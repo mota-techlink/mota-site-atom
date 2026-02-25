@@ -10,7 +10,8 @@ export type IconName =
   | "eye" 
   | "newspaper"
   | "orderList"
-  | "presentation";
+  | "presentation"
+  | "x402";
 
 export type NavItem = {
   titleKey: string;
@@ -29,6 +30,11 @@ export const userNavItems: NavItem[] = [
     titleKey: 'nav_orderList',
     href: '/dashboard/orders',
     icon: "orderList", // 🔴 传入字符串
+  },
+  {
+    titleKey: 'nav_x402_payments',
+    href: '/dashboard/x402-payments',
+    icon: "x402",
   },
   {
     titleKey: 'nav_settings',

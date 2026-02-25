@@ -4,85 +4,85 @@ description: How to leverage 3rd party account to login
 ---
 
 ## Google Side
-1. 创建 Google Cloud 项目：访问 Google Cloud Console 创建一个新项目。
+1. Create a Google Cloud project: Visit the Google Cloud Console to create a new project.
 
-2. 配置 OAuth 同意屏幕：在 "API 和服务" -> "OAuth 同意屏幕" 中，选择 "外部"，填写必要信息。
+2. Configure the OAuth consent screen: In "APIs & Services" -> "OAuth consent screen", select "External" and fill in the necessary information.
 
-3. 创建凭据：在 "凭据" 页面，点击 "创建凭据" -> "OAuth 客户端 ID"。
+3. Create credentials: On the "Credentials" page, click "Create credentials" -> "OAuth client ID".
 
-- 应用类型选择 "Web 应用"。
+- Select "Web application" as the application type.
 
-- 已获授权的 JavaScript 来源：添加 http://localhost:3000。
+- Authorized JavaScript origins: Add `http://localhost:3000`.
 
-- 已获授权的重定向 URI：添加本地 Supabase 的回调地址，格式为 http://127.0.0.1:54321/auth/v1/callback。
+- Authorized redirect URIs: Add the local Supabase callback URL, in the format `http://127.0.0.1:54321/auth/v1/callback`.
 
-4. 获取 Client ID 和 Secret：创建成功后，你会得到一个 Client ID 和 Client Secret。
+4. Get Client ID and Secret: After successful creation, you will get a Client ID and Client Secret.
 
-5. 配置本地 Supabase：打开本地 Supabase Studio (http://127.0.0.1:54323)，进入 "Authentication" -> "Providers"，启用 "Google"，并填入刚才获取的 Client ID 和 Client Secret。
+5. Configure local Supabase: Open the local Supabase Studio (`http://127.0.0.1:54323`), go to "Authentication" -> "Providers", enable "Google", and enter the Client ID and Client Secret you just obtained.
 
 
 ## Local Supabase Setup
 
-在本地使用 Supabase 时，Authentication 的第三方登录提供商（Providers，如 Google, GitHub 等）不能直接在本地的 Studio UI 界面中开启。
+When using Supabase locally, third-party login providers (such as Google, GitHub, etc.) in Authentication cannot be enabled directly in the local Studio UI.
 
-你需要通过编辑项目中的 Supabase 配置文件来启用它们。
+You need to enable them by editing the Supabase configuration file in your project.
 
-以下是开启本地 Supabase Auth Providers 的详细步骤：
+Here are the detailed steps to enable local Supabase Auth Providers:
 
-** 核心步骤：修改 config.toml 文件 **
-本地 Supabase 的所有配置都位于你的项目根目录下的 supabase/config.toml 文件中。你需要在这个文件中找到或添加相应的 OAuth 提供商配置块，并填入你的 Client ID 和 Secret。
+**Core Step: Modify the config.toml file**
+All configurations for local Supabase are located in the `supabase/config.toml` file in your project's root directory. You need to find or add the corresponding OAuth provider configuration block in this file and fill in your Client ID and Secret.
 
-1. 找到配置文件
-打开你的项目，找到以下文件： 你的项目根目录/supabase/config.toml
+1. Find the configuration file
+Open your project and find the following file: `Your project root directory/supabase/config.toml`
 
-2. 获取第三方提供商的凭据
-在配置之前，你必须先去你要开启的第三方服务商（例如 Google Cloud Console, GitHub Developer Settings 等）注册一个应用，并获取到以下两个关键信息：
+2. Get credentials from the third-party provider
+Before configuring, you must first go to the third-party service provider you want to enable (such as Google Cloud Console, GitHub Developer Settings, etc.) to register an application and obtain the following two key pieces of information:
 
-- Client ID (客户端 ID)
+- Client ID
 
-- Client Secret (客户端密钥)
+- Client Secret
 
-关于本地开发的重要提示： 在配置第三方应用的 "Authorized redirect URIs"（已授权的重定向 URI）时，本地 Supabase 的默认回调地址通常是： http://127.0.0.1:54321/auth/v1/callback (请确保端口号与你启动 supabase 时显示的 API URL 端口一致)
+Important note for local development: When configuring the "Authorized redirect URIs" of the third-party application, the default callback address for local Supabase is usually: `http://127.0.0.1:54321/auth/v1/callback` (please make sure the port number is consistent with the API URL port displayed when you start supabase)
 
-3. 编辑 config.toml
-在 config.toml 文件中，向下滚动，找到 [auth.external] 相关区域。如果没有，你需要手动添加。
+3. Edit config.toml
+In the `config.toml` file, scroll down to find the `[auth.external]` related area. If it doesn't exist, you need to add it manually.
 
-示例：开启 Google 登录
+Example: Enable Google login
 
-在文件中添加或修改以下内容，将 your_client_id 和 your_client_secret 替换为你实际获取到的值：
+Add or modify the following content in the file, replacing `your_client_id` and `your_client_secret` with the values you actually obtained:
 
 ```Ini, TOML
 # supabase/config.toml
 
-# ... 其他配置 ...
+# ... other configurations ...
 
 [auth.external.google]
 enabled = true
-client_id = "填写你的Google Client ID"
-secret = "填写你的Google Client Secret"
-# redirect_uri 通常不需要在本地显式设置，Supabase 会自动处理，
-# 但确保你在 Google控制台 配置了正确的 localhost 回调地址。
+client_id = "Your Google Client ID"
+secret = "Your Google Client Secret"
+# redirect_uri usually does not need to be set explicitly locally, Supabase will handle it automatically,
+# but make sure you have configured the correct localhost callback address in the Google console.
 
-# 示例：开启 GitHub 登录
+# Example: Enable GitHub login
 # [auth.external.github]
 # enabled = true
-# client_id = "填写你的GitHub Client ID"
-# secret = "填写你的GitHub Client Secret"
+# client_id = "Your GitHub Client ID"
+# secret = "Your GitHub Client Secret"
 
-# ... 其他配置 ...
+# ... other configurations ...
 ```
-确保 enabled = true。
+Make sure `enabled = true`.
 
-4. 重启本地 Supabase
-修改配置文件后，必须重启本地 Supabase 服务才能使更改生效。
+4. Restart local Supabase
+After modifying the configuration file, you must restart the local Supabase service for the changes to take effect.
 
-在你的终端中运行：
+Run in your terminal:
 
 ```Bash
 npx supabase stop
 npx supabase start
 ```
-5. 验证
-重启完成后，再次访问本地的 Supabase Studio 面板（通常是 http://127.0.0.1:54323）。
+5. Verification
+After restarting, visit the local Supabase Studio panel again (usually `http://127.0.0.1:54323`).
 
-进入 Authentication -> Providers 页面。现在你应该能看到你刚刚在配置文件中添加的提供商（例如 Google）已经显示为 "Enabled"（已启用）状态，并且可以展开查看你配置的 Client ID。
+Go to the Authentication -> Providers page. You should now see that the provider you just added in the configuration file (e.g., Google) is already displayed as "Enabled", and you can expand it to view the Client ID you configured.

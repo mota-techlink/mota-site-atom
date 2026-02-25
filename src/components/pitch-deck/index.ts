@@ -5,6 +5,7 @@ export { SlideRenderer } from "./SlideRenderer";
 export { SlideTransition } from "./SlideTransition";
 export { SlideNavigation } from "./SlideNavigation";
 export { ProgressBar } from "./ProgressBar";
+export { DeckLocaleProvider, useDeckLocale } from "./DeckLocaleContext";
 
 // Slide Layouts
 export { Slide } from "./slides/Slide";

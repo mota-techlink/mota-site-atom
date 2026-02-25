@@ -23,6 +23,7 @@ import {
   ListOrdered,
   Newspaper,
   Presentation,
+  Zap,
 } from "lucide-react";
 
 // 🔴 2. 定义映射表 (String -> Component)
@@ -36,6 +37,7 @@ const IconMap = {
   eye: Eye,
   newspaper: Newspaper,
   presentation: Presentation,
+  x402: Zap,
   // 如果有新的图标，在这里添加映射
 };
 interface SidebarProps {

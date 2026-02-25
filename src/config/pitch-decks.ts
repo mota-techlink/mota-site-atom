@@ -1,8 +1,15 @@
 // src/config/pitch-decks.ts
 // Static registry for pitch deck metadata.
 // No fs/path — safe for Cloudflare Pages / Edge Runtime.
-// When adding a new deck, add an entry here AND create the corresponding
-// deck component in src/components/pitch-deck/decks/.
+//
+// Each deck lives in content/pitch-decks/<slug>/ with a meta.json.
+// To add a new deck:
+//   1. Create content/pitch-decks/<slug>/meta.json + deck.tsx + slides
+//   2. Import the meta.json below and spread it into PITCH_DECK_REGISTRY
+//   3. Add a case in src/app/[locale]/pitch-deck/[slug]/pitch-deck-viewer.tsx
+
+import elmsMeta from "@content/pitch-decks/elms-logistics/meta.json";
+import aiWeb3Meta from "@content/pitch-decks/ai-web3-logistics/meta.json";
 
 export interface PitchDeckMeta {
   title: string;
@@ -20,22 +27,11 @@ export interface PitchDeckMeta {
 /**
  * All available pitch decks.
  * Key = slug used in the URL (/pitch-deck/[slug]).
+ * Automatically populated from each deck's meta.json.
  */
-export const PITCH_DECK_REGISTRY: Record<string, PitchDeckMeta> = {
-  "elms-logistics": {
-    title: "ELMS - European Logistics Management System",
-    slug: "elms-logistics",
-    description:
-      "AI-Powered Logistics Infrastructure for European Cross-Border Commerce",
-    author: "MOTA TechLink",
-    date: "2026-02-14",
-    status: "published",
-    previewSlides: 3,
-    defaultTransition: "slide",
-    tags: ["logistics", "AI", "MCP", "europe", "cross-border"],
-    coverImage: "/images/pitch-decks/elms-cover.png",
-  },
-};
+export const PITCH_DECK_REGISTRY: Record<string, PitchDeckMeta> = Object.fromEntries(
+  [elmsMeta, aiWeb3Meta].map((m) => [m.slug, m as PitchDeckMeta])
+);
 
 /**
  * Helper: get all decks as an array, sorted by date (newest first).

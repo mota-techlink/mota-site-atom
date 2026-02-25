@@ -1,0 +1,429 @@
+{
+  "slide1": {
+    "title": "智能体商务",
+    "subtitle": "协议驱动的跨境物流",
+    "description": "AI 原生全球物流 — 定义 Agent 驱动经济的行业标准",
+    "techLine": "MCP × 数字货币 × 多国供应链",
+    "badges": ["MCP 原生", "PayPal · Stripe", "数字货币(Web 3)", "跨境贸易", "清真认证"],
+    "agentToast": "跨境支付已通过 数字货币 结算 ✓",
+    "agentLabel": "AI 智能体",
+    "bottomDate": "2026 年 2 月",
+    "flowLabels": ["生产", "AI 调度", "运输", "签收"]
+  },
+  "slide2": {
+    "badge": "摩擦层",
+    "title": "传统物流已然",
+    "titleHighlight": "碎片化",
+    "subtitle": "供应商分散、费用不透明、语言时差障碍、繁琐单证 — 对非专业人士而言处处是陷阱。",
+    "painPoints": [
+      {
+        "title": "生态碎片化",
+        "stat": "10+ 孤岛",
+        "description": "货运、报关、仓储、保险 — 每项都需要不同的供应商、平台和合同，没有统一的信息来源。",
+        "details": [
+          "货运、报关行、仓库、保险各需独立账户",
+          "无统一追踪 — 每笔货物需登录 5+ 个平台",
+          "供应商锁定，数据格式不兼容",
+          "跨系统手动对账耗时耗力"
+        ]
+      },
+      {
+        "title": "费率高昂且不透明",
+        "stat": "5-15% 隐藏",
+        "description": "附加费、燃油调整、汇率加价 — 实际成本被层层不透明的收费结构掩盖，无法获得清晰的费用明细。",
+        "details": [
+          "燃油附加费每周调整，不予通知",
+          "汇率转换隐含 2-4% 加价",
+          "码头装卸费在不同服务商间差异达 3 倍",
+          "无标准费用明细 — 无法比价"
+        ]
+      },
+      {
+        "title": "语言与时差壁垒",
+        "stat": "8-16h 延迟",
+        "description": "跨时区的客户服务意味着 8-16 小时的响应延迟。语言误解导致错误分类和发货失误。",
+        "details": [
+          "客服团队跨时区分布，响应延迟 8-16 小时",
+          "语言误解导致 HS 编码分类错误",
+          "非工作时间的紧急问题可能数天无人处理",
+          "商业文件翻译错误触发海关扮留"
+        ]
+      },
+      {
+        "title": "单证迷宫",
+        "stat": "30+ 文件",
+        "description": "提单、原产地证、商业发票、装箱单 — 每条路线和国家都有独特的表格要求，定制化几乎不可能。",
+        "details": [
+          "单笔多国货运涉及 30+ 种文件类型",
+          "每个国家要求独特的表格格式和认证",
+          "清真、植检、安全证书各有不同工作流",
+          "模板定制需昂贵的法律咨询"
+        ]
+      },
+      {
+        "title": "需要专业知识",
+        "stat": "高风险",
+        "description": "缺乏深度行业经验的发货人面临 HS 编码错分、合规处罚、货物扣押和保险不足等风险。",
+        "details": [
+          "HS 编码错分导致 5-20% 的关税多缴或罚款",
+          "制裁筛查失误可导致货物被扣押",
+          "保险不足使发货人面临全额损失风险",
+          "190+ 个国家的法规变化无法人工追踪"
+        ]
+      }
+    ],
+    "criticalFriction": "关键摩擦",
+    "warningStrip": "没有专业知识，每次发货都隐含风险",
+    "mobileLabel": "查看所有痛点",
+    "mobileTitle": "行业痛点",
+    "mobileSubtitle": "传统物流摩擦"
+  },
+  "slide3": {
+    "badge": "解决方案",
+    "title": "AI 驱动的",
+    "titleHighlight": "智慧物流网络",
+    "sender": "发货人",
+    "receiver": "收件人",
+    "aiLabel": "AI 多模态",
+    "aiModels": ["ChatGPT", "Gemini", "Grok"],
+    "commChat": "聊天",
+    "commVoice": "语音",
+    "commImage": "图片",
+    "mcpLabel": "MCP",
+    "orderPay": "下单 & 支付",
+    "logisticsHub": "物流中心",
+    "services": [
+      { "id": "pickup", "title": "取件", "detail": "上门揽收，从发件人仓库或地址取货" },
+      { "id": "print", "title": "面单打印", "detail": "自动生成运单、面单、报关单据" },
+      { "id": "pack", "title": "包装", "detail": "专业包装、防护材料、合规标识" },
+      { "id": "sort", "title": "分拣", "detail": "智能路由优化与自动分拣" },
+      { "id": "freight", "title": "空运 / 海运", "detail": "国际航空货运与海运，智能选择承运商" },
+      { "id": "customs", "title": "清关", "detail": "自动报关、税费核算、快速通关" }
+    ],
+    "trackingTitle": "全链路追踪",
+    "tracking": ["货态跟踪", "温湿度监控", "地理轨迹", "碳排放"],
+    "docSync": "实时单据",
+    "docSyncDetail": "所有单据根据偏好实时同步给发货人和收件人",
+    "alerts": "互动提醒",
+    "alertItems": ["缴纳关税", "更正地址/信息错误", "确认签收"],
+    "hintText": "悬停服务图标 · 点击模块查看详情",
+    "modules": [
+      {
+        "id": "register",
+        "title": "智能注册",
+        "traditional": "手动注册开户，繁琐填表，数据录入僵化",
+        "solution": "OAuth 登录，多模态输入（语音、照片、对话）",
+        "details": ["一键社交账号登录", "拍照自动识别单证", "语音引导创建档案"]
+      },
+      {
+        "id": "order",
+        "title": "AI 下单",
+        "traditional": "搜索引擎列表，逐个查询，沟通效率低",
+        "solution": "AI 即时报价，MCP 一键下单",
+        "details": ["自然语言创建运单", "多承运商即时报价", "自动 HS 编码分类"]
+      },
+      {
+        "id": "payment",
+        "title": "Web3 结算",
+        "traditional": "传统汇款慢，手续费高，有最低金额限制",
+        "solution": "数字货币 + PayPal/Stripe 结算",
+        "details": ["支持微额支付（0.01元起）", "跨境即时到账", "无隐形银行费用"]
+      },
+      {
+        "id": "docs",
+        "title": "自动单证",
+        "traditional": "人工处理 30+ 种报关、运输等环节单证",
+        "solution": "AI 自动生成并验证所有环节单证",
+        "details": ["自动生成报关单", "智能纠错与验证", "统一单证标准"]
+      },
+      {
+        "id": "support",
+        "title": "全时客服",
+        "traditional": "时区阻隔，语言不通，服务时间有限",
+        "solution": "7×24 跨语言跨时区 AI 客服",
+        "details": ["实时 50+ 语言翻译", "零时差响应", "持续学习进化的服务体系"]
+      },
+      {
+        "id": "search",
+        "title": "智能搜索",
+        "traditional": "仅支持关键词搜索，无法跨系统关联，数据孤岛，手工逐系统查询",
+        "solution": "AI 语义搜索本地知识库与业务单据，自动关联查询",
+        "details": ["自然语言查询所有运单记录", "跨单据自动关联搜索", "本地知识库实时索引"]
+      }
+    ],
+    "mobileLabel": "查看拓扑图",
+    "mobileTitle": "解决方案拓扑"
+  },
+  "slide4": {
+    "badge": "技术引擎 I",
+    "title": "MCP 驱动的",
+    "titleHighlight": "智能体集成",
+    "subtitle": "将物流 API 封装为 AI 可理解的工具。任何 LLM 都能在 500ms 内发货。",
+    "mcpConnected": "MCP 服务器: 已连接",
+    "terminalTitle": "mcp-logistics-server — bash",
+    "mcpResponse": "← MCP 响应 (487ms):",
+    "toolCallDone": "工具调用完成。找到 3 条运价。",
+    "layers": [
+      { "label": "AI 智能体", "sublabel": "Claude / GPT / Gemini" },
+      { "label": "MCP 服务器", "sublabel": "工具注册 + 路由" },
+      { "label": "物流 API", "sublabel": "询价 / 追踪 / 下单" },
+      { "label": "承运商", "sublabel": "顺丰 / DHL / FedEx / NinjaVan" }
+    ],
+    "mobileLabel": "查看架构",
+    "mobileTitle": "MCP 架构"
+  },
+  "slide5": {
+    "badge": "数字货币支付",
+    "title": "数字货币",
+    "titleHighlight": "支付优势",
+    "subtitle": "更快、更便宜、无国界 — 由区块链驱动的 B2B 交易新未来。",
+    "advantages": [
+      {
+        "title": "即时结算",
+        "brief": "< 1 秒",
+        "detail": "加密货币交易在数秒内完成结算，而非传统银行的 3-5 个工作日。这极大地改善了现金流，降低了供应链运营中的对手方风险。"
+      },
+      {
+        "title": "超低手续费",
+        "brief": "~$0.001",
+        "detail": "现代 L2 网络上的交易费用仅为几分之一美分，相比之下信用卡手续费为 2-3%，电汇费用为 25-50 美元。对于大批量 B2B 支付，这意味着巨额节省。"
+      },
+      {
+        "title": "无国界转账",
+        "brief": "195+ 个国家",
+        "detail": "向任何国家汇款，无需货币兑换费、代理银行延迟或 SWIFT 额外开销。USDC 等稳定币在跨境流通的同时保持美元价值。"
+      },
+      {
+        "title": "可编程逻辑",
+        "brief": "智能合约",
+        "detail": "将支付条件直接嵌入代码中：托管释放、里程碑付款、自动化版税和条件结算 — 所有这些都无需人工干预或第三方仲裁。"
+      },
+      {
+        "title": "完全透明",
+        "brief": "链上审计",
+        "detail": "每笔交易都永久记录在链上，提供不可篡改的付款证明。这消除了纠纷、简化了对账流程，并自动满足合规要求。"
+      },
+      {
+        "title": "全天候可用",
+        "brief": "24/7/365",
+        "detail": "没有营业时间限制。没有银行假日。没有周末延迟。加密货币网络持续运行，实现真正的全天候全球商务。"
+      },
+      {
+        "title": "AI 原生支付",
+        "brief": "自主智能体",
+        "detail": "在 AI 时代，自主智能体需要无需人工干预地进行交易。数字货币是最佳选择：API 可以编程化地签署交易，智能合约无需中间人即可建立信任，去中心化结算消除了单点故障。与传统银行的 KYC 摩擦、营业时间限制和中心化审批不同，加密货币使 AI 智能体能够 24/7 全天候自主协商、支付和收款，具备密码学级别的安全性、微分精度和零对手方风险。"
+      }
+    ],
+    "x402": {
+      "title": "X402 协议",
+      "brief": "HTTP 原生加密支付",
+      "detail": "X402 扩展了 HTTP 402 状态码，在协议层面实现机器对机器支付。AI 智能体和服务可以使用 Base L2 上的 USDC 自主协商和结算支付 — 无需 API 密钥、无需中间人，仅需嵌入 HTTP 头部的加密支付证明。"
+    },
+    "learnMore": "了解更多",
+    "close": "关闭",
+    "mobileLabel": "查看全部优势",
+    "mobileTitle": "数字货币支付优势"
+  },
+  "slide6": {
+    "badge": "区域卓越",
+    "title": "全球路线，",
+    "titleHighlight": "本地合规",
+    "subtitle": "覆盖 4 大贸易区域的自动化清关，清关时间缩短 60-75%。",
+    "regions": [
+      {
+        "name": "欧盟",
+        "regulation": "ICS2 / AEO",
+        "badge": "GDPR 合规",
+        "features": ["ICS2 预到港申报", "AEO 可信贸易商资质", "ISO 14067 碳足迹追踪", "GDPR 数据驻留 (都柏林)"]
+      },
+      {
+        "name": "美国",
+        "regulation": "ACE / C-TPAT",
+        "badge": "FDA 就绪",
+        "features": ["ACE 自动化海关录入", "C-TPAT 供应链安全", "FDA 合规自动化", "Type 86 低值免税录入"]
+      },
+      {
+        "name": "马来西亚",
+        "regulation": "MS 2400 清真",
+        "badge": "清真认证",
+        "features": ["MS 2400 清真物流链", "JAKIM 认证追踪", "符合伊斯兰教法处理", "新马跨境物流"]
+      },
+      {
+        "name": "中东 / GCC",
+        "regulation": "GSO / SFDA",
+        "badge": "GCC 合规",
+        "features": ["GSO 标准对齐", "SFDA 食品/化妆品审批", "伊斯兰金融集成", "SASO 合格标识"]
+      }
+    ],
+    "traditional": "传统:",
+    "mobileLabel": "查看所有区域",
+    "mobileTitle": "全球合规区域"
+  },
+  "slide7": {
+    "badge": "运营流程",
+    "title": "从下单到",
+    "titleHighlight": "最后一公里",
+    "steps": [
+      {
+        "title": "订单创建",
+        "location": "卖家 → 平台",
+        "description": "AI 智能体通过 MCP 接收订单并启动履约流水线。",
+        "details": ["MCP 工具: create_shipment()", "自动生成商业发票", "X402 支付捕获", "AI 优化承运商选择"]
+      },
+      {
+        "title": "仓库揽收",
+        "location": "始发枢纽 (SZX / KUL)",
+        "description": "商品拣选、包装、贴标。IoT 传感器用于冷链监控。",
+        "details": ["自动生成运单标签", "重量与尺寸扫描", "IoT 温度传感器激活", "AI 验证装箱单"]
+      },
+      {
+        "title": "国际运输",
+        "location": "跨境空运 / 海运",
+        "description": "跨承运商实时追踪。AI 监控延误并主动改路。",
+        "details": ["多承运商统一追踪", "实时 GPS + 预计到达更新", "AI 异常检测", "延误时自动改路"]
+      },
+      {
+        "title": "AI 驱动清关",
+        "location": "目的国",
+        "description": "自动化清关申报、HS 编码分类及关税计算。",
+        "details": ["AI HS 编码分类 (99.7%)", "预到港 ICS2/ACE 申报", "关税自动计算", "数字证书验证"]
+      },
+      {
+        "title": "最后一公里配送",
+        "location": "NinjaVan / DHL / 本地",
+        "description": "本地承运商交接，路线优化。Webhook 触发状态更新。",
+        "details": ["本地承运商 API 集成", "签收凭证采集", "客户通知 Webhook", "碳足迹计算"]
+      },
+      {
+        "title": "已签收",
+        "location": "终端客户",
+        "description": "签收确认。链上收据生成。碳排放抵消记录。",
+        "details": ["签收确认", "链上结算收据", "AI 模型反馈闭环", "ISO 14067 碳排放记录"]
+      }
+    ],
+    "statusLabels": { "completed": "已完成", "active": "处理中", "pending": "待处理" },
+    "liveStatuses": [
+      "清关处理: 正在自动申报 ICS2...",
+      "AI 验证 HS 编码: 8471.30 → 99.7% 置信度",
+      "关税计算: €2,340.00 (12.5% 税率)",
+      "数字证书验证: 清真 MS 2400 ✓"
+    ],
+    "mobileLabel": "查看完整流程",
+    "mobileTitle": "运营流程"
+  },
+  "slide8": {
+    "badge": "进化战略",
+    "title": "从案例验证到",
+    "titleHighlight": "平台化",
+    "phases": [
+      {
+        "phase": "阶段 1",
+        "title": "自营走廊",
+        "timeline": "2026 Q1–Q2",
+        "description": "验证模型。端到端运营 2-3 条高频贸易通道，AI + X402 支付。",
+        "metrics": [
+          { "label": "贸易通道", "value": "2-3" },
+          { "label": "月 GMV", "value": "$500K" }
+        ],
+        "features": ["SZX → DUB 通道上线", "MCP 智能体集成", "X402 支付网关", "清真物流 (MY)"]
+      },
+      {
+        "phase": "阶段 2",
+        "title": "3PL 市场",
+        "timeline": "2026 Q3–Q4",
+        "description": "向第三方物流商开放平台。收入从差价转向交易手续费。",
+        "metrics": [
+          { "label": "3PL 合作商", "value": "15+" },
+          { "label": "月 GMV", "value": "$5M" }
+        ],
+        "features": ["3PL 入驻门户", "收入分成模式", "多承运商 AI 路由", "白标 API"]
+      },
+      {
+        "phase": "阶段 3",
+        "title": "平台主导",
+        "timeline": "2027+",
+        "description": "成为'跨境物流的 Stripe' — 全球贸易的协议级基础设施。",
+        "metrics": [
+          { "label": "3PL 合作商", "value": "100+" },
+          { "label": "月 GMV", "value": "$50M+" }
+        ],
+        "features": ["协议许可", "垂直 SaaS 模块", "物流 AI 市场", "多链结算"]
+      }
+    ],
+    "mobileLabel": "查看所有阶段",
+    "mobileTitle": "增长战略"
+  },
+  "slide9": {
+    "badge": "不对称优势",
+    "title": "为什么",
+    "titleHighlight": "我们赢",
+    "bentoItems": [
+      {
+        "title": "闪电结算",
+        "stat": "< 1 秒",
+        "description": "Base L2 上的 X402 链上支付 — 近零 Gas、即时最终性。",
+        "features": ["USDC 稳定币", "Base L2 网络", "~$0.001/笔"]
+      },
+      {
+        "title": "企业级安全",
+        "stat": "零信任",
+        "description": "密码学支付验证。无需 API 密钥，无凭证泄露。",
+        "features": ["钱包认证", "不可篡改收据", "审计就绪日志"]
+      },
+      {
+        "title": "清真认证",
+        "stat": "100%",
+        "description": "面向穆斯林世界商贸的全链路伊斯兰教法合规贸易通道。",
+        "features": ["JAKIM / MUI / ESMA", "清真专用仓储", "证书链路"]
+      },
+      {
+        "title": "智能体商务",
+        "stat": "MCP 原生",
+        "description": "任何 AI 模型都可通过标准化 MCP 工具调用物流、清关和支付。",
+        "features": ["Claude / GPT / Gemini", "JSON-RPC 2.0", "实时运价查询"]
+      }
+    ],
+    "comparisonMetric": "指标",
+    "comparisonUs": "MOTA TechLink",
+    "comparisonThem": "传统方案",
+    "comparisonRows": [
+      { "label": "结算速度", "us": 95, "them": 20 },
+      { "label": "AI 集成", "us": 90, "them": 5 },
+      { "label": "成本效率", "us": 85, "them": 35 },
+      { "label": "清真覆盖", "us": 80, "them": 15 }
+    ]
+  },
+  "slide10": {
+    "badge": "准备启航",
+    "title": "启动",
+    "titleHighlight": "智能体",
+    "subtitle": "首个 AI 智能体自主议价、链上结算、跨 4+ 区域清关的物流平台。",
+    "stats": [
+      { "label": "结算", "value": "< 1s" },
+      { "label": "交易成本", "value": "~$0.001" },
+      { "label": "AI 模型", "value": "全 MCP" },
+      { "label": "市场", "value": "4+ 区域" }
+    ],
+    "ctaButton": "携手 MOTA TechLink",
+    "emailPlaceholder": "输入您的邮箱",
+    "emailButton": "获取权限",
+    "emailSuccess": "我们将尽快联系您",
+    "emailDisclaimer": "无垃圾邮件。仅面向合格物流运营商的早期访问。",
+    "links": [
+      { "label": "motaiot.com", "href": "https://motaiot.com" },
+      { "label": "技术文档", "href": "https://motaiot.com/docs" }
+    ]
+  },
+  "slideTitles": [
+    "智能体商务",
+    "行业痛点",
+    "核心基础设施",
+    "MCP 集成",
+    "X402 支付",
+    "全球路线",
+    "运营流程",
+    "增长战略",
+    "竞争优势",
+    "启动智能体"
+  ]
+}

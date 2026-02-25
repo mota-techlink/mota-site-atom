@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
       .from("orders")
       .select("amount_total, created_at")
       .eq("user_id", user.id)
-      .eq("status", "paid")
+      .in("status", ["paid", "processing", "shipped", "delivered"])
       .gte("created_at", startDate)
       .lte("created_at", endDate);
 

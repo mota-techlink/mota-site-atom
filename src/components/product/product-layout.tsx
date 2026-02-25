@@ -30,6 +30,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Loader2, CheckCircle2 } from "lucide-react"
 import { usePathname } from 'next/navigation'
 import { CryptoPaymentModal } from "@/components/payments/crypto-payment-modal"
+import { X402ConsultButton } from "@/components/payments/x402-consult-button"
 import { toast } from "sonner";
 
 function ContactSalesDialog({ 
@@ -288,6 +289,10 @@ interface ProductLayoutProps {
 
 {/* === RIGHT COLUMN: Sticky Pricing Card === */}
 function PricingWidget({ data }: { data: any }) {
+  const pathname = usePathname();
+  // Derive product slug from URL: /en/products/mvp → mvp, /en/products/mota-ai/chatbot → chatbot
+  const productSlug = pathname.split('/').filter(Boolean).pop() || '';
+
   return (
         <div className="relative">
           <div className="sticky top-24 space-y-6 ">
@@ -349,7 +354,10 @@ function PricingWidget({ data }: { data: any }) {
               </Tabs>
             </Card>
 
-            {/* 2. Company Trust (B2C Adjustment) */}
+            {/* 2. X402 Quick Consultation */}
+            <X402ConsultButton productSlug={productSlug} productName={data.title} />
+
+            {/* 3. Company Trust (B2C Adjustment) */}
             <Card className="bg-muted/30">
               <CardHeader className="pb-3">
                 <CardTitle className="text-base flex items-center gap-2">

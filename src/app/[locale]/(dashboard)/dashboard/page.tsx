@@ -16,8 +16,8 @@ export default async function DashboardPage() {
     { count: activeOrders },
     { data: recentOrders }
   ] = await Promise.all([
-    // 计算已支付总额
-    supabase.from("orders").select("amount_total").eq("user_id", user.id).eq("status", "paid"),
+    // 计算已支付总额（包含所有已支付后的状态：paid → processing → shipped → delivered）
+    supabase.from("orders").select("amount_total").eq("user_id", user.id).in("status", ["paid", "processing", "shipped", "delivered"]),
     // 总订单数
     supabase.from("orders").select("*", { count: 'exact', head: true }).eq("user_id", user.id),
     // 活跃订单数 (未交付的)

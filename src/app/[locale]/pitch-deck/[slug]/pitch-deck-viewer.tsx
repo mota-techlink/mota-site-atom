@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ElmsLogisticsDeck } from "@content/pitch-decks/elms-logistics/deck";
+import { AIWeb3LogisticsDeck } from "@content/pitch-decks/ai-web3-logistics/deck";
 import type { TransitionType } from "@/components/pitch-deck";
 import type { PitchDeckMeta } from "@/config/pitch-decks";
 
@@ -21,6 +22,13 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated }: PitchDeckViewer
       return (
         <ElmsLogisticsDeck
           isAuthenticated={true}
+          transition={transition}
+        />
+      );
+    case "ai-web3-logistics":
+      return (
+        <AIWeb3LogisticsDeck
+          isAuthenticated={isAuthenticated}
           transition={transition}
         />
       );
