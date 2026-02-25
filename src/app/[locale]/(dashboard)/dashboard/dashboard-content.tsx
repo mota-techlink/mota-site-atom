@@ -7,7 +7,13 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Wallet, Package, CreditCard, Clock, TrendingUp, ChevronRight, ChevronLeft, Loader2,User } from "lucide-react"
 import { Link } from "@/navigation"
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
+import dynamic from "next/dynamic"
+
+// 🔧 动态导入图表组件 - recharts 约 200kB，仅在 dashboard 页真正需要时加载
+const DashboardChart = dynamic(
+  () => import("@/components/charts/dashboard-chart").then(mod => mod.DashboardChart),
+  { ssr: false, loading: () => <div className="w-full h-full bg-slate-800 animate-pulse rounded" /> }
+)
 
 const scrollbarStyles = `
   .orders-scroll::-webkit-scrollbar {
@@ -128,17 +134,7 @@ export default function DashboardContent({ user, stats, recentOrders }: any) {
               </div>
             ) : null}
             
-            <ResponsiveContainer width="100%" height="100%" minWidth={0}>
-              <BarChart data={chartData}>
-                <XAxis dataKey="name" stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} />
-                <YAxis stroke="#64748b" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(v) => `$${v}`} />
-                <Tooltip 
-                  cursor={{fill: '#1e293b'}} 
-                  contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '8px' }}
-                />
-                <Bar dataKey="total" fill="#3b82f6" radius={[4, 4, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
+            <DashboardChart data={chartData} />
           </CardContent>
         </Card>
 

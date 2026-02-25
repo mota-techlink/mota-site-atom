@@ -5,20 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  LineChart,
-  Line,
-  CartesianGrid,
-  Legend,
-} from "recharts";
 import { ChevronRight, ChevronLeft, Loader2 } from "lucide-react";
 import { Link } from "@/navigation";
+import dynamic from "next/dynamic";
+
+// 🔧 动态导入图表组件 - recharts 约 200kB
+const AdminChart = dynamic(
+  () => import("@/components/charts/admin-chart").then(mod => mod.AdminChart),
+  { ssr: false, loading: () => <div className="h-[300px] bg-muted animate-pulse rounded" /> }
+);
 
 export function ConsoleContent({ orders, stats }: any) {
   type ChartDataItem = {
@@ -132,24 +127,7 @@ export function ConsoleContent({ orders, stats }: any) {
                 <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
               </div>
             ) : chartData.length > 0 ? (
-              <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={chartData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip
-                    formatter={(value) => {
-                      if (typeof value === "number" && value > 1000) {
-                        return formatCurrency(value);
-                      }
-                      return value;
-                    }}
-                  />
-                  <Legend />
-                  <Bar dataKey="revenue" fill="#10b981" name="Revenue ($)" />
-                  <Bar dataKey="orders" fill="#3b82f6" name="Orders" />
-                </BarChart>
-              </ResponsiveContainer>
+              <AdminChart data={chartData} formatCurrency={formatCurrency} />
             ) : (
               <div className="h-64 flex items-center justify-center text-muted-foreground">
                 No data available

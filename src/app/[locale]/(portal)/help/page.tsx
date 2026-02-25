@@ -8,11 +8,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
+import dynamic from "next/dynamic";
 
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+// 🔧 动态导入代码高亮组件 - react-syntax-highlighter 约 40kB
+const CodeHighlighter = dynamic(
+  () => import("@/components/code-highlighter").then(mod => mod.CodeHighlighter),
+  { ssr: false, loading: () => <div className="bg-[#1e1e1e] p-4 rounded animate-pulse h-20" /> }
+);
 
 type Session = { id: string; title: string; date: string };
 
@@ -125,21 +130,12 @@ export default function HelpCenterPage() {
                                     
                                     {/* 滚动层单独放这里 */}
                                     <div className="overflow-x-auto w-full">
-                                        <SyntaxHighlighter
-                                        style={vscDarkPlus}
+                                        <CodeHighlighter
                                         language={match[1]}
-                                        PreTag="div"
-                                        customStyle={{ 
-                                            margin: 0, 
-                                            padding: '1rem', 
-                                            fontSize: '13px', 
-                                            lineHeight: '1.5',
-                                            background: 'transparent',
-                                        }}
                                         {...props}
                                         >
                                         {String(children).replace(/\n$/, '')}
-                                        </SyntaxHighlighter>
+                                        </CodeHighlighter>
                                     </div>
                                     </div>
                                 </div>

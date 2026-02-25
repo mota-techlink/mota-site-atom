@@ -3,6 +3,7 @@ import { useContactForm } from "@/hooks/use-contact-form"
 import React, { useState } from "react"
 import Image from "next/image"
 import { Link } from "@/navigation"
+import dynamic from "next/dynamic"
 import { Check, Clock, RefreshCcw, ShieldCheck, ArrowRight, LayoutGrid, Bitcoin, CreditCard } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -29,9 +30,17 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Loader2, CheckCircle2 } from "lucide-react"
 import { usePathname } from 'next/navigation'
-import { CryptoPaymentModal } from "@/components/payments/crypto-payment-modal"
-import { X402ConsultButton } from "@/components/payments/x402-consult-button"
 import { toast } from "sonner";
+
+// 🔧 动态导入重型组件 - 减少首屏 JS 约 200kB+
+const CryptoPaymentModal = dynamic(
+  () => import("@/components/payments/crypto-payment-modal").then(mod => mod.CryptoPaymentModal),
+  { ssr: false }
+)
+const X402ConsultButton = dynamic(
+  () => import("@/components/payments/x402-consult-button").then(mod => mod.X402ConsultButton),
+  { ssr: false }
+)
 
 function ContactSalesDialog({ 
   productName, 

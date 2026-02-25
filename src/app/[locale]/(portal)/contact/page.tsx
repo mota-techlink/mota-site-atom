@@ -6,7 +6,13 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Mail, MapPin, Phone, Loader2, CheckCircle2, Send, AlertCircle } from "lucide-react"
 import { siteConfig } from "@/config/site"
-import { GoogleMapView } from "@/components/ui/google-map-view"
+import dynamic from "next/dynamic"
+
+// 🔧 动态导入 Google Maps - 仅在联系页面加载 (~50kB)
+const GoogleMapView = dynamic(
+  () => import("@/components/ui/google-map-view").then(mod => mod.GoogleMapView),
+  { ssr: false, loading: () => <div className="w-full h-full bg-muted animate-pulse rounded-xl" /> }
+)
 
 // 🟢 引入我们刚刚封装的 Hook
 import { useContactForm } from "@/hooks/use-contact-form"

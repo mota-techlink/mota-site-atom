@@ -15,6 +15,17 @@ const nextConfig: NextConfig = {
     serverActions: {
       allowedOrigins: ["localhost:3000", "atom.motaiot.com","dev.motaiot.com","192.168.50.188:3000"],
     },
+    optimizePackageImports: [
+      'lucide-react',
+      'recharts',
+      'framer-motion',
+      '@radix-ui/react-icons',
+      'react-syntax-highlighter',
+      '@ai-sdk/react',
+      'embla-carousel-react',
+      'react-markdown',
+      'next-mdx-remote',
+    ],
   },
 
   // 3. 静态资源跨域头 (CORS)

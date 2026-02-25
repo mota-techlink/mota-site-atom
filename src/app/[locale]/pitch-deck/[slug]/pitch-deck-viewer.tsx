@@ -1,10 +1,28 @@
 "use client";
 
 import React from "react";
-import { ElmsLogisticsDeck } from "@content/pitch-decks/elms-logistics/deck";
-import { AIWeb3LogisticsDeck } from "@content/pitch-decks/ai-web3-logistics/deck";
+import dynamic from "next/dynamic";
 import type { TransitionType } from "@/components/pitch-deck";
 import type { PitchDeckMeta } from "@/config/pitch-decks";
+
+// 动态导入 Deck 组件，禁用 SSR 以避免水合不匹配，并实现代码分割
+const ElmsLogisticsDeck = dynamic(
+  () => import("@content/pitch-decks/elms-logistics/deck").then(mod => mod.ElmsLogisticsDeck),
+  { loading: () => <LoadingSpinner /> }
+);
+
+const AIWeb3LogisticsDeck = dynamic(
+  () => import("@content/pitch-decks/ai-web3-logistics/deck").then(mod => mod.AIWeb3LogisticsDeck),
+  { loading: () => <LoadingSpinner /> }
+);
+
+function LoadingSpinner() {
+  return (
+    <div className="w-full h-full flex items-center justify-center bg-black">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+    </div>
+  );
+}
 
 interface PitchDeckViewerProps {
   slug: string;

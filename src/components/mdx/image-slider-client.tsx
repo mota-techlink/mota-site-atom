@@ -8,13 +8,13 @@ import Autoplay from 'embla-carousel-autoplay'
 import { ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import dynamic from 'next/dynamic'
 
-import Lightbox from "yet-another-react-lightbox"
-import "yet-another-react-lightbox/styles.css"
-import Zoom from "yet-another-react-lightbox/plugins/zoom"
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow"
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
-import "yet-another-react-lightbox/plugins/thumbnails.css"
+// 🔧 延迟加载 Lightbox 组件 - 仅在用户点击放大时才加载 (~30kB)
+const LightboxComponent = dynamic(
+  () => import("yet-another-react-lightbox"),
+  { ssr: false }
+)
 
 interface ImageSliderClientProps {
   images: string[]
@@ -112,20 +112,18 @@ export function ImageSliderClient({
         )}
       </div>
 
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        index={index}
-        slides={images.map(src => ({ src }))}
-        plugins={[Zoom, Slideshow, Thumbnails]} 
-        // 4. 将 delay 参数也传给 Lightbox，保持体验一致
-        slideshow={{ autoplay: true, delay: delay }} 
-        zoom={{ maxZoomPixelRatio: 3 }}
-        styles={{ container: { backgroundColor: "rgba(0, 0, 0, .9)" } }}
-        on={{
-            view: ({ index: currentIndex }) => setIndex(currentIndex) 
-        }}
-      />
+      {open && (
+        <LightboxComponent
+          open={open}
+          close={() => setOpen(false)}
+          index={index}
+          slides={images.map(src => ({ src }))}
+          styles={{ container: { backgroundColor: "rgba(0, 0, 0, .9)" } }}
+          on={{
+              view: ({ index: currentIndex }) => setIndex(currentIndex) 
+          }}
+        />
+      )}
     </>
   )
 }

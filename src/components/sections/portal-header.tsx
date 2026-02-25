@@ -14,10 +14,16 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 import { BionicToggle } from '@/components/ui/bionic-toggle';
 import { SiteFooter } from "@/components/sections/site-footer"
 import { GlobalToggles } from '@/components/global-toggles';
-import { LoginModal } from '@/components/auth/login-modal';
 import { UserNav } from "@/components/sections/user-nav";
 import { createBrowserClient } from "@supabase/ssr";
 import { GlobalLogo } from '../GlobalLogo';
+import dynamic from "next/dynamic";
+
+// 🔧 动态导入 LoginModal - 仅在未登录用户点击登录按钮时才加载
+const LoginModal = dynamic(
+  () => import("@/components/auth/login-modal").then(mod => mod.LoginModal),
+  { ssr: false }
+);
 
 interface PortalHeaderProps {
   locale: string;

@@ -10,7 +10,13 @@ import { TypewriterText } from "@/components/ui/typewriter-text";
 import { Github, ArrowRight, Twitter } from "lucide-react";
 import { useTranslations } from "next-intl"
 import { TechStackLogos } from "@/components/ui/tech-stack-logos";
-import { LoginModal } from "@/components/auth/login-modal";
+import dynamic from "next/dynamic";
+
+// 🔧 动态导入 LoginModal - 仅在用户点击注册按钮时才加载
+const LoginModal = dynamic(
+  () => import("@/components/auth/login-modal").then(mod => mod.LoginModal),
+  { ssr: false }
+);
 
 interface HeroSectionProps {
   specificProviders?: any[];
