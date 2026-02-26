@@ -8,5 +8,5 @@
   "previewSlides": 3,
   "defaultTransition": "slide",
   "tags": ["logistics", "AI", "MCP", "europe", "cross-border"],
-  "coverImage": "/images/pitch-decks/elms-cover.png"
+      "coverImage": "/images/pitch-decks/elms-cover.webp"
 }

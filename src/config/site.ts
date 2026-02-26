@@ -31,7 +31,7 @@ export const siteConfig = {
   description:
     "Launch Your Dream Startup with AI Support, Zero Cost and Infinite Scale...",
   url: BASE_URL, 
-  ogImage: `${BASE_URL}/images/og.png`,
+  ogImage: `${BASE_URL}/images/og.webp`,
   contact: {
     email: "contract@motaiot.com",
     toMail: "harling@motaiot.com",

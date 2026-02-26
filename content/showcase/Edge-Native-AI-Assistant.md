@@ -1,7 +1,7 @@
 ---
 title: "Edge-Native AI Assistant: Enterprise RAG Solution"
 date: 2025-11-16
-image: "/images/showcase/chatbot/chatbot-cover.jpg" 
+image: "/images/showcase/chatbot/chatbot-cover.webp" 
 description: "A high-performance, serverless AI chatbot built entirely on Cloudflare's edge network. Features Retrieval-Augmented Generation (RAG), custom OAuth 2.0 security, and real-time streaming, delivering enterprise-grade AI interactions at a fraction of the cost."
 meta_title: "Edge-Native AI RAG Chatbot Case Study - MOTA ATOM"
 tags: ["AI", "RAG", "Cloudflare", "Serverless", "Edge Computing"]
@@ -31,7 +31,7 @@ Building a production-ready AI Chatbot on a static site architecture (Hugo) pres
 
  >We moved beyond simple API calls to build a robust **Serverless AI Gateway** using Cloudflare's modern stack.
 
-![](/images/showcase/chatbot/edge-solution.png)
+![](/images/showcase/chatbot/edge-solution.webp)
 
 ### System Architecture
 
@@ -66,7 +66,7 @@ Standard authentication libraries failed in the Edge environment. We rewrote the
 By switching from a "Knowledge Injection" approach (sending all docs in the prompt) to a RAG architecture, we reduced **Input Token consumption by 90%**. Furthermore, leveraging Cloudflare Workers AI allows us to run inference on edge GPUs, eliminating the need for expensive, always-on GPU servers.
 
 ## Beyond Support: A Lifelong Learning Asset
-![](/images/showcase/chatbot/lifegrowth.jpg)
+![](/images/showcase/chatbot/lifegrowth.webp)
 
 The true value of this technology extends far beyond providing **24H7D multilingual customer support**. Its core strength lies in its **evolutionary capability**:
 

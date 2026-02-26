@@ -5,7 +5,7 @@ description: "Inspired by NVIDIA's robot training in virtual worlds, MOTA ATOM e
 categories: ["AI Engineering", "Edge AI"]
 tags: ["NVIDIA", "Synthetic Data", "GenAI", "Industrial IoT", "Edge Computing"]
 # 封面图可以使用你推文里的那张架构图
-image: "/images/showcase/Edge-Computing/GenAI-Cover.png"
+image: "/images/showcase/Edge-Computing/GenAI-Cover.webp"
 ---
 
 Yesterday, **NVIDIA** showcased how the next generation of robots is being trained entirely within virtual simulations (sim-to-real). The core message is clear: **Real-world data is no longer enough.**
@@ -13,6 +13,7 @@ Yesterday, **NVIDIA** showcased how the next generation of robots is being train
 At **MOTA ATOM**, we are bringing this same "NVIDIA-level" logic to the **Industrial IoT** landscape. 
 
 ### Bridging the Gap with GenAI
+
 In many industrial scenarios, capturing high-quality data for rare events—like specific machine failures or safety breaches—is costly and time-consuming. 
 
 Our **[GenAI-Driven IoT Solution](/showcase/genai-driven/)** solves this by using Generative AI to synthesize high-fidelity industrial datasets. This allows us to:

@@ -1,0 +1,46 @@
+---
+title: SEO Configuration
+description: Learn how to configure SEO settings for your website, including Google Analytics and Google Search Console.
+---
+
+## Overview
+
+Search Engine Optimization (SEO) is crucial for improving your website's visibility on search engines. This guide explains how to configure Google Analytics and Google Search Console for your Next.js application.
+
+## Environment Variables
+
+To enable SEO features, you need to configure the following environment variables in your `.env` or `.env.local` file:
+
+```bash
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-verification-code
+```
+## Google Analytics (NEXT_PUBLIC_GA_MEASUREMENT_ID)
+Google Analytics 4 (GA4) helps you understand how visitors interact with your website.
+
+### How to obtain the Measurement ID:
+1. Go to [Google Analytics](https://analytics.google.com/) and sign in with your Google account.
+2. Click Admin (the gear icon) in the bottom left corner.
+3. In the Property column, click Data Streams.
+4. Select your Web data stream. If you don't have one, click Add stream -> Web and create one.
+5. In the Web stream details window, copy the MEASUREMENT ID (it usually starts with G-).
+6. Paste this ID into your .env file as NEXT_PUBLIC_GA_MEASUREMENT_ID.
+
+### Google Search Console (NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION)
+Google Search Console tools help you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
+
+### How to obtain the Verification Code:
+1. Go to [Google Search Console](https://search.google.com/search-console) and sign in.
+2. Click Add property (or select your property from the dropdown if already added).
+3. Choose the URL prefix method and enter your website URL (e.g., https://your-domain.com). Click Continue.
+4. In the verification method options, scroll down to HTML tag.
+5. Copy the meta tag provided. It will look like this: 
+`<meta name="google-site-verification" content="your-verification-code" />`
+6. Extract just the content value (your-verification-code).
+7. Paste this code into your .env file as NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION.
+
+### Verifying Configuration
+After adding these variables and deploying your site (or restarting your local server):
+
+- Google Analytics: Visit your site and check the Realtime report in Google Analytics to see if your visit is being tracked.
+- Google Search Console: Go back to the verification page in Google Search Console and click Verify. It should confirm that the ownership is verified.

@@ -359,10 +359,10 @@
     "titleHighlight": "We Win",
     "bentoItems": [
       {
-        "title": "Lightning Settlement",
+        "title": "Crypto Payment",
         "stat": "< 1 second",
-        "description": "X402 on-chain payments on Base L2 — near-zero gas, instant finality.",
-        "features": ["USDC stablecoin", "Base L2 network", "~$0.001 per tx"]
+        "description": "Native cryptocurrency settlement via X402 protocol on Base L2 — near-zero gas, instant finality, programmable money for global trade.",
+        "features": ["X402 Protocol", "USDC stablecoin", "Base L2 network", "~$0.001 per tx"]
       },
       {
         "title": "Enterprise Security",

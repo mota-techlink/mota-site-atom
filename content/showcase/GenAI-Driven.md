@@ -3,7 +3,7 @@ title: "GenAI-Driven Edge Computing: Smart Safety for Vertical Transport"
 meta_title: "GenAI & Edge AI for Smart Elevator Safety - MOTA ATOM"
 description: "Revolutionizing object detection with synthetic data generation and NPU quantization for real-time electric scooter detection in elevators. A privacy-first, low-latency Edge AI solution."
 date: 2025-12-08
-image: "/images/showcase/Edge-Computing/GenAI-Cover.png"
+image: "/images/showcase/Edge-Computing/GenAI-Cover.webp"
 categories: ["Edge AI", "IOT","AI Engineering"]
 tags: ["GenAI", "Edge Computing", "Computer Vision", "NPU", "IoT", "Synthetic Data"]
 draft: false
@@ -29,7 +29,7 @@ We reimagined the computer vision development lifecycle. Instead of 'collecting'
 
 ### 1. Synthetic Data Generation (GenAI)
 We utilized Multimodal Large Language Models (LLMs) and diffusion models to generate photorealistic scenes.
-![GenAI Samples](/images/showcase/Edge-Computing/GenAI-Samples.jpg)
+![GenAI Samples](/images/showcase/Edge-Computing/GenAI-Samples.webp)
 * **Domain Randomization:** We used prompts to vary lighting, elevator textures (mirrors, steel), and angles.
 * **Privacy by Design:** Since the humans in the training data are AI-generated, there are no privacy or consent issues.
 * **Edge Case Coverage:** We synthetically generated rare scenarios, such as motocycles covered by raincoats or viewed from extreme top-down angles.
@@ -43,7 +43,7 @@ We utilized Multimodal Large Language Models (LLMs) and diffusion models to gene
 Manual labeling is the bottleneck of AI training. We integrated the <ColorText color="green">Segment Anything Model</ColorText> [SAM3](https://github.com/facebookresearch/sam3) into our pipeline.
 * **Auto-Segmentation:** SAM automatically generated pixel-perfect bounding boxes and segmentation masks for the synthetic dataset.
 * **Efficiency:** This automation reduced data preparation time by **90%** while ensuring consistent label quality that outperforms human annotators.
-![](/images/showcase/Edge-Computing/SAM.jpg)
+![](/images/showcase/Edge-Computing/SAM.webp)
 
 ## Technical Execution: Edge Optimization
 
@@ -53,14 +53,14 @@ Training a model is only half the battle; deploying it to a low-power chip is wh
 To run on cost-effective IoT hardware (RISC-V/ARM Architectures), we could not use heavy GPU models.
 * **PTQ (Post-Training Quantization):** We compressed the YOLO-based architecture from FP32 (Floating Point 32) to **INT8 (Integer 8)**.
 * **Result:** This reduced the model size by **75%** and increased inference speed by **300%**, allowing it to run smoothly on edge NPUs with limited RAM.
-![GenAI Samples](/images/showcase/Edge-Computing/Quantization.jpg)
+![GenAI Samples](/images/showcase/Edge-Computing/Quantization.webp)
 
 ### Real-Time Logic & Control
 The system serves as an active controller, not just a passive camera.
 * **Latency:** less than 100ms inference time.
 * **Action:** Upon detecting a target with high confidence (>0.85), the edge device triggers a GPIO relay to **hold the elevator doors open** and plays a voice alert ("Prohibited object detected").
 * **Safety Loop:** The elevator will not move until the object is removed, physically preventing the hazard.
-![GenAI Samples](/images/showcase/Edge-Computing/CV-Controls.jpg)
+![GenAI Samples](/images/showcase/Edge-Computing/CV-Controls.webp)
 
 ## Impact & Results
 

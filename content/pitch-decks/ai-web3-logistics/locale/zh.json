@@ -359,10 +359,10 @@
     "titleHighlight": "我们赢",
     "bentoItems": [
       {
-        "title": "闪电结算",
+        "title": "加密货币支付",
         "stat": "< 1 秒",
-        "description": "Base L2 上的 X402 链上支付 — 近零 Gas、即时最终性。",
-        "features": ["USDC 稳定币", "Base L2 网络", "~$0.001/笔"]
+        "description": "通过 X402 协议在 Base L2 上进行原生加密货币结算 — 近零 Gas、即时最终性、全球贸易可编程货币。",
+        "features": ["X402 协议", "USDC 稳定币", "Base L2 网络", "~$0.001/笔"]
       },
       {
         "title": "企业级安全",

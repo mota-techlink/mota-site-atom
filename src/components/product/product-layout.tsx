@@ -494,7 +494,7 @@ export function ProductLayout({ data, content }: ProductLayoutProps) {
                         <div className="aspect-video bg-muted relative overflow-hidden rounded-t-xl">
                           {/* 封面图 */}
                           <Image 
-                            src={item.cover || '/images/placeholder.jpg'} 
+                            src={item.cover || '/images/placeholder.webp'} 
                             alt={item.title}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"

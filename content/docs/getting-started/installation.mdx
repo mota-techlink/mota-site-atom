@@ -4,162 +4,155 @@ description: How to install MOTA ATOM SDK.
 ---
 
 🛠️ Installation & Setup Guide
-本指南将帮助你从零开始搭建 Mota Atom 开发环境。项目基于 Next.js, Supabase 和 Cloudflare Pages 构建。
+This guide will help you set up the Mota Atom development environment from scratch. The project is built on Next.js, Supabase, and Cloudflare Pages.
 
-📋 目录 (Table of Contents)
-环境准备 (Environment)
+📋 Table of Contents
+1. Environment
+2. Project Initialization
+3. Supabase Integration
+4. Core Features
+5. Deployment
 
-项目初始化 (Project Initialization)
-
-后端集成 (Supabase Integration)
-
-核心功能 (Core Features)
-
-部署构建 (Deployment)
-
-## 1. 环境准备 (Environment)
-推荐使用 Conda 管理项目环境，以隔离 Node.js 版本。
+## 1. Environment
+It is recommended to use Conda to manage the project environment and isolate the Node.js version.
 
 ```bash
-# 创建独立环境 (指定 Node.js 20)
+# Create an independent environment (specify Node.js 20)
 conda create -n mota-atom nodejs=20 -y
+
+# Activate environment
+conda activate mota-atom
 ```
 
-# 激活环境
-conda activate mota-atom
-
-## 2. 项目初始化 (Project Initialization)
-初始化 Next.js 框架及 Shadcn UI 组件库。
+## 2. Project Initialization
+Initialize the Next.js framework and the Shadcn UI component library.
 
 ```bash
-# 1. 初始化 Next.js 项目 (TypeScript, Tailwind, ESLint)
+# 1. Initialize Next.js project (TypeScript, Tailwind, ESLint)
 npx create-next-app@latest mota-atom --typescript --tailwind --eslint
 
-# 进入项目目录
+# Enter project directory
 cd mota-atom
 
-# 2. 初始化 Shadcn UI
+# 2. Initialize Shadcn UI
 npx shadcn@latest init
-💡 Tip: 在配置 Shadcn UI 时，建议颜色主题选择 Slate 或 Gray 以获得最佳视觉效果。
 ```
+💡 Tip: When configuring Shadcn UI, it is recommended to choose Slate or Gray as the color theme for the best visual effect.
 
-## 3. 后端集成 (Supabase Integration)
-本项目使用 Supabase 作为后端服务（数据库、认证）。
+## 3. Supabase Integration
+This project uses Supabase as the backend service (database, authentication).
 
-3.1 CLI 安装与初始化
+### 3.1 CLI Installation & Initialization
 ```bash
-# 安装 Supabase CLI (仅开发依赖)
+# Install Supabase CLI (dev dependency only)
 npm install supabase --save-dev
 
-# 验证安装 (应显示版本号，如 2.72.9)
+# Verify installation (should show version number, e.g., 2.72.9)
 npx supabase --version
 
-# 初始化项目 (生成 supabase 文件夹)
+# Initialize project (generates supabase folder)
 npx supabase init
 ```
 
-3.2 启动本地环境 (Local Docker)
-确保你的 Docker 已经在运行，然后启动本地 Supabase 实例：
+### 3.2 Start Local Environment (Local Docker)
+Ensure your Docker is running, then start the local Supabase instance:
 
 ```bash
 npx supabase start
-启动成功后，你将获得以下本地服务地址：
 ```
+After starting successfully, you will get the following local service addresses:
 
-Console (Studio): http://127.0.0.1:54323
+- Console (Studio): http://127.0.0.1:54323
+- Mailpit (Email testing): http://127.0.0.1:54323/project/default
 
-Mailpit (邮件测试): http://127.0.0.1:54323/project/default
-
-3.3 安装依赖
+### 3.3 Install Dependencies
 ```bash
-# @supabase/ssr 用于服务端组件和中间件中的 Cookie 处理
+# @supabase/ssr is used for cookie handling in server components and middleware
 npm install @supabase/supabase-js @supabase/ssr
 ```
 
-3.4 环境变量配置
-在项目根目录创建 .env.local 文件：
-
-```Code snippet
-# 获取自 npx supabase status
-NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
-NEXT_PUBLIC_SUPABASE_ANON_KEY=你的本地AnonKey
-```
-
-3.5 数据库工作流 (Workflow)
-开发阶段 (Development): 当你修改了本地数据库结构后，使用以下命令生成 SQL 迁移文件：
+### 3.4 Environment Variable Configuration
+Create a `.env.local` file in the project root:
 
 ```bash
-# 将本地变更提取到 supabase/migrations 目录
+# Get from npx supabase status
+NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-local-anon-key
+```
+
+### 3.5 Database Workflow
+**Development**: When you modify the local database structure, use the following command to generate SQL migration files:
+
+```bash
+# Extract local changes to supabase/migrations directory
 npx supabase db diff -f init_schema
 npx supabase db diff -f add_user_table
 ```
-生产同步 (Production): 将本地的表结构变更推送到远程生产数据库：
+
+**Production Sync**: Push local schema changes to the remote production database:
 
 ```bash
-# 需先运行 npx supabase login
+# Must run npx supabase login first
 npx supabase db push
 ```
 
-## 4. 核心功能 (Core Features)
-🌓 主题支持 (Light/Dark Mode)
-集成 next-themes 以支持黑白模式切换。
+## 4. Core Features
+### 🌓 Theme Support (Light/Dark Mode)
+Integrate next-themes to support light/dark mode switching.
 
 ```bash
 npm install next-themes
 ```
 
-配置: 请在 layout.tsx 中包裹 ThemeProvider。Shadcn 组件会自动适配。
+**Configuration**: Wrap `ThemeProvider` in `layout.tsx`. Shadcn components will adapt automatically.
 
-🌐 多语言支持 (i18n)
-使用 next-intl 实现国际化。
+### 🌐 Multi-language Support (i18n)
+Use next-intl to implement internationalization.
 
 ```bash
 npm install next-intl
 ```
-配置文件: src/i18n.ts, src/middleware.ts
+- **Configuration Files**: `src/i18n.ts`, `src/middleware.ts`
+- **Translation Files**: `src/messages/zh.json`, `src/messages/en.json`
+- **Routing Structure**: Use `src/app/[locale]/` dynamic routing
 
-翻译文件: src/messages/zh.json, src/messages/en.json
-
-路由结构: 使用 src/app/[locale]/ 动态路由
-
-📝 博客系统 (Taxonomy Template)
-基于 MDX 和 Tailwind Typography 构建内容引擎。
+### 📝 Blog System (Taxonomy Template)
+Build a content engine based on MDX and Tailwind Typography.
 
 ```bash
-# 安装 MDX 解析与元数据处理工具
+# Install MDX parsing and metadata processing tools
 npm install gray-matter next-mdx-remote
 npm install -D @tailwindcss/typography
 ```
-配置插件: 更新 tailwind.config.ts 引入 typography 插件。
+- **Configure Plugin**: Update `tailwind.config.ts` to include the typography plugin.
+- **Read Engine**: `src/lib/mdx.ts`
+- **Page Implementation**: `src/app/[locale]/(portal)/blog/page.tsx` (Resend style list)
 
-读取引擎: src/lib/mdx.ts
+## 5. Deployment
+This project is optimized for Cloudflare Pages.
 
-页面实现: src/app/[locale]/(portal)/blog/page.tsx (Resend 风格列表)
-
-## 5. 部署构建 (Deployment)
-本项目针对 Cloudflare Pages 进行了优化。
-
-5.1 适配器安装
-安装 Cloudflare 适配器并锁定 React 版本（确保兼容性）：
+### 5.1 Adapter Installation
+Install the Cloudflare adapter and lock the React version (to ensure compatibility):
 
 ```bash
 npm install next@15.5.2 react@19 react-dom@19 --save-exact
 npm install -D @cloudflare/next-on-pages
 ```
-5.2 构建项目
-使用 Cloudflare 专用命令进行构建：
+
+### 5.2 Build Project
+Use the dedicated Cloudflare command to build:
 
 ```bash
 npx @cloudflare/next-on-pages
 ```
-5.3 本地预览
-在推送到 GitHub 之前，在本地模拟 Cloudflare Edge 环境进行测试：
+
+### 5.3 Local Preview
+Before pushing to GitHub, simulate the Cloudflare Edge environment locally for testing:
 
 ```bash
 npx wrangler pages dev .vercel/output/static
 ```
 
-附录：常用命令
-检查 Supabase 状态: npx supabase status
-
-重置本地数据库: npx supabase db reset
+### Appendix: Common Commands
+- **Check Supabase Status**: `npx supabase status`
+- **Reset Local Database**: `npx supabase db reset`

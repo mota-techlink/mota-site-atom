@@ -56,6 +56,7 @@
     "features": "Features",
     "i18n": "I18n Support",
     "mdx": "MDX Components",
+    "seo": "SEO Optimization",
     "searchPlaceholder": "Search docs...",
     "searchPlaceholderFull": "Search documentation...",
     "noResults": "No results found.",

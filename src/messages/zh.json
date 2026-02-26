@@ -55,6 +55,7 @@
     "features": "功能",
     "i18n": "国际化支持",
     "mdx": "MDX 组件",
+    "seo": "搜索引擎优化",
     "searchPlaceholder": "搜索文档...",
     "searchPlaceholderFull": "搜索文档内容...",
     "noResults": "未找到结果。",

@@ -4,7 +4,7 @@ meta_title: "AI 驱动的纺织行业质量检测"
 description: "利用先进机器视觉技术，克服纺织品标志检测中面料变形、光照变化和纹理干扰等挑战。"
 date: 2025-12-01T00:00:00Z
 youtube_id: "0uf0jkfYprM"
-image: "/images/showcase/textile-logo-qa/textile_logo_qa.jpg"
+image: "/images/showcase/textile-logo-qa/textile_logo_qa.webp"
 categories: ["AI 工程","边缘 AI"]
 tags: ["计算机视觉", "质量检测", "纺织品", "AI"]
 draft: false

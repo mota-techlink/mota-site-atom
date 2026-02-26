@@ -1,7 +1,7 @@
 ---
 title: "边缘原生 AI 助手：企业 RAG 解决方案"
 date: 2025-11-16
-image: "/images/showcase/chatbot/chatbot-cover.jpg" 
+image: "/images/showcase/chatbot/chatbot-cover.webp" 
 description: "一个高性能、无服务器的 AI 聊天机器人，完全构建在 Cloudflare 边缘网络上。具备检索增强生成（RAG）、自定义 OAuth 2.0 安全认证和实时流式传输功能，以极低成本提供企业级 AI 交互。"
 meta_title: "边缘原生 AI RAG 聊天机器人案例研究 - MOTA ATOM"
 tags: ["AI", "RAG", "Cloudflare", "无服务器", "边缘计算"]
@@ -30,7 +30,7 @@ draft: false
 
 > 我们超越了简单的 API 调用，使用 Cloudflare 的现代技术栈构建了一个强大的**无服务器 AI 网关**。
 
-![](/images/showcase/chatbot/edge-solution.png)
+![](/images/showcase/chatbot/edge-solution.webp)
 
 ### 系统架构
 
@@ -65,7 +65,7 @@ draft: false
 通过从"知识注入"方法（在提示中发送所有文档）切换到 RAG 架构，我们将**输入令牌消耗降低了 90%**。此外，利用 Cloudflare Workers AI 在边缘 GPU 上运行推理，消除了对昂贵的常驻 GPU 服务器的需求。
 
 ## 超越支持：终身学习资产
-![](/images/showcase/chatbot/lifegrowth.jpg)
+![](/images/showcase/chatbot/lifegrowth.webp)
 
 这项技术的真正价值远超提供**全天候多语言客户支持**。其核心优势在于**进化能力**：
 

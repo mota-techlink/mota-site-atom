@@ -3,7 +3,7 @@ title: "GenAI 驱动的边缘计算：垂直运输智能安全"
 meta_title: "GenAI 与边缘 AI 打造智能电梯安全 - MOTA ATOM"
 description: "通过合成数据生成和 NPU 量化，革新电梯内电动车实时检测的目标检测技术。隐私优先、低延迟的边缘 AI 解决方案。"
 date: 2025-12-08
-image: "/images/showcase/Edge-Computing/GenAI-Cover.png"
+image: "/images/showcase/Edge-Computing/GenAI-Cover.webp"
 categories: ["边缘 AI", "IoT", "AI 工程"]
 tags: ["GenAI", "边缘计算", "计算机视觉", "NPU", "IoT", "合成数据"]
 draft: false
@@ -29,7 +29,7 @@ draft: false
 
 ### 1. 合成数据生成（GenAI）
 我们利用多模态大语言模型（LLM）和扩散模型生成逼真场景。
-![GenAI 示例](/images/showcase/Edge-Computing/GenAI-Samples.jpg)
+![GenAI 示例](/images/showcase/Edge-Computing/GenAI-Samples.webp)
 * **领域随机化：** 我们使用提示词来变化光照、电梯材质（镜面、钢材）和角度。
 * **隐私设计：** 由于训练数据中的人物是 AI 生成的，不存在隐私或同意问题。
 * **边缘案例覆盖：** 我们合成生成了稀有场景，如被雨衣覆盖的摩托车或从极端俯角拍摄的场景。
@@ -42,7 +42,7 @@ draft: false
 手动标注是 AI 训练的瓶颈。我们将 <ColorText color="green">Segment Anything Model</ColorText> [SAM3](https://github.com/facebookresearch/sam3) 集成到管道中。
 * **自动分割：** SAM 自动为合成数据集生成像素级精确的边界框和分割掩码。
 * **效率：** 这种自动化将数据准备时间缩短了 **90%**，同时确保了超越人工标注员的一致标注质量。
-![](/images/showcase/Edge-Computing/SAM.jpg)
+![](/images/showcase/Edge-Computing/SAM.webp)
 
 ## 技术执行：边缘优化
 
@@ -52,14 +52,14 @@ draft: false
 要在高性价比的 IoT 硬件（RISC-V/ARM 架构）上运行，我们不能使用重型 GPU 模型。
 * **PTQ（训练后量化）：** 我们将基于 YOLO 的架构从 FP32（32 位浮点数）压缩到 **INT8（8 位整数）**。
 * **结果：** 模型大小减少了 **75%**，推理速度提高了 **300%**，使其能在有限 RAM 的边缘 NPU 上流畅运行。
-![GenAI 示例](/images/showcase/Edge-Computing/Quantization.jpg)
+![GenAI 示例](/images/showcase/Edge-Computing/Quantization.webp)
 
 ### 实时逻辑与控制
 系统作为主动控制器，而非被动摄像头。
 * **延迟：** 推理时间低于 100ms。
 * **动作：** 当以高置信度（>0.85）检测到目标时，边缘设备触发 GPIO 继电器**保持电梯门打开**并播放语音报警（"检测到违禁物品"）。
 * **安全循环：** 物品未移除前电梯不会运行，从物理上防止危险。
-![GenAI 示例](/images/showcase/Edge-Computing/CV-Controls.jpg)
+![GenAI 示例](/images/showcase/Edge-Computing/CV-Controls.webp)
 
 ## 影响与成果
 

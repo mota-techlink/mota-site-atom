@@ -2,7 +2,7 @@
 // scripts/generate-og-image.mjs
 // ─────────────────────────────────────────────────────────
 // 构建时生成默认的 OG (Open Graph) 图片
-// 输出: public/images/og.png (1200×630, 社交媒体分享预览图)
+// 输出: public/images/og.webp (1200×630, 社交媒体分享预览图)
 //
 // 使用项目已有的 Logo 和品牌色彩，生成一张
 // 包含 Logo + 站名 + 描述 + 域名 的 OG 预览图
@@ -18,7 +18,7 @@ const ROOT = path.resolve(__dirname, '..');
 
 const WIDTH = 1200;
 const HEIGHT = 630;
-const OUTPUT = path.join(ROOT, 'public', 'images', 'og.png');
+const OUTPUT = path.join(ROOT, 'public', 'images', 'og.webp');
 
 // ── 品牌配置 ────────────────────────────────────────────
 const SITE_NAME = 'MOTA TECHLINK';
@@ -144,7 +144,7 @@ async function generateOgImage() {
 
   const result = await sharp(bgBuffer)
     .composite(composites)
-    .png({ quality: 90, compressionLevel: 9 })
+    .webp({ quality: 90 })
     .toFile(OUTPUT);
 
   console.log(`✅ OG image generated: ${path.relative(ROOT, OUTPUT)} (${result.width}×${result.height}, ${(result.size / 1024).toFixed(1)}KB)`);

@@ -1,10 +1,11 @@
 ---
+
 title: "Advanced AI-Powered Quality Assurance for Textile Logos"
 meta_title: "AI-Powered Quality Assurance for the Textile Industry"
 description: "Overcoming challenges like fabric deformation, lighting variation, and texture interference in textile logo inspection using advanced machine vision."
 date: 2025-12-01T00:00:00Z
 youtube_id: "0uf0jkfYprM"
-image: "/images/showcase/textile-logo-qa/textile_logo_qa.jpg"
+image: "/images/showcase/textile-logo-qa/textile_logo_qa.webp"
 categories: ["AI Engineering","Edge AI"]
 tags: ["Computer Vision", "Quality Assurance", "Textile", "AI"]
 draft: false

@@ -6,7 +6,7 @@ import os
 # Configuration
 WIDTH = 1200
 HEIGHT = 630
-OUTPUT_PATH = "public/images/pitch-decks/ai-web3-logistics-cover.png"
+  OUTPUT_PATH = "public/images/pitch-decks/ai-web3-logistics-cover.webp"
 FONT_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 TITLE = "AI-Native Global Logistics"
 SUBTITLE = "Protocol-Driven Cross-Border Trade"
