@@ -1,0 +1,81 @@
+---
+title: 데이터베이스 배포
+description: 데이터 모델 구조를 동기화하는 방법
+---
+
+## 소개
+로컬 데이터베이스 구조를 원격으로 한 번의 명령으로 동기화합니다.
+
+## 작업 단계
+
+<Steps>
+
+<Step title = "준비" >
+ 
+```bash
+# CLI 설치
+npm install supabase --save-dev
+
+# 브라우저를 열어 인증
+npx supabase login
+```
+![](/images/docs/2026-02-05-00-09-37.webp)![](/images/docs/2026-02-05-00-05-36.webp)
+
+</Step>
+
+<Step title = "설정">
+
+> 로컬 코드에 원격 프로젝트를 연결해야 합니다.
+
+* Supabase 대시보드 -> Settings -> General에서 Reference ID를 복사합니다 (vjqwxqz... 형태의 문자열).
+
+```bash
+# 초기화 (처음 실행 시)
+npx supabase init
+
+# 원격 프로젝트 연결 (Reference ID)
+npx supabase link --project-ref ReferenceID
+# 이 단계에서 데이터베이스 비밀번호를 묻습니다
+```
+</Step>
+
+<Step title = "마이그레이션 문서 생성 (자동 비교)">
+
+```bash
+# 원격에서 기준선으로 Pull (처음 실행 시)
+npx supabase db pull
+
+# 새 업데이트 생성 (예: documents 테이블 추가 시)
+# supabase/migrations 폴더에 새 .sql이 생성됩니다
+npx supabase db diff --use-migra -f update_schema
+```
+</Step>
+<Step title = "자동화">
+
+(선택) package.json에 다음 내용을 추가합니다.
+```json
+"scripts": {
+  // ... 기타
+  "db:pull": "supabase db pull",
+  "db:push": "supabase db push" 
+}
+```
+</Step>
+
+</Steps>
+
+## 일상 운영
+향후 프로세스는 다음과 같습니다:
+
+1. 로컬 콘솔의 [Table Editor](http://127.0.0.1:54323/project/default/editor/) 또는 [SQL Edit](http://127.0.0.1:54323/project/default/sql/)에서 DB 업데이트
+2. 로컬 테스트 완료.
+3. diff 실행
+```bash
+npx supabase db diff -f feature_name
+```
+4. 원격 동기화 명령 실행
+```bash
+npx supabase db push
+# 또는 package.json에 정의한 경우 단축 명령
+# npm run db:push
+```

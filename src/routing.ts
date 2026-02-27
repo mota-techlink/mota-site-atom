@@ -17,6 +17,7 @@ export const localeLabels: Record<string, string> = {
   en: 'English',
   zh: '中文',
   ja: '日本語',
+  ko: '한국어',
 };
 
 export const routing = defineRouting({

@@ -20,8 +20,8 @@ import { CTASlide } from "./CTASlide";
 import { useContent } from "./useContent";
 
 /** Locales supported by this deck */
-const DECK_LOCALES = ["en", "zh", "ja", "ar"];
-const DECK_LOCALE_LABELS: Record<string, string> = { en: "EN", zh: "中文", ja: "日本語", ar: "عربي" };
+const DECK_LOCALES = ["en", "zh", "ja", "ar", "ko"];
+const DECK_LOCALE_LABELS: Record<string, string> = { en: "EN", zh: "中文", ja: "日本語", ar: "عربي", ko: "한국어" };
 
 interface ElmsLogisticsDeckProps {
   isAuthenticated?: boolean;

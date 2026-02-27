@@ -2,4 +2,5 @@ locales:
   - en
   - zh
   - ja
+  - ko
 defaultLocale: en

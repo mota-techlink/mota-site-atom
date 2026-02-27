@@ -5,6 +5,7 @@ import type { Locale } from './routing';
 import enMessages from '@content/locales/en.json';
 import zhMessages from '@content/locales/zh.json';
 import jaMessages from '@content/locales/ja.json';
+import koMessages from '@content/locales/ko.json';
 
 // 重新导出，方便其他地方引用
 export { locales, defaultLocale };
@@ -14,6 +15,7 @@ const messageRegistry: Record<string, Record<string, unknown>> = {
   en: enMessages,
   zh: zhMessages,
   ja: jaMessages,
+  ko: koMessages,
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {
