@@ -10,12 +10,15 @@
 
 ## 目录约定（当前已落地）
 
-- `content/site/i18n.json`: 语言配置唯一真相源
+- `content/site/i18n.yml`: 语言配置唯一真相源
 - `content/locales/*.json`: 多语言文案唯一真相源
-- `content/site/nav.json`: 导航结构配置
-- `content/site/docs-nav.json`: 文档侧栏结构
-- `content/site/features.json`: 首页 Features 结构
-- `content/site/site.json`: 站点品牌与对外展示信息
+- `content/site/nav.yml`: 导航结构配置
+- `content/site/docs-nav.yml`: 文档侧栏结构
+- `content/site/features.yml`: 首页 Features 结构
+- `content/site/site.yml`: 站点品牌与对外展示信息
+- `content/site/menu.yml`: Dashboard/Admin 菜单结构配置
+
+校验脚本会自动生成运行时产物到 `src/generated/content-config/*.json`（请勿手改）。
 
 `src/config/*` 现在作为“适配层”，不再存放核心内容数据。
 
@@ -51,12 +54,20 @@ git merge upstream/main
 - 将业务文本全部移到 `content/locales/`
 - 将导航和站点信息修改集中在 `content/site/*`
 
+## 新增页面内容规范
+
+新增页面（如 about/contact/后续 portal 页面）请统一遵循：
+
+1. 在 `content/site/*.yml` 建立页面配置（至少包含 `metadata.titleKey` 和 `metadata.descriptionKey`）
+2. 页面 UI 文案只引用翻译 key，不写死文本
+3. 页面 metadata 使用统一 helper：`src/lib/page-metadata.ts`
+4. 翻译只写入 `content/locales/*.json`
+5. 提交前执行 `npm run content:validate`，确保 schema 与翻译 key 都通过
+
 ## 提交前防护（已内置）
 
 - 内容 Schema 校验：`npm run content:validate`
 - 模板检查：`npm run check:template`
-- 多语言同步：`npm run content:sync`
-- 多语言校验：`npm run content:sync:check`
 
 如需启用 git 提交前自动校验（pre-commit）：
 

@@ -290,5 +290,45 @@
     "cancel": "Cancel",
     "enterQuestion": "Please enter your consultation question.",
     "consultComplete": "Consultation complete!"
+  },
+  "AboutPage": {
+    "metadataTitle": "About Us",
+    "metadataDescription": "We are building the future of SaaS asset management.",
+    "titlePrefix": "About",
+    "subtitle": "We are on a mission to simplify the chaos of digital asset management through intelligent, GenAI-first solutions.",
+    "storyTitle": "Our Story",
+    "storyParagraph1": "It started with a simple observation: managing SaaS assets and computer vision datasets was becoming impossibly complex. Traditional tools were clunky, slow, and disconnected.",
+    "storyParagraph2": "We realized that Generative AI wasn't just a buzzword—it was the key to unlocking a new workflow. By generating data instead of just collecting it, we could speed up development cycles by 10x.",
+    "storyParagraph3": "Today, MOTA ATOM helps thousands of developers and companies structure their chaos and build faster.",
+    "statsUsers": "Users",
+    "statsUptime": "Uptime",
+    "statsIntegrations": "Integrations",
+    "statsSupport": "Support"
+  },
+  "ContactPage": {
+    "metadataTitle": "Contact Us",
+    "metadataDescription": "Get in touch with our team for product, integration, and project inquiries.",
+    "title": "Contact Us",
+    "subtitle": "Have questions? We'd love to hear from you.",
+    "phoneLabel": "Phone",
+    "officeLabel": "Office",
+    "emailToUsLabel": "Email to us:",
+    "successTitle": "Message Sent!",
+    "successSubtitle": "Thank you. We'll get back to you shortly.",
+    "successCta": "Send another",
+    "firstNameLabel": "First name",
+    "firstNamePlaceholder": "John",
+    "lastNameLabel": "Last name",
+    "lastNamePlaceholder": "Doe",
+    "emailFieldLabel": "Email",
+    "emailPlaceholder": "john@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "send": "Send Message",
+    "sending": "Sending..."
+  },
+  "Footer": {
+    "allRightsReserved": "All rights reserved.",
+    "madeWithLove": "Made with ❤️ by Developers"
   }
 }

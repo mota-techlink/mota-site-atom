@@ -1,0 +1,19 @@
+# Page content template (copy & rename, e.g. pricing.yml)
+# Rule: every page config must include metadata keys for SEO/i18n.
+
+metadata:
+  titleKey: metadataTitle
+  descriptionKey: metadataDescription
+
+hero:
+  titleKey: title
+  subtitleKey: subtitle
+
+sections:
+  - id: section1
+    titleKey: section1Title
+    bodyKey: section1Body
+
+cta:
+  primaryLabelKey: ctaPrimary
+  secondaryLabelKey: ctaSecondary

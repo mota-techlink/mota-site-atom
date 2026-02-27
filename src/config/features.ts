@@ -1,6 +1,6 @@
 // src/config/features.ts
 import { IconKey } from "@/components/icons";
-import featuresContent from "@content/site/features.json";
+import featuresContent from "@/generated/content-config/features.json";
 
 export interface FeatureItem {
   title: string;

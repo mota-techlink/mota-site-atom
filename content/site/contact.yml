@@ -1,0 +1,25 @@
+metadata:
+  titleKey: metadataTitle
+  descriptionKey: metadataDescription
+hero:
+  titleKey: title
+  subtitleKey: subtitle
+info:
+  phoneLabelKey: phoneLabel
+  officeLabelKey: officeLabel
+  emailLabelKey: emailToUsLabel
+success:
+  titleKey: successTitle
+  subtitleKey: successSubtitle
+  ctaKey: successCta
+form:
+  firstNameLabelKey: firstNameLabel
+  firstNamePlaceholderKey: firstNamePlaceholder
+  lastNameLabelKey: lastNameLabel
+  lastNamePlaceholderKey: lastNamePlaceholder
+  emailLabelKey: emailFieldLabel
+  emailPlaceholderKey: emailPlaceholder
+  messageLabelKey: messageLabel
+  messagePlaceholderKey: messagePlaceholder
+  sendKey: send
+  sendingKey: sending

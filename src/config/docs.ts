@@ -1,5 +1,5 @@
 // src/config/docs.ts
-import docsNavContent from "@content/site/docs-nav.json";
+import docsNavContent from "@/generated/content-config/docs-nav.json";
 
 export type SidebarNavItem = {
   title: string;

@@ -289,5 +289,45 @@
     "cancel": "取消",
     "enterQuestion": "请输入您的咨询问题。",
     "consultComplete": "咨询完成！"
+  },
+  "AboutPage": {
+    "metadataTitle": "关于我们",
+    "metadataDescription": "我们正在构建 SaaS 资产管理的未来。",
+    "titlePrefix": "关于",
+    "subtitle": "我们的使命是通过智能化、GenAI 优先的解决方案，简化数字资产管理中的混乱。",
+    "storyTitle": "我们的故事",
+    "storyParagraph1": "一切始于一个简单观察：管理 SaaS 资产与计算机视觉数据集正变得极其复杂，传统工具笨重、缓慢且彼此割裂。",
+    "storyParagraph2": "我们意识到，生成式 AI 不只是一个热词，而是开启新工作流的关键。通过“生成数据”而非仅“收集数据”，我们将开发效率提升到 10 倍。",
+    "storyParagraph3": "如今，MOTA ATOM 正在帮助成千上万的开发者和企业梳理混乱，更快构建产品。",
+    "statsUsers": "用户",
+    "statsUptime": "可用性",
+    "statsIntegrations": "集成",
+    "statsSupport": "支持"
+  },
+  "ContactPage": {
+    "metadataTitle": "联系我们",
+    "metadataDescription": "如有产品、集成或项目咨询，请与我们的团队联系。",
+    "title": "联系我们",
+    "subtitle": "有任何问题？我们很乐意与你沟通。",
+    "phoneLabel": "电话",
+    "officeLabel": "办公室",
+    "emailToUsLabel": "邮件联系：",
+    "successTitle": "消息已发送！",
+    "successSubtitle": "感谢你的来信，我们会尽快回复。",
+    "successCta": "再发一条",
+    "firstNameLabel": "名",
+    "firstNamePlaceholder": "张",
+    "lastNameLabel": "姓",
+    "lastNamePlaceholder": "三",
+    "emailFieldLabel": "邮箱",
+    "emailPlaceholder": "zhangsan@example.com",
+    "messageLabel": "留言",
+    "messagePlaceholder": "我们可以如何帮助你？",
+    "send": "发送消息",
+    "sending": "发送中..."
+  },
+  "Footer": {
+    "allRightsReserved": "保留所有权利。",
+    "madeWithLove": "由开发者用 ❤️ 打造"
   }
 }

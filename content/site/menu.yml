@@ -1,0 +1,27 @@
+userNavItems:
+  - titleKey: nav_dashboard
+    href: /dashboard
+    icon: dashboard
+  - titleKey: nav_orderList
+    href: /dashboard/orders
+    icon: orderList
+  - titleKey: nav_x402_payments
+    href: /dashboard/x402-payments
+    icon: x402
+  - titleKey: nav_settings
+    href: /dashboard/settings
+    icon: settings
+
+adminNavItems:
+  - titleKey: nav_overview
+    href: /admin/console
+    icon: dashboard
+  - titleKey: nav_orders
+    href: /admin/orders
+    icon: orderList
+  - titleKey: nav_users
+    href: /admin/users
+    icon: users
+  - titleKey: nav_pitch_decks
+    href: /admin/pitch-decks
+    icon: presentation

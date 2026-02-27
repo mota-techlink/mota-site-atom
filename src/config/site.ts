@@ -1,5 +1,5 @@
 import { Provider } from "@supabase/supabase-js";
-import siteContent from "@content/site/site.json";
+import siteContent from "@/generated/content-config/site.json";
 
 
 export type ExtendedProvider = Provider | 'wechat' | 'feishu' | 'alibaba';
@@ -39,10 +39,6 @@ type SiteContent = {
     twitter: string;
     github: string;
   };
-  features: {
-    title: string;
-    description: string;
-  }[];
   oauth: {
     common: OAuthProviderConfig[];
     regionSpecific: Record<string, OAuthProviderConfig[]>;

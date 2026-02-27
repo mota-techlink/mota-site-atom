@@ -8,9 +8,9 @@ import { serialize } from 'next-mdx-remote/serialize';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 
-// ── 读取语言配置 (唯一真相来源: content/site/i18n.json) ──
+// ── 读取语言配置 (来源: src/generated/content-config/i18n.json；源头: content/site/i18n.yml) ──
 const i18nConfig = JSON.parse(
-  fs.readFileSync(path.join(process.cwd(), 'content/site/i18n.json'), 'utf-8')
+  fs.readFileSync(path.join(process.cwd(), 'src/generated/content-config/i18n.json'), 'utf-8')
 );
 const LOCALES = i18nConfig.locales;
 

@@ -1,5 +1,5 @@
 // import { Icons } from "@/components/icons" // 假设你有图标组件，或者使用 Lucide
-import navContent from "@content/site/nav.json";
+import navContent from "@/generated/content-config/nav.json";
 
 export interface NavItem {
   title: string       // 翻译键 (Key)

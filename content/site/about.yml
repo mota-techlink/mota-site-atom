@@ -1,0 +1,22 @@
+metadata:
+  titleKey: metadataTitle
+  descriptionKey: metadataDescription
+hero:
+  titlePrefixKey: titlePrefix
+  titleHighlight: MOTA ATOM
+  subtitleKey: subtitle
+story:
+  titleKey: storyTitle
+  paragraphs:
+    - storyParagraph1
+    - storyParagraph2
+    - storyParagraph3
+stats:
+  - value: 10k+
+    labelKey: statsUsers
+  - value: 99.9%
+    labelKey: statsUptime
+  - value: 50+
+    labelKey: statsIntegrations
+  - value: 24/7
+    labelKey: statsSupport

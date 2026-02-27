@@ -53,7 +53,12 @@ See [TEMPLATE_FORK_WORKFLOW.md](./TEMPLATE_FORK_WORKFLOW.md) for the full proces
 Validation and safety commands:
 
 - `npm run content:validate`
-- `npm run content:sync`
-- `npm run content:sync:check`
 - `npm run check:template`
 - `npm run hooks:install` (enable git pre-commit validation)
+
+Unified page content standard:
+
+- Page config template: `content/site/page-template.yml`
+- New page must include `metadata.titleKey` and `metadata.descriptionKey`
+- Page UI should consume keys from config + i18n namespace
+- Run `npm run content:validate` before commit

@@ -1,10 +1,24 @@
 import fs from 'fs';
 import path from 'path';
+import { load } from 'js-yaml';
 import { z } from 'zod';
 
 const ROOT = process.cwd();
-const SITE_DIR = path.join(ROOT, 'content', 'site');
 const LOCALES_DIR = path.join(ROOT, 'content', 'locales');
+const GENERATED_CONFIG_DIR = path.join(ROOT, 'src', 'generated', 'content-config');
+
+const ICON_NAMES = [
+  'dashboard',
+  'settings',
+  'users',
+  'logs',
+  'video',
+  'eye',
+  'newspaper',
+  'orderList',
+  'presentation',
+  'x402',
+];
 
 const i18nSchema = z.object({
   locales: z.array(z.string().min(1)).min(1),
@@ -46,12 +60,6 @@ const siteSchema = z.object({
     twitter: z.string().min(1),
     github: z.string().min(1),
   }),
-  features: z.array(
-    z.object({
-      title: z.string().min(1),
-      description: z.string().min(1),
-    })
-  ),
   oauth: z.object({
     common: z.array(oauthProviderSchema),
     regionSpecific: z.record(z.string(), z.array(oauthProviderSchema)),
@@ -96,10 +104,101 @@ const featuresSchema = z.object({
   ),
 });
 
-function readJson(relativePath) {
+const menuSchema = z.object({
+  userNavItems: z.array(
+    z.object({
+      titleKey: z.string().min(1),
+      href: z.string().min(1),
+      icon: z.enum(ICON_NAMES),
+    })
+  ),
+  adminNavItems: z.array(
+    z.object({
+      titleKey: z.string().min(1),
+      href: z.string().min(1),
+      icon: z.enum(ICON_NAMES),
+    })
+  ),
+});
+
+const aboutSchema = z.object({
+  metadata: z.object({
+    titleKey: z.string().min(1),
+    descriptionKey: z.string().min(1),
+  }),
+  hero: z.object({
+    titlePrefixKey: z.string().min(1),
+    titleHighlight: z.string().min(1),
+    subtitleKey: z.string().min(1),
+  }),
+  story: z.object({
+    titleKey: z.string().min(1),
+    paragraphs: z.array(z.string().min(1)).min(1),
+  }),
+  stats: z.array(
+    z.object({
+      value: z.string().min(1),
+      labelKey: z.string().min(1),
+    })
+  ).min(1),
+});
+
+const contactSchema = z.object({
+  metadata: z.object({
+    titleKey: z.string().min(1),
+    descriptionKey: z.string().min(1),
+  }),
+  hero: z.object({
+    titleKey: z.string().min(1),
+    subtitleKey: z.string().min(1),
+  }),
+  info: z.object({
+    phoneLabelKey: z.string().min(1),
+    officeLabelKey: z.string().min(1),
+    emailLabelKey: z.string().min(1),
+  }),
+  success: z.object({
+    titleKey: z.string().min(1),
+    subtitleKey: z.string().min(1),
+    ctaKey: z.string().min(1),
+  }),
+  form: z.object({
+    firstNameLabelKey: z.string().min(1),
+    firstNamePlaceholderKey: z.string().min(1),
+    lastNameLabelKey: z.string().min(1),
+    lastNamePlaceholderKey: z.string().min(1),
+    emailLabelKey: z.string().min(1),
+    emailPlaceholderKey: z.string().min(1),
+    messageLabelKey: z.string().min(1),
+    messagePlaceholderKey: z.string().min(1),
+    sendKey: z.string().min(1),
+    sendingKey: z.string().min(1),
+  }),
+});
+
+function readYaml(relativePath) {
   const absolutePath = path.join(ROOT, relativePath);
   const raw = fs.readFileSync(absolutePath, 'utf-8');
-  return JSON.parse(raw);
+  const parsed = load(raw);
+
+  if (!parsed || typeof parsed !== 'object') {
+    throw new Error(`${relativePath} must be a valid YAML object`);
+  }
+
+  return parsed;
+}
+
+function readJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+}
+
+function writeGeneratedJson(fileName, value) {
+  if (!fs.existsSync(GENERATED_CONFIG_DIR)) {
+    fs.mkdirSync(GENERATED_CONFIG_DIR, { recursive: true });
+  }
+
+  const outputPath = path.join(GENERATED_CONFIG_DIR, fileName);
+  fs.writeFileSync(outputPath, `${JSON.stringify(value, null, 2)}\n`);
 }
 
 function flattenMessageKeys(node, prefix = '', output = new Set()) {
@@ -121,7 +220,7 @@ function assertLocaleKeyParity(locales, defaultLocale) {
     throw new Error(`Missing default locale file: content/locales/${defaultLocale}.json`);
   }
 
-  const defaultMessages = JSON.parse(fs.readFileSync(defaultPath, 'utf-8'));
+  const defaultMessages = readJson(defaultPath);
   const defaultKeys = flattenMessageKeys(defaultMessages);
 
   for (const locale of locales) {
@@ -130,7 +229,7 @@ function assertLocaleKeyParity(locales, defaultLocale) {
       throw new Error(`Missing locale file: content/locales/${locale}.json`);
     }
 
-    const localeMessages = JSON.parse(fs.readFileSync(localePath, 'utf-8'));
+    const localeMessages = readJson(localePath);
     const localeKeys = flattenMessageKeys(localeMessages);
 
     const missingKeys = [...defaultKeys].filter((key) => !localeKeys.has(key));
@@ -148,30 +247,110 @@ function assertLocaleKeyParity(locales, defaultLocale) {
       );
     }
   }
+
+  return defaultKeys;
+}
+
+function assertMenuTitleKeysExist(menu, messageKeys) {
+  const allItems = [...menu.userNavItems, ...menu.adminNavItems];
+  const missing = allItems
+    .map((item) => item.titleKey)
+    .filter((titleKey) => !messageKeys.has(`Dashboard.${titleKey}`));
+
+  if (missing.length > 0) {
+    throw new Error(
+      `content/site/menu.yml has unknown titleKey in Dashboard namespace (examples: ${missing.slice(0, 5).join(', ')})`
+    );
+  }
+}
+
+function assertNamespacedKeysExist(namespace, keys, messageKeys) {
+  const missing = keys.filter((key) => !messageKeys.has(`${namespace}.${key}`));
+
+  if (missing.length > 0) {
+    throw new Error(
+      `${namespace} is missing translation keys (examples: ${missing.slice(0, 5).join(', ')})`
+    );
+  }
 }
 
 function validate() {
-  const i18n = i18nSchema.parse(readJson('content/site/i18n.json'));
+  const i18n = i18nSchema.parse(readYaml('content/site/i18n.yml'));
 
   if (!i18n.locales.includes(i18n.defaultLocale)) {
-    throw new Error('content/site/i18n.json: defaultLocale must exist in locales');
+    throw new Error('content/site/i18n.yml: defaultLocale must exist in locales');
   }
 
   if (new Set(i18n.locales).size !== i18n.locales.length) {
-    throw new Error('content/site/i18n.json: locales must be unique');
+    throw new Error('content/site/i18n.yml: locales must be unique');
   }
 
-  siteSchema.parse(readJson('content/site/site.json'));
-  navSchema.parse(readJson('content/site/nav.json'));
-  docsNavSchema.parse(readJson('content/site/docs-nav.json'));
-  featuresSchema.parse(readJson('content/site/features.json'));
+  const site = siteSchema.parse(readYaml('content/site/site.yml'));
+  const nav = navSchema.parse(readYaml('content/site/nav.yml'));
+  const docsNav = docsNavSchema.parse(readYaml('content/site/docs-nav.yml'));
+  const features = featuresSchema.parse(readYaml('content/site/features.yml'));
+  const menu = menuSchema.parse(readYaml('content/site/menu.yml'));
+  const about = aboutSchema.parse(readYaml('content/site/about.yml'));
+  const contact = contactSchema.parse(readYaml('content/site/contact.yml'));
 
-  assertLocaleKeyParity(i18n.locales, i18n.defaultLocale);
+  const defaultMessageKeys = assertLocaleKeyParity(i18n.locales, i18n.defaultLocale);
+  assertMenuTitleKeysExist(menu, defaultMessageKeys);
+
+  assertNamespacedKeysExist(
+    'AboutPage',
+    [
+      about.metadata.titleKey,
+      about.metadata.descriptionKey,
+      about.hero.titlePrefixKey,
+      about.hero.subtitleKey,
+      about.story.titleKey,
+      ...about.story.paragraphs,
+      ...about.stats.map((item) => item.labelKey),
+    ],
+    defaultMessageKeys
+  );
+
+  assertNamespacedKeysExist(
+    'ContactPage',
+    [
+      contact.metadata.titleKey,
+      contact.metadata.descriptionKey,
+      contact.hero.titleKey,
+      contact.hero.subtitleKey,
+      contact.info.phoneLabelKey,
+      contact.info.officeLabelKey,
+      contact.info.emailLabelKey,
+      contact.success.titleKey,
+      contact.success.subtitleKey,
+      contact.success.ctaKey,
+      contact.form.firstNameLabelKey,
+      contact.form.firstNamePlaceholderKey,
+      contact.form.lastNameLabelKey,
+      contact.form.lastNamePlaceholderKey,
+      contact.form.emailLabelKey,
+      contact.form.emailPlaceholderKey,
+      contact.form.messageLabelKey,
+      contact.form.messagePlaceholderKey,
+      contact.form.sendKey,
+      contact.form.sendingKey,
+    ],
+    defaultMessageKeys
+  );
+
+  writeGeneratedJson('i18n.json', i18n);
+  writeGeneratedJson('site.json', site);
+  writeGeneratedJson('nav.json', nav);
+  writeGeneratedJson('docs-nav.json', docsNav);
+  writeGeneratedJson('features.json', features);
+  writeGeneratedJson('menu.json', menu);
+  writeGeneratedJson('about.json', about);
+  writeGeneratedJson('contact.json', contact);
 }
 
 try {
   validate();
   console.log('✅ content validation passed');
+  console.log(`✅ generated config artifacts at ${path.relative(ROOT, GENERATED_CONFIG_DIR)}`);
 } catch (error) {
   console.error('❌ content validation failed');
   console.error(error instanceof Error ? error.message : error);
