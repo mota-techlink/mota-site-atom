@@ -1,0 +1,57 @@
+[
+  {
+    "titleKey": "gettingStarted",
+    "items": [
+      {
+        "titleKey": "introduction",
+        "href": "/docs"
+      },
+      {
+        "titleKey": "installation",
+        "href": "/docs/getting-started/installation"
+      },
+      {
+        "titleKey": "configuration",
+        "href": "/docs/getting-started/configuration"
+      }
+    ]
+  },
+  {
+    "titleKey": "deployment",
+    "items": [
+      {
+        "titleKey": "database",
+        "href": "/docs/deployment/database"
+      },
+      {
+        "titleKey": "oauth",
+        "href": "/docs/deployment/oauth"
+      },
+      {
+        "titleKey": "docker",
+        "href": "/docs/deployment/docker"
+      },
+      {
+        "titleKey": "hosting",
+        "href": "/docs/deployment/hosting"
+      }
+    ]
+  },
+  {
+    "titleKey": "features",
+    "items": [
+      {
+        "titleKey": "i18n",
+        "href": "/docs/features/i18n"
+      },
+      {
+        "titleKey": "mdx",
+        "href": "/docs/features/mdx"
+      },
+      {
+        "titleKey": "seo",
+        "href": "/docs/features/seo"
+      }
+    ]
+  }
+]

@@ -97,3 +97,4 @@ src/generated/
 public/search.json
 public/sitemap.xml
 ChatMD/
+.cache/

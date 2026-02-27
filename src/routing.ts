@@ -1,7 +1,7 @@
 import { defineRouting } from 'next-intl/routing';
-import i18nConfig from '@/config/i18n.json';
+import i18nConfig from '@content/site/i18n.json';
 
-// ── 语言配置 (唯一真相来源: src/config/i18n.json) ───────
+// ── 语言配置 (唯一真相来源: content/site/i18n.json) ─────
 // 所有需要语言列表的地方都从这里导入，包括：
 //   - src/i18n.ts (next-intl 服务端)
 //   - src/lib/mdx.ts (内容过滤)

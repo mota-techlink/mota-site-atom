@@ -23,9 +23,9 @@ import dotenv from 'dotenv';
 // 加载 .env.local (确保 NEXT_PUBLIC_BASE_URL 可用)
 dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
-// ── 读取语言配置 (唯一真相来源: src/config/i18n.json) ───
+// ── 读取语言配置 (唯一真相来源: content/site/i18n.json) ──
 const i18nConfig = JSON.parse(
-  fs.readFileSync(path.join(process.cwd(), 'src/config/i18n.json'), 'utf-8')
+  fs.readFileSync(path.join(process.cwd(), 'content/site/i18n.json'), 'utf-8')
 );
 
 // ── 配置 ────────────────────────────────────────────────

@@ -32,11 +32,7 @@ export default async function AdminLayout({
             <header className="mb-6 flex items-center justify-between gap-6">
                <div className="flex items-center gap-6 flex-1">
                   {/* Breadcrumb 导航 */}
-                  <AdminBreadcrumb />
-                  {/* 用红色标记这是管理员环境，防止混淆 */}
-                  <span className="text-xs font-semibold text-red-600 dark:text-red-400 border border-red-600/30 dark:border-red-400/30 rounded px-2 py-0.5">
-                    ADMIN
-                  </span>
+                  <AdminBreadcrumb />                  
                </div>
                <div className="flex items-center gap-4">  
                   <GlobalToggles position="inline" />

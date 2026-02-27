@@ -1,0 +1,36 @@
+{
+  "titleKey": "title",
+  "subtitleKey": "subtitle",
+  "features": [
+    {
+      "titleKey": "zeroInfra_title",
+      "descriptionKey": "zeroInfra_desc",
+      "icon": "wallet"
+    },
+    {
+      "titleKey": "ecosystem_title",
+      "descriptionKey": "ecosystem_desc",
+      "icon": "layers"
+    },
+    {
+      "titleKey": "techStack_title",
+      "descriptionKey": "techStack_desc",
+      "icon": "cpu"
+    },
+    {
+      "titleKey": "ai_title",
+      "descriptionKey": "ai_desc",
+      "icon": "bot"
+    },
+    {
+      "titleKey": "web3_title",
+      "descriptionKey": "web3_desc",
+      "icon": "blocks"
+    },
+    {
+      "titleKey": "ux_title",
+      "descriptionKey": "ux_desc",
+      "icon": "glasses"
+    }
+  ]
+}

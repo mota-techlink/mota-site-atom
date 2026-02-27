@@ -38,3 +38,22 @@ See the LICENSE-DATA file for details.
 Integrating Mota Atom into a proprietary (closed-source) product? We offer a commercial license that exempts you from the AGPLv3 obligations and provides access to advanced enterprise features.
 
 👉 [Contact us for Licensing] (mailto:contact@motaiot.com)
+
+## Template Mode (方案A)
+
+This repository now supports a template-first workflow for forking into multiple production projects:
+
+- Functional code remains in `src/`
+- Replaceable content lives in `content/` and `public/`
+- Locale messages are sourced from `content/locales/`
+- Site/nav/docs/features content configs are sourced from `content/site/`
+
+See [TEMPLATE_FORK_WORKFLOW.md](./TEMPLATE_FORK_WORKFLOW.md) for the full process.
+
+Validation and safety commands:
+
+- `npm run content:validate`
+- `npm run content:sync`
+- `npm run content:sync:check`
+- `npm run check:template`
+- `npm run hooks:install` (enable git pre-commit validation)
