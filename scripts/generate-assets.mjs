@@ -7,6 +7,7 @@ import { glob } from 'glob';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeSlug from 'rehype-slug';
 
 // ── 读取语言配置 (来源: src/generated/content-config/i18n.json；源头: content/site/i18n.yml) ──
 const i18nConfig = JSON.parse(
@@ -116,7 +117,7 @@ async function scanContent() {
       const compiledSource = await serialize(cleanedContent, {
         mdxOptions: {
           remarkPlugins: [remarkGfm],
-          rehypePlugins: [rehypeHighlight],
+          rehypePlugins: [rehypeSlug, rehypeHighlight],
           format: 'mdx',
         },
         parseFrontmatter: false,
@@ -127,6 +128,7 @@ async function scanContent() {
         slug,     // 保留完整路径 Slug (e.g. getting-started/installation)
         metadata: data,
         content: compiledSource,
+        rawContent: cleanedContent, // 保留原始 Markdown 用于 TOC 提取
       });
     }
 

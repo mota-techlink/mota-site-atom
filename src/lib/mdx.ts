@@ -19,6 +19,7 @@ export type MdxPost = {
     [key: string]: any;
   };
   content: MDXRemoteSerializeResult;
+  rawContent: string; // 原始 Markdown 用于 TOC 提取
 };
 
 function getManifestData(type: ContentType): any[] {
@@ -58,6 +59,7 @@ export function getContents(type: ContentType, locale: string = defaultLocale): 
     slug: item.slug,
     metadata: item.metadata,
     content: item.content,
+    rawContent: item.rawContent || '',
   }));
 
   // 4. 排序
@@ -95,6 +97,7 @@ export function getContentBySlug(type: ContentType, slug: string, locale: string
     slug: realSlug,
     metadata: targetItem.metadata,
     content: targetItem.content, // 内容在构建时已经清洗过了
+    rawContent: targetItem.rawContent || '', // 原始 Markdown
   };
 }
 

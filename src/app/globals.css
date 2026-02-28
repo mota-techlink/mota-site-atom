@@ -180,7 +180,7 @@
   .blog-content h1, 
   .blog-content h2, 
   .blog-content h3 {
-    @apply font-bold tracking-tight text-slate-900 dark:text-slate-50 mt-10 mb-4;
+    @apply font-bold tracking-tight text-slate-900 dark:text-slate-50 mt-10 mb-4 scroll-mt-24;
   }
   
   /* 🔴 改动 2: 缩小 H2 字号 (从 2xl 改为 xl 或 20px) */

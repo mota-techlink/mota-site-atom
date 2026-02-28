@@ -32,11 +32,12 @@ function Tree({ tree, level = 1, activeItem }: { tree: TableOfContents; level?: 
             <a
                 href={item.url}
                 className={cn(
-                    "inline-block no-underline transition-colors text-sm",
+                    "block no-underline transition-colors text-sm truncate max-w-50",
                     item.url === activeItem
                     ? "font-medium text-blue-600 dark:text-blue-400 border-l-2 border-blue-600 pl-3 -ml-3" // 🟢 激活状态：加颜色 + 左侧边框指示条
                     : "text-muted-foreground hover:text-foreground" // 普通状态
                 )}
+                title={item.title}
                 >
                 {item.title}
             </a>

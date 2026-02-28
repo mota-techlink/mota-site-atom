@@ -7,9 +7,9 @@ import ja from "./locale/ja.json";
 import ar from "./locale/ar.json";
 import ko from "./locale/ko.json";
 
-const contentMap: Record<string, typeof en> = { en, zh, ja, ar, ko };
+const contentMap = { en, zh, ja, ar, ko };
 
-export function useContent() {
+export function useContent(): typeof en {
   const { deckLocale } = useDeckLocale();
-  return contentMap[deckLocale] ?? en;
+  return (contentMap as unknown as Record<string, typeof en>)[deckLocale] ?? en;
 }

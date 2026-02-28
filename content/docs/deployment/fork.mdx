@@ -1,0 +1,93 @@
+---
+title: Template Fork Workflow
+description: How to use the Template Fork workflow to manage project branches and content synchronization
+---
+
+# Template Fork Workflow (Plan A)
+
+This repository is positioned as a "Feature Template Repo", used to incubate features, fix issues, and then sync to production projects via fork.
+
+## Goals
+
+- Stable iteration of feature code: placed in `src/`
+- Content can be independently replaced: placed in `content/` + `public/`
+- Multi-language content maintained independently: placed in `content/locales/`
+
+## Directory Conventions (Currently Implemented)
+
+- `content/site/i18n.yml`: Single source of truth for language configuration
+- `content/locales/*.json`: Single source of truth for multi-language content
+- `content/site/nav.yml`: Navigation structure configuration
+- `content/site/docs-nav.yml`: Documentation sidebar structure
+- `content/site/features.yml`: Homepage Features structure
+- `content/site/site.yml`: Site branding and public display information
+- `content/site/menu.yml`: Dashboard/Admin menu structure configuration
+
+Validation scripts automatically generate runtime artifacts to `src/generated/content-config/*.json` (do not edit manually).
+
+`src/config/*` now serves as an "adapter layer" and no longer stores core content data.
+
+## Recommended Branch Strategy
+
+### Template Repository (This Repo)
+
+- `main`: Template stable branch (can be synced by production projects)
+- `feature/*`: New feature development
+- `fix/*`: Bug fixes
+
+### Production Project (After Fork)
+
+- Keep upstream pointing to the template repository
+- Periodically sync template features without overwriting own content
+
+```bash
+git remote add upstream <template-repo-url>
+git fetch upstream
+git checkout main
+git merge upstream/main
+```
+
+## Content Replacement Process (Production Project)
+
+1. Replace business content under `content/` (docs, products, multi-language)
+2. Replace brand assets under `public/` (logos, images, videos)
+3. Keep `src/` feature layer, avoid divergence conflicts with template features
+
+## Conflict Minimization Tips
+
+- Do not directly modify `src/config/*` structure in production projects
+- Move all business text to `content/locales/`
+- Concentrate navigation and site info changes in `content/site/*`
+
+## New Page Content Standards
+
+For new pages (e.g., about/contact/future portal pages), follow these standards:
+
+1. Create page configuration in `content/site/*.yml` (at minimum include `metadata.titleKey` and `metadata.descriptionKey`)
+2. Page UI text should only reference translation keys, never hardcode text
+3. Page metadata should use the unified helper: `src/lib/page-metadata.ts`
+4. Translations should only be written to `content/locales/*.json`
+5. Run `npm run content:validate` before committing to ensure schema and translation keys pass
+
+## Pre-commit Protection (Built-in)
+
+- Content Schema validation: `npm run content:validate`
+- Template check: `npm run check:template`
+
+To enable automatic pre-commit validation:
+
+```bash
+npm run hooks:install
+```
+
+Once enabled, each commit will automatically run `content:validate`, catching:
+
+- Missing locale files
+- Inconsistent locale keys
+- `content/site/*` configuration structure errors
+
+## Cloudflare Pages Deployment Notes
+
+- The build pipeline uses `node scripts/*.mjs` to execute key scripts directly, avoiding the uncertainty of nested `npm run` calls.
+- Recommended Pages Build command: `npm run pages:build`
+- For data manifest generation only: `npm run build:data`

@@ -1,0 +1,93 @@
+---
+title: 템플릿 Fork 워크플로우
+description: Template Fork 워크플로우를 사용하여 프로젝트 브랜치 및 콘텐츠 동기화를 관리하는 방법
+---
+
+# Template Fork Workflow (플랜 A)
+
+본 리포지토리는 "기능 템플릿 리포지토리(Template Repo)"로 위치하며, 기능 인큐베이션, 이슈 수정 후 fork를 통해 프로덕션 프로젝트에 동기화합니다.
+
+## 목표
+
+- 기능 코드의 안정적인 반복: `src/`에 배치
+- 콘텐츠 독립 교체 가능: `content/` + `public/`에 배치
+- 다국어 콘텐츠 독립 유지보수: `content/locales/`에 배치
+
+## 디렉토리 규약 (현재 구현 완료)
+
+- `content/site/i18n.yml`: 언어 설정의 유일한 진실 공급원
+- `content/locales/*.json`: 다국어 텍스트의 유일한 진실 공급원
+- `content/site/nav.yml`: 네비게이션 구조 설정
+- `content/site/docs-nav.yml`: 문서 사이드바 구조
+- `content/site/features.yml`: 홈페이지 Features 구조
+- `content/site/site.yml`: 사이트 브랜드 및 공개 표시 정보
+- `content/site/menu.yml`: Dashboard/Admin 메뉴 구조 설정
+
+검증 스크립트는 자동으로 런타임 아티팩트를 `src/generated/content-config/*.json`에 생성합니다 (수동 편집 금지).
+
+`src/config/*`는 현재 "어댑터 레이어"로 기능하며, 더 이상 핵심 콘텐츠 데이터를 저장하지 않습니다.
+
+## 권장 브랜치 전략
+
+### 템플릿 리포지토리 (본 리포지토리)
+
+- `main`: 템플릿 안정 브랜치 (각 프로덕션 프로젝트가 동기화 가능)
+- `feature/*`: 새 기능 개발
+- `fix/*`: 버그 수정
+
+### 프로덕션 프로젝트 (fork 후)
+
+- upstream을 템플릿 리포지토리로 유지
+- 정기적으로 템플릿 기능을 동기화하되, 자체 콘텐츠를 덮어쓰지 않음
+
+```bash
+git remote add upstream <template-repo-url>
+git fetch upstream
+git checkout main
+git merge upstream/main
+```
+
+## 콘텐츠 교체 프로세스 (프로덕션 프로젝트)
+
+1. `content/` 하위 비즈니스 콘텐츠 교체 (문서, 제품, 다국어)
+2. `public/` 하위 브랜드 자산 교체 (로고, 이미지, 비디오)
+3. `src/` 기능 레이어 유지, 템플릿 기능과의 분기 충돌 방지
+
+## 충돌 최소화 팁
+
+- 프로덕션 프로젝트에서 `src/config/*` 구조를 직접 수정하지 않기
+- 모든 비즈니스 텍스트를 `content/locales/`로 이동
+- 네비게이션 및 사이트 정보 변경을 `content/site/*`에 집중
+
+## 새 페이지 콘텐츠 규약
+
+새 페이지 (예: about/contact/향후 포털 페이지)는 다음 규약을 통일적으로 준수하세요:
+
+1. `content/site/*.yml`에 페이지 설정 생성 (최소한 `metadata.titleKey`와 `metadata.descriptionKey` 포함)
+2. 페이지 UI 텍스트는 번역 키만 참조하고, 텍스트를 하드코딩하지 않기
+3. 페이지 메타데이터는 통합 헬퍼 사용: `src/lib/page-metadata.ts`
+4. 번역은 `content/locales/*.json`에만 작성
+5. 커밋 전 `npm run content:validate` 실행하여 스키마 및 번역 키 검증 확인
+
+## 커밋 전 보호 (내장)
+
+- 콘텐츠 스키마 검증: `npm run content:validate`
+- 템플릿 검사: `npm run check:template`
+
+Git 커밋 전 자동 검증(pre-commit)을 활성화하려면:
+
+```bash
+npm run hooks:install
+```
+
+활성화하면 각 커밋 시 자동으로 `content:validate`가 실행되어 다음을 우선 감지합니다:
+
+- 누락된 locale 파일
+- 불일치하는 locale 키
+- `content/site/*` 설정 구조 오류
+
+## Cloudflare Pages 배포 참고사항
+
+- 빌드 파이프라인은 `node scripts/*.mjs`를 사용하여 핵심 스크립트를 직접 실행하며, 중첩된 `npm run` 호출로 인한 불확실성을 방지합니다.
+- 권장 Pages Build 명령어: `npm run pages:build`
+- 데이터 매니페스트 생성만 필요한 경우: `npm run build:data`

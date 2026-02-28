@@ -13,10 +13,10 @@
       href: /docs/deployment/database
     - titleKey: oauth
       href: /docs/deployment/oauth
-    - titleKey: docker
-      href: /docs/deployment/docker
     - titleKey: hosting
       href: /docs/deployment/hosting
+    - titleKey: fork
+      href: /docs/deployment/fork
 
 - titleKey: features
   items:

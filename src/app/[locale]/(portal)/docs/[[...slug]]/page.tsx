@@ -28,10 +28,10 @@ export default async function DocPage({ params }: DocPageProps) {
     return notFound();
   }
   
-  const toc = await getTableOfContents(doc.content);
+  const toc = await getTableOfContents(doc.rawContent);
 
   return (
-    <article className="prose prose-slate dark:prose-invert max-w-none">
+    <div className="max-w-none">
       
       <div className="xl:grid xl:grid-cols-[1fr_250px] gap-8">
       
@@ -48,14 +48,18 @@ export default async function DocPage({ params }: DocPageProps) {
         </div>
 
         {/* 右栏：目录 (Desktop Only) */}
-        <div className="hidden xl:block text-sm">
-            <div className="sticky top-20 h-[calc(100vh-8rem)] overflow-y-auto py-2 pr-4">
+        <div className="hidden xl:block text-sm not-prose">
+            <div className="sticky top-20 max-h-[calc(100vh-8rem)] overflow-y-auto py-2 pr-4">
               <DashboardTableOfContents toc={toc} />
             </div>            
         </div>
 
+        {/* DocsPager 放在 grid 左栏内，保持右栏 sticky 不断 */}
+        <div className="col-span-1">
+          <DocsPager />
         </div>
-      <DocsPager />
-    </article>
+
+        </div>
+    </div>
   );
 }

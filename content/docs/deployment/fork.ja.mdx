@@ -1,0 +1,93 @@
+---
+title: テンプレート Fork ワークフロー
+description: Template Fork ワークフローを使用してプロジェクトブランチとコンテンツ同期を管理する方法
+---
+
+# Template Fork Workflow（プランA）
+
+本リポジトリは「機能テンプレートリポジトリ（Template Repo）」として位置づけられ、機能の開発、問題の修正を行い、fork を通じて本番プロジェクトに同期します。
+
+## 目標
+
+- 機能コードの安定的な反復：`src/` に配置
+- コンテンツの独立した差し替え：`content/` + `public/` に配置
+- 多言語コンテンツの独立メンテナンス：`content/locales/` に配置
+
+## ディレクトリ規約（現在実装済み）
+
+- `content/site/i18n.yml`：言語設定の唯一の情報源
+- `content/locales/*.json`：多言語テキストの唯一の情報源
+- `content/site/nav.yml`：ナビゲーション構造設定
+- `content/site/docs-nav.yml`：ドキュメントサイドバー構造
+- `content/site/features.yml`：トップページ Features 構造
+- `content/site/site.yml`：サイトブランドおよび公開表示情報
+- `content/site/menu.yml`：Dashboard/Admin メニュー構造設定
+
+検証スクリプトは自動的にランタイム成果物を `src/generated/content-config/*.json` に生成します（手動で編集しないでください）。
+
+`src/config/*` は現在「アダプターレイヤー」として機能し、コアコンテンツデータを保存しなくなりました。
+
+## 推奨ブランチ戦略
+
+### テンプレートリポジトリ（本リポジトリ）
+
+- `main`：テンプレート安定ブランチ（各本番プロジェクトが同期可能）
+- `feature/*`：新機能開発
+- `fix/*`：バグ修正
+
+### 本番プロジェクト（fork 後）
+
+- upstream をテンプレートリポジトリに向けたまま維持
+- 定期的にテンプレート機能を同期し、自身のコンテンツを上書きしない
+
+```bash
+git remote add upstream <template-repo-url>
+git fetch upstream
+git checkout main
+git merge upstream/main
+```
+
+## コンテンツ差し替え手順（本番プロジェクト）
+
+1. `content/` 配下のビジネスコンテンツを差し替え（ドキュメント、製品、多言語）
+2. `public/` 配下のブランドアセットを差し替え（ロゴ、画像、動画）
+3. `src/` 機能レイヤーを維持し、テンプレート機能との分岐コンフリクトを回避
+
+## コンフリクト最小化のヒント
+
+- 本番プロジェクトで `src/config/*` 構造を直接変更しない
+- すべてのビジネステキストを `content/locales/` に移動する
+- ナビゲーションとサイト情報の変更を `content/site/*` に集中させる
+
+## 新規ページコンテンツ規約
+
+新規ページ（例：about/contact/将来のポータルページ）は以下の規約に統一してください：
+
+1. `content/site/*.yml` にページ設定を作成（最低限 `metadata.titleKey` と `metadata.descriptionKey` を含む）
+2. ページ UI テキストは翻訳キーのみを参照し、テキストをハードコードしない
+3. ページメタデータは統一ヘルパーを使用：`src/lib/page-metadata.ts`
+4. 翻訳は `content/locales/*.json` にのみ記述
+5. コミット前に `npm run content:validate` を実行し、スキーマと翻訳キーの検証を確認
+
+## コミット前保護（組み込み済み）
+
+- コンテンツスキーマ検証：`npm run content:validate`
+- テンプレートチェック：`npm run check:template`
+
+Git コミット前自動検証（pre-commit）を有効にするには：
+
+```bash
+npm run hooks:install
+```
+
+有効にすると、各コミット時に自動的に `content:validate` が実行され、以下を優先的に検出します：
+
+- 不足している locale ファイル
+- 不整合な locale キー
+- `content/site/*` 設定構造エラー
+
+## Cloudflare Pages デプロイ注意事項
+
+- ビルドパイプラインは `node scripts/*.mjs` を使用してキースクリプトを直接実行し、ネストされた `npm run` 呼び出しによる不確実性を回避しています。
+- 推奨 Pages Build コマンド：`npm run pages:build`
+- データマニフェストの生成のみ：`npm run build:data`
