@@ -107,9 +107,9 @@
     "titleHighlight": "Operations Topology",
     "subtitle": "From field devices to AI processing to secure cloud storage — seamless data flow",
     "inputSources": [
-      { "icon": "📱", "label": "Mobile App", "detail": "Field staff submit voice reports and photos anytime, anywhere via smartphone. Supports offline mode with auto-sync." },
-      { "icon": "🖥️", "label": "Desktop Portal", "detail": "Office staff manage approvals, generate reports, and handle complex document workflows via web browser." },
-      { "icon": "🎤", "label": "Voice Reports", "detail": "Natural language speech auto-transcribed in Japanese, English, and Chinese. AI structures content into actionable tasks." },
+      { "icon": "🖥️", "label": "Multi-Terminal Access", "detail": "Unified access across mobile app, desktop portal, and tablet. Field staff use the mobile app for on-site submissions; office staff use the desktop portal for approvals and complex workflows; executives get full oversight on any device. All terminals sync in real time with role-based permissions." },
+      { "icon": "🌐", "label": "IoT & Field Devices", "detail": "Connected field devices feed live data into the platform: IP cameras stream building lobby and parking footage for AI anomaly detection; vibration, temperature, and pressure sensors on elevators and HVAC units trigger predictive maintenance alerts; vehicle GPS and trip data from service fleets are logged automatically for scheduling and cost control." },
+      { "icon": "🎬", "label": "Multimedia Input", "detail": "Submit in any format — record a video walkthrough of a maintenance issue, snap a photo of a damaged area, leave a voice message in Japanese/English/Chinese, or type a text note. AI automatically transcribes, classifies, and converts all formats into structured actionable records." },
       { "icon": "📄", "label": "Document Upload", "detail": "Paper invoices, maintenance reports, and contracts scanned via camera. Multi-language OCR extracts all structured data instantly." },
       { "icon": "🔗", "label": "External Integration", "detail": "Bank feeds, government portals, vendor APIs, and utility systems auto-synced. Protocol adapters handle legacy Japanese EDI formats." }
     ],
@@ -129,7 +129,14 @@
       "detail": "All processed data securely stored in Japan-based object storage (Cloudflare R2 / Supabase Storage) with vector indexing for instant semantic retrieval. Full APPI compliance — data never crosses borders.",
       "badge": "🛡️ APPI Compliant"
     },
-    "flowLabels": ["Input Devices", "AI Engine", "Cloud Storage"]
+    "outputDash": {
+      "title": "BI & Smart Output",
+      "icon": "📡",
+      "detail": "Business Intelligence dashboards display key metrics in real-time across all critical locations and executive offices. Proactive AI-triggered push notifications alert the right person at the right time — before issues escalate. Smart reports are auto-generated on daily/weekly/monthly schedules and delivered seamlessly across mobile, desktop, and display screens.",
+      "badge": "📊 Live Intelligence",
+      "features": ["BI Big Screen", "Proactive Push Alerts", "Smart Auto-Reports", "Multi-Terminal Delivery"]
+    },
+    "flowLabels": ["Input Devices", "AI Engine", "Output Layer"]
   },
   "slide5": {
     "badge": "Executive Command Center",

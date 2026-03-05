@@ -220,8 +220,8 @@ export function TopologySlide() {
           <FlowArrow delay={1} direction="down" />
         </div>
 
-        {/* RIGHT — Cloud Storage */}
-        <div className="flex-1 flex flex-col items-center">
+        {/* RIGHT — Output Layer */}
+        <div className="flex-1 flex flex-col">
           <motion.div
             className="text-center text-xs font-mono text-amber-400/60 uppercase tracking-widest mb-2"
             initial={{ opacity: 0 }}
@@ -230,21 +230,46 @@ export function TopologySlide() {
           >
             {c.flowLabels[2]}
           </motion.div>
+
+          {/* Cloud Storage */}
           <motion.div
-            className="w-full max-w-xs rounded-2xl bg-gradient-to-b from-amber-900/20 to-amber-950/30 border border-amber-600/25 p-5 cursor-pointer hover:border-amber-500/50 transition-colors"
+            className="w-full rounded-xl bg-gradient-to-b from-amber-900/20 to-amber-950/30 border border-amber-600/25 p-4 cursor-pointer hover:border-amber-500/50 transition-colors mb-2"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1, duration: 0.5 }}
             whileHover={{ scale: 1.02 }}
             onClick={() => setPopup({ title: c.storage.title, detail: c.storage.detail })}
           >
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-3xl">{c.storage.icon}</span>
-              <h4 className="text-lg font-bold text-amber-100">{c.storage.title}</h4>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-2xl">{c.storage.icon}</span>
+              <h4 className="text-base font-bold text-amber-100">{c.storage.title}</h4>
             </div>
-            <p className="text-sm text-amber-200/60 leading-relaxed line-clamp-3">{c.storage.detail}</p>
-            <div className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/20 border border-green-700/30 text-xs text-green-400/80">
+            <p className="text-xs text-amber-200/60 leading-relaxed line-clamp-2">{c.storage.detail}</p>
+            <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-900/20 border border-green-700/30 text-xs text-green-400/80">
               {c.storage.badge}
+            </div>
+          </motion.div>
+
+          {/* BI & Smart Output */}
+          <motion.div
+            className="w-full rounded-xl bg-gradient-to-b from-blue-900/25 to-blue-950/35 border border-blue-600/30 p-4 cursor-pointer hover:border-blue-400/55 transition-colors"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+            whileHover={{ scale: 1.02 }}
+            onClick={() => setPopup({ title: c.outputDash.title, detail: c.outputDash.detail })}
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-2xl">{c.outputDash.icon}</span>
+              <h4 className="text-base font-bold text-blue-100">{c.outputDash.title}</h4>
+            </div>
+            <div className="flex flex-wrap gap-1.5 mb-2">
+              {c.outputDash.features.map((f: string, i: number) => (
+                <span key={i} className="px-2 py-0.5 rounded-full bg-blue-800/25 border border-blue-500/25 text-xs text-blue-300/80">{f}</span>
+              ))}
+            </div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-900/25 border border-blue-600/30 text-xs text-blue-400/80">
+              {c.outputDash.badge}
             </div>
           </motion.div>
         </div>
