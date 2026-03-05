@@ -96,7 +96,7 @@
       {
         "icon": "🌏",
         "title": "Remote Control",
-        "description": "Full operational oversight from Los Angeles to Tokyo",
+        "description": "Full operational oversight from New York to Tokyo — with live visibility wherever you travel, even Colombia",
         "details": ["Real-time event notifications", "Video call integration", "Time-zone-aware scheduling", "Emergency escalation protocols"]
       }
     ]
@@ -219,7 +219,7 @@
       {
         "id": "fin", "label": "Finance", "icon": "💰",
         "historicalEvents": ["2017 — Consolidated 11-entity accounting into unified ledger", "2020 — Implemented real-time bank feed reconciliation", "2023 — AI tax optimization saved ¥28M across entities", "2025 — Predictive cash flow accuracy reached 94%"],
-        "workInsights": "Core strength: multi-entity consolidation. Known gap: FX hedging for overseas coffee operations. Win: automated reconciliation cut month-end close from 12 days to 2.",
+        "workInsights": "Core strength: multi-entity consolidation. Known gap: FX hedging for New York–Colombia coffee supply chain. Win: automated reconciliation cut month-end close from 12 days to 2.",
         "externalLiaison": ["Deloitte Tohmatsu — annual audit", "SMBC — primary banking", "NTA (National Tax Agency) — tax filing", "PwC Japan — transfer pricing advisory"],
         "dailyTraining": "Ingests bank feeds, invoice scans, expense receipts, and tax regulation updates daily. Cash flow model retrains weekly with actuals vs. forecast delta."
       },

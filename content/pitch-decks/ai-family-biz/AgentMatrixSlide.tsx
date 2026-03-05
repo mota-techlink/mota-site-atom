@@ -201,11 +201,11 @@ export function AgentMatrixSlide() {
   return (
     <div className="relative w-full h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-[#1a0f08] via-[#2C1810] to-[#1a0f08] px-3 py-3">
       {/* Glow */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(196,168,130,0.04) 0%, transparent 70%)" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(196,168,130,0.06) 0%, transparent 70%)" }} />
 
       {/* Badge */}
       <motion.div
-        className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-900/30 border border-amber-700/40 text-amber-300/80 text-[10px] font-mono tracking-widest uppercase mb-1.5"
+        className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-900/30 border border-amber-700/40 text-amber-200 text-xs font-mono tracking-widest uppercase mb-1.5"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
@@ -220,10 +220,10 @@ export function AgentMatrixSlide() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        <span className="text-amber-100/90">{c.title.replace(c.titleHighlight, "")}</span>
+        <span className="text-amber-50">{c.title.replace(c.titleHighlight, "")}</span>
         <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-300 bg-clip-text text-transparent">{c.titleHighlight}</span>
       </motion.h2>
-      <motion.p className="text-[10px] text-amber-100/50 mb-2 text-center max-w-xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}>
+      <motion.p className="text-xs text-amber-200/70 mb-2 text-center max-w-xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}>
         {c.subtitle}
       </motion.p>
 
@@ -237,22 +237,22 @@ export function AgentMatrixSlide() {
         {c.stats.map((s: { value: string; label: string }, i: number) => (
           <div key={i} className="flex flex-col items-center">
             <span className="text-lg sm:text-xl font-black bg-gradient-to-r from-amber-300 to-yellow-200 bg-clip-text text-transparent">{s.value}</span>
-            <span className="text-[9px] text-amber-400/50 font-medium">{s.label}</span>
+            <span className="text-[10px] text-amber-300/70 font-medium">{s.label}</span>
           </div>
         ))}
       </motion.div>
 
       {/* ─── Constitution Wrapper ─── */}
       <motion.div
-        className="relative z-10 w-full max-w-5xl rounded-2xl border-2 border-dashed border-amber-600/25 p-2 sm:p-3 flex-1 min-h-0 flex flex-col"
+        className="relative z-10 w-full max-w-6xl rounded-2xl border-2 border-dashed border-amber-600/30 p-2 sm:p-3 flex-1 min-h-0 flex flex-col"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         {/* Constitution header */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-1 mb-2 px-2">
-          <div className="text-xs font-bold text-amber-300/70">{c.constitution.title}</div>
-          <div className="flex flex-wrap gap-3 text-[10px] text-amber-400/60">
+          <div className="text-sm font-bold text-amber-200/90">{c.constitution.title}</div>
+          <div className="flex flex-wrap gap-3 text-xs text-amber-300/80">
             <span>{c.constitution.gmAgent}</span>
             <span>{c.constitution.schedulerAgent}</span>
           </div>
@@ -260,14 +260,14 @@ export function AgentMatrixSlide() {
 
         {/* ─── Matrix Grid ─── */}
         <div className="flex-1 overflow-auto">
-          <div className="min-w-[560px]">
+          <div className="min-w-[700px]">
             {/* Header row: experts */}
-            <div className="grid gap-1" style={{ gridTemplateColumns: `140px repeat(${c.experts.length}, 1fr)` }}>
-              <div className="flex items-center justify-center text-[9px] text-amber-500/40 font-mono">DEPT ↓ × EXPERT →</div>
+            <div className="grid gap-1.5" style={{ gridTemplateColumns: `180px repeat(${c.experts.length}, 1fr)` }}>
+              <div className="flex items-center justify-center text-xs text-amber-400/60 font-mono">DEPT ↓ × EXPERT →</div>
               {c.experts.map((exp, i) => (
                 <motion.div
                   key={exp.id}
-                  className="text-center py-2 px-1 rounded-lg bg-amber-900/25 border border-amber-700/25 cursor-pointer hover:bg-amber-800/30 hover:border-amber-600/40 transition-colors"
+                  className="text-center py-2.5 px-2 rounded-lg bg-amber-900/25 border border-amber-700/30 cursor-pointer hover:bg-amber-800/30 hover:border-amber-500/50 transition-colors"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + i * 0.08 }}
@@ -275,9 +275,9 @@ export function AgentMatrixSlide() {
                   whileTap={{ scale: 0.97 }}
                   onClick={() => setSelectedExpert(exp)}
                 >
-                  <div className="text-xl mb-0.5">{exp.icon}</div>
-                  <div className="text-[10px] sm:text-xs font-semibold text-amber-200/80 leading-tight">{exp.label}</div>
-                  <div className="text-[8px] text-amber-400/40 mt-0.5">click for details</div>
+                  <div className="text-2xl mb-0.5">{exp.icon}</div>
+                  <div className="text-sm font-bold text-amber-100 leading-tight">{exp.label}</div>
+                  <div className="text-[10px] text-amber-300/60 mt-0.5">click for details</div>
                 </motion.div>
               ))}
             </div>
@@ -286,12 +286,12 @@ export function AgentMatrixSlide() {
             {c.departments.map((dept, dIdx) => (
               <div
                 key={dept.id}
-                className="grid gap-1 mt-1"
-                style={{ gridTemplateColumns: `140px repeat(${c.experts.length}, 1fr)` }}
+                className="grid gap-1.5 mt-1.5"
+                style={{ gridTemplateColumns: `180px repeat(${c.experts.length}, 1fr)` }}
               >
                 {/* Row header — ENLARGED & CLICKABLE */}
                 <motion.div
-                  className="flex items-center gap-2 py-2 px-3 rounded-lg bg-amber-900/25 border border-amber-700/25 cursor-pointer hover:bg-amber-800/30 hover:border-amber-600/40 transition-colors"
+                  className="flex items-center gap-2.5 py-3 px-3 rounded-lg bg-amber-900/25 border border-amber-700/30 cursor-pointer hover:bg-amber-800/30 hover:border-amber-500/50 transition-colors"
                   initial={{ opacity: 0, x: -15 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 + dIdx * 0.1 }}
@@ -299,10 +299,10 @@ export function AgentMatrixSlide() {
                   whileTap={{ scale: 0.97 }}
                   onClick={() => setSelectedDept(dept)}
                 >
-                  <span className="text-2xl">{dept.icon}</span>
+                  <span className="text-3xl">{dept.icon}</span>
                   <div className="flex flex-col">
-                    <span className="text-xs sm:text-sm font-bold text-amber-200/90 leading-tight">{dept.label}</span>
-                    <span className="text-[8px] text-amber-400/40">Agent · click</span>
+                    <span className="text-sm sm:text-base font-bold text-amber-100 leading-tight">{dept.label}</span>
+                    <span className="text-[10px] text-amber-300/60">Agent · click</span>
                   </div>
                 </motion.div>
 
@@ -311,8 +311,8 @@ export function AgentMatrixSlide() {
                   const proj = matrixLookup.get(`${dept.id}-${exp.id}`);
                   if (!proj) {
                     return (
-                      <div key={exp.id} className="rounded-lg bg-amber-950/10 border border-amber-800/10 min-h-[52px] flex items-center justify-center">
-                        <span className="text-amber-800/20 text-lg">—</span>
+                      <div key={exp.id} className="rounded-lg bg-amber-950/15 border border-amber-800/15 min-h-[64px] flex items-center justify-center">
+                        <span className="text-amber-700/30 text-lg">—</span>
                       </div>
                     );
                   }
@@ -320,10 +320,10 @@ export function AgentMatrixSlide() {
                   return (
                     <motion.div
                       key={exp.id}
-                      className="rounded-lg border cursor-pointer flex flex-col items-center justify-center p-1.5 min-h-[52px] hover:scale-[1.04] transition-transform gap-0.5"
+                      className="rounded-lg border cursor-pointer flex flex-col items-center justify-center p-2 min-h-[64px] hover:scale-[1.04] transition-transform gap-1"
                       style={{
-                        backgroundColor: `${proj.color}15`,
-                        borderColor: `${proj.color}40`,
+                        backgroundColor: `${proj.color}20`,
+                        borderColor: `${proj.color}55`,
                       }}
                       initial={{ opacity: 0, scale: 0.85 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -332,17 +332,17 @@ export function AgentMatrixSlide() {
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setSelectedProject(proj)}
                     >
-                      <span className="text-[9px] sm:text-[11px] font-bold text-center leading-tight" style={{ color: proj.color }}>
+                      <span className="text-sm sm:text-base font-bold text-center leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]" style={{ color: proj.color, filter: "brightness(1.4)" }}>
                         {proj.name}
                       </span>
                       {/* Inline staff preview */}
                       {staffIcons.length > 0 && (
-                        <div className="flex -space-x-1 mt-0.5">
+                        <div className="flex -space-x-0.5 mt-0.5">
                           {staffIcons.map((s, si) => (
-                            <span key={si} className="text-[10px] select-none">{s.icon}</span>
+                            <span key={si} className="text-sm select-none">{s.icon}</span>
                           ))}
                           {(proj.staff ?? []).length > 3 && (
-                            <span className="text-[8px] text-amber-400/50 ml-1">+{(proj.staff ?? []).length - 3}</span>
+                            <span className="text-[10px] text-amber-300/70 ml-1">+{(proj.staff ?? []).length - 3}</span>
                           )}
                         </div>
                       )}
@@ -356,13 +356,13 @@ export function AgentMatrixSlide() {
 
         {/* Constitution footer */}
         <motion.div
-          className="mt-2 flex flex-col sm:flex-row items-center justify-between gap-2 py-2 px-3 rounded-lg bg-amber-900/15 border border-amber-700/20"
+          className="mt-2 flex flex-col sm:flex-row items-center justify-between gap-2 py-2.5 px-4 rounded-lg bg-amber-900/20 border border-amber-700/30"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
         >
-          <p className="text-xs sm:text-sm text-amber-300/70 font-medium">{c.constitution.roleRetention}</p>
-          <p className="text-[9px] sm:text-[10px] text-amber-200/40 max-w-xs text-right">{c.constitution.desc}</p>
+          <p className="text-sm sm:text-base text-amber-100 font-semibold">{c.constitution.roleRetention}</p>
+          <p className="text-xs sm:text-sm text-amber-200/70 max-w-sm text-right">{c.constitution.desc}</p>
         </motion.div>
       </motion.div>
 
