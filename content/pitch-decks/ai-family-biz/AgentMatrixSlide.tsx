@@ -199,7 +199,7 @@ export function AgentMatrixSlide() {
   c.projects.forEach((p) => matrixLookup.set(`${p.dept}-${p.expert}`, p));
 
   return (
-    <div className="relative w-full h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-[#1a0f08] via-[#2C1810] to-[#1a0f08] px-3 py-3">
+    <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#1a0f08] via-[#2C1810] to-[#1a0f08] px-3 py-3">
       {/* Glow */}
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(196,168,130,0.06) 0%, transparent 70%)" }} />
 

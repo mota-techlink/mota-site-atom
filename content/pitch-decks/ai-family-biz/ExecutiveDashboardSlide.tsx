@@ -207,7 +207,7 @@ export function ExecutiveDashboardSlide() {
   };
 
   return (
-    <div className="relative w-full h-full flex flex-col items-center overflow-hidden bg-gradient-to-br from-[#1a0f08] via-[#2C1810] to-[#1a0f08] px-3 py-4">
+    <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#1a0f08] via-[#2C1810] to-[#1a0f08] px-3 py-4">
       {/* Badge */}
       <motion.div
         className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-900/30 border border-amber-700/40 text-amber-300/80 text-xs font-mono tracking-widest uppercase mb-2"

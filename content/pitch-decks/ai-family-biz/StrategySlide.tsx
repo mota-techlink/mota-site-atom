@@ -70,7 +70,7 @@ function PrincipleCard({
 
   return (
     <motion.div
-      className={`relative cursor-pointer rounded-2xl bg-amber-950/30 border ${borderColors[index]} backdrop-blur-sm p-6 sm:p-8 flex flex-col items-center text-center max-w-xs w-full shadow-lg ${glowColors[index]} hover:shadow-xl transition-shadow`}
+      className={`relative cursor-pointer rounded-2xl bg-amber-950/30 border ${borderColors[index]} backdrop-blur-sm p-4 sm:p-5 flex flex-col items-center text-center max-w-xs w-full shadow-lg ${glowColors[index]} hover:shadow-xl transition-shadow`}
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 + index * 0.2, duration: 0.7, ease: "easeOut" }}
@@ -82,8 +82,8 @@ function PrincipleCard({
       <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{ background: "radial-gradient(ellipse at center, rgba(196,168,130,0.06) 0%, transparent 70%)" }} />
 
-      <span className="text-4xl sm:text-5xl mb-4">{principle.icon}</span>
-      <h3 className="text-xl sm:text-2xl font-bold text-amber-100 mb-3">{principle.title}</h3>
+      <span className="text-3xl sm:text-4xl mb-2">{principle.icon}</span>
+      <h3 className="text-base sm:text-xl font-bold text-amber-100 mb-1.5">{principle.title}</h3>
       <p className="text-base text-amber-200/60 leading-relaxed line-clamp-3">{principle.description}</p>
 
       {/* Tap hint */}
@@ -112,7 +112,7 @@ export function StrategySlide() {
 
       {/* Badge */}
       <motion.div
-        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-900/30 border border-amber-700/40 text-amber-300/80 text-xs font-mono tracking-widest uppercase mb-4"
+        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-900/30 border border-amber-700/40 text-amber-300/80 text-xs font-mono tracking-widest uppercase mb-2"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.5 }}
@@ -123,7 +123,7 @@ export function StrategySlide() {
 
       {/* Title */}
       <motion.h2
-        className="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-2"
+        className="text-2xl sm:text-3xl md:text-4xl font-black text-center mb-1"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -133,7 +133,7 @@ export function StrategySlide() {
       </motion.h2>
 
       <motion.p
-        className="text-base sm:text-lg text-amber-100/50 mb-8 text-center max-w-xl"
+        className="text-sm sm:text-base text-amber-100/50 mb-4 text-center max-w-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
@@ -142,7 +142,7 @@ export function StrategySlide() {
       </motion.p>
 
       {/* ─── Triangle Layout ─── */}
-      <div className="relative z-10 flex flex-col items-center gap-6 sm:gap-8">
+      <div className="relative z-10 flex flex-col items-center gap-3 sm:gap-4">
         {/* Top card — apex of the triangle */}
         <div className="flex justify-center">
           <PrincipleCard
@@ -153,7 +153,7 @@ export function StrategySlide() {
         </div>
 
         {/* Bottom two cards — base of the triangle */}
-        <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
           <PrincipleCard
             principle={c.principles[1]}
             index={1}
