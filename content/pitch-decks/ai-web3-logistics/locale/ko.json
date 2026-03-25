@@ -231,25 +231,25 @@
     "subtitle": "4대 주요 무역 지역에 걸친 자동 통관으로 통관 시간을 60-75% 단축.",
     "regions": [
       {
-        "name": "유럽 연합",
+        "name": "유럽 연합 / 영국 & 발틱",
         "regulation": "ICS2 / AEO",
         "badge": "GDPR 준수",
         "features": ["ICS2 사전 도착 신고", "AEO 인가 사업자 자격", "ISO 14067 탄소 추적", "GDPR 데이터 레지던시 (더블린)"]
       },
       {
-        "name": "미국",
+        "name": "미주 & 캐나다",
         "regulation": "ACE / C-TPAT",
         "badge": "FDA 대응",
         "features": ["ACE 자동 통관 신고", "C-TPAT 공급망 보안", "FDA 규정 자동화", "Type 86 소액 통관"]
       },
       {
-        "name": "말레이시아",
+        "name": "아시아 & 호주·뉴질랜드",
         "regulation": "MS 2400 할랄",
         "badge": "할랄 인증",
         "features": ["MS 2400 할랄 물류 체인", "JAKIM 인증 추적", "샤리아 준수 취급", "싱가포르 간 크로스보더"]
       },
       {
-        "name": "중동 / GCC",
+        "name": "GCC / ISC & 아프리카",
         "regulation": "GSO / SFDA",
         "badge": "GCC 준수",
         "features": ["GSO 표준 적합", "SFDA 식품/화장품 인가", "이슬람 금융 통합", "SASO 적합성 마킹"]

@@ -231,25 +231,25 @@
     "subtitle": "Automated customs clearance across 4 major trade regions, cutting clearance time by 60-75%.",
     "regions": [
       {
-        "name": "European Union",
+        "name": "EU /UK & Baltic",
         "regulation": "ICS2 / AEO",
         "badge": "GDPR Compliant",
         "features": ["ICS2 pre-arrival declaration", "AEO trusted trader status", "Carbon tracking ISO 14067", "GDPR data residency (Dublin)"]
       },
       {
-        "name": "United States",
+        "name": "America's & Canada",
         "regulation": "ACE / C-TPAT",
         "badge": "FDA Ready",
         "features": ["ACE automated customs entry", "C-TPAT supply chain security", "FDA compliance automation", "Type 86 de minimis entry"]
       },
       {
-        "name": "Malaysia",
+        "name": "Asia & Anzac",
         "regulation": "MS 2400 Halal",
         "badge": "Halal Certified",
         "features": ["MS 2400 Halal logistics chain", "JAKIM certification tracking", "Shariah-compliant handling", "Cross-border with Singapore"]
       },
       {
-        "name": "Middle East / GCC",
+        "name": "GCC /ISC & Africa",
         "regulation": "GSO / SFDA",
         "badge": "GCC Compliant",
         "features": ["GSO standards alignment", "SFDA food/cosmetics approval", "Islamic finance integration", "SASO conformity marking"]

@@ -231,25 +231,25 @@
     "subtitle": "4つの主要貿易地域にわたる自動通関手続きにより、通関時間を60-75%短縮。",
     "regions": [
       {
-        "name": "欧州連合",
+        "name": "欧州連合 / 英国 & 波羅的海",
         "regulation": "ICS2 / AEO",
         "badge": "GDPR準拠",
         "features": ["ICS2事前到着申告", "AEO認定事業者ステータス", "ISO 14067カーボントラッキング", "GDPRデータレジデンシー（ダブリン）"]
       },
       {
-        "name": "アメリカ合衆国",
+        "name": "アメリカ大陸 & カナダ",
         "regulation": "ACE / C-TPAT",
         "badge": "FDA対応",
         "features": ["ACE自動通関申告", "C-TPATサプライチェーンセキュリティ", "FDAコンプライアンス自動化", "Type 86デミニマス申告"]
       },
       {
-        "name": "マレーシア",
+        "name": "アジア & オーストラリア・ニュージーランド",
         "regulation": "MS 2400 ハラール",
         "badge": "ハラール認証",
         "features": ["MS 2400ハラール物流チェーン", "JAKIM認証追跡", "シャリーア準拠の取り扱い", "シンガポールとの越境"]
       },
       {
-        "name": "中東 / GCC",
+        "name": "GCC / ISC & アフリカ",
         "regulation": "GSO / SFDA",
         "badge": "GCC準拠",
         "features": ["GSO基準への適合", "SFDA食品・化粧品認可", "イスラム金融統合", "SASO適合マーキング"]

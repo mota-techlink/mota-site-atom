@@ -231,25 +231,25 @@
     "subtitle": "覆盖 4 大贸易区域的自动化清关，清关时间缩短 60-75%。",
     "regions": [
       {
-        "name": "欧盟",
+        "name": "欧盟 / 英国 & 波罗的海",
         "regulation": "ICS2 / AEO",
         "badge": "GDPR 合规",
         "features": ["ICS2 预到港申报", "AEO 可信贸易商资质", "ISO 14067 碳足迹追踪", "GDPR 数据驻留 (都柏林)"]
       },
       {
-        "name": "美国",
+        "name": "美洲 & 加拿大",
         "regulation": "ACE / C-TPAT",
         "badge": "FDA 就绪",
         "features": ["ACE 自动化海关录入", "C-TPAT 供应链安全", "FDA 合规自动化", "Type 86 低值免税录入"]
       },
       {
-        "name": "马来西亚",
+        "name": "亚洲 & 澳新",
         "regulation": "MS 2400 清真",
         "badge": "清真认证",
         "features": ["MS 2400 清真物流链", "JAKIM 认证追踪", "符合伊斯兰教法处理", "新马跨境物流"]
       },
       {
-        "name": "中东 / GCC",
+        "name": "GCC / ISC & 非洲",
         "regulation": "GSO / SFDA",
         "badge": "GCC 合规",
         "features": ["GSO 标准对齐", "SFDA 食品/化妆品审批", "伊斯兰金融集成", "SASO 合格标识"]

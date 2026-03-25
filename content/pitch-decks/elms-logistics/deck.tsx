@@ -69,7 +69,7 @@ function ElmsLogisticsDeckInner({
     // ═══════════════════════════════════════════════════════════
     // SLIDE 7: Investment Opportunity & Capital Efficiency
     // ═══════════════════════════════════════════════════════════
-    <FinancialTransparencySlide key="financials" />,
+    // <FinancialTransparencySlide key="financials" />,
 
     // ═══════════════════════════════════════════════════════════
     // SLIDE 8: Roadmap — Multi-Layer Evolution Map

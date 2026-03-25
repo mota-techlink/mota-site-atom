@@ -181,9 +181,9 @@ function SiloCard({ icon, title, items, delay, label }: SiloCardProps) {
       </h3>
 
       {/* Badge */}
-      <div className="mb-3">
+      {/* <div className="mb-3">
         <SyncErrorBadge delay={delay + 0.6} label={label} />
-      </div>
+      </div> */}
 
       {/* Items */}
       <ul className="space-y-1.5 w-full">
@@ -308,7 +308,7 @@ export function FragmentedLogisticsSlide() {
               title={c.silos[0].title}
               items={c.silos[0].items}
               delay={0.3}
-              label={c.syncError}
+              // label={c.syncError}
             />
           </div>
 
@@ -322,7 +322,7 @@ export function FragmentedLogisticsSlide() {
               title={c.silos[1].title}
               items={c.silos[1].items}
               delay={0.6}
-              label={c.syncError}
+              // label={c.syncError}
             />
           </div>
 
@@ -336,7 +336,7 @@ export function FragmentedLogisticsSlide() {
               title={c.silos[2].title}
               items={c.silos[2].items}
               delay={0.9}
-              label={c.syncError}
+              // label={c.syncError}
             />
           </div>
         </div>
