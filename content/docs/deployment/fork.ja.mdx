@@ -64,7 +64,9 @@ https://github.com/mota-techlink/mota-atom.git
 
 上流から機能コードのみを同期し、`content/` と `public/` の変更を取り込みたくない場合、以下の方法が利用できます：
 
-### 方法1：gitattributes によるコンテンツ保護（merge と組み合わせ、推奨）
+### 方法1：gitattributes によるコンテンツ保護（merge と組み合わせ）
+
+> ⚠️ **既知の制限**：`merge=ours` は**ローカルに既に存在するファイル**にのみ有効です。上流が `content/` または `public/` 配下に新規ファイルを追加した場合（`create mode`）、それらのファイルは**引き続きマージされてしまいます**。上流が既存ファイルのみを変更する場合に適用してください。
 
 `.gitattributes` を設定済みの場合（下記「ベストプラクティス」参照）、通常の merge 実行でコンテンツディレクトリが自動的に保護されます：
 
@@ -91,16 +93,24 @@ git push origin main
 
 > **注意**：この方法はマージコミットを作成せず、直接上流のファイル内容でローカルファイルを置き換えます。同期範囲を正確に制御できますが、上流で追加された新規ファイルは自動的に処理されません。
 
-### 方法3：マージ後にコンテンツディレクトリをリセット
+### 方法3：マージ後にコンテンツディレクトリをリセット（推奨）
 
-上流の全変更をマージした後、ローカルのコンテンツを強制的に復元します：
+上流の全変更をマージした後、ローカルのコンテンツを強制的に復元します。**`content/` と `public/` への上流の変更を新規追加ファイルを含め完全にブロックできます。**
 
 ```bash
 git fetch upstream
 git merge upstream/main --no-commit --no-ff
-# マージをステージング後、ローカルのコンテンツディレクトリを強制復元
+
+# ローカルの content/ と public/ を強制復元（既存ファイルへの上流変更を上書き）
 git checkout HEAD -- content/ public/
-git commit -m "Sync upstream code changes, keep local content"
+
+# 上流が content/ または public/ に新規追加したファイルを削除
+git status --short | grep '^A  content\|^A  public' \
+  | awk '{print $2}' | xargs -r git rm --cached
+git status --short | grep '^?? content\|^?? public' \
+  | awk '{print $2}' | xargs -r rm -rf
+
+git commit -m "sync: upstream code only, content and public preserved"
 git push origin main
 ```
 

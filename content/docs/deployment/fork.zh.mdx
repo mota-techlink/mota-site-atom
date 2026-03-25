@@ -63,7 +63,9 @@ https://github.com/mota-techlink/mota-atom.git
 
 如果你只希望从上游同步功能代码，而不引入上游的 `content/` 和 `public/` 变更，有以下方案可选：
 
-### 方案一：gitattributes 自动保护（配合 merge，推荐）
+### 方案一：gitattributes 自动保护（配合 merge）
+
+> ⚠️ **已知限制**：`merge=ours` 只对**已存在于本地的文件**有效。如果上游新增了 `content/` 或 `public/` 下的文件（`create mode`），这些新文件**仍会被合并进来**，无法被此方案阻止。适用于上游仅修改已有文件的场景。
 
 配置好 `.gitattributes` 后（见下方"最佳实践"一节），每次执行普通 merge 即可自动保护内容目录：
 
@@ -90,16 +92,24 @@ git push origin main
 
 > **注意**：此方式直接将上游文件内容替换本地文件，不产生合并提交。适合精确控制同步范围，但不会自动处理上游新增文件。
 
-### 方案三：合并后重置内容目录
+### 方案三：合并后重置内容目录（推荐）
 
-合并上游全部变更后，再强制恢复本地内容：
+合并上游全部变更后，强制恢复本地内容目录。**可完整拦截上游对 `content/` 和 `public/` 的所有变更，包括新增文件。**
 
 ```bash
 git fetch upstream
 git merge upstream/main --no-commit --no-ff
-# 合并暂存后强制恢复本地内容目录
+
+# 强制恢复本地 content/ 和 public/（覆盖上游对已有文件的修改）
 git checkout HEAD -- content/ public/
-git commit -m "Sync upstream code changes, keep local content"
+
+# 清理上游在 content/ 或 public/ 下新增的文件
+git status --short | grep '^A  content\|^A  public' \
+  | awk '{print $2}' | xargs -r git rm --cached
+git status --short | grep '^?? content\|^?? public' \
+  | awk '{print $2}' | xargs -r rm -rf
+
+git commit -m "sync: upstream code only, content and public preserved"
 git push origin main
 ```
 

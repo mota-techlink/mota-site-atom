@@ -64,7 +64,9 @@ https://github.com/mota-techlink/mota-atom.git
 
 If you only want to sync feature code from upstream without bringing in upstream changes to `content/` and `public/`, the following approaches are available:
 
-### Option 1: gitattributes Content Protection (with merge, Recommended)
+### Option 1: gitattributes Content Protection (with merge)
+
+> ⚠️ **Known Limitation**: `merge=ours` only applies to files that **already exist locally**. If upstream adds new files under `content/` or `public/` (`create mode`), those files **will still be merged in** and cannot be blocked by this approach. Use this only when upstream modifies existing files.
 
 Once `.gitattributes` is configured (see the "Best Practice" section below), a standard merge will automatically protect your content directories:
 
@@ -91,16 +93,24 @@ git push origin main
 
 > **Note**: This approach directly replaces local files with upstream content without creating a merge commit. It gives precise control over the sync scope but does not automatically handle new files added to upstream.
 
-### Option 3: Merge then Reset Content Directories
+### Option 3: Merge then Reset Content Directories (Recommended)
 
-Merge all upstream changes, then force-restore your local content:
+Merge all upstream changes, then force-restore your local content. **This fully blocks all upstream changes to `content/` and `public/`, including newly added files.**
 
 ```bash
 git fetch upstream
 git merge upstream/main --no-commit --no-ff
-# After staging the merge, force-restore local content directories
+
+# Force-restore local content/ and public/ (overrides upstream modifications to existing files)
 git checkout HEAD -- content/ public/
-git commit -m "Sync upstream code changes, keep local content"
+
+# Remove any new files upstream added under content/ or public/
+git status --short | grep '^A  content\|^A  public' \
+  | awk '{print $2}' | xargs -r git rm --cached
+git status --short | grep '^?? content\|^?? public' \
+  | awk '{print $2}' | xargs -r rm -rf
+
+git commit -m "sync: upstream code only, content and public preserved"
 git push origin main
 ```
 
