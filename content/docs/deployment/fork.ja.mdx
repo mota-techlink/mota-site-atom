@@ -48,6 +48,65 @@ git merge upstream/main
 git push origin main
 ```
 
+## 推奨ブランチワークフロー（本番プロジェクト）
+
+機能開発とコンテンツ管理を**ブランチで分離**し、専用のリリースブランチを通じて統一デプロイすることを推奨します。
+
+### ブランチ説明
+
+| ブランチ | 用途 |
+|----------|------|
+| `main` | 上流と同期を維持、直接開発しない |
+| `feature` | 機能コードの変更（`src/`、`scripts/` など） |
+| `content` | コンテンツ・ブランドの変更（`content/`、`public/`） |
+| `release` | デプロイブランチ — feature + content をマージして使用 |
+
+### ワークフロー図
+
+```
+upstream/main
+     │
+     ▼  bash scripts/sync-upstream.sh
+   main ──────────────► feature ──┐
+                                   ├──► release（デプロイ）
+                       content ───┘
+                   bash scripts/release.sh
+```
+
+### 日常操作
+
+**機能開発（feature ブランチ）：**
+
+```bash
+git checkout feature
+# src/、scripts/ などのコードファイルのみ変更
+git add src/ scripts/
+git commit -m "feat: xxx"
+```
+
+**コンテンツ更新（content ブランチ）：**
+
+```bash
+git checkout content
+# content/、public/ のみ変更
+git add content/ public/
+git commit -m "content: xxx"
+```
+
+**上流同期（ワンコマンド）：**
+
+```bash
+bash scripts/sync-upstream.sh
+# 自動：fetch upstream → content/public を保護 → main に同期 → feature にマージ → push
+```
+
+**リリース（ワンコマンド）：**
+
+```bash
+bash scripts/release.sh
+# 自動：feature + content → release にマージ → push
+```
+
 ## コンテンツ差し替え手順（本番プロジェクト）
 
 1. `content/` 配下のビジネスコンテンツを差し替え（ドキュメント、製品、多言語）

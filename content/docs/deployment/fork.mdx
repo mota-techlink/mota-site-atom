@@ -48,6 +48,65 @@ git merge upstream/main
 git push origin main
 ```
 
+## Recommended Branch Workflow (Production Project)
+
+Keep feature development and content maintenance in **separate branches**, unified through a dedicated release branch for deployment.
+
+### Branch Overview
+
+| Branch | Purpose |
+|--------|---------|
+| `main` | Stays in sync with upstream, no direct development |
+| `feature` | Code changes (`src/`, `scripts/`, etc.) |
+| `content` | Content and brand changes (`content/`, `public/`) |
+| `release` | Deployment branch — merges feature + content |
+
+### Workflow Diagram
+
+```
+upstream/main
+     │
+     ▼  bash scripts/sync-upstream.sh
+   main ──────────────► feature ──┐
+                                   ├──► release (deploy)
+                       content ───┘
+                   bash scripts/release.sh
+```
+
+### Day-to-Day Operations
+
+**Feature development (feature branch):**
+
+```bash
+git checkout feature
+# Only modify src/, scripts/, etc.
+git add src/ scripts/
+git commit -m "feat: xxx"
+```
+
+**Content updates (content branch):**
+
+```bash
+git checkout content
+# Only modify content/, public/
+git add content/ public/
+git commit -m "content: xxx"
+```
+
+**Sync upstream (one command):**
+
+```bash
+bash scripts/sync-upstream.sh
+# Auto: fetch upstream → protect content/public → sync to main → merge to feature → push
+```
+
+**Release (one command):**
+
+```bash
+bash scripts/release.sh
+# Auto: feature + content → merge to release → push
+```
+
 ## Content Replacement Process (Production Project)
 
 1. Replace business content under `content/` (docs, products, multi-language)

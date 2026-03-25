@@ -47,6 +47,65 @@ git merge upstream/main
 git push origin main
 ```
 
+## 推荐分支工作流（正式项目）
+
+建议正式项目将功能开发与内容维护**分支隔离**，通过独立的发布分支统一部署。
+
+### 分支说明
+
+| 分支 | 用途 |
+|------|------|
+| `main` | 与上游保持同步，不直接开发 |
+| `feature` | 功能代码变更（`src/` `scripts/` 等） |
+| `content` | 内容与品牌变更（`content/` `public/`） |
+| `release` | 发布分支，合并 feature + content 后部署 |
+
+### 工作流示意
+
+```
+upstream/main
+     │
+     ▼  bash scripts/sync-upstream.sh
+   main ──────────────► feature ──┐
+                                   ├──► release（部署）
+                       content ───┘
+                   bash scripts/release.sh
+```
+
+### 日常操作
+
+**功能开发（feature 分支）：**
+
+```bash
+git checkout feature
+# 只修改 src/ scripts/ 等代码文件
+git add src/ scripts/
+git commit -m "feat: xxx"
+```
+
+**内容更新（content 分支）：**
+
+```bash
+git checkout content
+# 只修改 content/ public/
+git add content/ public/
+git commit -m "content: xxx"
+```
+
+**同步上游（一键）：**
+
+```bash
+bash scripts/sync-upstream.sh
+# 自动：fetch upstream → 保护 content/public → 同步到 main → merge 到 feature → push
+```
+
+**发布（一键）：**
+
+```bash
+bash scripts/release.sh
+# 自动：feature + content → merge 到 release → push
+```
+
 ## 内容替换流程（正式项目）
 
 1. 替换 `content/` 下业务内容（文档、产品、多语言）

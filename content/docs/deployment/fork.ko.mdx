@@ -48,6 +48,65 @@ git merge upstream/main
 git push origin main
 ```
 
+## 권장 브랜치 워크플로우 (프로덕션 프로젝트)
+
+기능 개발과 콘텐츠 관리를 **브랜치로 분리**하고, 전용 릴리스 브랜치를 통해 통합 배포하는 것을 권장합니다.
+
+### 브랜치 설명
+
+| 브랜치 | 용도 |
+|--------|------|
+| `main` | 업스트림과 동기화 유지, 직접 개발 금지 |
+| `feature` | 코드 변경 (`src/`, `scripts/` 등) |
+| `content` | 콘텐츠 및 브랜드 변경 (`content/`, `public/`) |
+| `release` | 배포 브랜치 — feature + content 병합 후 사용 |
+
+### 워크플로우 다이어그램
+
+```
+upstream/main
+     │
+     ▼  bash scripts/sync-upstream.sh
+   main ──────────────► feature ──┐
+                                   ├──► release (배포)
+                       content ───┘
+                   bash scripts/release.sh
+```
+
+### 일상 작업
+
+**기능 개발 (feature 브랜치):**
+
+```bash
+git checkout feature
+# src/, scripts/ 등 코드 파일만 수정
+git add src/ scripts/
+git commit -m "feat: xxx"
+```
+
+**콘텐츠 업데이트 (content 브랜치):**
+
+```bash
+git checkout content
+# content/, public/ 만 수정
+git add content/ public/
+git commit -m "content: xxx"
+```
+
+**업스트림 동기화 (한 줄 명령):**
+
+```bash
+bash scripts/sync-upstream.sh
+# 자동: fetch upstream → content/public 보호 → main 동기화 → feature 병합 → push
+```
+
+**릴리스 (한 줄 명령):**
+
+```bash
+bash scripts/release.sh
+# 자동: feature + content → release 병합 → push
+```
+
 ## 콘텐츠 교체 프로세스 (프로덕션 프로젝트)
 
 1. `content/` 하위 비즈니스 콘텐츠 교체 (문서, 제품, 다국어)
