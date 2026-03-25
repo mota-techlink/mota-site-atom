@@ -14,6 +14,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MobileDetailModal, MobileExpandButton } from "./MobileDetailModal";
 import { useContent } from "./useContent";
 
+// ─── Flag Image (cross-browser safe) ──────────────────────────────
+const FLAG_IMAGES: Record<string, string> = {
+  eu: "/images/flags/eu.svg",
+  us: "/images/flags/us.svg",
+  my: "/images/flags/my.svg",
+  sa: "/images/flags/sa.svg",
+};
+
+function FlagImage({ code, className = "" }: { code: string; className?: string }) {
+  return (
+    <img
+      src={FLAG_IMAGES[code] ?? FLAG_IMAGES.eu}
+      alt={`${code.toUpperCase()} flag`}
+      className={`inline-block rounded-sm object-cover ${className}`}
+      draggable={false}
+    />
+  );
+}
+
 // ─── Region Card ─────────────────────────────────────────────────
 interface RegionData {
   id: string;
@@ -54,7 +73,7 @@ function RegionCard({ region, delay }: { region: RegionData; delay: number }) {
     >
       {/* Header */}
       <div className="flex items-center gap-2 mb-3">
-        <span className="text-xl lg:text-2xl">{region.flag}</span>
+        <FlagImage code={region.id} className="w-6 h-4 lg:w-8 lg:h-5" />
         <div>
           <h3 className="text-sm lg:text-base font-bold text-white">{region.name}</h3>
           <span className="text-[9px] lg:text-[10px] font-mono text-slate-400">{region.regulation}</span>
@@ -258,7 +277,7 @@ export function GlobalRoutesSlide() {
           {regions.map((r) => (
             <div key={r.id} className="p-4 rounded-xl bg-white/5 border border-white/10">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-xl">{r.flag}</span>
+                <FlagImage code={r.id} className="w-6 h-4" />
                 <span className="text-sm font-bold text-white">{r.name}</span>
                 <span className="text-[9px] font-mono text-slate-400 ml-auto">{r.regulation}</span>
               </div>
