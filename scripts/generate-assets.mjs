@@ -199,22 +199,38 @@ function enrichRelationship(contentMap) {
       
       // 在 Showcase 列表中查找对应的数据
       const enrichedData = relatedSlugs.map(slug => {
+        // 如果是外部 URL，直接当作外部案例处理
+        if (slug.startsWith('http://') || slug.startsWith('https://')) {
+          try {
+            const hostname = new URL(slug).hostname;
+            return {
+              type: 'external',
+              url: slug,
+              title: hostname,
+              description: null,
+              cover: null,
+            };
+          } catch {
+            console.warn(`   ⚠️ [Warning] Invalid external URL: "${slug}" (in: ${product.metadata.title})`);
+            return null;
+          }
+        }
         // 查找匹配的 showcase (忽略大小写)
         const found = showcases.find(s => s.slug.toLowerCase() === slug.toLowerCase());
         
         if (found) {
           // 只提取前端展示需要的轻量级数据，避免 JSON 太大
           return {
+            type: 'internal',
             slug: found.slug,
             title: found.metadata.title,
             description: found.metadata.description,
             cover: found.metadata.image, // 取第一张图做封面
           };
-        }else {
+        } else {
           console.warn(`   ⚠️ [Warning] Related showcase not found: "${slug}" (in: ${product.metadata.title})`);
           return null;
         }
-        return null;
       }).filter(item => item !== null); // 过滤掉找不到的
 
       // 🟢 将增强后的数据注入到 metadata 中，供前端直接使用

@@ -33,6 +33,19 @@ import { Loader2, CheckCircle2 } from "lucide-react"
 import { usePathname } from 'next/navigation'
 import { toast } from "sonner";
 
+/** Returns true if the URL appears to be a browseable website rather than a direct image file */
+function isWebsiteUrl(url: string): boolean {
+  try {
+    const { pathname } = new URL(url);
+    // If the path has no extension, or the extension is not a common image type → treat as website
+    const ext = pathname.split('.').pop()?.toLowerCase() ?? '';
+    const imageExts = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'avif', 'bmp', 'ico'];
+    return !imageExts.includes(ext);
+  } catch {
+    return false;
+  }
+}
+
 // 🔧 动态导入重型组件 - 减少首屏 JS 约 200kB+
 const CryptoPaymentModal = dynamic(
   () => import("@/components/payments/crypto-payment-modal").then(mod => mod.CryptoPaymentModal),
@@ -409,12 +422,22 @@ export function ProductLayout({ data, content }: ProductLayoutProps) {
           {/* A. Image Gallery */}
           <div className="space-y-4">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border bg-muted">
-              <Image 
-                src={selectedImage} 
-                alt={data.title} 
-                fill 
-                className="object-cover"
-              />
+              {isWebsiteUrl(selectedImage) ? (
+                <iframe
+                  src={selectedImage}
+                  title={data.title}
+                  className="absolute inset-0 h-full w-full"
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                  loading="lazy"
+                />
+              ) : (
+                <Image 
+                  src={selectedImage} 
+                  alt={data.title} 
+                  fill 
+                  className="object-cover"
+                />
+              )}
             </div>
             {/* Thumbnails */}
             <div className="flex gap-4 overflow-x-auto pb-2">
@@ -424,7 +447,13 @@ export function ProductLayout({ data, content }: ProductLayoutProps) {
                   onClick={() => setSelectedImage(img)}
                   className={`relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-all ${selectedImage === img ? 'border-primary' : 'border-transparent opacity-70 hover:opacity-100'}`}
                 >
-                  <Image src={img} alt="thumbnail" fill className="object-cover" />
+                  {isWebsiteUrl(img) ? (
+                    <div className="flex h-full w-full items-center justify-center bg-muted text-[8px] text-muted-foreground p-1 text-center break-all">
+                      {new URL(img).hostname}
+                    </div>
+                  ) : (
+                    <Image src={img} alt="thumbnail" fill className="object-cover" />
+                  )}
                 </button>
               ))}
             </div>
@@ -481,37 +510,65 @@ export function ProductLayout({ data, content }: ProductLayoutProps) {
           <div id="showcase">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-xl font-bold">{t("successStories")}</h3>
-              <Link href="/showcase" className="text-primary text-sm hover:underline flex items-center">
-                {t("viewAll")} <ArrowRight className="w-4 h-4 ml-1"/>
-              </Link>
+              {/* 只有存在站内案例时才显示「查看全部」 */}
+              {relatedCases.some((item: any) => item.type !== 'external') && (
+                <Link href="/showcase" className="text-primary text-sm hover:underline flex items-center">
+                  {t("viewAll")} <ArrowRight className="w-4 h-4 ml-1"/>
+                </Link>
+              )}
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
                {/* 🟢 直接循环渲染预生成的数据 */}
                {relatedCases.length > 0 ? (
-                 relatedCases.map((item: any) => (
-                   <Link key={item.slug} href={`/showcase/${item.slug}`} className="block h-full">
-                     <Card className="hover:shadow-md transition-all cursor-pointer group h-full flex flex-col overflow-hidden border-0 shadow-sm bg-card">
-                        <div className="aspect-video bg-muted relative overflow-hidden rounded-t-xl">
-                          {/* 封面图 */}
-                          <Image 
-                            src={item.cover || '/images/placeholder.webp'} 
-                            alt={item.title}
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"/>
-                          <div className="absolute bottom-3 left-3 z-20 text-white font-medium pr-2 leading-tight">
-                            {item.title}
+                 relatedCases.map((item: any) =>
+                   item.type === 'external' ? (
+                     // 外部网站卡片：iframe 预览 + 新标签打开
+                     <a key={item.url} href={item.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+                       <Card className="hover:shadow-md transition-all cursor-pointer group h-full flex flex-col overflow-hidden border-0 shadow-sm bg-card">
+                         <div className="aspect-video bg-muted relative overflow-hidden rounded-t-xl">
+                           <iframe
+                             src={item.url}
+                             title={item.title}
+                             className="absolute inset-0 h-full w-full pointer-events-none"
+                             sandbox="allow-scripts allow-same-origin"
+                             loading="lazy"
+                           />
+                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"/>
+                           <div className="absolute bottom-3 left-3 z-20 text-white font-medium pr-2 leading-tight">
+                             {item.title}
+                           </div>
+                         </div>
+                         <CardFooter className="p-4 pt-3 text-sm text-muted-foreground group-hover:text-primary transition-colors border-x border-b rounded-b-xl flex-grow">
+                           <span className="line-clamp-2 break-all">{item.url}</span>
+                         </CardFooter>
+                       </Card>
+                     </a>
+                   ) : (
+                     // 站内案例卡片
+                     <Link key={item.slug} href={`/showcase/${item.slug}`} className="block h-full">
+                       <Card className="hover:shadow-md transition-all cursor-pointer group h-full flex flex-col overflow-hidden border-0 shadow-sm bg-card">
+                          <div className="aspect-video bg-muted relative overflow-hidden rounded-t-xl">
+                            {/* 封面图 */}
+                            <Image 
+                              src={item.cover || '/images/placeholder.webp'} 
+                              alt={item.title}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"/>
+                            <div className="absolute bottom-3 left-3 z-20 text-white font-medium pr-2 leading-tight">
+                              {item.title}
+                            </div>
                           </div>
-                        </div>
-                        <CardFooter className="p-4 pt-3 text-sm text-muted-foreground group-hover:text-primary transition-colors border-x border-b rounded-b-xl flex-grow">
-                           <span className="line-clamp-2">
-                             {item.description || t("defaultShowcaseDesc")}
-                           </span>
-                        </CardFooter>
-                     </Card>
-                   </Link>
-                 ))
+                          <CardFooter className="p-4 pt-3 text-sm text-muted-foreground group-hover:text-primary transition-colors border-x border-b rounded-b-xl flex-grow">
+                             <span className="line-clamp-2">
+                               {item.description || t("defaultShowcaseDesc")}
+                             </span>
+                          </CardFooter>
+                       </Card>
+                     </Link>
+                   )
+                 )
                ) : (
                  <div className="col-span-2 text-muted-foreground text-sm italic p-4 border rounded-lg bg-muted/20">
                    {t("noSuccessStories")}

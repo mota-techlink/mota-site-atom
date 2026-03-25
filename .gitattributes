@@ -1,0 +1,9 @@
+# Protect local content and brand assets when merging upstream template changes.
+# Upstream changes to content/ and public/ will be automatically discarded,
+# keeping your own business data intact.
+#
+# One-time local setup required (run once per clone):
+#   git config merge.ours.driver true
+
+content/**/* merge=ours
+public/**/* merge=ours
