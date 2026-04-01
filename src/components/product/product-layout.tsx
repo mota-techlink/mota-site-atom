@@ -46,6 +46,41 @@ function isWebsiteUrl(url: string): boolean {
   }
 }
 
+/** Parses [text](url) markdown links in FAQ answer strings and renders them as styled anchors */
+function renderFaqAnswer(text: string): React.ReactNode {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (match) {
+      const [, label, href] = match;
+      const isExternal = href.startsWith('http');
+      return (
+        <Link
+          key={i}
+          href={href}
+          target={isExternal ? '_blank' : undefined}
+          rel={isExternal ? 'noopener noreferrer' : undefined}
+          className="inline-flex items-center gap-1 font-semibold relative group"
+        >
+          {/* Gradient text */}
+          <span className="bg-linear-to-r from-blue-600 to-violet-600 dark:from-cyan-400 dark:to-violet-400 bg-clip-text text-transparent transition-opacity group-hover:opacity-80">
+            {label}
+          </span>
+          {/* Gradient underline — slides in on hover from the origin */}
+          <span
+            aria-hidden
+            className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-blue-600 to-violet-600 dark:from-cyan-400 dark:to-violet-400 scale-x-100 group-hover:scale-x-110 transition-transform origin-left"
+          />
+          {isExternal && (
+            <ArrowRight className="w-3 h-3 text-violet-500 dark:text-violet-400 transition-transform group-hover:translate-x-0.5" />
+          )}
+        </Link>
+      );
+    }
+    return <React.Fragment key={i}>{part}</React.Fragment>;
+  });
+}
+
 // 🔧 动态导入重型组件 - 减少首屏 JS 约 200kB+
 const CryptoPaymentModal = dynamic(
   () => import("@/components/payments/crypto-payment-modal").then(mod => mod.CryptoPaymentModal),
@@ -315,6 +350,116 @@ interface ProductLayoutProps {
   content: React.ReactNode; // MDX 正文内容
 }
 
+function ComparisonTable({ pricing }: { pricing: any[] }) {
+  const t = useTranslations("ProductPage")
+
+  if (!pricing || pricing.length === 0) return null
+
+  // Tier names used to detect inheritance-marker lines (works across all languages)
+  const tierNamesLower = new Set(pricing.map((t: any) => t.name.toLowerCase()))
+
+  const isInheritanceMarker = (feat: string) =>
+    Array.from(tierNamesLower).some(name => feat.toLowerCase().includes(name))
+
+  // Raw features per tier — skip any inheritance-marker lines
+  const rawFeatures: string[][] = pricing.map((tier: any) =>
+    (tier.features ?? []).filter((f: string) => !isInheritanceMarker(f))
+  )
+
+  // Propagate upward: tier N's effective set = features of tiers 0..N combined
+  const effectiveFeatures: string[][] = rawFeatures.map((_, idx) => {
+    const seen = new Set<string>()
+    const result: string[] = []
+    for (let i = 0; i <= idx; i++) {
+      for (const feat of rawFeatures[i]) {
+        if (!seen.has(feat)) {
+          seen.add(feat)
+          result.push(feat)
+        }
+      }
+    }
+    return result
+  })
+
+  // Collect all unique features in order of first appearance
+  const allFeatures: string[] = []
+  const featureSet = new Set<string>()
+  for (const features of effectiveFeatures) {
+    for (const feat of features) {
+      if (!featureSet.has(feat)) {
+        featureSet.add(feat)
+        allFeatures.push(feat)
+      }
+    }
+  }
+
+  if (allFeatures.length === 0) return null
+
+  // Build inclusion map from effective (resolved) feature sets
+  const includedIn: Map<string, Set<number>> = new Map()
+  for (const feat of allFeatures) {
+    const tiers = new Set<number>()
+    effectiveFeatures.forEach((features, idx) => {
+      if (features.includes(feat)) tiers.add(idx)
+    })
+    includedIn.set(feat, tiers)
+  }
+
+  return (
+    <div className="hidden md:block">
+      <h3 className="text-xl font-bold mb-6">{t("comparePackages")}</h3>
+      <div className="border rounded-xl overflow-hidden">
+        <table className="w-full text-sm table-fixed">
+          <thead>
+            <tr className="bg-muted/50 border-b">
+              <th className="text-left px-5 py-4 font-semibold text-muted-foreground w-[40%]">
+                {t("feature")}
+              </th>
+              {pricing.map((tier, idx) => (
+                <th key={idx} className="text-center px-2 py-4 font-semibold w-[20%]">
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="whitespace-nowrap">{tier.name}</span>
+                    <span className="text-xs font-normal text-muted-foreground whitespace-nowrap">{tier.price}</span>
+                  </div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {/* Delivery time row */}
+            <tr className="border-b bg-muted/20">
+              <td className="px-5 py-3 text-muted-foreground">{t("delivery")}</td>
+              {pricing.map((tier, idx) => (
+                <td key={idx} className="text-center px-2 py-3 text-muted-foreground whitespace-nowrap">
+                  {tier.deliveryTime}
+                </td>
+              ))}
+            </tr>
+            {/* Feature rows */}
+            {allFeatures.map((feat, rowIdx) => (
+              <tr
+                key={rowIdx}
+                className={`border-b last:border-0 ${rowIdx % 2 === 0 ? "" : "bg-muted/10"}`}
+              >
+                <td className="px-5 py-3 text-foreground/80">{feat}</td>
+                {pricing.map((_, tierIdx) => (
+                  <td key={tierIdx} className="text-center px-2 py-3">
+                    {includedIn.get(feat)?.has(tierIdx) ? (
+                      <Check className="w-4 h-4 text-green-500 mx-auto" />
+                    ) : (
+                      <span className="text-muted-foreground/40 text-lg leading-none">—</span>
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
 {/* === RIGHT COLUMN: Sticky Pricing Card === */}
 function PricingWidget({ data }: { data: any }) {
   const pathname = usePathname();
@@ -464,11 +609,53 @@ export function ProductLayout({ data, content }: ProductLayoutProps) {
             <PricingWidget data={data} />
           </div>
 
+          {/* B-pre. Scenes Accordion (frontmatter `scenes:`) */}
+          {data.scenes && Array.isArray(data.scenes.items) && data.scenes.items.length > 0 && (
+            <div>
+              {data.scenes.title && (
+                <h3 className="text-xl font-bold mb-4">{data.scenes.title}</h3>
+              )}
+              <Accordion type="single" collapsible className="w-full divide-y divide-border rounded-xl border">
+                {data.scenes.items.map((scene: { title: string; content: string }, idx: number) => (
+                  <AccordionItem key={idx} value={`scene-${idx}`} className="border-none px-4">
+                    <AccordionTrigger className="text-left font-semibold text-sm py-4 hover:no-underline">
+                      {scene.title}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground text-sm pb-4 leading-relaxed">
+                      {scene.content}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          )}
+
           {/* B. About This Service (MDX Content) */}
           <div className="prose prose-slate dark:prose-invert max-w-none">
-            <h3 className="text-xl font-bold mb-4">{t("aboutThisService")}</h3>
+            {/* <h3 className="text-xl font-bold mb-4">{t("aboutThisService")}</h3> */}
             {content}
           </div>
+
+          {/* B-post. Contact CTA (frontmatter `contactCta:`) */}
+          {data.contactCta && (
+            <div className="not-prose rounded-2xl bg-linear-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="text-center sm:text-left">
+                <p className="text-base font-semibold text-foreground">
+                  {data.contactCta.label}
+                </p>
+                {data.contactCta.subtitle && (
+                  <p className="text-sm text-muted-foreground mt-0.5">{data.contactCta.subtitle}</p>
+                )}
+              </div>
+              <Link
+                href="/contact"
+                className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md hover:opacity-90 active:scale-95 transition-all"
+              >
+                {data.contactCta.buttonText ?? "Contact Us"}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          )}
 
           {/* C. Tech Stack (Icons) */}
           <div className="border rounded-xl p-6 bg-muted/30">
@@ -482,16 +669,8 @@ export function ProductLayout({ data, content }: ProductLayoutProps) {
             </div>
           </div>
 
-          {/* D. Comparison Table (Fiverr Style) - 可选 */}
-          <div className="hidden md:block">
-            <h3 className="text-xl font-bold mb-6">{t("comparePackages")}</h3>
-            <div className="border rounded-xl overflow-hidden">
-               {/* 这里可以放一个 Table 组件对比三个套餐的详细参数 */}
-               <div className="p-8 text-center text-muted-foreground bg-muted/20">
-                  {t("comparisonPlaceholder")}
-               </div>
-            </div>
-          </div>
+          {/* D. Comparison Table (Fiverr Style) */}
+          <ComparisonTable pricing={data.pricing} />
 
           {/* E. FAQ Section */}
           <div>
@@ -500,7 +679,9 @@ export function ProductLayout({ data, content }: ProductLayoutProps) {
               {data.faq.map((item: any, idx: number) => (
                 <AccordionItem key={idx} value={`item-${idx}`}>
                   <AccordionTrigger>{item.question}</AccordionTrigger>
-                  <AccordionContent>{item.answer}</AccordionContent>
+                  <AccordionContent>
+                    {renderFaqAnswer(item.answer)}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

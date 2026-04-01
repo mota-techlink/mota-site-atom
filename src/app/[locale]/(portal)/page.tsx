@@ -37,7 +37,7 @@ export default async function IndexPage({ params }: IndexPageProps) {
       </section>
       
       {/* --- Open Source Section --- */}
-      <section className="container py-8 md:py-10 lg:py-20 mx-auto">
+      {/* <section className="container py-8 md:py-10 lg:py-20 mx-auto">
          <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
             <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
               {t('openSourceTitle')}
@@ -49,7 +49,7 @@ export default async function IndexPage({ params }: IndexPageProps) {
                {t('viewOnGitHub')}
             </Link>
          </div>
-      </section>
+      </section> */}
     </>
   )
 }

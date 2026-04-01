@@ -3,6 +3,8 @@
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import remarkGfm from 'remark-gfm';
 import React from 'react';
+import NextLink from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 // 引入自定义组件
 import { CodeBlock } from './code-block';
@@ -16,7 +18,7 @@ import { BionicWrapper } from './bionic-wrapper';
 import { Steps, Step } from "@/components/mdx/steps";
 
 // -----------------------------------------------------------------------------
-// 1. 定义辅助组件 (CustomHighlight, CustomCallout)
+// 1. 定义辅助组件 (CustomHighlight, CustomCallout, ContactCTA)
 // -----------------------------------------------------------------------------
 
 export function CustomHighlight({ children, color = "yellow" }: { children: React.ReactNode, color?: string }) {
@@ -46,6 +48,41 @@ export function CustomCallout({ children, type = "default" }: { children: React.
     )
 }
 
+/**
+ * ContactCTA — 突出显示的联系按钮块，点击跳转到 /contact 页面。
+ * 通常由 ProductLayout 通过 frontmatter `contactCta:` 自动渲染，
+ * 也可在 MDX 中直接使用：<ContactCTA label="..." subtitle="..." buttonText="..." />
+ */
+export function ContactCTA({
+  label,
+  subtitle,
+  buttonText,
+}: {
+  label?: string;
+  subtitle?: string;
+  buttonText?: string;
+}) {
+  return (
+    <div className="not-prose my-8 rounded-2xl bg-linear-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="text-center sm:text-left">
+        <p className="text-base font-semibold text-foreground">
+          {label ?? "准备好开始了吗？"}
+        </p>
+        {subtitle && (
+          <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>
+        )}
+      </div>
+      <NextLink
+        href="/contact"
+        className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md hover:opacity-90 active:scale-95 transition-all"
+      >
+        {buttonText ?? "Contact Us"}
+        <ArrowRight className="w-4 h-4" />
+      </NextLink>
+    </div>
+  );
+}
+
 // -----------------------------------------------------------------------------
 // 2. 定义 Shared Components (MDX 组件映射)
 // -----------------------------------------------------------------------------
@@ -70,6 +107,7 @@ const sharedComponents = {
   Bionic: BionicText,
   Steps: Steps,
   Step: Step,
+  ContactCTA: ContactCTA,
 
   // 🟢 拦截标准 HTML 标签 (解决 any 报错，使用 HTMLAttributes)
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => <BionicWrapper as="p" {...props} />,

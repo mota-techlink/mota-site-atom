@@ -2,27 +2,27 @@
   items:
     - titleKey: introduction
       href: /docs
-    - titleKey: installation
-      href: /docs/getting-started/installation
-    - titleKey: configuration
-      href: /docs/getting-started/configuration
+    - titleKey: howToBrowse
+      href: /docs/getting-started/browse-services
+    - titleKey: howToOrder
+      href: /docs/getting-started/how-to-order
 
-- titleKey: deployment
+- titleKey: ourServices
   items:
-    - titleKey: database
-      href: /docs/deployment/database
-    - titleKey: oauth
-      href: /docs/deployment/oauth
-    - titleKey: hosting
-      href: /docs/deployment/hosting
-    - titleKey: fork
-      href: /docs/deployment/fork
+    - titleKey: sitebuild
+      href: /docs/services/website-building
+    - titleKey: mvpHardware
+      href: /docs/services/hardware-mvp
+    - titleKey: aiChatbot
+      href: /docs/services/ai-chatbot
+    - titleKey: paymentDelivery
+      href: /docs/services/payment-delivery
 
-- titleKey: features
+- titleKey: resources
   items:
-    - titleKey: i18n
-      href: /docs/features/i18n
-    - titleKey: mdx
-      href: /docs/features/mdx
-    - titleKey: seo
-      href: /docs/features/seo
+    - titleKey: showcase
+      href: /docs/resources/case-studies
+    - titleKey: faq
+      href: /docs/resources/faq
+    - titleKey: contactUs
+      href: /docs/resources/contact

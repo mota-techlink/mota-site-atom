@@ -20,7 +20,7 @@ google_map:
   mapURL: https://www.google.com/maps/place/MOTA+TECHLINK+INC./@40.7065031,-73.9258083,17z/data=!3m1!4b1!4m6!3m5!1s0x4cb5e44496595be9:0x6c229d34b2a8ae32!8m2!3d40.7065032!4d-73.9209374!16s%2Fg%2F11ys91d0m4
 links:
   twitter: https://twitter.com/motatechlink
-  github: https://github.com/mota-techlink/mota-atom
+  github: https://github.com/mota-techlink/
 oauth:
   common:
     - id: google
@@ -40,7 +40,7 @@ oauth:
       icon: /icons/facebook.svg
       enable: false
     - id: linkedin
-      label: linkedin
+      label: LinkedIn
       icon: /icons/linkedin.svg
       enable: false
   regionSpecific:

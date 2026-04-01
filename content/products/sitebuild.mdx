@@ -15,8 +15,7 @@ gallery:
 
 # === Related Showcases (Bottom Section) ===
 relatedShowcases:
-  - "GenAI-Driven"
-  - "Edge-Native-AI-Assistant"
+  - "https://atom.motaiot.com"
 
 # === Pricing Strategy (Right Sticky Column) ===
 pricing:
@@ -34,6 +33,10 @@ pricing:
       - "AI customer service chatbot"
       - "Git-based auto deployment pipeline"
       - "Zero server cost (Cloudflare / CDN hosted)"
+      - "Content-function separation via config files"
+      - "Bionic reading typography"
+      - "Dark / light theme toggle"
+      - "Responsive layout — dynamic adaptation for mobile, tablet, and desktop"
       - "No user registration, purchases, or admin panel"
 
   - name: "Standard"
@@ -78,6 +81,57 @@ faq:
     answer: "Yes. The Starter plan uses a Git-based workflow ideal for developers or tech-savvy owners. Standard and above include a graphical CMS — no coding required."
   - question: "When will Premium plan features be finalized?"
     answer: "Premium features are being scoped based on real enterprise client needs. Contact us to discuss your requirements and receive a custom evaluation and quote."
+
+# === Scenes accordion (renders above body, same accordion style as FAQ) ===
+scenes:
+  title: "Do Any of These Sound Familiar?"
+  items:
+    - title: "🔍 \"We paid for a website, but we just can't find ourselves on Google.\""
+      content: >-
+        Many outsourced websites are delivered with zero SEO configuration — no structured data,
+        no sitemap, no image alt text, generic titles everywhere. To search engines, these sites
+        barely exist. We build SEO in from the architecture stage, not as an afterthought.
+    - title: "🤖 \"A client told us they asked ChatGPT for vendors — and we never came up.\""
+      content: >-
+        AI search engines like ChatGPT, Perplexity, and Gemini are becoming the new front door
+        for discovery. But AI only cites well-structured, parseable content — pages built with
+        Wix or Squarespace are rarely indexed effectively by AI platforms. Our site architecture
+        is natively compatible with AI search from day one.
+    - title: "🌏 \"We want to enter the Japanese and Korean markets, but our site is English-only.\""
+      content: >-
+        Language is the most underestimated barrier to entering East Asian markets. Japanese and
+        Korean users have high expectations for localized experiences — an English-only site
+        carries very little trust in these markets. Our i18n architecture supports EN/ZH/JA/KO
+        with independent routing and per-language SEO; entering a new market doesn't mean
+        rebuilding your site.
+    - title: "💸 \"Our server renewal fees aren't small, but our traffic doesn't justify the cost.\""
+      content: >-
+        Cloud servers billed by usage, CDN bandwidth, SSL certificates, DevOps overhead — many
+        SMBs pay hundreds to thousands of dollars a year for a simple showcase site with modest
+        traffic. With Cloudflare's global edge network, our hosting solution is completely free
+        for SMB-level traffic, bringing annual operating costs from "ongoing expense" to
+        "near zero".
+    - title: "✏️ \"Updating a phone number or refreshing product copy means filing a ticket and waiting days.\""
+      content: >-
+        Having content locked inside developer-owned source code is a hidden operational cost.
+        Every text change requires scheduling, approvals, and a deployment — delaying
+        opportunities while consuming team coordination resources. Our modern architecture
+        fully separates content from code: edit via Markdown or a graphical CMS, submit,
+        and it's live in minutes. No waiting for anyone.
+    - title: "⚡ \"I want AI Agents to call our services and pay automatically, with no human in the loop.\""
+      content: >-
+        X402 is an AI-native payment protocol built on the HTTP 402 status code. It allows
+        AI Agents to autonomously pay for API access, content subscriptions, or service calls
+        using on-chain stablecoins (USDC, etc.) — no account registration, no manual approval,
+        no traditional payment gateway required. Your website or API can charge AI Agents
+        directly. Our Standard plan supports X402 protocol integration, positioning your
+        business at the frontier of the AI Agent economy.
+
+# === Bottom-of-body CTA ===
+contactCta:
+  label: "Ready to make your brand visible to a global audience?"
+  subtitle: "Tell us your business needs — we reply within 1 business day with a proposal."
+  buttonText: "Contact Us"
 ---
 
 ### About This Service
@@ -93,7 +147,11 @@ From a $99 brand showcase to a $499 full e-commerce platform, every tier include
 * **Google Maps & Local Business Integration**: Automatic Google Business Profile submission to establish your brand presence in map search results for both local and international audiences.
 * **AI Customer Service Chatbot**: A built-in LLM-powered chat assistant answers visitor questions around the clock, improving conversion rates and reducing manual support workload.
 * **Automated Content Deployment**: A Git-driven CI/CD pipeline publishes updates in minutes after submission, with multi-language and multi-region sync support.
-* **Multilingual Internationalization**: Standard support for EN, ZH, JA, and KO with per-language SEO optimization to help brands enter East Asian and global markets.
+* **Multilingual Internationalization & i18n Architecture**: Full i18n stack with per-language routing, isolated translation files, and per-language SEO metadata — standard support for EN, ZH, JA, and KO with per-language SEO optimization, easily extensible to new languages without touching core code.
+* **Content-Function Separation**: Site content, navigation, and feature modules are managed separately via YAML/MDX configuration files — rearrange layouts or toggle features without touching code, dramatically reducing operational overhead.
+* **Responsive Design**: Dynamic layout adaptation for mobile, tablet, and desktop — ensuring optimal viewing experience and visual consistency across all screen sizes and resolutions.
+* **Bionic Reading Mode**: Typography enhanced with Bionic Reading principles — bolding the first characters of each word to guide the eye, improve reading speed, and boost information retention.
+* **Dark / Light Theme Support**: Built-in theme toggle with automatic system preference detection, delivering a comfortable reading experience in any lighting environment.
 * **User System & Payments (Standard)**: Complete registration/login system, product purchase flow, with Stripe credit card and USDT/ETH/BTC crypto payment support.
 * **Admin CMS (Standard)**: Graphical content management, order management, user management, and analytics dashboard — all in one place.
 

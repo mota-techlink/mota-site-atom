@@ -1,19 +1,19 @@
 - title: products
   items:
-    - title: motaAI
-      href: /products/mota-ai/
-      description: motaAI
-      featured: true
+    # - title: motaAI
+    #   href: /products/mota-ai/
+    #   description: motaAI
+    #   featured: true
     - title: sitebuild
       href: /products/sitebuild
       description: sitebuild
     - title: mvp
       href: /products/mvp
       description: mvp
-      featured: true
-    - title: scalup
-      href: /products/scalup
-      description: scalup
+      # featured: true
+    # - title: scalup
+    #   href: /products/scalup
+    #   description: scalup
 
 - title: resources
   items:

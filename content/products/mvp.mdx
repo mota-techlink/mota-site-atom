@@ -1,75 +1,155 @@
 ---
 # === Basic information (for list & SEO) ===
-title: "MVP"
-date: "YYYY-MM-DD"
-description: "[Short Description] A high-level summary of the product (150-160 characters recommended for SEO)."
-category: "[category-slug]" # e.g., visual-interaction, enterprise-efficiency, hardcore-tech
-order: 10 # Adjust order as needed
-techStack: ["[Tech 1]", "[Tech 2]", "[Tech 3]"] # e.g., Next.js, Python, AWS
+title: "MVP Hardware Prototyping"
+date: "2026-03-26"
+description: "From idea to reality — leveraging China's manufacturing efficiency and global logistics to deliver low-cost, high-speed hardware MVP prototypes. Starting at just $99."
+category: "hardware-mvp"
+order: 10
+techStack: ["3D Printing", "PCB Prototyping", "Firmware Development", "Supply Chain", "Global Logistics"]
 
 # === Detail Page Media (Left Column) ===
 # Recommended: 16:9 Aspect Ratio
 gallery:
-      - "/images/products/cover.webp" # Main image
-      - "/images/products/placehold-1.webp"
-  
+  - "/images/products/cover.webp"
+  - "/images/products/placehold-1.webp"
+
 # === Related Showcases (Bottom Section) ===
-# Use the slugs of other .mdx files you want to link to
 relatedShowcases:
-  - "GenAI-Driven"  
+  - "GenAI-Driven"
   - "Textile-Logo-QA"
   - "Edge-Native-AI-Assistant"
 
 # === Pricing Strategy (Right Sticky Column) ===
 pricing:
   - name: "Basic"
-    price: "$0.99"
-    description: "[Short description for entry-level users]"
-    deliveryTime: "[X] days"
+    price: "$99"
+    description: "Manufacture and ship your prototype based on your complete design files. The fastest, most affordable path from design to physical reality."
+    deliveryTime: "15–20 business days"
     features:
-      - "[Feature 1]"
-      - "[Feature 2]"
-      - "[Feature 3]"
-  
+      - "Requires complete design files (3D model / schematic / Gerber / firmware)"
+      - "3D-printed enclosure and structural parts"
+      - "PCB fabrication and SMT assembly"
+      - "Firmware flashing and basic power-on verification"
+      - "Full device assembly and adjustment"
+      - "International shipping (DHL / FedEx)"
+      - "Single prototype unit (multi-unit pricing available)"
+
   - name: "Standard"
-    price: "$498"
-    description: "[Short description for most users/businesses]"
-    deliveryTime: "[X] weeks"
+    price: "$999"
+    description: "Everything in Basic plus engineering review, BOM optimization, functional testing, and technical documentation for a more reliable validated prototype."
+    deliveryTime: "3–5 weeks"
     features:
       - "Everything in Basic"
-      - "[Advanced Feature 1]"
-      - "[Advanced Feature 2]"
-  
+      - "Design for Manufacturability (DFM) review"
+      - "BOM component optimization and cost-down recommendations"
+      - "PCB layout and routing review with improvement suggestions"
+      - "Firmware functional testing and basic debug support"
+      - "Preliminary environmental validation (per requirements)"
+      - "Up to 3 prototype units"
+      - "Delivery of test report and optimized BOM"
+      - "1 free revision cycle"
+
   - name: "Premium"
-    price: "Custom" 
-    description: "[Short description for large enterprises]"
-    deliveryTime: "[X] months"
+    price: "Custom Quote"
+    description: "Full end-to-end service from concept to production-ready prototype. A dedicated engineering team handles design, firmware, manufacturing, and supply chain."
+    deliveryTime: "Assessed per project, typically 2–4 months"
     features:
       - "Everything in Standard"
-      - "[Exclusive Feature 1]"
-      - "[Exclusive Feature 2]"
-      - "24/7 Support"
+      - "Requirements analysis and product feasibility assessment"
+      - "Hardware architecture design and component selection"
+      - "Schematic and PCB design (multi-layer supported)"
+      - "Industrial design and 3D modeling"
+      - "Embedded firmware / application software development"
+      - "Multiple prototype iterations (typically 2–3 rounds)"
+      - "Mass production feasibility assessment and supply chain onboarding"
+      - "Full engineering delivery package (design sources / firmware / production docs)"
+      - "IP protection advisory"
+      - "Dedicated project manager"
+      - "24/7 technical support"
 
 # === FAQ (Accordion Section) ===
 faq:
-  - question: "[Common Question 1]?"
-    answer: "[Clear and concise answer]."
-  - question: "[Common Question 2]?"
-    answer: "[Clear and concise answer]."
+  - question: "What design files are required for the Basic tier?"
+    answer: "You need to provide complete design files including: 3D enclosure model (STL/STEP), PCB schematic and Gerber files, component BOM, firmware binary (HEX/BIN/ELF), and assembly instructions. The more complete your files, the smoother the delivery. If your files are incomplete, we recommend the Standard or Premium tier."
+  - question: "How do you leverage China's supply chain advantages?"
+    answer: "Our partner network in Shenzhen covers PCB fabs, SMT assembly factories, 3D printing services, and direct access to the world's largest electronics component markets. This allows us to manufacture prototypes at globally competitive costs and speeds, then ship worldwide via DHL/FedEx."
+  - question: "What is the key difference between Basic and Standard?"
+    answer: "Basic is a pure manufacturing service — we build exactly what your files specify. Standard adds an engineering layer: we review your design for manufacturability, optimize the BOM, and run functional tests before shipping. It's ideal if your files haven't been production-validated or you want professional engineering input before committing to a design."
+  - question: "What stage of project is Premium best suited for?"
+    answer: "Premium is for projects still at the concept or early-design stage without a complete technical specification. Our team handles all engineering work from scratch and delivers a production-ready prototype — putting you in a position to move directly into fundraising demos or small-batch pilot production."
+  - question: "Does pricing include destination customs duties?"
+    answer: "Shipping costs are included in the quote. Destination import duties and taxes are the responsibility of the recipient (subject to each country's customs regulations). We provide full customs documentation and recommend DHL/FedEx for smooth clearance."
+  - question: "How do I get started?"
+    answer: "Use the contact button on this page to reach us with a brief description of your product or upload your existing design files. We typically respond within 1 business day with a recommended service tier and quote."
+
+# === Scenes accordion (renders above body, same accordion style as FAQ) ===
+scenes:
+  title: "Do Any of These Scenarios Sound Familiar?"
+  items:
+    - title: "💡 \"Great idea — but what's it actually like to use?\""
+      content: >-
+        Words and slides can only convey so much. A working prototype lets someone understand in 5 minutes
+        what you couldn't explain in 5 hours of talking.
+    - title: "🚀 \"Nice deck, but having a physical demo at the pitch would close a lot more investors.\""
+      content: >-
+        A prototype investors can hold, tap through, and watch respond in real time carries a trust
+        no slide deck can match. It's not just a demo — it's a silent letter of credit.
+    - title: "🔧 \"The code works in simulation, but I need to validate the hardware path.\""
+      content: >-
+        Passing tests in a simulator doesn't guarantee the same on real hardware. ESP32 field testing
+        exposes latency, power draw, sensor accuracy, and communication stability that simulation hides —
+        and finding them early is far cheaper to fix.
+    - title: "🌐 \"I need to demo remotely to an overseas client, but the prototype is here.\""
+      content: >-
+        We can ship directly to your client's overseas address, or deliver a prototype with a remote
+        control interface so you can demo to anyone, anywhere — Tokyo, San Francisco, or Dubai.
+    - title: "🏭 \"Will this sensor scheme actually work on the factory floor? Lab conditions are so different.\""
+      content: >-
+        Industrial IoT validation must happen in a real environment. We deliver not a showroom piece,
+        but a functional prototype you can bring into the factory, connect to actual equipment,
+        and run under real operating conditions.
+
+# === Bottom-of-body CTA ===
+contactCta:
+  label: "Ready to turn your idea into something real?"
+  subtitle: "Tell us your concept — we reply within 1 business day with a quote."
+  buttonText: "Contact Us"
 ---
 
 ### About This Service
-[Detailed description of the service or product. Explain the value proposition, the problem it solves, and why the client should choose it.]
 
-### Key Features
-* **[Feature Name]**: [Description of the feature]
-* **[Feature Name]**: [Description of the feature]
-* **[Feature Name]**: [Description of the feature]
+The AI era has democratized software creation — but there is still a real gap between ideas in the digital world and physical products you can hold in your hand.
+
+**MOTA MVP Hardware Prototyping** bridges that gap. By combining global supply chain resources, China's unmatched manufacturing efficiency, and streamlined international logistics, we make it possible for makers, independent developers, and early-stage startups to go from **idea to physical prototype** faster and cheaper than ever before.
+
+Whether you're an engineer with a complete design file set who needs rapid physical output, or a founder with only a product concept who needs end-to-end engineering support, we have a tier that fits exactly where you are.
+
+### Key Advantages
+
+* **China Manufacturing × Global Delivery**: Our Shenzhen partner network covers PCB fabrication, SMT assembly, 3D printing, and component sourcing — delivering prototypes at globally competitive costs via DHL/FedEx directly to your door.
+* **Full-Stack Engineering Capability**: From circuit design and PCB layout to industrial modeling and embedded firmware, our in-house engineering team covers every layer of hardware prototyping. Standard and Premium tiers include direct engineering support.
+* **Tiered to Your Stage**: Three tiers match three stages of readiness — complete files at $99, engineering review needed at $999, and starting from scratch at a custom quote. No bloated packages, no wasted spend.
+* **Transparent Progress Tracking**: Once your project starts, we provide real-time status updates and flag engineering issues as they arise, regardless of your timezone.
+* **Production-Ready Handoff**: Standard and Premium deliveries include a complete engineering package — design files, firmware, BOM, and production documentation — lowering the barrier to mass production or pilot runs.
 
 ### How It Works
-1.  **[Step 1 Name]**: [Brief explanation]
-2.  **[Step 2 Name]**: [Brief explanation]
-3.  **[Step 3 Name]**: [Brief explanation]
+
+1. **Align on Requirements**: Submit your product description and design files via the contact form. We respond within 1 business day with a recommended tier, scope confirmation, and delivery timeline.
+2. **Engineering Preparation**: Basic moves directly to production. Standard begins with DFM review and BOM optimization. Premium kicks off a full design and development process.
+3. **Manufacturing & Assembly**: PCB fabrication, SMT assembly, 3D printing, firmware flashing, and full device assembly are completed at our Shenzhen partner facilities under quality control.
+4. **Testing & Acceptance**: Basic receives power-on functional verification. Standard and Premium undergo systematic functional testing with a formal test report.
+5. **Pack & Ship**: Prototypes are ESD- and shock-protected, then shipped via DHL/FedEx to your address with real-time parcel tracking.
 
 ### Use Cases
-> "[Insert a powerful quote, a testimonial, or a specific scenario where this product shines.]"
+
+> "The AI revolution has lowered the barrier to hardware entrepreneurship dramatically — but you still need a reliable manufacturing pipeline to turn a circuit board design into something real you can demo. That's exactly what we're here for."
+>
+> — MOTA Team
+
+**Typical Applications:**
+* IoT sensor nodes and smart home device prototyping
+* Industrial controllers and edge computing module prototyping
+* Wearable and medical health terminal concept validation
+* Robotics and drone control board customization
+* Maker competitions and hackathon rapid prototyping
+* Investor demo unit production
