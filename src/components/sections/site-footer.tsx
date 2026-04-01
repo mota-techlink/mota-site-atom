@@ -114,7 +114,7 @@ export async function SiteFooter({ className }: { className?: string }) {
           <p>&copy; {new Date().getFullYear()} {siteConfig.name}. {footerT("allRightsReserved")}</p>
           <div className="flex gap-4">
              {/* 可以在这里放一些底部的额外链接或 Status Indicator */}
-             <span>{footerT("madeWithLove")}</span>
+             {/* <span>{footerT("madeWithLove")}</span> */}
           </div>
         </div>
       </div>

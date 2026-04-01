@@ -46,6 +46,41 @@ function isWebsiteUrl(url: string): boolean {
   }
 }
 
+/** Parses [text](url) markdown links in FAQ answer strings and renders them as styled anchors */
+function renderFaqAnswer(text: string): React.ReactNode {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (match) {
+      const [, label, href] = match;
+      const isExternal = href.startsWith('http');
+      return (
+        <Link
+          key={i}
+          href={href}
+          target={isExternal ? '_blank' : undefined}
+          rel={isExternal ? 'noopener noreferrer' : undefined}
+          className="inline-flex items-center gap-1 font-semibold relative group"
+        >
+          {/* Gradient text */}
+          <span className="bg-linear-to-r from-blue-600 to-violet-600 dark:from-cyan-400 dark:to-violet-400 bg-clip-text text-transparent transition-opacity group-hover:opacity-80">
+            {label}
+          </span>
+          {/* Gradient underline — slides in on hover from the origin */}
+          <span
+            aria-hidden
+            className="absolute bottom-0 left-0 h-px w-full bg-linear-to-r from-blue-600 to-violet-600 dark:from-cyan-400 dark:to-violet-400 scale-x-100 group-hover:scale-x-110 transition-transform origin-left"
+          />
+          {isExternal && (
+            <ArrowRight className="w-3 h-3 text-violet-500 dark:text-violet-400 transition-transform group-hover:translate-x-0.5" />
+          )}
+        </Link>
+      );
+    }
+    return <React.Fragment key={i}>{part}</React.Fragment>;
+  });
+}
+
 // 🔧 动态导入重型组件 - 减少首屏 JS 约 200kB+
 const CryptoPaymentModal = dynamic(
   () => import("@/components/payments/crypto-payment-modal").then(mod => mod.CryptoPaymentModal),
@@ -574,11 +609,53 @@ export function ProductLayout({ data, content }: ProductLayoutProps) {
             <PricingWidget data={data} />
           </div>
 
+          {/* B-pre. Scenes Accordion (frontmatter `scenes:`) */}
+          {data.scenes && Array.isArray(data.scenes.items) && data.scenes.items.length > 0 && (
+            <div>
+              {data.scenes.title && (
+                <h3 className="text-xl font-bold mb-4">{data.scenes.title}</h3>
+              )}
+              <Accordion type="single" collapsible className="w-full divide-y divide-border rounded-xl border">
+                {data.scenes.items.map((scene: { title: string; content: string }, idx: number) => (
+                  <AccordionItem key={idx} value={`scene-${idx}`} className="border-none px-4">
+                    <AccordionTrigger className="text-left font-semibold text-sm py-4 hover:no-underline">
+                      {scene.title}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground text-sm pb-4 leading-relaxed">
+                      {scene.content}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          )}
+
           {/* B. About This Service (MDX Content) */}
           <div className="prose prose-slate dark:prose-invert max-w-none">
-            <h3 className="text-xl font-bold mb-4">{t("aboutThisService")}</h3>
+            {/* <h3 className="text-xl font-bold mb-4">{t("aboutThisService")}</h3> */}
             {content}
           </div>
+
+          {/* B-post. Contact CTA (frontmatter `contactCta:`) */}
+          {data.contactCta && (
+            <div className="not-prose rounded-2xl bg-linear-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="text-center sm:text-left">
+                <p className="text-base font-semibold text-foreground">
+                  {data.contactCta.label}
+                </p>
+                {data.contactCta.subtitle && (
+                  <p className="text-sm text-muted-foreground mt-0.5">{data.contactCta.subtitle}</p>
+                )}
+              </div>
+              <Link
+                href="/contact"
+                className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md hover:opacity-90 active:scale-95 transition-all"
+              >
+                {data.contactCta.buttonText ?? "Contact Us"}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          )}
 
           {/* C. Tech Stack (Icons) */}
           <div className="border rounded-xl p-6 bg-muted/30">
@@ -602,7 +679,9 @@ export function ProductLayout({ data, content }: ProductLayoutProps) {
               {data.faq.map((item: any, idx: number) => (
                 <AccordionItem key={idx} value={`item-${idx}`}>
                   <AccordionTrigger>{item.question}</AccordionTrigger>
-                  <AccordionContent>{item.answer}</AccordionContent>
+                  <AccordionContent>
+                    {renderFaqAnswer(item.answer)}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
