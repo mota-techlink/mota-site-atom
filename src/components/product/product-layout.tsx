@@ -534,7 +534,7 @@ function PricingWidget({ data }: { data: any }) {
               <CardHeader className="pb-3">
                 <CardTitle className="text-base flex items-center gap-2">
                    <ShieldCheck className="w-5 h-5 text-primary" />
-                   {t("whyMotaAtom")}
+                   {t("whyMota")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground space-y-3">

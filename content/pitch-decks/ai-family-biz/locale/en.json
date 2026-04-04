@@ -24,7 +24,7 @@
       { "value": "7,500+", "label": "Related Personnel" },
       { "value": "2", "label": "Strategic Phases" }
     ],
-    "website": "atom.motaiot.com"
+    "website": "motaiot.com"
   },
   "slide2": {
     "badge": "Core Principles",
@@ -420,7 +420,7 @@
     },
     "cta": {
       "label": "Start the Conversation",
-      "website": "atom.motaiot.com"
+      "website": "motaiot.com"
     },
     "footer": "MOTA TECHLINK INC. — Empowering Legacy Businesses with AI"
   }

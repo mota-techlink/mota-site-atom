@@ -83,7 +83,7 @@ export async function POST(req: Request) {
 
     // D. 构建 Prompt
     const systemPrompt = `
-      You are the AI support assistant for MOTA ATOM.
+      You are the AI support assistant for MOTA TECHLINK.
       
       Instructions:
       1. Answer the question based ONLY on the context below.

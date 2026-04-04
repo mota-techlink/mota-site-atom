@@ -1,13 +1,13 @@
 ---
 title: "오픈소스 프로젝트로 디지털 휴먼을 생성하는 방법"
 date: "2025-12-26 08:31:05"
-description: "MOTA ATOM 오픈소스 프로젝트 동기화: dh_pipeline 기술 백서"
+description: "MOTA TECHLINK 오픈소스 프로젝트 동기화: dh_pipeline 기술 백서"
 categories: ["오픈소스", "백서"]
 tags: ["데이터 파이프라인", "IoT"]
 image: "https://raw.githubusercontent.com/mota-techlink/dh_pipeline/refs/heads/main/assets/images/cover.jpg"
 canonicalUrl: "https://github.com/mota-techlink/dh_pipeline"
-keywords: ["디지털 휴먼", "LivePortrait", "MuseTalk", "AI 비디오 파이프라인", "MOTA ATOM"]
-author: "MOTA ATOM"
+keywords: ["디지털 휴먼", "LivePortrait", "MuseTalk", "AI 비디오 파이프라인", "MOTA TECHLINK"]
+author: "MOTA TECHLINK"
 ---
 
 # 올인원 디지털 휴먼 비디오 파이프라인
@@ -15,7 +15,7 @@ author: "MOTA ATOM"
   <img src="https://raw.githubusercontent.com/mota-techlink/dh_pipeline/refs/heads/main/assets/images/cover.jpg" alt="MOTA dh_pipeline"/>
 </p>
 
-로컬 환경에서 사실적인 디지털 휴먼 비디오를 생성하기 위해 설계된 모듈식 고효율 파이프라인입니다. LivePortrait를 통한 모션 동기화와 MuseTalk을 통한 정밀한 립싱크를 통합하며, MOTA ATOM의 최적화 로직으로 구동됩니다.
+로컬 환경에서 사실적인 디지털 휴먼 비디오를 생성하기 위해 설계된 모듈식 고효율 파이프라인입니다. LivePortrait를 통한 모션 동기화와 MuseTalk을 통한 정밀한 립싱크를 통합하며, MOTA TECHLINK의 최적화 로직으로 구동됩니다.
 
 <div align="left">  
   <a href="https://zdoc.app/zh/mota-techlink/dh_pipeline">中文</a> | 
@@ -339,7 +339,7 @@ sh inference.sh v1.5 realtime
 A: 네, 최소 8GB VRAM이 탑재된 NVIDIA GPU(RTX 3060 이상)에 최적화되어 있습니다.
 
 **Q: 실시간 생성을 지원하나요?**
-A: 현재는 고속 오프라인 추론을 지원합니다. 실시간 지원은 MOTA ATOM 로드맵에 포함되어 있습니다.
+A: 현재는 고속 오프라인 추론을 지원합니다. 실시간 지원은 MOTA TECHLINK 로드맵에 포함되어 있습니다.
 
 **Q: 다른 제공업체 대신 Edge-TTS를 사용하는 이유는 무엇인가요?**
 A: Edge-TTS는 자연스러운 운율과 비용 없는 로컬 통합 사이에서 최적의 균형을 제공합니다.

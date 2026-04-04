@@ -1,13 +1,13 @@
 ---
 title: "How to generating Digital Human via opensource project"
 date: "2025-12-26 08:31:05"
-description: "Sync up from MOTA ATOM's opensource project: dh_pipeline technical white paper"
+description: "Sync up from MOTA TECHLINK's opensource project: dh_pipeline technical white paper"
 categories: ["Opensource", "White paper"]
 tags: ["Data Pipeline", "IoT"]
 image: "https://raw.githubusercontent.com/mota-techlink/dh_pipeline/refs/heads/main/assets/images/cover.jpg"
 canonicalUrl: "https://github.com/mota-techlink/dh_pipeline"
-keywords: ["Digital Human", "LivePortrait", "MuseTalk", "AI Video Pipeline", "MOTA ATOM"]
-author: "MOTA ATOM"
+keywords: ["Digital Human", "LivePortrait", "MuseTalk", "AI Video Pipeline", "MOTA TECHLINK"]
+author: "MOTA TECHLINK"
 ---
 
 # All-in-One Digital Human Video Pipeline
@@ -15,7 +15,7 @@ author: "MOTA ATOM"
   <img src="https://raw.githubusercontent.com/mota-techlink/dh_pipeline/refs/heads/main/assets/images/cover.jpg" alt="MOTA dh_pipeline"/>
 </p>
 
-A modular and high-efficiency pipeline designed to generate realistic digital human videos locally. It integrates LivePortrait for motion synchronization and MuseTalk for precise lip-sync, powered by MOTA ATOM's optimization logic.
+A modular and high-efficiency pipeline designed to generate realistic digital human videos locally. It integrates LivePortrait for motion synchronization and MuseTalk for precise lip-sync, powered by MOTA TECHLINK's optimization logic.
 
 
 <div align="left">  
@@ -341,7 +341,7 @@ sh inference.sh v1.5 realtime
 A: Yes, it is optimized for NVIDIA GPUs with at least 8GB VRAM (e.g., RTX 3060 and above).
 
 **Q: Does it support real-time generation?**
-A: Currently, it supports high-speed offline inference. Real-time support is in the MOTA ATOM roadmap.
+A: Currently, it supports high-speed offline inference. Real-time support is in the MOTA TECHLINK roadmap.
 
 **Q: Why use Edge-TTS instead of other providers?**
 A: Edge-TTS provides the best balance between natural prosody and zero-cost local integration.

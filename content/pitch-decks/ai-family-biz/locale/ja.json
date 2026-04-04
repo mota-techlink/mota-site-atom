@@ -24,7 +24,7 @@
       { "value": "7,500+", "label": "関係者" },
       { "value": "2", "label": "戦略段階" }
     ],
-    "website": "atom.motaiot.com"
+    "website": "motaiot.com"
   },
   "slide2": {
     "badge": "コア原則",
@@ -432,7 +432,7 @@
     },
     "cta": {
       "label": "お話を始めましょう",
-      "website": "atom.motaiot.com"
+      "website": "motaiot.com"
     },
     "footer": "MOTA TECHLINK INC. — AIで受け継がれてきた企業に新たな力を"
   }

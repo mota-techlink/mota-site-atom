@@ -1,13 +1,13 @@
 ---
 title: "Scoutプロジェクト：反転する原子の番兵"
 date: "2026-01-09 11:43:43"
-description: "混沌を再構築：MOTA ATOMのオープンソース番兵が高価値エッジデータを監視する方法。"
+description: "混沌を再構築：MOTA TECHLINKのオープンソース番兵が高価値エッジデータを監視する方法。"
 categories: ["オープンソース", "インフラストラクチャ"]
 tags: ["Cloudflare Workers", "データパイプライン", "自動化"]
 image: "https://raw.githubusercontent.com/mota-techlink/mota-scout-public/main/assets/images/cover.jpg"
 canonicalUrl: "https://github.com/mota-techlink/mota-scout-public"
-keywords: ["MOTA ATOM", "Scout", "エッジコンピューティング", "混沌を再構築"]
-author: "MOTA ATOM"
+keywords: ["MOTA TECHLINK", "Scout", "エッジコンピューティング", "混沌を再構築"]
+author: "MOTA TECHLINK"
 ---
 
 # Scoutプロジェクト：反転する原子の番兵
@@ -93,4 +93,4 @@ SUPABASE_KEY：Service Roleキー（Secretとして保存）。
 
 **Q：安全に運用できますか？** A：はい。すべての機密キーはCloudflare SecretsとGitHub Actionsで管理されています。
 
-[MOTA ATOM：](https://motaiot.com) **ビットから原子へ、反転。**
+[MOTA TECHLINK：](https://motaiot.com) **ビットから原子へ、反転。**

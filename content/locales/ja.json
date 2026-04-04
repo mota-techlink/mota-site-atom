@@ -176,7 +176,7 @@
     "topics": "トピック"
   },
   "MotaAIList": {
-    "badge": "MOTA ATOM インテリジェンススイート",
+    "badge": "MOTA TECHLINK インテリジェンススイート",
     "titleLine1": "未来のビジネスのための",
     "titleLine2": "インテリジェントソリューション",
     "description": "生成系デジタルヒューマンからエッジ AI 量子化まで、業務自動化と拡張を支える先端モデルを提供します。",
@@ -215,7 +215,7 @@
     "orderConfirmed": "{productName} - {tierName} の注文が確定しました。",
     "delivery": "納期",
     "unlimitedRevisions": "無制限の修正",
-    "whyMotaAtom": "なぜ MOTA ATOM？",
+    "whyMota": "なぜ MOTA TECHLINK なのか？",
     "provenExpertise": "実績：",
     "provenExpertiseDesc": "50件以上のエンタープライズ AI ソリューションを提供。",
     "dataPrivacy": "データプライバシー：",
@@ -298,7 +298,7 @@
     "storyTitle": "私たちのストーリー",
     "storyParagraph1": "きっかけは単純な気づきでした。SaaS 資産やコンピュータビジョンデータセットの管理は、従来ツールでは複雑すぎるということです。",
     "storyParagraph2": "生成 AI は単なる流行語ではなく、新しいワークフローを解放する鍵だと確信しました。収集だけでなく生成を活用し、開発サイクルを 10 倍高速化できます。",
-    "storyParagraph3": "現在 MOTA ATOM は、多くの開発者と企業が混沌を整理し、より速く構築することを支援しています。",
+    "storyParagraph3": "現在 MOTA TECHLINK は、多くの開発者と企業が混沌を整理し、より速く構築することを支援しています。",
     "statsUsers": "ユーザー",
     "statsUptime": "稼働率",
     "statsIntegrations": "連携",
@@ -336,9 +336,9 @@
     "recent": "最近",
     "historyComing": "履歴（近日公開）",
     "greeting": "こんにちは、旅人よ。",
-    "subtitle": "今日はMOTA ATOMで何をお手伝いしましょうか？",
-    "placeholder": "MOTA ATOMにメッセージを送信...",
-    "disclaimer": "MOTA ATOMは間違えることがあります。重要な情報はご確認ください。"
+    "subtitle": "今日はMOTA TECHLINKで何をお手伝いしましょうか？",
+    "placeholder": "MOTA TECHLINKにメッセージを送信...",
+    "disclaimer": "MOTA TECHLINKは間違えることがあります。重要な情報はご確認ください。"
   },
   "Footer": {
     "allRightsReserved": "All rights reserved.",

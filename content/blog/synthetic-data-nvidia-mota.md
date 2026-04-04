@@ -1,7 +1,7 @@
 ---
 title: "Sim-to-Real: Why Synthetic Data is the New Fuel for Industrial AIoT"
 date: "2026-01-06 09:00:00"
-description: "Inspired by NVIDIA's robot training in virtual worlds, MOTA ATOM explores how Generative AI synthesizes industrial data to accelerate Edge AI deployment."
+description: "Inspired by NVIDIA's robot training in virtual worlds, MOTA TECHLINK explores how Generative AI synthesizes industrial data to accelerate Edge AI deployment."
 categories: ["AI Engineering", "Edge AI"]
 tags: ["NVIDIA", "Synthetic Data", "GenAI", "Industrial IoT", "Edge Computing"]
 # 封面图可以使用你推文里的那张架构图
@@ -10,7 +10,7 @@ image: "/images/showcase/Edge-Computing/GenAI-Cover.webp"
 
 Yesterday, **NVIDIA** showcased how the next generation of robots is being trained entirely within virtual simulations (sim-to-real). The core message is clear: **Real-world data is no longer enough.**
 
-At **MOTA ATOM**, we are bringing this same "NVIDIA-level" logic to the **Industrial IoT** landscape. 
+At **MOTA TECHLINK**, we are bringing this same "NVIDIA-level" logic to the **Industrial IoT** landscape. 
 
 ### Bridging the Gap with GenAI
 

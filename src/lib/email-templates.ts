@@ -16,7 +16,7 @@ export function getPaymentMethodAddedEmailHtml(customerName: string, last4: stri
           <!-- Logo Section -->
           <tr>
             <td align="center" style="padding: 20px 0;">
-              <img src="https://atom.motaiot.com/logos/mota-techlink-logo-v2.webp" width="160" alt="Mota Techlink" style="max-width: 100%; height: auto;">
+              <img src="https://motaiot.com/logos/mota-techlink-logo-v2.webp" width="160" alt="Mota Techlink" style="max-width: 100%; height: auto;">
             </td>
           </tr>
           
@@ -30,7 +30,7 @@ export function getPaymentMethodAddedEmailHtml(customerName: string, last4: stri
               <p style="font-size: 16px; line-height: 26px; color: #cbd5e1; margin: 0 0 16px;">You have successfully added a new payment method (ending in ${escapeHtml(last4)}) to your account. This card can now be used for faster checkouts.</p>
               
               <div style="text-align: center; margin: 32px 0;">
-                <a href="https://atom.motaiot.com/dashboard/settings" style="background-color: #2563eb; border-radius: 6px; color: #fff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 12px 24px; display: inline-block;">Manage Payment Methods</a>
+                <a href="https://motaiot.com/dashboard/settings" style="background-color: #2563eb; border-radius: 6px; color: #fff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 12px 24px; display: inline-block;">Manage Payment Methods</a>
               </div>
               
               <p style="font-size: 16px; line-height: 26px; color: #cbd5e1; margin: 0;">If you did not authorize this action, please contact our support team immediately.</p>
@@ -74,7 +74,7 @@ export function getOrderConfirmationEmailHtml(
           <!-- Logo Section -->
           <tr>
             <td align="center" style="padding: 20px 0;">
-              <img src="https://atom.motaiot.com/logos/mota-techlink-logo-v2.webp" width="160" alt="Mota" style="max-width: 100%; height: auto;">
+              <img src="https://motaiot.com/logos/mota-techlink-logo-v2.webp" width="160" alt="Mota" style="max-width: 100%; height: auto;">
             </td>
           </tr>
           
@@ -113,7 +113,7 @@ export function getOrderConfirmationEmailHtml(
               </div>
               
               <div style="text-align: center;">
-                <a href="https://atom.motaiot.com/dashboard/orders" style="background-color: #2563eb; border-radius: 6px; color: #fff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 12px 24px; display: inline-block;">Track Order</a>
+                <a href="https://motaiot.com/dashboard/orders" style="background-color: #2563eb; border-radius: 6px; color: #fff; font-size: 16px; font-weight: bold; text-decoration: none; padding: 12px 24px; display: inline-block;">Track Order</a>
               </div>
             </td>
           </tr>

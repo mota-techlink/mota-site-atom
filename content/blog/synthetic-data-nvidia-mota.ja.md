@@ -1,7 +1,7 @@
 ---
 title: "Sim-to-Real：合成データが産業AIoTの新たな燃料となる理由"
 date: "2026-01-06 09:00:00"
-description: "NVIDIAが仮想世界でロボットを訓練する手法に触発され、MOTA ATOMは生成AIによる産業データの合成を通じて、エッジAIの実用展開を加速する方法を探ります。"
+description: "NVIDIAが仮想世界でロボットを訓練する手法に触発され、MOTA TECHLINKは生成AIによる産業データの合成を通じて、エッジAIの実用展開を加速する方法を探ります。"
 categories: ["AI Engineering", "Edge AI"]
 tags: ["NVIDIA", "Synthetic Data", "GenAI", "Industrial IoT", "Edge Computing"]
 image: "/images/showcase/Edge-Computing/GenAI-Cover.webp"
@@ -9,7 +9,7 @@ image: "/images/showcase/Edge-Computing/GenAI-Cover.webp"
 
 昨日、**NVIDIA** は次世代ロボットが完全に仮想シミュレーション環境で訓練される手法（Sim-to-Real）を披露しました。核心メッセージは明確です：**現実世界のデータだけではもはや十分ではありません。**
 
-**MOTA ATOM** では、同じ「NVIDIAレベル」のロジックを**産業IoT**の領域に導入しています。
+**MOTA TECHLINK** では、同じ「NVIDIAレベル」のロジックを**産業IoT**の領域に導入しています。
 
 ### GenAIでギャップを埋める
 多くの産業シナリオでは、希少なイベント（特定の機械故障やセキュリティ脆弱性など）の高品質データを収集するのは、コストと時間の両面で大きな負担です。

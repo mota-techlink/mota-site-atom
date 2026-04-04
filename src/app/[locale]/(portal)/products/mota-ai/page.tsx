@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "MOTA ATOM Solutions - Empower Your Business",
+  title: "MOTA TECHLINK Solutions - Empower Your Business",
   description: "Explore our suite of AI products tailored for enterprise efficiency and visual innovation.",
 };
 
@@ -81,7 +81,7 @@ export default async function AIProductListPage({ params }: { params: { locale: 
   const { locale } = await params;
   const t = await getTranslations("MotaAIList");
   
-  // 1. 获取所有 MOTA ATOM 产品  
+  // 1. 获取所有 MOTA TECHLINK 产品  
   const products = getContents("mota-ai", locale);
   // 2. 排序逻辑：有配置的按 order 排，没配置的放最后
   const sortedProducts = products.sort((a, b) => {

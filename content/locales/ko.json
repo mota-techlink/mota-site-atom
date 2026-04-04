@@ -176,7 +176,7 @@
     "topics": "주제"
   },
   "MotaAIList": {
-    "badge": "MOTA ATOM 인텔리전스 스위트",
+    "badge": "MOTA TECHLINK 인텔리전스 스위트",
     "titleLine1": "미래 비즈니스를 위한",
     "titleLine2": "지능형 솔루션",
     "description": "제너레이티브 디지털 휴먼부터 엣지 AI 양자화까지, 운영 자동화 및 확장을 위한 첨단 모델을 탐색하세요.",
@@ -215,7 +215,7 @@
     "orderConfirmed": "{productName} - {tierName} 주문이 확정되었습니다.",
     "delivery": "납기",
     "unlimitedRevisions": "무제한 수정",
-    "whyMotaAtom": "왜 MOTA ATOM인가?",
+    "whyMota": "왜 MOTA TECHLINK인가?",
     "provenExpertise": "검증된 전문성:",
     "provenExpertiseDesc": "50건 이상의 엔터프라이즈 AI 솔루션 제공.",
     "dataPrivacy": "데이터 프라이버시:",
@@ -298,7 +298,7 @@
     "storyTitle": "우리의 이야기",
     "storyParagraph1": "SaaS 자산과 컴퓨터 비전 데이터셋을 관리하는 것이 점점 복잡해지고 있다는 단순한 관찰에서 시작되었습니다. 기존 도구는 투박하고, 느리고, 단절되어 있었습니다.",
     "storyParagraph2": "생성형 AI는 단순한 유행어가 아니라 새로운 워크플로우를 여는 열쇠라는 것을 깨달았습니다. 데이터를 수집하는 것이 아니라 생성함으로써 개발 주기를 10배 가속할 수 있습니다.",
-    "storyParagraph3": "현재 MOTA ATOM은 수천 명의 개발자와 기업이 혼돈을 정리하고 더 빠르게 구축하도록 지원하고 있습니다.",
+    "storyParagraph3": "현재 MOTA TECHLINK은 수천 명의 개발자와 기업이 혼돈을 정리하고 더 빠르게 구축하도록 지원하고 있습니다.",
     "statsUsers": "사용자",
     "statsUptime": "가동률",
     "statsIntegrations": "통합",
@@ -336,9 +336,9 @@
     "recent": "최근",
     "historyComing": "기록 (곧 출시)",
     "greeting": "안녕하세요, 여행자님.",
-    "subtitle": "오늘 MOTA ATOM에서 무엇을 도와드릴까요?",
-    "placeholder": "MOTA ATOM에 메시지 보내기...",
-    "disclaimer": "MOTA ATOM은 실수할 수 있습니다. 중요한 정보는 확인해주세요."
+    "subtitle": "오늘 MOTA TECHLINK에서 무엇을 도와드릴까요?",
+    "placeholder": "MOTA TECHLINK에 메시지 보내기...",
+    "disclaimer": "MOTA TECHLINK은 실수할 수 있습니다. 중요한 정보는 확인해주세요."
   },
   "Footer": {
     "allRightsReserved": "All rights reserved.",

@@ -24,7 +24,7 @@
       { "value": "7,500+", "label": "相关人员" },
       { "value": "2", "label": "战略阶段" }
     ],
-    "website": "atom.motaiot.com"
+    "website": "motaiot.com"
   },
   "slide2": {
     "badge": "核心原则",
@@ -420,7 +420,7 @@
     },
     "cta": {
       "label": "开始对话",
-      "website": "atom.motaiot.com"
+      "website": "motaiot.com"
     },
     "footer": "MOTA TECHLINK INC. — 以AI赋能传承企业"
   }

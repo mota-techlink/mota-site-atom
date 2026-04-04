@@ -1,13 +1,13 @@
 ---
 title: "如何通过开源项目生成数字人"
 date: "2025-12-26 08:31:05"
-description: "同步自 MOTA ATOM 开源项目：dh_pipeline 技术白皮书"
+description: "同步自 MOTA TECHLINK 开源项目：dh_pipeline 技术白皮书"
 categories: ["开源", "白皮书"]
 tags: ["数据管道", "IoT"]
 image: "https://raw.githubusercontent.com/mota-techlink/dh_pipeline/refs/heads/main/assets/images/cover.jpg"
 canonicalUrl: "https://github.com/mota-techlink/dh_pipeline"
-keywords: ["数字人", "LivePortrait", "MuseTalk", "AI 视频管道", "MOTA ATOM"]
-author: "MOTA ATOM"
+keywords: ["数字人", "LivePortrait", "MuseTalk", "AI 视频管道", "MOTA TECHLINK"]
+author: "MOTA TECHLINK"
 ---
 
 # 一体化数字人视频管道
@@ -15,7 +15,7 @@ author: "MOTA ATOM"
   <img src="https://raw.githubusercontent.com/mota-techlink/dh_pipeline/refs/heads/main/assets/images/cover.jpg" alt="MOTA dh_pipeline"/>
 </p>
 
-一个模块化、高效率的管道，专为本地生成逼真数字人视频而设计。它集成了 LivePortrait 用于动作同步，MuseTalk 用于精准唇形同步，并由 MOTA ATOM 的优化逻辑驱动。
+一个模块化、高效率的管道，专为本地生成逼真数字人视频而设计。它集成了 LivePortrait 用于动作同步，MuseTalk 用于精准唇形同步，并由 MOTA TECHLINK 的优化逻辑驱动。
 
 <div align="left">  
   <a href="https://zdoc.app/zh/mota-techlink/dh_pipeline">中文</a> | 
@@ -335,7 +335,7 @@ sh inference.sh v1.5 realtime
 答：可以，它针对至少 8GB 显存的 NVIDIA GPU（如 RTX 3060 及以上）进行了优化。
 
 **问：是否支持实时生成？**
-答：目前支持高速离线推理。实时支持已在 MOTA ATOM 路线图中。
+答：目前支持高速离线推理。实时支持已在 MOTA TECHLINK 路线图中。
 
 **问：为什么使用 Edge-TTS 而不是其他服务商？**
 答：Edge-TTS 在自然韵律和零成本本地集成之间提供了最佳平衡。

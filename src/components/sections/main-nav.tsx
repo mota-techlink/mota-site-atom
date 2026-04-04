@@ -36,7 +36,7 @@ export function MainNav() {
                       : "lg:grid-cols-2" // 否则显示普通双列
                   )}>
                     {item.items.map((subItem) => {
-                      // 特色大卡片渲染 (例如 MOTA ATOM)
+                      // 特色大卡片渲染 (例如 MOTA )
                       if (subItem.featured) {
                         return (
                           <li key={subItem.title} className="row-span-3">

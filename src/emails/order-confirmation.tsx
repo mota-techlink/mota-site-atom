@@ -22,7 +22,7 @@ export default function OrderConfirmationEmail({
         <Container style={container}>
           {/* Logo Section (Same as above) */}
           <Section style={logoContainer}>
-             <Img src="https://atom.motaiot.com/logos/mota-techlink-logo-v2.webp" width="160" alt="Mota" />
+             <Img src="https://motaiot.com/logos/mota-techlink-logo-v2.webp" width="160" alt="Mota" />
           </Section>
 
           <Section style={content}>
@@ -50,7 +50,7 @@ export default function OrderConfirmationEmail({
               </Row>
             </Section>
 
-            <Button style={button} href="https://atom.motaiot.com/dashboard/orders">
+            <Button style={button} href="https://motaiot.com/dashboard/orders">
               Track Order
             </Button>
           </Section>

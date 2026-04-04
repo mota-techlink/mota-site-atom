@@ -3,7 +3,7 @@ title: "边缘原生 AI 助手：企业 RAG 解决方案"
 date: 2025-11-16
 image: "/images/showcase/chatbot/chatbot-cover.webp" 
 description: "一个高性能、无服务器的 AI 聊天机器人，完全构建在 Cloudflare 边缘网络上。具备检索增强生成（RAG）、自定义 OAuth 2.0 安全认证和实时流式传输功能，以极低成本提供企业级 AI 交互。"
-meta_title: "边缘原生 AI RAG 聊天机器人案例研究 - MOTA ATOM"
+meta_title: "边缘原生 AI RAG 聊天机器人案例研究 - MOTA TECHLINK"
 tags: ["AI", "RAG", "Cloudflare", "无服务器", "边缘计算"]
 categories: ["AI 工程"]
 draft: false
@@ -13,7 +13,7 @@ draft: false
 
 在生成式 AI 时代，企业需要能够理解其特定领域知识、确保数据隐私并以低延迟运行的<Gradient from="red" to="orange">智能助手</Gradient>。标准的"封装"解决方案往往面临高昂的 API 成本、缓慢的响应时间和数据幻觉问题。
 
-**MOTA ATOM** 设计了一个全栈、边缘原生的 AI 解决方案，利用**检索增强生成（RAG）**基于私有企业数据提供准确、上下文感知的回答。通过绕过传统的重型服务器，利用 Cloudflare 的全球边缘网络，我们实现了无与伦比的性能和成本效率。
+**MOTA TECHLINK** 设计了一个全栈、边缘原生的 AI 解决方案，利用**检索增强生成（RAG）**基于私有企业数据提供准确、上下文感知的回答。通过绕过传统的重型服务器，利用 Cloudflare 的全球边缘网络，我们实现了无与伦比的性能和成本效率。
 
 ##### <Gradient from="orange" to="green"> 与机器人对话 </Gradient>[🤖](/help)
 
@@ -44,7 +44,7 @@ draft: false
 ### 核心功能
 
 #### 1. 检索增强生成（RAG）
-与通用聊天机器人不同，我们的系统在回答前会"阅读"MOTA ATOM 的专有文档。我们利用 **AutoRAG** 工作流来嵌入、索引和检索相关上下文，确保回答准确且无幻觉。
+与通用聊天机器人不同，我们的系统在回答前会"阅读"MOTA TECHLINK 的专有文档。我们利用 **AutoRAG** 工作流来嵌入、索引和检索相关上下文，确保回答准确且无幻觉。
 
 #### 2. 原生 OAuth 2.0 实现
 为了克服边缘运行时的限制，我们设计了一个轻量级的原生 OAuth 身份认证流程。
@@ -92,4 +92,4 @@ draft: false
 
 ## 结论
 
-本项目展示了 **MOTA ATOM** 交付复杂、全栈 AI 解决方案的能力。我们不仅仅是集成 API；我们架构安全、可扩展且高性价比的系统，为现代边缘环境量身定制。
+本项目展示了 **MOTA TECHLINK** 交付复杂、全栈 AI 解决方案的能力。我们不仅仅是集成 API；我们架构安全、可扩展且高性价比的系统，为现代边缘环境量身定制。

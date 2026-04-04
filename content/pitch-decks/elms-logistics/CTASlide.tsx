@@ -329,7 +329,7 @@ export function CTASlide() {
           transition={{ delay: 1.5, duration: 0.6 }}
         >
           <motion.a
-            href="https://atom.motaiot.com/zh/contact"
+            href="https://motaiot.com/contact"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative px-6 md:px-8 py-3 md:py-3.5 bg-white text-slate-950 font-bold rounded-xl text-sm md:text-base overflow-hidden transition-all inline-block"
@@ -368,7 +368,7 @@ export function CTASlide() {
             <span className="flex items-center gap-1.5 hover:text-blue-400/70 transition-colors cursor-pointer">
               {/* <Globe className="w-3 h-3" /> */}
               <a
-                        href="https://atom.motaiot.com"
+                        href="https://motaiot.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 font-medium tracking-wider text-blue-500 hover:text-blue-400 transition-colors"

@@ -614,7 +614,7 @@ export function VisionHookSlide() {
         transition={{ delay: 2.0, duration: 0.5 }}
       >
         <a
-          href="https://atom.motaiot.com"
+          href="https://motaiot.com"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 font-medium tracking-wider text-blue-500 hover:text-blue-400 transition-colors"

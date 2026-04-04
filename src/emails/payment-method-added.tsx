@@ -18,7 +18,7 @@ export default function PaymentMethodAddedEmail({ customerName, last4 = "••�
           {/* Logo */}
           <Section style={logoContainer}>
              <Img 
-              src="https://atom.motaiot.com/logos/mota-techlink-logo-v2.webp" 
+              src="https://motaiot.com/logos/mota-techlink-logo-v2.webp" 
               width="160" 
               alt="Mota Techlink" 
              />
@@ -32,7 +32,7 @@ export default function PaymentMethodAddedEmail({ customerName, last4 = "••�
               You have successfully added a new payment method (ending in {last4}) to your account. This card can now be used for faster checkouts.
             </Text>
             
-            <Button style={button} href="https://atom.motaiot.com/dashboard/settings">
+            <Button style={button} href="https://motaiot.com/dashboard/settings">
               Manage Payment Methods
             </Button>
 

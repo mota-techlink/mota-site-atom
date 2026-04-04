@@ -3,7 +3,7 @@ title: "Edge-Native AI Assistant: Enterprise RAG Solution"
 date: 2025-11-16
 image: "/images/showcase/chatbot/chatbot-cover.webp" 
 description: "A high-performance, serverless AI chatbot built entirely on Cloudflare's edge network. Features Retrieval-Augmented Generation (RAG), custom OAuth 2.0 security, and real-time streaming, delivering enterprise-grade AI interactions at a fraction of the cost."
-meta_title: "Edge-Native AI RAG Chatbot Case Study - MOTA ATOM"
+meta_title: "Edge-Native AI RAG Chatbot Case Study - MOTA TECHLINK"
 tags: ["AI", "RAG", "Cloudflare", "Serverless", "Edge Computing"]
 categories: ["AI Engineering"]
 draft: false
@@ -14,7 +14,7 @@ draft: false
 In the era of Generative AI, businesses need 
 <Gradient from="red" to="orange">intelligent assistants</Gradient> that understand their specific domain knowledge, ensure data privacy, and operate with low latency. Standard "wrapper" solutions often suffer from high API costs, slow response times, and data hallucinations.
 
-**MOTA ATOM** engineered a full-stack, edge-native AI solutionthat leverages **Retrieval-Augmented Generation (RAG)** to provide accurate, context-aware answers based on private corporate data. By bypassing traditional heavy servers and utilizing Cloudflare's global edge network, we achieved unparalleled performance and cost efficiency.
+**MOTA TECHLINK** engineered a full-stack, edge-native AI solutionthat leverages **Retrieval-Augmented Generation (RAG)** to provide accurate, context-aware answers based on private corporate data. By bypassing traditional heavy servers and utilizing Cloudflare's global edge network, we achieved unparalleled performance and cost efficiency.
 
 ##### <Gradient from="orange" to="green">  TALK to BOT  </Gradient>[🤖](/help)
 
@@ -45,7 +45,7 @@ Building a production-ready AI Chatbot on a static site architecture (Hugo) pres
 ### Key Features
 
 #### 1. Retrieval-Augmented Generation (RAG)
-Unlike generic chatbots, our system "reads" MOTA ATOM's proprietary documentation before answering. We utilize **AutoRAG** workflows to embed, index, and retrieve relevant context, ensuring answers are accurate and hallucination-free.
+Unlike generic chatbots, our system "reads" MOTA TECHLINK's proprietary documentation before answering. We utilize **AutoRAG** workflows to embed, index, and retrieve relevant context, ensuring answers are accurate and hallucination-free.
 
 #### 2. Native OAuth 2.0 Implementation
 To overcome Edge Runtime limitations, we engineered a lightweight, native OAuth authentication flow.
@@ -93,4 +93,4 @@ This is not just a showcase; it's a ready-to-deploy solution.
 
 ## Conclusion
 
-This project demonstrates **MOTA ATOM's** ability to deliver complex, full-stack AI solutions. We don't just integrate APIs; we architect secure, scalable, and cost-effective systems tailored to modern edge environments.
+This project demonstrates **MOTA TECHLINK's** ability to deliver complex, full-stack AI solutions. We don't just integrate APIs; we architect secure, scalable, and cost-effective systems tailored to modern edge environments.

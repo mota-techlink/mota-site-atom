@@ -1,13 +1,13 @@
 ---
 title: "オープンソースプロジェクトでデジタルヒューマンを生成する方法"
 date: "2025-12-26 08:31:05"
-description: "MOTA ATOMオープンソースプロジェクトより同期：dh_pipeline 技術ホワイトペーパー"
+description: "MOTA TECHLINKオープンソースプロジェクトより同期：dh_pipeline 技術ホワイトペーパー"
 categories: ["オープンソース", "ホワイトペーパー"]
 tags: ["データパイプライン", "IoT"]
 image: "https://raw.githubusercontent.com/mota-techlink/dh_pipeline/refs/heads/main/assets/images/cover.jpg"
 canonicalUrl: "https://github.com/mota-techlink/dh_pipeline"
-keywords: ["デジタルヒューマン", "LivePortrait", "MuseTalk", "AI動画パイプライン", "MOTA ATOM"]
-author: "MOTA ATOM"
+keywords: ["デジタルヒューマン", "LivePortrait", "MuseTalk", "AI動画パイプライン", "MOTA TECHLINK"]
+author: "MOTA TECHLINK"
 ---
 
 # オールインワン デジタルヒューマン動画パイプライン
@@ -15,7 +15,7 @@ author: "MOTA ATOM"
   <img src="https://raw.githubusercontent.com/mota-techlink/dh_pipeline/refs/heads/main/assets/images/cover.jpg" alt="MOTA dh_pipeline"/>
 </p>
 
-ローカル環境でリアルなデジタルヒューマン動画を生成するために設計された、モジュール式で高効率なパイプラインです。LivePortraitによるモーション同期、MuseTalkによる精密なリップシンクを統合し、MOTA ATOMの最適化ロジックによって駆動されます。
+ローカル環境でリアルなデジタルヒューマン動画を生成するために設計された、モジュール式で高効率なパイプラインです。LivePortraitによるモーション同期、MuseTalkによる精密なリップシンクを統合し、MOTA TECHLINKの最適化ロジックによって駆動されます。
 
 <div align="left">  
   <a href="https://zdoc.app/zh/mota-techlink/dh_pipeline">中文</a> | 
@@ -335,7 +335,7 @@ sh inference.sh v1.5 realtime
 A：はい、8GB以上のVRAMを搭載したNVIDIA GPU（RTX 3060以上）向けに最適化されています。
 
 **Q：リアルタイム生成に対応していますか？**
-A：現在は高速オフライン推論をサポートしています。リアルタイム対応はMOTA ATOMのロードマップに含まれています。
+A：現在は高速オフライン推論をサポートしています。リアルタイム対応はMOTA TECHLINKのロードマップに含まれています。
 
 **Q：なぜ他のプロバイダーではなくEdge-TTSを使用するのですか？**
 A：Edge-TTSは、自然な韻律とゼロコストのローカル統合の間で最適なバランスを提供します。

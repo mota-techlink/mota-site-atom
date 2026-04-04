@@ -1,13 +1,13 @@
 ---
 title: "Scout 프로젝트: 반전하는 원자의 파수꾼"
 date: "2026-01-09 11:43:43"
-description: "혼돈을 구조화하다: MOTA ATOM의 오픈소스 파수꾼이 고가치 엣지 데이터를 모니터링하는 방법."
+description: "혼돈을 구조화하다: MOTA TECHLINK의 오픈소스 파수꾼이 고가치 엣지 데이터를 모니터링하는 방법."
 categories: ["오픈소스", "인프라"]
 tags: ["Cloudflare Workers", "데이터 파이프라인", "자동화"]
 image: "https://raw.githubusercontent.com/mota-techlink/mota-scout-public/main/assets/images/cover.jpg"
 canonicalUrl: "https://github.com/mota-techlink/mota-scout-public"
-keywords: ["MOTA ATOM", "Scout", "엣지 컴퓨팅", "혼돈을 구조화하다"]
-author: "MOTA ATOM"
+keywords: ["MOTA TECHLINK", "Scout", "엣지 컴퓨팅", "혼돈을 구조화하다"]
+author: "MOTA TECHLINK"
 ---
 
 # Scout 프로젝트: 반전하는 원자의 파수꾼
@@ -96,4 +96,4 @@ SUPABASE_KEY: Service Role 키(Secret으로 저장).
 **Q: 안전하게 운영할 수 있나요?** A: 네. 모든 민감한 키는 Cloudflare Secrets와 GitHub Actions를 통해 관리됩니다.
 
 
-[MOTA ATOM:](https://motaiot.com) **비트에서 원자로, 반전.**
+[MOTA TECHLINK:](https://motaiot.com) **비트에서 원자로, 반전.**

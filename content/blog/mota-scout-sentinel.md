@@ -1,16 +1,16 @@
 ---
-title: "Project Scout: The Inverted Atom's Sentinel"
+title: "Project Scout: The Inverted TECHLINK's Sentinel"
 date: "2026-01-09 11:43:43"
-description: "Structuring the Chaos: How MOTA ATOM's open-source scout monitors high-value edge data."
+description: "Structuring the Chaos: How MOTA TECHLINK's open-source scout monitors high-value edge data."
 categories: ["Open Source", "Infrastructure"]
 tags: ["Cloudflare Workers", "Data Pipeline", "Automation"]
 image: "https://raw.githubusercontent.com/mota-techlink/mota-scout-public/main/assets/images/cover.jpg"
 canonicalUrl: "https://github.com/mota-techlink/mota-scout-public"
-keywords: ["MOTA ATOM", "Scout", "Edge Computing", "Structuring the Chaos"]
-author: "MOTA ATOM"
+keywords: ["MOTA TECHLINK", "Scout", "Edge Computing", "Structuring the Chaos"]
+author: "MOTA TECHLINK"
 ---
 
-# Project Scout: The Inverted Atom's Sentinel
+# Project Scout: The Inverted TECHLINK's Sentinel
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/mota-techlink/mota-scout-public/main/assets/images/cover.jpg" alt="MOTA Project Scout"/>
@@ -18,7 +18,7 @@ author: "MOTA ATOM"
 
 **Project Scout** is the high-efficiency edge data gateway of the MOTA ecosystem. Designed as a "Sentinel," it monitors high-value digital noise—starting with YouTube and RSS feeds—and compresses it into structured signals via Cloudflare Workers and Supabase.
 
-> **Structuring the Chaos:** This project is a living implementation of the "Inverted Atom" theory, where digital chaos is captured at the edge and funneled into high-density actionable insights.
+> **Structuring the Chaos:** This project is a living implementation of the "Inverted TECHLINK" theory, where digital chaos is captured at the edge and funneled into high-density actionable insights.
 
 
 
@@ -96,4 +96,4 @@ Unlike generic scrapers, Project Scout is optimized for:
 **Q: Is it safe to run?** A: Yes. All sensitive keys are handled via Cloudflare Secrets and GitHub Actions.
 
 
-[MOTA ATOM:](https://motaiot.com) **From Bits to Atoms. Inverted.**
+[MOTA TECHLINK:](https://motaiot.com) **From Bits to Atoms. Inverted.**

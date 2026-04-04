@@ -197,7 +197,7 @@ export function SlideRenderer({ slides, slideTitles }: SlideRendererProps) {
 
               {/* MOTA TECHLINK logo */}
               <a
-                href="https://atom.motaiot.com"
+                href="https://motaiot.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 sm:gap-2 md:gap-2.5 px-1.5 py-1 sm:px-2.5 sm:py-1.5 rounded-lg hover:bg-white/5 transition-colors"

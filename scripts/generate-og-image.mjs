@@ -23,7 +23,7 @@ const OUTPUT = path.join(ROOT, 'public', 'images', 'og.webp');
 // ── 品牌配置 ────────────────────────────────────────────
 const SITE_NAME = 'MOTA TECHLINK';
 const TAGLINE = 'Launch Your Dream Startup with AI';
-const DOMAIN = 'atom.motaiot.com';
+const DOMAIN = 'motaiot.com';
 
 // Logo 路径 (白色 Logo 用于深色背景)
 const LOGO_PATH = path.join(ROOT, 'public', 'logos', 'mota-logo-v2.webp');

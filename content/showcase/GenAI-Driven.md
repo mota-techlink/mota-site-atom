@@ -1,6 +1,6 @@
 ---
 title: "GenAI-Driven Edge Computing: Smart Safety for Vertical Transport"
-meta_title: "GenAI & Edge AI for Smart Elevator Safety - MOTA ATOM"
+meta_title: "GenAI & Edge AI for Smart Elevator Safety - MOTA TECHLINK"
 description: "Revolutionizing object detection with synthetic data generation and NPU quantization for real-time electric scooter detection in elevators. A privacy-first, low-latency Edge AI solution."
 date: 2025-12-08
 image: "/images/showcase/Edge-Computing/GenAI-Cover.webp"
@@ -13,7 +13,7 @@ draft: false
 
 In high-density urban environments, the unauthorized transport of electric motocycles (e-motocycles) in elevators poses a severe fire hazard due to lithium battery instability. Property managers face a critical safety requirement: <Gradient from="red" to="orange"> stop e-motocycles before the doors close. </Gradient>
 
-**MOTA ATOM** engineered an end-to-end **Edge AIoT solution** that detects prohibited objects in real-time. By pivoting from traditional data collection to **Generative AI (GenAI) synthetic data creation**, we bypassed data scarcity bottlenecks and deployed a highly optimized, privacy-compliant model directly onto embedded hardware.
+**MOTA TECHLINK** engineered an end-to-end **Edge AIoT solution** that detects prohibited objects in real-time. By pivoting from traditional data collection to **Generative AI (GenAI) synthetic data creation**, we bypassed data scarcity bottlenecks and deployed a highly optimized, privacy-compliant model directly onto embedded hardware.
 
 ## The Challenge: Safety vs. Data Constraints
 
@@ -47,7 +47,7 @@ Manual labeling is the bottleneck of AI training. We integrated the <ColorText c
 
 ## Technical Execution: Edge Optimization
 
-Training a model is only half the battle; deploying it to a low-power chip is where MOTA ATOM excels.
+Training a model is only half the battle; deploying it to a low-power chip is where MOTA TECHLINK excels.
 
 ### NPU Quantization & Compression
 To run on cost-effective IoT hardware (RISC-V/ARM Architectures), we could not use heavy GPU models.
@@ -79,6 +79,6 @@ The system serves as an active controller, not just a passive camera.
 
 ## Conclusion
 
-This project demonstrates **MOTA ATOM's** ability to bridge the gap between cutting-edge Generative AI and practical, ruggedized hardware. We solve real-world physical safety problems with software-defined intelligence.
+This project demonstrates **MOTA TECHLINK's** ability to bridge the gap between cutting-edge Generative AI and practical, ruggedized hardware. We solve real-world physical safety problems with software-defined intelligence.
 
 **Looking to deploy AI on the Edge?** [Contact us](#) to learn how we can optimize your computer vision models for embedded devices.

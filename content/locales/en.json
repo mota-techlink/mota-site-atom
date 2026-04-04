@@ -177,7 +177,7 @@
     "topics": "TOPICS"
   },
   "MotaAIList": {
-    "badge": "MOTA ATOM Intelligence Suite",
+    "badge": "MOTA TECHLINK Intelligence Suite",
     "titleLine1": "Intelligent Solutions for",
     "titleLine2": "Future Business",
     "description": "From generative digital humans to edge AI quantification, explore our cutting-edge models designed to automate and scale your operations.",
@@ -216,7 +216,7 @@
     "orderConfirmed": "Your order for {productName} - {tierName} has been confirmed.",
     "delivery": "Delivery",
     "unlimitedRevisions": "Unlimited Revisions",
-    "whyMotaAtom": "Why MOTA ATOM?",
+    "whyMota": "Why MOTA TECHLINK?",
     "provenExpertise": "Proven Expertise:",
     "provenExpertiseDesc": "Over 50+ enterprise AI solutions delivered.",
     "dataPrivacy": "Data Privacy:",
@@ -299,7 +299,7 @@
     "storyTitle": "Our Story",
     "storyParagraph1": "It started with a simple observation: managing SaaS assets and computer vision datasets was becoming impossibly complex. Traditional tools were clunky, slow, and disconnected.",
     "storyParagraph2": "We realized that Generative AI wasn't just a buzzword—it was the key to unlocking a new workflow. By generating data instead of just collecting it, we could speed up development cycles by 10x.",
-    "storyParagraph3": "Today, MOTA ATOM helps thousands of developers and companies structure their chaos and build faster.",
+    "storyParagraph3": "Today, MOTA TECHLINK helps thousands of developers and companies structure their chaos and build faster.",
     "statsUsers": "Users",
     "statsUptime": "Uptime",
     "statsIntegrations": "Integrations",
@@ -337,9 +337,9 @@
     "recent": "RECENT",
     "historyComing": "History (Coming Soon)",
     "greeting": "Hello, Traveler.",
-    "subtitle": "How can I help you explore MOTA ATOM today?",
-    "placeholder": "Message MOTA ATOM...",
-    "disclaimer": "MOTA ATOM can make mistakes. Check important info."
+    "subtitle": "How can I help you explore MOTA TECHLINK today?",
+    "placeholder": "Message MOTA TECHLINK...",
+    "disclaimer": "MOTA TECHLINK can make mistakes. Check important info."
   },
   "Footer": {
     "allRightsReserved": "All rights reserved.",

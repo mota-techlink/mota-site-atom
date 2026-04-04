@@ -11,7 +11,7 @@ import { x402Config, x402Products, x402ConsultProducts, amountToUsd, getTokenAdd
 export const runtime = "edge";
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://atom.motaiot.com";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://motaiot.com";
 
   const resources = Object.entries(x402Products).map(([key, config]) => {
     const [method, path] = key.split(" ");

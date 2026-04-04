@@ -1,13 +1,13 @@
 ---
 title: "Scout 项目：反转原子的哨兵"
 date: "2026-01-09 11:43:43"
-description: "重构混乱：MOTA ATOM 的开源哨兵如何监控高价值边缘数据。"
+description: "重构混乱：MOTA TECHLINK 的开源哨兵如何监控高价值边缘数据。"
 categories: ["开源", "基础设施"]
 tags: ["Cloudflare Workers", "数据管道", "自动化"]
 image: "https://raw.githubusercontent.com/mota-techlink/mota-scout-public/main/assets/images/cover.jpg"
 canonicalUrl: "https://github.com/mota-techlink/mota-scout-public"
-keywords: ["MOTA ATOM", "Scout", "边缘计算", "重构混乱"]
-author: "MOTA ATOM"
+keywords: ["MOTA TECHLINK", "Scout", "边缘计算", "重构混乱"]
+author: "MOTA TECHLINK"
 ---
 
 # Scout 项目：反转原子的哨兵
@@ -93,4 +93,4 @@ SUPABASE_KEY：你的 Service Role 密钥（作为 Secret 存储）。
 
 **问：运行安全吗？** 答：安全。所有敏感密钥通过 Cloudflare Secrets 和 GitHub Actions 处理。
 
-[MOTA ATOM：](https://motaiot.com) **从比特到原子，反转。**
+[MOTA TECHLINK：](https://motaiot.com) **从比特到原子，反转。**

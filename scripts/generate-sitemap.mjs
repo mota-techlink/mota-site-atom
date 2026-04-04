@@ -29,7 +29,7 @@ const i18nConfig = JSON.parse(
 );
 
 // ── 配置 ────────────────────────────────────────────────
-const BASE_URL = (process.env.NEXT_PUBLIC_BASE_URL || 'https://atom.motaiot.com').replace(/\/+$/, '');
+const BASE_URL = (process.env.NEXT_PUBLIC_BASE_URL || 'https://motaiot.com').replace(/\/+$/, '');
 const LOCALES = i18nConfig.locales;
 const DEFAULT_LOCALE = i18nConfig.defaultLocale;
 const NON_DEFAULT_LOCALES = LOCALES.filter(l => l !== DEFAULT_LOCALE);

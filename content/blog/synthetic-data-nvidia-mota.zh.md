@@ -1,7 +1,7 @@
 ---
 title: "Sim-to-Real：合成数据为何成为工业 AIoT 的新燃料"
 date: "2026-01-06 09:00:00"
-description: "受 NVIDIA 在虚拟世界中训练机器人的启发，MOTA ATOM 探索了如何利用生成式 AI 合成工业数据，从而加速边缘 AI 的落地部署。"
+description: "受 NVIDIA 在虚拟世界中训练机器人的启发，MOTA TECHLINK 探索了如何利用生成式 AI 合成工业数据，从而加速边缘 AI 的落地部署。"
 categories: ["AI Engineering", "Edge AI"]
 tags: ["NVIDIA", "Synthetic Data", "GenAI", "Industrial IoT", "Edge Computing"]
 # 封面图可以使用你推文里的那张架构图
@@ -10,7 +10,7 @@ image: "/images/showcase/Edge-Computing/GenAI-Cover.webp"
 
 昨天，**NVIDIA** 展示了下一代机器人如何完全在虚拟仿真环境中进行训练（Sim-to-Real）。核心信息很明确：**仅靠真实世界的数据已经不够了。**
 
-在 **MOTA ATOM**，我们将同样的“NVIDIA 级”逻辑引入到**工业物联网**领域。
+在 **MOTA TECHLINK**，我们将同样的“NVIDIA 级”逻辑引入到**工业物联网**领域。
 
 ### 利用 GenAI 跨越鸿沟
 在许多工业场景中，采集罕见事件（如特定的机器故障或安全漏洞）的高质量数据既昂贵又耗时。

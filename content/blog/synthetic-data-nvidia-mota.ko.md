@@ -1,7 +1,7 @@
 ---
 title: "Sim-to-Real: 합성 데이터가 산업 AIoT의 새로운 연료인 이유"
 date: "2026-01-06 09:00:00"
-description: "NVIDIA가 가상 세계에서 로봇을 훈련하는 방식에서 영감을 받아, MOTA ATOM은 생성형 AI를 통한 산업 데이터 합성으로 엣지 AI 배포를 가속화하는 방법을 탐구합니다."
+description: "NVIDIA가 가상 세계에서 로봇을 훈련하는 방식에서 영감을 받아, MOTA TECHLINK은 생성형 AI를 통한 산업 데이터 합성으로 엣지 AI 배포를 가속화하는 방법을 탐구합니다."
 categories: ["AI Engineering", "Edge AI"]
 tags: ["NVIDIA", "Synthetic Data", "GenAI", "Industrial IoT", "Edge Computing"]
 image: "/images/showcase/Edge-Computing/GenAI-Cover.webp"
@@ -9,7 +9,7 @@ image: "/images/showcase/Edge-Computing/GenAI-Cover.webp"
 
 어제 **NVIDIA**는 차세대 로봇이 완전히 가상 시뮬레이션(sim-to-real) 환경에서 훈련되는 방법을 공개했습니다. 핵심 메시지는 명확합니다: **현실 세계의 데이터만으로는 더 이상 충분하지 않습니다.**
 
-**MOTA ATOM**에서는 이 동일한 "NVIDIA 수준"의 로직을 **산업 IoT** 영역에 도입하고 있습니다.
+**MOTA TECHLINK**에서는 이 동일한 "NVIDIA 수준"의 로직을 **산업 IoT** 영역에 도입하고 있습니다.
 
 ### GenAI로 격차 해소하기
 
