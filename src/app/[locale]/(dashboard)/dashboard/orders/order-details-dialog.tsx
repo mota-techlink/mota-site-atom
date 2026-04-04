@@ -16,7 +16,6 @@ import {
   CreditCard, MapPin, Package, Calendar, Bitcoin, 
   ExternalLink, Truck, Headphones, Copy, FileText 
 } from "lucide-react"
-import { Link } from "@/navigation"
 import Image from "next/image"
 import { getCarrierLabel } from "@/config/shipping-carriers"
 
@@ -128,9 +127,9 @@ export function OrderDetailsDialog({ order, open, onOpenChange }: OrderDetailsPr
                            <p className="text-sm text-slate-400">{order.tier_name} Plan</p>
                         </div>
                         <Button asChild variant="outline" size="sm" className="border-slate-700 hover:bg-slate-800 hover:text-white">                           
-                           <Link href={`${productSlug}`} target="_blank" rel="noopener noreferrer">
+                           <a href={productSlug} target="_blank" rel="noopener noreferrer">
                              View Product <ExternalLink className="ml-2 w-3 h-3" />
-                           </Link>
+                           </a>
                         </Button>
                     </div>
                  
