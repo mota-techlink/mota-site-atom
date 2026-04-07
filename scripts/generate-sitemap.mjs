@@ -12,7 +12,7 @@
 //         blog/foo.md + foo.zh.md → /en/blog/foo ✅  /zh/blog/foo ✅
 //
 // 输出: public/sitemap.xml — 标准 <urlset> 格式，pretty-printed XML
-// 风格参考: resend.com/sitemap.xml
+//   包含 hreflang xhtml:link 标签，符合 Google 多语言网站规范
 // ─────────────────────────────────────────────────────────
 
 import fs from 'fs';
@@ -205,42 +205,72 @@ function generateSitemap() {
   const staticRoutes = scanAppRoutes();
   const contentRoutes = scanContentRoutes();
 
-  const urls = [];
+  // 构建路由分组：每组 = 一个逻辑页面 + 它并存的所有语言版本
+  const groups = [];
 
   // 静态页面 — next-intl 翻译，所有 locale 都有
   for (const route of staticRoutes) {
     const routePath = route === '/' ? '' : route;
     if (EXCLUDED_ROUTES.has(routePath || '/')) continue;
-
-    for (const locale of LOCALES) {
-      urls.push({ loc: `${BASE_URL}/${locale}${routePath}`, lastmod: NOW });
-    }
+    groups.push({ routePath, locales: [...LOCALES], lastmod: NOW });
   }
 
-  // 动态内容页面 — 只为有翻译的 locale 生成
+  // 动态内容页面 — 只为有翻译文件的 locale 生成
   for (const { path: routePath, date, locales } of contentRoutes) {
+    groups.push({ routePath, locales, lastmod: date });
+  }
+
+  // 展开成独立 URL 条目，每个条目携带 hreflang alternate 信息
+  const urls = [];
+  for (const { routePath, locales, lastmod } of groups) {
+    // 该路由的 hreflang 列表（仅含实际存在翻译的语言）
+    const alternates = locales.map(l => ({
+      hreflang: l,
+      href: `${BASE_URL}/${l}${routePath}`,
+    }));
+    // x-default 指向默认语言版本
+    const xdefault = `${BASE_URL}/${DEFAULT_LOCALE}${routePath}`;
+
     for (const locale of locales) {
-      urls.push({ loc: `${BASE_URL}/${locale}${routePath}`, lastmod: date });
+      urls.push({
+        loc: `${BASE_URL}/${locale}${routePath}`,
+        lastmod,
+        alternates,
+        xdefault,
+      });
     }
   }
 
   // 按 URL 字母排序 (方便调试)
   urls.sort((a, b) => a.loc.localeCompare(b.loc));
 
-  // 生成 pretty-printed XML (Resend 风格)
+  // 生成带 hreflang 的 pretty-printed XML
   const urlEntries = urls
-    .map(
-      (u) =>
+    .map(({ loc, lastmod, alternates, xdefault }) => {
+      const altLines = alternates
+        .map(
+          ({ hreflang, href }) =>
+            `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${escapeXml(href)}"/>`
+        )
+        .join('\n');
+      const xdefaultLine =
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(xdefault)}"/>`;
+
+      return (
         `  <url>\n` +
-        `    <loc>${escapeXml(u.loc)}</loc>\n` +
-        `    <lastmod>${u.lastmod}</lastmod>\n` +
+        `    <loc>${escapeXml(loc)}</loc>\n` +
+        `    <lastmod>${lastmod}</lastmod>\n` +
+        altLines + '\n' +
+        xdefaultLine + '\n' +
         `  </url>`
-    )
+      );
+    })
     .join('\n');
 
   const xml =
     `<?xml version="1.0" encoding="UTF-8"?>\n` +
-    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n` +
+    `        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n` +
     urlEntries + '\n' +
     `</urlset>\n`;
 
@@ -250,14 +280,15 @@ function generateSitemap() {
   const bilingualContent = contentRoutes.filter(r => r.locales.length > 1).length;
   const monoContent = contentRoutes.filter(r => r.locales.length === 1).length;
 
-  return { xml, count: urls.length, staticCount, bilingualContent, monoContent };
+  return { xml, count: urls.length, staticCount, contentCount, bilingualContent, monoContent };
 }
 
 // ── 4. 写入文件 ────────────────────────────────────────
-const { xml, count, staticCount, bilingualContent, monoContent } = generateSitemap();
+const { xml, count, staticCount, contentCount, bilingualContent, monoContent } = generateSitemap();
 fs.writeFileSync(OUTPUT_FILE, xml, 'utf-8');
 console.log(`✅ sitemap.xml generated → ${count} URLs → public/sitemap.xml`);
 console.log(`   Base URL: ${BASE_URL}`);
-console.log(`   📄 Static pages: all bilingual (${LOCALES.join(', ')})`);
-console.log(`   📝 MDX bilingual: ${bilingualContent} slugs (have .zh.md)`);
+console.log(`   📔 Static pages: all multilingual (${LOCALES.join(', ')}): ${staticCount} URLs`);
+console.log(`   📝 MDX bilingual: ${bilingualContent} slugs (have translated files)`);
 console.log(`   📝 MDX monolingual: ${monoContent} slugs (${DEFAULT_LOCALE} only)`);
+console.log(`   🌐 hreflang: xhtml:link alternate tags added for all URL entries`);

@@ -17,8 +17,16 @@ export default function robots(): MetadataRoute.Robots {
   const baseUrl = siteConfig.url;
 
   // 🔴 预览/开发环境：禁止所有爬虫抓取，防止测试页面被索引
-  const isProduction = process.env.NODE_ENV === 'production' 
-    && !process.env.VERCEL_ENV?.includes('preview');
+  // CF_PAGES_BRANCH 由 Cloudflare Pages 构建时注入：
+  //   - 生产部署 (main / release): CF_PAGES_BRANCH = 'main' 或 'release'
+  //   - 预览部署 (feature / content …): CF_PAGES_BRANCH = 其他分支名
+  //   - 本地开发: CF_PAGES_BRANCH 未设置，回退到 NEXT_PUBLIC_BASE_URL 判断
+  const cfBranch = process.env.CF_PAGES_BRANCH;
+  const isProduction = process.env.NODE_ENV === 'production' && (
+    cfBranch !== undefined
+      ? cfBranch === 'main' || cfBranch === 'release'
+      : process.env.NEXT_PUBLIC_BASE_URL === 'https://motaiot.com'
+  );
 
   if (!isProduction) {
     return {
@@ -31,47 +39,75 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       // ── 1. 屏蔽 AI/LLM 爬虫 ──────────────────────────
       // 这些爬虫抓取内容用于训练模型，而非搜索索引
-      // 如果你希望允许某个 AI 爬虫，将其从这里移除即可
-    //   {
-    //     userAgent: 'GPTBot',            // OpenAI (GPT 训练数据)
-    //     disallow: '/',
-    //   },
-    //   {
-    //     userAgent: 'ChatGPT-User',      // ChatGPT 浏览插件
-    //     disallow: '/',
-    //   },
-    //   {
-    //     userAgent: 'CCBot',             // Common Crawl (大量 AI 公司的数据源)
-    //     disallow: '/',
-    //   },
-    //   {
-    //     userAgent: 'Google-Extended',   // Google AI/ML 训练（不影响搜索索引）
-    //     disallow: '/',
-    //   },
-    //   {
-    //     userAgent: 'anthropic-ai',      // Anthropic (Claude)
-    //     disallow: '/',
-    //   },
-    //   {
-    //     userAgent: 'ClaudeBot',         // Anthropic Claude 爬虫
-    //     disallow: '/',
-    //   },
-    //   {
-    //     userAgent: 'Bytespider',        // 字节跳动爬虫
-    //     disallow: '/',
-    //   },
-    //   {
-    //     userAgent: 'Amazonbot',         // Amazon AI
-    //     disallow: '/',
-    //   },
-    //   {
-    //     userAgent: 'FacebookBot',       // Meta AI 训练
-    //     disallow: '/',
-    //   },
-    //   {
-    //     userAgent: 'cohere-ai',         // Cohere AI
-    //     disallow: '/',
-    //   },
+      // 如果你希望允许某个 AI 爬虫，将其注释掉即可
+      {
+        userAgent: 'GPTBot',            // OpenAI (GPT 训练数据)
+        disallow: '/',
+      },
+      {
+        userAgent: 'ChatGPT-User',      // ChatGPT 浏览插件
+        disallow: '/',
+      },
+      {
+        userAgent: 'OAI-SearchBot',     // OpenAI SearchBot
+        disallow: '/',
+      },
+      {
+        userAgent: 'CCBot',             // Common Crawl (大量 AI 公司的数据源)
+        disallow: '/',
+      },
+      {
+        userAgent: 'Google-Extended',   // Google AI/ML 训练（不影响搜索索引）
+        disallow: '/',
+      },
+      {
+        userAgent: 'anthropic-ai',      // Anthropic (Claude)
+        disallow: '/',
+      },
+      {
+        userAgent: 'ClaudeBot',         // Anthropic Claude 爬虫
+        disallow: '/',
+      },
+      {
+        userAgent: 'Bytespider',        // 字节跳动爬虫
+        disallow: '/',
+      },
+      {
+        userAgent: 'Amazonbot',         // Amazon AI
+        disallow: '/',
+      },
+      {
+        userAgent: 'FacebookBot',       // Meta AI 训练
+        disallow: '/',
+      },
+      {
+        userAgent: 'cohere-ai',         // Cohere AI
+        disallow: '/',
+      },
+      {
+        userAgent: 'PerplexityBot',     // Perplexity AI 爬虫
+        disallow: '/',
+      },
+      {
+        userAgent: 'Perplexity-User',   // Perplexity AI 用户插件
+        disallow: '/',
+      },
+      {
+        userAgent: 'Applebot-Extended', // Apple AI 训练（不影响 Siri/Spotlight 索引）
+        disallow: '/',
+      },
+      {
+        userAgent: 'AnchorBot',         // Anchor/Spotify 播客 AI
+        disallow: '/',
+      },
+      {
+        userAgent: 'Diffbot',           // Diffbot AI 数据抓取
+        disallow: '/',
+      },
+      {
+        userAgent: 'ImagesiftBot',      // AI 图像训练
+        disallow: '/',
+      },
 
       // ── 2. 搜索引擎爬虫：允许抓取公开内容 ───────────────
       {
