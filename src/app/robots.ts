@@ -37,77 +37,52 @@ export default function robots(): MetadataRoute.Robots {
   // 🟢 生产环境规则
   return {
     rules: [
-      // ── 1. 屏蔽 AI/LLM 爬虫 ──────────────────────────
-      // 这些爬虫抓取内容用于训练模型，而非搜索索引
-      // 如果你希望允许某个 AI 爬虫，将其注释掉即可
-      // {
-      //   userAgent: 'GPTBot',            // OpenAI (GPT 训练数据)
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'ChatGPT-User',      // ChatGPT 浏览插件
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'OAI-SearchBot',     // OpenAI SearchBot
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'CCBot',             // Common Crawl (大量 AI 公司的数据源)
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'Google-Extended',   // Google AI/ML 训练（不影响搜索索引）
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'anthropic-ai',      // Anthropic (Claude)
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'ClaudeBot',         // Anthropic Claude 爬虫
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'Bytespider',        // 字节跳动爬虫
-      //   disallow: '/',
-      // },
+      // ── 1. 屏蔽纯训练爬虫（无搜索引用价值）────────────
+      // 这些爬虫只抓取内容用于训练模型，不会在搜索结果中引用或导流
+      // 允许的 AI 搜索爬虫见下方注释说明
       {
-        userAgent: 'Amazonbot',         // Amazon AI
+        userAgent: 'CCBot',             // Common Crawl — 几乎所有 LLM 的训练数据来源，无引用
         disallow: '/',
       },
-      // {
-      //   userAgent: 'FacebookBot',       // Meta AI 训练
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'cohere-ai',         // Cohere AI
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'PerplexityBot',     // Perplexity AI 爬虫
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'Perplexity-User',   // Perplexity AI 用户插件
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'Applebot-Extended', // Apple AI 训练（不影响 Siri/Spotlight 索引）
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'AnchorBot',         // Anchor/Spotify 播客 AI
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'Diffbot',           // Diffbot AI 数据抓取
-      //   disallow: '/',
-      // },
-      // {
-      //   userAgent: 'ImagesiftBot',      // AI 图像训练
-      //   disallow: '/',
-      // },
+      {
+        userAgent: 'Bytespider',        // 字节跳动 — 纯训练，不做 AI 搜索引用
+        disallow: '/',
+      },
+      {
+        userAgent: 'Amazonbot',         // Amazon — 纯训练，无 AI 搜索产品
+        disallow: '/',
+      },
+      {
+        userAgent: 'FacebookBot',       // Meta — 纯训练 Llama，无搜索引用
+        disallow: '/',
+      },
+      {
+        userAgent: 'cohere-ai',         // Cohere — 纯 API 训练，无终端搜索产品
+        disallow: '/',
+      },
+      {
+        userAgent: 'Applebot-Extended', // Apple AI 训练（Applebot 正常索引不受影响）
+        disallow: '/',
+      },
+      {
+        userAgent: 'AnchorBot',         // Spotify/Anchor — 播客 AI，无网页搜索引用
+        disallow: '/',
+      },
+      {
+        userAgent: 'Diffbot',           // Diffbot — 商业数据抓取，无引用导流
+        disallow: '/',
+      },
+      {
+        userAgent: 'ImagesiftBot',      // 图像训练爬虫
+        disallow: '/',
+      },
+
+      // ── ✅ 允许的 AI 搜索爬虫（会在结果中引用并导流）──
+      // GPTBot / ChatGPT-User / OAI-SearchBot  → ChatGPT Search，有引用链接
+      // anthropic-ai / ClaudeBot               → Claude Search，有引用链接
+      // PerplexityBot / Perplexity-User        → Perplexity，有引用链接
+      // Google-Extended                        → Google AI Overview，有引用链接
+      // 以上爬虫均不在屏蔽列表中，默认由下方 * 规则放行
 
       // ── 2. 搜索引擎爬虫：允许抓取公开内容 ───────────────
       {
