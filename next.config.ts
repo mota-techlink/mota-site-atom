@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // 3. 静态资源跨域头 (CORS) + 安全响应头
+  // 3. 响应头：CORS + CSP + 缓存策略
   async headers() {
     // Content Security Policy
     // - script-src: 'unsafe-inline' 为 GA4/Next.js inline script 所需
@@ -51,22 +51,95 @@ const nextConfig: NextConfig = {
       "upgrade-insecure-requests",
     ].join("; ");
 
+    // 所有路由共用的安全头
+    const securityHeaders = [
+      { key: "Access-Control-Allow-Origin", value: "*" },
+      { key: "Access-Control-Allow-Methods", value: "GET, POST, OPTIONS" },
+      { key: "Content-Security-Policy", value: csp },
+      { key: "X-Frame-Options", value: "DENY" },
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+    ];
+
     return [
+      // ── 1. Next.js 构建产物：文件名含 hash，永久不变 ──────────────────
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+
+      // ── 2. Public 静态文件：图片/图标/视频，缓存 1 天，后台 7 天更新 ──
+      {
+        source: "/:dir(icons|images|logos|videos)/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+        ],
+      },
+
+      // ── 3. 所有路由：基准安全头 + 公开页面 SSR 缓存 60s ──────────────
+      //    私有路由（下方）会覆盖 Cache-Control
       {
         source: "/:path*",
         headers: [
-          { key: "Access-Control-Allow-Origin", value: "*" },
-          { key: "Access-Control-Allow-Methods", value: "GET, POST, OPTIONS" },
-          // CSP — 拦截 XSS / 数据注入攻击
-          { key: "Content-Security-Policy", value: csp },
-          // 禁止点击劫持
-          { key: "X-Frame-Options", value: "DENY" },
-          // 禁止 MIME 嗅探
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          // Referrer 策略
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          // Permissions Policy — 关闭不需要的浏览器功能
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+          ...securityHeaders,
+          // Cloudflare 缓存 SSR 结果 60s；stale-while-revalidate 5 分钟内
+          // 返回旧缓存同时后台重新生成，对用户无感知
+          { key: "Cache-Control", value: "public, s-maxage=60, stale-while-revalidate=300" },
+        ],
+      },
+
+      // ── 4. API 路由：绝不缓存 ─────────────────────────────────────────
+      {
+        source: "/api/:path*",
+        headers: [
+          { key: "Cache-Control", value: "no-store" },
+        ],
+      },
+
+      // ── 5. Auth 回调：绝不缓存 ────────────────────────────────────────
+      {
+        source: "/auth/:path*",
+        headers: [
+          { key: "Cache-Control", value: "private, no-store" },
+        ],
+      },
+
+      // ── 6. 需要登录的页面：私有，绝不缓存 ────────────────────────────
+      // dashboard（用户订单/设置/支付）
+      {
+        source: "/:locale/dashboard/:path*",
+        headers: [
+          { key: "Cache-Control", value: "private, no-store" },
+        ],
+      },
+      // admin 后台
+      {
+        source: "/:locale/admin/:path*",
+        headers: [
+          { key: "Cache-Control", value: "private, no-store" },
+        ],
+      },
+      // 登录/注册/重置密码/找回密码
+      {
+        source: "/:locale/login",
+        headers: [{ key: "Cache-Control", value: "private, no-store" }],
+      },
+      {
+        source: "/:locale/forgot-password",
+        headers: [{ key: "Cache-Control", value: "private, no-store" }],
+      },
+      {
+        source: "/:locale/reset-password",
+        headers: [{ key: "Cache-Control", value: "private, no-store" }],
+      },
+      // pitch-deck（仅邀请查看）
+      {
+        source: "/:locale/pitch-deck/:path*",
+        headers: [
+          { key: "Cache-Control", value: "private, no-store" },
         ],
       },
     ];
