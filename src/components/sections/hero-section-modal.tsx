@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@/navigation";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -7,13 +8,50 @@ import { buttonVariants } from "@/components/ui/button";
 import { GifVideo } from "@/components/mdx/gif-video";
 import { TypewriterText } from "@/components/ui/typewriter-text"; 
 import { Github, ArrowRight, Twitter } from "lucide-react";
-import { useTranslations } from "next-intl"
-import { TechStackLogos } from "@/components/ui/tech-stack-logos";
+import { useLocale, useTranslations } from "next-intl"
+import dynamic from "next/dynamic";
+
+const TechStackLogos = dynamic(
+  () => import("@/components/ui/tech-stack-logos").then((mod) => mod.TechStackLogos),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full max-w-4xl h-20 rounded-md bg-muted/40 animate-pulse" />
+    ),
+  }
+);
 export function HeroSection() {
   const t = useTranslations('Hero');
+  const locale = useLocale();
+  const isChinese = locale.startsWith('zh');
+  const logosRef = useRef<HTMLDivElement | null>(null);
+  const [showLogos, setShowLogos] = useState(false);
 
-  const sloganSize = "text-3xl sm:text-4xl md:text-4xl lg:text-5xl";
-  const typewriterSize = "text-3xl sm:text-4xl md:text-5xl lg:text-6xl";
+  const sloganSize = isChinese
+    ? "text-3xl sm:text-4xl md:text-4xl lg:text-5xl"
+    : "text-2xl sm:text-3xl md:text-3xl lg:text-4xl";
+  const typewriterSize = isChinese
+    ? "text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+    : "text-2xl sm:text-3xl md:text-4xl lg:text-5xl";
+  const noWrapClass = isChinese ? "" : "whitespace-nowrap";
+
+  useEffect(() => {
+    const target = logosRef.current;
+    if (!target || showLogos) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShowLogos(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "120px" }
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [showLogos]);
 
   return (
     <>
@@ -42,15 +80,16 @@ export function HeroSection() {
               {/* 标题 */}
               <div className="space-y-4 max-w-2xl lg:max-w-3xl">
                 <h1 className="font-bold tracking-tighter text-foreground font-heading leading-tight">
-                  <span className={cn(sloganSize, "block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-400")}>
+                  <span className={cn(sloganSize, noWrapClass, "block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-400")}>
                     {t('slogan')}{" "}
                   </span>
 
-                  <span className={cn(typewriterSize, "inline-block")}>
+                  <span className={cn(typewriterSize, noWrapClass, "inline-block")}>
                       <TypewriterText
                         words={[t('typewriterWord1'), t('typewriterWord2'), t('typewriterWord3'), t('typewriterWord4')]}
                         className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-600"
                         cursorClassName="bg-blue-500 h-[0.8em]"
+                        startOnIdle
                       />
                   </span>
                 </h1>
@@ -113,12 +152,16 @@ export function HeroSection() {
               }}
             />          
           </div>        
-          <div className="py-12 sm:py-24 flex flex-col items-center">
+          <div ref={logosRef} className="py-12 sm:py-24 flex flex-col items-center">
             
             <p className="text-base md:text-lg text-muted-foreground mb-10 text-center max-w-lg">            
               {t('TrustedByCompanies')}                        
             </p>
-            <TechStackLogos />
+            {showLogos ? (
+              <TechStackLogos />
+            ) : (
+              <div className="w-full max-w-4xl h-20 rounded-md bg-muted/40 animate-pulse" />
+            )}
                      
           </div>        
         </div>

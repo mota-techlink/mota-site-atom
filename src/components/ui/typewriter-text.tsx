@@ -11,6 +11,7 @@ interface TypewriterTextProps {
   typingSpeed?: number;      // 打字速度 (ms)
   deletingSpeed?: number;    // 删除速度 (ms)
   pauseTime?: number;        // 写完一个词后的停留时间 (ms)
+  startOnIdle?: boolean;     // 是否在浏览器空闲后再启动动画
 }
 
 export function TypewriterText({
@@ -21,24 +22,60 @@ export function TypewriterText({
   typingSpeed = 150,
   deletingSpeed = 100,
   pauseTime = 2000,
+  startOnIdle = false,
 }: TypewriterTextProps) {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [delta, setDelta] = useState(typingSpeed);
+  const [isActive, setIsActive] = useState(!startOnIdle);
 
   useEffect(() => {
+    if (!startOnIdle) return;
+
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    let idleId: number | undefined;
+    const runtime = globalThis as typeof globalThis & {
+      requestIdleCallback?: (
+        callback: IdleRequestCallback,
+        options?: IdleRequestOptions
+      ) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+
+    const activate = () => setIsActive(true);
+
+    if (typeof runtime.requestIdleCallback === "function") {
+      idleId = runtime.requestIdleCallback(() => activate(), { timeout: 1200 });
+    } else {
+      timeoutId = setTimeout(activate, 400);
+    }
+
+    return () => {
+      if (idleId !== undefined && typeof runtime.cancelIdleCallback === "function") {
+        runtime.cancelIdleCallback(idleId);
+      }
+
+      if (timeoutId !== undefined) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [startOnIdle]);
+
+  useEffect(() => {
+    if (!isActive || words.length === 0) return;
+
     let ticker = setTimeout(() => {
       tick();
     }, delta);
 
     return () => clearTimeout(ticker);
-  }, [text, delta]);
+  }, [text, delta, isActive, words.length]);
 
   const tick = () => {
     // 获取当前要显示的完整单词
     const i = loopNum % words.length;
-    const fullText = words[i];
+    const fullText = words[i] || "";
 
     // 根据状态更新显示的文本
     const updatedText = isDeleting
@@ -63,7 +100,7 @@ export function TypewriterText({
     } else if (isDeleting && updatedText === "") {
       // 删除完了，切换到下一个单词，开始打字
       setIsDeleting(false);
-      setLoopNum(loopNum + 1);
+      setLoopNum((prev) => prev + 1);
       newDelta = 500; // 删除完后稍微停顿一下再开始打字
     }
 
