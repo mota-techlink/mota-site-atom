@@ -28,15 +28,45 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // 3. 静态资源跨域头 (CORS)
-  // 确保字体文件 (.woff2) 能被加载
+  // 3. 静态资源跨域头 (CORS) + 安全响应头
   async headers() {
+    // Content Security Policy
+    // - script-src: 'unsafe-inline' 为 GA4/Next.js inline script 所需
+    // - connect-src: 覆盖 Supabase (auth + realtime)、Stripe、Google Analytics
+    // - frame-src: Stripe Elements iframe
+    // - img-src: 允许 data: / https: 以兼容各类第三方图片
+    const csp = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://js.stripe.com",
+      "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://api.stripe.com wss://ws.stripe.com https://www.googletagmanager.com",
+      "frame-src 'self' https://js.stripe.com https://hooks.stripe.com",
+      "img-src 'self' data: blob: https:",
+      "font-src 'self' data: https://fonts.gstatic.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "media-src 'self' blob: https:",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "frame-ancestors 'none'",
+      "upgrade-insecure-requests",
+    ].join("; ");
+
     return [
       {
         source: "/:path*",
         headers: [
           { key: "Access-Control-Allow-Origin", value: "*" },
           { key: "Access-Control-Allow-Methods", value: "GET, POST, OPTIONS" },
+          // CSP — 拦截 XSS / 数据注入攻击
+          { key: "Content-Security-Policy", value: csp },
+          // 禁止点击劫持
+          { key: "X-Frame-Options", value: "DENY" },
+          // 禁止 MIME 嗅探
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          // Referrer 策略
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          // Permissions Policy — 关闭不需要的浏览器功能
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
         ],
       },
     ];
