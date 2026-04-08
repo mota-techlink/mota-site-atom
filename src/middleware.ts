@@ -1,4 +1,4 @@
-import { type NextRequest, NextResponse } from 'next/server';
+import { type NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 import { createServerClient } from '@supabase/ssr';
 import { routing } from './routing';
@@ -11,10 +11,18 @@ export async function middleware(request: NextRequest) {
   // 这样我们就能拿到带有正确 locale Header 的 response
   const response = intlMiddleware(request);
 
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  // 公开页面不应因鉴权环境变量缺失而 500
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return response;
+  }
+
   // 3. 初始化 Supabase Client
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseAnonKey,
     {
       cookies: {
         getAll() {
@@ -34,7 +42,11 @@ export async function middleware(request: NextRequest) {
   // 4. 刷新 Session (Supabase 核心逻辑)
   // 如果用户未登录，getUser 会返回 null，但我们这里只负责刷新 Token
   // 具体的页面保护逻辑（如重定向到登录页）建议在 Layout 或 Page 中做
-  await supabase.auth.getUser();
+  try {
+    await supabase.auth.getUser();
+  } catch {
+    // 仅跳过刷新，避免网络抖动/上游故障引发全站 500
+  }
 
   return response;
 }

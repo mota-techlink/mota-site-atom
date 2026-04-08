@@ -16,9 +16,21 @@ declare global {
  */
 export function pageview(url: string) {
   if (typeof window === 'undefined' || !GA_MEASUREMENT_ID) return;
-  window.gtag('config', GA_MEASUREMENT_ID, {
-    page_path: url,
-  });
+  if (typeof window.gtag === 'function') {
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      page_path: url,
+    });
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push([
+    'config',
+    GA_MEASUREMENT_ID,
+    {
+      page_path: url,
+    },
+  ]);
 }
 
 /**
@@ -39,9 +51,23 @@ export function event(
   } = {}
 ) {
   if (typeof window === 'undefined' || !GA_MEASUREMENT_ID) return;
-  window.gtag('event', action, {
-    event_category: category,
-    event_label: label,
-    value,
-  });
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value,
+    });
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push([
+    'event',
+    action,
+    {
+      event_category: category,
+      event_label: label,
+      value,
+    },
+  ]);
 }

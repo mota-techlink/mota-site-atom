@@ -9,72 +9,82 @@ import { AnalyticsPageview } from "@/components/seo/analytics-pageview"
 import { siteConfig } from "@/config/site"
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
+import { locales } from '@/routing'
 
 // ── SEO: 全局 Metadata 配置 ────────────────────────────
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  keywords: [
-    'MOTA TECHLINK',
-    'AI Startup',
-    'SaaS',
-    'Next.js',
-    'Supabase',
-    'Full Stack',
-    'Open Source',
-  ],
-  authors: [{ name: siteConfig.name, url: siteConfig.url }],
-  creator: siteConfig.name,
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    alternateLocale: 'zh_CN',
-    url: siteConfig.url,
-    title: siteConfig.name,
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const normalizedLocale = locales.includes(locale) ? locale : 'en';
+
+  const alternateLanguages = Object.fromEntries(
+    locales.map((lang) => [lang, `${siteConfig.url}/${lang}`])
+  );
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title: {
+      default: siteConfig.name,
+      template: `%s | ${siteConfig.name}`,
+    },
     description: siteConfig.description,
-    siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
+    keywords: [
+      'MOTA TECHLINK',
+      'AI Startup',
+      'SaaS',
+      'Next.js',
+      'Supabase',
+      'Full Stack',
+      'Open Source',
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: '@motatechlink',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    authors: [{ name: siteConfig.name, url: siteConfig.url }],
+    creator: siteConfig.name,
+    openGraph: {
+      type: 'website',
+      locale: normalizedLocale,
+      url: `${siteConfig.url}/${normalizedLocale}`,
+      title: siteConfig.name,
+      description: siteConfig.description,
+      siteName: siteConfig.name,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: siteConfig.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: siteConfig.name,
+      description: siteConfig.description,
+      images: [siteConfig.ogImage],
+      creator: '@motatechlink',
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-  },
-  alternates: {
-    canonical: siteConfig.url,
-    languages: {
-      'en': `${siteConfig.url}/en`,
-      'zh': `${siteConfig.url}/zh`,
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
     },
-  },
-};
+    alternates: {
+      canonical: `${siteConfig.url}/${normalizedLocale}`,
+      languages: alternateLanguages,
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,
