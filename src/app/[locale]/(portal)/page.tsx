@@ -14,15 +14,11 @@ interface IndexPageProps {
 export default async function IndexPage({ params }: IndexPageProps) {
   const { locale } = await params;
   const t = await getTranslations('Hero');
-  
-  // Provider 配置
-  const specificProviders = siteConfig.oauth.regionSpecific[locale] || [];
-  const commonProviders = siteConfig.oauth.common;
 
   return (
     <>
       {/* --- Hero Section --- */}
-      <HeroSection specificProviders={specificProviders} commonProviders={commonProviders} />
+      <HeroSection />
 
       {/* --- Features Grid Section --- */}
       <section id="features" className="container space-y-6 bg-slate-50 dark:bg-transparent  mx-auto">        

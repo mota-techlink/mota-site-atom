@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Link } from "@/navigation";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -10,43 +9,11 @@ import { TypewriterText } from "@/components/ui/typewriter-text";
 import { Github, ArrowRight, Twitter } from "lucide-react";
 import { useTranslations } from "next-intl"
 import { TechStackLogos } from "@/components/ui/tech-stack-logos";
-import dynamic from "next/dynamic";
-
-// 🔧 动态导入 LoginModal - 仅在用户点击注册按钮时才加载
-const LoginModal = dynamic(
-  () => import("@/components/auth/login-modal").then(mod => mod.LoginModal),
-  { ssr: false }
-);
-
-interface HeroSectionProps {
-  specificProviders?: any[];
-  commonProviders?: any[];
-}
-
-export function HeroSection({ specificProviders = [], commonProviders = [] }: HeroSectionProps) {
+export function HeroSection() {
   const t = useTranslations('Hero');
-  const tAuth = useTranslations('Auth');
-  const [signupModalOpen, setSignupModalOpen] = useState(false);
 
   const sloganSize = "text-3xl sm:text-4xl md:text-4xl lg:text-5xl";
   const typewriterSize = "text-3xl sm:text-4xl md:text-5xl lg:text-6xl";
-
-  const dict = {
-    loginTitle: tAuth('loginTitle'),
-    signupTitle: tAuth('signupTitle'),
-    loginDesc: tAuth('loginDesc'),
-    signupDesc: tAuth('signupDesc'),
-    email: tAuth('email'),
-    password: tAuth('password'),
-    confirmPassword: tAuth('confirmPassword'),
-    signIn: tAuth('signIn'),
-    signUp: tAuth('signUp'),
-    noAccount: tAuth('noAccount'),
-    hasAccount: tAuth('hasAccount'),
-    signUpNow: tAuth('signUpNow'),
-    signInNow: tAuth('signInNow'),
-    forgotPassword: tAuth('forgotPassword'),
-  };
 
   return (
     <>
@@ -95,15 +62,15 @@ export function HeroSection({ specificProviders = [], commonProviders = [] }: He
 
               {/* 按钮组 */}
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center landscape:justify-start lg:justify-start">
-                <button 
-                  onClick={() => setSignupModalOpen(true)}
+                <Link
+                  href="/login?view=signup"
                   className={cn(
                     buttonVariants({ size: "lg" }), 
                     "rounded-full px-8 h-12 text-base shadow-lg shadow-blue-500/20 w-full sm:w-auto font-semibold"
                   )}
                 >
                   {t('getStarted')} <ArrowRight className="ml-2 w-4 h-4" />
-                </button>
+                </Link>
 
                 <Link
                   href={siteConfig.links.github}
@@ -157,15 +124,6 @@ export function HeroSection({ specificProviders = [], commonProviders = [] }: He
         </div>
         <span className="animate-ping absolute inline-flex h-1 w-full rounded-full bg-sky-400 opacity-75"></span>    
       </section>
-
-      <LoginModal
-        open={signupModalOpen}
-        onOpenChange={setSignupModalOpen}
-        specificProviders={specificProviders}
-        commonProviders={commonProviders}
-        isSignup={true}
-        dict={dict}
-      />
     </>
   );
 }
