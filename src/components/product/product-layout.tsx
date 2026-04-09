@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Link } from "@/navigation"
 import dynamic from "next/dynamic"
 import { useTranslations } from "next-intl"
-import { Check, Clock, RefreshCcw, ShieldCheck, ArrowRight, LayoutGrid, Bitcoin, CreditCard } from "lucide-react"
+import { Check, Clock, RefreshCcw, ShieldCheck, ArrowRight, LayoutGrid, Bitcoin, CreditCard, ZoomIn, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
@@ -32,6 +32,13 @@ import { Textarea } from "@/components/ui/textarea"
 import { Loader2, CheckCircle2 } from "lucide-react"
 import { usePathname } from 'next/navigation'
 import { toast } from "sonner";
+
+/** Normalise a gallery entry — accepts both old string format and new {src, title} object */
+type GalleryItem = { src: string; title?: string }
+function normalizeGalleryItem(item: string | GalleryItem): GalleryItem {
+  if (typeof item === 'string') return { src: item }
+  return item
+}
 
 /** Returns true if the URL appears to be a browseable website rather than a direct image file */
 function isWebsiteUrl(url: string): boolean {
@@ -549,9 +556,15 @@ function PricingWidget({ data }: { data: any }) {
   )
 }
 export function ProductLayout({ data, content }: ProductLayoutProps) {
-  const [selectedImage, setSelectedImage] = useState(data.gallery[0]);
+  const galleryItems: GalleryItem[] = (data.gallery as (string | GalleryItem)[]).map(normalizeGalleryItem);
+  const [selectedIdx, setSelectedIdx] = useState(0);
+  const selectedItem = galleryItems[selectedIdx] ?? galleryItems[0];
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const relatedCases = data.relatedShowcasesData || [];
   const t = useTranslations("ProductPage");
+
+  const goToPrev = () => setSelectedIdx(i => (i - 1 + galleryItems.length) % galleryItems.length);
+  const goToNext = () => setSelectedIdx(i => (i + 1) % galleryItems.length);
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       {/* 1. Breadcrumb & Title Area */}
@@ -565,44 +578,141 @@ export function ProductLayout({ data, content }: ProductLayoutProps) {
         <div className="space-y-10">
           
           {/* A. Image Gallery */}
-          <div className="space-y-4">
-            <div className="relative aspect-video w-full overflow-hidden rounded-xl border bg-muted">
-              {isWebsiteUrl(selectedImage) ? (
+          <div className="space-y-3">
+            {/* Main viewer */}
+            <div
+              className="group relative aspect-video w-full overflow-hidden rounded-xl border bg-muted cursor-zoom-in"
+              onClick={() => !isWebsiteUrl(selectedItem.src) && setLightboxOpen(true)}
+            >
+              {isWebsiteUrl(selectedItem.src) ? (
                 <iframe
-                  src={selectedImage}
-                  title={data.title}
+                  src={selectedItem.src}
+                  title={selectedItem.title ?? data.title}
                   className="absolute inset-0 h-full w-full"
                   sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                   loading="lazy"
                 />
               ) : (
-                <Image 
-                  src={selectedImage} 
-                  alt={data.title} 
-                  fill 
-                  className="object-cover"
-                />
+                <>
+                  <Image
+                    src={selectedItem.src}
+                    alt={selectedItem.title ?? data.title}
+                    fill
+                    className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                  {/* Zoom hint */}
+                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-black/50 text-white rounded-full p-1.5">
+                    <ZoomIn className="w-4 h-4" />
+                  </div>
+                </>
               )}
             </div>
+
+            {/* Image title */}
+            {selectedItem.title && (
+              <p className="text-sm text-center text-muted-foreground font-medium px-2">
+                {selectedItem.title}
+              </p>
+            )}
+
             {/* Thumbnails */}
-            <div className="flex gap-4 overflow-x-auto pb-2">
-              {data.gallery.map((img: string, idx: number) => (
-                <button 
-                  key={idx} 
-                  onClick={() => setSelectedImage(img)}
-                  className={`relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-all ${selectedImage === img ? 'border-primary' : 'border-transparent opacity-70 hover:opacity-100'}`}
+            <div className="flex gap-3 overflow-x-auto pb-2">
+              {galleryItems.map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setSelectedIdx(idx)}
+                  title={item.title}
+                  className={`relative h-20 w-28 shrink-0 overflow-hidden rounded-lg border-2 transition-all ${
+                    selectedIdx === idx ? 'border-primary' : 'border-transparent opacity-60 hover:opacity-100'
+                  }`}
                 >
-                  {isWebsiteUrl(img) ? (
+                  {isWebsiteUrl(item.src) ? (
                     <div className="flex h-full w-full items-center justify-center bg-muted text-[8px] text-muted-foreground p-1 text-center break-all">
-                      {new URL(img).hostname}
+                      {new URL(item.src).hostname}
                     </div>
                   ) : (
-                    <Image src={img} alt="thumbnail" fill className="object-cover" />
+                    <Image src={item.src} alt={item.title ?? 'thumbnail'} fill className="object-contain" />
                   )}
                 </button>
               ))}
             </div>
           </div>
+
+          {/* Fullscreen Lightbox */}
+          {lightboxOpen && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+              onClick={() => setLightboxOpen(false)}
+            >
+              {/* Close */}
+              <button
+                className="absolute top-4 right-4 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all"
+                onClick={() => setLightboxOpen(false)}
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {/* Prev */}
+              {galleryItems.length > 1 && (
+                <button
+                  className="absolute left-4 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all"
+                  onClick={e => { e.stopPropagation(); goToPrev(); }}
+                  aria-label="Previous"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+              )}
+
+              {/* Image */}
+              <div
+                className="relative w-[90vw] h-[85vh] flex items-center justify-center"
+                onClick={e => e.stopPropagation()}
+              >
+                <Image
+                  src={selectedItem.src}
+                  alt={selectedItem.title ?? data.title}
+                  fill
+                  className="object-contain"
+                  sizes="90vw"
+                  priority
+                />
+              </div>
+
+              {/* Next */}
+              {galleryItems.length > 1 && (
+                <button
+                  className="absolute right-4 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all"
+                  onClick={e => { e.stopPropagation(); goToNext(); }}
+                  aria-label="Next"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              )}
+
+              {/* Title — top */}
+              {selectedItem.title && (
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-max max-w-[80vw] bg-black/60 text-white text-lg font-semibold px-6 py-2 rounded-full text-center">
+                  {selectedItem.title}
+                </div>
+              )}
+
+              {/* Dot indicators */}
+              {galleryItems.length > 1 && (
+                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-2">
+                  {galleryItems.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={e => { e.stopPropagation(); setSelectedIdx(i); }}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        i === selectedIdx ? 'bg-white scale-125' : 'bg-white/40 hover:bg-white/70'
+                      }`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
           {/* 🟢 2. Mobile Only Pricing Section */}
           <div className="block lg:hidden">
             <h3 className="text-xl font-bold mb-4">{t("pricing")}</h3>
