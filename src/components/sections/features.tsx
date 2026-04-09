@@ -28,7 +28,7 @@ export async function FeaturesSection() {
               key={index}
               className="relative overflow-hidden rounded-lg border bg-background/50 p-2 transition-all hover:bg-accent/50 hover:shadow-lg backdrop-blur-sm"
             >
-              <div className="flex h-[180px] flex-col justify-between rounded-md p-6">                              
+              <div className="flex min-h-[180px] flex-col justify-between rounded-md p-6">                              
                 <div className="flex items-center gap-3">
                   <IconComponent className="h-6 w-6 text-primary shrink-0" />
                   <h3 className="font-bold leading-tight">{feature.title}</h3>                  
