@@ -6,21 +6,6 @@ import type { TransitionType } from "@/components/pitch-deck";
 import type { PitchDeckMeta } from "@/config/pitch-decks";
 
 // 动态导入 Deck 组件，禁用 SSR 以避免水合不匹配，并实现代码分割
-const ElmsLogisticsDeck = dynamic(
-  () => import("@content/pitch-decks/elms-logistics/deck").then(mod => mod.ElmsLogisticsDeck),
-  { loading: () => <LoadingSpinner /> }
-);
-
-const AIWeb3LogisticsDeck = dynamic(
-  () => import("@content/pitch-decks/ai-web3-logistics/deck").then(mod => mod.AIWeb3LogisticsDeck),
-  { loading: () => <LoadingSpinner /> }
-);
-
-const AIFamilyBizDeck = dynamic(
-  () => import("@content/pitch-decks/ai-family-biz/deck").then(mod => mod.AIFamilyBizDeck),
-  { loading: () => <LoadingSpinner /> }
-);
-
 const MarketIntelDeck = dynamic(
   () => import("@content/pitch-decks/mota-market-intel/deck").then(mod => mod.MarketIntelDeck),
   { loading: () => <LoadingSpinner /> }
@@ -46,27 +31,6 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated }: PitchDeckViewer
 
   // Deck component registry (client-side)
   switch (slug) {
-    case "elms-logistics":
-      return (
-        <ElmsLogisticsDeck
-          isAuthenticated={true}
-          transition={transition}
-        />
-      );
-    case "ai-web3-logistics":
-      return (
-        <AIWeb3LogisticsDeck
-          isAuthenticated={isAuthenticated}
-          transition={transition}
-        />
-      );
-    case "ai-family-biz":
-      return (
-        <AIFamilyBizDeck
-          isAuthenticated={isAuthenticated}
-          transition={transition}
-        />
-      );
     case "mota-market-intel":
       return <MarketIntelDeck />;
     default:
