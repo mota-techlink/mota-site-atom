@@ -25,13 +25,13 @@ export function CTASection() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <a
-            href="mailto:hello@motaiot.com?subject=Market Intelligence — Get Started"
+            href="mailto:market@motaiot.com?subject=Market Intelligence — Get Started"
             className="px-8 py-4 rounded-full bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-lg transition-all duration-200 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-0.5"
           >
             {cta.primary}
           </a>
           <a
-            href="mailto:hello@motaiot.com?subject=Market Intelligence — Enterprise"
+            href="mailto:market@motaiot.com?subject=Market Intelligence — Enterprise"
             className="px-8 py-4 rounded-full border border-white/20 text-white/80 hover:text-white hover:border-white/40 font-semibold text-lg transition-all duration-200"
           >
             {cta.secondary}
