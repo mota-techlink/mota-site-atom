@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import { DeckLocaleProvider } from "@/components/pitch-deck";
 import { SECTION_IDS, LOCALES, LOCALE_LABELS } from "./constants";
-import { usePageNav, PageNavCtx } from "./hooks";
+import { usePageNav, PageNavCtx, ActiveSlideCtx } from "./hooks";
 import { FloatingNav, SectionDots } from "./nav";
 import { HeroSection } from "./sections/HeroSection";
 import { ProblemSection } from "./sections/ProblemSection";
@@ -111,6 +111,37 @@ const SLIDE_STYLES = `
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0);    }
   }
+
+  /* ── Viewport-adaptive typography ───────────────────── */
+  /* Scale text smoothly between mobile and large desktop  */
+  .mi-slide h1 { font-size: clamp(1.25rem, 2vw + 0.5rem, 3.5rem); }
+  .mi-slide h2 { font-size: clamp(1.15rem, 1.8vw + 0.4rem, 2.5rem); }
+  .mi-slide h3 { font-size: clamp(0.8rem, 0.9vw + 0.3rem, 1.25rem); }
+
+  /* ── Viewport-adaptive spacing ──────────────────────── */
+  /* Margins / gaps shrink on shorter viewports            */
+  .mi-slide section .mb-auto-vh { margin-bottom: clamp(0.5rem, 1.5vh, 2.5rem); }
+
+  /* Ensure slide content fits within safe area on all viewports */
+  .mi-slide > section {
+    max-height: 100dvh;
+    max-height: 100vh; /* fallback */
+  }
+
+  /* Allow active slides to scroll gracefully on short viewports */
+  .mi-slide[data-state="active"] {
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;  /* Firefox */
+  }
+  .mi-slide[data-state="active"]::-webkit-scrollbar { display: none; }
+
+  /* ── Short-viewport compaction (≤ 750px tall) ───────── */
+  @media (max-height: 750px) {
+    .mi-slide section { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .mi-slide h2 { font-size: clamp(1rem, 1.4vw + 0.35rem, 1.75rem); }
+    .mi-slide p  { font-size: clamp(0.7rem, 0.65vw + 0.3rem, 0.95rem); }
+  }
 `;
 
 // ─── Root deck inner ──────────────────────────────────────────────────────────
@@ -123,7 +154,7 @@ function MarketIntelDeckInner() {
       ref={rootRef}
       className="h-full w-full overflow-hidden relative bg-black text-white"
       tabIndex={-1}
-      style={{ outline: "none" }}
+      style={{ outline: "none", touchAction: "none" }}
     >
       <style>{SLIDE_STYLES}</style>
 
@@ -132,28 +163,30 @@ function MarketIntelDeckInner() {
       <SectionDots activeIdx={activeIdx} goTo={goTo} />
 
       {/* Slides — absolutely stacked; only active + exiting are visible */}
-      <PageNavCtx.Provider value={goTo}>
-        {SECTIONS.map((Section, idx) => {
-          const isActive = idx === activeIdx;
-          const isExiting = idx === exitingIdx;
-          const state: "active" | "exiting" | "idle" = isActive
-            ? "active"
-            : isExiting
-            ? "exiting"
-            : "idle";
+      <ActiveSlideCtx.Provider value={activeIdx}>
+        <PageNavCtx.Provider value={goTo}>
+          {SECTIONS.map((Section, idx) => {
+            const isActive = idx === activeIdx;
+            const isExiting = idx === exitingIdx;
+            const state: "active" | "exiting" | "idle" = isActive
+              ? "active"
+              : isExiting
+              ? "exiting"
+              : "idle";
 
-          return (
-            <div
-              key={SECTION_IDS[idx]}
-              className="mi-slide"
-              data-state={state}
-              data-dir={isActive || isExiting ? String(direction) : "0"}
-            >
-              <Section />
-            </div>
-          );
-        })}
-      </PageNavCtx.Provider>
+            return (
+              <div
+                key={SECTION_IDS[idx]}
+                className="mi-slide"
+                data-state={state}
+                data-dir={isActive || isExiting ? String(direction) : "0"}
+              >
+                <Section />
+              </div>
+            );
+          })}
+        </PageNavCtx.Provider>
+      </ActiveSlideCtx.Provider>
     </div>
   );
 }

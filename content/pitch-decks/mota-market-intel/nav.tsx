@@ -15,7 +15,7 @@ export function SectionDots({
   goTo: (idx: number) => void;
 }) {
   return (
-    <div className="fixed right-5 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3 max-lg:hidden">
+    <div className="fixed right-3 sm:right-5 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-2 sm:gap-3">
       {SECTION_IDS.map((_, idx) => (
         <button
           key={idx}
@@ -24,8 +24,8 @@ export function SectionDots({
           className={`
             rounded-full transition-all duration-300 outline-none
             ${activeIdx === idx
-              ? "w-2 h-6 bg-white"
-              : "w-2 h-2 bg-white/25 hover:bg-white/60"}
+              ? "w-1.5 h-4 sm:w-2 sm:h-6 bg-white"
+              : "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/25 hover:bg-white/60"}
           `}
         />
       ))}
@@ -47,7 +47,7 @@ export function FloatingNav({ pastHero }: { pastHero: boolean }) {
           : "bg-transparent"}
       `}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-12 sm:h-16 flex items-center justify-between">
         {/* Logo */}
         <a
           href="/"
@@ -58,7 +58,7 @@ export function FloatingNav({ pastHero }: { pastHero: boolean }) {
             alt="Mota"
             width={108}
             height={36}
-            className="h-8 w-auto"
+            className="h-6 sm:h-8 w-auto"
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).style.display = "none";
             }}
@@ -73,13 +73,13 @@ export function FloatingNav({ pastHero }: { pastHero: boolean }) {
         </a>
 
         {/* Language switcher */}
-        <nav className="flex items-center gap-1">
+        <nav className="flex items-center gap-0.5 sm:gap-1">
           {LOCALES.map((locale) => (
             <button
               key={locale}
               onClick={() => setDeckLocale(locale)}
               className={`
-                px-3 py-1 rounded-full text-sm font-medium transition-all duration-200
+                px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium transition-all duration-200
                 ${deckLocale === locale
                   ? "bg-white text-black"
                   : "text-white/60 hover:text-white hover:bg-white/10"}
