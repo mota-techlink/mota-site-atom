@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
-import { useDeckLocale } from "@/components/pitch-deck";
+import { useDeckLocale, useDeckAccess } from "@/components/pitch-deck";
 import { SECTION_IDS, LOCALES, LOCALE_LABELS } from "./constants";
-import { useContent } from "./hooks";
+import { useContent, PageNavCtx } from "./hooks";
 
 // ─── Section dots ─────────────────────────────────────────────────────────────
 export function SectionDots({
@@ -14,21 +14,68 @@ export function SectionDots({
   activeIdx: number;
   goTo: (idx: number) => void;
 }) {
+  const lastIdx = SECTION_IDS.length - 1;
+
+  // Access control — dim/lock restricted dots
+  let canView: (idx: number) => boolean;
+  try {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const access = useDeckAccess();
+    canView = access.canView;
+  } catch {
+    canView = () => true;
+  }
+
   return (
-    <div className="fixed right-3 sm:right-5 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-2 sm:gap-3">
-      {SECTION_IDS.map((_, idx) => (
-        <button
-          key={idx}
-          onClick={() => goTo(idx)}
-          aria-label={`Go to section ${idx + 1}`}
-          className={`
-            rounded-full transition-all duration-300 outline-none
-            ${activeIdx === idx
-              ? "w-1.5 h-4 sm:w-2 sm:h-6 bg-white"
-              : "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/25 hover:bg-white/60"}
-          `}
-        />
-      ))}
+    <div className="fixed right-3 sm:right-5 top-1/2 -translate-y-1/2 z-40 flex flex-col items-center gap-2 sm:gap-3">
+      {/* Top button */}
+      <button
+        onClick={() => goTo(0)}
+        aria-label="Go to first slide"
+        className={`
+          mb-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center
+          transition-all duration-200 text-[10px] sm:text-xs cursor-pointer
+          ${activeIdx === 0
+            ? "bg-white/5 text-white/15 pointer-events-none"
+            : "bg-white/10 text-white/50 hover:bg-white/20 hover:text-white"}
+        `}
+      >
+        ▲
+      </button>
+
+      {SECTION_IDS.map((_, idx) => {
+        const locked = !canView(idx);
+        return (
+          <button
+            key={idx}
+            onClick={() => goTo(idx)}
+            aria-label={`Go to section ${idx + 1}${locked ? " (locked)" : ""}`}
+            className={`
+              rounded-full transition-all duration-300 outline-none cursor-pointer
+              ${locked
+                ? "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/8 ring-1 ring-white/15"
+                : activeIdx === idx
+                  ? "w-1.5 h-4 sm:w-2 sm:h-6 bg-white"
+                  : "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/25 hover:bg-white/60"}
+            `}
+          />
+        );
+      })}
+
+      {/* End button */}
+      <button
+        onClick={() => goTo(lastIdx)}
+        aria-label="Go to last slide"
+        className={`
+          mt-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center
+          transition-all duration-200 text-[10px] sm:text-xs cursor-pointer
+          ${activeIdx === lastIdx
+            ? "bg-white/5 text-white/15 pointer-events-none"
+            : "bg-white/10 text-white/50 hover:bg-white/20 hover:text-white"}
+        `}
+      >
+        ▼
+      </button>
     </div>
   );
 }

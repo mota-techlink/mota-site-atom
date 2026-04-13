@@ -9,6 +9,18 @@
 //   3. Add a case in src/app/[locale]/pitch-deck/[slug]/pitch-deck-viewer.tsx
 
 import marketIntelMeta from "@content/pitch-decks/mota-market-intel/meta.json";
+import marketDesignMeta from "@content/pitch-decks/market-design/meta.json";
+
+/**
+ * Access level for pitch deck slides beyond the preview limit.
+ *  - `public`  — all slides visible to everyone (no auth required)
+ *  - `user`    — logged-in users can see all slides
+ *  - `admin`   — only admin/staff roles can see all slides
+ */
+export type DeckAccess = "public" | "user" | "admin";
+
+/** Default number of preview slides when not specified in meta.json */
+export const DEFAULT_PREVIEW_SLIDES = 3;
 
 export interface PitchDeckMeta {
   title: string;
@@ -21,6 +33,8 @@ export interface PitchDeckMeta {
   defaultTransition: "fade" | "slide" | "zoom" | "flip";
   tags: string[];
   coverImage?: string;
+  /** Access level — defaults to "admin" if omitted */
+  access?: DeckAccess;
 }
 
 /**
@@ -29,7 +43,7 @@ export interface PitchDeckMeta {
  * Automatically populated from each deck's meta.json.
  */
 export const PITCH_DECK_REGISTRY: Record<string, PitchDeckMeta> = Object.fromEntries(
-  [marketIntelMeta].map((m) => [m.slug, m as PitchDeckMeta])
+  [marketIntelMeta, marketDesignMeta].map((m) => [m.slug, m as PitchDeckMeta])
 );
 
 /**

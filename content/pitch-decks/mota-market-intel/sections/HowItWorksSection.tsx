@@ -110,7 +110,7 @@ export function HowItWorksSection() {
     <section id="s-howitworks" className={`${SECTION} bg-black relative`}>
       <DynamicBackground accent="violet" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-4 sm:mb-8">
           <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs sm:text-sm font-medium mb-2 sm:mb-4">

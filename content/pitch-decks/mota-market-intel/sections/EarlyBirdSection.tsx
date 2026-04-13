@@ -3,6 +3,7 @@
 import React from "react";
 import { useContent } from "../hooks";
 import { SECTION } from "../constants";
+import { DynamicBackground } from "./DynamicBackground";
 
 export function EarlyBirdSection() {
   const c = useContent();
@@ -14,8 +15,9 @@ export function EarlyBirdSection() {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-violet-600/10 rounded-full blur-[100px]" />
       </div>
+      <DynamicBackground accent="violet" brightness={1.8} count={18} />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-3 sm:mb-5 lg:mb-8">
           <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs sm:text-sm font-medium mb-2 sm:mb-3">
             {e.badge}

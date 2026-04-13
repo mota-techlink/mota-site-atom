@@ -3,14 +3,16 @@
 import React from "react";
 import { useContent } from "../hooks";
 import { SECTION } from "../constants";
+import { DynamicBackground } from "./DynamicBackground";
 
 export function TopupSection() {
   const c = useContent();
   const t = c.topup;
 
   return (
-    <section id="s-topup" className={`${SECTION} bg-zinc-950`}>
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="s-topup" className={`${SECTION} bg-zinc-950 relative`}>
+      <DynamicBackground accent="violet" brightness={1.4} count={16} />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs sm:text-sm font-medium mb-3 sm:mb-4">
           {t.badge}
         </span>

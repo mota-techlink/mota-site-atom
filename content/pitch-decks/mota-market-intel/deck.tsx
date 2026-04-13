@@ -1,7 +1,14 @@
 "use client";
 
-import React, { useRef } from "react";
-import { DeckLocaleProvider } from "@/components/pitch-deck";
+import React, { useRef, useCallback, useMemo } from "react";
+import {
+  DeckLocaleProvider,
+  DeckAccessProvider,
+  useDeckAccess,
+  LoginGate,
+} from "@/components/pitch-deck";
+import type { DeckAccess } from "@/config/pitch-decks";
+import { DEFAULT_PREVIEW_SLIDES } from "@/config/pitch-decks";
 import { SECTION_IDS, LOCALES, LOCALE_LABELS } from "./constants";
 import { usePageNav, PageNavCtx, ActiveSlideCtx } from "./hooks";
 import { FloatingNav, SectionDots } from "./nav";
@@ -11,6 +18,10 @@ import { HowItWorksSection } from "./sections/HowItWorksSection";
 import { PlatformsSection } from "./sections/PlatformsSection";
 import { PricingSection } from "./sections/PricingSection";
 import { TopupSection } from "./sections/TopupSection";
+import { DashboardSection } from "./sections/DashboardSection";
+import { BillingSection } from "./sections/BillingSection";
+import { TaskDetailSection } from "./sections/TaskDetailSection";
+import { CreatorPartnerSection } from "./sections/CreatorPartnerSection";
 import { EarlyBirdSection } from "./sections/EarlyBirdSection";
 import { WhyMotaSection } from "./sections/WhyMotaSection";
 import { CTASection } from "./sections/CTASection";
@@ -23,6 +34,10 @@ const SECTIONS = [
   PlatformsSection,
   PricingSection,
   TopupSection,
+  DashboardSection,
+  BillingSection,
+  TaskDetailSection,
+  CreatorPartnerSection,
   EarlyBirdSection,
   WhyMotaSection,
   CTASection,
@@ -142,12 +157,38 @@ const SLIDE_STYLES = `
     .mi-slide h2 { font-size: clamp(1rem, 1.4vw + 0.35rem, 1.75rem); }
     .mi-slide p  { font-size: clamp(0.7rem, 0.65vw + 0.3rem, 0.95rem); }
   }
+
+  /* ── Comfortable-viewport (≥ 900px tall, e.g. 1920×1080) ── */
+  @media (min-height: 900px) {
+    .mi-slide section { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  }
+
+  /* ── Wide-viewport horizontal padding (≥ 1600px) ───── */
+  @media (min-width: 1600px) {
+    .mi-slide section > div { padding-left: 2.5rem; padding-right: 2.5rem; }
+  }
 `;
 
 // ─── Root deck inner ──────────────────────────────────────────────────────────
 function MarketIntelDeckInner() {
   const rootRef = useRef<HTMLDivElement>(null);
-  const { activeIdx, exitingIdx, direction, goTo } = usePageNav(rootRef);
+  const { canView, showGate, previewSlides } = useDeckAccess();
+
+  // Stable options object for usePageNav
+  const navOptions = useMemo(
+    () => ({ canView, onGated: showGate }),
+    [canView, showGate],
+  );
+
+  const { activeIdx, exitingIdx, direction, goTo } = usePageNav(
+    rootRef,
+    navOptions,
+  );
+
+  // Callback to go back to last preview slide when dismissing the gate
+  const handleGateBack = useCallback(() => {
+    goTo(previewSlides - 1);
+  }, [goTo, previewSlides]);
 
   return (
     <div
@@ -187,19 +228,49 @@ function MarketIntelDeckInner() {
           })}
         </PageNavCtx.Provider>
       </ActiveSlideCtx.Provider>
+
+      {/* Login gate — z-50, rendered when user hits a restricted slide */}
+      <LoginGate onBack={handleGateBack} />
     </div>
   );
 }
 
 // ─── Public export ────────────────────────────────────────────────────────────
-export function MarketIntelDeck() {
+interface MarketIntelDeckProps {
+  /** Access level from meta.json — defaults to "public" for this deck */
+  access?: DeckAccess;
+  /** Number of preview slides — defaults to DEFAULT_PREVIEW_SLIDES (3) */
+  previewSlides?: number;
+  /** Server-side auth hint (passed from page.tsx) */
+  isAuthenticated?: boolean;
+  /** Server-side user role hint */
+  userRole?: string;
+}
+
+export function MarketIntelDeck({
+  access = "public",
+  previewSlides = DEFAULT_PREVIEW_SLIDES,
+  isAuthenticated = false,
+  userRole,
+}: MarketIntelDeckProps = {}) {
   return (
-    <DeckLocaleProvider
-      availableLocales={[...LOCALES]}
-      localeLabels={LOCALE_LABELS}
+    <DeckAccessProvider
+      access={access}
+      previewSlides={previewSlides}
+      totalSlides={SECTIONS.length}
+      serverAuth={
+        isAuthenticated
+          ? { isAuthenticated: true, role: userRole }
+          : undefined
+      }
     >
-      <MarketIntelDeckInner />
-    </DeckLocaleProvider>
+      <DeckLocaleProvider
+        availableLocales={[...LOCALES]}
+        localeLabels={LOCALE_LABELS}
+      >
+        <MarketIntelDeckInner />
+      </DeckLocaleProvider>
+    </DeckAccessProvider>
   );
 }
 

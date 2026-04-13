@@ -3,48 +3,45 @@
     "tagline": "市场智能系统"
   },
   "hero": {
-    "badge": "AI 驱动 · 按真实点击付费 · 20+ 平台 · 6 种语言",
-    "title": "你的客户正在网上寻求帮助。",
-    "titleHighlight": "我们把你的产品，自然地送到他们眼前。",
-    "subtitle": "Mota 市场智能系统全天候扫描 Reddit、YouTube、亚马逊、Quora、Naver、Yahoo!知恵袋等 20+ 平台，横跨 6 种语言——精准锁定那些正在公开表达你产品所解决的痛点的真实用户。AI 以真诚有价值的回复加入他们的对话。你只在他们点击时付费。",
+    "badge": "AI 驱动市场智能",
+    "title": "将网上的真实对话",
+    "titleHighlight": "转化为付费客户。",
+    "subtitle": "我们的 AI 在 6 种语言的社区中，精准找到正在公开表达你产品所能解决的痛点的用户，以真诚有价值的回复自然加入对话。只在点击时付费。",
     "cta": "免费开始",
     "ctaSecondary": "了解运作方式",
+    "features": [
+      { "icon": "🤖", "label": "AI 智能匹配" },
+      { "icon": "🌍", "label": "20+ 平台 · 6 种语言" },
+      { "icon": "💰", "label": "仅按真实点击付费" },
+      { "icon": "⚡", "label": "48 小时内上线" }
+    ],
     "stats": [
-      {
-        "value": "20+",
-        "label": "覆盖 6 种语言的平台"
-      },
-      {
-        "value": "48h",
-        "label": "注册到首次触达"
-      },
-      {
-        "value": "0",
-        "label": "无点击则零费用"
-      }
+      { "value": "20+", "label": "覆盖平台" },
+      { "value": "48h", "label": "首次触达" },
+      { "value": "$0", "label": "无点击零费用" }
     ]
   },
   "problem": {
-    "badge": "广告的问题",
-    "title": "传统广告是打扰。我们是拦截意向。",
-    "subtitle": "此刻，数以千计的用户正在各大平台发帖投诉、提出无人解答的问题、给竞品写差评——Reddit、YouTube、亚马逊、Quora，不胜枚举。他们不是在随便刷内容，而是在主动发出信号：他们需要一个解决方案。你的产品可能正是他们要找的——但广告永远不会让他们看到你。",
+    "badge": "问题所在",
+    "title": "传统广告是打扰，我们拦截真实意向。",
+    "subtitle": "此刻，成千上万的用户正在各平台发帖提问、投诉、写差评——他们在主动寻找解决方案。广告触达不了他们。",
     "comparison": {
       "traditional": {
-        "label": "传统广告投放",
+        "label": "传统广告",
         "items": [
-          "按曝光付费——触达的大多是完全不感兴趣的人",
-          "凭感觉猜测用户会搜什么关键词",
-          "参与烧钱的竞价战",
-          "无法判断投入是否产生了真实购买意向"
+          { "icon": "💸", "text": "按曝光付费——大多数人毫不关心" },
+          { "icon": "🎯", "text": "凭猜测选择关键词和受众" },
+          { "icon": "⚔️", "text": "竞价战快速烧光预算" },
+          { "icon": "❓", "text": "无法衡量是否产生真实购买意向" }
         ]
       },
       "mota": {
-        "label": "Mota 市场智能系统",
+        "label": "Mota 智能系统",
         "items": [
-          "触达已经在表达你产品对应痛点的用户",
-          "AI 从你的产品描述反向推导目标受众",
-          "无竞价——早期用户享有固定费率优先权",
-          "只在真实用户点击时付费——完全透明"
+          { "icon": "🎯", "text": "触达已在表达你产品痛点的用户" },
+          { "icon": "🤖", "text": "AI 从产品描述自动锁定目标" },
+          { "icon": "🔒", "text": "固定费率——无竞价战" },
+          { "icon": "✅", "text": "仅为真实点击付费——完全透明" }
         ]
       }
     }
@@ -55,23 +52,23 @@
     "steps": [
       {
         "number": "01",
-        "title": "描述你的产品。就这么简单。",
-        "description": "只需告诉我们你卖什么、帮助谁。无需关键词研究，无需用户画像，无需撰写任何提示词。Mota AI 分析你的产品后，自动推断出客户的痛点、他们活跃的平台、他们提到的竞品，以及他们用来描述挫败感的具体语言——横跨 6 种语言。几分钟内就绪。"
+        "title": "描述你的产品",
+        "description": "告诉我们你卖什么、帮助谁。AI 自动推断客户痛点、活跃平台、竞品和表达语言，横跨 6 种语言。几分钟就绪。"
       },
       {
         "number": "02",
         "title": "AI 全天候扫描 20+ 平台",
-        "description": "我们的 Agent 持续监听 Reddit、YouTube、亚马逊评论区、Quora、Twitter/X、App Store、Google Play、G2、Trustpilot、Hacker News、Stack Overflow——以及 Naver 지식iN、Yahoo!知恵袋、Pikabu、Reclame Aqui、VK 等多语言本土平台。每一条无人解答的投诉、每一条竞品差评、每一篇挫败感帖子，都是信号。"
+        "description": "Agent 持续监听全球社区——每一条未解答的投诉、低星差评和挫败帖子，都是你产品的信号。"
       },
       {
         "number": "03",
-        "title": "AI 发布真诚有价值的回复",
-        "description": "当发现高意向匹配内容时，我们的 AI 生成一条契合语境的回复——先提供真正有用的建议，最后自然引出你的产品。这不像广告，更像是用户期待已久的答案。所有回复在发布前均经人工审核，品质有保障。"
+        "title": "真诚有价值的回复",
+        "description": "发现匹配时，AI 生成应景回复——先给价值，再自然引出产品。发布前均经人工审核。"
       },
       {
         "number": "04",
-        "title": "只在有人点击时你才付费",
-        "description": "每条回复都包含唯一追踪链接。当用户点击进入你的产品页面，消耗一个 Credit。零点击？零费用。实时数据面板展示每条回复、每次点击、每次转化——并完整归因至原始帖子和平台。"
+        "title": "有人点击才付费",
+        "description": "每条回复含唯一追踪链接。一次点击 = 一个 Credit。零点击 = 零费用。实时面板展示每条回复、点击和转化。"
       }
     ]
   },
@@ -80,36 +77,21 @@
     "title": "你的客户在哪里，我们就在哪里倾听。",
     "subtitle": "英语主流平台 + 西班牙语、葡萄牙语、日语、韩语、俄语本土社区。持续新增平台，不额外收费。",
     "items": [
-      "Reddit",
-      "YouTube",
-      "亚马逊评论",
-      "Quora",
-      "Twitter / X",
-      "App Store",
-      "Google Play",
-      "Hacker News",
-      "Stack Overflow",
-      "Trustpilot",
-      "G2",
-      "Naver 지식iN",
-      "Yahoo! 知恵袋",
-      "Pikabu",
-      "Reclame Aqui",
-      "VK",
-      "Yandex Q",
-      "Taringa!",
-      "Kakaku.com",
-      "Coupang"
+      "Reddit", "YouTube", "亚马逊评论", "Quora",
+      "Twitter / X", "App Store", "Google Play",
+      "Hacker News", "Stack Overflow", "Trustpilot", "G2",
+      "Naver 지식iN", "Yahoo! 知恵袋", "Pikabu", "Reclame Aqui",
+      "VK", "Yandex Q", "Taringa!", "Kakaku.com", "Coupang"
     ]
   },
   "pricing": {
     "badge": "收费方式",
     "title": "按点击付费，仅此而已。",
-    "subtitle": "无月费，无开户费，无最低消费。Credit 永不过期。只有真实用户点击你的追踪链接并进入产品页面时才产生费用。",
+    "subtitle": "无月费，无开户费，无最低消费。Credit 永不过期。只有真实用户点击追踪链接进入产品页面时才产生费用。",
     "perClick": "每次点击",
     "currentRate": "$0.15",
     "currentRateLabel": "Starter 套餐 · 注册时锁定费率",
-    "note": "你的单次点击费率在注册时永久锁定。未来调价不影响已有账号。",
+    "note": "单次点击费率在注册时永久锁定。未来调价不影响已有账号。",
     "features": [
       "无点击则零费用",
       "实时数据面板——每条回复、每次点击",
@@ -120,99 +102,331 @@
   "topup": {
     "badge": "Credit 套餐",
     "title": "选择套餐，锁定费率。",
-    "subtitle": "预充值 Credit 即可享受更低单价。Credit 永不过期，随时升级。企业客户可享专属定价与专属客户经理。",
-    "tableHeaders": [
-      "套餐",
-      "Credit & 价格",
-      "单次点击"
-    ],
+    "subtitle": "预充值 Credit 享受更低单价。永不过期，随时升级。企业客户享专属定价和专属经理。",
+    "tableHeaders": ["套餐", "Credit & 价格", "单次点击"],
     "tiers": [
+      { "amount": "Starter", "discount": "100 次点击 · $9", "rate": "$0.090" },
+      { "amount": "Growth", "discount": "500 次点击 · $39", "rate": "$0.078" },
+      { "amount": "Scale", "discount": "2,000 次点击 · $129", "rate": "$0.065" }
+    ],
+    "note": "Enterprise 套餐：不限量 · 专属费率 · 专属支持。欢迎联系。"
+  },
+  "dashboard": {
+    "badge": "控制面板",
+    "title": "每一次互动，实时可见。",
+    "subtitle": "统一面板——查看回复、点击、转化和 ROI，跨所有平台和语言。",
+    "stats": [
+      { "label": "总点击数", "value": "1,284", "change": "+12.5%", "icon": "🖱️" },
+      { "label": "活跃回复", "value": "3,847", "change": "+8.3%", "icon": "💬" },
+      { "label": "转化率", "value": "4.7%", "change": "+0.6%", "icon": "📈" },
+      { "label": "已用额度", "value": "$96.30", "change": "剩余 742", "icon": "💰" }
+    ],
+    "chart": {
+      "title": "本周点击量",
+      "convTitle": "转化率 %",
+      "bars": [
+        { "label": "周一", "value": 42, "conv": 3.2 },
+        { "label": "周二", "value": 68, "conv": 4.8 },
+        { "label": "周三", "value": 55, "conv": 4.1 },
+        { "label": "周四", "value": 91, "conv": 6.5 },
+        { "label": "周五", "value": 78, "conv": 5.9 },
+        { "label": "周六", "value": 34, "conv": 2.8 },
+        { "label": "周日", "value": 22, "conv": 1.9 }
+      ]
+    },
+    "activity": {
+      "title": "最近动态",
+      "items": [
+        { "platform": "Reddit", "action": "回复已发布 → r/SaaS", "time": "2 分钟前", "status": "click" },
+        { "platform": "YouTube", "action": "回复已发布 → 评论区", "time": "8 分钟前", "status": "posted" },
+        { "platform": "Naver", "action": "回复已发布 → 지식iN", "time": "15 分钟前", "status": "click" },
+        { "platform": "Quora", "action": "回复已发布 → 产品对比帖", "time": "23 分钟前", "status": "posted" },
+        { "platform": "G2", "action": "回复已发布 → 替代品讨论", "time": "31 分钟前", "status": "click" }
+      ]
+    }
+  },
+  "billing": {
+    "badge": "互动演示",
+    "title": "完全透明——深入每一次点击。",
+    "subtitle": "点击任意账单查看明细，点击明细查看原始帖子、AI 回复、用户评价和追踪证据。",
+    "backToInvoices": "← 返回账单列表",
+    "backToDetails": "← 返回明细",
+    "backToTop": "⇈ 返回账单列表",
+    "invoices": {
+      "title": "账单历史",
+      "headers": ["账单号", "日期", "点击数", "金额", "状态"],
+      "rows": [
+        { "id": "INV-2026-041", "date": "2026-04-07", "clicks": "127", "amount": "$11.43", "status": "已支付" },
+        { "id": "INV-2026-040", "date": "2026-03-31", "clicks": "203", "amount": "$18.27", "status": "已支付" },
+        { "id": "INV-2026-039", "date": "2026-03-24", "clicks": "89", "amount": "$8.01", "status": "已支付" },
+        { "id": "INV-2026-038", "date": "2026-03-17", "clicks": "156", "amount": "$14.04", "status": "已支付" }
+      ]
+    },
+    "details": {
+      "title": "账单明细 — {id}",
+      "headers": ["#", "平台", "帖子标题", "点击数", "费用"],
+      "rows": [
+        { "idx": "1", "platform": "Reddit", "post": "小团队最好的 Notion 替代品？", "clicks": "23", "cost": "$2.07" },
+        { "idx": "2", "platform": "Quora", "post": "最容易上手的项目管理工具是什么？", "clicks": "18", "cost": "$1.62" },
+        { "idx": "3", "platform": "YouTube", "post": "我试了 10 个效率工具——这是排名", "clicks": "31", "cost": "$2.79" },
+        { "idx": "4", "platform": "Naver", "post": "프로젝트 관리 앱 추천해주세요", "clicks": "12", "cost": "$1.08" }
+      ]
+    },
+    "clickDetail": {
+      "title": "点击证据",
+      "userPost": "用户原始帖子",
+      "aiReply": "AI 回复",
+      "userPostContent": "\"我一直在用 Notion，但对我 5 人的团队来说太复杂了。我们只需要任务看板和简单文档。有什么建议不用花一周时间来设置的吗？\"",
+      "aiReplyContent": "\"完全理解——Notion 的灵活性对小团队来说确实容易变得繁琐。如果你想要 5 分钟就能上手的任务看板+文档工具，可以看看 [产品名]。我的团队上个月换过来，整个上手过程大约只用了 10 分钟。\"",
+      "tracking": {
+        "title": "追踪证据",
+        "clickTime": "2026-04-07 · 14:23 UTC",
+        "source": "Reddit · r/SaaS",
+        "landingPage": "https://yourproduct.com/?ref=mota-r-28491",
+        "gaSession": "GA Session ID: UA-XXXXX-1 / 1728491023",
+        "timeOnPage": "2 分 34 秒",
+        "converted": "是 — 已注册免费试用"
+      },
+      "screenshot": "原始页面截图",
+      "viewOriginal": "查看原始帖子 →"
+    }
+  },
+  "taskDetail": {
+    "badge": "任务监控",
+    "title": "AI 回复效果追踪器",
+    "subtitle": "按平台和关键词筛选，点击任意指标查看详细证据。",
+    "searchPlaceholder": "搜索问题或回复…",
+    "filterAll": "全部平台",
+    "platforms": ["Reddit", "YouTube", "Quora", "Naver", "G2", "Amazon"],
+    "headers": ["平台", "问题", "AI 回复", "点击数", "转化率"],
+    "tasks": [
       {
-        "amount": "Starter",
-        "discount": "100 次点击 · $9",
-        "rate": "$0.090"
+        "id": "T-001",
+        "platform": "Reddit",
+        "question": "小团队最好的 Notion 替代品？",
+        "replyPreview": "如果你想 5 分钟就能上手任务看板 + 文档，可以看看 [Product]…",
+        "clicks": 23,
+        "convRate": "8.7%",
+        "clickDetails": [
+          { "time": "4月7日 14:23 UTC", "ref": "r/SaaS · u/devpro99", "landing": "yourproduct.com/?ref=mota-r-28491", "ga": "UA-XXXXX-1 / 172849", "duration": "2分34秒" },
+          { "time": "4月7日 16:05 UTC", "ref": "r/SaaS · u/mkteam", "landing": "yourproduct.com/?ref=mota-r-28512", "ga": "UA-XXXXX-1 / 172851", "duration": "1分47秒" },
+          { "time": "4月8日 09:12 UTC", "ref": "r/startups · u/founderX", "landing": "yourproduct.com/?ref=mota-r-28534", "ga": "UA-XXXXX-1 / 172855", "duration": "3分11秒" }
+        ],
+        "conversions": [
+          { "time": "4月7日 14:25 UTC", "action": "注册免费试用", "value": "$0", "source": "r/SaaS" },
+          { "time": "4月8日 09:18 UTC", "action": "注册免费试用", "value": "$0", "source": "r/startups" }
+        ]
       },
       {
-        "amount": "Growth",
-        "discount": "500 次点击 · $39",
-        "rate": "$0.078"
+        "id": "T-002",
+        "platform": "Quora",
+        "question": "最容易上手的项目管理工具是什么？",
+        "replyPreview": "如果团队只需要任务看板而不是复杂功能，[Product] 值得一试…",
+        "clicks": 18,
+        "convRate": "5.6%",
+        "clickDetails": [
+          { "time": "4月6日 10:41 UTC", "ref": "Quora · 回答串", "landing": "yourproduct.com/?ref=mota-q-7821", "ga": "UA-XXXXX-1 / 172800", "duration": "1分55秒" },
+          { "time": "4月6日 22:17 UTC", "ref": "Quora · 回答串", "landing": "yourproduct.com/?ref=mota-q-7822", "ga": "UA-XXXXX-1 / 172811", "duration": "2分08秒" }
+        ],
+        "conversions": [
+          { "time": "4月6日 10:44 UTC", "action": "查看定价页面", "value": "$0", "source": "Quora" }
+        ]
       },
       {
-        "amount": "Scale",
-        "discount": "2,000 次点击 · $129",
-        "rate": "$0.065"
+        "id": "T-003",
+        "platform": "YouTube",
+        "question": "我试了 10 个效率工具——这是排名",
+        "replyPreview": "好榜单！再推荐一个：[Product]——对小团队来说简单到不可思议…",
+        "clicks": 31,
+        "convRate": "3.2%",
+        "clickDetails": [
+          { "time": "4月5日 08:30 UTC", "ref": "YouTube · @ProdReviewer", "landing": "yourproduct.com/?ref=mota-yt-4401", "ga": "UA-XXXXX-1 / 172780", "duration": "0分52秒" },
+          { "time": "4月5日 14:19 UTC", "ref": "YouTube · @ProdReviewer", "landing": "yourproduct.com/?ref=mota-yt-4402", "ga": "UA-XXXXX-1 / 172789", "duration": "3分42秒" }
+        ],
+        "conversions": [
+          { "time": "4月5日 14:23 UTC", "action": "注册免费试用", "value": "$0", "source": "YouTube" }
+        ]
+      },
+      {
+        "id": "T-004",
+        "platform": "Naver",
+        "question": "프로젝트 관리 앱 추천해주세요",
+        "replyPreview": "소규모 팀에 추천하는 [Product] — 5분이면 시작할 수 있습니다…",
+        "clicks": 12,
+        "convRate": "16.7%",
+        "clickDetails": [
+          { "time": "4月7日 03:15 UTC", "ref": "Naver 지식iN · user8821", "landing": "yourproduct.com/?ref=mota-nv-901", "ga": "UA-XXXXX-1 / 172840", "duration": "4分02秒" },
+          { "time": "4月7日 11:44 UTC", "ref": "Naver 지식iN · user9103", "landing": "yourproduct.com/?ref=mota-nv-902", "ga": "UA-XXXXX-1 / 172848", "duration": "2分18秒" }
+        ],
+        "conversions": [
+          { "time": "4月7日 03:22 UTC", "action": "注册免费试用", "value": "$0", "source": "Naver" },
+          { "time": "4月7日 11:50 UTC", "action": "付费升级", "value": "$9", "source": "Naver" }
+        ]
+      },
+      {
+        "id": "T-005",
+        "platform": "G2",
+        "question": "寻找比 Asana 更简洁的替代品",
+        "replyPreview": "Asana 适合复杂流程，但如果你需要更精简的工具，[Product] 专注于核心功能…",
+        "clicks": 9,
+        "convRate": "11.1%",
+        "clickDetails": [
+          { "time": "4月6日 17:33 UTC", "ref": "G2 · 对比帖", "landing": "yourproduct.com/?ref=mota-g2-220", "ga": "UA-XXXXX-1 / 172815", "duration": "5分11秒" }
+        ],
+        "conversions": [
+          { "time": "4月6日 17:40 UTC", "action": "注册免费试用", "value": "$0", "source": "G2" }
+        ]
+      },
+      {
+        "id": "T-006",
+        "platform": "Amazon",
+        "question": "一星评价：'功能太多，太复杂了'",
+        "replyPreview": "完全理解——功能过载确实是个问题。如果你需要简单的工具，[Product] 就是为此而生…",
+        "clicks": 7,
+        "convRate": "0%",
+        "clickDetails": [
+          { "time": "4月8日 02:09 UTC", "ref": "Amazon · 已验证买家", "landing": "yourproduct.com/?ref=mota-amz-55", "ga": "UA-XXXXX-1 / 172860", "duration": "1分03秒" }
+        ],
+        "conversions": []
       }
     ],
-    "note": "Enterprise 套餐：不限量 · 专属费率 · 专属支持。欢迎联系我们。"
+    "clickDetailTitle": "点击证据",
+    "clickHeaders": ["时间", "来源 / 引用", "落地页", "GA 会话", "停留时间"],
+    "convTitle": "转化证据",
+    "convHeaders": ["时间", "行为", "价值", "来源"],
+    "close": "✕ 关闭",
+    "noResults": "未找到匹配的任务。",
+    "noConversions": "暂无转化记录。"
+  },
+  "creatorPartner": {
+    "badge": "达人合作 · AI 时代",
+    "title": "AI 驱动的达人网络",
+    "titleHighlight": "共赢，全自动。",
+    "subtitle": "AI 自动招募平台达人、管理合作全流程、处理结算——将每位达人转化为可信赖的增长渠道。",
+    "vision": {
+      "title": "AI 时代的商业模式革新",
+      "items": [
+        { "icon": "🤝", "label": "共赢经济", "desc": "达人赚取按点击计费的佣金；品牌获得真实、高信任度的大规模推荐。" },
+        { "icon": "🤖", "label": "AI 优先协作", "desc": "从外联到内容共创到结算——AI 自主完成 95% 的工作流程。" },
+        { "icon": "🔄", "label": "自增长飞轮", "desc": "更好的达人 → 更高信任 → 更高转化 → 吸引更多达人。网络效应持续复利增长。" }
+      ]
+    },
+    "flow": {
+      "title": "全自动运作流程",
+      "steps": [
+        { "icon": "📡", "num": "01", "title": "AI 寻找达人", "desc": "Agent 扫描各平台中高互动量与领域权威的活跃创作者，自动发送个性化合作邀请。" },
+        { "icon": "✍️", "num": "02", "title": "内容共创", "desc": "AI 提供产品简介 + 回复模板。达人用自己的风格发布在个人账号——真实可信，非脚本化。" },
+        { "icon": "🔗", "num": "03", "title": "追踪链接与入口", "desc": "每条达人发布的内容附带唯一追踪链接。点击、转化、归因均实时记录。" },
+        { "icon": "💳", "num": "04", "title": "自动结算", "desc": "佣金按账单周期自动计算。通过 Stripe 直接转账或加密货币（USDT / USDC）支付。零人工操作。" }
+      ]
+    },
+    "dashboard": {
+      "title": "达人管理控制台",
+      "stats": [
+        { "label": "活跃达人", "value": "128", "icon": "👤", "change": "+本周 18 位" },
+        { "label": "达人点击", "value": "4,721", "icon": "🖱️", "change": "+22.3%" },
+        { "label": "平均转化率", "value": "7.2%", "icon": "📈", "change": "+1.1%" },
+        { "label": "累计支付", "value": "$2,340", "icon": "💰", "change": "已付 32 位达人" }
+      ],
+      "recentTitle": "最近达人动态",
+      "recent": [
+        { "creator": "@TechBlogger_JP", "platform": "Yahoo!", "action": "发布评测 · 12 次点击", "status": "active", "time": "5 分钟前" },
+        { "creator": "@DevToolKR", "platform": "Naver", "action": "Stripe 支付 $45.60", "status": "paid", "time": "1 小时前" },
+        { "creator": "@SaaS_Reviews", "platform": "Reddit", "action": "接受合作邀请", "status": "new", "time": "3 小时前" },
+        { "creator": "@StartupGuru", "platform": "YouTube", "action": "发布视频提及 · 38 次点击", "status": "active", "time": "6 小时前" },
+        { "creator": "@CryptoNomad", "platform": "Twitter", "action": "钱包支付 28 USDT", "status": "paid", "time": "1 天前" }
+      ]
+    },
+    "payment": {
+      "title": "灵活结算方式",
+      "methods": [
+        { "icon": "💳", "name": "Stripe", "desc": "银行直转 · 自动开票" },
+        { "icon": "₿", "name": "加密货币", "desc": "USDT / USDC · 低手续费 · 全球覆盖" }
+      ]
+    },
+    "statusLabels": {
+      "active": "活跃",
+      "paid": "已付",
+      "new": "新加入"
+    }
   },
   "earlybird": {
     "badge": "早期用户",
     "title": "现在加入，永久锁定费率与优先权。",
-    "subtitle": "Mota 市场智能系统目前处于早期公测阶段。当前没有竞价——所有注册产品平等享有触达机会。随着平台规模扩大，这一机制将改变。立即注册，永久锁定你的专属优势。",
+    "subtitle": "Mota 市场智能系统处于早期公测。当前无竞价——所有产品平等触达。立即注册，永久锁定优势。",
     "benefits": [
       {
         "icon": "🔒",
         "title": "费率永久锁定",
-        "description": "你的单次点击费率将永久锁定在今日价格。即使我们明天调涨，你的账号也不受任何影响——有保障。"
+        "description": "单次点击费率永久锁定在今日价格——有保障。"
       },
       {
         "icon": "⭐",
         "title": "早期合作伙伴身份",
-        "description": "你的账号被标注为「早期合作伙伴」。随着平台成长、更多品牌加入竞争，早期合作伙伴始终优先获得流量分配权。"
+        "description": "早期合作伙伴始终优先获得流量分配权。"
       },
       {
         "icon": "🌐",
         "title": "全球首批触达权",
-        "description": "每当我们拓展新语言市场或新平台，早期合作伙伴的产品最先进入新受众——无需额外配置。"
+        "description": "新市场和新平台——早期合作伙伴的产品最先匹配。"
       },
       {
         "icon": "🎯",
         "title": "一对一配置支持",
-        "description": "早期用户可获得我们团队的直接支持，协助搭建产品档案、调整回复语气、优化匹配精度——全程免费。"
+        "description": "产品档案搭建、回复语气、匹配精度优化——全程免费。"
       }
     ],
-    "urgency": "早期费率锁定名额有限。平台正式大规模开放后，今日定价将不再对新注册用户开放。"
+    "urgency": "早期费率锁定名额有限。平台大规模开放后，今日定价不再对新用户开放。"
   },
   "whymota": {
     "badge": "为什么选择 Mota",
-    "title": "不是广告网络——是需求拦截引擎。",
+    "title": "别再烧广告费。直接拦截真实需求。",
+    "subtitle": "当竞争对手还在为曝光量买单时，你已经在和真正喊痛的人对话了。",
     "cards": [
       {
+        "icon": "🎯",
         "title": "意向已经在那里",
-        "description": "我们引导到你产品页面的每个用户，都已在真实平台上用自己的话公开表达了产品所能解决的痛点。你不是在打扰一个随意刷屏的人，而是被一个正在主动寻找答案的人发现。"
+        "description": "每个被引导到你产品页面的用户，都已在真实平台上公开表达了产品所能解决的痛点。",
+        "metric": "100%",
+        "metricLabel": "意向驱动"
       },
       {
+        "icon": "🛡️",
         "title": "零曝光浪费",
-        "description": "你永远不为触达、浏览量或曝光付费。没有一分钱花在未表达真实意向的人身上。如果我们没有带来点击，你一分不花——这是唯一真正零风险的客户获取模式。"
+        "description": "没有一分钱花在未表达真实意向的人身上。无点击 = 零费用。",
+        "metric": "$0",
+        "metricLabel": "浪费支出"
       },
       {
-        "title": "6 种语言，一个面板。",
-        "description": "无论你的客户在 Reddit 发英文帖、在 Naver 用韩语投诉、还是在亚马逊留日文差评——Mota 全部监听、全部回应、统一报表。全球触达，无需全球团队。"
+        "icon": "🌐",
+        "title": "6 种语言 × 多平台覆盖",
+        "description": "英语、西班牙语、葡萄牙语、日语、韩语、俄语——横跨 Reddit、Naver、Amazon、Yahoo! 等主流平台。一个面板，零语言障碍。",
+        "metric": "6",
+        "metricLabel": "种语言"
       }
     ]
   },
   "cta": {
-    "title": "你的客户此刻就在网上——等你出现。",
-    "subtitle": "免费注册。描述你的产品。48 小时内，AI 开始在 20+ 平台的 6 种语言中为你寻找真正需要你产品的人。",
-    "primary": "免费开始",
-    "secondary": "联系我们了解企业方案",
-    "footnote": "注册无需信用卡 · 无最低消费 · 随时暂停 · 数据完全透明"
+    "headline": "你每多犹豫一秒，",
+    "headlineHighlight": "商机就被竞争对手抢走了。",
+    "title": "0 风险，无点击不收费。",
+    "subtitle": "早启动，早收益——不然商机就被竞争对手抢走了。",
+    "stats": [
+      { "value": "$0", "label": "零风险启动" },
+      { "value": "48h", "label": "注册到首条线索" },
+      { "value": "10+", "label": "监控平台" }
+    ],
+    "primary": "立即免费捕获需求",
+    "secondary": "预约演示",
+    "urgency": "⚡ 限时早鸟价——立即锁定你的专属费率",
+    "footnote": "无点击不收费 · 无最低消费 · 随时暂停 · 数据完全透明"
   },
   "footer": {
     "copyright": "© 2026 MOTA TechLink. 保留所有权利。",
     "links": [
-      {
-        "label": "隐私政策",
-        "href": "/legal/privacy"
-      },
-      {
-        "label": "服务条款",
-        "href": "/legal/terms"
-      },
-      {
-        "label": "联系我们",
-        "href": "mailto:market@motaiot.com"
-      }
+      { "label": "隐私政策", "href": "/privacy" },
+      { "label": "服务条款", "href": "/terms" },
+      { "label": "联系我们", "href": "/contact" }
     ]
   }
 }
