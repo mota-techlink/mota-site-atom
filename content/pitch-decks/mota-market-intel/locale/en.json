@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "tagline": "Market Intelligence"
+  },
+  "hero": {
+    "badge": "AI-Powered · Pay Per Real Click · 20+ Platforms · 6 Languages",
+    "title": "Your customers are already asking for help.",
+    "titleHighlight": "We place your product in front of them — naturally.",
+    "subtitle": "Mota Market Intelligence scans Reddit, YouTube, Amazon, Quora, Naver, Yahoo! 知恵袋, and 20+ platforms across 6 languages — pinpointing users who publicly express the exact problem your product solves. Our AI joins the conversation with genuine, helpful replies. You only pay when they click.",
+    "cta": "Get Started Free",
+    "ctaSecondary": "See How It Works",
+    "stats": [
+      { "value": "20+", "label": "Platforms in 6 languages" },
+      { "value": "48h", "label": "From signup to first mentions" },
+      { "value": "0¢", "label": "Cost if no clicks happen" }
+    ]
+  },
+  "problem": {
+    "badge": "The Problem With Ads",
+    "title": "Traditional ads interrupt. We intercept intent.",
+    "subtitle": "Right now, thousands of users are posting complaints, asking unanswered questions, and leaving competitor reviews — on Reddit, YouTube, Amazon, Quora, and dozens more platforms. They're not browsing passively. They're actively signalling they need a solution. Your product may be exactly what they're looking for. But they'll never see an ad for it.",
+    "comparison": {
+      "traditional": {
+        "label": "Traditional Advertising",
+        "items": [
+          "Pay per impression — reach people who don't care",
+          "Guess what keywords your audience uses",
+          "Compete in expensive bidding wars",
+          "No way to know if spend generates real intent"
+        ]
+      },
+      "mota": {
+        "label": "Mota Market Intelligence",
+        "items": [
+          "Reach users already expressing your exact pain point",
+          "AI reverse-engineers your audience from your product description",
+          "No bidding — early users get flat-rate priority access",
+          "Pay only when a real user clicks through — full transparency"
+        ]
+      }
+    }
+  },
+  "howitworks": {
+    "badge": "How It Works",
+    "title": "From product description to real customers — automatically.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Describe Your Product. That's It.",
+        "description": "Just tell us what you sell and who it helps. No keyword research. No audience briefs. No prompts to write. Mota's AI analyzes your product and automatically infers your customers' pain points, the platforms they use, the competitors they mention, and the language they use to describe their frustration — across 6 languages. Ready in minutes."
+      },
+      {
+        "number": "02",
+        "title": "AI Scans 20+ Platforms Around the Clock",
+        "description": "Our agents continuously monitor Reddit, YouTube, Amazon Reviews, Quora, Twitter/X, App Store, Google Play, G2, Trustpilot, Hacker News, Stack Overflow — plus multilingual platforms like Naver 지식iN, Yahoo! 知恵袋, Pikabu, Reclame Aqui, and VK. Every unanswered complaint, every low-star competitor review, every frustrated post is a signal."
+      },
+      {
+        "number": "03",
+        "title": "AI Posts Genuine, Helpful Replies",
+        "description": "When a high-intent match is found, our AI generates a contextually appropriate reply — real value first, your product introduced naturally at the end. It doesn't feel like an ad. It feels like the answer the user was looking for. All replies go through human review before posting, so quality is guaranteed."
+      },
+      {
+        "number": "04",
+        "title": "You Pay Only When Someone Clicks",
+        "description": "Every reply contains a unique tracking link. When a user clicks through to your product page, one credit is consumed. Zero clicks? Zero cost. Your real-time dashboard shows every reply, every click, every conversion — with full attribution back to the original post and platform."
+      }
+    ]
+  },
+  "platforms": {
+    "badge": "Platform Coverage",
+    "title": "Wherever your customers talk, we listen.",
+    "subtitle": "English platforms plus native communities in Spanish, Portuguese, Japanese, Korean & Russian. New platforms added continuously at no extra cost.",
+    "items": [
+      "Reddit", "YouTube", "Amazon Reviews", "Quora",
+      "Twitter / X", "App Store", "Google Play",
+      "Hacker News", "Stack Overflow", "Trustpilot", "G2",
+      "Naver 지식iN", "Yahoo! 知恵袋", "Pikabu", "Reclame Aqui",
+      "VK", "Yandex Q", "Taringa!", "Kakaku.com", "Coupang"
+    ]
+  },
+  "pricing": {
+    "badge": "Pricing",
+    "title": "Pay per click. Nothing else.",
+    "subtitle": "No monthly fees. No setup costs. No minimum spend. Credits never expire. You are charged only when a real user clicks your tracked link and lands on your product page.",
+    "perClick": "per click",
+    "currentRate": "$0.09",
+    "currentRateLabel": "Starter plan · rate locked at signup",
+    "note": "Your per-click rate is locked at the plan rate when you register. Future price increases never affect existing accounts.",
+    "features": [
+      "Zero cost if no clicks happen",
+      "Real-time dashboard — every reply, every click",
+      "Full attribution back to the original post & platform",
+      "No contracts · export your data anytime"
+    ]
+  },
+  "topup": {
+    "badge": "Credit Plans",
+    "title": "Choose a plan. Lock your rate.",
+    "subtitle": "Pre-load credits and pay a lower per-click rate. Credits never expire. Upgrade anytime. Enterprise clients get custom pricing and a dedicated account manager.",
+    "tableHeaders": ["Plan", "Credits & Price", "Per Click"],
+    "tiers": [
+      { "amount": "Starter", "discount": "100 clicks · $9", "rate": "$0.090" },
+      { "amount": "Growth", "discount": "500 clicks · $39", "rate": "$0.078" },
+      { "amount": "Scale", "discount": "2,000 clicks · $129", "rate": "$0.065" }
+    ],
+    "note": "Enterprise plan: unlimited volume · custom rate · dedicated support. Contact us."
+  },
+  "earlybird": {
+    "badge": "Early Access",
+    "title": "Join now. Lock your rate. Get priority forever.",
+    "subtitle": "Mota Market Intelligence is in early access. There is no competitive bidding — every registered product gets equal discovery reach. That changes as we scale. Register now to lock in your advantages permanently.",
+    "benefits": [
+      {
+        "icon": "🔒",
+        "title": "Permanent Rate Lock",
+        "description": "Your per-click rate is locked permanently at today's price. If we raise prices tomorrow, your account is never affected — guaranteed."
+      },
+      {
+        "icon": "⭐",
+        "title": "Early Partner Status",
+        "description": "Your profile is flagged as an Early Partner. As our platform grows and more brands compete for visibility, Early Partners receive priority allocation over new entrants — always."
+      },
+      {
+        "icon": "🌐",
+        "title": "First-Tier Global Reach",
+        "description": "When we expand to new language markets and platforms, Early Partners' products are matched into those new audiences first — no extra configuration needed."
+      },
+      {
+        "icon": "🎯",
+        "title": "Direct Configuration Support",
+        "description": "Early access members get hands-on support from our team to set up their product profile, fine-tune reply tone, and optimize matching precision — at no extra charge."
+      }
+    ],
+    "urgency": "Early access rate locks are time-limited. Once the platform opens broadly, today's pricing will no longer be available to new registrants."
+  },
+  "whymota": {
+    "badge": "Why Mota",
+    "title": "Not an ad network. A demand interception engine.",
+    "cards": [
+      {
+        "title": "Intent Is Already There",
+        "description": "Every user we direct to your product has publicly expressed the exact problem it solves — on a real platform, in their own words. You're not interrupting a scroll. You're being discovered by someone already searching for an answer."
+      },
+      {
+        "title": "Zero Impression Waste",
+        "description": "You never pay for reach, views, or impressions. Not a single cent is spent on someone who hasn't signalled real intent. If we don't deliver clicks, you pay nothing — the only truly risk-free customer acquisition model."
+      },
+      {
+        "title": "6 Languages. One Dashboard.",
+        "description": "Whether your customers vent on Reddit in English, complain on Naver in Korean, or post frustrated reviews in Japanese — Mota listens, responds, and reports everything in one place. Global reach without global headcount."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Your customers are out there — right now.",
+    "subtitle": "Register free. Describe your product. Within 48 hours, our AI begins finding the people who need exactly what you sell — across 20+ platforms in 6 languages.",
+    "primary": "Get Started Free",
+    "secondary": "Talk to Us About Enterprise",
+    "footnote": "No credit card required · No minimum spend · Cancel anytime · Full data transparency"
+  },
+  "footer": {
+    "copyright": "© 2026 MOTA TechLink. All rights reserved.",
+    "links": [
+      { "label": "Privacy Policy", "href": "/legal/privacy" },
+      { "label": "Terms of Service", "href": "/legal/terms" },
+      { "label": "Contact", "href": "mailto:market@motaiot.com" }
+    ]
+  }
+}

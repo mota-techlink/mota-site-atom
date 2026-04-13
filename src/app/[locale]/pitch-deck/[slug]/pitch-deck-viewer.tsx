@@ -21,6 +21,11 @@ const AIFamilyBizDeck = dynamic(
   { loading: () => <LoadingSpinner /> }
 );
 
+const MarketIntelDeck = dynamic(
+  () => import("@content/pitch-decks/mota-market-intel/deck").then(mod => mod.MarketIntelDeck),
+  { loading: () => <LoadingSpinner /> }
+);
+
 function LoadingSpinner() {
   return (
     <div className="w-full h-full flex items-center justify-center bg-black">
@@ -62,6 +67,8 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated }: PitchDeckViewer
           transition={transition}
         />
       );
+    case "mota-market-intel":
+      return <MarketIntelDeck />;
     default:
       return (
         <div className="w-full h-full flex items-center justify-center text-white">
