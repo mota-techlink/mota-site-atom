@@ -38,5 +38,7 @@ export type ContentType = typeof en;
 /**
  * Base className for each section's content wrapper.
  * The slide wrapper (absolute, inset-0) is added by deck.tsx.
+ * Uses py-safe for vertical padding that adapts to viewport height.
+ * overflow-y-auto allows graceful scrolling on very short viewports.
  */
-export const SECTION = "h-full flex flex-col justify-center overflow-hidden";
+export const SECTION = "h-full flex flex-col justify-center overflow-y-auto py-12 sm:py-0";

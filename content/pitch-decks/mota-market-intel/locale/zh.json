@@ -107,7 +107,7 @@
     "title": "按点击付费，仅此而已。",
     "subtitle": "无月费，无开户费，无最低消费。Credit 永不过期。只有真实用户点击你的追踪链接并进入产品页面时才产生费用。",
     "perClick": "每次点击",
-    "currentRate": "$0.09",
+    "currentRate": "$0.15",
     "currentRateLabel": "Starter 套餐 · 注册时锁定费率",
     "note": "你的单次点击费率在注册时永久锁定。未来调价不影响已有账号。",
     "features": [

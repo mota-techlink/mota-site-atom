@@ -18,6 +18,11 @@ import en from "./locale/en.json";
 export const PageNavCtx = createContext<(idx: number) => void>(() => {});
 export const useNav = () => useContext(PageNavCtx);
 
+// ─── Active-slide context ─────────────────────────────────────────────────────
+/** Sections can read `activeIdx` to know if they're currently visible. */
+export const ActiveSlideCtx = createContext<number>(0);
+export const useActiveSlide = () => useContext(ActiveSlideCtx);
+
 // ─── Content hook ─────────────────────────────────────────────────────────────
 export function useContent(): ContentType {
   const { deckLocale } = useDeckLocale();
@@ -116,6 +121,53 @@ export function usePageNav(rootRef: RefObject<HTMLElement | null>) {
 
     root.addEventListener("keydown", onKey);
     return () => root.removeEventListener("keydown", onKey);
+  }, [rootRef, goTo]);
+
+  // Touch / swipe (vertical — swipe up → next, swipe down → prev)
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+
+    const SWIPE_THRESHOLD = 50;    // min px distance
+    const SWIPE_MAX_TIME = 500;    // max ms for a valid swipe gesture
+    const ANGLE_THRESHOLD_RATIO = 1.2; // |dy| must exceed |dx| * ratio
+
+    let startX = 0;
+    let startY = 0;
+    let startTime = 0;
+
+    const onTouchStart = (e: TouchEvent) => {
+      // Skip if touching a scrollable child
+      if ((e.target as HTMLElement).closest("[data-scrollable]")) return;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      startTime = Date.now();
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      if (locked.current) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      const dy = e.changedTouches[0].clientY - startY;
+      const dt = Date.now() - startTime;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+
+      // Must be a vertical swipe: tall enough, fast enough, more vertical than horizontal
+      if (absDy > SWIPE_THRESHOLD && dt < SWIPE_MAX_TIME && absDy > absDx * ANGLE_THRESHOLD_RATIO) {
+        if (dy < 0) {
+          goTo(activeIdxRef.current + 1); // swipe up → next
+        } else {
+          goTo(activeIdxRef.current - 1); // swipe down → prev
+        }
+      }
+    };
+
+    root.addEventListener("touchstart", onTouchStart, { passive: true });
+    root.addEventListener("touchend", onTouchEnd, { passive: true });
+    return () => {
+      root.removeEventListener("touchstart", onTouchStart);
+      root.removeEventListener("touchend", onTouchEnd);
+    };
   }, [rootRef, goTo]);
 
   return { activeIdx, exitingIdx, direction, goTo };
