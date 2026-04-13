@@ -2,15 +2,12 @@
 // Static registry for pitch deck metadata.
 // No fs/path — safe for Cloudflare Pages / Edge Runtime.
 //
-// Each deck lives in content/pitch-decks/<slug>/ with a meta.json.
+// Decks live in: content/pitch-decks/<slug>/
 // To add a new deck:
-//   1. Create content/pitch-decks/<slug>/meta.json + deck.tsx + slides
+//   1. Create meta.json + deck.tsx + slides in content/pitch-decks/<slug>/
 //   2. Import the meta.json below and spread it into PITCH_DECK_REGISTRY
 //   3. Add a case in src/app/[locale]/pitch-deck/[slug]/pitch-deck-viewer.tsx
 
-import elmsMeta from "@content/pitch-decks/elms-logistics/meta.json";
-import aiWeb3Meta from "@content/pitch-decks/ai-web3-logistics/meta.json";
-import aiFamilyBizMeta from "@content/pitch-decks/ai-family-biz/meta.json";
 import marketIntelMeta from "@content/pitch-decks/mota-market-intel/meta.json";
 
 export interface PitchDeckMeta {
@@ -32,7 +29,7 @@ export interface PitchDeckMeta {
  * Automatically populated from each deck's meta.json.
  */
 export const PITCH_DECK_REGISTRY: Record<string, PitchDeckMeta> = Object.fromEntries(
-  [elmsMeta, aiWeb3Meta, aiFamilyBizMeta, marketIntelMeta].map((m) => [m.slug, m as PitchDeckMeta])
+  [marketIntelMeta].map((m) => [m.slug, m as PitchDeckMeta])
 );
 
 /**

@@ -31,3 +31,9 @@ export { ComparisonTable } from "./data/ComparisonTable";
 export { PricingGrid } from "./data/PricingGrid";
 export { TeamGrid } from "./data/TeamGrid";
 export { FeatureGrid } from "./data/FeatureGrid";
+
+// Mobile Overlays
+export { MobileDetailModal, MobileExpandButton } from "./MobileDetailModal";
+
+// Locale Content Factory
+export { createUseContent } from "./createUseContent";
