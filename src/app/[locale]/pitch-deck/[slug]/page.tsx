@@ -18,6 +18,7 @@ export default async function PitchDeckPage({ params }: PageProps) {
 
   // Check authentication — allow public preview but restrict full access
   let isAuthenticated = false;
+  let userRole: string | undefined;
   try {
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
@@ -27,7 +28,11 @@ export default async function PitchDeckPage({ params }: PageProps) {
         .select("role")
         .eq("id", user.id)
         .single();
+      userRole = profile?.role ?? undefined;
       if (profile && (profile.role === "admin" || profile.role === "staff")) {
+        isAuthenticated = true;
+      } else if (user) {
+        // Logged-in user but not admin/staff — still "authenticated"
         isAuthenticated = true;
       }
     }
@@ -40,6 +45,7 @@ export default async function PitchDeckPage({ params }: PageProps) {
       slug={slug}
       meta={meta}
       isAuthenticated={isAuthenticated}
+      userRole={userRole}
     />
   );
 }

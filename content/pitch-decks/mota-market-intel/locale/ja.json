@@ -3,48 +3,45 @@
     "tagline": "マーケット・インテリジェンス"
   },
   "hero": {
-    "badge": "AI駆動 · 実クリック課金 · 20以上のプラットフォーム · 6言語対応",
-    "title": "あなたの顧客は、今まさに助けを求めています。",
-    "titleHighlight": "私たちがあなたの製品を、彼らの前に自然に届けます。",
-    "subtitle": "Mota マーケット・インテリジェンスはReddit、YouTube、Amazon、Quora、Naver、Yahoo!知恵袋など20以上のプラットフォームを6言語にわたって常時スキャン。あなたの製品が解決するまさにその問題を公に発信しているユーザーを特定し、AIが誠実で価値あるリプライを届けます。課金はクリックが発生したときだけ。",
+    "badge": "AI駆動マーケット・インテリジェンス",
+    "title": "オンラインの会話を",
+    "titleHighlight": "有料顧客に変える。",
+    "subtitle": "6言語のコミュニティで、あなたの製品が解決する問題を公に発信しているユーザーをAIが特定し、誠実で価値あるリプライで自然に会話に参加します。課金はクリック時だけ。",
     "cta": "無料で始める",
     "ctaSecondary": "仕組みを見る",
+    "features": [
+      { "icon": "🤖", "label": "AI自動マッチング" },
+      { "icon": "🌍", "label": "20+プラットフォーム · 6言語" },
+      { "icon": "💰", "label": "実クリックのみ課金" },
+      { "icon": "⚡", "label": "48時間で稼働開始" }
+    ],
     "stats": [
-      {
-        "value": "20+",
-        "label": "6言語対応プラットフォーム"
-      },
-      {
-        "value": "48h",
-        "label": "登録から初回マッチングまで"
-      },
-      {
-        "value": "0円",
-        "label": "クリックがなければ費用ゼロ"
-      }
+      { "value": "20+", "label": "対応プラットフォーム" },
+      { "value": "48h", "label": "初回マッチングまで" },
+      { "value": "¥0", "label": "クリックなしなら" }
     ]
   },
   "problem": {
-    "badge": "広告の問題点",
-    "title": "従来の広告は邪魔をする。私たちは意図を捕捉する。",
-    "subtitle": "今この瞬間も、数千人のユーザーがReddit・YouTube・Amazon・Quoraなど数十のプラットフォームで不満を投稿し、未回答の質問を残し、競合製品にネガティブなレビューを書いています。彼らはただスクロールしているのではありません。解決策を求めてシグナルを発しています。あなたの製品がその答えかもしれない。しかし広告では、彼らに届きません。",
+    "badge": "問題点",
+    "title": "従来の広告は邪魔。私たちは意図を捕捉する。",
+    "subtitle": "今この瞬間も、数千人のユーザーが質問・不満・レビューを投稿しています。彼らは解決策を探しています。広告では届きません。",
     "comparison": {
       "traditional": {
-        "label": "従来の広告手法",
+        "label": "従来の広告",
         "items": [
-          "インプレッション課金 — 関心のない人々にリーチ",
-          "ユーザーが使うキーワードを推測するしかない",
-          "高額な入札競争に巻き込まれる",
-          "支出が実際の購買意欲につながっているか判断不能"
+          { "icon": "💸", "text": "インプレッション課金 — 関心のない人にリーチ" },
+          { "icon": "🎯", "text": "キーワードとターゲットを推測" },
+          { "icon": "⚔️", "text": "入札競争で予算を消耗" },
+          { "icon": "❓", "text": "購買意欲の測定が不可能" }
         ]
       },
       "mota": {
-        "label": "Mota マーケット・インテリジェンス",
+        "label": "Motaインテリジェンス",
         "items": [
-          "まさにあなたの課題を訴えているユーザーにリーチ",
-          "AIが製品説明からターゲット層を逆算",
-          "入札なし — アーリーユーザーは定額優先アクセス",
-          "実クリック時のみ課金 — 完全な透明性"
+          { "icon": "🎯", "text": "あなたの課題を訴えているユーザーにリーチ" },
+          { "icon": "🤖", "text": "AIが製品説明からターゲットを自動特定" },
+          { "icon": "🔒", "text": "定額料金 — 入札なし" },
+          { "icon": "✅", "text": "実クリックのみ課金 — 完全な透明性" }
         ]
       }
     }
@@ -55,61 +52,46 @@
     "steps": [
       {
         "number": "01",
-        "title": "製品を説明するだけ。それだけです。",
-        "description": "何を販売し、誰を助けるか教えてください。キーワードリサーチ不要。ターゲット設定不要。プロンプト作成も一切不要。Mota AIが製品を分析し、顧客のペインポイント・活動プラットフォーム・言及する競合・不満の表現方法を6言語にわたって自動推論。数分で完了します。"
+        "title": "製品を説明するだけ",
+        "description": "何を販売し、誰を助けるか教えてください。AIが6言語にわたって顧客のペインポイント、プラットフォーム、競合、表現を自動推論。数分で完了。"
       },
       {
         "number": "02",
-        "title": "AIが20以上のプラットフォームを24時間365日スキャン",
-        "description": "エージェントがReddit、YouTube、Amazon、Quora、Twitter/X、App Store、Google Play、G2、Trustpilot、Hacker News、Stack Overflowを常時監視。さらにNaver 지식iN、Yahoo!知恵袋、Pikabu、Reclame Aqui、VKなど多言語ローカルプラットフォームもカバー。未回答の不満投稿、競合の低評価レビュー、あらゆるフラストレーションの表現がシグナルになります。"
+        "title": "AIが20以上のプラットフォームを24時間スキャン",
+        "description": "エージェントが世界中のコミュニティを常時監視。未回答の不満、低評価レビュー、すべてのフラストレーションがシグナルになります。"
       },
       {
         "number": "03",
-        "title": "AIが誠実で価値あるリプライを投稿",
-        "description": "高い意図を持つマッチが見つかると、AIは文脈に適したリプライを生成します。まず本当に役立つ情報を提供し、最後にあなたの製品を自然な形で紹介。広告らしさゼロ。ユーザーが探していた答えそのものです。すべてのリプライは投稿前に人間によるレビューを経るため、品質は保証されています。"
+        "title": "誠実で価値あるリプライ",
+        "description": "マッチが見つかると、AIが文脈に合ったリプライを生成。まず本当に役立つ情報、最後に製品を自然紹介。投稿前に人間レビュー。"
       },
       {
         "number": "04",
-        "title": "クリックが発生したときだけ課金",
-        "description": "各リプライには固有のトラッキングリンクが含まれます。ユーザーがあなたの製品ページへクリックすると、クレジットが1消費されます。クリックゼロ？費用ゼロ。リアルタイムダッシュボードで各リプライ・各クリック・各コンバージョンを、元の投稿とプラットフォームへの完全な帰属情報とともに確認できます。"
+        "title": "クリック時のみ課金",
+        "description": "各リプライに固有の追跡リンク。1クリック = 1クレジット。ゼロクリック = ゼロ費用。リアルタイムダッシュボードで全データ確認。"
       }
     ]
   },
   "platforms": {
     "badge": "対応プラットフォーム",
     "title": "顧客がどこで話していても、私たちは聞いています。",
-    "subtitle": "英語圏の主要プラットフォームに加え、スペイン語・ポルトガル語・日本語・韓国語・ロシア語のネイティブコミュニティをカバー。新プラットフォームは追加費用なしで順次追加。",
+    "subtitle": "英語圏の主要プラットフォーム + 日本語・韓国語・ロシア語・スペイン語・ポルトガル語のネイティブコミュニティ。追加費用なしで順次拡大。",
     "items": [
-      "Reddit",
-      "YouTube",
-      "Amazonレビュー",
-      "Quora",
-      "Twitter / X",
-      "App Store",
-      "Google Play",
-      "Hacker News",
-      "Stack Overflow",
-      "Trustpilot",
-      "G2",
-      "Naver 지식iN",
-      "Yahoo! 知恵袋",
-      "Pikabu",
-      "Reclame Aqui",
-      "VK",
-      "Yandex Q",
-      "Taringa!",
-      "価格.com",
-      "Coupang"
+      "Reddit", "YouTube", "Amazonレビュー", "Quora",
+      "Twitter / X", "App Store", "Google Play",
+      "Hacker News", "Stack Overflow", "Trustpilot", "G2",
+      "Naver 지식iN", "Yahoo! 知恵袋", "Pikabu", "Reclame Aqui",
+      "VK", "Yandex Q", "Taringa!", "価格.com", "Coupang"
     ]
   },
   "pricing": {
     "badge": "料金体系",
     "title": "クリック課金のみ。それだけ。",
-    "subtitle": "月額費用なし。初期費用なし。最低利用額なし。クレジットは無期限有効。実際のユーザーがあなたのトラッキングリンクをクリックして製品ページへ進んだときのみ課金されます。",
+    "subtitle": "月額なし。初期費用なし。最低利用額なし。クレジット無期限。実クリック時のみ課金。",
     "perClick": "クリックあたり",
     "currentRate": "$0.15",
     "currentRateLabel": "Starterプラン · 登録時にレート固定",
-    "note": "クリック単価は登録時のプランレートで永久固定。将来的な値上げは既存アカウントに影響しません。",
+    "note": "クリック単価は登録時のプランレートで永久固定。将来の値上げは既存アカウントに影響しません。",
     "features": [
       "クリックなしなら費用ゼロ",
       "リアルタイムダッシュボード — 全リプライ・全クリック",
@@ -120,99 +102,331 @@
   "topup": {
     "badge": "クレジットプラン",
     "title": "プランを選んで、レートを固定。",
-    "subtitle": "クレジットを事前購入するほど、クリック単価が下がります。有効期限なし。いつでもアップグレード可能。エンタープライズはカスタム料金とデ専担アカウントマネージャーをご用意。",
-    "tableHeaders": [
-      "プラン",
-      "クレジット & 価格",
-      "クリック単価"
-    ],
+    "subtitle": "事前購入でクリック単価が下がります。有効期限なし。いつでもアップグレード。エンタープライズはカスタム料金。",
+    "tableHeaders": ["プラン", "クレジット & 価格", "クリック単価"],
     "tiers": [
-      {
-        "amount": "Starter",
-        "discount": "100クリック · $9",
-        "rate": "$0.090"
-      },
-      {
-        "amount": "Growth",
-        "discount": "500クリック · $39",
-        "rate": "$0.078"
-      },
-      {
-        "amount": "Scale",
-        "discount": "2,000クリック · $129",
-        "rate": "$0.065"
-      }
+      { "amount": "Starter", "discount": "100クリック · $9", "rate": "$0.090" },
+      { "amount": "Growth", "discount": "500クリック · $39", "rate": "$0.078" },
+      { "amount": "Scale", "discount": "2,000クリック · $129", "rate": "$0.065" }
     ],
     "note": "エンタープライズ：無制限・カスタム料金・専任サポート。お問い合わせください。"
+  },
+  "dashboard": {
+    "badge": "ダッシュボード",
+    "title": "すべてのインタラクションをリアルタイムで把握。",
+    "subtitle": "統一ダッシュボード — リプライ、クリック、コンバージョン、ROIをすべてのプラットフォームと言語で確認。",
+    "stats": [
+      { "label": "総クリック数", "value": "1,284", "change": "+12.5%", "icon": "🖱️" },
+      { "label": "アクティブリプライ", "value": "3,847", "change": "+8.3%", "icon": "💬" },
+      { "label": "コンバージョン率", "value": "4.7%", "change": "+0.6%", "icon": "📈" },
+      { "label": "使用クレジット", "value": "$96.30", "change": "残り742", "icon": "💰" }
+    ],
+    "chart": {
+      "title": "今週のクリック数",
+      "convTitle": "転換率 %",
+      "bars": [
+        { "label": "月", "value": 42, "conv": 3.2 },
+        { "label": "火", "value": 68, "conv": 4.8 },
+        { "label": "水", "value": 55, "conv": 4.1 },
+        { "label": "木", "value": 91, "conv": 6.5 },
+        { "label": "金", "value": 78, "conv": 5.9 },
+        { "label": "土", "value": 34, "conv": 2.8 },
+        { "label": "日", "value": 22, "conv": 1.9 }
+      ]
+    },
+    "activity": {
+      "title": "最近のアクティビティ",
+      "items": [
+        { "platform": "Reddit", "action": "リプライ投稿 → r/SaaS", "time": "2分前", "status": "click" },
+        { "platform": "YouTube", "action": "リプライ投稿 → コメントスレッド", "time": "8分前", "status": "posted" },
+        { "platform": "Naver", "action": "リプライ投稿 → 지식iN", "time": "15分前", "status": "click" },
+        { "platform": "Quora", "action": "リプライ投稿 → 製品比較", "time": "23分前", "status": "posted" },
+        { "platform": "G2", "action": "リプライ投稿 → 代替製品スレッド", "time": "31分前", "status": "click" }
+      ]
+    }
+  },
+  "billing": {
+    "badge": "インタラクティブデモ",
+    "title": "完全な透明性 — すべてのクリックを詳細に。",
+    "subtitle": "請求書をクリックして明細を確認。明細行をクリックして元の投稿、AIリプライ、追跡証拠を表示。",
+    "backToInvoices": "← 請求書一覧に戻る",
+    "backToDetails": "← 明細に戻る",
+    "backToTop": "⇈ 請求書一覧に戻る",
+    "invoices": {
+      "title": "請求履歴",
+      "headers": ["請求書", "日付", "クリック数", "金額", "状態"],
+      "rows": [
+        { "id": "INV-2026-041", "date": "2026-04-07", "clicks": "127", "amount": "$11.43", "status": "支払済" },
+        { "id": "INV-2026-040", "date": "2026-03-31", "clicks": "203", "amount": "$18.27", "status": "支払済" },
+        { "id": "INV-2026-039", "date": "2026-03-24", "clicks": "89", "amount": "$8.01", "status": "支払済" },
+        { "id": "INV-2026-038", "date": "2026-03-17", "clicks": "156", "amount": "$14.04", "status": "支払済" }
+      ]
+    },
+    "details": {
+      "title": "請求書詳細 — {id}",
+      "headers": ["#", "プラットフォーム", "投稿タイトル", "クリック数", "費用"],
+      "rows": [
+        { "idx": "1", "platform": "Reddit", "post": "小チーム用Notionの最良代替は？", "clicks": "23", "cost": "$2.07" },
+        { "idx": "2", "platform": "Quora", "post": "最も使いやすいプロジェクト管理ツールは？", "clicks": "18", "cost": "$1.62" },
+        { "idx": "3", "platform": "YouTube", "post": "生産性アプリ10個試してみた — ランキング", "clicks": "31", "cost": "$2.79" },
+        { "idx": "4", "platform": "Naver", "post": "프로젝트 관리 앱 추천해주세요", "clicks": "12", "cost": "$1.08" }
+      ]
+    },
+    "clickDetail": {
+      "title": "クリック証拠",
+      "userPost": "ユーザー元投稿",
+      "aiReply": "AIリプライ",
+      "userPostContent": "\"Notionを使っていますが、5人チームには複雑すぎます。タスクボードとシンプルなドキュメントだけ欲しい。セットアップに1週間かからないもの、ありますか？\"",
+      "aiReplyContent": "\"わかります — Notionの柔軟性は小チームには過剰になりがちですよね。5分で使えるタスクボード+ドキュメントなら [製品名] がおすすめです。私のチームは先月乗り換えて、オンボーディングは約10分で完了しました。\"",
+      "tracking": {
+        "title": "追跡証拠",
+        "clickTime": "2026-04-07 · 14:23 UTC",
+        "source": "Reddit · r/SaaS",
+        "landingPage": "https://yourproduct.com/?ref=mota-r-28491",
+        "gaSession": "GA Session ID: UA-XXXXX-1 / 1728491023",
+        "timeOnPage": "2分34秒",
+        "converted": "はい — 無料トライアル登録"
+      },
+      "screenshot": "元ページのスクリーンショット",
+      "viewOriginal": "元の投稿を見る →"
+    }
+  },
+  "taskDetail": {
+    "badge": "タスクモニター",
+    "title": "AI返信パフォーマンストラッカー",
+    "subtitle": "プラットフォームとキーワードでフィルタリング。指標をクリックして詳細証拠を確認。",
+    "searchPlaceholder": "質問や返信を検索…",
+    "filterAll": "全プラットフォーム",
+    "platforms": ["Reddit", "YouTube", "Quora", "Naver", "G2", "Amazon"],
+    "headers": ["プラットフォーム", "質問", "AI返信", "クリック数", "転換率"],
+    "tasks": [
+      {
+        "id": "T-001",
+        "platform": "Reddit",
+        "question": "小規模チーム向けのNotion代替ツールは？",
+        "replyPreview": "5分で使えるタスクボード+ドキュメントなら[Product]がおすすめです…",
+        "clicks": 23,
+        "convRate": "8.7%",
+        "clickDetails": [
+          { "time": "4月7日 14:23 UTC", "ref": "r/SaaS · u/devpro99", "landing": "yourproduct.com/?ref=mota-r-28491", "ga": "UA-XXXXX-1 / 172849", "duration": "2分34秒" },
+          { "time": "4月7日 16:05 UTC", "ref": "r/SaaS · u/mkteam", "landing": "yourproduct.com/?ref=mota-r-28512", "ga": "UA-XXXXX-1 / 172851", "duration": "1分47秒" },
+          { "time": "4月8日 09:12 UTC", "ref": "r/startups · u/founderX", "landing": "yourproduct.com/?ref=mota-r-28534", "ga": "UA-XXXXX-1 / 172855", "duration": "3分11秒" }
+        ],
+        "conversions": [
+          { "time": "4月7日 14:25 UTC", "action": "無料トライアル登録", "value": "$0", "source": "r/SaaS" },
+          { "time": "4月8日 09:18 UTC", "action": "無料トライアル登録", "value": "$0", "source": "r/startups" }
+        ]
+      },
+      {
+        "id": "T-002",
+        "platform": "Quora",
+        "question": "最も使いやすいプロジェクト管理ツールは？",
+        "replyPreview": "タスクボードだけ必要なチームには[Product]がぴったりです…",
+        "clicks": 18,
+        "convRate": "5.6%",
+        "clickDetails": [
+          { "time": "4月6日 10:41 UTC", "ref": "Quora · 回答スレッド", "landing": "yourproduct.com/?ref=mota-q-7821", "ga": "UA-XXXXX-1 / 172800", "duration": "1分55秒" },
+          { "time": "4月6日 22:17 UTC", "ref": "Quora · 回答スレッド", "landing": "yourproduct.com/?ref=mota-q-7822", "ga": "UA-XXXXX-1 / 172811", "duration": "2分08秒" }
+        ],
+        "conversions": [
+          { "time": "4月6日 10:44 UTC", "action": "料金ページ閲覧", "value": "$0", "source": "Quora" }
+        ]
+      },
+      {
+        "id": "T-003",
+        "platform": "YouTube",
+        "question": "生産性アプリ10個試した — ランキング発表",
+        "replyPreview": "素晴らしいリスト！もう一つ：[Product]は小規模チームに最適です…",
+        "clicks": 31,
+        "convRate": "3.2%",
+        "clickDetails": [
+          { "time": "4月5日 08:30 UTC", "ref": "YouTube · @ProdReviewer", "landing": "yourproduct.com/?ref=mota-yt-4401", "ga": "UA-XXXXX-1 / 172780", "duration": "0分52秒" },
+          { "time": "4月5日 14:19 UTC", "ref": "YouTube · @ProdReviewer", "landing": "yourproduct.com/?ref=mota-yt-4402", "ga": "UA-XXXXX-1 / 172789", "duration": "3分42秒" }
+        ],
+        "conversions": [
+          { "time": "4月5日 14:23 UTC", "action": "無料トライアル登録", "value": "$0", "source": "YouTube" }
+        ]
+      },
+      {
+        "id": "T-004",
+        "platform": "Naver",
+        "question": "프로젝트 관리 앱 추천해주세요",
+        "replyPreview": "소규모 팀에 추천하는 [Product] — 5분이면 시작할 수 있습니다…",
+        "clicks": 12,
+        "convRate": "16.7%",
+        "clickDetails": [
+          { "time": "4月7日 03:15 UTC", "ref": "Naver 지식iN · user8821", "landing": "yourproduct.com/?ref=mota-nv-901", "ga": "UA-XXXXX-1 / 172840", "duration": "4分02秒" },
+          { "time": "4月7日 11:44 UTC", "ref": "Naver 지식iN · user9103", "landing": "yourproduct.com/?ref=mota-nv-902", "ga": "UA-XXXXX-1 / 172848", "duration": "2分18秒" }
+        ],
+        "conversions": [
+          { "time": "4月7日 03:22 UTC", "action": "無料トライアル登録", "value": "$0", "source": "Naver" },
+          { "time": "4月7日 11:50 UTC", "action": "有料アップグレード", "value": "$9", "source": "Naver" }
+        ]
+      },
+      {
+        "id": "T-005",
+        "platform": "G2",
+        "question": "Asanaよりシンプルな代替ツールを探しています",
+        "replyPreview": "Asanaは複雑なワークフロー向けですが、シンプルさ重視なら[Product]がおすすめ…",
+        "clicks": 9,
+        "convRate": "11.1%",
+        "clickDetails": [
+          { "time": "4月6日 17:33 UTC", "ref": "G2 · 比較スレッド", "landing": "yourproduct.com/?ref=mota-g2-220", "ga": "UA-XXXXX-1 / 172815", "duration": "5分11秒" }
+        ],
+        "conversions": [
+          { "time": "4月6日 17:40 UTC", "action": "無料トライアル登録", "value": "$0", "source": "G2" }
+        ]
+      },
+      {
+        "id": "T-006",
+        "platform": "Amazon",
+        "question": "★1レビュー：「機能が多すぎて混乱する」",
+        "replyPreview": "機能過多は確かに問題です。シンプルなツールが必要なら[Product]がまさにそれです…",
+        "clicks": 7,
+        "convRate": "0%",
+        "clickDetails": [
+          { "time": "4月8日 02:09 UTC", "ref": "Amazon · 購入確認済み", "landing": "yourproduct.com/?ref=mota-amz-55", "ga": "UA-XXXXX-1 / 172860", "duration": "1分03秒" }
+        ],
+        "conversions": []
+      }
+    ],
+    "clickDetailTitle": "クリック証拠",
+    "clickHeaders": ["時刻", "ソース / 参照", "ランディングページ", "GAセッション", "滞在時間"],
+    "convTitle": "転換証拠",
+    "convHeaders": ["時刻", "アクション", "金額", "ソース"],
+    "close": "✕ 閉じる",
+    "noResults": "該当するタスクが見つかりません。",
+    "noConversions": "転換記録はまだありません。"
+  },
+  "creatorPartner": {
+    "badge": "クリエイター連携 · AI時代",
+    "title": "AI駆動クリエイターネットワーク",
+    "titleHighlight": "Win-Win、完全自動。",
+    "subtitle": "AIがプラットフォームのインフルエンサーを自動招募し、コラボレーションを管理、決済を処理——すべてのクリエイターを信頼できる成長チャネルに変換します。",
+    "vision": {
+      "title": "AI時代のビジネスモデル革新",
+      "items": [
+        { "icon": "🤝", "label": "Win-Winエコノミー", "desc": "クリエイターはクリック課金のコミッションを獲得、ブランドは本物の高信頼レコメンデーションを大規模に獲得。" },
+        { "icon": "🤖", "label": "AIファーストコラボ", "desc": "アウトリーチからコンテンツ共創、決済まで——AIがワークフローの95%を自律的に処理。" },
+        { "icon": "🔄", "label": "自己成長フライホイール", "desc": "優秀なクリエイター → 高い信頼 → 高い転換率 → さらに多くのクリエイター。ネットワークが複利で成長。" }
+      ]
+    },
+    "flow": {
+      "title": "完全自動化フロー",
+      "steps": [
+        { "icon": "📡", "num": "01", "title": "AIがクリエイターを発掘", "desc": "エージェントが各プラットフォームの高エンゲージメント・トピカルオーソリティを持つクリエイターをスキャン。パーソナライズされたパートナーシップ招待を自動送信。" },
+        { "icon": "✍️", "num": "02", "title": "コンテンツ共創", "desc": "AIが製品ブリーフ＋返信テンプレートを提供。クリエイターが自分の声で加工し、自身のアカウントで公開——本物の、台本なしのコンテンツ。" },
+        { "icon": "🔗", "num": "03", "title": "追跡リンク＆入口", "desc": "各クリエイター投稿に固有の追跡リンクを付与。クリック、コンバージョン、アトリビューションをリアルタイム記録。" },
+        { "icon": "💳", "num": "04", "title": "自動決済", "desc": "コミッションは請求サイクルごとに自動計算。Stripeダイレクト送金または暗号通貨（USDT / USDC）で支払い。手作業ゼロ。" }
+      ]
+    },
+    "dashboard": {
+      "title": "クリエイター管理コンソール",
+      "stats": [
+        { "label": "アクティブクリエイター", "value": "128", "icon": "👤", "change": "+今週18名" },
+        { "label": "クリエイタークリック", "value": "4,721", "icon": "🖱️", "change": "+22.3%" },
+        { "label": "平均転換率", "value": "7.2%", "icon": "📈", "change": "+1.1%" },
+        { "label": "累計支払い", "value": "$2,340", "icon": "💰", "change": "32名に支払い済み" }
+      ],
+      "recentTitle": "最近のクリエイター活動",
+      "recent": [
+        { "creator": "@TechBlogger_JP", "platform": "Yahoo!", "action": "レビュー公開 · 12クリック", "status": "active", "time": "5分前" },
+        { "creator": "@DevToolKR", "platform": "Naver", "action": "Stripe支払い $45.60", "status": "paid", "time": "1時間前" },
+        { "creator": "@SaaS_Reviews", "platform": "Reddit", "action": "パートナーシップ承認", "status": "new", "time": "3時間前" },
+        { "creator": "@StartupGuru", "platform": "YouTube", "action": "動画メンション公開 · 38クリック", "status": "active", "time": "6時間前" },
+        { "creator": "@CryptoNomad", "platform": "Twitter", "action": "ウォレット支払い 28 USDT", "status": "paid", "time": "1日前" }
+      ]
+    },
+    "payment": {
+      "title": "柔軟な決済方法",
+      "methods": [
+        { "icon": "💳", "name": "Stripe", "desc": "銀行直接振込 · 自動請求書発行" },
+        { "icon": "₿", "name": "暗号通貨", "desc": "USDT / USDC · 低手数料 · グローバル対応" }
+      ]
+    },
+    "statusLabels": {
+      "active": "アクティブ",
+      "paid": "支払済",
+      "new": "新規"
+    }
   },
   "earlybird": {
     "badge": "アーリーアクセス",
     "title": "今すぐ登録。レート永久固定。優先権を永遠に。",
-    "subtitle": "Mota マーケット・インテリジェンスはアーリーアクセス段階です。現在入札競争はなく、登録製品は平等にリーチ機会を得られます。スケールアップとともにこの仕組みは変わります。今すぐ登録して、あなたの優位性を永続的に確保してください。",
+    "subtitle": "アーリーアクセス段階。入札なし — すべての製品が平等にリーチ。今すぐ登録して優位性を確保。",
     "benefits": [
       {
         "icon": "🔒",
         "title": "レート永久固定",
-        "description": "クリック単価は今日の価格で永久固定。明日値上げが発生しても、あなたのアカウントには一切影響しません — 保証付き。"
+        "description": "クリック単価は今日の価格で永久固定 — 保証付き。"
       },
       {
         "icon": "⭐",
-        "title": "アーリーパートナーステータス",
-        "description": "プロフィールに「アーリーパートナー」のフラグが立ちます。プラットフォームが成長し、競合ブランドが増えても、アーリーパートナーは常に優先配信を受けます。"
+        "title": "アーリーパートナー",
+        "description": "アーリーパートナーは常に優先配信を受けます。"
       },
       {
         "icon": "🌐",
-        "title": "グローバル最優先リーチ",
-        "description": "新機言語市場や新プラットフォームへ展開する際、アーリーパートナーの製品が最初に新規オーディエンスにマッチング — 追加設定なし。"
+        "title": "グローバル最優先",
+        "description": "新市場・新プラットフォーム — アーリーパートナーが最初にマッチング。"
       },
       {
         "icon": "🎯",
         "title": "専任設定サポート",
-        "description": "アーリーアクセスメンバーは、製品プロフィールの設定・リプライトーンの調整・マッチング精度の最適化について、チームから直接サポートを受けられます — 追加費用なし。"
+        "description": "製品プロフィール・リプライトーン・マッチング精度の最適化 — 無料。"
       }
     ],
-    "urgency": "アーリーアクセスのレート固定枠は期間限定です。プラットフォームが広く公開された後、本日の料金は新規登録者には適用されなくなります。"
+    "urgency": "アーリーアクセスのレート固定枠は期間限定。広く公開後、本日の料金は新規登録者に適用されません。"
   },
   "whymota": {
     "badge": "Motaを選ぶ理由",
-    "title": "広告ネットワークではない。需要インターセプトエンジンです。",
+    "title": "広告に頼るな。需要を直接つかめ。",
+    "subtitle": "競合がインプレッションに予算を燃やしている間に、あなたは助けを求めている人と直接対話しています。",
     "cards": [
       {
-        "title": "意図はすでにそこにある",
-        "description": "私たちがあなたの製品ページへ誘導するすべてのユーザーは、リアルなプラットフォームで自分の言葉を使って、その製品が解決する問題を公に表明済みです。スクロール中の人を邪魔するのではなく、すでに答えを探している人に発見されるのです。"
+        "icon": "🎯",
+        "title": "意図はすでにそこに",
+        "description": "すべてのユーザーがリアルなプラットフォームで、製品が解決する問題を自分の言葉で公に表明済みです。",
+        "metric": "100%",
+        "metricLabel": "意図ベース"
       },
       {
+        "icon": "🛡️",
         "title": "インプレッション無駄ゼロ",
-        "description": "リーチ・閲覧・インプレッションへの課金は一切ありません。意図を示していないユーザーに1セントも使いません。クリックが届かなければ、費用ゼロ — 唯一真にリスクフリーな顧客獲得モデルです。"
+        "description": "意図を示していないユーザーに1セントも使いません。クリックなし = 費用ゼロ。",
+        "metric": "$0",
+        "metricLabel": "無駄ゼロ"
       },
       {
-        "title": "6言語。ダッシュボードはひとつ。",
-        "description": "顧客が英語でRedditに投稿しようと、韓国語でNaverに不満を書こうと、日本語でAmazonレビューを残そうと — Motaがすべてを監視し、対応し、ひとつの場所にまとめてレポートします。グローバルリーチ、グローバルチーム不要。"
+        "icon": "🌐",
+        "title": "6言語 × マルチプラットフォーム",
+        "description": "英語・スペイン語・ポルトガル語・日本語・韓国語・ロシア語 — Reddit、Naver、Amazon、Yahoo! 等を横断。ひとつのダッシュボードで言語の壁ゼロ。",
+        "metric": "6",
+        "metricLabel": "言語"
       }
     ]
   },
   "cta": {
-    "title": "あなたの顧客は今まさに、そこにいます。",
-    "subtitle": "無料登録。製品を説明するだけ。48時間以内に、AIが6言語・20以上のプラットフォームで、あなたの製品を必要としている人々を探し始めます。",
-    "primary": "無料で始める",
-    "secondary": "エンタープライズについて相談する",
-    "footnote": "クレジットカード不要 · 最低利用額なし · いつでも解約可 · データ完全透明"
+    "headline": "1秒迷うたびに、",
+    "headlineHighlight": "ビジネスチャンスが競合に奪われる。",
+    "title": "リスクゼロ。クリックなければ課金なし。",
+    "subtitle": "早く始めれば早く成果が出る——さもなければ、競合に先を越されます。",
+    "stats": [
+      { "value": "$0", "label": "ゼロリスクで開始" },
+      { "value": "48h", "label": "登録から最初のリード" },
+      { "value": "10+", "label": "監視プラットフォーム" }
+    ],
+    "primary": "今すぐ需要をキャプチャ — 無料",
+    "secondary": "デモを予約",
+    "urgency": "⚡ 早期限定価格 — 今日のレートを確保",
+    "footnote": "クリックなければ課金なし · 最低利用額なし · いつでも解約 · データ完全透明"
   },
   "footer": {
     "copyright": "© 2026 MOTA TechLink. All rights reserved.",
     "links": [
-      {
-        "label": "プライバシーポリシー",
-        "href": "/legal/privacy"
-      },
-      {
-        "label": "利用規約",
-        "href": "/legal/terms"
-      },
-      {
-        "label": "お問い合わせ",
-        "href": "mailto:market@motaiot.com"
-      }
+      { "label": "プライバシーポリシー", "href": "/privacy" },
+      { "label": "利用規約", "href": "/terms" },
+      { "label": "お問い合わせ", "href": "/contact" }
     ]
   }
 }

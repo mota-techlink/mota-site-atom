@@ -3,14 +3,16 @@
 import React from "react";
 import { useContent } from "../hooks";
 import { SECTION } from "../constants";
+import { DynamicBackground } from "./DynamicBackground";
 
 export function PricingSection() {
   const c = useContent();
   const p = c.pricing;
 
   return (
-    <section id="s-pricing" className={`${SECTION} bg-black`}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="s-pricing" className={`${SECTION} bg-black relative`}>
+      <DynamicBackground accent="amber" brightness={1.8} count={18} />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs sm:text-sm font-medium mb-3 sm:mb-4">
           {p.badge}
         </span>

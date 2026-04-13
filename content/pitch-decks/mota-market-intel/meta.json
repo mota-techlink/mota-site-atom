@@ -5,7 +5,8 @@
   "author": "MOTA TechLink",
   "date": "2026-04-13",
   "status": "published",
-  "previewSlides": 10,
+  "access": "public",
+  "previewSlides": 3,
   "defaultTransition": "fade",
   "tags": ["market-intelligence", "AI", "pay-per-click", "growth", "marketing"],
   "coverImage": "/images/pitch-decks/market-intel-cover.webp"

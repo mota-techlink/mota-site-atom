@@ -7,6 +7,11 @@ export { SlideNavigation } from "./SlideNavigation";
 export { ProgressBar } from "./ProgressBar";
 export { DeckLocaleProvider, useDeckLocale } from "./DeckLocaleContext";
 
+// Access Control
+export { DeckAccessProvider, useDeckAccess } from "./DeckAccessProvider";
+export type { DeckAccessCtx, UserTier } from "./DeckAccessProvider";
+export { LoginGate } from "./LoginGate";
+
 // Slide Layouts
 export { Slide } from "./slides/Slide";
 export { TitleSlide } from "./slides/TitleSlide";

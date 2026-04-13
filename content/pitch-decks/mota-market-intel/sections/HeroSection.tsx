@@ -25,32 +25,45 @@ export function HeroSection() {
       {/* Dynamic floating particles */}
       <DynamicBackground accent="indigo" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-16 text-center">
+      <div className="relative z-10 max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-12 text-center">
         {/* Badge */}
-        <div className="mi-child inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs sm:text-sm font-medium mb-3 sm:mb-5 lg:mb-8">
+        <div className="mi-child inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs sm:text-sm font-medium mb-3 sm:mb-5 lg:mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
           {h.badge}
         </div>
 
         {/* Title */}
-        <h1 className="mi-child text-2xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight mb-1 sm:mb-3">
+        <h1 className="mi-child text-2xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight mb-1 sm:mb-2">
           {h.title}
         </h1>
 
         {/* Title highlight */}
-        <p className="mi-child text-xl sm:text-3xl lg:text-5xl font-bold mb-3 sm:mb-5 lg:mb-8">
+        <p className="mi-child text-xl sm:text-3xl lg:text-5xl font-bold mb-3 sm:mb-4 lg:mb-6">
           <span className="bg-linear-to-r from-indigo-400 via-violet-400 to-pink-400 bg-clip-text text-transparent">
             {h.titleHighlight}
           </span>
         </p>
 
-        {/* Subtitle */}
-        <p className="mi-child text-sm sm:text-lg lg:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-4 sm:mb-8 lg:mb-12">
+        {/* Subtitle — concise, no platform names */}
+        <p className="mi-child text-sm sm:text-lg lg:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed mb-4 sm:mb-6 lg:mb-8">
           {h.subtitle}
         </p>
 
+        {/* Visual feature pills */}
+        <div className="mi-child flex flex-wrap justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 lg:mb-8">
+          {(h as any).features?.map((f: { icon: string; label: string }, i: number) => (
+            <div
+              key={i}
+              className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/8 transition-all duration-200"
+            >
+              <span className="text-base sm:text-lg">{f.icon}</span>
+              <span className="text-xs sm:text-sm text-white/70 font-medium whitespace-nowrap">{f.label}</span>
+            </div>
+          ))}
+        </div>
+
         {/* CTAs */}
-        <div className="mi-child flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-12 lg:mb-20">
+        <div className="mi-child flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-10 lg:mb-16">
           <button
             onClick={() => goTo(SECTION_MAP["s-cta"])}
             className="px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-base sm:text-lg transition-all duration-200 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-0.5"
@@ -66,11 +79,11 @@ export function HeroSection() {
         </div>
 
         {/* Stats */}
-        <div className="mi-child grid grid-cols-3 gap-4 sm:gap-8 max-w-lg mx-auto">
+        <div className="mi-child grid grid-cols-3 gap-4 sm:gap-8 max-w-md mx-auto">
           {h.stats.map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="text-xl sm:text-3xl font-bold text-white mb-1">{stat.value}</div>
-              <div className="text-xs sm:text-sm text-white/40">{stat.label}</div>
+              <div className="text-xl sm:text-3xl font-bold text-white mb-0.5">{stat.value}</div>
+              <div className="text-[10px] sm:text-sm text-white/40">{stat.label}</div>
             </div>
           ))}
         </div>

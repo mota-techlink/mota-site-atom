@@ -3,15 +3,9 @@
 import React, { useEffect, useRef } from "react";
 
 // ─── Floating icon definitions ────────────────────────────────────────────────
-// SVG-based social/AI/marketing icons that float across the background.
-// Each is a tiny inline SVG string rendered as a data URI for zero network cost.
-
 const ICONS = [
-  // Social media
   "💬", "📱", "🔗", "👍", "🔔", "📢",
-  // AI / tech
   "🤖", "🧠", "⚡", "🔮", "💡", "🎯",
-  // Marketing
   "📊", "📈", "🚀", "💎", "🌐", "✨",
 ] as const;
 
@@ -22,16 +16,23 @@ interface Particle {
   vy: number;
   icon: string;
   size: number;
-  opacity: number;
+  baseOpacity: number;
   rotation: number;
   rotationSpeed: number;
+  /** Sine wobble phase */
+  phase: number;
+  /** Sine wobble amplitude in px */
+  wobbleAmp: number;
+  /** Sine wobble frequency (rad/frame) */
+  wobbleFreq: number;
 }
 
 interface DynamicBackgroundProps {
-  /** Number of floating particles. Defaults to 18 on desktop, fewer on mobile */
+  /** Number of floating particles. Defaults to 40 on desktop, 22 on mobile */
   count?: number;
-  /** Base color class (for the gradient mesh). e.g. "indigo" | "violet" */
-  accent?: "indigo" | "violet" | "emerald" | "rose";
+  accent?: "indigo" | "violet" | "emerald" | "rose" | "amber" | "cyan";
+  /** Opacity multiplier (1 = default, 1.5 = brighter — useful on pure-black bgs) */
+  brightness?: number;
   className?: string;
 }
 
@@ -40,16 +41,25 @@ const ACCENT_COLORS = {
   violet: { mesh1: "rgba(139,92,246,0.08)", mesh2: "rgba(167,139,250,0.05)" },
   emerald: { mesh1: "rgba(16,185,129,0.06)", mesh2: "rgba(52,211,153,0.04)" },
   rose: { mesh1: "rgba(244,63,94,0.06)", mesh2: "rgba(251,113,133,0.04)" },
+  amber: { mesh1: "rgba(245,158,11,0.06)", mesh2: "rgba(252,211,77,0.04)" },
+  cyan: { mesh1: "rgba(6,182,212,0.07)", mesh2: "rgba(34,211,238,0.04)" },
 };
+
+/** Random float in [min, max) */
+const rand = (min: number, max: number) => min + Math.random() * (max - min);
+/** Random sign: -1 or 1 */
+const randSign = () => (Math.random() < 0.5 ? -1 : 1);
 
 export function DynamicBackground({
   count,
   accent = "indigo",
+  brightness = 1,
   className = "",
 }: DynamicBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const rafRef = useRef<number>(0);
+  const lastTimeRef = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -57,53 +67,87 @@ export function DynamicBackground({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    let cw = 0;
+    let ch = 0;
+
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio, 2);
-      canvas.width = canvas.offsetWidth * dpr;
-      canvas.height = canvas.offsetHeight * dpr;
+      cw = canvas.offsetWidth;
+      ch = canvas.offsetHeight;
+      canvas.width = cw * dpr;
+      canvas.height = ch * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
     window.addEventListener("resize", resize);
 
-    // Determine particle count based on viewport
-    const effectiveCount = count ?? (window.innerWidth < 640 ? 10 : 18);
-    const w = canvas.offsetWidth;
-    const h = canvas.offsetHeight;
+    // More particles for a denser, more energetic feel
+    const effectiveCount = count ?? (window.innerWidth < 640 ? 22 : 40);
 
-    // Initialize particles
-    particlesRef.current = Array.from({ length: effectiveCount }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.2 - 0.1, // slight upward drift
-      icon: ICONS[Math.floor(Math.random() * ICONS.length)],
-      size: 10 + Math.random() * 10,
-      opacity: 0.06 + Math.random() * 0.12,
-      rotation: Math.random() * Math.PI * 2,
-      rotationSpeed: (Math.random() - 0.5) * 0.005,
-    }));
+    // Initialize particles with much more speed & variety
+    particlesRef.current = Array.from({ length: effectiveCount }, () => {
+      const speed = rand(0.6, 2.0);
+      const angle = Math.random() * Math.PI * 2;
+      return {
+        x: Math.random() * cw,
+        y: Math.random() * ch,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed - 0.3, // slight upward bias
+        icon: ICONS[Math.floor(Math.random() * ICONS.length)],
+        size: rand(10, 20),
+        baseOpacity: rand(0.08, 0.22) * brightness,
+        rotation: Math.random() * Math.PI * 2,
+        rotationSpeed: randSign() * rand(0.008, 0.025),
+        phase: Math.random() * Math.PI * 2,
+        wobbleAmp: rand(0.3, 1.2),
+        wobbleFreq: rand(0.015, 0.04),
+      };
+    });
 
-    const animate = () => {
-      const cw = canvas.offsetWidth;
-      const ch = canvas.offsetHeight;
+    // Handle tab visibility — reset timing when user returns to avoid dt spike
+    let paused = false;
+    const onVisibility = () => {
+      if (document.hidden) {
+        paused = true;
+        cancelAnimationFrame(rafRef.current);
+      } else {
+        // Reset time reference so first frame after return has dt ≈ 0
+        lastTimeRef.current = 0;
+        paused = false;
+        rafRef.current = requestAnimationFrame(animate);
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
+    // Time-based animation for consistent speed across frame-rates
+    const animate = (now: number) => {
+      if (paused) return;
+      if (!lastTimeRef.current) lastTimeRef.current = now;
+      const dt = Math.min((now - lastTimeRef.current) / 16.667, 1.5); // normalise to ~60fps, cap at 1.5
+      lastTimeRef.current = now;
+
       ctx.clearRect(0, 0, cw, ch);
 
       for (const p of particlesRef.current) {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.rotation += p.rotationSpeed;
+        // Update position with sine wobble for organic drift
+        p.phase += p.wobbleFreq * dt;
+        p.x += (p.vx + Math.sin(p.phase) * p.wobbleAmp) * dt;
+        p.y += (p.vy + Math.cos(p.phase * 0.7) * p.wobbleAmp * 0.5) * dt;
+        p.rotation += p.rotationSpeed * dt;
 
-        // Wrap around
-        if (p.x < -30) p.x = cw + 30;
-        if (p.x > cw + 30) p.x = -30;
-        if (p.y < -30) p.y = ch + 30;
-        if (p.y > ch + 30) p.y = -30;
+        // Wrap around with margin
+        if (p.x < -40) p.x = cw + 40;
+        if (p.x > cw + 40) p.x = -40;
+        if (p.y < -40) p.y = ch + 40;
+        if (p.y > ch + 40) p.y = -40;
+
+        // Pulsing opacity for a lively feel
+        const pulse = 0.85 + 0.15 * Math.sin(p.phase * 1.3);
 
         ctx.save();
         ctx.translate(p.x, p.y);
         ctx.rotate(p.rotation);
-        ctx.globalAlpha = p.opacity;
+        ctx.globalAlpha = p.baseOpacity * pulse;
         ctx.font = `${p.size}px sans-serif`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
@@ -111,33 +155,15 @@ export function DynamicBackground({
         ctx.restore();
       }
 
-      // Draw faint connection lines between nearby particles
-      ctx.strokeStyle = "rgba(255,255,255,0.02)";
-      ctx.lineWidth = 0.5;
-      const ps = particlesRef.current;
-      for (let i = 0; i < ps.length; i++) {
-        for (let j = i + 1; j < ps.length; j++) {
-          const dx = ps[i].x - ps[j].x;
-          const dy = ps[i].y - ps[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            ctx.globalAlpha = (1 - dist / 150) * 0.04;
-            ctx.beginPath();
-            ctx.moveTo(ps[i].x, ps[i].y);
-            ctx.lineTo(ps[j].x, ps[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-      ctx.globalAlpha = 1;
-
       rafRef.current = requestAnimationFrame(animate);
     };
 
     rafRef.current = requestAnimationFrame(animate);
 
     return () => {
+      paused = true;
       cancelAnimationFrame(rafRef.current);
+      document.removeEventListener("visibilitychange", onVisibility);
       window.removeEventListener("resize", resize);
     };
   }, [count, accent]);

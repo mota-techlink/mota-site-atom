@@ -3,39 +3,45 @@
     "tagline": "Market Intelligence"
   },
   "hero": {
-    "badge": "AI-Powered · Pay Per Real Click · 20+ Platforms · 6 Languages",
-    "title": "Your customers are already asking for help.",
-    "titleHighlight": "We place your product in front of them — naturally.",
-    "subtitle": "Mota Market Intelligence scans Reddit, YouTube, Amazon, Quora, Naver, Yahoo! 知恵袋, and 20+ platforms across 6 languages — pinpointing users who publicly express the exact problem your product solves. Our AI joins the conversation with genuine, helpful replies. You only pay when they click.",
+    "badge": "AI-Powered Market Intelligence",
+    "title": "Turn online conversations",
+    "titleHighlight": "into paying customers.",
+    "subtitle": "Our AI finds users publicly expressing the exact problem your product solves — across communities in 6 languages — and joins the conversation with genuine, helpful replies. You only pay when they click.",
     "cta": "Get Started Free",
     "ctaSecondary": "See How It Works",
+    "features": [
+      { "icon": "🤖", "label": "AI-Powered Matching" },
+      { "icon": "🌍", "label": "20+ Platforms · 6 Languages" },
+      { "icon": "💰", "label": "Pay Per Real Click Only" },
+      { "icon": "⚡", "label": "Live in 48 Hours" }
+    ],
     "stats": [
-      { "value": "20+", "label": "Platforms in 6 languages" },
-      { "value": "48h", "label": "From signup to first mentions" },
-      { "value": "0¢", "label": "Cost if no clicks happen" }
+      { "value": "20+", "label": "Platforms" },
+      { "value": "48h", "label": "To First Mentions" },
+      { "value": "$0", "label": "If No Clicks" }
     ]
   },
   "problem": {
-    "badge": "The Problem With Ads",
-    "title": "Traditional ads interrupt. We intercept intent.",
-    "subtitle": "Right now, thousands of users are posting complaints, asking unanswered questions, and leaving competitor reviews — on Reddit, YouTube, Amazon, Quora, and dozens more platforms. They're not browsing passively. They're actively signalling they need a solution. Your product may be exactly what they're looking for. But they'll never see an ad for it.",
+    "badge": "The Problem",
+    "title": "Traditional ads interrupt. We intercept real intent.",
+    "subtitle": "Thousands of users are posting questions, complaints, and reviews right now — actively seeking solutions. Ads can't reach them.",
     "comparison": {
       "traditional": {
-        "label": "Traditional Advertising",
+        "label": "Traditional Ads",
         "items": [
-          "Pay per impression — reach people who don't care",
-          "Guess what keywords your audience uses",
-          "Compete in expensive bidding wars",
-          "No way to know if spend generates real intent"
+          { "icon": "💸", "text": "Pay for impressions — most people don't care" },
+          { "icon": "🎯", "text": "Guess at keywords and audience targeting" },
+          { "icon": "⚔️", "text": "Bidding wars drain budgets fast" },
+          { "icon": "❓", "text": "No way to measure real purchase intent" }
         ]
       },
       "mota": {
-        "label": "Mota Market Intelligence",
+        "label": "Mota Intelligence",
         "items": [
-          "Reach users already expressing your exact pain point",
-          "AI reverse-engineers your audience from your product description",
-          "No bidding — early users get flat-rate priority access",
-          "Pay only when a real user clicks through — full transparency"
+          { "icon": "🎯", "text": "Reach users already expressing your pain point" },
+          { "icon": "🤖", "text": "AI auto-targets from your product description" },
+          { "icon": "🔒", "text": "Flat-rate pricing — no bidding wars" },
+          { "icon": "✅", "text": "Pay only for real clicks — full transparency" }
         ]
       }
     }
@@ -46,23 +52,23 @@
     "steps": [
       {
         "number": "01",
-        "title": "Describe Your Product. That's It.",
-        "description": "Just tell us what you sell and who it helps. No keyword research. No audience briefs. No prompts to write. Mota's AI analyzes your product and automatically infers your customers' pain points, the platforms they use, the competitors they mention, and the language they use to describe their frustration — across 6 languages. Ready in minutes."
+        "title": "Describe Your Product",
+        "description": "Tell us what you sell and who it helps. Our AI infers customer pain points, platforms, competitors, and language across 6 languages. Ready in minutes."
       },
       {
         "number": "02",
-        "title": "AI Scans 20+ Platforms Around the Clock",
-        "description": "Our agents continuously monitor Reddit, YouTube, Amazon Reviews, Quora, Twitter/X, App Store, Google Play, G2, Trustpilot, Hacker News, Stack Overflow — plus multilingual platforms like Naver 지식iN, Yahoo! 知恵袋, Pikabu, Reclame Aqui, and VK. Every unanswered complaint, every low-star competitor review, every frustrated post is a signal."
+        "title": "AI Scans 20+ Platforms 24/7",
+        "description": "Agents continuously monitor communities worldwide — every unanswered complaint, low-star review, and frustrated post becomes a signal for your product."
       },
       {
         "number": "03",
-        "title": "AI Posts Genuine, Helpful Replies",
-        "description": "When a high-intent match is found, our AI generates a contextually appropriate reply — real value first, your product introduced naturally at the end. It doesn't feel like an ad. It feels like the answer the user was looking for. All replies go through human review before posting, so quality is guaranteed."
+        "title": "Genuine, Helpful Replies",
+        "description": "When a match is found, AI generates contextually appropriate replies — real value first, your product introduced naturally. Human-reviewed before posting."
       },
       {
         "number": "04",
-        "title": "You Pay Only When Someone Clicks",
-        "description": "Every reply contains a unique tracking link. When a user clicks through to your product page, one credit is consumed. Zero clicks? Zero cost. Your real-time dashboard shows every reply, every click, every conversion — with full attribution back to the original post and platform."
+        "title": "Pay Only When Someone Clicks",
+        "description": "Each reply has a unique tracking link. One click = one credit. Zero clicks = zero cost. Real-time dashboard shows every reply, click, and conversion."
       }
     ]
   },
@@ -105,65 +111,322 @@
     ],
     "note": "Enterprise plan: unlimited volume · custom rate · dedicated support. Contact us."
   },
+  "dashboard": {
+    "badge": "Your Dashboard",
+    "title": "Real-time visibility into every interaction.",
+    "subtitle": "One unified dashboard — see replies, clicks, conversions, and ROI across all platforms and languages.",
+    "stats": [
+      { "label": "Total Clicks", "value": "1,284", "change": "+12.5%", "icon": "🖱️" },
+      { "label": "Active Replies", "value": "3,847", "change": "+8.3%", "icon": "💬" },
+      { "label": "Conversion Rate", "value": "4.7%", "change": "+0.6%", "icon": "📈" },
+      { "label": "Credits Used", "value": "$96.30", "change": "742 left", "icon": "💰" }
+    ],
+    "chart": {
+      "title": "Clicks This Week",
+      "convTitle": "Conversion Rate %",
+      "bars": [
+        { "label": "Mon", "value": 42, "conv": 3.2 },
+        { "label": "Tue", "value": 68, "conv": 4.8 },
+        { "label": "Wed", "value": 55, "conv": 4.1 },
+        { "label": "Thu", "value": 91, "conv": 6.5 },
+        { "label": "Fri", "value": 78, "conv": 5.9 },
+        { "label": "Sat", "value": 34, "conv": 2.8 },
+        { "label": "Sun", "value": 22, "conv": 1.9 }
+      ]
+    },
+    "activity": {
+      "title": "Recent Activity",
+      "items": [
+        { "platform": "Reddit", "action": "Reply posted → r/SaaS", "time": "2 min ago", "status": "click" },
+        { "platform": "YouTube", "action": "Reply posted → comment thread", "time": "8 min ago", "status": "posted" },
+        { "platform": "Naver", "action": "Reply posted → 지식iN", "time": "15 min ago", "status": "click" },
+        { "platform": "Quora", "action": "Reply posted → product comparison", "time": "23 min ago", "status": "posted" },
+        { "platform": "G2", "action": "Reply posted → alternative thread", "time": "31 min ago", "status": "click" }
+      ]
+    }
+  },
+  "billing": {
+    "badge": "Interactive Demo",
+    "title": "Full transparency — drill into every click.",
+    "subtitle": "Click any invoice to see line items. Click a line item to see the original post, AI reply, user review, and tracking evidence.",
+    "backToInvoices": "← Back to Invoices",
+    "backToDetails": "← Back to Details",
+    "backToTop": "⇈ Back to Invoices",
+    "invoices": {
+      "title": "Billing History",
+      "headers": ["Invoice", "Date", "Clicks", "Amount", "Status"],
+      "rows": [
+        { "id": "INV-2026-041", "date": "Apr 7, 2026", "clicks": "127", "amount": "$11.43", "status": "Paid" },
+        { "id": "INV-2026-040", "date": "Mar 31, 2026", "clicks": "203", "amount": "$18.27", "status": "Paid" },
+        { "id": "INV-2026-039", "date": "Mar 24, 2026", "clicks": "89", "amount": "$8.01", "status": "Paid" },
+        { "id": "INV-2026-038", "date": "Mar 17, 2026", "clicks": "156", "amount": "$14.04", "status": "Paid" }
+      ]
+    },
+    "details": {
+      "title": "Invoice Details — {id}",
+      "headers": ["#", "Platform", "Post Title", "Clicks", "Cost"],
+      "rows": [
+        { "idx": "1", "platform": "Reddit", "post": "Best alternatives to Notion for small teams?", "clicks": "23", "cost": "$2.07" },
+        { "idx": "2", "platform": "Quora", "post": "What project management tool is easiest to use?", "clicks": "18", "cost": "$1.62" },
+        { "idx": "3", "platform": "YouTube", "post": "I tried 10 productivity apps — here's my ranking", "clicks": "31", "cost": "$2.79" },
+        { "idx": "4", "platform": "Naver", "post": "프로젝트 관리 앱 추천해주세요", "clicks": "12", "cost": "$1.08" }
+      ]
+    },
+    "clickDetail": {
+      "title": "Click Evidence",
+      "userPost": "Original User Post",
+      "aiReply": "AI Reply",
+      "userPostContent": "\"I've been using Notion but it's way too complex for my 5-person team. We just need task boards and simple docs. Any suggestions that won't take a week to set up?\"",
+      "aiReplyContent": "\"Totally get it — Notion's flexibility can become overwhelming for smaller teams. If you want something that's ready in 5 minutes with clean task boards + docs, check out [ProductName]. My team switched last month and onboarding took about 10 minutes total.\"",
+      "tracking": {
+        "title": "Tracking Evidence",
+        "clickTime": "Apr 7, 2026 · 14:23 UTC",
+        "source": "Reddit · r/SaaS",
+        "landingPage": "https://yourproduct.com/?ref=mota-r-28491",
+        "gaSession": "GA Session ID: UA-XXXXX-1 / 1728491023",
+        "timeOnPage": "2m 34s",
+        "converted": "Yes — signed up for free trial"
+      },
+      "screenshot": "Screenshot of Original Page",
+      "viewOriginal": "View Original Post →"
+    }
+  },
+  "taskDetail": {
+    "badge": "Task Monitor",
+    "title": "AI Reply Performance Tracker",
+    "subtitle": "Filter by platform and keyword. Click any metric to drill into evidence.",
+    "searchPlaceholder": "Search questions or replies…",
+    "filterAll": "All Platforms",
+    "platforms": ["Reddit", "YouTube", "Quora", "Naver", "G2", "Amazon"],
+    "headers": ["Platform", "Question", "AI Reply", "Clicks", "Conv."],
+    "tasks": [
+      {
+        "id": "T-001",
+        "platform": "Reddit",
+        "question": "Best alternatives to Notion for small teams?",
+        "replyPreview": "If you want something ready in 5 min with clean task boards + docs, check out [Product]…",
+        "clicks": 23,
+        "convRate": "8.7%",
+        "clickDetails": [
+          { "time": "Apr 7, 14:23 UTC", "ref": "r/SaaS · u/devpro99", "landing": "yourproduct.com/?ref=mota-r-28491", "ga": "UA-XXXXX-1 / 172849", "duration": "2m 34s" },
+          { "time": "Apr 7, 16:05 UTC", "ref": "r/SaaS · u/mkteam", "landing": "yourproduct.com/?ref=mota-r-28512", "ga": "UA-XXXXX-1 / 172851", "duration": "1m 47s" },
+          { "time": "Apr 8, 09:12 UTC", "ref": "r/startups · u/founderX", "landing": "yourproduct.com/?ref=mota-r-28534", "ga": "UA-XXXXX-1 / 172855", "duration": "3m 11s" }
+        ],
+        "conversions": [
+          { "time": "Apr 7, 14:25 UTC", "action": "Free trial signup", "value": "$0", "source": "r/SaaS" },
+          { "time": "Apr 8, 09:18 UTC", "action": "Free trial signup", "value": "$0", "source": "r/startups" }
+        ]
+      },
+      {
+        "id": "T-002",
+        "platform": "Quora",
+        "question": "What project management tool is easiest to use?",
+        "replyPreview": "For teams that just need task boards without the complexity, [Product] is worth trying…",
+        "clicks": 18,
+        "convRate": "5.6%",
+        "clickDetails": [
+          { "time": "Apr 6, 10:41 UTC", "ref": "Quora · answer thread", "landing": "yourproduct.com/?ref=mota-q-7821", "ga": "UA-XXXXX-1 / 172800", "duration": "1m 55s" },
+          { "time": "Apr 6, 22:17 UTC", "ref": "Quora · answer thread", "landing": "yourproduct.com/?ref=mota-q-7822", "ga": "UA-XXXXX-1 / 172811", "duration": "2m 08s" }
+        ],
+        "conversions": [
+          { "time": "Apr 6, 10:44 UTC", "action": "Pricing page view", "value": "$0", "source": "Quora" }
+        ]
+      },
+      {
+        "id": "T-003",
+        "platform": "YouTube",
+        "question": "I tried 10 productivity apps — here's my ranking",
+        "replyPreview": "Great list! One more to consider: [Product] — it's ridiculously simple for small teams…",
+        "clicks": 31,
+        "convRate": "3.2%",
+        "clickDetails": [
+          { "time": "Apr 5, 08:30 UTC", "ref": "YouTube · @ProdReviewer", "landing": "yourproduct.com/?ref=mota-yt-4401", "ga": "UA-XXXXX-1 / 172780", "duration": "0m 52s" },
+          { "time": "Apr 5, 14:19 UTC", "ref": "YouTube · @ProdReviewer", "landing": "yourproduct.com/?ref=mota-yt-4402", "ga": "UA-XXXXX-1 / 172789", "duration": "3m 42s" }
+        ],
+        "conversions": [
+          { "time": "Apr 5, 14:23 UTC", "action": "Free trial signup", "value": "$0", "source": "YouTube" }
+        ]
+      },
+      {
+        "id": "T-004",
+        "platform": "Naver",
+        "question": "프로젝트 관리 앱 추천해주세요",
+        "replyPreview": "소규모 팀에 추천하는 [Product] — 5분이면 시작할 수 있습니다…",
+        "clicks": 12,
+        "convRate": "16.7%",
+        "clickDetails": [
+          { "time": "Apr 7, 03:15 UTC", "ref": "Naver 지식iN · user8821", "landing": "yourproduct.com/?ref=mota-nv-901", "ga": "UA-XXXXX-1 / 172840", "duration": "4m 02s" },
+          { "time": "Apr 7, 11:44 UTC", "ref": "Naver 지식iN · user9103", "landing": "yourproduct.com/?ref=mota-nv-902", "ga": "UA-XXXXX-1 / 172848", "duration": "2m 18s" }
+        ],
+        "conversions": [
+          { "time": "Apr 7, 03:22 UTC", "action": "Free trial signup", "value": "$0", "source": "Naver" },
+          { "time": "Apr 7, 11:50 UTC", "action": "Paid upgrade", "value": "$9", "source": "Naver" }
+        ]
+      },
+      {
+        "id": "T-005",
+        "platform": "G2",
+        "question": "Looking for Asana alternatives with simpler UI",
+        "replyPreview": "Asana's great for complex workflows, but if you need something lean, [Product] strips it down to essentials…",
+        "clicks": 9,
+        "convRate": "11.1%",
+        "clickDetails": [
+          { "time": "Apr 6, 17:33 UTC", "ref": "G2 · comparison thread", "landing": "yourproduct.com/?ref=mota-g2-220", "ga": "UA-XXXXX-1 / 172815", "duration": "5m 11s" }
+        ],
+        "conversions": [
+          { "time": "Apr 6, 17:40 UTC", "action": "Free trial signup", "value": "$0", "source": "G2" }
+        ]
+      },
+      {
+        "id": "T-006",
+        "platform": "Amazon",
+        "question": "One-star review: 'Too many features, too confusing'",
+        "replyPreview": "Totally hear you — feature overload is real. If simple is what you need, [Product] is built for exactly that…",
+        "clicks": 7,
+        "convRate": "0%",
+        "clickDetails": [
+          { "time": "Apr 8, 02:09 UTC", "ref": "Amazon · verified purchase", "landing": "yourproduct.com/?ref=mota-amz-55", "ga": "UA-XXXXX-1 / 172860", "duration": "1m 03s" }
+        ],
+        "conversions": []
+      }
+    ],
+    "clickDetailTitle": "Click Evidence",
+    "clickHeaders": ["Time", "Source / Ref", "Landing Page", "GA Session", "Duration"],
+    "convTitle": "Conversion Evidence",
+    "convHeaders": ["Time", "Action", "Value", "Source"],
+    "close": "✕ Close",
+    "noResults": "No matching tasks found.",
+    "noConversions": "No conversions recorded yet."
+  },
+  "creatorPartner": {
+    "badge": "Creator Partnership · AI Era",
+    "title": "AI-Powered Creator Network",
+    "titleHighlight": "Win-Win, Fully Automated.",
+    "subtitle": "Our AI recruits platform influencers, manages collaboration, and handles payments — transforming every creator into a trusted growth channel.",
+    "vision": {
+      "title": "A New Business Model for the AI Era",
+      "items": [
+        { "icon": "🤝", "label": "Win-Win Economy", "desc": "Creators earn per-click commissions; brands get authentic, high-trust recommendations at scale." },
+        { "icon": "🤖", "label": "AI-First Collaboration", "desc": "From outreach to content co-creation to settlement — AI handles 95% of the workflow autonomously." },
+        { "icon": "🔄", "label": "Self-Growing Flywheel", "desc": "Better creators → more trust → higher conversions → attracts more creators. The network compounds." }
+      ]
+    },
+    "flow": {
+      "title": "How It Works — Fully Automated",
+      "steps": [
+        { "icon": "📡", "num": "01", "title": "AI Scouts Creators", "desc": "Agents scan platforms for active creators with high engagement and topical authority. Auto-sends personalized partnership invitations." },
+        { "icon": "✍️", "num": "02", "title": "Content Co-Creation", "desc": "AI provides product briefs + reply templates. Creators add their voice and publish under their own account — authentic, not scripted." },
+        { "icon": "🔗", "num": "03", "title": "Tracked Links & Entry Points", "desc": "Each creator post carries a unique tracking link. Clicks, conversions, and attribution are logged in real-time." },
+        { "icon": "💳", "num": "04", "title": "Auto-Settlement", "desc": "Commissions calculated per billing cycle. Paid via Stripe direct transfer or cryptocurrency (USDT / USDC). Zero manual work." }
+      ]
+    },
+    "dashboard": {
+      "title": "Creator Management Console",
+      "stats": [
+        { "label": "Active Creators", "value": "128", "icon": "👤", "change": "+18 this week" },
+        { "label": "Creator Clicks", "value": "4,721", "icon": "🖱️", "change": "+22.3%" },
+        { "label": "Avg. Conv. Rate", "value": "7.2%", "icon": "📈", "change": "+1.1%" },
+        { "label": "Total Payouts", "value": "$2,340", "icon": "💰", "change": "32 creators paid" }
+      ],
+      "recentTitle": "Recent Creator Activity",
+      "recent": [
+        { "creator": "@TechBlogger_JP", "platform": "Yahoo!", "action": "Published review · 12 clicks", "status": "active", "time": "5 min ago" },
+        { "creator": "@DevToolKR", "platform": "Naver", "action": "Payout $45.60 via Stripe", "status": "paid", "time": "1 hr ago" },
+        { "creator": "@SaaS_Reviews", "platform": "Reddit", "action": "New partnership accepted", "status": "new", "time": "3 hr ago" },
+        { "creator": "@StartupGuru", "platform": "YouTube", "action": "Published video mention · 38 clicks", "status": "active", "time": "6 hr ago" },
+        { "creator": "@CryptoNomad", "platform": "Twitter", "action": "Payout 28 USDT via wallet", "status": "paid", "time": "1 day ago" }
+      ]
+    },
+    "payment": {
+      "title": "Flexible Settlement",
+      "methods": [
+        { "icon": "💳", "name": "Stripe", "desc": "Direct bank transfer · auto-invoicing" },
+        { "icon": "₿", "name": "Crypto", "desc": "USDT / USDC · low fees · global reach" }
+      ]
+    },
+    "statusLabels": {
+      "active": "Active",
+      "paid": "Paid",
+      "new": "New"
+    }
+  },
   "earlybird": {
     "badge": "Early Access",
     "title": "Join now. Lock your rate. Get priority forever.",
-    "subtitle": "Mota Market Intelligence is in early access. There is no competitive bidding — every registered product gets equal discovery reach. That changes as we scale. Register now to lock in your advantages permanently.",
+    "subtitle": "Mota Market Intelligence is in early access. No competitive bidding — every product gets equal reach. Register now to lock your advantages permanently.",
     "benefits": [
       {
         "icon": "🔒",
         "title": "Permanent Rate Lock",
-        "description": "Your per-click rate is locked permanently at today's price. If we raise prices tomorrow, your account is never affected — guaranteed."
+        "description": "Your per-click rate is locked permanently at today's price — guaranteed."
       },
       {
         "icon": "⭐",
         "title": "Early Partner Status",
-        "description": "Your profile is flagged as an Early Partner. As our platform grows and more brands compete for visibility, Early Partners receive priority allocation over new entrants — always."
+        "description": "Early Partners receive priority allocation over new entrants — always."
       },
       {
         "icon": "🌐",
         "title": "First-Tier Global Reach",
-        "description": "When we expand to new language markets and platforms, Early Partners' products are matched into those new audiences first — no extra configuration needed."
+        "description": "New markets and platforms — Early Partners' products are matched first."
       },
       {
         "icon": "🎯",
         "title": "Direct Configuration Support",
-        "description": "Early access members get hands-on support from our team to set up their product profile, fine-tune reply tone, and optimize matching precision — at no extra charge."
+        "description": "Hands-on setup support: product profile, reply tone, matching precision — free."
       }
     ],
-    "urgency": "Early access rate locks are time-limited. Once the platform opens broadly, today's pricing will no longer be available to new registrants."
+    "urgency": "Early access rate locks are time-limited. Once the platform opens broadly, today's pricing will no longer be available."
   },
   "whymota": {
     "badge": "Why Mota",
-    "title": "Not an ad network. A demand interception engine.",
+    "title": "Stop Advertising. Start Intercepting Demand.",
+    "subtitle": "While your competitors burn budgets on impressions, you're engaging the exact people who are already crying for help.",
     "cards": [
       {
+        "icon": "🎯",
         "title": "Intent Is Already There",
-        "description": "Every user we direct to your product has publicly expressed the exact problem it solves — on a real platform, in their own words. You're not interrupting a scroll. You're being discovered by someone already searching for an answer."
+        "description": "Every user has publicly expressed the exact problem your product solves — on a real platform, in their own words.",
+        "metric": "100%",
+        "metricLabel": "Intent-Based"
       },
       {
+        "icon": "🛡️",
         "title": "Zero Impression Waste",
-        "description": "You never pay for reach, views, or impressions. Not a single cent is spent on someone who hasn't signalled real intent. If we don't deliver clicks, you pay nothing — the only truly risk-free customer acquisition model."
+        "description": "Not a single cent is spent on someone who hasn't signalled real intent. No clicks = no cost.",
+        "metric": "$0",
+        "metricLabel": "Wasted Spend"
       },
       {
-        "title": "6 Languages. One Dashboard.",
-        "description": "Whether your customers vent on Reddit in English, complain on Naver in Korean, or post frustrated reviews in Japanese — Mota listens, responds, and reports everything in one place. Global reach without global headcount."
+        "icon": "🌐",
+        "title": "6 Languages × Multiple Platforms",
+        "description": "English, Spanish, Portuguese, Japanese, Korean, Russian — Mota operates natively across Reddit, Naver, Amazon, Yahoo! and more. One dashboard, zero language barriers.",
+        "metric": "6",
+        "metricLabel": "Languages"
       }
     ]
   },
   "cta": {
-    "title": "Your customers are out there — right now.",
-    "subtitle": "Register free. Describe your product. Within 48 hours, our AI begins finding the people who need exactly what you sell — across 20+ platforms in 6 languages.",
-    "primary": "Get Started Free",
-    "secondary": "Talk to Us About Enterprise",
-    "footnote": "No credit card required · No minimum spend · Cancel anytime · Full data transparency"
+    "headline": "Every second you wait,",
+    "headlineHighlight": "your competitor answers first.",
+    "title": "Zero Risk. No Click, No Charge.",
+    "subtitle": "Start early, profit early — otherwise, your competitors will seize the opportunity before you do.",
+    "stats": [
+      { "value": "$0", "label": "Zero risk to start" },
+      { "value": "48h", "label": "From signup to first lead" },
+      { "value": "10+", "label": "Platforms monitored" }
+    ],
+    "primary": "Start Capturing Demand — Free",
+    "secondary": "Book a Live Demo",
+    "urgency": "⚡ Limited early-bird pricing — lock in your rate today",
+    "footnote": "No click, no charge · No minimum spend · Cancel anytime · Full data transparency"
   },
   "footer": {
     "copyright": "© 2026 MOTA TechLink. All rights reserved.",
     "links": [
-      { "label": "Privacy Policy", "href": "/legal/privacy" },
-      { "label": "Terms of Service", "href": "/legal/terms" },
-      { "label": "Contact", "href": "mailto:market@motaiot.com" }
+      { "label": "Privacy Policy", "href": "privacy" },
+      { "label": "Terms of Service", "href": "/terms" },
+      { "label": "Contact", "href": "/contact" }
     ]
   }
 }

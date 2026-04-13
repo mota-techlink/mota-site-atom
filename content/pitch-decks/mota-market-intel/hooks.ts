@@ -42,8 +42,18 @@ export type NavDirection = 1 | -1 | 0;
  *  - exitingIdx  — the previous slide currently animating out (null if idle)
  *  - direction   — travel direction used to pick enter/exit animations
  *  - goTo        — imperatively jump to any slide index
+ *
+ * @param rootRef  — ref to the root container element
+ * @param options.canView  — optional access guard: returns `true` if slide is viewable
+ * @param options.onGated  — called when navigation is blocked by access control
  */
-export function usePageNav(rootRef: RefObject<HTMLElement | null>) {
+export function usePageNav(
+  rootRef: RefObject<HTMLElement | null>,
+  options?: {
+    canView?: (idx: number) => boolean;
+    onGated?: () => void;
+  },
+) {
   const [activeIdx, setActiveIdx] = useState(0);
   const [exitingIdx, setExitingIdx] = useState<number | null>(null);
   const [direction, setDirection] = useState<NavDirection>(0);
@@ -57,6 +67,12 @@ export function usePageNav(rootRef: RefObject<HTMLElement | null>) {
   const goTo = useCallback((idx: number) => {
     const clamped = Math.max(0, Math.min(SECTION_IDS.length - 1, idx));
     if (clamped === activeIdxRef.current) return;
+
+    // ── Access guard ──────────────────────────────────────
+    if (options?.canView && !options.canView(clamped)) {
+      options.onGated?.();
+      return; // Block navigation
+    }
 
     const dir: NavDirection = clamped > activeIdxRef.current ? 1 : -1;
 
@@ -79,7 +95,7 @@ export function usePageNav(rootRef: RefObject<HTMLElement | null>) {
     exitTimer.current = setTimeout(() => {
       setExitingIdx(null);
     }, 1050);
-  }, []);
+  }, [options]);
 
   // Wheel
   useEffect(() => {
@@ -116,6 +132,14 @@ export function usePageNav(rootRef: RefObject<HTMLElement | null>) {
       if (e.key === "ArrowUp" || e.key === "PageUp") {
         e.preventDefault();
         if (!locked.current) goTo(activeIdxRef.current - 1);
+      }
+      if (e.key === "Home") {
+        e.preventDefault();
+        if (!locked.current) goTo(0);
+      }
+      if (e.key === "End") {
+        e.preventDefault();
+        if (!locked.current) goTo(SECTION_IDS.length - 1);
       }
     };
 

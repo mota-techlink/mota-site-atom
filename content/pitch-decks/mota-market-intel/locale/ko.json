@@ -3,48 +3,45 @@
     "tagline": "마켓 인텔리전스"
   },
   "hero": {
-    "badge": "AI 구동 · 실제 클릭당 과금 · 20개 이상 플랫폼 · 6개 언어",
-    "title": "당신의 고객은 이미 도움을 찾고 있습니다.",
-    "titleHighlight": "우리가 당신의 제품을 그들 앞에 자연스럽게 전달합니다.",
-    "subtitle": "Mota 마켓 인텔리전스는 Reddit, YouTube, Amazon, Quora, Naver 지식iN, Yahoo! 知恵袋 등 6개 언어 20개 이상의 플랫폼을 상시 스캔합니다. 당신의 제품이 해결하는 바로 그 문제를 공개적으로 표현하는 사용자를 특정하고, AI가 진심 어린 유용한 답변으로 대화에 합류합니다. 클릭이 발생할 때만 비용이 청구됩니다.",
+    "badge": "AI 기반 마켓 인텔리전스",
+    "title": "온라인 대화를",
+    "titleHighlight": "유료 고객으로 전환합니다.",
+    "subtitle": "6개 언어 커뮤니티에서 당신의 제품이 해결하는 문제를 공개적으로 표현하는 사용자를 AI가 찾아내고, 진심 어린 답변으로 자연스럽게 대화에 참여합니다. 클릭 시에만 과금.",
     "cta": "무료로 시작하기",
     "ctaSecondary": "작동 방식 보기",
+    "features": [
+      { "icon": "🤖", "label": "AI 자동 매칭" },
+      { "icon": "🌍", "label": "20+ 플랫폼 · 6개 언어" },
+      { "icon": "💰", "label": "실제 클릭만 과금" },
+      { "icon": "⚡", "label": "48시간 내 가동" }
+    ],
     "stats": [
-      {
-        "value": "20+",
-        "label": "6개 언어 플랫폼"
-      },
-      {
-        "value": "48h",
-        "label": "가입 후 첫 매칭까지"
-      },
-      {
-        "value": "$0",
-        "label": "클릭 없으면 비용 없음"
-      }
+      { "value": "20+", "label": "플랫폼" },
+      { "value": "48h", "label": "첫 매칭까지" },
+      { "value": "$0", "label": "클릭 없으면" }
     ]
   },
   "problem": {
-    "badge": "광고의 문제점",
-    "title": "기존 광고는 방해합니다. 우리는 의도를 포착합니다.",
-    "subtitle": "지금 이 순간에도 수천 명의 사용자가 Reddit, YouTube, Amazon, Quora 등 수십 개 플랫폼에서 불만을 게시하고, 미답 질문을 남기고, 경쟁사에 낮은 평점을 주고 있습니다. 그들은 수동적으로 스크롤하는 것이 아닙니다. 해결책이 필요하다는 신호를 보내고 있습니다. 당신의 제품이 바로 그 답일 수 있습니다. 하지만 광고로는 절대 그들에게 닿지 않습니다.",
+    "badge": "문제점",
+    "title": "기존 광고는 방해. 우리는 의도를 포착합니다.",
+    "subtitle": "지금 이 순간 수천 명이 질문, 불만, 리뷰를 게시하며 해결책을 찾고 있습니다. 광고로는 닿을 수 없습니다.",
     "comparison": {
       "traditional": {
-        "label": "기존 광고 방식",
+        "label": "기존 광고",
         "items": [
-          "노출당 과금 — 관심 없는 사람들에게 도달",
-          "타겟이 사용할 키워드를 추측해야 함",
-          "비싼 입찰 경쟁에 참여",
-          "지출이 실제 구매 의도로 이어지는지 알 수 없음"
+          { "icon": "💸", "text": "노출당 과금 — 대부분 관심 없음" },
+          { "icon": "🎯", "text": "키워드와 타겟을 추측" },
+          { "icon": "⚔️", "text": "입찰 경쟁으로 예산 소진" },
+          { "icon": "❓", "text": "실제 구매 의도 측정 불가" }
         ]
       },
       "mota": {
-        "label": "Mota 마켓 인텔리전스",
+        "label": "Mota 인텔리전스",
         "items": [
-          "이미 당신의 페인 포인트를 표현하고 있는 사용자에게 도달",
-          "AI가 제품 설명으로부터 타겟 고객을 역산",
-          "입찰 없음 — 얼리 유저는 정액 우선 접근권 확보",
-          "실제 사용자가 클릭할 때만 과금 — 완전한 투명성"
+          { "icon": "🎯", "text": "이미 페인 포인트를 표현한 사용자 도달" },
+          { "icon": "🤖", "text": "AI가 제품 설명에서 타겟 자동 특정" },
+          { "icon": "🔒", "text": "정액 요금 — 입찰 없음" },
+          { "icon": "✅", "text": "실제 클릭만 과금 — 완전한 투명성" }
         ]
       }
     }
@@ -55,164 +52,381 @@
     "steps": [
       {
         "number": "01",
-        "title": "제품을 설명하세요. 그게 전부입니다.",
-        "description": "무엇을 팔고 누구를 돕는지 알려주세요. 키워드 리서치 불필요. 타겟 설정 불필요. 프롬프트 작성도 전혀 필요 없습니다. Mota AI가 제품을 분석해 고객의 페인 포인트, 활동 플랫폼, 언급하는 경쟁사, 불만 표현 언어를 6개 언어에 걸쳐 자동으로 추론합니다. 몇 분 안에 준비 완료."
+        "title": "제품을 설명하세요",
+        "description": "무엇을 팔고 누구를 돕는지 알려주세요. AI가 6개 언어에 걸쳐 고객 페인 포인트, 플랫폼, 경쟁사, 표현을 자동 추론합니다. 수 분 내 준비 완료."
       },
       {
         "number": "02",
-        "title": "AI가 20개 이상 플랫폼을 24시간 스캔",
-        "description": "에이전트가 Reddit, YouTube, Amazon 리뷰, Quora, Twitter/X, App Store, Google Play, G2, Trustpilot, Hacker News, Stack Overflow를 상시 모니터링합니다. Naver 지식iN, Yahoo! 知恵袋, Pikabu, Reclame Aqui, VK 등 다국어 로컬 플랫폼도 커버합니다. 미답 불만 게시물, 낮은 별점의 경쟁사 리뷰, 모든 좌절 표현이 신호입니다."
+        "title": "AI가 20+ 플랫폼을 24시간 스캔",
+        "description": "에이전트가 전 세계 커뮤니티를 상시 모니터링. 미답 불만, 낮은 별점 리뷰, 모든 좌절 표현이 시그널입니다."
       },
       {
         "number": "03",
-        "title": "AI가 진심 어린 유용한 답변을 게시",
-        "description": "높은 의도를 가진 매칭이 발견되면 AI가 문맥에 맞는 답변을 생성합니다. 먼저 진짜 도움이 되는 정보를 전달하고, 마지막에 당신의 제품을 자연스럽게 소개합니다. 광고처럼 느껴지지 않습니다. 사용자가 기다리던 답변처럼 느껴집니다. 모든 답변은 게시 전 사람이 검토하므로 품질이 보장됩니다."
+        "title": "진심 어린 유용한 답변",
+        "description": "매칭 발견 시 AI가 맥락에 맞는 답변 생성. 먼저 진짜 도움, 마지막에 제품 자연 소개. 게시 전 사람이 검토."
       },
       {
         "number": "04",
-        "title": "누군가 클릭할 때만 비용 발생",
-        "description": "모든 답변에는 고유 추적 링크가 포함됩니다. 사용자가 제품 페이지로 클릭하면 크레딧 1개가 소모됩니다. 클릭 제로? 비용 제로. 실시간 대시보드에서 모든 답변, 모든 클릭, 모든 전환을 원본 게시물과 플랫폼까지 완전한 귀인 정보와 함께 확인할 수 있습니다."
+        "title": "클릭 시에만 과금",
+        "description": "모든 답변에 고유 추적 링크. 1클릭 = 1크레딧. 제로 클릭 = 제로 비용. 실시간 대시보드에서 모든 데이터 확인."
       }
     ]
   },
   "platforms": {
     "badge": "플랫폼 커버리지",
-    "title": "고객이 이야기하는 곳이라면 어디든, 우리가 듣습니다.",
-    "subtitle": "영어권 주요 플랫폼 + 스페인어, 포르투갈어, 일본어, 한국어, 러시아어 네이티브 커뮤니티. 추가 비용 없이 지속적으로 플랫폼 추가.",
+    "title": "고객이 이야기하는 곳이라면 어디든.",
+    "subtitle": "영어권 주요 플랫폼 + 일본어, 한국어, 러시아어, 스페인어, 포르투갈어 네이티브 커뮤니티. 추가 비용 없이 지속 확대.",
     "items": [
-      "Reddit",
-      "YouTube",
-      "Amazon 리뷰",
-      "Quora",
-      "Twitter / X",
-      "App Store",
-      "Google Play",
-      "Hacker News",
-      "Stack Overflow",
-      "Trustpilot",
-      "G2",
-      "Naver 지식iN",
-      "Yahoo! 知恵袋",
-      "Pikabu",
-      "Reclame Aqui",
-      "VK",
-      "Yandex Q",
-      "Taringa!",
-      "Kakaku.com",
-      "Coupang"
+      "Reddit", "YouTube", "Amazon 리뷰", "Quora",
+      "Twitter / X", "App Store", "Google Play",
+      "Hacker News", "Stack Overflow", "Trustpilot", "G2",
+      "Naver 지식iN", "Yahoo! 知恵袋", "Pikabu", "Reclame Aqui",
+      "VK", "Yandex Q", "Taringa!", "Kakaku.com", "Coupang"
     ]
   },
   "pricing": {
     "badge": "요금 체계",
-    "title": "클릭당 과금. 그것뿐입니다.",
-    "subtitle": "월정액 없음. 초기 비용 없음. 최소 결제 없음. 크레딧은 영구 유효. 실제 사용자가 추적 링크를 클릭하고 제품 페이지에 도착할 때만 과금됩니다.",
+    "title": "클릭당 과금. 그것뿐.",
+    "subtitle": "월정액 없음. 초기 비용 없음. 최소 결제 없음. 크레딧 영구 유효. 실제 클릭 시에만 과금.",
     "perClick": "클릭당",
     "currentRate": "$0.15",
     "currentRateLabel": "Starter 플랜 · 가입 시 요금 고정",
-    "note": "클릭 단가는 가입 시의 플랜 요금으로 영구 고정됩니다. 향후 가격 인상은 기존 계정에 영향을 미치지 않습니다.",
+    "note": "클릭 단가는 가입 시 플랜 요금으로 영구 고정. 향후 인상은 기존 계정에 영향 없음.",
     "features": [
       "클릭 없으면 비용 제로",
       "실시간 대시보드 — 모든 답변, 모든 클릭",
-      "원본 게시물 & 플랫폼까지 완전한 귀인",
+      "원본 게시물 & 플랫폼 완전 귀인",
       "계약 없음 · 언제든 데이터 내보내기"
     ]
   },
   "topup": {
     "badge": "크레딧 플랜",
-    "title": "플랜을 선택하고 요금을 고정하세요.",
-    "subtitle": "크레딧을 사전 구매할수록 클릭 단가가 낮아집니다. 크레딧은 영구 유효. 언제든 업그레이드 가능. 엔터프라이즈 고객은 맞춤 요금과 전담 계정 매니저를 제공받습니다.",
-    "tableHeaders": [
-      "플랜",
-      "크레딧 & 가격",
-      "클릭당"
-    ],
+    "title": "플랜 선택. 요금 고정.",
+    "subtitle": "사전 구매할수록 클릭 단가 인하. 영구 유효. 언제든 업그레이드. 엔터프라이즈는 맞춤 요금.",
+    "tableHeaders": ["플랜", "크레딧 & 가격", "클릭당"],
     "tiers": [
+      { "amount": "Starter", "discount": "100클릭 · $9", "rate": "$0.090" },
+      { "amount": "Growth", "discount": "500클릭 · $39", "rate": "$0.078" },
+      { "amount": "Scale", "discount": "2,000클릭 · $129", "rate": "$0.065" }
+    ],
+    "note": "엔터프라이즈: 무제한 · 맞춤 요금 · 전담 지원. 문의해 주세요."
+  },
+  "dashboard": {
+    "badge": "대시보드",
+    "title": "모든 인터랙션을 실시간으로 확인.",
+    "subtitle": "통합 대시보드 — 답변, 클릭, 전환, ROI를 모든 플랫폼과 언어에서 확인.",
+    "stats": [
+      { "label": "총 클릭수", "value": "1,284", "change": "+12.5%", "icon": "🖱️" },
+      { "label": "활성 답변", "value": "3,847", "change": "+8.3%", "icon": "💬" },
+      { "label": "전환율", "value": "4.7%", "change": "+0.6%", "icon": "📈" },
+      { "label": "사용 크레딧", "value": "$96.30", "change": "742 남음", "icon": "💰" }
+    ],
+    "chart": {
+      "title": "이번 주 클릭수",
+      "convTitle": "전환율 %",
+      "bars": [
+        { "label": "월", "value": 42, "conv": 3.2 },
+        { "label": "화", "value": 68, "conv": 4.8 },
+        { "label": "수", "value": 55, "conv": 4.1 },
+        { "label": "목", "value": 91, "conv": 6.5 },
+        { "label": "금", "value": 78, "conv": 5.9 },
+        { "label": "토", "value": 34, "conv": 2.8 },
+        { "label": "일", "value": 22, "conv": 1.9 }
+      ]
+    },
+    "activity": {
+      "title": "최근 활동",
+      "items": [
+        { "platform": "Reddit", "action": "답변 게시 → r/SaaS", "time": "2분 전", "status": "click" },
+        { "platform": "YouTube", "action": "답변 게시 → 댓글 스레드", "time": "8분 전", "status": "posted" },
+        { "platform": "Naver", "action": "답변 게시 → 지식iN", "time": "15분 전", "status": "click" },
+        { "platform": "Quora", "action": "답변 게시 → 제품 비교", "time": "23분 전", "status": "posted" },
+        { "platform": "G2", "action": "답변 게시 → 대안 스레드", "time": "31분 전", "status": "click" }
+      ]
+    }
+  },
+  "billing": {
+    "badge": "인터랙티브 데모",
+    "title": "완전한 투명성 — 모든 클릭을 상세히.",
+    "subtitle": "청구서를 클릭하면 상세 내역이 표시됩니다. 항목을 클릭하면 원본 게시물, AI 답변, 추적 증거를 확인할 수 있습니다.",
+    "backToInvoices": "← 청구서 목록으로",
+    "backToDetails": "← 상세로 돌아가기",
+    "backToTop": "⇈ 청구서 목록으로",
+    "invoices": {
+      "title": "청구 내역",
+      "headers": ["청구서", "날짜", "클릭수", "금액", "상태"],
+      "rows": [
+        { "id": "INV-2026-041", "date": "2026-04-07", "clicks": "127", "amount": "$11.43", "status": "결제완료" },
+        { "id": "INV-2026-040", "date": "2026-03-31", "clicks": "203", "amount": "$18.27", "status": "결제완료" },
+        { "id": "INV-2026-039", "date": "2026-03-24", "clicks": "89", "amount": "$8.01", "status": "결제완료" },
+        { "id": "INV-2026-038", "date": "2026-03-17", "clicks": "156", "amount": "$14.04", "status": "결제완료" }
+      ]
+    },
+    "details": {
+      "title": "청구서 상세 — {id}",
+      "headers": ["#", "플랫폼", "게시물 제목", "클릭수", "비용"],
+      "rows": [
+        { "idx": "1", "platform": "Reddit", "post": "소규모 팀을 위한 Notion 대안?", "clicks": "23", "cost": "$2.07" },
+        { "idx": "2", "platform": "Quora", "post": "가장 쉬운 프로젝트 관리 도구는?", "clicks": "18", "cost": "$1.62" },
+        { "idx": "3", "platform": "YouTube", "post": "생산성 앱 10개 사용 후기 — 순위", "clicks": "31", "cost": "$2.79" },
+        { "idx": "4", "platform": "Naver", "post": "프로젝트 관리 앱 추천해주세요", "clicks": "12", "cost": "$1.08" }
+      ]
+    },
+    "clickDetail": {
+      "title": "클릭 증거",
+      "userPost": "사용자 원본 게시물",
+      "aiReply": "AI 답변",
+      "userPostContent": "\"Notion을 쓰고 있는데 5명 팀에겐 너무 복잡합니다. 태스크 보드와 간단한 문서만 필요합니다. 셋업에 일주일 안 걸리는 거 추천해주세요.\"",
+      "aiReplyContent": "\"충분히 이해합니다 — Notion의 유연성이 소규모 팀에겐 부담이 될 수 있죠. 5분이면 시작할 수 있는 태스크 보드 + 문서 도구라면 [제품명]을 추천합니다. 저희 팀이 지난달 전환했는데 온보딩에 약 10분 걸렸습니다.\"",
+      "tracking": {
+        "title": "추적 증거",
+        "clickTime": "2026-04-07 · 14:23 UTC",
+        "source": "Reddit · r/SaaS",
+        "landingPage": "https://yourproduct.com/?ref=mota-r-28491",
+        "gaSession": "GA Session ID: UA-XXXXX-1 / 1728491023",
+        "timeOnPage": "2분 34초",
+        "converted": "예 — 무료 체험 등록"
+      },
+      "screenshot": "원본 페이지 스크린샷",
+      "viewOriginal": "원본 게시물 보기 →"
+    }
+  },
+  "taskDetail": {
+    "badge": "작업 모니터",
+    "title": "AI 답변 성과 트래커",
+    "subtitle": "플랫폼과 키워드로 필터링하세요. 지표를 클릭하면 상세 증거를 확인할 수 있습니다.",
+    "searchPlaceholder": "질문 또는 답변 검색…",
+    "filterAll": "전체 플랫폼",
+    "platforms": ["Reddit", "YouTube", "Quora", "Naver", "G2", "Amazon"],
+    "headers": ["플랫폼", "질문", "AI 답변", "클릭수", "전환율"],
+    "tasks": [
       {
-        "amount": "Starter",
-        "discount": "100클릭 · $9",
-        "rate": "$0.090"
+        "id": "T-001",
+        "platform": "Reddit",
+        "question": "소규모 팀을 위한 최고의 Notion 대안은?",
+        "replyPreview": "5분이면 사용 가능한 작업 보드 + 문서 도구, [Product]을 추천합니다…",
+        "clicks": 23,
+        "convRate": "8.7%",
+        "clickDetails": [
+          { "time": "4월 7일 14:23 UTC", "ref": "r/SaaS · u/devpro99", "landing": "yourproduct.com/?ref=mota-r-28491", "ga": "UA-XXXXX-1 / 172849", "duration": "2분 34초" },
+          { "time": "4월 7일 16:05 UTC", "ref": "r/SaaS · u/mkteam", "landing": "yourproduct.com/?ref=mota-r-28512", "ga": "UA-XXXXX-1 / 172851", "duration": "1분 47초" },
+          { "time": "4월 8일 09:12 UTC", "ref": "r/startups · u/founderX", "landing": "yourproduct.com/?ref=mota-r-28534", "ga": "UA-XXXXX-1 / 172855", "duration": "3분 11초" }
+        ],
+        "conversions": [
+          { "time": "4월 7일 14:25 UTC", "action": "무료 체험 가입", "value": "$0", "source": "r/SaaS" },
+          { "time": "4월 8일 09:18 UTC", "action": "무료 체험 가입", "value": "$0", "source": "r/startups" }
+        ]
       },
       {
-        "amount": "Growth",
-        "discount": "500클릭 · $39",
-        "rate": "$0.078"
+        "id": "T-002",
+        "platform": "Quora",
+        "question": "가장 쉬운 프로젝트 관리 도구는?",
+        "replyPreview": "작업 보드만 필요한 팀이라면 [Product]을 추천합니다…",
+        "clicks": 18,
+        "convRate": "5.6%",
+        "clickDetails": [
+          { "time": "4월 6일 10:41 UTC", "ref": "Quora · 답변 스레드", "landing": "yourproduct.com/?ref=mota-q-7821", "ga": "UA-XXXXX-1 / 172800", "duration": "1분 55초" },
+          { "time": "4월 6일 22:17 UTC", "ref": "Quora · 답변 스레드", "landing": "yourproduct.com/?ref=mota-q-7822", "ga": "UA-XXXXX-1 / 172811", "duration": "2분 08초" }
+        ],
+        "conversions": [
+          { "time": "4월 6일 10:44 UTC", "action": "가격 페이지 조회", "value": "$0", "source": "Quora" }
+        ]
       },
       {
-        "amount": "Scale",
-        "discount": "2,000클릭 · $129",
-        "rate": "$0.065"
+        "id": "T-003",
+        "platform": "YouTube",
+        "question": "생산성 앱 10개 사용 후기 — 순위 발표",
+        "replyPreview": "훌륭한 목록입니다! 하나 더: [Product]은 소규모 팀에 최적화되어 있습니다…",
+        "clicks": 31,
+        "convRate": "3.2%",
+        "clickDetails": [
+          { "time": "4월 5일 08:30 UTC", "ref": "YouTube · @ProdReviewer", "landing": "yourproduct.com/?ref=mota-yt-4401", "ga": "UA-XXXXX-1 / 172780", "duration": "0분 52초" },
+          { "time": "4월 5일 14:19 UTC", "ref": "YouTube · @ProdReviewer", "landing": "yourproduct.com/?ref=mota-yt-4402", "ga": "UA-XXXXX-1 / 172789", "duration": "3분 42초" }
+        ],
+        "conversions": [
+          { "time": "4월 5일 14:23 UTC", "action": "무료 체험 가입", "value": "$0", "source": "YouTube" }
+        ]
+      },
+      {
+        "id": "T-004",
+        "platform": "Naver",
+        "question": "프로젝트 관리 앱 추천해주세요",
+        "replyPreview": "소규모 팀에 추천하는 [Product] — 5분이면 시작할 수 있습니다…",
+        "clicks": 12,
+        "convRate": "16.7%",
+        "clickDetails": [
+          { "time": "4월 7일 03:15 UTC", "ref": "Naver 지식iN · user8821", "landing": "yourproduct.com/?ref=mota-nv-901", "ga": "UA-XXXXX-1 / 172840", "duration": "4분 02초" },
+          { "time": "4월 7일 11:44 UTC", "ref": "Naver 지식iN · user9103", "landing": "yourproduct.com/?ref=mota-nv-902", "ga": "UA-XXXXX-1 / 172848", "duration": "2분 18초" }
+        ],
+        "conversions": [
+          { "time": "4월 7일 03:22 UTC", "action": "무료 체험 가입", "value": "$0", "source": "Naver" },
+          { "time": "4월 7일 11:50 UTC", "action": "유료 업그레이드", "value": "$9", "source": "Naver" }
+        ]
+      },
+      {
+        "id": "T-005",
+        "platform": "G2",
+        "question": "Asana보다 간단한 UI를 가진 대안 찾습니다",
+        "replyPreview": "Asana는 복잡한 워크플로에 적합하지만, 심플함이 필요하다면 [Product]이 딱입니다…",
+        "clicks": 9,
+        "convRate": "11.1%",
+        "clickDetails": [
+          { "time": "4월 6일 17:33 UTC", "ref": "G2 · 비교 스레드", "landing": "yourproduct.com/?ref=mota-g2-220", "ga": "UA-XXXXX-1 / 172815", "duration": "5분 11초" }
+        ],
+        "conversions": [
+          { "time": "4월 6일 17:40 UTC", "action": "무료 체험 가입", "value": "$0", "source": "G2" }
+        ]
+      },
+      {
+        "id": "T-006",
+        "platform": "Amazon",
+        "question": "별 1개 리뷰: '기능이 너무 많아서 혼란스럽다'",
+        "replyPreview": "기능 과부하는 진짜 문제입니다. 심플한 도구가 필요하다면 [Product]이 바로 그것입니다…",
+        "clicks": 7,
+        "convRate": "0%",
+        "clickDetails": [
+          { "time": "4월 8일 02:09 UTC", "ref": "Amazon · 인증 구매자", "landing": "yourproduct.com/?ref=mota-amz-55", "ga": "UA-XXXXX-1 / 172860", "duration": "1분 03초" }
+        ],
+        "conversions": []
       }
     ],
-    "note": "엔터프라이즈 플랜: 무제한 볼륨 · 맞춤 요금 · 전담 지원. 문의해 주세요."
+    "clickDetailTitle": "클릭 증거",
+    "clickHeaders": ["시간", "출처 / 참조", "랜딩 페이지", "GA 세션", "체류 시간"],
+    "convTitle": "전환 증거",
+    "convHeaders": ["시간", "행동", "금액", "출처"],
+    "close": "✕ 닫기",
+    "noResults": "일치하는 작업을 찾을 수 없습니다.",
+    "noConversions": "전환 기록이 아직 없습니다."
+  },
+  "creatorPartner": {
+    "badge": "크리에이터 파트너십 · AI 시대",
+    "title": "AI 기반 크리에이터 네트워크",
+    "titleHighlight": "Win-Win, 완전 자동화.",
+    "subtitle": "AI가 플랫폼 인플루언서를 자동 모집하고, 협업을 관리하며, 정산을 처리합니다 — 모든 크리에이터를 신뢰할 수 있는 성장 채널로 전환합니다.",
+    "vision": {
+      "title": "AI 시대의 비즈니스 모델 혁신",
+      "items": [
+        { "icon": "🤝", "label": "Win-Win 경제", "desc": "크리에이터는 클릭당 수수료를 획득하고, 브랜드는 진정성 있는 고신뢰 추천을 대규모로 얻습니다." },
+        { "icon": "🤖", "label": "AI 우선 협업", "desc": "아웃리치부터 콘텐츠 공동 제작, 정산까지 — AI가 워크플로의 95%를 자율적으로 처리합니다." },
+        { "icon": "🔄", "label": "자기성장 플라이휠", "desc": "우수한 크리에이터 → 높은 신뢰 → 높은 전환율 → 더 많은 크리에이터 유입. 네트워크가 복리로 성장합니다." }
+      ]
+    },
+    "flow": {
+      "title": "완전 자동화 프로세스",
+      "steps": [
+        { "icon": "📡", "num": "01", "title": "AI가 크리에이터 발굴", "desc": "에이전트가 각 플랫폼에서 높은 참여도와 주제 권위를 가진 활발한 크리에이터를 스캔합니다. 개인화된 파트너십 초대를 자동 발송합니다." },
+        { "icon": "✍️", "num": "02", "title": "콘텐츠 공동 제작", "desc": "AI가 제품 브리프 + 답변 템플릿을 제공합니다. 크리에이터가 자신의 목소리를 더해 본인 계정에 게시 — 진정성 있는 비대본 콘텐츠." },
+        { "icon": "🔗", "num": "03", "title": "추적 링크 & 입구", "desc": "각 크리에이터 게시물에 고유 추적 링크가 첨부됩니다. 클릭, 전환, 기여도가 실시간으로 기록됩니다." },
+        { "icon": "💳", "num": "04", "title": "자동 정산", "desc": "수수료는 청구 주기별로 자동 계산됩니다. Stripe 직접 이체 또는 암호화폐(USDT / USDC)로 지급. 수동 작업 제로." }
+      ]
+    },
+    "dashboard": {
+      "title": "크리에이터 관리 콘솔",
+      "stats": [
+        { "label": "활성 크리에이터", "value": "128", "icon": "👤", "change": "+이번 주 18명" },
+        { "label": "크리에이터 클릭", "value": "4,721", "icon": "🖱️", "change": "+22.3%" },
+        { "label": "평균 전환율", "value": "7.2%", "icon": "📈", "change": "+1.1%" },
+        { "label": "총 지급액", "value": "$2,340", "icon": "💰", "change": "32명 지급 완료" }
+      ],
+      "recentTitle": "최근 크리에이터 활동",
+      "recent": [
+        { "creator": "@TechBlogger_JP", "platform": "Yahoo!", "action": "리뷰 게시 · 12 클릭", "status": "active", "time": "5분 전" },
+        { "creator": "@DevToolKR", "platform": "Naver", "action": "Stripe 지급 $45.60", "status": "paid", "time": "1시간 전" },
+        { "creator": "@SaaS_Reviews", "platform": "Reddit", "action": "파트너십 수락", "status": "new", "time": "3시간 전" },
+        { "creator": "@StartupGuru", "platform": "YouTube", "action": "영상 멘션 게시 · 38 클릭", "status": "active", "time": "6시간 전" },
+        { "creator": "@CryptoNomad", "platform": "Twitter", "action": "지갑 지급 28 USDT", "status": "paid", "time": "1일 전" }
+      ]
+    },
+    "payment": {
+      "title": "유연한 정산 방식",
+      "methods": [
+        { "icon": "💳", "name": "Stripe", "desc": "은행 직접 이체 · 자동 인보이스" },
+        { "icon": "₿", "name": "암호화폐", "desc": "USDT / USDC · 낮은 수수료 · 글로벌 지원" }
+      ]
+    },
+    "statusLabels": {
+      "active": "활성",
+      "paid": "지급 완료",
+      "new": "신규"
+    }
   },
   "earlybird": {
     "badge": "얼리 액세스",
-    "title": "지금 가입하세요. 요금을 영원히 고정하세요.",
-    "subtitle": "Mota 마켓 인텔리전스는 얼리 액세스 단계입니다. 현재 입찰 경쟁이 없으며, 등록된 모든 제품이 동등한 도달 기회를 얻습니다. 플랫폼이 성장하면 이 구조는 바뀝니다. 지금 등록해 당신의 이점을 영구적으로 확보하세요.",
+    "title": "지금 가입. 요금 영원히 고정.",
+    "subtitle": "얼리 액세스 단계. 입찰 없음 — 모든 제품 동등 도달. 지금 등록하여 이점을 영구 확보.",
     "benefits": [
       {
         "icon": "🔒",
         "title": "영구 요금 고정",
-        "description": "클릭 단가는 오늘의 가격으로 영구 고정됩니다. 내일 가격이 올라도 당신의 계정에는 전혀 영향이 없습니다 — 보장됩니다."
+        "description": "클릭 단가 오늘 가격으로 영구 고정 — 보장."
       },
       {
         "icon": "⭐",
         "title": "얼리 파트너 지위",
-        "description": "프로필에 '얼리 파트너' 태그가 부여됩니다. 플랫폼이 성장하고 더 많은 브랜드가 가시성 경쟁에 참여할수록, 얼리 파트너는 항상 신규 참가자보다 우선 배정을 받습니다."
+        "description": "얼리 파트너는 항상 우선 배정."
       },
       {
         "icon": "🌐",
-        "title": "글로벌 최우선 도달권",
-        "description": "새로운 언어 시장이나 플랫폼으로 확장할 때, 얼리 파트너의 제품이 그 새로운 오디언스에 가장 먼저 매칭됩니다 — 추가 설정 없이."
+        "title": "글로벌 최우선 도달",
+        "description": "새 시장·플랫폼 — 얼리 파트너 제품이 먼저 매칭."
       },
       {
         "icon": "🎯",
         "title": "1:1 설정 지원",
-        "description": "얼리 액세스 멤버는 제품 프로필 설정, 답변 톤 조정, 매칭 정밀도 최적화에 대해 팀으로부터 직접 지원을 받습니다 — 추가 비용 없이."
+        "description": "제품 프로필·답변 톤·매칭 정밀도 최적화 — 무료."
       }
     ],
-    "urgency": "얼리 액세스 요금 고정 혜택은 기간 한정입니다. 플랫폼이 전면 공개된 후에는 오늘의 요금이 신규 가입자에게 더 이상 적용되지 않습니다."
+    "urgency": "얼리 액세스 요금 고정은 기간 한정. 전면 공개 후 오늘 요금은 신규 가입자에게 적용되지 않습니다."
   },
   "whymota": {
     "badge": "Mota를 선택하는 이유",
-    "title": "광고 네트워크가 아닙니다. 수요 인터셉트 엔진입니다.",
+    "title": "광고를 멈춰라. 수요를 직접 잡아라.",
+    "subtitle": "경쟁자가 노출에 예산을 태우는 동안, 당신은 이미 도움을 요청하는 사람과 대화하고 있습니다.",
     "cards": [
       {
-        "title": "의도는 이미 거기 있습니다",
-        "description": "우리가 당신의 제품 페이지로 연결하는 모든 사용자는, 실제 플랫폼에서 자신의 말로 그 제품이 해결하는 문제를 공개적으로 표현한 사람들입니다. 스크롤 중인 사람을 방해하는 것이 아닙니다. 이미 답을 찾고 있는 사람에게 발견되는 것입니다."
+        "icon": "🎯",
+        "title": "의도는 이미 거기에",
+        "description": "모든 사용자가 실제 플랫폼에서 자신의 말로 제품이 해결하는 문제를 공개적으로 표현했습니다.",
+        "metric": "100%",
+        "metricLabel": "의도 기반"
       },
       {
+        "icon": "🛡️",
         "title": "노출 낭비 제로",
-        "description": "도달, 조회수, 노출에 대한 비용은 전혀 없습니다. 실제 의도를 표명하지 않은 사람에게는 1센트도 쓰이지 않습니다. 클릭이 없으면 비용도 없습니다 — 진정한 리스크 프리 고객 획득 모델입니다."
+        "description": "실제 의도를 표명하지 않은 사람에게 1센트도 쓰이지 않습니다. 클릭 없으면 비용 없음.",
+        "metric": "$0",
+        "metricLabel": "낭비 비용"
       },
       {
-        "title": "6개 언어. 대시보드는 하나.",
-        "description": "고객이 영어로 Reddit에 올라도, 한국어로 Naver에 불만을 올려도, 일본어로 Amazon 리뷰를 남겨도 — Mota가 모두 감지하고, 응답하고, 하나의 공간에서 리포트합니다. 글로벌 도달, 글로벌 팀 불필요."
+        "icon": "🌐",
+        "title": "6개 언어 × 멀티 플랫폼",
+        "description": "영어·스페인어·포르투갈어·일본어·한국어·러시아어 — Reddit, Naver, Amazon, Yahoo! 등 주요 플랫폼을 횡단. 하나의 대시보드, 언어 장벽 제로.",
+        "metric": "6",
+        "metricLabel": "개 언어"
       }
     ]
   },
   "cta": {
-    "title": "당신의 고객은 지금 이 순간에도 거기 있습니다.",
-    "subtitle": "무료로 등록하세요. 제품을 설명하세요. 48시간 이내에 AI가 6개 언어 20개 이상의 플랫폼에서 당신의 제품을 필요로 하는 사람들을 찾기 시작합니다.",
-    "primary": "무료로 시작하기",
-    "secondary": "엔터프라이즈 문의하기",
-    "footnote": "신용카드 불필요 · 최소 결제 없음 · 언제든 취소 · 완전한 데이터 투명성"
+    "headline": "1초 망설일 때마다,",
+    "headlineHighlight": "비즈니스 기회를 경쟁자에게 빼앗깁니다.",
+    "title": "제로 리스크. 클릭 없으면 과금 없음.",
+    "subtitle": "먼저 시작하면 먼저 수익 — 그렇지 않으면 경쟁자가 기회를 가져갑니다.",
+    "stats": [
+      { "value": "$0", "label": "제로 리스크 시작" },
+      { "value": "48h", "label": "가입부터 첫 리드까지" },
+      { "value": "10+", "label": "모니터링 플랫폼" }
+    ],
+    "primary": "지금 바로 수요 캡처 — 무료",
+    "secondary": "라이브 데모 예약",
+    "urgency": "⚡ 한정 얼리버드 가격 — 오늘 요금을 고정하세요",
+    "footnote": "클릭 없으면 과금 없음 · 최소 결제 없음 · 언제든 취소 · 완전한 투명성"
   },
   "footer": {
     "copyright": "© 2026 MOTA TechLink. All rights reserved.",
     "links": [
-      {
-        "label": "개인정보 보호정책",
-        "href": "/legal/privacy"
-      },
-      {
-        "label": "이용약관",
-        "href": "/legal/terms"
-      },
-      {
-        "label": "문의",
-        "href": "mailto:market@motaiot.com"
-      }
+      { "label": "개인정보 보호정책", "href": "/privacy" },
+      { "label": "이용약관", "href": "/terms" },
+      { "label": "문의", "href": "/contact" }
     ]
   }
 }
