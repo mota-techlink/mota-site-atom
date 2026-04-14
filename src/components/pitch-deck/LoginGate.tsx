@@ -132,16 +132,20 @@ const LOGIN_DICT: Record<string, Record<string, string>> = {
  * Shows a blur backdrop with access info and a "Sign In" button that opens
  * the existing LoginModal.
  */
-export function LoginGate({ onBack }: { onBack?: () => void }) {
+export function LoginGate({ onBack, locale: localeProp }: { onBack?: () => void; locale?: string }) {
   const { access, previewSlides, gateOpen, hideGate } = useDeckAccess();
   const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   let locale: string;
-  try {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    locale = useLocale();
-  } catch {
-    locale = "en";
+  if (localeProp) {
+    locale = localeProp;
+  } else {
+    try {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      locale = useLocale();
+    } catch {
+      locale = "en";
+    }
   }
 
   const copy = GATE_COPY[locale] ?? GATE_COPY.en;

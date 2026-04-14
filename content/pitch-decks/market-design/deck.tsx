@@ -5,6 +5,7 @@ import {
   DeckLocaleProvider,
   DeckAccessProvider,
   useDeckAccess,
+  useDeckLocale,
   LoginGate,
 } from "@/components/pitch-deck";
 import { DEFAULT_PREVIEW_SLIDES } from "@/config/pitch-decks";
@@ -46,6 +47,7 @@ const SECTIONS = [
 // ─── Inner deck (needs locale + access context) ───────────────────────────────
 function MarketDesignDeckInner() {
   const { canView, showGate, previewSlides } = useDeckAccess();
+  const { deckLocale } = useDeckLocale();
   const { theme } = useDeckTheme();
   const t = THEME[theme];
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -108,7 +110,7 @@ function MarketDesignDeckInner() {
             </div>
 
             {/* Login gate — z-50 overlay, shown when user tries to access locked slide */}
-            <LoginGate onBack={handleGateBack} />
+            <LoginGate onBack={handleGateBack} locale={deckLocale} />
           </main>
         </div>
       </ActivePageCtx.Provider>
