@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react";
 import { Link } from "@/navigation";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -9,23 +8,11 @@ import { GifVideo } from "@/components/mdx/gif-video";
 import { TypewriterText } from "@/components/ui/typewriter-text"; 
 import { Github, ArrowRight, Twitter } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl"
-import dynamic from "next/dynamic";
-
-const TechStackLogos = dynamic(
-  () => import("@/components/ui/tech-stack-logos").then((mod) => mod.TechStackLogos),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="w-full max-w-4xl h-20 rounded-md bg-muted/40 animate-pulse" />
-    ),
-  }
-);
+import { TechStackLogos } from "@/components/ui/tech-stack-logos";
 export function HeroSection() {
   const t = useTranslations('Hero');
   const locale = useLocale();
   const isChinese = locale.startsWith('zh');
-  const logosRef = useRef<HTMLDivElement | null>(null);
-  const [showLogos, setShowLogos] = useState(false);
 
   const sloganSize = isChinese
     ? "text-3xl sm:text-4xl md:text-4xl lg:text-5xl"
@@ -34,24 +21,6 @@ export function HeroSection() {
     ? "text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
     : "text-2xl sm:text-3xl md:text-4xl lg:text-5xl";
   const noWrapClass = isChinese ? "" : "whitespace-nowrap";
-
-  useEffect(() => {
-    const target = logosRef.current;
-    if (!target || showLogos) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setShowLogos(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "120px" }
-    );
-
-    observer.observe(target);
-    return () => observer.disconnect();
-  }, [showLogos]);
 
   return (
     <>
@@ -152,16 +121,12 @@ export function HeroSection() {
               }}
             />          
           </div>        
-          <div ref={logosRef} className="py-12 sm:py-24 flex flex-col items-center">
+          <div className="py-12 sm:py-24 flex flex-col items-center">
             
             <p className="text-base md:text-lg text-muted-foreground mb-10 text-center max-w-lg">            
               {t('TrustedByCompanies')}                        
             </p>
-            {showLogos ? (
-              <TechStackLogos />
-            ) : (
-              <div className="w-full max-w-4xl h-20 rounded-md bg-muted/40 animate-pulse" />
-            )}
+            <TechStackLogos />
                      
           </div>        
         </div>
