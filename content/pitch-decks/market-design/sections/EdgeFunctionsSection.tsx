@@ -15,10 +15,10 @@ export function EdgeFunctionsSection() {
           {d.badge}
         </span>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{d.title}</h2>
-        <p className="text-sm text-white/40 mb-8 max-w-2xl">{d.subtitle}</p>
+        <p className="text-base text-white/40 mb-8 max-w-2xl">{d.subtitle}</p>
 
         {/* Edge functions table */}
-        <h3 className="text-sm font-semibold text-white/60 mb-3">{d.functionsTitle}</h3>
+        <h3 className="text-base font-semibold text-white/60 mb-3">{d.functionsTitle}</h3>
         <div className="rounded-xl bg-white/5 border border-white/8 overflow-hidden mb-8">
           <table className="w-full text-xs">
             <thead>
@@ -32,9 +32,9 @@ export function EdgeFunctionsSection() {
             <tbody>
               {d.functions.map((f: any, i: number) => (
                 <tr key={i} className="border-b border-white/5 hover:bg-white/3 transition-colors">
-                  <td className="px-4 py-2 text-white/20 font-mono text-[10px]">{i + 1}</td>
-                  <td className="px-4 py-2 text-orange-300/70 font-mono text-[11px] whitespace-nowrap">{f.name}</td>
-                  <td className="px-4 py-2 text-white/40 text-[10px]">{f.trigger}</td>
+                  <td className="px-4 py-2 text-white/20 font-mono text-xs">{i + 1}</td>
+                  <td className="px-4 py-2 text-orange-300/70 font-mono text-xs whitespace-nowrap">{f.name}</td>
+                  <td className="px-4 py-2 text-white/40 text-xs">{f.trigger}</td>
                   <td className="px-4 py-2 text-white/30 hidden sm:table-cell">{f.purpose}</td>
                 </tr>
               ))}
@@ -43,19 +43,19 @@ export function EdgeFunctionsSection() {
         </div>
 
         {/* RLS policy matrix */}
-        <h3 className="text-sm font-semibold text-white/60 mb-3">{d.rlsTitle}</h3>
+        <h3 className="text-base font-semibold text-white/60 mb-3">{d.rlsTitle}</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">
           {d.rlsGroups.map((p: any, i: number) => (
             <div key={i} className="rounded-lg bg-white/5 border border-white/8 p-3">
-              <h4 className="text-[11px] font-bold text-white mb-1">{p.scope}</h4>
-              <p className="text-[10px] text-white/35">{p.rule}</p>
-              <p className="text-[9px] text-white/20 mt-1 font-mono">{p.tables}</p>
+              <h4 className="text-sm font-bold text-white mb-1">{p.scope}</h4>
+              <p className="text-xs text-white/35">{p.rule}</p>
+              <p className="text-xs text-white/20 mt-1 font-mono">{p.tables}</p>
             </div>
           ))}
         </div>
 
         {/* Anti-fraud rules */}
-        <h3 className="text-sm font-semibold text-white/60 mb-3">{d.fraudTitle}</h3>
+        <h3 className="text-base font-semibold text-white/60 mb-3">{d.fraudTitle}</h3>
         <div className="rounded-xl bg-white/5 border border-white/8 overflow-hidden">
           <table className="w-full text-xs">
             <tbody>

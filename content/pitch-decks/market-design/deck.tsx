@@ -8,6 +8,7 @@ import {
   LoginGate,
 } from "@/components/pitch-deck";
 import { DEFAULT_PREVIEW_SLIDES } from "@/config/pitch-decks";
+import type { DeckAccess } from "@/config/pitch-decks";
 import { SECTION_IDS, LOCALES, LOCALE_LABELS } from "./constants";
 import { usePageNav, PageNavCtx, ActivePageCtx } from "./hooks";
 import { Sidebar, MobileTopBar } from "./nav";
@@ -111,18 +112,22 @@ function MarketDesignDeckInner() {
 
 // ─── Public export ────────────────────────────────────────────────────────────
 interface MarketDesignDeckProps {
+  access?: DeckAccess;
+  previewSlides?: number;
   isAuthenticated?: boolean;
   userRole?: string;
 }
 
 export function MarketDesignDeck({
+  access = "admin",
+  previewSlides = DEFAULT_PREVIEW_SLIDES,
   isAuthenticated = false,
   userRole,
 }: MarketDesignDeckProps) {
   return (
     <DeckAccessProvider
-      access="admin"
-      previewSlides={DEFAULT_PREVIEW_SLIDES}
+      access={access}
+      previewSlides={previewSlides}
       totalSlides={SECTIONS.length}
       serverAuth={
         isAuthenticated

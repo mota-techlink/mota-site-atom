@@ -193,7 +193,7 @@ function MarketIntelDeckInner() {
   return (
     <div
       ref={rootRef}
-      className="h-full w-full overflow-hidden relative bg-black text-white"
+      className="h-full w-full overflow-hidden relative bg-d-bg text-d-fg"
       tabIndex={-1}
       style={{ outline: "none", touchAction: "none" }}
     >

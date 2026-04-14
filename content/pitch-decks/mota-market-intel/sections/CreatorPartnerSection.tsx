@@ -6,16 +6,16 @@ import { SECTION, SECTION_MAP } from "../constants";
 import { DynamicBackground } from "./DynamicBackground";
 
 const STATUS_STYLE: Record<string, string> = {
-  active: "bg-emerald-500/15 text-emerald-400",
-  paid: "bg-indigo-500/15 text-indigo-400",
-  new: "bg-amber-500/15 text-amber-400",
+  active: "bg-emerald-500/15 text-d-emerald",
+  paid: "bg-indigo-500/15 text-d-indigo",
+  new: "bg-amber-500/15 text-d-amber",
 };
 
 const PLAT_DOT: Record<string, string> = {
   Reddit: "bg-orange-500",
   YouTube: "bg-red-500",
   Naver: "bg-green-500",
-  "Yahoo!": "bg-violet-500",
+  "Yahoo!": "bg-d-violet",
   Twitter: "bg-sky-500",
 };
 
@@ -30,22 +30,22 @@ export function CreatorPartnerSection() {
   return (
     <section
       id="s-creatorpartner"
-      className={`${SECTION} bg-black relative`}
+      className={`${SECTION} bg-d-bg relative`}
     >
       <DynamicBackground accent="cyan" brightness={1.8} count={18} />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         {/* ── Header ───────────────────────────────────── */}
         <div className="text-center mb-2 sm:mb-4">
-          <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-linear-to-r from-fuchsia-500/15 to-cyan-500/15 border border-fuchsia-500/20 text-fuchsia-400 text-[10px] sm:text-sm font-medium mb-1.5 sm:mb-2">
+          <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-linear-to-r from-fuchsia-500/15 to-cyan-500/15 border border-fuchsia-500/20 text-d-fuchsia text-[10px] sm:text-sm font-medium mb-1.5 sm:mb-2">
             {cp.badge}
           </span>
-          <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-white">
+          <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-d-fg">
             {cp.title}{" "}
             <span className="bg-linear-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
               {cp.titleHighlight}
             </span>
           </h2>
-          <p className="text-[10px] sm:text-sm text-white/40 max-w-2xl mx-auto mt-0.5 sm:mt-1">
+          <p className="text-[10px] sm:text-sm text-d-fg/40 max-w-2xl mx-auto mt-0.5 sm:mt-1">
             {cp.subtitle}
           </p>
         </div>
@@ -55,13 +55,13 @@ export function CreatorPartnerSection() {
           {cp.vision.items.map((v: any, i: number) => (
             <div
               key={i}
-              className="rounded-lg sm:rounded-xl bg-linear-to-br from-white/5 to-white/[0.02] ring-1 ring-white/8 p-2 sm:p-3.5 text-center transition-all duration-300 hover:-translate-y-0.5"
+              className="rounded-lg sm:rounded-xl bg-linear-to-br from-d-fg/5 to-d-fg/[0.02] ring-1 ring-d-fg/8 p-2 sm:p-3.5 text-center transition-all duration-300 hover:-translate-y-0.5"
             >
               <div className="text-xl sm:text-3xl mb-1 sm:mb-2">{v.icon}</div>
-              <h4 className="text-[10px] sm:text-sm font-bold text-white mb-0.5 sm:mb-1">
+              <h4 className="text-[10px] sm:text-sm font-bold text-d-fg mb-0.5 sm:mb-1">
                 {v.label}
               </h4>
-              <p className="text-[8px] sm:text-xs text-white/40 leading-relaxed">
+              <p className="text-[8px] sm:text-xs text-d-fg/40 leading-relaxed">
                 {v.desc}
               </p>
             </div>
@@ -71,8 +71,8 @@ export function CreatorPartnerSection() {
         {/* ── Two-column: Flow + Dashboard ─────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-3">
           {/* Left — Automated flow */}
-          <div className="mi-child rounded-xl sm:rounded-2xl ring-1 ring-white/8 bg-zinc-900/60 p-2.5 sm:p-4">
-            <h3 className="text-[10px] sm:text-sm font-semibold text-white/70 mb-2 sm:mb-3">
+          <div className="mi-child rounded-xl sm:rounded-2xl ring-1 ring-d-fg/8 bg-d-card/60 p-2.5 sm:p-4">
+            <h3 className="text-[10px] sm:text-sm font-semibold text-d-fg/70 mb-2 sm:mb-3">
               ⚡ {cp.flow.title}
             </h3>
             <div className="space-y-1 sm:space-y-2">
@@ -94,16 +94,16 @@ export function CreatorPartnerSection() {
                       {s.icon}
                     </div>
                     <div className="min-w-0">
-                      <span className="text-[8px] sm:text-[10px] text-fuchsia-400/50 font-mono block">
+                      <span className="text-[8px] sm:text-[10px] text-d-fuchsia/50 font-mono block">
                         {s.num}
                       </span>
-                      <h4 className="text-[10px] sm:text-sm font-semibold text-white leading-tight">
+                      <h4 className="text-[10px] sm:text-sm font-semibold text-d-fg leading-tight">
                         {s.title}
                       </h4>
                     </div>
                   </div>
                   {/* Right: Description — fills remaining width */}
-                  <p className="flex-1 text-[9px] sm:text-sm text-white/40 leading-relaxed pt-1 sm:pt-2">
+                  <p className="flex-1 text-[9px] sm:text-sm text-d-fg/40 leading-relaxed pt-1 sm:pt-2">
                     {s.desc}
                   </p>
                 </div>
@@ -111,22 +111,22 @@ export function CreatorPartnerSection() {
             </div>
 
             {/* Payment methods */}
-            <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/5">
-              <h4 className="text-[9px] sm:text-xs text-white/30 font-medium mb-1.5 sm:mb-2">
+            <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-d-fg/5">
+              <h4 className="text-[9px] sm:text-xs text-d-fg/30 font-medium mb-1.5 sm:mb-2">
                 {cp.payment.title}
               </h4>
               <div className="flex gap-2 sm:gap-3">
                 {cp.payment.methods.map((m: any, i: number) => (
                   <div
                     key={i}
-                    className="flex-1 rounded-lg bg-white/5 ring-1 ring-white/8 p-1.5 sm:p-2.5 flex items-center gap-1.5 sm:gap-2"
+                    className="flex-1 rounded-lg bg-d-fg/5 ring-1 ring-d-fg/8 p-1.5 sm:p-2.5 flex items-center gap-1.5 sm:gap-2"
                   >
                     <span className="text-base sm:text-xl">{m.icon}</span>
                     <div>
-                      <div className="text-[9px] sm:text-xs font-semibold text-white">
+                      <div className="text-[9px] sm:text-xs font-semibold text-d-fg">
                         {m.name}
                       </div>
-                      <div className="text-[7px] sm:text-[10px] text-white/30">
+                      <div className="text-[7px] sm:text-[10px] text-d-fg/30">
                         {m.desc}
                       </div>
                     </div>
@@ -137,13 +137,13 @@ export function CreatorPartnerSection() {
           </div>
 
           {/* Right — Mock dashboard */}
-          <div className="mi-child rounded-xl sm:rounded-2xl ring-1 ring-white/8 bg-zinc-900/60 overflow-hidden">
+          <div className="mi-child rounded-xl sm:rounded-2xl ring-1 ring-d-fg/8 bg-d-card/60 overflow-hidden">
             {/* Browser chrome */}
-            <div className="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 border-b border-white/5 bg-white/3">
+            <div className="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 border-b border-d-fg/5 bg-d-fg/3">
               <div className="w-2 h-2 rounded-full bg-rose-500/60" />
               <div className="w-2 h-2 rounded-full bg-amber-500/60" />
               <div className="w-2 h-2 rounded-full bg-emerald-500/60" />
-              <span className="ml-1.5 text-[8px] sm:text-[10px] text-white/25">
+              <span className="ml-1.5 text-[8px] sm:text-[10px] text-d-fg/25">
                 creators.motaiot.com
               </span>
             </div>
@@ -154,18 +154,18 @@ export function CreatorPartnerSection() {
                 {cp.dashboard.stats.map((st: any, i: number) => (
                   <div
                     key={i}
-                    className="rounded-lg bg-white/5 ring-1 ring-white/5 p-1.5 sm:p-2.5"
+                    className="rounded-lg bg-d-fg/5 ring-1 ring-d-fg/5 p-1.5 sm:p-2.5"
                   >
                     <div className="flex items-center justify-between mb-0.5 sm:mb-1">
-                      <span className="text-[8px] sm:text-[10px] text-white/30">
+                      <span className="text-[8px] sm:text-[10px] text-d-fg/30">
                         {st.label}
                       </span>
                       <span className="text-xs sm:text-sm">{st.icon}</span>
                     </div>
-                    <div className="text-sm sm:text-xl font-bold text-white">
+                    <div className="text-sm sm:text-xl font-bold text-d-fg">
                       {st.value}
                     </div>
-                    <div className="text-[7px] sm:text-[10px] text-emerald-400/70 mt-0.5">
+                    <div className="text-[7px] sm:text-[10px] text-d-emerald/70 mt-0.5">
                       {st.change}
                     </div>
                   </div>
@@ -174,7 +174,7 @@ export function CreatorPartnerSection() {
 
               {/* Recent activity */}
               <div>
-                <h4 className="text-[8px] sm:text-[10px] text-white/30 font-medium mb-1 sm:mb-1.5">
+                <h4 className="text-[8px] sm:text-[10px] text-d-fg/30 font-medium mb-1 sm:mb-1.5">
                   {cp.dashboard.recentTitle}
                 </h4>
                 <div className="space-y-1 sm:space-y-1.5">
@@ -192,25 +192,25 @@ export function CreatorPartnerSection() {
                     >
                       <div
                         className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-                          PLAT_DOT[r.platform] ?? "bg-white/20"
+                          PLAT_DOT[r.platform] ?? "bg-d-fg/20"
                         }`}
                       />
-                      <span className="text-white/60 font-medium shrink-0 w-20 sm:w-28 truncate">
+                      <span className="text-d-fg/60 font-medium shrink-0 w-20 sm:w-28 truncate">
                         {r.creator}
                       </span>
-                      <span className="text-white/40 flex-1 truncate">
+                      <span className="text-d-fg/40 flex-1 truncate">
                         {r.action}
                       </span>
                       <span
                         className={`shrink-0 px-1 py-0.5 rounded text-[7px] sm:text-[9px] font-medium ${
-                          STATUS_STYLE[r.status] ?? "bg-white/10 text-white/40"
+                          STATUS_STYLE[r.status] ?? "bg-d-fg/10 text-d-fg/40"
                         }`}
                       >
                         {(cp.statusLabels as Record<string, string>)[
                           r.status
                         ] ?? r.status}
                       </span>
-                      <span className="text-white/20 shrink-0 hidden sm:inline">
+                      <span className="text-d-fg/20 shrink-0 hidden sm:inline">
                         {r.time}
                       </span>
                     </div>

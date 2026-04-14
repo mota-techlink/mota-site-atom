@@ -11,7 +11,7 @@ export function CTASection() {
   const footer = c.footer;
 
   return (
-    <section id="s-cta" className={`${SECTION} bg-black relative overflow-hidden`}>
+    <section id="s-cta" className={`${SECTION} bg-d-bg relative overflow-hidden`}>
       {/* Multi-layer gradient backdrop */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-linear-to-t from-indigo-950/50 via-transparent to-transparent" />
@@ -26,7 +26,7 @@ export function CTASection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {/* ── Urgency headline ── */}
         {cta.headline && (
-          <p className="text-sm sm:text-lg lg:text-xl text-white/50 mb-1 sm:mb-2 font-medium tracking-wide">
+          <p className="text-sm sm:text-lg lg:text-xl text-d-fg/50 mb-1 sm:mb-2 font-medium tracking-wide">
             {cta.headline}{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-400 to-amber-400 font-bold">
               {cta.headlineHighlight}
@@ -35,11 +35,12 @@ export function CTASection() {
         )}
 
         {/* ── Main title ── */}
-        <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black text-transparent bg-clip-text bg-linear-to-r from-white via-indigo-100 to-indigo-300 mb-3 sm:mb-5 leading-tight">
+        <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black text-transparent bg-clip-text bg-[length:200%_auto] animate-[gradient-flow_4s_ease-in-out_infinite] mb-3 sm:mb-5 leading-tight"
+            style={{ backgroundImage: "linear-gradient(90deg, #818cf8, #c084fc, #f472b6, #fb923c, #facc15, #34d399, #818cf8)" }}>
           {cta.title}
         </h2>
 
-        <p className="text-xs sm:text-lg lg:text-xl text-white/45 mb-5 sm:mb-8 leading-relaxed max-w-2xl mx-auto">
+        <p className="text-xs sm:text-lg lg:text-xl text-d-fg/45 mb-5 sm:mb-8 leading-relaxed max-w-2xl mx-auto">
           {cta.subtitle}
         </p>
 
@@ -48,10 +49,10 @@ export function CTASection() {
           <div className="flex justify-center gap-4 sm:gap-8 lg:gap-12 mb-5 sm:mb-8">
             {cta.stats.map((s: any, i: number) => (
               <div key={i} className="text-center">
-                <div className="text-xl sm:text-3xl lg:text-4xl font-black text-white">
+                <div className="text-xl sm:text-3xl lg:text-4xl font-black text-d-fg">
                   {s.value}
                 </div>
-                <div className="text-[9px] sm:text-xs text-white/35 mt-0.5 font-medium uppercase tracking-wider">
+                <div className="text-[9px] sm:text-xs text-d-fg/35 mt-0.5 font-medium uppercase tracking-wider">
                   {s.label}
                 </div>
               </div>
@@ -67,12 +68,12 @@ export function CTASection() {
             className="group relative px-7 py-3 sm:px-10 sm:py-4 rounded-full bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-sm sm:text-lg transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-400/50"
           >
             {/* pulse ring */}
-            <span className="absolute inset-0 rounded-full border-2 border-indigo-400/40 animate-ping pointer-events-none" />
+            <span className="absolute inset-0 rounded-full border-2 border-d-indigo/40 animate-ping pointer-events-none" />
             <span className="relative">{cta.primary}</span>
           </a>
           <a
             href="/contact"
-            className="px-7 py-3 sm:px-10 sm:py-4 rounded-full border border-white/20 hover:border-white/40 text-white/80 hover:text-white font-semibold text-sm sm:text-lg transition-all duration-300 backdrop-blur-sm"
+            className="px-7 py-3 sm:px-10 sm:py-4 rounded-full border border-d-fg/20 hover:border-d-fg/40 text-d-fg/80 hover:text-d-fg font-semibold text-sm sm:text-lg transition-all duration-300 backdrop-blur-sm"
           >
             {cta.secondary}
           </a>
@@ -85,19 +86,19 @@ export function CTASection() {
           </p>
         )}
 
-        <p className="text-white/25 text-[10px] sm:text-sm">{cta.footnote}</p>
+        <p className="text-d-fg/25 text-[10px] sm:text-sm">{cta.footnote}</p>
       </div>
 
       {/* Footer — pinned to bottom */}
-      <div className="absolute bottom-0 inset-x-0 border-t border-white/10 py-3 sm:py-5 px-4 sm:px-6 lg:px-8">
+      <div className="absolute bottom-0 inset-x-0 border-t border-d-fg/10 py-3 sm:py-5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
-          <p className="text-white/25 text-xs sm:text-sm">{footer.copyright}</p>
+          <p className="text-d-fg/25 text-xs sm:text-sm">{footer.copyright}</p>
           <div className="flex gap-4 sm:gap-6">
             {footer.links.map((link: any, i: number) => (
               <a
                 key={i}
                 href={link.href}
-                className="text-white/30 hover:text-white/60 text-xs sm:text-sm transition-colors"
+                className="text-d-fg/30 hover:text-d-fg/60 text-xs sm:text-sm transition-colors"
               >
                 {link.label}
               </a>

@@ -5,43 +5,139 @@
   "hero": {
     "badge": "AI 驱动市场智能",
     "title": "将网上的真实对话",
-    "titleHighlight": "转化为付费客户。",
-    "subtitle": "我们的 AI 在 6 种语言的社区中，精准找到正在公开表达你产品所能解决的痛点的用户，以真诚有价值的回复自然加入对话。只在点击时付费。",
+    "titleHighlight": "转化为付费客户",
+    "subtitle": "我们从 6 种语言的社区中，精准找到正在公开表达你产品所能解决的痛点的用户，以真诚有价值的回复自然加入对话。只在点击时付费。",
     "cta": "免费开始",
     "ctaSecondary": "了解运作方式",
+    "trustLine": "从初创团队到全球品牌，都在用 Mota 拦截真实需求",
+    "valueBadges": [
+      {
+        "icon": "🛡️",
+        "label": "零风险——无点击不收费"
+      },
+      {
+        "icon": "🚀",
+        "label": "覆盖平台"
+      },
+      {
+        "icon": "🏅",
+        "label": "费率永久锁定"
+      },
+      {
+        "icon": "📊",
+        "label": "全透明数据面板"
+      }
+    ],
     "features": [
-      { "icon": "🤖", "label": "AI 智能匹配" },
-      { "icon": "🌍", "label": "20+ 平台 · 6 种语言" },
-      { "icon": "💰", "label": "仅按真实点击付费" },
-      { "icon": "⚡", "label": "48 小时内上线" }
+      {
+        "icon": "🤖",
+        "label": "AI 智能匹配"
+      },
+      {
+        "icon": "🌍",
+        "label": "20+ 平台 · 6 种语言"
+      },
+      {
+        "icon": "💰",
+        "label": "仅按真实点击付费"
+      },
+      {
+        "icon": "⚡",
+        "label": "48 小时内上线"
+      }
     ],
     "stats": [
-      { "value": "20+", "label": "覆盖平台" },
-      { "value": "48h", "label": "首次触达" },
-      { "value": "$0", "label": "无点击零费用" }
-    ]
+      {
+        "value": "20+",
+        "label": "覆盖平台"
+      },
+      {
+        "value": "48h",
+        "label": "首次触达"
+      },
+      {
+        "value": "$0",
+        "label": "无点击零费用"
+      }
+    ],
+    "platformWords": [
+      "Reddit",
+      "Quora",
+      "YouTube",
+      "Amazon",
+      "LinkedIn",
+      "TikTok",
+      "Naver 지식iN",
+      "Yahoo! 知恵袋",
+      "Stack Overflow",
+      "ProductHunt",
+      "X (Twitter)",
+      "Facebook",
+      "Instagram",
+      "Pinterest",
+      "Medium",
+      "Discord",
+      "Hacker News",
+      "Trustpilot",
+      "G2",
+      "App Store"
+    ],
+    "languageWords": [
+      "英语",
+      "西班牙语",
+      "葡萄牙语",
+      "日语",
+      "韩语",
+      "俄语"
+    ],
+    "platformStatic": "20+:",
+    "languageStatic": "6种语言:"
   },
   "problem": {
     "badge": "问题所在",
     "title": "传统广告是打扰，我们拦截真实意向。",
-    "subtitle": "此刻，成千上万的用户正在各平台发帖提问、投诉、写差评——他们在主动寻找解决方案。广告触达不了他们。",
+    "subtitle": "此刻，成千上万的用户正在各平台发帖提问、投诉、写差评——他们在主动寻找解决方案！",
     "comparison": {
       "traditional": {
         "label": "传统广告",
         "items": [
-          { "icon": "💸", "text": "按曝光付费——大多数人毫不关心" },
-          { "icon": "🎯", "text": "凭猜测选择关键词和受众" },
-          { "icon": "⚔️", "text": "竞价战快速烧光预算" },
-          { "icon": "❓", "text": "无法衡量是否产生真实购买意向" }
+          {
+            "icon": "💸",
+            "text": "按曝光付费——大多数人毫不关心"
+          },
+          {
+            "icon": "🎯",
+            "text": "凭猜测选择关键词和受众"
+          },
+          {
+            "icon": "⚔️",
+            "text": "竞价战快速烧光预算"
+          },
+          {
+            "icon": "❓",
+            "text": "无法衡量是否产生真实购买意向"
+          }
         ]
       },
       "mota": {
         "label": "Mota 智能系统",
         "items": [
-          { "icon": "🎯", "text": "触达已在表达你产品痛点的用户" },
-          { "icon": "🤖", "text": "AI 从产品描述自动锁定目标" },
-          { "icon": "🔒", "text": "固定费率——无竞价战" },
-          { "icon": "✅", "text": "仅为真实点击付费——完全透明" }
+          {
+            "icon": "🎯",
+            "text": "触达已在表达你产品痛点的用户"
+          },
+          {
+            "icon": "🤖",
+            "text": "AI 从产品描述自动锁定目标"
+          },
+          {
+            "icon": "📊",
+            "text": "全程跟踪点击和转化数据"
+          },
+          {
+            "icon": "✅",
+            "text": "仅为真实点击付费——完全透明"
+          }
         ]
       }
     }
@@ -52,7 +148,7 @@
     "steps": [
       {
         "number": "01",
-        "title": "描述你的产品",
+        "title": "描述你的产品/服务",
         "description": "告诉我们你卖什么、帮助谁。AI 自动推断客户痛点、活跃平台、竞品和表达语言，横跨 6 种语言。几分钟就绪。"
       },
       {
@@ -77,11 +173,33 @@
     "title": "你的客户在哪里，我们就在哪里倾听。",
     "subtitle": "英语主流平台 + 西班牙语、葡萄牙语、日语、韩语、俄语本土社区。持续新增平台，不额外收费。",
     "items": [
-      "Reddit", "YouTube", "亚马逊评论", "Quora",
-      "Twitter / X", "App Store", "Google Play",
-      "Hacker News", "Stack Overflow", "Trustpilot", "G2",
-      "Naver 지식iN", "Yahoo! 知恵袋", "Pikabu", "Reclame Aqui",
-      "VK", "Yandex Q", "Taringa!", "Kakaku.com", "Coupang"
+      "Reddit",
+      "YouTube",
+      "亚马逊评论",
+      "Quora",
+      "Twitter / X",
+      "App Store",
+      "Google Play",
+      "Hacker News",
+      "Stack Overflow",
+      "Trustpilot",
+      "G2",
+      "Naver 지식iN",
+      "Yahoo! 知恵袋",
+      "Pikabu",
+      "Reclame Aqui",
+      "VK",
+      "Yandex Q",
+      "Taringa!",
+      "Kakaku.com",
+      "Coupang",
+      "LinkedIn",
+      "Facebook",
+      "Instagram",
+      "TikTok",
+      "ProductHunt",
+      "Medium",
+      "Discord"
     ]
   },
   "pricing": {
@@ -103,11 +221,28 @@
     "badge": "Credit 套餐",
     "title": "选择套餐，锁定费率。",
     "subtitle": "预充值 Credit 享受更低单价。永不过期，随时升级。企业客户享专属定价和专属经理。",
-    "tableHeaders": ["套餐", "Credit & 价格", "单次点击"],
+    "tableHeaders": [
+      "套餐",
+      "Credit & 价格",
+      "单次点击"
+    ],
     "tiers": [
-      { "amount": "Starter", "discount": "100 次点击 · $9", "rate": "$0.090" },
-      { "amount": "Growth", "discount": "500 次点击 · $39", "rate": "$0.078" },
-      { "amount": "Scale", "discount": "2,000 次点击 · $129", "rate": "$0.065" }
+      {
+        "amount": "Starter",
+        "discount": "100 次点击 · $9",
+        "rate": "$0.090"
+      },
+      {
+        "amount": "Growth",
+        "discount": "500 次点击 · $39",
+        "rate": "$0.078"
+      },
+      {
+        "amount": "Scale",
+        "discount": "5,000 次点击 · $299",
+        "rate": "$0.060"
+      }
+      
     ],
     "note": "Enterprise 套餐：不限量 · 专属费率 · 专属支持。欢迎联系。"
   },
@@ -116,32 +251,105 @@
     "title": "每一次互动，实时可见。",
     "subtitle": "统一面板——查看回复、点击、转化和 ROI，跨所有平台和语言。",
     "stats": [
-      { "label": "总点击数", "value": "1,284", "change": "+12.5%", "icon": "🖱️" },
-      { "label": "活跃回复", "value": "3,847", "change": "+8.3%", "icon": "💬" },
-      { "label": "转化率", "value": "4.7%", "change": "+0.6%", "icon": "📈" },
-      { "label": "已用额度", "value": "$96.30", "change": "剩余 742", "icon": "💰" }
+      {
+        "label": "总点击数",
+        "value": "1,284",
+        "change": "+12.5%",
+        "icon": "🖱️"
+      },
+      {
+        "label": "活跃回复",
+        "value": "3,847",
+        "change": "+8.3%",
+        "icon": "💬"
+      },
+      {
+        "label": "转化率",
+        "value": "4.7%",
+        "change": "+0.6%",
+        "icon": "📈"
+      },
+      {
+        "label": "已用额度",
+        "value": "$96.30",
+        "change": "剩余 742",
+        "icon": "💰"
+      }
     ],
     "chart": {
       "title": "本周点击量",
       "convTitle": "转化率 %",
       "bars": [
-        { "label": "周一", "value": 42, "conv": 3.2 },
-        { "label": "周二", "value": 68, "conv": 4.8 },
-        { "label": "周三", "value": 55, "conv": 4.1 },
-        { "label": "周四", "value": 91, "conv": 6.5 },
-        { "label": "周五", "value": 78, "conv": 5.9 },
-        { "label": "周六", "value": 34, "conv": 2.8 },
-        { "label": "周日", "value": 22, "conv": 1.9 }
+        {
+          "label": "周一",
+          "value": 42,
+          "conv": 3.2
+        },
+        {
+          "label": "周二",
+          "value": 68,
+          "conv": 4.8
+        },
+        {
+          "label": "周三",
+          "value": 55,
+          "conv": 4.1
+        },
+        {
+          "label": "周四",
+          "value": 91,
+          "conv": 6.5
+        },
+        {
+          "label": "周五",
+          "value": 78,
+          "conv": 5.9
+        },
+        {
+          "label": "周六",
+          "value": 34,
+          "conv": 2.8
+        },
+        {
+          "label": "周日",
+          "value": 22,
+          "conv": 1.9
+        }
       ]
     },
     "activity": {
       "title": "最近动态",
       "items": [
-        { "platform": "Reddit", "action": "回复已发布 → r/SaaS", "time": "2 分钟前", "status": "click" },
-        { "platform": "YouTube", "action": "回复已发布 → 评论区", "time": "8 分钟前", "status": "posted" },
-        { "platform": "Naver", "action": "回复已发布 → 지식iN", "time": "15 分钟前", "status": "click" },
-        { "platform": "Quora", "action": "回复已发布 → 产品对比帖", "time": "23 分钟前", "status": "posted" },
-        { "platform": "G2", "action": "回复已发布 → 替代品讨论", "time": "31 分钟前", "status": "click" }
+        {
+          "platform": "Reddit",
+          "action": "回复已发布 → r/SaaS",
+          "time": "2 分钟前",
+          "status": "click"
+        },
+        {
+          "platform": "YouTube",
+          "action": "回复已发布 → 评论区",
+          "time": "8 分钟前",
+          "status": "posted"
+        },
+        {
+          "platform": "Naver",
+          "action": "回复已发布 → 지식iN",
+          "time": "15 分钟前",
+          "status": "click"
+        },
+        {
+          "platform": "Quora",
+          "action": "回复已发布 → 产品对比帖",
+          "time": "23 分钟前",
+          "status": "posted"
+        },
+        {
+          "platform": "G2",
+          "action": "回复已发布 → 替代品讨论",
+          "time": "31 分钟前",
+          "status": "click"
+        }
       ]
     }
   },
@@ -154,22 +362,82 @@
     "backToTop": "⇈ 返回账单列表",
     "invoices": {
       "title": "账单历史",
-      "headers": ["账单号", "日期", "点击数", "金额", "状态"],
+      "headers": [
+        "账单号",
+        "日期",
+        "点击数",
+        "金额",
+        "状态"
+      ],
       "rows": [
-        { "id": "INV-2026-041", "date": "2026-04-07", "clicks": "127", "amount": "$11.43", "status": "已支付" },
-        { "id": "INV-2026-040", "date": "2026-03-31", "clicks": "203", "amount": "$18.27", "status": "已支付" },
-        { "id": "INV-2026-039", "date": "2026-03-24", "clicks": "89", "amount": "$8.01", "status": "已支付" },
-        { "id": "INV-2026-038", "date": "2026-03-17", "clicks": "156", "amount": "$14.04", "status": "已支付" }
+        {
+          "id": "INV-2026-041",
+          "date": "2026-04-07",
+          "clicks": "127",
+          "amount": "$11.43",
+          "status": "已支付"
+        },
+        {
+          "id": "INV-2026-040",
+          "date": "2026-03-31",
+          "clicks": "203",
+          "amount": "$18.27",
+          "status": "已支付"
+        },
+        {
+          "id": "INV-2026-039",
+          "date": "2026-03-24",
+          "clicks": "89",
+          "amount": "$8.01",
+          "status": "已支付"
+        },
+        {
+          "id": "INV-2026-038",
+          "date": "2026-03-17",
+          "clicks": "156",
+          "amount": "$14.04",
+          "status": "已支付"
+        }
       ]
     },
     "details": {
       "title": "账单明细 — {id}",
-      "headers": ["#", "平台", "帖子标题", "点击数", "费用"],
+      "headers": [
+        "#",
+        "平台",
+        "帖子标题",
+        "点击数",
+        "费用"
+      ],
       "rows": [
-        { "idx": "1", "platform": "Reddit", "post": "小团队最好的 Notion 替代品？", "clicks": "23", "cost": "$2.07" },
-        { "idx": "2", "platform": "Quora", "post": "最容易上手的项目管理工具是什么？", "clicks": "18", "cost": "$1.62" },
-        { "idx": "3", "platform": "YouTube", "post": "我试了 10 个效率工具——这是排名", "clicks": "31", "cost": "$2.79" },
-        { "idx": "4", "platform": "Naver", "post": "프로젝트 관리 앱 추천해주세요", "clicks": "12", "cost": "$1.08" }
+        {
+          "idx": "1",
+          "platform": "Reddit",
+          "post": "小团队最好的 Notion 替代品？",
+          "clicks": "23",
+          "cost": "$2.07"
+        },
+        {
+          "idx": "2",
+          "platform": "Quora",
+          "post": "最容易上手的项目管理工具是什么？",
+          "clicks": "18",
+          "cost": "$1.62"
+        },
+        {
+          "idx": "3",
+          "platform": "YouTube",
+          "post": "我试了 10 个效率工具——这是排名",
+          "clicks": "31",
+          "cost": "$2.79"
+        },
+        {
+          "idx": "4",
+          "platform": "Naver",
+          "post": "프로젝트 관리 앱 추천해주세요",
+          "clicks": "12",
+          "cost": "$1.08"
+        }
       ]
     },
     "clickDetail": {
@@ -197,8 +465,21 @@
     "subtitle": "按平台和关键词筛选，点击任意指标查看详细证据。",
     "searchPlaceholder": "搜索问题或回复…",
     "filterAll": "全部平台",
-    "platforms": ["Reddit", "YouTube", "Quora", "Naver", "G2", "Amazon"],
-    "headers": ["平台", "问题", "AI 回复", "点击数", "转化率"],
+    "platforms": [
+      "Reddit",
+      "YouTube",
+      "Quora",
+      "Naver",
+      "G2",
+      "Amazon"
+    ],
+    "headers": [
+      "平台",
+      "问题",
+      "AI 回复",
+      "点击数",
+      "转化率"
+    ],
     "tasks": [
       {
         "id": "T-001",
@@ -208,13 +489,41 @@
         "clicks": 23,
         "convRate": "8.7%",
         "clickDetails": [
-          { "time": "4月7日 14:23 UTC", "ref": "r/SaaS · u/devpro99", "landing": "yourproduct.com/?ref=mota-r-28491", "ga": "UA-XXXXX-1 / 172849", "duration": "2分34秒" },
-          { "time": "4月7日 16:05 UTC", "ref": "r/SaaS · u/mkteam", "landing": "yourproduct.com/?ref=mota-r-28512", "ga": "UA-XXXXX-1 / 172851", "duration": "1分47秒" },
-          { "time": "4月8日 09:12 UTC", "ref": "r/startups · u/founderX", "landing": "yourproduct.com/?ref=mota-r-28534", "ga": "UA-XXXXX-1 / 172855", "duration": "3分11秒" }
+          {
+            "time": "4月7日 14:23 UTC",
+            "ref": "r/SaaS · u/devpro99",
+            "landing": "yourproduct.com/?ref=mota-r-28491",
+            "ga": "UA-XXXXX-1 / 172849",
+            "duration": "2分34秒"
+          },
+          {
+            "time": "4月7日 16:05 UTC",
+            "ref": "r/SaaS · u/mkteam",
+            "landing": "yourproduct.com/?ref=mota-r-28512",
+            "ga": "UA-XXXXX-1 / 172851",
+            "duration": "1分47秒"
+          },
+          {
+            "time": "4月8日 09:12 UTC",
+            "ref": "r/startups · u/founderX",
+            "landing": "yourproduct.com/?ref=mota-r-28534",
+            "ga": "UA-XXXXX-1 / 172855",
+            "duration": "3分11秒"
+          }
         ],
         "conversions": [
-          { "time": "4月7日 14:25 UTC", "action": "注册免费试用", "value": "$0", "source": "r/SaaS" },
-          { "time": "4月8日 09:18 UTC", "action": "注册免费试用", "value": "$0", "source": "r/startups" }
+          {
+            "time": "4月7日 14:25 UTC",
+            "action": "注册免费试用",
+            "value": "$0",
+            "source": "r/SaaS"
+          },
+          {
+            "time": "4月8日 09:18 UTC",
+            "action": "注册免费试用",
+            "value": "$0",
+            "source": "r/startups"
+          }
         ]
       },
       {
@@ -225,11 +534,28 @@
         "clicks": 18,
         "convRate": "5.6%",
         "clickDetails": [
-          { "time": "4月6日 10:41 UTC", "ref": "Quora · 回答串", "landing": "yourproduct.com/?ref=mota-q-7821", "ga": "UA-XXXXX-1 / 172800", "duration": "1分55秒" },
-          { "time": "4月6日 22:17 UTC", "ref": "Quora · 回答串", "landing": "yourproduct.com/?ref=mota-q-7822", "ga": "UA-XXXXX-1 / 172811", "duration": "2分08秒" }
+          {
+            "time": "4月6日 10:41 UTC",
+            "ref": "Quora · 回答串",
+            "landing": "yourproduct.com/?ref=mota-q-7821",
+            "ga": "UA-XXXXX-1 / 172800",
+            "duration": "1分55秒"
+          },
+          {
+            "time": "4月6日 22:17 UTC",
+            "ref": "Quora · 回答串",
+            "landing": "yourproduct.com/?ref=mota-q-7822",
+            "ga": "UA-XXXXX-1 / 172811",
+            "duration": "2分08秒"
+          }
         ],
         "conversions": [
-          { "time": "4月6日 10:44 UTC", "action": "查看定价页面", "value": "$0", "source": "Quora" }
+          {
+            "time": "4月6日 10:44 UTC",
+            "action": "查看定价页面",
+            "value": "$0",
+            "source": "Quora"
+          }
         ]
       },
       {
@@ -240,11 +566,28 @@
         "clicks": 31,
         "convRate": "3.2%",
         "clickDetails": [
-          { "time": "4月5日 08:30 UTC", "ref": "YouTube · @ProdReviewer", "landing": "yourproduct.com/?ref=mota-yt-4401", "ga": "UA-XXXXX-1 / 172780", "duration": "0分52秒" },
-          { "time": "4月5日 14:19 UTC", "ref": "YouTube · @ProdReviewer", "landing": "yourproduct.com/?ref=mota-yt-4402", "ga": "UA-XXXXX-1 / 172789", "duration": "3分42秒" }
+          {
+            "time": "4月5日 08:30 UTC",
+            "ref": "YouTube · @ProdReviewer",
+            "landing": "yourproduct.com/?ref=mota-yt-4401",
+            "ga": "UA-XXXXX-1 / 172780",
+            "duration": "0分52秒"
+          },
+          {
+            "time": "4月5日 14:19 UTC",
+            "ref": "YouTube · @ProdReviewer",
+            "landing": "yourproduct.com/?ref=mota-yt-4402",
+            "ga": "UA-XXXXX-1 / 172789",
+            "duration": "3分42秒"
+          }
         ],
         "conversions": [
-          { "time": "4月5日 14:23 UTC", "action": "注册免费试用", "value": "$0", "source": "YouTube" }
+          {
+            "time": "4月5日 14:23 UTC",
+            "action": "注册免费试用",
+            "value": "$0",
+            "source": "YouTube"
+          }
         ]
       },
       {
@@ -255,12 +598,34 @@
         "clicks": 12,
         "convRate": "16.7%",
         "clickDetails": [
-          { "time": "4月7日 03:15 UTC", "ref": "Naver 지식iN · user8821", "landing": "yourproduct.com/?ref=mota-nv-901", "ga": "UA-XXXXX-1 / 172840", "duration": "4分02秒" },
-          { "time": "4月7日 11:44 UTC", "ref": "Naver 지식iN · user9103", "landing": "yourproduct.com/?ref=mota-nv-902", "ga": "UA-XXXXX-1 / 172848", "duration": "2分18秒" }
+          {
+            "time": "4月7日 03:15 UTC",
+            "ref": "Naver 지식iN · user8821",
+            "landing": "yourproduct.com/?ref=mota-nv-901",
+            "ga": "UA-XXXXX-1 / 172840",
+            "duration": "4分02秒"
+          },
+          {
+            "time": "4月7日 11:44 UTC",
+            "ref": "Naver 지식iN · user9103",
+            "landing": "yourproduct.com/?ref=mota-nv-902",
+            "ga": "UA-XXXXX-1 / 172848",
+            "duration": "2分18秒"
+          }
         ],
         "conversions": [
-          { "time": "4月7日 03:22 UTC", "action": "注册免费试用", "value": "$0", "source": "Naver" },
-          { "time": "4月7日 11:50 UTC", "action": "付费升级", "value": "$9", "source": "Naver" }
+          {
+            "time": "4月7日 03:22 UTC",
+            "action": "注册免费试用",
+            "value": "$0",
+            "source": "Naver"
+          },
+          {
+            "time": "4月7日 11:50 UTC",
+            "action": "付费升级",
+            "value": "$9",
+            "source": "Naver"
+          }
         ]
       },
       {
@@ -271,10 +636,21 @@
         "clicks": 9,
         "convRate": "11.1%",
         "clickDetails": [
-          { "time": "4月6日 17:33 UTC", "ref": "G2 · 对比帖", "landing": "yourproduct.com/?ref=mota-g2-220", "ga": "UA-XXXXX-1 / 172815", "duration": "5分11秒" }
+          {
+            "time": "4月6日 17:33 UTC",
+            "ref": "G2 · 对比帖",
+            "landing": "yourproduct.com/?ref=mota-g2-220",
+            "ga": "UA-XXXXX-1 / 172815",
+            "duration": "5分11秒"
+          }
         ],
         "conversions": [
-          { "time": "4月6日 17:40 UTC", "action": "注册免费试用", "value": "$0", "source": "G2" }
+          {
+            "time": "4月6日 17:40 UTC",
+            "action": "注册免费试用",
+            "value": "$0",
+            "source": "G2"
+          }
         ]
       },
       {
@@ -285,15 +661,32 @@
         "clicks": 7,
         "convRate": "0%",
         "clickDetails": [
-          { "time": "4月8日 02:09 UTC", "ref": "Amazon · 已验证买家", "landing": "yourproduct.com/?ref=mota-amz-55", "ga": "UA-XXXXX-1 / 172860", "duration": "1分03秒" }
+          {
+            "time": "4月8日 02:09 UTC",
+            "ref": "Amazon · 已验证买家",
+            "landing": "yourproduct.com/?ref=mota-amz-55",
+            "ga": "UA-XXXXX-1 / 172860",
+            "duration": "1分03秒"
+          }
         ],
         "conversions": []
       }
     ],
     "clickDetailTitle": "点击证据",
-    "clickHeaders": ["时间", "来源 / 引用", "落地页", "GA 会话", "停留时间"],
+    "clickHeaders": [
+      "时间",
+      "来源 / 引用",
+      "落地页",
+      "GA 会话",
+      "停留时间"
+    ],
     "convTitle": "转化证据",
-    "convHeaders": ["时间", "行为", "价值", "来源"],
+    "convHeaders": [
+      "时间",
+      "行为",
+      "价值",
+      "来源"
+    ],
     "close": "✕ 关闭",
     "noResults": "未找到匹配的任务。",
     "noConversions": "暂无转化记录。"
@@ -306,42 +699,132 @@
     "vision": {
       "title": "AI 时代的商业模式革新",
       "items": [
-        { "icon": "🤝", "label": "共赢经济", "desc": "达人赚取按点击计费的佣金；品牌获得真实、高信任度的大规模推荐。" },
-        { "icon": "🤖", "label": "AI 优先协作", "desc": "从外联到内容共创到结算——AI 自主完成 95% 的工作流程。" },
-        { "icon": "🔄", "label": "自增长飞轮", "desc": "更好的达人 → 更高信任 → 更高转化 → 吸引更多达人。网络效应持续复利增长。" }
+        {
+          "icon": "🤝",
+          "label": "共赢经济",
+          "desc": "达人赚取按点击计费的佣金；品牌获得真实、高信任度的大规模推荐。"
+        },
+        {
+          "icon": "🤖",
+          "label": "AI 优先协作",
+          "desc": "从外联到内容共创到结算——AI 自主完成 95% 的工作流程。"
+        },
+        {
+          "icon": "🔄",
+          "label": "自增长飞轮",
+          "desc": "更好的达人 → 更高信任 → 更高转化 → 吸引更多达人。网络效应持续复利增长。"
+        }
       ]
     },
     "flow": {
       "title": "全自动运作流程",
       "steps": [
-        { "icon": "📡", "num": "01", "title": "AI 寻找达人", "desc": "Agent 扫描各平台中高互动量与领域权威的活跃创作者，自动发送个性化合作邀请。" },
-        { "icon": "✍️", "num": "02", "title": "内容共创", "desc": "AI 提供产品简介 + 回复模板。达人用自己的风格发布在个人账号——真实可信，非脚本化。" },
-        { "icon": "🔗", "num": "03", "title": "追踪链接与入口", "desc": "每条达人发布的内容附带唯一追踪链接。点击、转化、归因均实时记录。" },
-        { "icon": "💳", "num": "04", "title": "自动结算", "desc": "佣金按账单周期自动计算。通过 Stripe 直接转账或加密货币（USDT / USDC）支付。零人工操作。" }
+        {
+          "icon": "📡",
+          "num": "01",
+          "title": "AI 寻找达人",
+          "desc": "Agent 扫描各平台中高互动量与领域权威的活跃创作者，自动发送个性化合作邀请。"
+        },
+        {
+          "icon": "✍️",
+          "num": "02",
+          "title": "内容共创",
+          "desc": "AI 提供产品简介 + 回复模板。达人用自己的风格发布在个人账号——真实可信，非脚本化。"
+        },
+        {
+          "icon": "🔗",
+          "num": "03",
+          "title": "追踪链接与入口",
+          "desc": "每条达人发布的内容附带唯一追踪链接。点击、转化、归因均实时记录。"
+        },
+        {
+          "icon": "💳",
+          "num": "04",
+          "title": "自动结算",
+          "desc": "佣金按账单周期自动计算。通过 Stripe 直接转账或加密货币（USDT / USDC）支付。零人工操作。"
+        }
       ]
     },
     "dashboard": {
       "title": "达人管理控制台",
       "stats": [
-        { "label": "活跃达人", "value": "128", "icon": "👤", "change": "+本周 18 位" },
-        { "label": "达人点击", "value": "4,721", "icon": "🖱️", "change": "+22.3%" },
-        { "label": "平均转化率", "value": "7.2%", "icon": "📈", "change": "+1.1%" },
-        { "label": "累计支付", "value": "$2,340", "icon": "💰", "change": "已付 32 位达人" }
+        {
+          "label": "活跃达人",
+          "value": "128",
+          "icon": "👤",
+          "change": "+本周 18 位"
+        },
+        {
+          "label": "达人点击",
+          "value": "4,721",
+          "icon": "🖱️",
+          "change": "+22.3%"
+        },
+        {
+          "label": "平均转化率",
+          "value": "7.2%",
+          "icon": "📈",
+          "change": "+1.1%"
+        },
+        {
+          "label": "累计支付",
+          "value": "$2,340",
+          "icon": "💰",
+          "change": "已付 32 位达人"
+        }
       ],
       "recentTitle": "最近达人动态",
       "recent": [
-        { "creator": "@TechBlogger_JP", "platform": "Yahoo!", "action": "发布评测 · 12 次点击", "status": "active", "time": "5 分钟前" },
-        { "creator": "@DevToolKR", "platform": "Naver", "action": "Stripe 支付 $45.60", "status": "paid", "time": "1 小时前" },
-        { "creator": "@SaaS_Reviews", "platform": "Reddit", "action": "接受合作邀请", "status": "new", "time": "3 小时前" },
-        { "creator": "@StartupGuru", "platform": "YouTube", "action": "发布视频提及 · 38 次点击", "status": "active", "time": "6 小时前" },
-        { "creator": "@CryptoNomad", "platform": "Twitter", "action": "钱包支付 28 USDT", "status": "paid", "time": "1 天前" }
+        {
+          "creator": "@TechBlogger_JP",
+          "platform": "Yahoo!",
+          "action": "发布评测 · 12 次点击",
+          "status": "active",
+          "time": "5 分钟前"
+        },
+        {
+          "creator": "@DevToolKR",
+          "platform": "Naver",
+          "action": "Stripe 支付 $45.60",
+          "status": "paid",
+          "time": "1 小时前"
+        },
+        {
+          "creator": "@SaaS_Reviews",
+          "platform": "Reddit",
+          "action": "接受合作邀请",
+          "status": "new",
+          "time": "3 小时前"
+        },
+        {
+          "creator": "@StartupGuru",
+          "platform": "YouTube",
+          "action": "发布视频提及 · 38 次点击",
+          "status": "active",
+          "time": "6 小时前"
+        },
+        {
+          "creator": "@CryptoNomad",
+          "platform": "Twitter",
+          "action": "钱包支付 28 USDT",
+          "status": "paid",
+          "time": "1 天前"
+        }
       ]
     },
     "payment": {
       "title": "灵活结算方式",
       "methods": [
-        { "icon": "💳", "name": "Stripe", "desc": "银行直转 · 自动开票" },
-        { "icon": "₿", "name": "加密货币", "desc": "USDT / USDC · 低手续费 · 全球覆盖" }
+        {
+          "icon": "💳",
+          "name": "Stripe",
+          "desc": "银行直转 · 自动开票"
+        },
+        {
+          "icon": "₿",
+          "name": "加密货币",
+          "desc": "USDT / USDC · 低手续费 · 全球覆盖"
+        }
       ]
     },
     "statusLabels": {
@@ -352,18 +835,18 @@
   },
   "earlybird": {
     "badge": "早期用户",
-    "title": "现在加入，永久锁定费率与优先权。",
+    "title": "现在加入，锁定优先权。",
     "subtitle": "Mota 市场智能系统处于早期公测。当前无竞价——所有产品平等触达。立即注册，永久锁定优势。",
     "benefits": [
       {
-        "icon": "🔒",
-        "title": "费率永久锁定",
-        "description": "单次点击费率永久锁定在今日价格——有保障。"
+        "icon": "🏅",
+        "title": "创始徽章",
+        "description": "不仅是荣耀的标志，更能享受永久的额外折扣，并获得优先的服务支持。"
       },
       {
         "icon": "⭐",
-        "title": "早期合作伙伴身份",
-        "description": "早期合作伙伴始终优先获得流量分配权。"
+        "title": "优先流量分配权",
+        "description": "早期合作伙伴在同类商品、服务或关键词中，始终优先获得流量分配权。"
       },
       {
         "icon": "🌐",
@@ -376,7 +859,7 @@
         "description": "产品档案搭建、回复语气、匹配精度优化——全程免费。"
       }
     ],
-    "urgency": "早期费率锁定名额有限。平台大规模开放后，今日定价不再对新用户开放。"
+    "urgency": "早期会员名额有限。平台大规模开放后，竞争将迅速加剧。现在注册，锁定你的先发优势！"
   },
   "whymota": {
     "badge": "为什么选择 Mota",
@@ -408,13 +891,22 @@
   },
   "cta": {
     "headline": "你每多犹豫一秒，",
-    "headlineHighlight": "商机就被竞争对手抢走了。",
-    "title": "0 风险，无点击不收费。",
-    "subtitle": "早启动，早收益——不然商机就被竞争对手抢走了。",
+    "headlineHighlight": "商机就被竞争对手抢走了！",
+    "title": "0 风险，无点击不收费",
+    "subtitle": "早启动，早收益——直接拦截那些正在公开喊痛的用户，转化为你的客户。",
     "stats": [
-      { "value": "$0", "label": "零风险启动" },
-      { "value": "48h", "label": "注册到首条线索" },
-      { "value": "10+", "label": "监控平台" }
+      {
+        "value": "$0",
+        "label": "零风险启动"
+      },
+      {
+        "value": "48h",
+        "label": "注册到首条线索"
+      },
+      {
+        "value": "20+",
+        "label": "监控平台"
+      }
     ],
     "primary": "立即免费捕获需求",
     "secondary": "预约演示",
@@ -424,9 +916,18 @@
   "footer": {
     "copyright": "© 2026 MOTA TechLink. 保留所有权利。",
     "links": [
-      { "label": "隐私政策", "href": "/privacy" },
-      { "label": "服务条款", "href": "/terms" },
-      { "label": "联系我们", "href": "/contact" }
+      {
+        "label": "隐私政策",
+        "href": "/privacy"
+      },
+      {
+        "label": "服务条款",
+        "href": "/terms"
+      },
+      {
+        "label": "联系我们",
+        "href": "/contact"
+      }
     ]
   }
 }

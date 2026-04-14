@@ -15,10 +15,10 @@ export function ScheduleSection() {
           {d.badge}
         </span>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{d.title}</h2>
-        <p className="text-sm text-white/40 mb-8 max-w-2xl">{d.subtitle}</p>
+        <p className="text-base text-white/40 mb-8 max-w-2xl">{d.subtitle}</p>
 
         {/* Schedule table */}
-        <h3 className="text-sm font-semibold text-white/60 mb-3">{d.schedTitle}</h3>
+        <h3 className="text-base font-semibold text-white/60 mb-3">{d.schedTitle}</h3>
         <div className="rounded-xl bg-white/5 border border-white/8 overflow-hidden mb-8">
           <table className="w-full text-xs">
             <thead>
@@ -32,7 +32,7 @@ export function ScheduleSection() {
               {d.schedules.map((r: any, i: number) => (
                 <tr key={i} className="border-b border-white/5 hover:bg-white/3 transition-colors">
                   <td className="px-4 py-2 text-white/60">{r.task}</td>
-                  <td className="px-4 py-2 text-amber-300/60 font-mono text-[10px]">{r.freq}</td>
+                  <td className="px-4 py-2 text-amber-300/60 font-mono text-xs">{r.freq}</td>
                   <td className="px-4 py-2 text-white/40">{r.trigger}</td>
                 </tr>
               ))}
@@ -41,8 +41,8 @@ export function ScheduleSection() {
         </div>
 
         {/* CLI commands */}
-        <h3 className="text-sm font-semibold text-white/60 mb-3">{d.cliTitle}</h3>
-        <div className="rounded-xl bg-black/40 border border-white/8 p-4 font-mono text-[11px]">
+        <h3 className="text-base font-semibold text-white/60 mb-3">{d.cliTitle}</h3>
+        <div className="rounded-xl bg-black/40 border border-white/8 p-4 font-mono text-xs">
           {d.cliCommands.map((cmd: any, i: number) => (
             <div key={i} className="mb-2 last:mb-0">
               <span className="text-emerald-400/50">$</span>{" "}

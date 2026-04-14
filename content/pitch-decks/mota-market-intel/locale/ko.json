@@ -5,10 +5,17 @@
   "hero": {
     "badge": "AI 기반 마켓 인텔리전스",
     "title": "온라인 대화를",
-    "titleHighlight": "유료 고객으로 전환합니다.",
+    "titleHighlight": "유료 고객으로 전환합니다",
     "subtitle": "6개 언어 커뮤니티에서 당신의 제품이 해결하는 문제를 공개적으로 표현하는 사용자를 AI가 찾아내고, 진심 어린 답변으로 자연스럽게 대화에 참여합니다. 클릭 시에만 과금.",
     "cta": "무료로 시작하기",
     "ctaSecondary": "작동 방식 보기",
+    "trustLine": "스타트업부터 글로벌 브랜드까지, Mota로 수요를 직접 포착",
+    "valueBadges": [
+      { "icon": "🛡️", "label": "제로 리스크 — 클릭 없으면 과금 없음" },
+      { "icon": "🚀", "label": "지원 플랫폼" },
+      { "icon": "🏅", "label": "요금 영구 고정" },
+      { "icon": "📊", "label": "완전 투명 대시보드" }
+    ],
     "features": [
       { "icon": "🤖", "label": "AI 자동 매칭" },
       { "icon": "🌍", "label": "20+ 플랫폼 · 6개 언어" },
@@ -19,7 +26,19 @@
       { "value": "20+", "label": "플랫폼" },
       { "value": "48h", "label": "첫 매칭까지" },
       { "value": "$0", "label": "클릭 없으면" }
-    ]
+    ],
+    "platformWords": [
+      "Reddit", "Quora", "YouTube", "Amazon", "LinkedIn",
+      "TikTok", "Naver 지식iN", "Yahoo! 知恵袋", "Stack Overflow",
+      "ProductHunt", "X (Twitter)", "Facebook", "Instagram",
+      "Pinterest", "Medium", "Discord",
+      "Hacker News", "Trustpilot", "G2", "App Store"
+    ],
+    "languageWords": [
+      "영어", "스페인어", "포르투갈어", "일본어", "한국어", "러시아어"
+    ],
+    "platformStatic": "20+:",
+    "languageStatic": "6개 언어:"
   },
   "problem": {
     "badge": "문제점",
@@ -40,7 +59,7 @@
         "items": [
           { "icon": "🎯", "text": "이미 페인 포인트를 표현한 사용자 도달" },
           { "icon": "🤖", "text": "AI가 제품 설명에서 타겟 자동 특정" },
-          { "icon": "🔒", "text": "정액 요금 — 입찰 없음" },
+          { "icon": "📊", "text": "클릭과 전환 데이터를 실시간으로 추적" },
           { "icon": "✅", "text": "실제 클릭만 과금 — 완전한 투명성" }
         ]
       }
@@ -52,7 +71,7 @@
     "steps": [
       {
         "number": "01",
-        "title": "제품을 설명하세요",
+        "title": "제품/서비스를 설명해주세요",
         "description": "무엇을 팔고 누구를 돕는지 알려주세요. AI가 6개 언어에 걸쳐 고객 페인 포인트, 플랫폼, 경쟁사, 표현을 자동 추론합니다. 수 분 내 준비 완료."
       },
       {
@@ -81,7 +100,9 @@
       "Twitter / X", "App Store", "Google Play",
       "Hacker News", "Stack Overflow", "Trustpilot", "G2",
       "Naver 지식iN", "Yahoo! 知恵袋", "Pikabu", "Reclame Aqui",
-      "VK", "Yandex Q", "Taringa!", "Kakaku.com", "Coupang"
+      "VK", "Yandex Q", "Taringa!", "Kakaku.com", "Coupang",
+      "LinkedIn", "Facebook", "Instagram", "TikTok",
+      "ProductHunt", "Medium", "Discord"
     ]
   },
   "pricing": {
@@ -107,7 +128,7 @@
     "tiers": [
       { "amount": "Starter", "discount": "100클릭 · $9", "rate": "$0.090" },
       { "amount": "Growth", "discount": "500클릭 · $39", "rate": "$0.078" },
-      { "amount": "Scale", "discount": "2,000클릭 · $129", "rate": "$0.065" }
+      { "amount": "Scale", "discount": "5,000클릭 · $299", "rate": "$0.060" }
     ],
     "note": "엔터프라이즈: 무제한 · 맞춤 요금 · 전담 지원. 문의해 주세요."
   },
@@ -356,14 +377,14 @@
     "subtitle": "얼리 액세스 단계. 입찰 없음 — 모든 제품 동등 도달. 지금 등록하여 이점을 영구 확보.",
     "benefits": [
       {
-        "icon": "🔒",
-        "title": "영구 요금 고정",
-        "description": "클릭 단가 오늘 가격으로 영구 고정 — 보장."
+        "icon": "🏅",
+        "title": "파운더 배지",
+        "description": "명예의 표시일 뿐만 아니라 영구 추가 할인과 우선 서비스 지원을 받을 수 있습니다."
       },
       {
         "icon": "⭐",
-        "title": "얼리 파트너 지위",
-        "description": "얼리 파트너는 항상 우선 배정."
+        "title": "영구 요금 고정",
+        "description": "얼리 파트너는 동일 상품·서비스·키워드 카테고리에서 항상 트래픽 배분 우선권을 받습니다."
       },
       {
         "icon": "🌐",
@@ -376,7 +397,7 @@
         "description": "제품 프로필·답변 톤·매칭 정밀도 최적화 — 무료."
       }
     ],
-    "urgency": "얼리 액세스 요금 고정은 기간 한정. 전면 공개 후 오늘 요금은 신규 가입자에게 적용되지 않습니다."
+    "urgency": "얼리 멤버 자리는 한정되어 있습니다. 플랫폼이 대규모로 개방되면 경쟁이 빠르게 치열해집니다. 지금 등록하고 선점 우위를 확보하세요!"
   },
   "whymota": {
     "badge": "Mota를 선택하는 이유",
@@ -408,13 +429,13 @@
   },
   "cta": {
     "headline": "1초 망설일 때마다,",
-    "headlineHighlight": "비즈니스 기회를 경쟁자에게 빼앗깁니다.",
-    "title": "제로 리스크. 클릭 없으면 과금 없음.",
-    "subtitle": "먼저 시작하면 먼저 수익 — 그렇지 않으면 경쟁자가 기회를 가져갑니다.",
+    "headlineHighlight": "비즈니스 기회를 경쟁자에게 빼앗깁니다!",
+    "title": "제로 리스크. 클릭 없으면 과금 없음",
+    "subtitle": "먼저 시작하면 먼저 수익 — 공개적으로 고통을 호소하는 사용자를 직접 포착하여 고객으로 전환하세요.",
     "stats": [
       { "value": "$0", "label": "제로 리스크 시작" },
       { "value": "48h", "label": "가입부터 첫 리드까지" },
-      { "value": "10+", "label": "모니터링 플랫폼" }
+      { "value": "20+", "label": "모니터링 플랫폼" }
     ],
     "primary": "지금 바로 수요 캡처 — 무료",
     "secondary": "라이브 데모 예약",

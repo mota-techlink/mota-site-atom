@@ -5,13 +5,20 @@
   "hero": {
     "badge": "AI駆動マーケット・インテリジェンス",
     "title": "オンラインの会話を",
-    "titleHighlight": "有料顧客に変える。",
+    "titleHighlight": "有料顧客に変える",
     "subtitle": "6言語のコミュニティで、あなたの製品が解決する問題を公に発信しているユーザーをAIが特定し、誠実で価値あるリプライで自然に会話に参加します。課金はクリック時だけ。",
     "cta": "無料で始める",
     "ctaSecondary": "仕組みを見る",
+    "trustLine": "スタートアップからグローバルブランドまで、Motaで需要を直接キャッチ",
+    "valueBadges": [
+      { "icon": "🛡️", "label": "ゼロリスク——クリックなければ課金なし" },
+      { "icon": "🚀", "label": "対応プラットフォーム" },
+      { "icon": "🏅", "label": "レート永久ロック" },
+      { "icon": "📊", "label": "完全透明ダッシュボード" }
+    ],
     "features": [
       { "icon": "🤖", "label": "AI自動マッチング" },
-      { "icon": "🌍", "label": "20+プラットフォーム · 6言語" },
+      { "icon": "🌍", "label": "20+ プラットフォーム · 6 言語" },
       { "icon": "💰", "label": "実クリックのみ課金" },
       { "icon": "⚡", "label": "48時間で稼働開始" }
     ],
@@ -19,7 +26,19 @@
       { "value": "20+", "label": "対応プラットフォーム" },
       { "value": "48h", "label": "初回マッチングまで" },
       { "value": "¥0", "label": "クリックなしなら" }
-    ]
+    ],
+    "platformWords": [
+      "Reddit", "Quora", "YouTube", "Amazon", "LinkedIn",
+      "TikTok", "Naver 지식iN", "Yahoo! 知恵袋", "Stack Overflow",
+      "ProductHunt", "X (Twitter)", "Facebook", "Instagram",
+      "Pinterest", "Medium", "Discord",
+      "Hacker News", "Trustpilot", "G2", "App Store"
+    ],
+    "languageWords": [
+      "英語", "スペイン語", "ポルトガル語", "日本語", "韓国語", "ロシア語"
+    ],
+    "platformStatic": "20+:",
+    "languageStatic": "6言語:"
   },
   "problem": {
     "badge": "問題点",
@@ -40,7 +59,7 @@
         "items": [
           { "icon": "🎯", "text": "あなたの課題を訴えているユーザーにリーチ" },
           { "icon": "🤖", "text": "AIが製品説明からターゲットを自動特定" },
-          { "icon": "🔒", "text": "定額料金 — 入札なし" },
+          { "icon": "📊", "text": "クリックとコンバージョンデータをリアルタイムで追跡" },
           { "icon": "✅", "text": "実クリックのみ課金 — 完全な透明性" }
         ]
       }
@@ -52,7 +71,7 @@
     "steps": [
       {
         "number": "01",
-        "title": "製品を説明するだけ",
+        "title": "製品/サービスを説明してください",
         "description": "何を販売し、誰を助けるか教えてください。AIが6言語にわたって顧客のペインポイント、プラットフォーム、競合、表現を自動推論。数分で完了。"
       },
       {
@@ -81,7 +100,9 @@
       "Twitter / X", "App Store", "Google Play",
       "Hacker News", "Stack Overflow", "Trustpilot", "G2",
       "Naver 지식iN", "Yahoo! 知恵袋", "Pikabu", "Reclame Aqui",
-      "VK", "Yandex Q", "Taringa!", "価格.com", "Coupang"
+      "VK", "Yandex Q", "Taringa!", "価格.com", "Coupang",
+      "LinkedIn", "Facebook", "Instagram", "TikTok",
+      "ProductHunt", "Medium", "Discord"
     ]
   },
   "pricing": {
@@ -107,7 +128,7 @@
     "tiers": [
       { "amount": "Starter", "discount": "100クリック · $9", "rate": "$0.090" },
       { "amount": "Growth", "discount": "500クリック · $39", "rate": "$0.078" },
-      { "amount": "Scale", "discount": "2,000クリック · $129", "rate": "$0.065" }
+      { "amount": "Scale", "discount": "5,000クリック · $299", "rate": "$0.060" }
     ],
     "note": "エンタープライズ：無制限・カスタム料金・専任サポート。お問い合わせください。"
   },
@@ -356,18 +377,18 @@
     "subtitle": "アーリーアクセス段階。入札なし — すべての製品が平等にリーチ。今すぐ登録して優位性を確保。",
     "benefits": [
       {
-        "icon": "🔒",
-        "title": "レート永久固定",
-        "description": "クリック単価は今日の価格で永久固定 — 保証付き。"
+        "icon": "🏅",
+        "title": "創始バッジ",
+        "description": "名誉の証だけではありません。永久の追加割引と優先サポートを享受できます。"
       },
       {
         "icon": "⭐",
         "title": "アーリーパートナー",
-        "description": "アーリーパートナーは常に優先配信を受けます。"
+        "description": "アーリーパートナーは同カテゴリの商品・サービス・キーワードにおいて、常にトラフィック配分の優先権を受けます。"
       },
       {
         "icon": "🌐",
-        "title": "グローバル最優先",
+        "title": "新市場優先アクセス",
         "description": "新市場・新プラットフォーム — アーリーパートナーが最初にマッチング。"
       },
       {
@@ -376,7 +397,7 @@
         "description": "製品プロフィール・リプライトーン・マッチング精度の最適化 — 無料。"
       }
     ],
-    "urgency": "アーリーアクセスのレート固定枠は期間限定。広く公開後、本日の料金は新規登録者に適用されません。"
+    "urgency": "アーリーメンバー枚は限定です。プラットフォームが本格公開されると、競争は急速に激化します。今すぐ登録して、先行者優位を確保しましょう！"
   },
   "whymota": {
     "badge": "Motaを選ぶ理由",
@@ -408,13 +429,13 @@
   },
   "cta": {
     "headline": "1秒迷うたびに、",
-    "headlineHighlight": "ビジネスチャンスが競合に奪われる。",
-    "title": "リスクゼロ。クリックなければ課金なし。",
-    "subtitle": "早く始めれば早く成果が出る——さもなければ、競合に先を越されます。",
+    "headlineHighlight": "ビジネスチャンスが競合に奪われる!",
+    "title": "リスクゼロ。クリックなければ課金なし",
+    "subtitle": "早く始めれば早く成果が出る——公に悩みを発信しているユーザーを直接あなたの顧客に転換します。",
     "stats": [
       { "value": "$0", "label": "ゼロリスクで開始" },
       { "value": "48h", "label": "登録から最初のリード" },
-      { "value": "10+", "label": "監視プラットフォーム" }
+      { "value": "20+", "label": "監視プラットフォーム" }
     ],
     "primary": "今すぐ需要をキャプチャ — 無料",
     "secondary": "デモを予約",
