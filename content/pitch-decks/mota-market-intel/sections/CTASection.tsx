@@ -35,7 +35,8 @@ export function CTASection() {
         )}
 
         {/* ── Main title ── */}
-        <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black text-transparent bg-clip-text bg-linear-to-r from-white via-indigo-100 to-indigo-300 mb-3 sm:mb-5 leading-tight">
+        <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black text-transparent bg-clip-text bg-[length:200%_auto] animate-[gradient-flow_4s_ease-in-out_infinite] mb-3 sm:mb-5 leading-tight"
+            style={{ backgroundImage: "linear-gradient(90deg, #818cf8, #c084fc, #f472b6, #fb923c, #facc15, #34d399, #818cf8)" }}>
           {cta.title}
         </h2>
 
@@ -67,7 +68,7 @@ export function CTASection() {
             className="group relative px-7 py-3 sm:px-10 sm:py-4 rounded-full bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-sm sm:text-lg transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-400/50"
           >
             {/* pulse ring */}
-            <span className="absolute inset-0 rounded-full border-2 border-indigo-400/40 animate-ping pointer-events-none" />
+            <span className="absolute inset-0 rounded-full border-2 border-d-indigo/40 animate-ping pointer-events-none" />
             <span className="relative">{cta.primary}</span>
           </a>
           <a

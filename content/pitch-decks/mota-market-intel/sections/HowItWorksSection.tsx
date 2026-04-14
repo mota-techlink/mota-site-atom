@@ -15,8 +15,8 @@ const GRADIENTS = [
 
 /** Border/glow accent per step */
 const ACCENTS = [
-  { border: "border-indigo-500/40", glow: "shadow-indigo-500/10" },
-  { border: "border-violet-500/40", glow: "shadow-violet-500/10" },
+  { border: "border-d-indigo/40", glow: "shadow-d-indigo/10" },
+  { border: "border-d-violet/40", glow: "shadow-violet-500/10" },
   { border: "border-pink-500/40", glow: "shadow-pink-500/10" },
   { border: "border-emerald-500/40", glow: "shadow-emerald-500/10" },
 ];
@@ -107,16 +107,16 @@ export function HowItWorksSection() {
   };
 
   return (
-    <section id="s-howitworks" className={`${SECTION} bg-black relative`}>
+    <section id="s-howitworks" className={`${SECTION} bg-d-bg relative`}>
       <DynamicBackground accent="violet" />
 
       <div className="max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-4 sm:mb-8">
-          <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs sm:text-sm font-medium mb-2 sm:mb-4">
+          <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-indigo-500/10 border border-d-indigo/20 text-d-indigo text-xs sm:text-sm font-medium mb-2 sm:mb-4">
             {h.badge}
           </span>
-          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-d-fg">
             {h.title}
           </h2>
         </div>
@@ -132,8 +132,8 @@ export function HowItWorksSection() {
                 key={i}
                 className={`mi-child rounded-xl sm:rounded-2xl border transition-all duration-500 overflow-hidden ${
                   isOpen
-                    ? `${acc.border} bg-white/[0.04] shadow-lg ${acc.glow}`
-                    : "border-white/8 bg-white/[0.02] hover:bg-white/[0.03]"
+                    ? `${acc.border} bg-d-fg/[0.04] shadow-lg ${acc.glow}`
+                    : "border-d-fg/8 bg-d-fg/[0.02] hover:bg-d-fg/[0.03]"
                 }`}
               >
                 {/* Header row — always visible */}
@@ -143,7 +143,7 @@ export function HowItWorksSection() {
                 >
                   {/* Step bubble */}
                   <div
-                    className={`shrink-0 w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br ${GRADIENTS[i]} flex items-center justify-center text-white font-mono font-bold text-xs sm:text-base shadow-md transition-transform duration-300 ${
+                    className={`shrink-0 w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br ${GRADIENTS[i]} flex items-center justify-center text-d-fg font-mono font-bold text-xs sm:text-base shadow-md transition-transform duration-300 ${
                       isOpen ? "scale-110" : "group-hover:scale-105"
                     }`}
                   >
@@ -153,7 +153,7 @@ export function HowItWorksSection() {
                   {/* Title */}
                   <h3
                     className={`flex-1 font-bold transition-colors duration-300 text-sm sm:text-lg ${
-                      isOpen ? "text-white" : "text-white/60 group-hover:text-white/80"
+                      isOpen ? "text-d-fg" : "text-d-fg/60 group-hover:text-d-fg/80"
                     }`}
                   >
                     {step.title}
@@ -162,7 +162,7 @@ export function HowItWorksSection() {
                   {/* Chevron */}
                   <svg
                     className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 text-white/60" : "text-white/30"
+                      isOpen ? "rotate-180 text-d-fg/60" : "text-d-fg/30"
                     }`}
                     fill="none"
                     stroke="currentColor"
@@ -186,7 +186,7 @@ export function HowItWorksSection() {
                   }}
                 >
                   <div className="px-3 pb-3 sm:px-6 sm:pb-5 pl-14 sm:pl-[4.5rem]">
-                    <p className="text-white/55 leading-relaxed text-xs sm:text-base max-w-2xl">
+                    <p className="text-d-fg/55 leading-relaxed text-xs sm:text-base max-w-2xl">
                       {step.description}
                     </p>
                   </div>
@@ -194,7 +194,7 @@ export function HowItWorksSection() {
 
                 {/* Progress bar — only on active open step */}
                 {isOpen && !paused && (
-                  <div className="h-0.5 bg-white/5">
+                  <div className="h-0.5 bg-d-fg/5">
                     <div
                       className={`h-full bg-linear-to-r ${GRADIENTS[i]} transition-none`}
                       style={{ width: `${progress * 100}%` }}

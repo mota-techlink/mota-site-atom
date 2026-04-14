@@ -9,9 +9,23 @@
     "subtitle": "6言語のコミュニティで、あなたの製品が解決する問題を公に発信しているユーザーをAIが特定し、誠実で価値あるリプライで自然に会話に参加します。課金はクリック時だけ。",
     "cta": "無料で始める",
     "ctaSecondary": "仕組みを見る",
+    "trustLine": "スタートアップからグローバルブランドまで、Motaで需要を直接キャッチ",
+    "valueBadges": [
+      { "icon": "🛡️", "label": "ゼロリスク——クリックなければ課金なし" },
+      { "icon": "🚀", "label": "対応プラットフォーム" },
+      { "icon": "🔒", "label": "レート永久ロック" },
+      { "icon": "📊", "label": "完全透明ダッシュボード" }
+    ],
+    "typewriterWords": [
+      "Reddit", "Quora", "YouTube", "Amazon", "LinkedIn",
+      "TikTok", "Naver 지식iN", "Yahoo! 知恵袋", "Stack Overflow",
+      "ProductHunt", "X (Twitter)", "Facebook", "Instagram",
+      "Pinterest", "Medium", "Discord",
+      "English", "Español", "Português", "日本語", "한국어", "Русский"
+    ],
     "features": [
       { "icon": "🤖", "label": "AI自動マッチング" },
-      { "icon": "🌍", "label": "20+プラットフォーム · 6言語" },
+      { "icon": "🌍", "label": "20+ プラットフォーム · 6 言語" },
       { "icon": "💰", "label": "実クリックのみ課金" },
       { "icon": "⚡", "label": "48時間で稼働開始" }
     ],
@@ -19,7 +33,18 @@
       { "value": "20+", "label": "対応プラットフォーム" },
       { "value": "48h", "label": "初回マッチングまで" },
       { "value": "¥0", "label": "クリックなしなら" }
-    ]
+    ],
+    "platformWords": [
+      "Reddit", "Quora", "YouTube", "Amazon", "LinkedIn",
+      "TikTok", "Naver 지식iN", "Yahoo! 知恵袋", "Stack Overflow",
+      "ProductHunt", "X (Twitter)", "Facebook", "Instagram",
+      "Pinterest", "Medium", "Discord"
+    ],
+    "languageWords": [
+      "英語", "スペイン語", "ポルトガル語", "日本語", "韓国語", "ロシア語"
+    ],
+    "platformStatic": "20+:",
+    "languageStatic": "6言語:"
   },
   "problem": {
     "badge": "問題点",
@@ -408,9 +433,9 @@
   },
   "cta": {
     "headline": "1秒迷うたびに、",
-    "headlineHighlight": "ビジネスチャンスが競合に奪われる。",
-    "title": "リスクゼロ。クリックなければ課金なし。",
-    "subtitle": "早く始めれば早く成果が出る——さもなければ、競合に先を越されます。",
+    "headlineHighlight": "ビジネスチャンスが競合に奪われる!",
+    "title": "リスクゼロ。クリックなければ課金なし",
+    "subtitle": "早く始めれば早く成果が出る——AIマーケットレーダーは今日から稼働可能。",
     "stats": [
       { "value": "$0", "label": "ゼロリスクで開始" },
       { "value": "48h", "label": "登録から最初のリード" },

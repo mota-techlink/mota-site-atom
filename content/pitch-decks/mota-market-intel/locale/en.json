@@ -9,6 +9,20 @@
     "subtitle": "Our AI finds users publicly expressing the exact problem your product solves — across communities in 6 languages — and joins the conversation with genuine, helpful replies. You only pay when they click.",
     "cta": "Get Started Free",
     "ctaSecondary": "See How It Works",
+    "trustLine": "Trusted by early-stage startups and global brands alike",
+    "valueBadges": [
+      { "icon": "🛡️", "label": "Zero Risk — No Click, No Charge" },
+      { "icon": "🚀", "label": "Platforms" },
+      { "icon": "🔒", "label": "Rate Locked Forever" },
+      { "icon": "📊", "label": "Full Transparency Dashboard" }
+    ],
+    "typewriterWords": [
+      "Reddit", "Quora", "YouTube", "Amazon", "LinkedIn",
+      "TikTok", "Naver 지식iN", "Yahoo! 知恵袋", "Stack Overflow",
+      "ProductHunt", "X (Twitter)", "Facebook", "Instagram",
+      "Pinterest", "Medium", "Discord",
+      "English", "Español", "Português", "日本語", "한국어", "Русский"
+    ],
     "features": [
       { "icon": "🤖", "label": "AI-Powered Matching" },
       { "icon": "🌍", "label": "20+ Platforms · 6 Languages" },
@@ -19,7 +33,18 @@
       { "value": "20+", "label": "Platforms" },
       { "value": "48h", "label": "To First Mentions" },
       { "value": "$0", "label": "If No Clicks" }
-    ]
+    ],
+    "platformWords": [
+      "Reddit", "Quora", "YouTube", "Amazon", "LinkedIn",
+      "TikTok", "Naver 지식iN", "Yahoo! 知恵袋", "Stack Overflow",
+      "ProductHunt", "X (Twitter)", "Facebook", "Instagram",
+      "Pinterest", "Medium", "Discord"
+    ],
+    "languageWords": [
+      "English", "Spanish", "Portuguese", "Japanese", "Korean", "Russian"
+    ],
+    "platformStatic": "20+:",
+    "languageStatic": "6 Languages:"
   },
   "problem": {
     "badge": "The Problem",
@@ -408,9 +433,9 @@
   },
   "cta": {
     "headline": "Every second you wait,",
-    "headlineHighlight": "your competitor answers first.",
+    "headlineHighlight": "your competitor answers first!",
     "title": "Zero Risk. No Click, No Charge.",
-    "subtitle": "Start early, profit early — otherwise, your competitors will seize the opportunity before you do.",
+    "subtitle": "Start early, profit early — your AI market radar can go live today.",
     "stats": [
       { "value": "$0", "label": "Zero risk to start" },
       { "value": "48h", "label": "From signup to first lead" },

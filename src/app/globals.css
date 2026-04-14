@@ -49,6 +49,24 @@
   --animate-nav-pulse: nav-pulse 5s ease-in-out infinite;
   --animate-lang-hint: lang-hint-fade 5s ease-in-out infinite;
   --animate-lang-ring: lang-ring-glow 5s ease-in-out infinite;
+  /* ── Pitch Deck theme tokens ── */
+  --color-d-bg: var(--d-bg);
+  --color-d-bg2: var(--d-bg2);
+  --color-d-fg: var(--d-fg);
+  --color-d-card: var(--d-card);
+  --color-d-card2: var(--d-card2);
+  --color-d-indigo: var(--d-indigo);
+  --color-d-violet: var(--d-violet);
+  --color-d-emerald: var(--d-emerald);
+  --color-d-amber: var(--d-amber);
+  --color-d-rose: var(--d-rose);
+  --color-d-cyan: var(--d-cyan);
+  --color-d-fuchsia: var(--d-fuchsia);
+  --color-d-pink: var(--d-pink);
+  --color-d-indigo-s: var(--d-indigo-s);
+  --color-d-violet-s: var(--d-violet-s);
+  --color-d-amber-s: var(--d-amber-s);
+  --color-d-rose-s: var(--d-rose-s);
 }
 
 /* === Pitch Deck Navigation Animations === */
@@ -63,6 +81,12 @@
 @keyframes lang-ring-glow {
   0%, 100% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0); }
   50% { box-shadow: 0 0 8px 2px rgba(96, 165, 250, 0.35); }
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
 }
 
 :root {
@@ -98,6 +122,24 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  /* ── Pitch Deck light palette ── */
+  --d-bg: #ffffff;
+  --d-bg2: #f9fafb;
+  --d-fg: #18181b;
+  --d-card: #f3f4f6;
+  --d-card2: #e5e7eb;
+  --d-indigo: #4f46e5;
+  --d-violet: #7c3aed;
+  --d-emerald: #059669;
+  --d-amber: #d97706;
+  --d-rose: #e11d48;
+  --d-cyan: #0891b2;
+  --d-fuchsia: #c026d3;
+  --d-pink: #db2777;
+  --d-indigo-s: #e0e7ff;
+  --d-violet-s: #ede9fe;
+  --d-amber-s: #fef3c7;
+  --d-rose-s: #ffe4e6;
 }
 
 .dark {
@@ -132,6 +174,24 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  /* ── Pitch Deck dark palette ── */
+  --d-bg: #000000;
+  --d-bg2: #09090b;
+  --d-fg: #ffffff;
+  --d-card: #18181b;
+  --d-card2: #27272a;
+  --d-indigo: #818cf8;
+  --d-violet: #a78bfa;
+  --d-emerald: #34d399;
+  --d-amber: #fbbf24;
+  --d-rose: #fb7185;
+  --d-cyan: #22d3ee;
+  --d-fuchsia: #e879f9;
+  --d-pink: #f472b6;
+  --d-indigo-s: #1e1b4b;
+  --d-violet-s: #2e1065;
+  --d-amber-s: #451a03;
+  --d-rose-s: #4c0519;
 }
 
 

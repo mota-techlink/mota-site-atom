@@ -69,10 +69,10 @@ function MarqueeRow({
         {doubled.map((name, i) => (
           <div
             key={`${name}-${i}`}
-            className="shrink-0 flex items-center gap-1.5 sm:gap-2.5 rounded-full bg-white/5 border border-white/10 hover:border-white/25 hover:bg-white/8 px-3 py-1.5 sm:px-5 sm:py-2.5 transition-all duration-200 cursor-default"
+            className="shrink-0 flex items-center gap-1.5 sm:gap-2.5 rounded-full bg-d-fg/5 border border-d-fg/10 hover:border-d-fg/25 hover:bg-d-fg/8 px-3 py-1.5 sm:px-5 sm:py-2.5 transition-all duration-200 cursor-default"
           >
             <span className="text-base sm:text-xl">{PLATFORM_ICONS[name] ?? "🔷"}</span>
-            <span className="text-[11px] sm:text-sm text-white/70 font-medium whitespace-nowrap">
+            <span className="text-[11px] sm:text-sm text-d-fg/70 font-medium whitespace-nowrap">
               {name}
             </span>
           </div>
@@ -92,27 +92,27 @@ export function PlatformsSection() {
   const row2 = p.items.slice(mid);
 
   return (
-    <section id="s-platforms" className={`${SECTION} bg-zinc-950 relative`}>
+    <section id="s-platforms" className={`${SECTION} bg-d-bg2 relative`}>
       <DynamicBackground accent="emerald" count={12} />
       <style>{MARQUEE_CSS}</style>
 
       <div className="w-full relative z-10">
         {/* Header — constrained width */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+          <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-d-emerald text-xs sm:text-sm font-medium mb-3 sm:mb-4">
             {p.badge}
           </span>
-          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-d-fg mb-2 sm:mb-3">
             {p.title}
           </h2>
-          <p className="text-white/40 mb-6 sm:mb-10 text-sm sm:text-lg">{p.subtitle}</p>
+          <p className="text-d-fg/40 mb-6 sm:mb-10 text-sm sm:text-lg">{p.subtitle}</p>
         </div>
 
         {/* Marquee rows — full width with gradient fade edges */}
         <div className="relative">
           {/* Fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-linear-to-r from-zinc-950 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-linear-to-l from-zinc-950 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-linear-to-r from-d-bg2 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-linear-to-l from-d-bg2 to-transparent z-10 pointer-events-none" />
 
           <div className="space-y-2 sm:space-y-3 px-2">
             <MarqueeRow items={row1} direction="left" />

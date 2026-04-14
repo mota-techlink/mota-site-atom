@@ -9,6 +9,20 @@
     "subtitle": "6개 언어 커뮤니티에서 당신의 제품이 해결하는 문제를 공개적으로 표현하는 사용자를 AI가 찾아내고, 진심 어린 답변으로 자연스럽게 대화에 참여합니다. 클릭 시에만 과금.",
     "cta": "무료로 시작하기",
     "ctaSecondary": "작동 방식 보기",
+    "trustLine": "스타트업부터 글로벌 브랜드까지, Mota로 수요를 직접 포착",
+    "valueBadges": [
+      { "icon": "🛡️", "label": "제로 리스크 — 클릭 없으면 과금 없음" },
+      { "icon": "🚀", "label": "지원 플랫폼" },
+      { "icon": "🔒", "label": "요금 영구 고정" },
+      { "icon": "📊", "label": "완전 투명 대시보드" }
+    ],
+    "typewriterWords": [
+      "Reddit", "Quora", "YouTube", "Amazon", "LinkedIn",
+      "TikTok", "Naver 지식iN", "Yahoo! 知恵袋", "Stack Overflow",
+      "ProductHunt", "X (Twitter)", "Facebook", "Instagram",
+      "Pinterest", "Medium", "Discord",
+      "English", "Español", "Português", "日本語", "한국어", "Русский"
+    ],
     "features": [
       { "icon": "🤖", "label": "AI 자동 매칭" },
       { "icon": "🌍", "label": "20+ 플랫폼 · 6개 언어" },
@@ -19,7 +33,18 @@
       { "value": "20+", "label": "플랫폼" },
       { "value": "48h", "label": "첫 매칭까지" },
       { "value": "$0", "label": "클릭 없으면" }
-    ]
+    ],
+    "platformWords": [
+      "Reddit", "Quora", "YouTube", "Amazon", "LinkedIn",
+      "TikTok", "Naver 지식iN", "Yahoo! 知恵袋", "Stack Overflow",
+      "ProductHunt", "X (Twitter)", "Facebook", "Instagram",
+      "Pinterest", "Medium", "Discord"
+    ],
+    "languageWords": [
+      "영어", "스페인어", "포르투갈어", "일본어", "한국어", "러시아어"
+    ],
+    "platformStatic": "20+:",
+    "languageStatic": "6개 언어:"
   },
   "problem": {
     "badge": "문제점",
@@ -408,9 +433,9 @@
   },
   "cta": {
     "headline": "1초 망설일 때마다,",
-    "headlineHighlight": "비즈니스 기회를 경쟁자에게 빼앗깁니다.",
-    "title": "제로 리스크. 클릭 없으면 과금 없음.",
-    "subtitle": "먼저 시작하면 먼저 수익 — 그렇지 않으면 경쟁자가 기회를 가져갑니다.",
+    "headlineHighlight": "비즈니스 기회를 경쟁자에게 빼앗깁니다!",
+    "title": "제로 리스크. 클릭 없으면 과금 없음",
+    "subtitle": "먼저 시작하면 먼저 수익 — AI 마켓 레이더를 오늘 바로 가동하세요.",
     "stats": [
       { "value": "$0", "label": "제로 리스크 시작" },
       { "value": "48h", "label": "가입부터 첫 리드까지" },

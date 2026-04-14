@@ -50,7 +50,14 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated, userRole }: Pitch
         />
       );
     case "market-design":
-      return <MarketDesignDeck isAuthenticated={isAuthenticated} userRole={userRole} />;
+      return (
+        <MarketDesignDeck
+          access={access}
+          previewSlides={preview}
+          isAuthenticated={isAuthenticated}
+          userRole={userRole}
+        />
+      );
     default:
       return (
         <div className="w-full h-full flex items-center justify-center text-white">

@@ -10,21 +10,21 @@ const CARD_ACCENT = [
   {
     gradient: "from-indigo-500/20 via-indigo-600/10 to-transparent",
     ring: "ring-indigo-500/30 hover:ring-indigo-400/50",
-    metric: "text-indigo-400",
-    glow: "group-hover:shadow-indigo-500/20",
+    metric: "text-d-indigo",
+    glow: "group-hover:shadow-d-indigo/20",
     bar: "bg-indigo-500",
   },
   {
     gradient: "from-violet-500/20 via-violet-600/10 to-transparent",
     ring: "ring-violet-500/30 hover:ring-violet-400/50",
-    metric: "text-violet-400",
+    metric: "text-d-violet",
     glow: "group-hover:shadow-violet-500/20",
-    bar: "bg-violet-500",
+    bar: "bg-d-violet",
   },
   {
     gradient: "from-emerald-500/20 via-emerald-600/10 to-transparent",
     ring: "ring-emerald-500/30 hover:ring-emerald-400/50",
-    metric: "text-emerald-400",
+    metric: "text-d-emerald",
     glow: "group-hover:shadow-emerald-500/20",
     bar: "bg-emerald-500",
   },
@@ -74,7 +74,7 @@ function MetricCounter({ value, label, accent }: { value: string; label: string;
         {display}
       </span>
       {label && (
-        <div className="text-[9px] sm:text-xs text-white/35 mt-0.5 font-semibold uppercase tracking-widest">
+        <div className="text-[9px] sm:text-xs text-d-fg/35 mt-0.5 font-semibold uppercase tracking-widest">
           {label}
         </div>
       )}
@@ -87,7 +87,7 @@ export function WhyMotaSection() {
   const w = c.whymota;
 
   return (
-    <section id="s-whymota" className={`${SECTION} bg-zinc-950 relative overflow-hidden`}>
+    <section id="s-whymota" className={`${SECTION} bg-d-bg2 relative overflow-hidden`}>
       {/* radial glow behind cards */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-indigo-600/8 rounded-full blur-[120px]" />
@@ -98,16 +98,16 @@ export function WhyMotaSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* ── header ── */}
         <div className="text-center mb-4 sm:mb-6 lg:mb-10">
-          <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs sm:text-sm font-medium mb-2 sm:mb-3 animate-pulse">
+          <span className="inline-block px-3 py-1 sm:px-4 rounded-full bg-indigo-500/10 border border-d-indigo/20 text-d-indigo text-xs sm:text-sm font-medium mb-2 sm:mb-3 animate-pulse">
             {w.badge}
           </span>
 
-          <h2 className="text-xl sm:text-3xl lg:text-5xl font-black text-transparent bg-clip-text bg-linear-to-r from-white via-indigo-200 to-indigo-400 leading-tight">
+          <h2 className="text-xl sm:text-3xl lg:text-5xl font-black text-transparent bg-clip-text bg-linear-to-r from-d-fg via-d-indigo/50 to-d-indigo leading-tight">
             {w.title}
           </h2>
 
           {w.subtitle && (
-            <p className="mt-2 sm:mt-3 text-xs sm:text-base lg:text-lg text-white/45 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-2 sm:mt-3 text-xs sm:text-base lg:text-lg text-d-fg/45 max-w-2xl mx-auto leading-relaxed">
               {w.subtitle}
             </p>
           )}
@@ -137,10 +137,10 @@ export function WhyMotaSection() {
                   <MetricCounter value={card.metric} label={card.metricLabel ?? ""} accent={a.metric} />
                 )}
 
-                <h3 className="text-white font-bold text-[11px] sm:text-base lg:text-lg mb-1 sm:mb-2">
+                <h3 className="text-d-fg font-bold text-[11px] sm:text-base lg:text-lg mb-1 sm:mb-2">
                   {card.title}
                 </h3>
-                <p className="text-white/45 leading-relaxed text-[9px] sm:text-sm lg:text-base">
+                <p className="text-d-fg/45 leading-relaxed text-[9px] sm:text-sm lg:text-base">
                   {card.description}
                 </p>
               </div>

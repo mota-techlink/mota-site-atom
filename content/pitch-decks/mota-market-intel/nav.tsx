@@ -2,6 +2,8 @@
 
 import React, { useContext } from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { Moon, Sun, Monitor } from "lucide-react";
 import { useDeckLocale, useDeckAccess } from "@/components/pitch-deck";
 import { SECTION_IDS, LOCALES, LOCALE_LABELS } from "./constants";
 import { useContent, PageNavCtx } from "./hooks";
@@ -36,8 +38,8 @@ export function SectionDots({
           mb-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center
           transition-all duration-200 text-[10px] sm:text-xs cursor-pointer
           ${activeIdx === 0
-            ? "bg-white/5 text-white/15 pointer-events-none"
-            : "bg-white/10 text-white/50 hover:bg-white/20 hover:text-white"}
+            ? "bg-d-fg/5 text-d-fg/15 pointer-events-none"
+            : "bg-d-fg/10 text-d-fg/50 hover:bg-d-fg/20 hover:text-d-fg"}
         `}
       >
         ▲
@@ -53,10 +55,10 @@ export function SectionDots({
             className={`
               rounded-full transition-all duration-300 outline-none cursor-pointer
               ${locked
-                ? "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/8 ring-1 ring-white/15"
+                ? "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-d-fg/8 ring-1 ring-d-fg/15"
                 : activeIdx === idx
-                  ? "w-1.5 h-4 sm:w-2 sm:h-6 bg-white"
-                  : "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/25 hover:bg-white/60"}
+                  ? "w-1.5 h-4 sm:w-2 sm:h-6 bg-d-fg"
+                  : "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-d-fg/25 hover:bg-d-fg/60"}
             `}
           />
         );
@@ -70,8 +72,8 @@ export function SectionDots({
           mt-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center
           transition-all duration-200 text-[10px] sm:text-xs cursor-pointer
           ${activeIdx === lastIdx
-            ? "bg-white/5 text-white/15 pointer-events-none"
-            : "bg-white/10 text-white/50 hover:bg-white/20 hover:text-white"}
+            ? "bg-d-fg/5 text-d-fg/15 pointer-events-none"
+            : "bg-d-fg/10 text-d-fg/50 hover:bg-d-fg/20 hover:text-d-fg"}
         `}
       >
         ▼
@@ -90,7 +92,7 @@ export function FloatingNav({ pastHero }: { pastHero: boolean }) {
       className={`
         fixed top-0 inset-x-0 z-50 transition-all duration-300
         ${pastHero
-          ? "bg-black/80 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/40"
+          ? "bg-d-bg/80 backdrop-blur-md border-b border-d-fg/10 shadow-lg shadow-d-bg/40"
           : "bg-transparent"}
       `}
     >
@@ -110,33 +112,68 @@ export function FloatingNav({ pastHero }: { pastHero: boolean }) {
               (e.currentTarget as HTMLImageElement).style.display = "none";
             }}
           />
-          <span className="text-white font-semibold text-base tracking-tight hidden sm:inline">
+          <span className="text-d-fg font-semibold text-base tracking-tight hidden sm:inline">
             Mota
           </span>
-          <span className="text-white/40 mx-1 hidden sm:inline">·</span>
-          <span className="text-white/60 text-sm hidden sm:inline">
+          <span className="text-d-fg/40 mx-1 hidden sm:inline">·</span>
+          <span className="text-d-fg/60 text-sm hidden sm:inline">
             {c.nav.tagline}
           </span>
         </a>
 
-        {/* Language switcher */}
-        <nav className="flex items-center gap-0.5 sm:gap-1">
-          {LOCALES.map((locale) => (
-            <button
-              key={locale}
-              onClick={() => setDeckLocale(locale)}
-              className={`
-                px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium transition-all duration-200
-                ${deckLocale === locale
-                  ? "bg-white text-black"
-                  : "text-white/60 hover:text-white hover:bg-white/10"}
-              `}
-            >
-              {LOCALE_LABELS[locale]}
-            </button>
-          ))}
+        {/* Language switcher + Theme toggle */}
+        <nav className="flex items-center gap-1 sm:gap-2">
+          {/* Language pills */}
+          <div className="flex items-center gap-0.5 sm:gap-1">
+            {LOCALES.map((locale) => (
+              <button
+                key={locale}
+                onClick={() => setDeckLocale(locale)}
+                className={`
+                  px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium transition-all duration-200
+                  ${deckLocale === locale
+                    ? "bg-d-fg text-d-bg"
+                    : "text-d-fg/60 hover:text-d-fg hover:bg-d-fg/10"}
+                `}
+              >
+                {LOCALE_LABELS[locale]}
+              </button>
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div className="w-px h-4 bg-d-fg/15 mx-0.5 sm:mx-1" />
+
+          {/* Theme toggle */}
+          <ThemeToggleInline />
         </nav>
       </div>
     </header>
+  );
+}
+
+// ─── Inline theme toggle (light / dark / system) ─────────────────────────────
+const THEME_CYCLE = ["dark", "light", "system"] as const;
+const THEME_ICONS = { dark: Moon, light: Sun, system: Monitor };
+
+function ThemeToggleInline() {
+  const { theme, setTheme } = useTheme();
+  const current = (theme ?? "dark") as keyof typeof THEME_ICONS;
+  const Icon = THEME_ICONS[current] ?? Moon;
+
+  const cycle = () => {
+    const idx = THEME_CYCLE.indexOf(current as (typeof THEME_CYCLE)[number]);
+    setTheme(THEME_CYCLE[(idx + 1) % THEME_CYCLE.length]);
+  };
+
+  return (
+    <button
+      onClick={cycle}
+      aria-label={`Theme: ${current}`}
+      title={`Theme: ${current}`}
+      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-d-fg/60 hover:text-d-fg hover:bg-d-fg/10 transition-all duration-200"
+    >
+      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+    </button>
   );
 }
