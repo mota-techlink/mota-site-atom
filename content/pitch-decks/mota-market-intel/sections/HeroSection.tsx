@@ -23,6 +23,11 @@ const PLATFORM_ICONS = [
   { name: "Medium",         src: "/icons/medium.svg" },
   { name: "Discord",        src: "/icons/discord.svg" },
   { name: "Google",         src: "/icons/google.svg" },
+  { name: "Naver",          src: "/icons/naver.svg" },
+  { name: "Hacker News",    src: "/icons/hackernews.svg" },
+  { name: "Trustpilot",     src: "/icons/trustpilot.svg" },
+  { name: "App Store",      src: "/icons/appstore.svg" },
+  { name: "Google Play",    src: "/icons/googleplay.svg" },
 ];
 
 const VISIBLE = 5;
