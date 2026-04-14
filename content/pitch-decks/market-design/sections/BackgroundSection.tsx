@@ -34,14 +34,14 @@ export function BackgroundSection() {
         {/* ── Problem / Insight visual ─────────────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
           {/* Traditional marketing problem */}
-          <div className="rounded-xl bg-gradient-to-br from-red-500/5 to-red-500/0 border border-red-500/15 p-5 flex items-center gap-5">
-            <div className="shrink-0 flex flex-col items-center gap-1">
-              <span className="text-3xl">🚫</span>
-              <h3 className="text-base font-bold text-red-300 whitespace-nowrap">{d.problem.title}</h3>
+          <div className="rounded-xl bg-gradient-to-br from-red-500/5 to-red-500/0 border border-red-500/15 p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="shrink-0 flex sm:flex-col items-center gap-2 sm:gap-1">
+              <span className="text-2xl sm:text-3xl">🚫</span>
+              <h3 className="text-sm sm:text-base font-bold text-red-300">{d.problem.title}</h3>
             </div>
-            <ul className="space-y-2 flex-1 min-w-0">
+            <ul className="space-y-1.5 sm:space-y-2 flex-1 min-w-0">
               {d.problem.points.map((p: string, i: number) => (
-                <li key={i} className="text-sm text-white/60 flex items-start gap-2">
+                <li key={i} className="text-xs sm:text-sm text-white/60 flex items-start gap-2">
                   <span className="text-red-400/50 mt-0.5 shrink-0">✕</span>
                   <span>{p}</span>
                 </li>
@@ -50,14 +50,14 @@ export function BackgroundSection() {
           </div>
 
           {/* Our approach */}
-          <div className="rounded-xl bg-gradient-to-br from-emerald-500/5 to-emerald-500/0 border border-emerald-500/15 p-5 flex items-center gap-5">
-            <div className="shrink-0 flex flex-col items-center gap-1">
-              <span className="text-3xl">✅</span>
-              <h3 className="text-base font-bold text-emerald-300 whitespace-nowrap">{d.solution.title}</h3>
+          <div className="rounded-xl bg-gradient-to-br from-emerald-500/5 to-emerald-500/0 border border-emerald-500/15 p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="shrink-0 flex sm:flex-col items-center gap-2 sm:gap-1">
+              <span className="text-2xl sm:text-3xl">✅</span>
+              <h3 className="text-sm sm:text-base font-bold text-emerald-300">{d.solution.title}</h3>
             </div>
-            <ul className="space-y-2 flex-1 min-w-0">
+            <ul className="space-y-1.5 sm:space-y-2 flex-1 min-w-0">
               {d.solution.points.map((p: string, i: number) => (
-                <li key={i} className="text-sm text-white/60 flex items-start gap-2">
+                <li key={i} className="text-xs sm:text-sm text-white/60 flex items-start gap-2">
                   <span className="text-emerald-400/60 mt-0.5 shrink-0">✓</span>
                   <span>{p}</span>
                 </li>
