@@ -2,9 +2,18 @@
   "nav": {
     "title": "System Design",
     "versions": [
-      { "label": "PRD", "ver": "v1.2" },
-      { "label": "ERD", "ver": "v0.8" },
-      { "label": "TDD", "ver": "v0.8" }
+      {
+        "label": "PRD",
+        "ver": "v1.3"
+      },
+      {
+        "label": "ERD",
+        "ver": "v0.8"
+      },
+      {
+        "label": "TDD",
+        "ver": "v0.8"
+      }
     ],
     "sections": {
       "cover": "Overview",
@@ -49,33 +58,100 @@
     "invalidCredentials": "Invalid email or password",
     "loginSuccess": "Logged in successfully!"
   },
-
   "cover": {
     "badge": "MOTA Market Intelligence",
     "title": "System Design Deck",
     "subtitle": "AI-powered pain-point capture across 20+ platforms · automated precision replies · pay-per-click billing",
     "docRefs": [
-      { "label": "PRD", "desc": "Product Requirements", "ver": "v1.2", "sections": "§4.0 – §4.12", "hoverDesc": "Full requirements for 13 modules including product onboarding, analysis engine, scanners, mining, auto-reply, partner ecosystem, billing, etc.", "targetSection": "s-analysis", "clickHint": "Go to Analysis Engine" },
-      { "label": "ERD", "desc": "Database Schema", "ver": "v0.8", "sections": "21 tables · 11 Edge Functions", "hoverDesc": "Complete table definitions, RLS policies, Edge Functions, and anti-abuse rules on Supabase PostgreSQL 15", "targetSection": "s-erd", "clickHint": "Go to Database Schema" },
-      { "label": "TDD", "desc": "Technical Design", "ver": "v0.8", "sections": "D.1 – D.10", "hoverDesc": "Implementation specs for each module: analysis engine, scanner cluster, mining matcher, reply agent, scheduling strategy, partner implementation, etc.", "targetSection": "s-edge", "clickHint": "Go to Edge Functions" }
+      {
+        "label": "PRD",
+        "desc": "Product Requirements",
+        "sections": "§4.0 – §4.12",
+        "hoverDesc": "Full requirements for 13 modules including product onboarding, analysis engine, scanners, mining, auto-reply, partner ecosystem, billing, etc.",
+        "targetSection": "s-analysis",
+        "clickHint": "Go to Analysis Engine"
+      },
+      {
+        "label": "ERD",
+        "desc": "Database Schema",
+        "sections": "21 tables · 11 Edge Functions",
+        "hoverDesc": "Complete table definitions, RLS policies, Edge Functions, and anti-abuse rules on Supabase PostgreSQL 15",
+        "targetSection": "s-erd",
+        "clickHint": "Go to Database Schema"
+      },
+      {
+        "label": "TDD",
+        "desc": "Technical Design",
+        "sections": "D.1 – D.10",
+        "hoverDesc": "Implementation specs for each module: analysis engine, scanner cluster, mining matcher, reply agent, scheduling strategy, partner implementation, etc.",
+        "targetSection": "s-edge",
+        "clickHint": "Go to Edge Functions"
+      }
     ],
     "pipeline": {
       "title": "Four-Stage Pipeline (Hover for details · Click to navigate)",
       "stages": [
-        { "icon": "🔍", "label": "Analyze", "desc": "LLM infers pain points · keywords · platforms", "hoverDesc": "User submits product description → Ollama/Gamma 4 infers audience pain points, generates 20+ platform search keywords, identifies competitors", "targetSection": "s-analysis" },
-        { "icon": "📡", "label": "Scan", "desc": "20+ platforms · 6 languages · 24/7", "hoverDesc": "11 Scanner types cover Reddit/YouTube/Google/Amazon/Quora/Twitter/HN/SO/App Store/Review Sites + multilingual local platforms", "targetSection": "s-scanners" },
-        { "icon": "🔮", "label": "Mine", "desc": "Extract pain points · 5-axis validation · scoring", "hoverDesc": "LLM pain-point extraction → relevance matching → 5-axis validation (community authenticity · monetization potential · search volume · negative review correlation · technical depth) → scoring & grading", "targetSection": "s-mining" },
-        { "icon": "💬", "label": "Reply", "desc": "Generate replies · review · publish · track", "hoverDesc": "Ollama generates value-added replies + injects tracking links → human/auto review → multi-platform publishing → click/conversion tracking", "targetSection": "s-reply" }
+        {
+          "icon": "🔍",
+          "label": "Analyze",
+          "desc": "LLM infers pain points · keywords · platforms",
+          "hoverDesc": "User submits product description → Ollama/Gamma 4 infers audience pain points, generates 20+ platform search keywords, identifies competitors",
+          "targetSection": "s-analysis"
+        },
+        {
+          "icon": "📡",
+          "label": "Scan",
+          "desc": "20+ platforms · 6 languages · 24/7",
+          "hoverDesc": "11 Scanner types cover Reddit/YouTube/Google/Amazon/Quora/Twitter/HN/SO/App Store/Review Sites + multilingual local platforms",
+          "targetSection": "s-scanners"
+        },
+        {
+          "icon": "🔮",
+          "label": "Mine",
+          "desc": "Extract pain points · 5-axis validation · scoring",
+          "hoverDesc": "LLM pain-point extraction → relevance matching → 5-axis validation (community authenticity · monetization potential · search volume · negative review correlation · technical depth) → scoring & grading",
+          "targetSection": "s-mining"
+        },
+        {
+          "icon": "💬",
+          "label": "Reply",
+          "desc": "Generate replies · review · publish · track",
+          "hoverDesc": "Ollama generates value-added replies + injects tracking links → human/auto review → multi-platform publishing → click/conversion tracking",
+          "targetSection": "s-reply"
+        }
       ]
     },
     "metrics": [
-      { "value": "20+", "label": "Platforms", "hoverDesc": "Full coverage of major English platforms + Spanish/Portuguese/Japanese/Korean/Russian local platforms", "targetSection": "s-scanners" },
-      { "value": "6", "label": "Languages", "hoverDesc": "English, Spanish, Portuguese, Japanese, Korean, Russian", "targetSection": "s-i18n" },
-      { "value": "21", "label": "DB Tables", "hoverDesc": "Core business + reply tracking + billing + audit + funnel + partner — 6 table groups", "targetSection": "s-erd" },
-      { "value": "11", "label": "Edge Fns", "hoverDesc": "Covering project analysis, reply publishing, billing deduction, partner revenue share, and more", "targetSection": "s-edge" }
+      {
+        "icon": "📡",
+        "value": "20+",
+        "label": "Platforms",
+        "hoverDesc": "Full coverage of major English platforms + Spanish/Portuguese/Japanese/Korean/Russian local platforms",
+        "targetSection": "s-scanners"
+      },
+      {
+        "icon": "🌍",
+        "value": "6",
+        "label": "Languages",
+        "hoverDesc": "English, Spanish, Portuguese, Japanese, Korean, Russian",
+        "targetSection": "s-i18n"
+      },
+      {
+        "icon": "🗄️",
+        "value": "21",
+        "label": "DB Tables",
+        "hoverDesc": "Core business + reply tracking + billing + audit + funnel + partner — 6 table groups",
+        "targetSection": "s-erd"
+      },
+      {
+        "icon": "⚡",
+        "value": "11",
+        "label": "Edge Fns",
+        "hoverDesc": "Covering project analysis, reply publishing, billing deduction, partner revenue share, and more",
+        "targetSection": "s-edge"
+      }
     ]
   },
-
   "background": {
     "badge": "PRD §1 · Project Background",
     "title": "Background & Goals",
@@ -100,130 +176,476 @@
     },
     "workflowTitle": "Five-Step Closed-Loop Workflow (Hover for details)",
     "workflow": [
-      { "step": "1", "icon": "📝", "label": "Onboard Product", "brief": "Name + description + URL", "detail": "Customer provides product name, description copy, product URL, and target market languages in the user dashboard — system auto-creates the project" },
-      { "step": "2", "icon": "🤖", "label": "AI Analysis", "brief": "LLM infers pain points & keywords", "detail": "Ollama/Gamma 4 analyzes the product → infers audience pain points → generates multi-platform search keywords → creates tasks and enqueues them" },
-      { "step": "3", "icon": "📡", "label": "Full-Web Scan", "brief": "20+ platforms, continuous discovery", "detail": "Scanner Agent cluster scans Reddit/YouTube/Google/Amazon/Quora/Twitter and 20+ other platforms 24/7 to find real posts discussing related problems" },
-      { "step": "4", "icon": "💬", "label": "Generate Reply", "brief": "Value-added content + tracking link", "detail": "AI generates a helpful reply + injects tracking links (mota_pid + mota_ref + UTM); optional human review before publishing" },
-      { "step": "5", "icon": "📊", "label": "Track & Bill", "brief": "Pay per click / conversion", "detail": "Tracking link clicked → funnel_events logged → Prepaid: real-time credit deduction / PAYG: end-of-month settlement → Admin can adjust invoices" }
+      {
+        "step": "1",
+        "icon": "📝",
+        "label": "Onboard Product",
+        "brief": "Name + description + URL",
+        "detail": "Customer provides product name, description copy, product URL, and target market languages in the user dashboard — system auto-creates the project"
+      },
+      {
+        "step": "2",
+        "icon": "🤖",
+        "label": "AI Analysis",
+        "brief": "LLM infers pain points & keywords",
+        "detail": "Ollama/Gamma 4 analyzes the product → infers audience pain points → generates multi-platform search keywords → creates tasks and enqueues them"
+      },
+      {
+        "step": "3",
+        "icon": "📡",
+        "label": "Full-Web Scan",
+        "brief": "20+ platforms, continuous discovery",
+        "detail": "Scanner Agent cluster scans Reddit/YouTube/Google/Amazon/Quora/Twitter and 20+ other platforms 24/7 to find real posts discussing related problems"
+      },
+      {
+        "step": "4",
+        "icon": "💬",
+        "label": "Generate Reply",
+        "brief": "Value-added content + tracking link",
+        "detail": "AI generates a helpful reply + injects tracking links (mota_pid + mota_ref + UTM); optional human review before publishing"
+      },
+      {
+        "step": "5",
+        "icon": "📊",
+        "label": "Track & Bill",
+        "brief": "Pay per click / conversion",
+        "detail": "Tracking link clicked → funnel_events logged → Prepaid: real-time credit deduction / PAYG: end-of-month settlement → Admin can adjust invoices"
+      }
     ],
     "goalsTitle": "Business Goals (Hover for details)",
     "goals": [
-      { "icon": "🎯", "title": "Product-First", "desc": "Start from the customer's product/service — the system reverse-engineers target audience pain-point profiles. No research prompts required.", "details": ["User only needs to provide product name, description, and URL", "LLM automatically infers domain tags, pain points, competitors, keywords", "Generated tasks cover search queries across all platforms"] },
-      { "icon": "🌍", "title": "Full-Platform Coverage", "desc": "Major English platforms + Spanish/Portuguese/Japanese/Korean/Russian local platforms — global market reach.", "details": ["11 Scanner types cover 20+ platforms", "Ollama multilingual models support 6 languages", "Local platforms: Taringa!/Reclame Aqui/知恵袋/지식iN/Pikabu etc."] },
-      { "icon": "✨", "title": "Genuinely Valuable Replies", "desc": "AI replies must contain truly useful content. Product links are a natural extension, not ads — minimizing ban risk.", "details": ["Prompt rules: no direct advertising tone", "Quality score ≥ threshold for auto-publish", "Disguise detection + human review fallback"] },
-      { "icon": "💰", "title": "Pay for Performance", "desc": "Billed per actual posted reply click/conversion. Admins can apply discount adjustments to invoices.", "details": ["Prepaid: top-up Credits with real-time deduction", "PAYG: monthly accumulation via Stripe card charge", "CPA: deep conversion events with weighted billing"] },
-      { "icon": "🏗️", "title": "Three-Tier Architecture", "desc": "Portal (public site), User Dashboard (project & billing management), Admin Dashboard (global operations).", "details": ["Portal: SSR/SSG + SEO + registration funnel", "User Dashboard: Next.js + Recharts", "Admin Dashboard: Tanstack Table + full RBAC"] }
+      {
+        "icon": "🎯",
+        "title": "Product-First",
+        "desc": "Start from the customer's product/service — the system reverse-engineers target audience pain-point profiles. No research prompts required.",
+        "details": [
+          "User only needs to provide product name, description, and URL",
+          "LLM automatically infers domain tags, pain points, competitors, keywords",
+          "Generated tasks cover search queries across all platforms"
+        ]
+      },
+      {
+        "icon": "🌍",
+        "title": "Full-Platform Coverage",
+        "desc": "Major English platforms + Spanish/Portuguese/Japanese/Korean/Russian local platforms — global market reach.",
+        "details": [
+          "11 Scanner types cover 20+ platforms",
+          "Ollama multilingual models support 6 languages",
+          "Local platforms: Taringa!/Reclame Aqui/知恵袋/지식iN/Pikabu etc."
+        ]
+      },
+      {
+        "icon": "✨",
+        "title": "Genuinely Valuable Replies",
+        "desc": "AI replies must contain truly useful content. Product links are a natural extension, not ads — minimizing ban risk.",
+        "details": [
+          "Prompt rules: no direct advertising tone",
+          "Quality score ≥ threshold for auto-publish",
+          "Disguise detection + human review fallback"
+        ]
+      },
+      {
+        "icon": "💰",
+        "title": "Pay for Performance",
+        "desc": "Billed per actual posted reply click/conversion. Admins can apply discount adjustments to invoices.",
+        "details": [
+          "Prepaid: top-up Credits with real-time deduction",
+          "PAYG: monthly accumulation via Stripe card charge",
+          "CPA: deep conversion events with weighted billing"
+        ]
+      },
+      {
+        "icon": "🏗️",
+        "title": "Three-Tier Architecture",
+        "desc": "Portal (public site), User Dashboard (project & billing management), Admin Dashboard (global operations).",
+        "details": [
+          "Portal: SSR/SSG + SEO + registration funnel",
+          "User Dashboard: Next.js + Recharts",
+          "Admin Dashboard: Tanstack Table + full RBAC"
+        ]
+      }
     ],
     "methodTitle": "8 Signal Capture Methods (Hover for details)",
     "methods": [
-      { "id": "M1", "icon": "😤", "name": "Negative Search", "platforms": "Reddit · Google · Twitter", "detail": "Find posts with a 'frustration' tone — users who've tried generic solutions but failed are prime candidates for alternatives" },
-      { "id": "M2", "icon": "❓", "name": "Community Q&A Radar", "platforms": "Reddit · Quora · HN", "detail": "Capture unanswered or poorly-answered questions where the product can be a better answer" },
-      { "id": "M3", "icon": "🎥", "name": "Video Comment Mining", "platforms": "YouTube", "detail": "Comment sections under competitor tutorials are a natural 'what's not good enough' database" },
-      { "id": "M4", "icon": "⭐", "name": "Negative Review Targeting", "platforms": "Amazon · App Store · G2", "detail": "Competitor negative reviews = potential target users for our product" },
-      { "id": "M5", "icon": "⚡", "name": "Real-Time Sentiment", "platforms": "Twitter/X", "detail": "Monitor keyword complaints in real time — be first to engage" },
-      { "id": "M6", "icon": "🔧", "name": "Technical Q&A", "platforms": "Stack Overflow · SE", "detail": "High-view unanswered technical questions are ideal for tool/SaaS products" },
-      { "id": "M7", "icon": "🔗", "name": "Cross-Source Validation", "platforms": "Multi-platform", "detail": "Same problem appearing on multiple platforms = stronger signal, higher match confidence" },
-      { "id": "M8", "icon": "🌐", "name": "Multilingual Local", "platforms": "Taringa! · Reclame Aqui · 知恵袋 etc.", "detail": "Cover Spanish/Portuguese/Japanese/Korean/Russian local communities to expand acquisition geography" }
+      {
+        "id": "M1",
+        "icon": "😤",
+        "name": "Negative Search",
+        "platforms": "Reddit · Google · Twitter",
+        "detail": "Find posts with a 'frustration' tone — users who've tried generic solutions but failed are prime candidates for alternatives"
+      },
+      {
+        "id": "M2",
+        "icon": "❓",
+        "name": "Community Q&A Radar",
+        "platforms": "Reddit · Quora · HN",
+        "detail": "Capture unanswered or poorly-answered questions where the product can be a better answer"
+      },
+      {
+        "id": "M3",
+        "icon": "🎥",
+        "name": "Video Comment Mining",
+        "platforms": "YouTube",
+        "detail": "Comment sections under competitor tutorials are a natural 'what's not good enough' database"
+      },
+      {
+        "id": "M4",
+        "icon": "⭐",
+        "name": "Negative Review Targeting",
+        "platforms": "Amazon · App Store · G2",
+        "detail": "Competitor negative reviews = potential target users for our product"
+      },
+      {
+        "id": "M5",
+        "icon": "⚡",
+        "name": "Real-Time Sentiment",
+        "platforms": "Twitter/X",
+        "detail": "Monitor keyword complaints in real time — be first to engage"
+      },
+      {
+        "id": "M6",
+        "icon": "🔧",
+        "name": "Technical Q&A",
+        "platforms": "Stack Overflow · SE",
+        "detail": "High-view unanswered technical questions are ideal for tool/SaaS products"
+      },
+      {
+        "id": "M7",
+        "icon": "🔗",
+        "name": "Cross-Source Validation",
+        "platforms": "Multi-platform",
+        "detail": "Same problem appearing on multiple platforms = stronger signal, higher match confidence"
+      },
+      {
+        "id": "M8",
+        "icon": "🌐",
+        "name": "Multilingual Local",
+        "platforms": "Taringa! · Reclame Aqui · 知恵袋 etc.",
+        "detail": "Cover Spanish/Portuguese/Japanese/Korean/Russian local communities to expand acquisition geography"
+      }
     ]
   },
-
   "analysis": {
     "badge": "PRD §4.1 · TDD D.1",
     "title": "Product Analysis Engine",
     "subtitle": "User submits product description → LLM infers target audience pain points, search keywords, and target platforms.",
     "promptTitle": "LLM Analysis Prompt — Output Fields",
     "promptFields": [
-      { "field": "domain_tags", "type": "string[]", "desc": "Up to 3 domain tags" },
-      { "field": "target_audience_pain", "type": "string", "desc": "Core pain point in one sentence" },
-      { "field": "inferred_competitors", "type": "string[]", "desc": "Inferred competitor list" },
-      { "field": "keywords", "type": "string[]", "desc": "5–10 search keywords" },
-      { "field": "subreddits", "type": "string[]", "desc": "5–15 target subreddits" },
-      { "field": "youtube_queries", "type": "string[]", "desc": "YouTube search queries" },
-      { "field": "google_seeds", "type": "string[]", "desc": "Google PAA seed terms" },
-      { "field": "amazon_queries", "type": "string[]", "desc": "Amazon search terms" },
-      { "field": "twitter_keywords", "type": "string[]", "desc": "Twitter monitoring topics" },
-      { "field": "multilingual_queries", "type": "object", "desc": "Locale-specific platform queries" }
+      {
+        "field": "domain_tags",
+        "type": "string[]",
+        "desc": "Up to 3 domain tags"
+      },
+      {
+        "field": "target_audience_pain",
+        "type": "string",
+        "desc": "Core pain point in one sentence"
+      },
+      {
+        "field": "inferred_competitors",
+        "type": "string[]",
+        "desc": "Inferred competitor list"
+      },
+      {
+        "field": "keywords",
+        "type": "string[]",
+        "desc": "5–10 search keywords"
+      },
+      {
+        "field": "subreddits",
+        "type": "string[]",
+        "desc": "5–15 target subreddits"
+      },
+      {
+        "field": "youtube_queries",
+        "type": "string[]",
+        "desc": "YouTube search queries"
+      },
+      {
+        "field": "google_seeds",
+        "type": "string[]",
+        "desc": "Google PAA seed terms"
+      },
+      {
+        "field": "amazon_queries",
+        "type": "string[]",
+        "desc": "Amazon search terms"
+      },
+      {
+        "field": "twitter_keywords",
+        "type": "string[]",
+        "desc": "Twitter monitoring topics"
+      },
+      {
+        "field": "multilingual_queries",
+        "type": "object",
+        "desc": "Locale-specific platform queries"
+      }
     ],
     "taskTitle": "tasks Table — Core Fields",
     "taskFields": [
-      { "field": "task_id / project_id", "desc": "Project association" },
-      { "field": "target_audience_pain", "desc": "Audience core pain point" },
-      { "field": "domain_tags", "desc": "Domain tags (used for partner matching)" },
-      { "field": "keywords → subreddits → youtube_queries → ...", "desc": "Per-platform search params" },
-      { "field": "multilingual_queries", "desc": "Non-English locale queries (ja/ko/es/pt/ru)" },
-      { "field": "status", "desc": "queued → scanning → completed → failed" }
+      {
+        "field": "task_id / project_id",
+        "desc": "Project association"
+      },
+      {
+        "field": "target_audience_pain",
+        "desc": "Audience core pain point"
+      },
+      {
+        "field": "domain_tags",
+        "desc": "Domain tags (used for partner matching)"
+      },
+      {
+        "field": "keywords → subreddits → youtube_queries → ...",
+        "desc": "Per-platform search params"
+      },
+      {
+        "field": "multilingual_queries",
+        "desc": "Non-English locale queries (ja/ko/es/pt/ru)"
+      },
+      {
+        "field": "status",
+        "desc": "queued → scanning → completed → failed"
+      }
     ],
     "triggerNote": "Trigger: projects INSERT → on_project_created Edge Function"
   },
-
   "scanners": {
     "badge": "PRD §4.2–§4.3 · TDD D.2–D.3",
     "title": "Scanner Agents & Platform Skills",
     "subtitle": "10+ platform scanners + 10+ platform skill interfaces covering English and 5 native-language communities.",
     "scannersTitle": "Scanner Matrix",
     "scanners": [
-      { "platform": "Reddit", "method": "PRAW / Pushshift", "freq": "Daily 02:00", "rateLimit": "3–8s interval · 50/board/day" },
-      { "platform": "YouTube", "method": "Data API v3", "freq": "Weekly Mon 03:00", "rateLimit": "10,000 units/day" },
-      { "platform": "Google PAA", "method": "SerpAPI / Serper.dev", "freq": "Daily 04:00", "rateLimit": "24h cache" },
-      { "platform": "Amazon", "method": "Rainforest API", "freq": "Weekly Tue 03:00", "rateLimit": "≤100/day" },
-      { "platform": "Quora", "method": "Playwright headless", "freq": "Weekly Wed 03:00", "rateLimit": "8–20s interval" },
-      { "platform": "Twitter/X", "method": "API v2 (tweepy)", "freq": "Daily 02:30", "rateLimit": "10,000 reads/mo" },
-      { "platform": "App Store", "method": "app-store-scraper", "freq": "Biweekly", "rateLimit": "3–10s interval" },
-      { "platform": "Google Play", "method": "google-play-scraper", "freq": "Biweekly", "rateLimit": "3–10s interval" },
-      { "platform": "Hacker News", "method": "Algolia API", "freq": "Daily 04:30", "rateLimit": "Free unlimited" },
-      { "platform": "Stack Overflow", "method": "Stack Exchange API", "freq": "Daily 05:00", "rateLimit": "10,000/day" },
-      { "platform": "Trustpilot/G2", "method": "Playwright + random UA", "freq": "Biweekly", "rateLimit": "10–30s interval" }
+      {
+        "platform": "Reddit",
+        "method": "PRAW / Pushshift",
+        "freq": "Daily 02:00",
+        "rateLimit": "3–8s interval · 50/board/day"
+      },
+      {
+        "platform": "YouTube",
+        "method": "Data API v3",
+        "freq": "Weekly Mon 03:00",
+        "rateLimit": "10,000 units/day"
+      },
+      {
+        "platform": "Google PAA",
+        "method": "SerpAPI / Serper.dev",
+        "freq": "Daily 04:00",
+        "rateLimit": "24h cache"
+      },
+      {
+        "platform": "Amazon",
+        "method": "Rainforest API",
+        "freq": "Weekly Tue 03:00",
+        "rateLimit": "≤100/day"
+      },
+      {
+        "platform": "Quora",
+        "method": "Playwright headless",
+        "freq": "Weekly Wed 03:00",
+        "rateLimit": "8–20s interval"
+      },
+      {
+        "platform": "Twitter/X",
+        "method": "API v2 (tweepy)",
+        "freq": "Daily 02:30",
+        "rateLimit": "10,000 reads/mo"
+      },
+      {
+        "platform": "App Store",
+        "method": "app-store-scraper",
+        "freq": "Biweekly",
+        "rateLimit": "3–10s interval"
+      },
+      {
+        "platform": "Google Play",
+        "method": "google-play-scraper",
+        "freq": "Biweekly",
+        "rateLimit": "3–10s interval"
+      },
+      {
+        "platform": "Hacker News",
+        "method": "Algolia API",
+        "freq": "Daily 04:30",
+        "rateLimit": "Free unlimited"
+      },
+      {
+        "platform": "Stack Overflow",
+        "method": "Stack Exchange API",
+        "freq": "Daily 05:00",
+        "rateLimit": "10,000/day"
+      },
+      {
+        "platform": "Trustpilot/G2",
+        "method": "Playwright + random UA",
+        "freq": "Biweekly",
+        "rateLimit": "10–30s interval"
+      }
     ],
     "skillsTitle": "Platform Skills Interface",
     "skills": [
-      { "skill": "RedditSearchSkill", "input": "keywords · subreddit · time range", "output": "posts + metadata" },
-      { "skill": "YouTubeCommentSkill", "input": "video ID", "output": "comments + frustration flags" },
-      { "skill": "AmazonReviewsSkill", "input": "ASIN · star filter", "output": "1–3 star reviews" },
-      { "skill": "QuoraScraperSkill", "input": "keywords · max pages", "output": "high-follow low-answer Qs" },
-      { "skill": "TwitterSearchSkill", "input": "keywords · language", "output": "negative sentiment tweets" },
-      { "skill": "HNSearchSkill", "input": "keywords · type", "output": "unresolved posts" },
-      { "skill": "SOSearchSkill", "input": "keywords · tags", "output": "unanswered questions" }
+      {
+        "skill": "RedditSearchSkill",
+        "input": "keywords · subreddit · time range",
+        "output": "posts + metadata"
+      },
+      {
+        "skill": "YouTubeCommentSkill",
+        "input": "video ID",
+        "output": "comments + frustration flags"
+      },
+      {
+        "skill": "AmazonReviewsSkill",
+        "input": "ASIN · star filter",
+        "output": "1–3 star reviews"
+      },
+      {
+        "skill": "QuoraScraperSkill",
+        "input": "keywords · max pages",
+        "output": "high-follow low-answer Qs"
+      },
+      {
+        "skill": "TwitterSearchSkill",
+        "input": "keywords · language",
+        "output": "negative sentiment tweets"
+      },
+      {
+        "skill": "HNSearchSkill",
+        "input": "keywords · type",
+        "output": "unresolved posts"
+      },
+      {
+        "skill": "SOSearchSkill",
+        "input": "keywords · tags",
+        "output": "unanswered questions"
+      }
     ],
     "filterTitle": "Frustration Signal Keywords",
-    "filterKeywords": ["not working", "broken", "frustrated", "useless", "waste of money", "returned it", "doesn't work"]
+    "filterKeywords": [
+      "not working",
+      "broken",
+      "frustrated",
+      "useless",
+      "waste of money",
+      "returned it",
+      "doesn't work"
+    ]
   },
-
   "mining": {
     "badge": "PRD §4.4 · TDD D.4",
     "title": "Data Mining Engine",
     "subtitle": "Four-stage pipeline: batch classification → pain-point extraction → dedup aggregation → 5-axis validation.",
     "llmTitle": "LLM Tiered Strategy",
     "llmStrategy": [
-      { "task": "Batch comment classification", "model": "Ollama (llama3 / Gamma 4)", "reason": "High volume, zero cost locally" },
-      { "task": "Pain-point extraction", "model": "Ollama → Gemini Flash fallback", "reason": "Balance quality & cost" },
-      { "task": "Tri-point validation", "model": "Gemini 1.5 Flash", "reason": "Cross-source reasoning, high quality" },
-      { "task": "Final opportunity report", "model": "Gemini 1.5 Pro", "reason": "Manual trigger only, best quality" }
+      {
+        "task": "Batch comment classification",
+        "model": "Ollama (llama3 / Gamma 4)",
+        "reason": "High volume, zero cost locally"
+      },
+      {
+        "task": "Pain-point extraction",
+        "model": "Ollama → Gemini Flash fallback",
+        "reason": "Balance quality & cost"
+      },
+      {
+        "task": "Tri-point validation",
+        "model": "Gemini 1.5 Flash",
+        "reason": "Cross-source reasoning, high quality"
+      },
+      {
+        "task": "Final opportunity report",
+        "model": "Gemini 1.5 Pro",
+        "reason": "Manual trigger only, best quality"
+      }
     ],
     "pipelineTitle": "Processing Pipeline",
     "pipeline": [
-      { "step": "1", "label": "Ollama Batch Classify", "desc": "Filter frustration-toned content (binary)" },
-      { "step": "2", "label": "Ollama Extract", "desc": "Extract: scenario + failure reason + workaround" },
-      { "step": "3", "label": "Gemini Flash Aggregate", "desc": "Merge similar pain points, compute frequency" },
-      { "step": "4", "label": "Write to Supabase", "desc": "Structured JSON → pain_points table" }
+      {
+        "step": "1",
+        "label": "Ollama Batch Classify",
+        "desc": "Filter frustration-toned content (binary)"
+      },
+      {
+        "step": "2",
+        "label": "Ollama Extract",
+        "desc": "Extract: scenario + failure reason + workaround"
+      },
+      {
+        "step": "3",
+        "label": "Gemini Flash Aggregate",
+        "desc": "Merge similar pain points, compute frequency"
+      },
+      {
+        "step": "4",
+        "label": "Write to Supabase",
+        "desc": "Structured JSON → pain_points table"
+      }
     ],
     "validationTitle": "5-Axis Validation Scoring (max 10)",
     "axes": [
-      { "axis": "A", "name": "Mention frequency", "max": 2 },
-      { "axis": "B", "name": "Cross-platform confirmation", "max": 2 },
-      { "axis": "C", "name": "Emotional intensity", "max": 2 },
-      { "axis": "D", "name": "Timeliness", "max": 2 },
-      { "axis": "E", "name": "Competitive gap", "max": 2 }
+      {
+        "axis": "A",
+        "name": "Mention frequency",
+        "max": 2
+      },
+      {
+        "axis": "B",
+        "name": "Cross-platform confirmation",
+        "max": 2
+      },
+      {
+        "axis": "C",
+        "name": "Emotional intensity",
+        "max": 2
+      },
+      {
+        "axis": "D",
+        "name": "Timeliness",
+        "max": 2
+      },
+      {
+        "axis": "E",
+        "name": "Competitive gap",
+        "max": 2
+      }
     ],
     "verdictTitle": "Score Verdicts",
     "verdicts": [
-      { "range": "9–10", "icon": "🔴", "verdict": "Gold Mine", "action": "Act immediately" },
-      { "range": "6–8", "icon": "🟡", "verdict": "Potential", "action": "Keep tracking" },
-      { "range": "0–5", "icon": "⚪", "verdict": "Low Priority", "action": "Archive" }
+      {
+        "range": "9–10",
+        "icon": "🔴",
+        "verdict": "Gold Mine",
+        "action": "Act immediately"
+      },
+      {
+        "range": "6–8",
+        "icon": "🟡",
+        "verdict": "Potential",
+        "action": "Keep tracking"
+      },
+      {
+        "range": "0–5",
+        "icon": "⚪",
+        "verdict": "Low Priority",
+        "action": "Archive"
+      }
     ],
     "outputTitle": "pain_points Output Fields",
-    "outputFields": ["pain_point_id", "task_id", "title", "description", "domain_tags", "source_platform", "mention_count", "sample_quotes", "source_urls", "status"]
+    "outputFields": [
+      "pain_point_id",
+      "task_id",
+      "title",
+      "description",
+      "domain_tags",
+      "source_platform",
+      "mention_count",
+      "sample_quotes",
+      "source_urls",
+      "status"
+    ]
   },
-
   "reply": {
     "badge": "PRD §4.6 · TDD D.6",
     "title": "Auto-Reply Agent",
@@ -237,46 +659,125 @@
     ],
     "channelsTitle": "Four Publishing Channels",
     "channels": [
-      { "icon": "💬", "name": "Direct Reply", "desc": "Post AI replies directly on YouTube, Twitter, Reddit etc.", "ref": "§4.6.1–6" },
-      { "icon": "🔗", "name": "GitHub Bridge", "desc": "Create GitHub repos for HN/SO where promotion is banned; embed tracking links in README", "ref": "§4.6.8" },
-      { "icon": "📝", "name": "Internal Post", "desc": "Publish standalone solution posts on platforms that restrict external links", "ref": "§4.6.7" },
-      { "icon": "🤝", "name": "Customer Collab", "desc": "Customer adds context → AI drafts → edit → system-send or manual publish", "ref": "§4.6.10" }
+      {
+        "icon": "💬",
+        "name": "Direct Reply",
+        "desc": "Post AI replies directly on YouTube, Twitter, Reddit etc.",
+        "ref": "§4.6.1–6"
+      },
+      {
+        "icon": "🔗",
+        "name": "GitHub Bridge",
+        "desc": "Create GitHub repos for HN/SO where promotion is banned; embed tracking links in README",
+        "ref": "§4.6.8"
+      },
+      {
+        "icon": "📝",
+        "name": "Internal Post",
+        "desc": "Publish standalone solution posts on platforms that restrict external links",
+        "ref": "§4.6.7"
+      },
+      {
+        "icon": "🤝",
+        "name": "Customer Collab",
+        "desc": "Customer adds context → AI drafts → edit → system-send or manual publish",
+        "ref": "§4.6.10"
+      }
     ],
     "qualityTitle": "Quality Control",
     "quality": [
-      { "metric": "min_quality_score", "value": "0.6", "desc": "Below → forced manual review" },
-      { "metric": "auto_approve_score", "value": "0.85", "desc": "Above → auto-approved" },
-      { "metric": "Per-account daily limit", "value": "5 replies", "desc": "Mimics human behavior" },
-      { "metric": "Publishing windows", "value": "14:00 / 20:00 UTC", "desc": "Staggered posting" }
+      {
+        "metric": "min_quality_score",
+        "value": "0.6",
+        "desc": "Below → forced manual review"
+      },
+      {
+        "metric": "auto_approve_score",
+        "value": "0.85",
+        "desc": "Above → auto-approved"
+      },
+      {
+        "metric": "Per-account daily limit",
+        "value": "5 replies",
+        "desc": "Mimics human behavior"
+      },
+      {
+        "metric": "Publishing windows",
+        "value": "14:00 / 20:00 UTC",
+        "desc": "Staggered posting"
+      }
     ]
   },
-
   "partner": {
     "badge": "PRD §4.6.11–12 · TDD D.6.6",
     "title": "Partner Ecosystem",
     "subtitle": "Recruit platform users & creators. AI-driven collaboration from discovery to payout. True AI-employs-humans model.",
     "programsTitle": "Dual-Track Programs",
     "programs": [
-      { "name": "Partner Program §4.6.11", "target": "Platform native users", "flow": "Apply → Review → Task assignment → Per-click revenue share", "tiers": "Bronze $0.02 / Silver $0.04 / Gold $0.08" },
-      { "name": "Creator Co-creation §4.6.12", "target": "Platform creators/KOLs", "flow": "AI discovers → AI invites → Creative brief → Creator publishes → AI settles", "tiers": "Creator $0.06 / Elite $0.12" }
+      {
+        "name": "Partner Program §4.6.11",
+        "target": "Platform native users",
+        "flow": "Apply → Review → Task assignment → Per-click revenue share",
+        "tiers": "Bronze $0.02 / Silver $0.04 / Gold $0.08"
+      },
+      {
+        "name": "Creator Co-creation §4.6.12",
+        "target": "Platform creators/KOLs",
+        "flow": "AI discovers → AI invites → Creative brief → Creator publishes → AI settles",
+        "tiers": "Creator $0.06 / Elite $0.12"
+      }
     ],
     "aiTitle": "AI-Driven · 7-Stage Automation",
     "aiStages": [
-      { "stage": "1", "label": "Discover", "desc": "Scan platforms for high-influence users → creator_leads" },
-      { "stage": "2", "label": "Invite", "desc": "AI generates personalized invitation DMs" },
-      { "stage": "3", "label": "Brief", "desc": "Auto-generate Creative Brief + reply draft" },
-      { "stage": "4", "label": "Follow-up", "desc": "48h no response → auto follow-up" },
-      { "stage": "5", "label": "Compliance", "desc": "AI scans final content, auto-review" },
-      { "stage": "6", "label": "Settle", "desc": "Stripe Connect or USDT/USDC payout" },
-      { "stage": "7", "label": "Alert", "desc": "Flag anomalous click patterns, auto-pause" }
+      {
+        "stage": "1",
+        "label": "Discover",
+        "desc": "Scan platforms for high-influence users → creator_leads"
+      },
+      {
+        "stage": "2",
+        "label": "Invite",
+        "desc": "AI generates personalized invitation DMs"
+      },
+      {
+        "stage": "3",
+        "label": "Brief",
+        "desc": "Auto-generate Creative Brief + reply draft"
+      },
+      {
+        "stage": "4",
+        "label": "Follow-up",
+        "desc": "48h no response → auto follow-up"
+      },
+      {
+        "stage": "5",
+        "label": "Compliance",
+        "desc": "AI scans final content, auto-review"
+      },
+      {
+        "stage": "6",
+        "label": "Settle",
+        "desc": "Stripe Connect or USDT/USDC payout"
+      },
+      {
+        "stage": "7",
+        "label": "Alert",
+        "desc": "Flag anomalous click patterns, auto-pause"
+      }
     ],
     "paymentTitle": "Multi-Path Settlement",
     "payments": [
-      { "method": "Stripe Connect", "desc": "Fiat direct transfer · monthly Cron · $10 min payout" },
-      { "method": "USDT / USDC", "chains": "Ethereum (ERC-20) · Tron (TRC-20) · Polygon · BSC (BEP-20)", "desc": "Global crypto payout" }
+      {
+        "method": "Stripe Connect",
+        "desc": "Fiat direct transfer · monthly Cron · $10 min payout"
+      },
+      {
+        "method": "USDT / USDC",
+        "chains": "Ethereum (ERC-20) · Tron (TRC-20) · Polygon · BSC (BEP-20)",
+        "desc": "Global crypto payout"
+      }
     ]
   },
-
   "erd": {
     "badge": "ERD v0.8 · Supabase PostgreSQL 15",
     "title": "Database Schema",
@@ -285,124 +786,356 @@
       {
         "name": "Core Business",
         "tables": [
-          { "table": "projects", "desc": "Product/service registration", "key": "user_id, name, target_languages, status" },
-          { "table": "tasks", "desc": "Scan tasks", "key": "project_id, keywords, subreddits, status" },
-          { "table": "mentions", "desc": "Captured mentions", "key": "task_id, platform, source_url, relatedness_score" },
-          { "table": "pain_points", "desc": "Extracted pain points", "key": "task_id, title, mention_count, status" },
-          { "table": "validations", "desc": "5-axis validation", "key": "pain_point_id, validation_score, verdict" }
+          {
+            "table": "projects",
+            "desc": "Product/service registration",
+            "key": "user_id, name, target_languages, status"
+          },
+          {
+            "table": "tasks",
+            "desc": "Scan tasks",
+            "key": "project_id, keywords, subreddits, status"
+          },
+          {
+            "table": "mentions",
+            "desc": "Captured mentions",
+            "key": "task_id, platform, source_url, relatedness_score"
+          },
+          {
+            "table": "pain_points",
+            "desc": "Extracted pain points",
+            "key": "task_id, title, mention_count, status"
+          },
+          {
+            "table": "validations",
+            "desc": "5-axis validation",
+            "key": "pain_point_id, validation_score, verdict"
+          }
         ]
       },
       {
         "name": "Reply & Funnel",
         "tables": [
-          { "table": "reply_queue", "desc": "Reply queue", "key": "mention_id, generated_reply, tracking_url, quality_score" },
-          { "table": "reply_logs", "desc": "Published replies", "key": "reply_queue_id, reply_url, platform_reply_id" },
-          { "table": "funnel_events", "desc": "Click events", "key": "reply_log_id, event_type, is_valid, fraud_reason" }
+          {
+            "table": "reply_queue",
+            "desc": "Reply queue",
+            "key": "mention_id, generated_reply, tracking_url, quality_score"
+          },
+          {
+            "table": "reply_logs",
+            "desc": "Published replies",
+            "key": "reply_queue_id, reply_url, platform_reply_id"
+          },
+          {
+            "table": "funnel_events",
+            "desc": "Click events",
+            "key": "reply_log_id, event_type, is_valid, fraud_reason"
+          }
         ]
       },
       {
         "name": "Billing",
         "tables": [
-          { "table": "credit_packages", "desc": "Package catalog", "key": "name, credits, price_cents" },
-          { "table": "user_billing", "desc": "User billing state", "key": "mode, credits_balance, payg_unit_price_cents" },
-          { "table": "credit_transactions", "desc": "Credit ledger", "key": "transaction_type, credits_delta, amount_cents" },
-          { "table": "bill_periods", "desc": "Monthly invoices", "key": "period_start/end, clicks_count, total_cents" },
-          { "table": "bill_adjustments", "desc": "Admin adjustments", "key": "adjustment_type, reason, admin_user_id" }
+          {
+            "table": "credit_packages",
+            "desc": "Package catalog",
+            "key": "name, credits, price_cents"
+          },
+          {
+            "table": "user_billing",
+            "desc": "User billing state",
+            "key": "mode, credits_balance, payg_unit_price_cents"
+          },
+          {
+            "table": "credit_transactions",
+            "desc": "Credit ledger",
+            "key": "transaction_type, credits_delta, amount_cents"
+          },
+          {
+            "table": "bill_periods",
+            "desc": "Monthly invoices",
+            "key": "period_start/end, clicks_count, total_cents"
+          },
+          {
+            "table": "bill_adjustments",
+            "desc": "Admin adjustments",
+            "key": "adjustment_type, reason, admin_user_id"
+          }
         ]
       },
       {
         "name": "Content Assets",
         "tables": [
-          { "table": "platform_posts", "desc": "Internal posts", "key": "platform, post_url, status" },
-          { "table": "github_repos", "desc": "GitHub bridge repos", "key": "repo_url, stars_count, tracking_url" },
-          { "table": "customer_collaborations", "desc": "Customer co-authored replies", "key": "mention_id, ai_draft, publish_mode" },
-          { "table": "competitor_reports", "desc": "Competitor reports", "key": "version, summary, tier" }
+          {
+            "table": "platform_posts",
+            "desc": "Internal posts",
+            "key": "platform, post_url, status"
+          },
+          {
+            "table": "github_repos",
+            "desc": "GitHub bridge repos",
+            "key": "repo_url, stars_count, tracking_url"
+          },
+          {
+            "table": "customer_collaborations",
+            "desc": "Customer co-authored replies",
+            "key": "mention_id, ai_draft, publish_mode"
+          },
+          {
+            "table": "competitor_reports",
+            "desc": "Competitor reports",
+            "key": "version, summary, tier"
+          }
         ]
       },
       {
         "name": "Partners",
         "tables": [
-          { "table": "partners", "desc": "Partner profiles", "key": "partner_type, tier, crypto_wallet_address" },
-          { "table": "partner_tasks", "desc": "Partner tasks", "key": "task_type, ai_draft, creative_brief, tracking_url" },
-          { "table": "partner_earnings", "desc": "Earnings records", "key": "amount_usd, payment_method, tx_hash" },
-          { "table": "creator_leads", "desc": "Creator leads", "key": "platform, handle, karma_estimate, status" }
+          {
+            "table": "partners",
+            "desc": "Partner profiles",
+            "key": "partner_type, tier, crypto_wallet_address"
+          },
+          {
+            "table": "partner_tasks",
+            "desc": "Partner tasks",
+            "key": "task_type, ai_draft, creative_brief, tracking_url"
+          },
+          {
+            "table": "partner_earnings",
+            "desc": "Earnings records",
+            "key": "amount_usd, payment_method, tx_hash"
+          },
+          {
+            "table": "creator_leads",
+            "desc": "Creator leads",
+            "key": "platform, handle, karma_estimate, status"
+          }
         ]
       },
       {
         "name": "System",
         "tables": [
-          { "table": "scan_logs", "desc": "Scan logs", "key": "task_id, platform, mentions_found, api_cost_usd" },
-          { "table": "admin_audit_logs", "desc": "Admin audit trail", "key": "admin_user_id, action_type, before/after_state" }
+          {
+            "table": "scan_logs",
+            "desc": "Scan logs",
+            "key": "task_id, platform, mentions_found, api_cost_usd"
+          },
+          {
+            "table": "admin_audit_logs",
+            "desc": "Admin audit trail",
+            "key": "admin_user_id, action_type, before/after_state"
+          }
         ]
       }
     ]
   },
-
   "edge": {
     "badge": "ERD Edge Functions · Supabase",
     "title": "Edge Functions & RLS",
     "subtitle": "11 Edge Functions covering the full business pipeline · all tables with row-level security.",
     "functionsTitle": "Edge Functions List",
     "functions": [
-      { "name": "on_project_created", "trigger": "projects INSERT", "desc": "Triggers LLM analysis → generates tasks" },
-      { "name": "on_mention_scored", "trigger": "mentions INSERT", "desc": "Score → match project → generate reply_queue" },
-      { "name": "on_link_clicked", "trigger": "funnel_events INSERT", "desc": "Anti-fraud filter → mark is_valid → billing" },
-      { "name": "on_cpa_event", "trigger": "funnel_events INSERT (deep conv)", "desc": "CPA event → credit deduction" },
-      { "name": "on_partner_click", "trigger": "funnel_events (partner link)", "desc": "Partner revenue calc → partner_earnings" },
-      { "name": "purchase_credits", "trigger": "User-initiated", "desc": "Stripe Checkout → credit top-up" },
-      { "name": "process_payg_billing", "trigger": "Cron monthly 1st", "desc": "PAYG monthly settlement → Stripe charge" },
-      { "name": "process_partner_payouts", "trigger": "Cron monthly 1st", "desc": "Partner settlement → Stripe Connect / Crypto" },
-      { "name": "apply_admin_adjustment", "trigger": "Admin action", "desc": "Billing adjustment + audit log" },
-      { "name": "generate_competitor_report", "trigger": "Cron weekly Mon / manual", "desc": "LLM report generation + PDF" },
-      { "name": "manage_github_repo / publish_platform_post", "trigger": "Approval", "desc": "GitHub repo mgmt / Internal post publishing" }
+      {
+        "name": "on_project_created",
+        "trigger": "projects INSERT",
+        "desc": "Triggers LLM analysis → generates tasks"
+      },
+      {
+        "name": "on_mention_scored",
+        "trigger": "mentions INSERT",
+        "desc": "Score → match project → generate reply_queue"
+      },
+      {
+        "name": "on_link_clicked",
+        "trigger": "funnel_events INSERT",
+        "desc": "Anti-fraud filter → mark is_valid → billing"
+      },
+      {
+        "name": "on_cpa_event",
+        "trigger": "funnel_events INSERT (deep conv)",
+        "desc": "CPA event → credit deduction"
+      },
+      {
+        "name": "on_partner_click",
+        "trigger": "funnel_events (partner link)",
+        "desc": "Partner revenue calc → partner_earnings"
+      },
+      {
+        "name": "purchase_credits",
+        "trigger": "User-initiated",
+        "desc": "Stripe Checkout → credit top-up"
+      },
+      {
+        "name": "process_payg_billing",
+        "trigger": "Cron monthly 1st",
+        "desc": "PAYG monthly settlement → Stripe charge"
+      },
+      {
+        "name": "process_partner_payouts",
+        "trigger": "Cron monthly 1st",
+        "desc": "Partner settlement → Stripe Connect / Crypto"
+      },
+      {
+        "name": "apply_admin_adjustment",
+        "trigger": "Admin action",
+        "desc": "Billing adjustment + audit log"
+      },
+      {
+        "name": "generate_competitor_report",
+        "trigger": "Cron weekly Mon / manual",
+        "desc": "LLM report generation + PDF"
+      },
+      {
+        "name": "manage_github_repo / publish_platform_post",
+        "trigger": "Approval",
+        "desc": "GitHub repo mgmt / Internal post publishing"
+      }
     ],
     "rlsTitle": "RLS Policy Matrix",
     "rlsGroups": [
-      { "scope": "User isolation", "rule": "user_id = auth.uid()", "tables": "projects, reply_queue (SELECT), user_billing, customer_collaborations" },
-      { "scope": "Partner isolation", "rule": "email = auth.email()", "tables": "partners, partner_tasks, partner_earnings" },
-      { "scope": "System write-only", "rule": "SELECT only for user", "tables": "tasks, mentions, scan_logs, pain_points, validations, reply_logs, funnel_events" },
-      { "scope": "Admin full access", "rule": "role = 'admin'", "tables": "All tables — full read/write" },
-      { "scope": "Public read", "rule": "anon SELECT", "tables": "credit_packages" },
-      { "scope": "Audit read-only", "rule": "admin SELECT only", "tables": "admin_audit_logs" }
+      {
+        "scope": "User isolation",
+        "rule": "user_id = auth.uid()",
+        "tables": "projects, reply_queue (SELECT), user_billing, customer_collaborations"
+      },
+      {
+        "scope": "Partner isolation",
+        "rule": "email = auth.email()",
+        "tables": "partners, partner_tasks, partner_earnings"
+      },
+      {
+        "scope": "System write-only",
+        "rule": "SELECT only for user",
+        "tables": "tasks, mentions, scan_logs, pain_points, validations, reply_logs, funnel_events"
+      },
+      {
+        "scope": "Admin full access",
+        "rule": "role = 'admin'",
+        "tables": "All tables — full read/write"
+      },
+      {
+        "scope": "Public read",
+        "rule": "anon SELECT",
+        "tables": "credit_packages"
+      },
+      {
+        "scope": "Audit read-only",
+        "rule": "admin SELECT only",
+        "tables": "admin_audit_logs"
+      }
     ],
     "fraudTitle": "Anti-Fraud Rules (on_link_clicked)",
     "fraudRules": [
-      { "rule": "bot_ua", "desc": "UA matches crawler patterns (bot/crawl/spider/curl)" },
-      { "rule": "ip_blacklist", "desc": "ipinfo.io flagged as datacenter IP" },
-      { "rule": "high_freq_ip", "desc": "Same IP · 10 min · same project > 3 clicks" },
-      { "rule": "early_bounce", "desc": "Landing page dwell < 2 seconds" },
-      { "rule": "cross_project", "desc": "Same IP · 1 hour · across 5+ projects" }
+      {
+        "rule": "bot_ua",
+        "desc": "UA matches crawler patterns (bot/crawl/spider/curl)"
+      },
+      {
+        "rule": "ip_blacklist",
+        "desc": "ipinfo.io flagged as datacenter IP"
+      },
+      {
+        "rule": "high_freq_ip",
+        "desc": "Same IP · 10 min · same project > 3 clicks"
+      },
+      {
+        "rule": "early_bounce",
+        "desc": "Landing page dwell < 2 seconds"
+      },
+      {
+        "rule": "cross_project",
+        "desc": "Same IP · 1 hour · across 5+ projects"
+      }
     ]
   },
-
   "billing": {
     "badge": "PRD §4.7",
     "title": "Billing System",
     "subtitle": "Four billing models · flexible adjustments · anti-fraud protection.",
     "modelsTitle": "Billing Models",
     "models": [
-      { "name": "Prepaid Packages", "desc": "Buy credit packs, consume per click, never expire", "detail": "Starter $9/100 | Growth $39/500 | Scale $129/2000" },
-      { "name": "PAYG (Pay-as-you-go)", "desc": "Month-end actual click tally, Stripe auto-charge", "detail": "Default $0.10/click · configurable" },
-      { "name": "Free Tier", "desc": "20 credits on signup (admin-configurable)", "detail": "Admin can adjust via bill_adjustments" },
-      { "name": "Partner Revenue Share", "desc": "Client pays → platform cut → partner per-tier share", "detail": "Bronze $0.02 → Gold $0.08 / Creator $0.06 → Elite $0.12" }
+      {
+        "name": "Prepaid Packages",
+        "desc": "Buy credit packs, consume per click, never expire",
+        "detail": "Starter $9/100 | Growth $39/500 | Scale $129/2000",
+        "icon": "💳"
+      },
+      {
+        "name": "PAYG (Pay-as-you-go)",
+        "desc": "Month-end actual click tally, Stripe auto-charge",
+        "detail": "Default $0.10/click · configurable",
+        "icon": "📊"
+      },
+      {
+        "name": "Free Tier",
+        "desc": "20 credits on signup (admin-configurable)",
+        "detail": "Admin can adjust via bill_adjustments",
+        "icon": "🎁"
+      },
+      {
+        "name": "Partner Revenue Share",
+        "desc": "Client pays → platform cut → partner per-tier share",
+        "detail": "Bronze $0.02 → Gold $0.08 / Creator $0.06 → Elite $0.12",
+        "icon": "🤝"
+      }
     ],
     "adjustTitle": "Admin Adjustment Types",
     "adjustTypes": [
-      { "type": "discount_percent", "desc": "Percentage discount" },
-      { "type": "discount_flat", "desc": "Fixed amount reduction" },
-      { "type": "credit_grant", "desc": "Grant credits" },
-      { "type": "credit_deduct", "desc": "Deduct credits" },
-      { "type": "waive_all", "desc": "Waive all charges (reduce to $0)" }
+      {
+        "type": "discount_percent",
+        "desc": "Percentage discount",
+        "icon": "🏷️"
+      },
+      {
+        "type": "discount_flat",
+        "desc": "Fixed amount reduction",
+        "icon": "💵"
+      },
+      {
+        "type": "credit_grant",
+        "desc": "Grant credits",
+        "icon": "🎁"
+      },
+      {
+        "type": "credit_deduct",
+        "desc": "Deduct credits",
+        "icon": "➖"
+      },
+      {
+        "type": "waive_all",
+        "desc": "Waive all charges (reduce to $0)",
+        "icon": "🆓"
+      }
     ],
     "cryptoTitle": "Cryptocurrency Payment",
     "cryptoChains": [
-      { "chain": "Ethereum (ERC-20)", "token": "USDT / USDC", "note": "Mainnet standard" },
-      { "chain": "Tron (TRC-20)", "token": "USDT", "note": "Low fees" },
-      { "chain": "Polygon", "token": "USDC", "note": "L2 low gas" },
-      { "chain": "BSC (BEP-20)", "token": "USDT / USDC", "note": "Asia preference" }
+      {
+        "chain": "Ethereum (ERC-20)",
+        "token": "USDT / USDC",
+        "note": "Mainnet standard",
+        "icon": "💎"
+      },
+      {
+        "chain": "Tron (TRC-20)",
+        "token": "USDT",
+        "note": "Low fees",
+        "icon": "⚡"
+      },
+      {
+        "chain": "Polygon",
+        "token": "USDC",
+        "note": "L2 low gas",
+        "icon": "🔷"
+      },
+      {
+        "chain": "BSC (BEP-20)",
+        "token": "USDT / USDC",
+        "note": "Asia preference",
+        "icon": "🟡"
+      }
     ]
   },
-
   "dashboard": {
     "badge": "PRD §4.9 – §4.10",
     "title": "Dashboard Design",
@@ -412,120 +1145,385 @@
       {
         "name": "User Dashboard /dashboard",
         "modules": [
-          "Overview (project status · credit balance · weekly clicks)",
-          "Projects (product list · CRUD)",
-          "Replies (reply list · customer co-authoring entry)",
-          "Assets (internal posts · GitHub repos)",
-          "Competitor Reports (report downloads)",
-          "Analytics (funnel · click trends · platform distribution)",
-          "Billing & Credits (top-up · invoices · transactions)"
-        ]
+          "📊 Overview (project status · credit balance · weekly clicks)",
+          "📁 Projects (product list · CRUD)",
+          "💬 Replies (reply list · customer co-authoring entry)",
+          "📎 Assets (internal posts · GitHub repos)",
+          "📑 Competitor Reports (report downloads)",
+          "📈 Analytics (funnel · click trends · platform distribution)",
+          "💳 Billing & Credits (top-up · invoices · transactions)"
+        ],
+        "icon": "👤"
       },
       {
         "name": "Admin Dashboard /admin",
         "modules": [
-          "Users (user management)",
-          "Projects (global projects)",
-          "Tasks (task monitoring)",
-          "Reply Queue (review · AI rewrite · batch approve)",
-          "Billing (package CRUD · CPA weights · per-user pricing)",
-          "Fraud Monitor (suspicious events · IP blocklist)",
-          "Funnel Analytics (global funnel)",
-          "System Monitor (Cron status · API quotas)",
-          "Partner & Creator Mgmt (lead pool · tasks · settlement)"
-        ]
+          "👥 Users (user management)",
+          "📁 Projects (global projects)",
+          "⚡ Tasks (task monitoring)",
+          "📝 Reply Queue (review · AI rewrite · batch approve)",
+          "💰 Billing (package CRUD · CPA weights · per-user pricing)",
+          "🛡️ Fraud Monitor (suspicious events · IP blocklist)",
+          "📊 Funnel Analytics (global funnel)",
+          "🖥️ System Monitor (Cron status · API quotas)",
+          "🤝 Partner & Creator Mgmt (lead pool · tasks · settlement)"
+        ],
+        "icon": "⚙️"
       },
       {
         "name": "Partner Portal /partner",
         "modules": [
-          "Apply / Onboard (application review)",
-          "Task Center (task list · AI draft · tracking links)",
-          "AI Interactions (AI interaction timeline)",
-          "Earnings (revenue dashboard · tx_hash links)",
-          "Account (Stripe Connect · crypto wallet · KYC)"
-        ]
+          "📋 Apply / Onboard (application review)",
+          "📌 Task Center (task list · AI draft · tracking links)",
+          "🤖 AI Interactions (AI interaction timeline)",
+          "💎 Earnings (revenue dashboard · tx_hash links)",
+          "🔐 Account (Stripe Connect · crypto wallet · KYC)"
+        ],
+        "icon": "🤝"
       }
     ],
     "dataTitle": "Data Source Mapping",
     "dataSources": [
-      { "panel": "User Dashboard", "tables": "projects, tasks, mentions, reply_queue, reply_logs, funnel_events, competitor_reports, user_billing, credit_transactions, bill_periods" },
-      { "panel": "Admin Dashboard", "tables": "All 21 tables + admin_audit_logs + creator_leads + partners + partner_tasks + partner_earnings" },
-      { "panel": "Partner Portal", "tables": "partners, partner_tasks, partner_earnings, creator_leads" }
+      {
+        "panel": "User Dashboard",
+        "tables": "projects, tasks, mentions, reply_queue, reply_logs, funnel_events, competitor_reports, user_billing, credit_transactions, bill_periods",
+        "icon": "👤"
+      },
+      {
+        "panel": "Admin Dashboard",
+        "tables": "All 21 tables + admin_audit_logs + creator_leads + partners + partner_tasks + partner_earnings",
+        "icon": "⚙️"
+      },
+      {
+        "panel": "Partner Portal",
+        "tables": "partners, partner_tasks, partner_earnings, creator_leads",
+        "icon": "🤝"
+      }
     ]
   },
-
   "schedule": {
     "badge": "PRD §5 · TDD D.7–D.8",
     "title": "Scheduling & Operations",
     "subtitle": "Fully automated scheduling · CLI management · quality control configuration.",
     "schedTitle": "Schedule Table",
-    "schedules": [
-      { "task": "Product analysis", "freq": "Instant", "trigger": "projects INSERT Webhook" },
-      { "task": "Reddit scan", "freq": "Daily 02:00", "trigger": "Task queue poll" },
-      { "task": "Twitter/X scan", "freq": "Daily 02:30", "trigger": "Task queue poll" },
-      { "task": "Google PAA", "freq": "Daily 04:00", "trigger": "Task queue poll" },
-      { "task": "HN scan", "freq": "Daily 04:30", "trigger": "Task queue poll" },
-      { "task": "SO scan", "freq": "Daily 05:00", "trigger": "Task queue poll" },
-      { "task": "Pain extraction (Ollama)", "freq": "Daily 06:00", "trigger": "Post-scan cascade" },
-      { "task": "5-axis validation", "freq": "Daily 08:00", "trigger": "mention_count ≥ 5" },
-      { "task": "Reply generation (Ollama)", "freq": "Daily 10:00", "trigger": "reply_queue poll" },
-      { "task": "Reply publishing", "freq": "14:00 / 20:00", "trigger": "Approved queue" },
-      { "task": "YouTube scan", "freq": "Weekly Mon", "trigger": "API quota limited" },
-      { "task": "Amazon scan", "freq": "Weekly Tue", "trigger": "Pay-per-call control" },
-      { "task": "Multilingual (ES/PT/JA/KO/RU)", "freq": "Weekly Thu–Sat", "trigger": "target_languages trigger" },
-      { "task": "PAYG monthly charge", "freq": "Monthly 1st 01:00", "trigger": "Cron" },
-      { "task": "Partner payouts", "freq": "Monthly 1st 02:00", "trigger": "Cron" },
-      { "task": "Funnel rollup", "freq": "Daily 23:00", "trigger": "Cron" },
-      { "task": "Weekly report", "freq": "Sunday 09:00", "trigger": "Cron (Gemini Pro)" }
-    ],
     "cliTitle": "CLI Tools",
     "cliCommands": [
-      { "cmd": "mota.py projects list", "desc": "View all project status" },
-      { "cmd": "mota.py projects analyze --project-id {id}", "desc": "Manual re-analysis" },
-      { "cmd": "mota.py tasks run --project-id {id} --platform reddit", "desc": "Manual scan" },
-      { "cmd": "mota.py replies pending --project-id {id}", "desc": "Pending reviews" },
-      { "cmd": "mota.py replies approve --reply-id {id}", "desc": "Approve reply" },
-      { "cmd": "mota.py replies stats --project-id {id} --days 30", "desc": "Performance stats" }
+      {
+        "cmd": "mota.py projects list",
+        "desc": "View all project status"
+      },
+      {
+        "cmd": "mota.py projects analyze --project-id {id}",
+        "desc": "Manual re-analysis"
+      },
+      {
+        "cmd": "mota.py tasks run --project-id {id} --platform reddit",
+        "desc": "Manual scan"
+      },
+      {
+        "cmd": "mota.py replies pending --project-id {id}",
+        "desc": "Pending reviews"
+      },
+      {
+        "cmd": "mota.py replies approve --reply-id {id}",
+        "desc": "Approve reply"
+      },
+      {
+        "cmd": "mota.py replies stats --project-id {id} --days 30",
+        "desc": "Performance stats"
+      }
+    ],
+    "categories": [
+      {
+        "label": "Instant",
+        "icon": "⚡",
+        "desc": "Event-driven, immediate response",
+        "tasks": [
+          {
+            "task": "Product analysis",
+            "trigger": "projects INSERT Webhook",
+            "icon": "🔍"
+          }
+        ]
+      },
+      {
+        "label": "Monthly",
+        "icon": "📆",
+        "desc": "Billing settlement & partner payouts",
+        "tasks": [
+          {
+            "task": "PAYG monthly charge",
+            "time": "1st 01:00",
+            "trigger": "Cron",
+            "icon": "💰"
+          },
+          {
+            "task": "Partner payouts",
+            "time": "1st 02:00",
+            "trigger": "Cron",
+            "icon": "🤝"
+          }
+        ]
+      },
+      {
+        "label": "Weekly",
+        "icon": "📅",
+        "desc": "Periodic platform scans & reports",
+        "tasks": [
+          {
+            "task": "YouTube scan",
+            "time": "Mon",
+            "trigger": "API quota limited",
+            "icon": "📺"
+          },
+          {
+            "task": "Amazon scan",
+            "time": "Tue",
+            "trigger": "Pay-per-call control",
+            "icon": "🛒"
+          },
+          {
+            "task": "Multilingual (ES/PT/JA/KO/RU)",
+            "time": "Thu–Sat",
+            "trigger": "target_languages trigger",
+            "icon": "🌐"
+          },
+          {
+            "task": "Weekly report",
+            "time": "Sun 09:00",
+            "trigger": "Cron (Gemini Pro)",
+            "icon": "📋"
+          }
+        ]
+      },
+      {
+        "label": "Daily",
+        "icon": "🔄",
+        "desc": "Core pipeline · Scan→Extract→Validate→Reply",
+        "tasks": [
+          {
+            "task": "Reddit scan",
+            "time": "02:00",
+            "trigger": "Task queue poll",
+            "icon": "📱"
+          },
+          {
+            "task": "Twitter/X scan",
+            "time": "02:30",
+            "trigger": "Task queue poll",
+            "icon": "🐦"
+          },
+          {
+            "task": "Google PAA",
+            "time": "04:00",
+            "trigger": "Task queue poll",
+            "icon": "🔎"
+          },
+          {
+            "task": "HN scan",
+            "time": "04:30",
+            "trigger": "Task queue poll",
+            "icon": "📰"
+          },
+          {
+            "task": "SO scan",
+            "time": "05:00",
+            "trigger": "Task queue poll",
+            "icon": "💬"
+          },
+          {
+            "task": "Pain extraction (Ollama)",
+            "time": "06:00",
+            "trigger": "Post-scan cascade",
+            "icon": "🔮"
+          },
+          {
+            "task": "5-axis validation",
+            "time": "08:00",
+            "trigger": "mention_count ≥ 5",
+            "icon": "✅"
+          },
+          {
+            "task": "Reply generation (Ollama)",
+            "time": "10:00",
+            "trigger": "reply_queue poll",
+            "icon": "💬"
+          },
+          {
+            "task": "Reply publishing",
+            "time": "14:00 / 20:00",
+            "trigger": "Approved queue",
+            "icon": "📤"
+          },
+          {
+            "task": "Funnel rollup",
+            "time": "23:00",
+            "trigger": "Cron",
+            "icon": "📊"
+          }
+        ]
+      }
     ]
   },
-
   "i18n": {
     "badge": "PRD §4.11–12 · TDD D.9–D.10",
     "title": "Multilingual & Reports",
     "subtitle": "6-language coverage · native platform skills · automated competitor intelligence pipeline.",
     "langTitle": "Language × Platform Coverage",
     "languages": [
-      { "lang": "English", "code": "en", "platforms": "Reddit, YouTube, Amazon, Quora, Twitter, HN, SO, G2, Trustpilot" },
-      { "lang": "Español", "code": "es", "platforms": "Taringa!, MercadoLibre, ForoCoches" },
-      { "lang": "Português", "code": "pt", "platforms": "Reclame Aqui, Mercado Livre BR" },
-      { "lang": "日本語", "code": "ja", "platforms": "Yahoo! 知恵袋, Kakaku.com, Amazon JP" },
-      { "lang": "한국어", "code": "ko", "platforms": "Naver 지식iN, Naver Cafe, Coupang" },
-      { "lang": "Русский", "code": "ru", "platforms": "VK, Pikabu, Otzovik, Yandex Q" }
+      {
+        "lang": "English",
+        "code": "en",
+        "platforms": "Reddit, YouTube, Amazon, Quora, Twitter, HN, SO, G2, Trustpilot"
+      },
+      {
+        "lang": "Español",
+        "code": "es",
+        "platforms": "Taringa!, MercadoLibre, ForoCoches"
+      },
+      {
+        "lang": "Português",
+        "code": "pt",
+        "platforms": "Reclame Aqui, Mercado Livre BR"
+      },
+      {
+        "lang": "日本語",
+        "code": "ja",
+        "platforms": "Yahoo! 知恵袋, Kakaku.com, Amazon JP"
+      },
+      {
+        "lang": "한국어",
+        "code": "ko",
+        "platforms": "Naver 지식iN, Naver Cafe, Coupang"
+      },
+      {
+        "lang": "Русский",
+        "code": "ru",
+        "platforms": "VK, Pikabu, Otzovik, Yandex Q"
+      }
     ],
     "ollamaTitle": "Ollama Multilingual Model Routing",
     "ollamaModels": [
-      { "lang": "en", "model": "llama3:8b" },
-      { "lang": "ja / ko / zh", "model": "qwen2.5:14b" },
-      { "lang": "es / pt / ru", "model": "Gamma 4:14b" },
-      { "lang": "Reply generation", "model": "Gamma 4:14b (universal)" }
+      {
+        "lang": "en",
+        "model": "llama3:8b"
+      },
+      {
+        "lang": "ja / ko / zh",
+        "model": "qwen2.5:14b"
+      },
+      {
+        "lang": "es / pt / ru",
+        "model": "Gamma 4:14b"
+      },
+      {
+        "lang": "Reply generation",
+        "model": "Gamma 4:14b (universal)"
+      }
     ],
     "reportTitle": "Competitor Intelligence Reports",
     "reportPipeline": [
-      { "step": "Data Aggregation", "desc": "Last 30 days: competitor reviews, pain points, platform distribution" },
-      { "step": "LLM Generation", "desc": "Ollama Gamma 4:14b → Markdown report" },
-      { "step": "Structure Extraction", "desc": "Executive summary + Top 3 pain points + competitor matrix" },
-      { "step": "Export", "desc": "WeasyPrint → PDF download · write to competitor_reports table" }
+      {
+        "step": "Data Aggregation",
+        "desc": "Last 30 days: competitor reviews, pain points, platform distribution",
+        "icon": "📊"
+      },
+      {
+        "step": "LLM Generation",
+        "desc": "Ollama Gamma 4:14b → Markdown report",
+        "icon": "🤖"
+      },
+      {
+        "step": "Structure Extraction",
+        "desc": "Executive summary + Top 3 pain points + competitor matrix",
+        "icon": "🏗️"
+      },
+      {
+        "step": "Export",
+        "desc": "WeasyPrint → PDF download · write to competitor_reports table",
+        "icon": "📄"
+      }
     ],
-    "reportSections": ["Executive Summary", "Top 3 Pain Points", "Market Gap Analysis", "Differentiation Recommendations", "Competitor Comparison Matrix"],
+    "reportSections": [
+      {
+        "icon": "📋",
+        "label": "Executive Summary"
+      },
+      {
+        "icon": "🔥",
+        "label": "Top 3 Pain Points"
+      },
+      {
+        "icon": "🔭",
+        "label": "Market Gap Analysis"
+      },
+      {
+        "icon": "💡",
+        "label": "Differentiation Recommendations"
+      },
+      {
+        "icon": "⚖️",
+        "label": "Competitor Comparison Matrix"
+      }
+    ],
     "stackTitle": "Core Tech Stack",
     "stack": [
-      { "layer": "Database", "tech": "Supabase (PostgreSQL 15) · RLS · Edge Functions" },
-      { "layer": "Backend", "tech": "Python · FastAPI · Celery (task queue)" },
-      { "layer": "AI/LLM", "tech": "Ollama (llama3/qwen2.5/Gamma 4) · Gemini 1.5 Flash/Pro" },
-      { "layer": "Scraping", "tech": "Playwright · PRAW · tweepy · stackapi" },
-      { "layer": "Payments", "tech": "Stripe (Checkout + Connect) · USDT/USDC (4 chains)" },
-      { "layer": "Frontend", "tech": "Next.js · Tailwind CSS · shadcn/ui" },
-      { "layer": "Deployment", "tech": "Cloudflare Pages · Supabase Cloud" }
-    ]
+      {
+        "layer": "Database",
+        "tech": "Supabase (PostgreSQL 15) · RLS · Edge Functions",
+        "icon": "🗄️",
+        "desc": "Supabase is an open-source BaaS platform built on PostgreSQL, offering real-time subscriptions, Row Level Security (RLS) for multi-tenant data isolation, and Edge Functions for serverless compute. It stores all market intelligence data, user info, and billing records.",
+        "url": "https://supabase.com/docs"
+      },
+      {
+        "layer": "Backend",
+        "tech": "Python · FastAPI · Celery (task queue)",
+        "icon": "⚙️",
+        "desc": "FastAPI is a high-performance async Python web framework with built-in OpenAPI docs and type validation. Celery is a distributed task queue for background jobs — crawling, AI analysis, and report generation — with scheduling and retry support.",
+        "url": "https://fastapi.tiangolo.com/"
+      },
+      {
+        "layer": "AI/LLM",
+        "tech": "Ollama (llama3/qwen2.5/Gamma 4) · Gemini 1.5 Flash/Pro",
+        "icon": "🧠",
+        "desc": "Ollama enables local deployment of open-source LLMs (llama3, qwen2.5, Gamma 4) for offline inference and data privacy. Gemini 1.5 Flash/Pro is Google's cloud multimodal AI used for high-quality competitor summaries and sentiment analysis.",
+        "url": "https://ollama.com/"
+      },
+      {
+        "layer": "Scraping",
+        "tech": "Playwright · PRAW · tweepy · stackapi",
+        "icon": "🕷️",
+        "desc": "Playwright is Microsoft's open-source browser automation framework supporting headless Chromium/WebKit/Firefox. PRAW, tweepy, and stackapi connect to Reddit, Twitter(X), and StackOverflow APIs for multi-platform sentiment data collection.",
+        "url": "https://playwright.dev/python/docs/intro"
+      },
+      {
+        "layer": "Payments",
+        "tech": "Stripe (Checkout + Connect) · USDT/USDC (4 chains)",
+        "icon": "💳",
+        "desc": "Stripe Checkout provides hosted payment pages; Connect enables platform payouts and multi-party settlements. USDT/USDC stablecoin payments cover Ethereum, Polygon, BSC, and Tron chains for global payment acceptance.",
+        "url": "https://docs.stripe.com/"
+      },
+      {
+        "layer": "Frontend",
+        "tech": "Next.js · Tailwind CSS · shadcn/ui",
+        "icon": "🖥️",
+        "desc": "Next.js is a full-stack React framework supporting SSR/SSG/ISR rendering strategies and App Router. Tailwind CSS provides atomic utility styling. shadcn/ui is a Radix UI-based component library ensuring consistent design language.",
+        "url": "https://nextjs.org/docs"
+      },
+      {
+        "layer": "Deployment",
+        "tech": "Cloudflare Pages · Supabase Cloud",
+        "icon": "☁️",
+        "desc": "Cloudflare Pages offers global CDN edge deployment with automatic CI/CD and preview environments at ultra-low TTFB. Supabase Cloud hosts the database and Edge Functions with automatic backups, monitoring, and elastic scaling.",
+        "url": "https://developers.cloudflare.com/pages/"
+      }
+    ],
+    "stackZones": {
+      "user": "User Layer",
+      "app": "Application Layer",
+      "data": "Data Layer",
+      "connApi": "API Request",
+      "connData": "Read / Write"
+    }
   }
 }

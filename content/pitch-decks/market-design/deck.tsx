@@ -84,26 +84,26 @@ function MarketDesignDeckInner() {
             <TopControls />
 
             {/* Page content */}
-            <div className="h-full pt-12 lg:pt-0">
+            <div className="h-full pt-14 lg:pt-0">
               <ActiveSection />
             </div>
 
             {/* Bottom page indicator */}
-            <div className="absolute bottom-3 right-4 z-20 flex items-center gap-2">
+            <div className="absolute bottom-4 right-5 z-20 flex items-center gap-3">
               <button
                 onClick={() => goTo(activeIdx - 1)}
                 disabled={activeIdx === 0}
-                className={`w-7 h-7 rounded-full ${t.cardBg} ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-gray-200"} disabled:opacity-20 flex items-center justify-center ${t.body} text-xs transition-all cursor-pointer disabled:cursor-not-allowed`}
+                className={`w-9 h-9 rounded-full ${t.cardBg} ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-[#DBD3ED]"} disabled:opacity-20 flex items-center justify-center ${t.body} text-sm transition-all cursor-pointer disabled:cursor-not-allowed`}
               >
                 ▲
               </button>
-              <span className={`text-[10px] ${t.muted} font-mono tabular-nums min-w-[3rem] text-center`}>
+              <span className={`text-xs ${t.muted} font-mono tabular-nums min-w-[3rem] text-center`}>
                 {activeIdx + 1} / {SECTION_IDS.length}
               </span>
               <button
                 onClick={() => goTo(activeIdx + 1)}
                 disabled={activeIdx >= SECTION_IDS.length - 1}
-                className={`w-7 h-7 rounded-full ${t.cardBg} ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-gray-200"} disabled:opacity-20 flex items-center justify-center ${t.body} text-xs transition-all cursor-pointer disabled:cursor-not-allowed`}
+                className={`w-9 h-9 rounded-full ${t.cardBg} ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-[#DBD3ED]"} disabled:opacity-20 flex items-center justify-center ${t.body} text-sm transition-all cursor-pointer disabled:cursor-not-allowed`}
               >
                 ▼
               </button>

@@ -49,7 +49,7 @@ export const PAGE =
  * Inner content container with max-width and padding.
  */
 export const PAGE_INNER =
-  "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12";
+  "w-[85%] mx-auto py-8 sm:py-12";
 
 /* ─── Theme token maps ─────────────────────────────────────────────────────── */
 export const THEME = {
@@ -83,26 +83,26 @@ export const THEME = {
     divider: "border-white/10",
   },
   light: {
-    bg: "bg-[#F5F6FA]",
-    text: "text-gray-900",
-    sidebarBg: "bg-white",
-    sidebarBorder: "border-gray-200",
-    cardBg: "bg-white",
-    cardBorder: "border-gray-200",
-    heading: "text-gray-900",
-    subheading: "text-gray-500",
-    body: "text-gray-600",
-    muted: "text-gray-400",
-    thText: "text-gray-400",
-    trBorder: "border-gray-100",
-    trHover: "hover:bg-gray-50",
-    navActive: "bg-indigo-50 text-indigo-700",
-    navInactive: "text-gray-500 hover:text-gray-900 hover:bg-gray-100",
-    navLocked: "text-gray-300",
+    bg: "bg-[#EEEBF7]",
+    text: "text-[#1E1536]",
+    sidebarBg: "bg-[#E8E3F3]",
+    sidebarBorder: "border-[#D0C8E4]",
+    cardBg: "bg-[#E2DCF0]",
+    cardBorder: "border-[#D0C8E4]",
+    heading: "text-[#1A1230]",
+    subheading: "text-[#4A3D66]",
+    body: "text-[#37294F]",
+    muted: "text-[#7A6E96]",
+    thText: "text-[#7A6E96]",
+    trBorder: "border-[#D6CEE8]",
+    trHover: "hover:bg-[#DBD3ED]",
+    navActive: "bg-[#D6CBF0] text-[#4A18A8]",
+    navInactive: "text-[#4A3D66] hover:text-[#1A1230] hover:bg-[#DBD3ED]",
+    navLocked: "text-[#B0A7C4]",
     overlay: "bg-black/30",
-    badgeBg: "bg-gray-100",
-    badgeText: "text-gray-500",
-    divider: "border-gray-200",
+    badgeBg: "bg-[#D6CEE8]",
+    badgeText: "text-[#4A3D66]",
+    divider: "border-[#D0C8E4]",
   },
 } as const;
 

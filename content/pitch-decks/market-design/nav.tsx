@@ -53,7 +53,7 @@ export function Sidebar({
       {/* Sidebar panel */}
       <aside
         className={`
-          fixed top-0 left-0 h-full z-50 w-64 ${t.sidebarBg} border-r ${t.sidebarBorder}
+          fixed top-0 left-0 h-full z-50 w-80 ${t.sidebarBg} border-r ${t.sidebarBorder}
           flex flex-col transition-all duration-300 ease-in-out
           lg:translate-x-0 lg:static lg:z-auto
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
@@ -72,12 +72,12 @@ export function Sidebar({
               alt="Mota"
               width={80}
               height={28}
-              className="h-6 w-auto"
+              className="h-8 w-auto"
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).style.display = "none";
               }}
             />
-            <span className={`${t.subheading} text-sm font-semibold`}>
+            <span className={`${t.subheading} text-lg font-semibold`}>
               {c.nav.title}
             </span>
           </a>
@@ -87,7 +87,7 @@ export function Sidebar({
             {c.nav.versions.map((v: { label: string; ver: string }, i: number) => (
               <span
                 key={i}
-                className={`text-[10px] px-1.5 py-0.5 rounded ${t.badgeBg} ${t.badgeText} font-mono`}
+                className={`text-xs px-1.5 py-0.5 rounded ${t.badgeBg} ${t.badgeText} font-mono`}
               >
                 {v.label} {v.ver}
               </span>
@@ -116,7 +116,7 @@ export function Sidebar({
                 }}
                 disabled={isLocked}
                 className={`
-                  w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left text-sm
+                  w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-left text-lg
                   transition-all duration-200 mb-0.5 cursor-pointer
                   ${isActive
                     ? `${t.navActive} font-medium`
@@ -125,7 +125,7 @@ export function Sidebar({
                     : t.navInactive}
                 `}
               >
-                <span className="text-base shrink-0">{meta.icon}</span>
+                <span className="text-xl shrink-0">{meta.icon}</span>
                 <span className="flex-1 truncate">{label}</span>
                 {isLocked && (
                   <svg
@@ -151,7 +151,7 @@ export function Sidebar({
         {/* Footer — login hint */}
         {!isAuth && (
           <div className={`shrink-0 px-4 py-3 border-t ${t.divider}`}>
-            <p className="text-[10px] text-amber-400/60 leading-relaxed">
+            <p className="text-xs text-amber-400/60 leading-relaxed">
               🔒 {c.nav.loginHint}
             </p>
           </div>
@@ -169,25 +169,25 @@ export function TopControls() {
   const isDark = theme === "dark";
 
   return (
-    <div className={`fixed top-2 right-3 z-40 flex items-center gap-1 rounded-full px-1.5 py-1 backdrop-blur-md ${isDark ? "bg-black/30 border border-white/10" : "bg-white/70 border border-gray-200 shadow-sm"}`}>
+    <div className={`fixed top-3 right-4 z-40 flex items-center gap-1.5 rounded-full px-2 py-1.5 backdrop-blur-md ${isDark ? "bg-black/30 border border-white/10" : "bg-[#E8E3F3]/80 border border-[#D0C8E4] shadow-sm"}`}>
       {LOCALES.map((locale) => (
         <button
           key={locale}
           onClick={() => setDeckLocale(locale)}
           className={`
-            px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer
+            px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer
             ${deckLocale === locale
-              ? isDark ? "bg-white/20 text-white" : "bg-gray-800 text-white"
-              : `${t.muted} ${isDark ? "hover:text-white hover:bg-white/10" : "hover:text-gray-700 hover:bg-white/40"}`}
+              ? isDark ? "bg-white/20 text-white" : "bg-[#4A18A8] text-white"
+              : `${t.muted} ${isDark ? "hover:text-white hover:bg-white/10" : "hover:text-[#1A1230] hover:bg-[#DBD3ED]"}`}
           `}
         >
           {LOCALE_LABELS[locale]}
         </button>
       ))}
-      <div className={`w-px h-4 ${isDark ? "bg-white/15" : "bg-gray-300"}`} />
+      <div className={`w-px h-5 ${isDark ? "bg-white/15" : "bg-[#D0C8E4]"}`} />
       <button
         onClick={toggleTheme}
-        className={`w-7 h-7 rounded-full flex items-center justify-center text-sm transition-all duration-200 cursor-pointer ${isDark ? "text-white/60 hover:text-white hover:bg-white/10" : "text-gray-500 hover:text-gray-900 hover:bg-white/40"}`}
+        className={`w-8 h-8 rounded-full flex items-center justify-center text-lg transition-all duration-200 cursor-pointer ${isDark ? "text-white/60 hover:text-white hover:bg-white/10" : "text-[#7A6E96] hover:text-[#1A1230] hover:bg-[#DBD3ED]"}`}
         aria-label="Toggle theme"
       >
         {isDark ? "☀️" : "🌙"}
@@ -206,14 +206,14 @@ export function MobileTopBar({ onToggle }: { onToggle: () => void }) {
   const label = (c.nav.sections as Record<string, string>)[meta?.key] ?? "";
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-30 h-12 ${t.sidebarBg}/95 backdrop-blur-md border-b ${t.divider} flex items-center px-3 gap-3 lg:hidden`}>
+    <header className={`fixed top-0 inset-x-0 z-30 h-14 ${t.sidebarBg}/95 backdrop-blur-md border-b ${t.divider} flex items-center px-4 gap-3 lg:hidden`}>
       <button
         onClick={onToggle}
-        className={`w-8 h-8 flex items-center justify-center rounded-lg ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-gray-200"} transition-colors cursor-pointer`}
+        className={`w-9 h-9 flex items-center justify-center rounded-lg ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-[#DBD3ED]"} transition-colors cursor-pointer`}
         aria-label="Toggle navigation"
       >
         <svg
-          className={`w-5 h-5 ${t.subheading}`}
+          className={`w-6 h-6 ${t.subheading}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -226,10 +226,10 @@ export function MobileTopBar({ onToggle }: { onToggle: () => void }) {
           />
         </svg>
       </button>
-      <span className={`text-sm ${t.subheading} truncate`}>
+      <span className={`text-lg ${t.subheading} truncate`}>
         {meta?.icon} {label}
       </span>
-      <span className={`ml-auto text-[10px] ${t.muted} font-mono mr-24`}>
+      <span className={`ml-auto text-xs ${t.muted} font-mono mr-24`}>
         {activeIdx + 1}/{SECTION_IDS.length}
       </span>
     </header>

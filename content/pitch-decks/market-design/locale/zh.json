@@ -2,9 +2,18 @@
   "nav": {
     "title": "系统设计",
     "versions": [
-      { "label": "PRD", "ver": "v1.2" },
-      { "label": "ERD", "ver": "v0.8" },
-      { "label": "TDD", "ver": "v0.8" }
+      {
+        "label": "PRD",
+        "ver": "v1.3"
+      },
+      {
+        "label": "ERD",
+        "ver": "v0.8"
+      },
+      {
+        "label": "TDD",
+        "ver": "v0.8"
+      }
     ],
     "sections": {
       "cover": "系统概览",
@@ -49,33 +58,100 @@
     "invalidCredentials": "邮箱或密码错误",
     "loginSuccess": "登录成功！"
   },
-
   "cover": {
     "badge": "MOTA Market Intelligence",
     "title": "系统设计文档",
     "subtitle": "AI 驱动的全网痛点捕获 · 自动精准回复 · 按点击计费",
     "docRefs": [
-      { "label": "PRD", "desc": "产品需求文档", "ver": "v1.2", "sections": "§4.0 – §4.12", "hoverDesc": "涵盖产品录入、分析引擎、扫描器、数据挖掘、自动回复、合作伙伴、计费等 13 个模块的完整需求定义", "targetSection": "s-analysis", "clickHint": "跳转到分析引擎" },
-      { "label": "ERD", "desc": "数据库架构文档", "ver": "v0.8", "sections": "21 张表 · 11 Edge Functions", "hoverDesc": "Supabase PostgreSQL 15 上的完整表结构、RLS 策略、Edge Function 及反作弊规则", "targetSection": "s-erd", "clickHint": "跳转到数据库架构" },
-      { "label": "TDD", "desc": "技术设计文档", "ver": "v0.8", "sections": "D.1 – D.10", "hoverDesc": "各模块实现规格：分析引擎、扫描器集群、挖掘匹配、回复 Agent、调度策略、合作伙伴实现等", "targetSection": "s-edge", "clickHint": "跳转到 Edge Functions" }
+      {
+        "label": "PRD",
+        "desc": "产品需求文档",
+        "sections": "§4.0 – §4.12",
+        "hoverDesc": "涵盖产品录入、分析引擎、扫描器、数据挖掘、自动回复、合作伙伴、计费等 13 个模块的完整需求定义",
+        "targetSection": "s-analysis",
+        "clickHint": "跳转到分析引擎"
+      },
+      {
+        "label": "ERD",
+        "desc": "数据库架构文档",
+        "sections": "21 张表 · 11 Edge Functions",
+        "hoverDesc": "Supabase PostgreSQL 15 上的完整表结构、RLS 策略、Edge Function 及反作弊规则",
+        "targetSection": "s-erd",
+        "clickHint": "跳转到数据库架构"
+      },
+      {
+        "label": "TDD",
+        "desc": "技术设计文档",
+        "sections": "D.1 – D.10",
+        "hoverDesc": "各模块实现规格：分析引擎、扫描器集群、挖掘匹配、回复 Agent、调度策略、合作伙伴实现等",
+        "targetSection": "s-edge",
+        "clickHint": "跳转到 Edge Functions"
+      }
     ],
     "pipeline": {
       "title": "四阶段处理管线（Hover 查看详情 · 点击跳转）",
       "stages": [
-        { "icon": "🔍", "label": "分析", "desc": "LLM 推断痛点·关键词·平台", "hoverDesc": "用户提交产品描述 → Ollama/Gamma 4 推断目标受众痛点、生成 20+ 平台搜索关键词、识别竞品", "targetSection": "s-analysis" },
-        { "icon": "📡", "label": "扫描", "desc": "20+ 平台 · 6 种语言 · 24/7", "hoverDesc": "11 类 Scanner 覆盖 Reddit/YouTube/Google/Amazon/Quora/Twitter/HN/SO/App Store/Review Sites + 多语言本土平台", "targetSection": "s-scanners" },
-        { "icon": "🔮", "label": "挖掘", "desc": "痛点提取 · 五轴验证 · 评分", "hoverDesc": "LLM 痛点提取 → 相关性匹配 → 五轴验证（社区真实性·变现潜力·搜索基数·差评印证·技术深度）→ 打分分级", "targetSection": "s-mining" },
-        { "icon": "💬", "label": "回复", "desc": "生成回复 · 审核 · 发布 · 追踪", "hoverDesc": "Ollama 生成有价值回复 + 注入追踪链接 → 人工/自动审核 → 多平台发布 → 点击/转化追踪", "targetSection": "s-reply" }
+        {
+          "icon": "🔍",
+          "label": "分析",
+          "desc": "LLM 推断痛点·关键词·平台",
+          "hoverDesc": "用户提交产品描述 → Ollama/Gamma 4 推断目标受众痛点、生成 20+ 平台搜索关键词、识别竞品",
+          "targetSection": "s-analysis"
+        },
+        {
+          "icon": "📡",
+          "label": "扫描",
+          "desc": "20+ 平台 · 6 种语言 · 24/7",
+          "hoverDesc": "11 类 Scanner 覆盖 Reddit/YouTube/Google/Amazon/Quora/Twitter/HN/SO/App Store/Review Sites + 多语言本土平台",
+          "targetSection": "s-scanners"
+        },
+        {
+          "icon": "🔮",
+          "label": "挖掘",
+          "desc": "痛点提取 · 五轴验证 · 评分",
+          "hoverDesc": "LLM 痛点提取 → 相关性匹配 → 五轴验证（社区真实性·变现潜力·搜索基数·差评印证·技术深度）→ 打分分级",
+          "targetSection": "s-mining"
+        },
+        {
+          "icon": "💬",
+          "label": "回复",
+          "desc": "生成回复 · 审核 · 发布 · 追踪",
+          "hoverDesc": "Ollama 生成有价值回复 + 注入追踪链接 → 人工/自动审核 → 多平台发布 → 点击/转化追踪",
+          "targetSection": "s-reply"
+        }
       ]
     },
     "metrics": [
-      { "value": "20+", "label": "覆盖平台", "hoverDesc": "英语主流平台 + 西/葡/日/韩/俄本土平台全覆盖", "targetSection": "s-scanners" },
-      { "value": "6", "label": "支持语言", "hoverDesc": "英语、西班牙语、葡萄牙语、日语、韩语、俄语", "targetSection": "s-i18n" },
-      { "value": "21", "label": "数据表", "hoverDesc": "核心业务表 + 回复追踪 + 计费 + 审计 + 引流 + 合作伙伴 共 6 组", "targetSection": "s-erd" },
-      { "value": "11", "label": "Edge Functions", "hoverDesc": "覆盖项目分析、回复发布、计费扣减、合作伙伴分成等关键后端逻辑", "targetSection": "s-edge" }
+      {
+        "icon": "📡",
+        "value": "20+",
+        "label": "覆盖平台",
+        "hoverDesc": "英语主流平台 + 西/葡/日/韩/俄本土平台全覆盖",
+        "targetSection": "s-scanners"
+      },
+      {
+        "icon": "🌍",
+        "value": "6",
+        "label": "支持语言",
+        "hoverDesc": "英语、西班牙语、葡萄牙语、日语、韩语、俄语",
+        "targetSection": "s-i18n"
+      },
+      {
+        "icon": "🗄️",
+        "value": "21",
+        "label": "数据表",
+        "hoverDesc": "核心业务表 + 回复追踪 + 计费 + 审计 + 引流 + 合作伙伴 共 6 组",
+        "targetSection": "s-erd"
+      },
+      {
+        "icon": "⚡",
+        "value": "11",
+        "label": "Edge Functions",
+        "hoverDesc": "覆盖项目分析、回复发布、计费扣减、合作伙伴分成等关键后端逻辑",
+        "targetSection": "s-edge"
+      }
     ]
   },
-
   "background": {
     "badge": "PRD §1 · 项目背景",
     "title": "项目背景与目标",
@@ -100,130 +176,476 @@
     },
     "workflowTitle": "五步闭环工作流（Hover 查看详情）",
     "workflow": [
-      { "step": "1", "icon": "📝", "label": "录入产品", "brief": "名称 + 介绍 + URL", "detail": "客户在用户后台提供产品名称、介绍文案、产品 URL 和目标市场语言，系统自动创建项目" },
-      { "step": "2", "icon": "🤖", "label": "AI 分析", "brief": "LLM 推断痛点与关键词", "detail": "Ollama/Gamma 4 分析产品 → 推断目标受众痛点 → 生成多平台搜索关键词 → 创建 tasks 入队" },
-      { "step": "3", "icon": "📡", "label": "全网扫描", "brief": "20+ 平台持续发现", "detail": "Scanner Agent 集群 24/7 扫描 Reddit/YouTube/Google/Amazon/Quora/Twitter 等 20+ 平台，发现正在讨论相关问题的真实帖子" },
-      { "step": "4", "icon": "💬", "label": "生成回复", "brief": "有价值内容 + 追踪链接", "detail": "AI 生成有价值的回复内容 + 注入追踪链接（mota_pid + mota_ref + UTM），可选人工审核后发布" },
-      { "step": "5", "icon": "📊", "label": "追踪计费", "brief": "按点击/转化付费", "detail": "追踪链接点击 → funnel_events 写入 → Prepaid 实时扣 Credit / PAYG 月末结算 → 管理员可调整账单" }
+      {
+        "step": "1",
+        "icon": "📝",
+        "label": "录入产品",
+        "brief": "名称 + 介绍 + URL",
+        "detail": "客户在用户后台提供产品名称、介绍文案、产品 URL 和目标市场语言，系统自动创建项目"
+      },
+      {
+        "step": "2",
+        "icon": "🤖",
+        "label": "AI 分析",
+        "brief": "LLM 推断痛点与关键词",
+        "detail": "Ollama/Gamma 4 分析产品 → 推断目标受众痛点 → 生成多平台搜索关键词 → 创建 tasks 入队"
+      },
+      {
+        "step": "3",
+        "icon": "📡",
+        "label": "全网扫描",
+        "brief": "20+ 平台持续发现",
+        "detail": "Scanner Agent 集群 24/7 扫描 Reddit/YouTube/Google/Amazon/Quora/Twitter 等 20+ 平台，发现正在讨论相关问题的真实帖子"
+      },
+      {
+        "step": "4",
+        "icon": "💬",
+        "label": "生成回复",
+        "brief": "有价值内容 + 追踪链接",
+        "detail": "AI 生成有价值的回复内容 + 注入追踪链接（mota_pid + mota_ref + UTM），可选人工审核后发布"
+      },
+      {
+        "step": "5",
+        "icon": "📊",
+        "label": "追踪计费",
+        "brief": "按点击/转化付费",
+        "detail": "追踪链接点击 → funnel_events 写入 → Prepaid 实时扣 Credit / PAYG 月末结算 → 管理员可调整账单"
+      }
     ],
     "goalsTitle": "业务目标（Hover 查看详情）",
     "goals": [
-      { "icon": "🎯", "title": "产品优先", "desc": "以客户产品/服务为起点，系统反向推导目标受众痛点特征，无需客户自行撰写调研 Prompt。", "details": ["用户只需填写产品名称、介绍和 URL", "LLM 自动推断域标签、痛点、竞品、关键词", "生成的 tasks 覆盖全平台查询词"] },
-      { "icon": "🌍", "title": "全平台覆盖", "desc": "英语主流平台 + 西/葡/日/韩/俄本土平台，覆盖全球主要市场。", "details": ["11 类 Scanner 覆盖 20+ 平台", "Ollama 多语言模型支持 6 种语言", "本土平台：Taringa!/Reclame Aqui/知恵袋/지식iN/Pikabu 等"] },
-      { "icon": "✨", "title": "真实价值回复", "desc": "AI 回复必须包含真正有用的内容，产品链接作为自然延伸，避免封号风险。", "details": ["Prompt 规则：禁止直接广告语气", "质量评分 ≥ 阈值才自动发布", "伪装检测 + 人工审核兜底"] },
-      { "icon": "💰", "title": "按效果计费", "desc": "按实际回复发布的点击/转化计费，管理员可对账单进行折扣调整。", "details": ["Prepaid：预充 Credits 实时扣减", "PAYG：按月累计 Stripe 扣卡", "CPA：深度转化按权重叠加"] },
-      { "icon": "🏗️", "title": "三端分层", "desc": "Portal（官网展示）、User Dashboard（项目管理+账单）、Admin Dashboard（全局运营）。", "details": ["Portal：SSR/SSG + SEO + 注册入口", "用户后台：Next.js + Recharts", "管理后台：Tanstack Table + 全局权限"] }
+      {
+        "icon": "🎯",
+        "title": "产品优先",
+        "desc": "以客户产品/服务为起点，系统反向推导目标受众痛点特征，无需客户自行撰写调研 Prompt。",
+        "details": [
+          "用户只需填写产品名称、介绍和 URL",
+          "LLM 自动推断域标签、痛点、竞品、关键词",
+          "生成的 tasks 覆盖全平台查询词"
+        ]
+      },
+      {
+        "icon": "🌍",
+        "title": "全平台覆盖",
+        "desc": "英语主流平台 + 西/葡/日/韩/俄本土平台，覆盖全球主要市场。",
+        "details": [
+          "11 类 Scanner 覆盖 20+ 平台",
+          "Ollama 多语言模型支持 6 种语言",
+          "本土平台：Taringa!/Reclame Aqui/知恵袋/지식iN/Pikabu 等"
+        ]
+      },
+      {
+        "icon": "✨",
+        "title": "真实价值回复",
+        "desc": "AI 回复必须包含真正有用的内容，产品链接作为自然延伸，避免封号风险。",
+        "details": [
+          "Prompt 规则：禁止直接广告语气",
+          "质量评分 ≥ 阈值才自动发布",
+          "伪装检测 + 人工审核兜底"
+        ]
+      },
+      {
+        "icon": "💰",
+        "title": "按效果计费",
+        "desc": "按实际回复发布的点击/转化计费，管理员可对账单进行折扣调整。",
+        "details": [
+          "Prepaid：预充 Credits 实时扣减",
+          "PAYG：按月累计 Stripe 扣卡",
+          "CPA：深度转化按权重叠加"
+        ]
+      },
+      {
+        "icon": "🏗️",
+        "title": "三端分层",
+        "desc": "Portal（官网展示）、User Dashboard（项目管理+账单）、Admin Dashboard（全局运营）。",
+        "details": [
+          "Portal：SSR/SSG + SEO + 注册入口",
+          "用户后台：Next.js + Recharts",
+          "管理后台：Tanstack Table + 全局权限"
+        ]
+      }
     ],
     "methodTitle": "8 大信号捕获方法论（Hover 查看详情）",
     "methods": [
-      { "id": "M1", "icon": "😤", "name": "负向搜索法", "platforms": "Reddit · Google · Twitter", "detail": "找「挫败感」语气的帖子：用户已尝试通用方案但未解决，正处于寻找替代品的最佳时机" },
-      { "id": "M2", "icon": "❓", "name": "社区问答雷达", "platforms": "Reddit · Quora · HN", "detail": "抓取未被解答或解答质量差的提问，产品可成为更好答案" },
-      { "id": "M3", "icon": "🎥", "name": "视频评论挖掘", "platforms": "YouTube", "detail": "同类产品教程评论区是天然的「哪里不够好」数据库" },
-      { "id": "M4", "icon": "⭐", "name": "差评反向定位", "platforms": "Amazon · App Store · G2", "detail": "竞品差评 = 我方产品的潜在目标用户" },
-      { "id": "M5", "icon": "⚡", "name": "实时舆情", "platforms": "Twitter/X", "detail": "监控关键词实时抱怨，第一时间介入" },
-      { "id": "M6", "icon": "🔧", "name": "技术问答", "platforms": "Stack Overflow · SE", "detail": "高浏览未解答的技术问题，适合工具类产品" },
-      { "id": "M7", "icon": "🔗", "name": "跨源验证", "platforms": "多平台交叉", "detail": "同一问题在多个平台出现 → 信号更强，匹配度更高" },
-      { "id": "M8", "icon": "🌐", "name": "多语言本土", "platforms": "Taringa! · Reclame Aqui · 知恵袋 等", "detail": "覆盖西/葡/日/韩/俄本土社区，拓展获客地域边界" }
+      {
+        "id": "M1",
+        "icon": "😤",
+        "name": "负向搜索法",
+        "platforms": "Reddit · Google · Twitter",
+        "detail": "找「挫败感」语气的帖子：用户已尝试通用方案但未解决，正处于寻找替代品的最佳时机"
+      },
+      {
+        "id": "M2",
+        "icon": "❓",
+        "name": "社区问答雷达",
+        "platforms": "Reddit · Quora · HN",
+        "detail": "抓取未被解答或解答质量差的提问，产品可成为更好答案"
+      },
+      {
+        "id": "M3",
+        "icon": "🎥",
+        "name": "视频评论挖掘",
+        "platforms": "YouTube",
+        "detail": "同类产品教程评论区是天然的「哪里不够好」数据库"
+      },
+      {
+        "id": "M4",
+        "icon": "⭐",
+        "name": "差评反向定位",
+        "platforms": "Amazon · App Store · G2",
+        "detail": "竞品差评 = 我方产品的潜在目标用户"
+      },
+      {
+        "id": "M5",
+        "icon": "⚡",
+        "name": "实时舆情",
+        "platforms": "Twitter/X",
+        "detail": "监控关键词实时抱怨，第一时间介入"
+      },
+      {
+        "id": "M6",
+        "icon": "🔧",
+        "name": "技术问答",
+        "platforms": "Stack Overflow · SE",
+        "detail": "高浏览未解答的技术问题，适合工具类产品"
+      },
+      {
+        "id": "M7",
+        "icon": "🔗",
+        "name": "跨源验证",
+        "platforms": "多平台交叉",
+        "detail": "同一问题在多个平台出现 → 信号更强，匹配度更高"
+      },
+      {
+        "id": "M8",
+        "icon": "🌐",
+        "name": "多语言本土",
+        "platforms": "Taringa! · Reclame Aqui · 知恵袋 等",
+        "detail": "覆盖西/葡/日/韩/俄本土社区，拓展获客地域边界"
+      }
     ]
   },
-
   "analysis": {
     "badge": "PRD §4.1 · TDD D.1",
     "title": "产品分析引擎",
     "subtitle": "用户提交产品描述后，LLM 自动推断目标受众痛点、搜索关键词、目标平台。",
     "promptTitle": "LLM 分析 Prompt 核心输出字段",
     "promptFields": [
-      { "field": "domain_tags", "type": "string[]", "desc": "最多 3 个领域标签" },
-      { "field": "target_audience_pain", "type": "string", "desc": "核心痛点一句话" },
-      { "field": "inferred_competitors", "type": "string[]", "desc": "推断竞品列表" },
-      { "field": "keywords", "type": "string[]", "desc": "5–10 个搜索关键词" },
-      { "field": "subreddits", "type": "string[]", "desc": "5–15 个目标 Subreddit" },
-      { "field": "youtube_queries", "type": "string[]", "desc": "YouTube 搜索语句" },
-      { "field": "google_seeds", "type": "string[]", "desc": "Google PAA 种子词" },
-      { "field": "amazon_queries", "type": "string[]", "desc": "Amazon 搜索词" },
-      { "field": "twitter_keywords", "type": "string[]", "desc": "Twitter 监控话题" },
-      { "field": "multilingual_queries", "type": "object", "desc": "各语言本土平台查询词" }
+      {
+        "field": "domain_tags",
+        "type": "string[]",
+        "desc": "最多 3 个领域标签"
+      },
+      {
+        "field": "target_audience_pain",
+        "type": "string",
+        "desc": "核心痛点一句话"
+      },
+      {
+        "field": "inferred_competitors",
+        "type": "string[]",
+        "desc": "推断竞品列表"
+      },
+      {
+        "field": "keywords",
+        "type": "string[]",
+        "desc": "5–10 个搜索关键词"
+      },
+      {
+        "field": "subreddits",
+        "type": "string[]",
+        "desc": "5–15 个目标 Subreddit"
+      },
+      {
+        "field": "youtube_queries",
+        "type": "string[]",
+        "desc": "YouTube 搜索语句"
+      },
+      {
+        "field": "google_seeds",
+        "type": "string[]",
+        "desc": "Google PAA 种子词"
+      },
+      {
+        "field": "amazon_queries",
+        "type": "string[]",
+        "desc": "Amazon 搜索词"
+      },
+      {
+        "field": "twitter_keywords",
+        "type": "string[]",
+        "desc": "Twitter 监控话题"
+      },
+      {
+        "field": "multilingual_queries",
+        "type": "object",
+        "desc": "各语言本土平台查询词"
+      }
     ],
     "taskTitle": "tasks 表核心字段",
     "taskFields": [
-      { "field": "task_id / project_id", "desc": "关联项目" },
-      { "field": "target_audience_pain", "desc": "受众核心痛点" },
-      { "field": "domain_tags", "desc": "领域标签（用于匹配合作伙伴）" },
-      { "field": "keywords → subreddits → youtube_queries → ...", "desc": "各平台搜索参数" },
-      { "field": "multilingual_queries", "desc": "非英语本土查询 (ja/ko/es/pt/ru)" },
-      { "field": "status", "desc": "queued → scanning → completed → failed" }
+      {
+        "field": "task_id / project_id",
+        "desc": "关联项目"
+      },
+      {
+        "field": "target_audience_pain",
+        "desc": "受众核心痛点"
+      },
+      {
+        "field": "domain_tags",
+        "desc": "领域标签（用于匹配合作伙伴）"
+      },
+      {
+        "field": "keywords → subreddits → youtube_queries → ...",
+        "desc": "各平台搜索参数"
+      },
+      {
+        "field": "multilingual_queries",
+        "desc": "非英语本土查询 (ja/ko/es/pt/ru)"
+      },
+      {
+        "field": "status",
+        "desc": "queued → scanning → completed → failed"
+      }
     ],
     "triggerNote": "触发：projects INSERT → on_project_created Edge Function"
   },
-
   "scanners": {
     "badge": "PRD §4.2–§4.3 · TDD D.2–D.3",
     "title": "扫描 Agent & 平台 Skills",
     "subtitle": "10+ 平台扫描器 + 10+ 平台技能接口，覆盖英语及 5 种本土语言社区。",
     "scannersTitle": "扫描器矩阵",
     "scanners": [
-      { "platform": "Reddit", "method": "PRAW / Pushshift", "freq": "每日 02:00", "rateLimit": "3–8s 间隔 · 50次/板/日" },
-      { "platform": "YouTube", "method": "Data API v3", "freq": "每周一 03:00", "rateLimit": "10,000 units/日" },
-      { "platform": "Google PAA", "method": "SerpAPI / Serper.dev", "freq": "每日 04:00", "rateLimit": "24h 缓存" },
-      { "platform": "Amazon", "method": "Rainforest API", "freq": "每周二 03:00", "rateLimit": "≤100次/日" },
-      { "platform": "Quora", "method": "Playwright 无头浏览器", "freq": "每周三 03:00", "rateLimit": "8–20s 间隔" },
-      { "platform": "Twitter/X", "method": "API v2 (tweepy)", "freq": "每日 02:30", "rateLimit": "10,000 读/月" },
-      { "platform": "App Store", "method": "app-store-scraper", "freq": "每两周", "rateLimit": "3–10s 间隔" },
-      { "platform": "Google Play", "method": "google-play-scraper", "freq": "每两周", "rateLimit": "3–10s 间隔" },
-      { "platform": "Hacker News", "method": "Algolia API", "freq": "每日 04:30", "rateLimit": "免费无限制" },
-      { "platform": "Stack Overflow", "method": "Stack Exchange API", "freq": "每日 05:00", "rateLimit": "10,000次/日" },
-      { "platform": "Trustpilot/G2", "method": "Playwright + 随机UA", "freq": "每两周", "rateLimit": "10–30s 间隔" }
+      {
+        "platform": "Reddit",
+        "method": "PRAW / Pushshift",
+        "freq": "每日 02:00",
+        "rateLimit": "3–8s 间隔 · 50次/板/日"
+      },
+      {
+        "platform": "YouTube",
+        "method": "Data API v3",
+        "freq": "每周一 03:00",
+        "rateLimit": "10,000 units/日"
+      },
+      {
+        "platform": "Google PAA",
+        "method": "SerpAPI / Serper.dev",
+        "freq": "每日 04:00",
+        "rateLimit": "24h 缓存"
+      },
+      {
+        "platform": "Amazon",
+        "method": "Rainforest API",
+        "freq": "每周二 03:00",
+        "rateLimit": "≤100次/日"
+      },
+      {
+        "platform": "Quora",
+        "method": "Playwright 无头浏览器",
+        "freq": "每周三 03:00",
+        "rateLimit": "8–20s 间隔"
+      },
+      {
+        "platform": "Twitter/X",
+        "method": "API v2 (tweepy)",
+        "freq": "每日 02:30",
+        "rateLimit": "10,000 读/月"
+      },
+      {
+        "platform": "App Store",
+        "method": "app-store-scraper",
+        "freq": "每两周",
+        "rateLimit": "3–10s 间隔"
+      },
+      {
+        "platform": "Google Play",
+        "method": "google-play-scraper",
+        "freq": "每两周",
+        "rateLimit": "3–10s 间隔"
+      },
+      {
+        "platform": "Hacker News",
+        "method": "Algolia API",
+        "freq": "每日 04:30",
+        "rateLimit": "免费无限制"
+      },
+      {
+        "platform": "Stack Overflow",
+        "method": "Stack Exchange API",
+        "freq": "每日 05:00",
+        "rateLimit": "10,000次/日"
+      },
+      {
+        "platform": "Trustpilot/G2",
+        "method": "Playwright + 随机UA",
+        "freq": "每两周",
+        "rateLimit": "10–30s 间隔"
+      }
     ],
     "skillsTitle": "平台 Skills 接口",
     "skills": [
-      { "skill": "RedditSearchSkill", "input": "关键词 · Subreddit · 时间范围", "output": "帖子 + 元数据" },
-      { "skill": "YouTubeCommentSkill", "input": "视频 ID", "output": "评论列表 + 挫败感标记" },
-      { "skill": "AmazonReviewsSkill", "input": "ASIN · 星级过滤", "output": "1–3 星评论" },
-      { "skill": "QuoraScraperSkill", "input": "关键词 · 页数", "output": "高关注低回答问题" },
-      { "skill": "TwitterSearchSkill", "input": "关键词 · 语言", "output": "负向情绪推文" },
-      { "skill": "HNSearchSkill", "input": "关键词 · 类型", "output": "未解决帖子" },
-      { "skill": "SOSearchSkill", "input": "关键词 · 标签", "output": "无答案问题" }
+      {
+        "skill": "RedditSearchSkill",
+        "input": "关键词 · Subreddit · 时间范围",
+        "output": "帖子 + 元数据"
+      },
+      {
+        "skill": "YouTubeCommentSkill",
+        "input": "视频 ID",
+        "output": "评论列表 + 挫败感标记"
+      },
+      {
+        "skill": "AmazonReviewsSkill",
+        "input": "ASIN · 星级过滤",
+        "output": "1–3 星评论"
+      },
+      {
+        "skill": "QuoraScraperSkill",
+        "input": "关键词 · 页数",
+        "output": "高关注低回答问题"
+      },
+      {
+        "skill": "TwitterSearchSkill",
+        "input": "关键词 · 语言",
+        "output": "负向情绪推文"
+      },
+      {
+        "skill": "HNSearchSkill",
+        "input": "关键词 · 类型",
+        "output": "未解决帖子"
+      },
+      {
+        "skill": "SOSearchSkill",
+        "input": "关键词 · 标签",
+        "output": "无答案问题"
+      }
     ],
     "filterTitle": "过滤信号关键词",
-    "filterKeywords": ["not working", "broken", "frustrated", "useless", "waste of money", "returned it", "doesn't work"]
+    "filterKeywords": [
+      "not working",
+      "broken",
+      "frustrated",
+      "useless",
+      "waste of money",
+      "returned it",
+      "doesn't work"
+    ]
   },
-
   "mining": {
     "badge": "PRD §4.4 · TDD D.4",
     "title": "数据挖掘引擎",
     "subtitle": "四阶段管线：批量分类 → 痛点提取 → 聚合去重 → 五轴验证。",
     "llmTitle": "LLM 分层策略",
     "llmStrategy": [
-      { "task": "批量评论分类", "model": "Ollama (llama3 / Gamma 4)", "reason": "量大、本地零成本" },
-      { "task": "痛点提取与摘要", "model": "Ollama → Gemini Flash fallback", "reason": "平衡质量与成本" },
-      { "task": "三点验证分析", "model": "Gemini 1.5 Flash", "reason": "跨源推理，质量要求高" },
-      { "task": "最终商机报告", "model": "Gemini 1.5 Pro", "reason": "仅手动触发，质量最优" }
+      {
+        "task": "批量评论分类",
+        "model": "Ollama (llama3 / Gamma 4)",
+        "reason": "量大、本地零成本"
+      },
+      {
+        "task": "痛点提取与摘要",
+        "model": "Ollama → Gemini Flash fallback",
+        "reason": "平衡质量与成本"
+      },
+      {
+        "task": "三点验证分析",
+        "model": "Gemini 1.5 Flash",
+        "reason": "跨源推理，质量要求高"
+      },
+      {
+        "task": "最终商机报告",
+        "model": "Gemini 1.5 Pro",
+        "reason": "仅手动触发，质量最优"
+      }
     ],
     "pipelineTitle": "处理流程",
     "pipeline": [
-      { "step": "1", "label": "Ollama 批量分类", "desc": "过滤含挫败感语气的内容（二分类）" },
-      { "step": "2", "label": "Ollama 痛点提取", "desc": "提取：问题场景 + 失败原因 + 临时方案" },
-      { "step": "3", "label": "Gemini Flash 聚合", "desc": "合并相似痛点，计算提及频次" },
-      { "step": "4", "label": "写入 Supabase", "desc": "结构化 JSON → pain_points 表" }
+      {
+        "step": "1",
+        "label": "Ollama 批量分类",
+        "desc": "过滤含挫败感语气的内容（二分类）"
+      },
+      {
+        "step": "2",
+        "label": "Ollama 痛点提取",
+        "desc": "提取：问题场景 + 失败原因 + 临时方案"
+      },
+      {
+        "step": "3",
+        "label": "Gemini Flash 聚合",
+        "desc": "合并相似痛点，计算提及频次"
+      },
+      {
+        "step": "4",
+        "label": "写入 Supabase",
+        "desc": "结构化 JSON → pain_points 表"
+      }
     ],
     "validationTitle": "五轴验证评分（满分 10 分）",
     "axes": [
-      { "axis": "A", "name": "提及频次", "max": 2 },
-      { "axis": "B", "name": "跨平台确认", "max": 2 },
-      { "axis": "C", "name": "情绪强度", "max": 2 },
-      { "axis": "D", "name": "时效性", "max": 2 },
-      { "axis": "E", "name": "竞争空白", "max": 2 }
+      {
+        "axis": "A",
+        "name": "提及频次",
+        "max": 2
+      },
+      {
+        "axis": "B",
+        "name": "跨平台确认",
+        "max": 2
+      },
+      {
+        "axis": "C",
+        "name": "情绪强度",
+        "max": 2
+      },
+      {
+        "axis": "D",
+        "name": "时效性",
+        "max": 2
+      },
+      {
+        "axis": "E",
+        "name": "竞争空白",
+        "max": 2
+      }
     ],
     "verdictTitle": "评分判定",
     "verdicts": [
-      { "range": "9–10", "icon": "🔴", "verdict": "Gold Mine", "action": "立即行动" },
-      { "range": "6–8", "icon": "🟡", "verdict": "Potential", "action": "持续追踪" },
-      { "range": "0–5", "icon": "⚪", "verdict": "Low Priority", "action": "归档" }
+      {
+        "range": "9–10",
+        "icon": "🔴",
+        "verdict": "Gold Mine",
+        "action": "立即行动"
+      },
+      {
+        "range": "6–8",
+        "icon": "🟡",
+        "verdict": "Potential",
+        "action": "持续追踪"
+      },
+      {
+        "range": "0–5",
+        "icon": "⚪",
+        "verdict": "Low Priority",
+        "action": "归档"
+      }
     ],
     "outputTitle": "pain_points 输出字段",
-    "outputFields": ["pain_point_id", "task_id", "title", "description", "domain_tags", "source_platform", "mention_count", "sample_quotes", "source_urls", "status"]
+    "outputFields": [
+      "pain_point_id",
+      "task_id",
+      "title",
+      "description",
+      "domain_tags",
+      "source_platform",
+      "mention_count",
+      "sample_quotes",
+      "source_urls",
+      "status"
+    ]
   },
-
   "reply": {
     "badge": "PRD §4.6 · TDD D.6",
     "title": "自动回复 Agent",
@@ -237,46 +659,125 @@
     ],
     "channelsTitle": "四种发布渠道",
     "channels": [
-      { "icon": "💬", "name": "直接回复", "desc": "YouTube、Twitter、Reddit 等平台直接发布 AI 回复", "ref": "§4.6.1–6" },
-      { "icon": "🔗", "name": "GitHub 跳板", "desc": "为 HN/SO 等禁推广平台创建 GitHub 仓库，README 嵌入追踪链接", "ref": "§4.6.8" },
-      { "icon": "📝", "name": "站内帖", "desc": "在限制外链的平台发布独立解决方案帖，间接导流", "ref": "§4.6.7" },
-      { "icon": "🤝", "name": "客户协同", "desc": "客户补充上下文 → AI 生成草稿 → 编辑 → 代发或手动发布", "ref": "§4.6.10" }
+      {
+        "icon": "💬",
+        "name": "直接回复",
+        "desc": "YouTube、Twitter、Reddit 等平台直接发布 AI 回复",
+        "ref": "§4.6.1–6"
+      },
+      {
+        "icon": "🔗",
+        "name": "GitHub 跳板",
+        "desc": "为 HN/SO 等禁推广平台创建 GitHub 仓库，README 嵌入追踪链接",
+        "ref": "§4.6.8"
+      },
+      {
+        "icon": "📝",
+        "name": "站内帖",
+        "desc": "在限制外链的平台发布独立解决方案帖，间接导流",
+        "ref": "§4.6.7"
+      },
+      {
+        "icon": "🤝",
+        "name": "客户协同",
+        "desc": "客户补充上下文 → AI 生成草稿 → 编辑 → 代发或手动发布",
+        "ref": "§4.6.10"
+      }
     ],
     "qualityTitle": "质量控制",
     "quality": [
-      { "metric": "min_quality_score", "value": "0.6", "desc": "低于此分强制人工审核" },
-      { "metric": "auto_approve_score", "value": "0.85", "desc": "高于此分自动批准" },
-      { "metric": "每账号每日上限", "value": "5 条", "desc": "模拟真人行为模式" },
-      { "metric": "发布时段", "value": "14:00 / 20:00 UTC", "desc": "错峰发布" }
+      {
+        "metric": "min_quality_score",
+        "value": "0.6",
+        "desc": "低于此分强制人工审核"
+      },
+      {
+        "metric": "auto_approve_score",
+        "value": "0.85",
+        "desc": "高于此分自动批准"
+      },
+      {
+        "metric": "每账号每日上限",
+        "value": "5 条",
+        "desc": "模拟真人行为模式"
+      },
+      {
+        "metric": "发布时段",
+        "value": "14:00 / 20:00 UTC",
+        "desc": "错峰发布"
+      }
     ]
   },
-
   "partner": {
     "badge": "PRD §4.6.11–12 · TDD D.6.6",
     "title": "合作伙伴生态",
     "subtitle": "招募平台用户 & 达人，AI 全程驱动协作，按点击计费分成。真正意义上的 AI 雇佣人类。",
     "programsTitle": "双轨计划对比",
     "programs": [
-      { "name": "合作伙伴计划 §4.6.11", "target": "平台自身用户", "flow": "申请 → 审核 → 分配任务 → 按点击分成", "tiers": "Bronze $0.02 / Silver $0.04 / Gold $0.08" },
-      { "name": "达人共创计划 §4.6.12", "target": "各平台达人/KOL", "flow": "AI 发现 → AI 邀请 → 创意简报 → 达人创作 → AI 结算", "tiers": "Creator $0.06 / Elite $0.12" }
+      {
+        "name": "合作伙伴计划 §4.6.11",
+        "target": "平台自身用户",
+        "flow": "申请 → 审核 → 分配任务 → 按点击分成",
+        "tiers": "Bronze $0.02 / Silver $0.04 / Gold $0.08"
+      },
+      {
+        "name": "达人共创计划 §4.6.12",
+        "target": "各平台达人/KOL",
+        "flow": "AI 发现 → AI 邀请 → 创意简报 → 达人创作 → AI 结算",
+        "tiers": "Creator $0.06 / Elite $0.12"
+      }
     ],
     "aiTitle": "AI 全程驱动 · 7 阶段自动化",
     "aiStages": [
-      { "stage": "1", "label": "发现", "desc": "扫描平台识别高影响力用户, 写入 creator_leads" },
-      { "stage": "2", "label": "邀请", "desc": "AI 生成个性化邀请消息, DM 发送" },
-      { "stage": "3", "label": "下发", "desc": "自动生成 Creative Brief + 回复草稿" },
-      { "stage": "4", "label": "跟进", "desc": "48h 未响应自动发送 Follow-up" },
-      { "stage": "5", "label": "合规", "desc": "AI 扫描最终内容, 自动审核" },
-      { "stage": "6", "label": "结算", "desc": "Stripe Connect 或 USDT/USDC 打款" },
-      { "stage": "7", "label": "预警", "desc": "异常点击模式自动标记暂停" }
+      {
+        "stage": "1",
+        "label": "发现",
+        "desc": "扫描平台识别高影响力用户, 写入 creator_leads"
+      },
+      {
+        "stage": "2",
+        "label": "邀请",
+        "desc": "AI 生成个性化邀请消息, DM 发送"
+      },
+      {
+        "stage": "3",
+        "label": "下发",
+        "desc": "自动生成 Creative Brief + 回复草稿"
+      },
+      {
+        "stage": "4",
+        "label": "跟进",
+        "desc": "48h 未响应自动发送 Follow-up"
+      },
+      {
+        "stage": "5",
+        "label": "合规",
+        "desc": "AI 扫描最终内容, 自动审核"
+      },
+      {
+        "stage": "6",
+        "label": "结算",
+        "desc": "Stripe Connect 或 USDT/USDC 打款"
+      },
+      {
+        "stage": "7",
+        "label": "预警",
+        "desc": "异常点击模式自动标记暂停"
+      }
     ],
     "paymentTitle": "多路径结算",
     "payments": [
-      { "method": "Stripe Connect", "desc": "法币直接转账 · 月底 Cron · $10 最低打款" },
-      { "method": "USDT / USDC", "chains": "Ethereum (ERC-20) · Tron (TRC-20) · Polygon · BSC (BEP-20)", "desc": "加密货币全球打款" }
+      {
+        "method": "Stripe Connect",
+        "desc": "法币直接转账 · 月底 Cron · $10 最低打款"
+      },
+      {
+        "method": "USDT / USDC",
+        "chains": "Ethereum (ERC-20) · Tron (TRC-20) · Polygon · BSC (BEP-20)",
+        "desc": "加密货币全球打款"
+      }
     ]
   },
-
   "erd": {
     "badge": "ERD v0.8 · Supabase PostgreSQL 15",
     "title": "数据库架构",
@@ -285,124 +786,356 @@
       {
         "name": "核心业务",
         "tables": [
-          { "table": "projects", "desc": "产品/服务注册", "key": "user_id, name, target_languages, status" },
-          { "table": "tasks", "desc": "扫描任务", "key": "project_id, keywords, subreddits, status" },
-          { "table": "mentions", "desc": "抓取的提及", "key": "task_id, platform, source_url, relatedness_score" },
-          { "table": "pain_points", "desc": "提取的痛点", "key": "task_id, title, mention_count, status" },
-          { "table": "validations", "desc": "五轴验证", "key": "pain_point_id, validation_score, verdict" }
+          {
+            "table": "projects",
+            "desc": "产品/服务注册",
+            "key": "user_id, name, target_languages, status"
+          },
+          {
+            "table": "tasks",
+            "desc": "扫描任务",
+            "key": "project_id, keywords, subreddits, status"
+          },
+          {
+            "table": "mentions",
+            "desc": "抓取的提及",
+            "key": "task_id, platform, source_url, relatedness_score"
+          },
+          {
+            "table": "pain_points",
+            "desc": "提取的痛点",
+            "key": "task_id, title, mention_count, status"
+          },
+          {
+            "table": "validations",
+            "desc": "五轴验证",
+            "key": "pain_point_id, validation_score, verdict"
+          }
         ]
       },
       {
         "name": "回复 & 漏斗",
         "tables": [
-          { "table": "reply_queue", "desc": "回复队列", "key": "mention_id, generated_reply, tracking_url, quality_score" },
-          { "table": "reply_logs", "desc": "已发布回复", "key": "reply_queue_id, reply_url, platform_reply_id" },
-          { "table": "funnel_events", "desc": "点击事件", "key": "reply_log_id, event_type, is_valid, fraud_reason" }
+          {
+            "table": "reply_queue",
+            "desc": "回复队列",
+            "key": "mention_id, generated_reply, tracking_url, quality_score"
+          },
+          {
+            "table": "reply_logs",
+            "desc": "已发布回复",
+            "key": "reply_queue_id, reply_url, platform_reply_id"
+          },
+          {
+            "table": "funnel_events",
+            "desc": "点击事件",
+            "key": "reply_log_id, event_type, is_valid, fraud_reason"
+          }
         ]
       },
       {
         "name": "计费",
         "tables": [
-          { "table": "credit_packages", "desc": "套餐目录", "key": "name, credits, price_cents" },
-          { "table": "user_billing", "desc": "用户计费状态", "key": "mode, credits_balance, payg_unit_price_cents" },
-          { "table": "credit_transactions", "desc": "积分流水", "key": "transaction_type, credits_delta, amount_cents" },
-          { "table": "bill_periods", "desc": "月结账单", "key": "period_start/end, clicks_count, total_cents" },
-          { "table": "bill_adjustments", "desc": "管理员调整", "key": "adjustment_type, reason, admin_user_id" }
+          {
+            "table": "credit_packages",
+            "desc": "套餐目录",
+            "key": "name, credits, price_cents"
+          },
+          {
+            "table": "user_billing",
+            "desc": "用户计费状态",
+            "key": "mode, credits_balance, payg_unit_price_cents"
+          },
+          {
+            "table": "credit_transactions",
+            "desc": "积分流水",
+            "key": "transaction_type, credits_delta, amount_cents"
+          },
+          {
+            "table": "bill_periods",
+            "desc": "月结账单",
+            "key": "period_start/end, clicks_count, total_cents"
+          },
+          {
+            "table": "bill_adjustments",
+            "desc": "管理员调整",
+            "key": "adjustment_type, reason, admin_user_id"
+          }
         ]
       },
       {
         "name": "内容资产",
         "tables": [
-          { "table": "platform_posts", "desc": "站内帖", "key": "platform, post_url, status" },
-          { "table": "github_repos", "desc": "GitHub 跳板仓库", "key": "repo_url, stars_count, tracking_url" },
-          { "table": "customer_collaborations", "desc": "客户协同回复", "key": "mention_id, ai_draft, publish_mode" },
-          { "table": "competitor_reports", "desc": "竞品报告", "key": "version, summary, tier" }
+          {
+            "table": "platform_posts",
+            "desc": "站内帖",
+            "key": "platform, post_url, status"
+          },
+          {
+            "table": "github_repos",
+            "desc": "GitHub 跳板仓库",
+            "key": "repo_url, stars_count, tracking_url"
+          },
+          {
+            "table": "customer_collaborations",
+            "desc": "客户协同回复",
+            "key": "mention_id, ai_draft, publish_mode"
+          },
+          {
+            "table": "competitor_reports",
+            "desc": "竞品报告",
+            "key": "version, summary, tier"
+          }
         ]
       },
       {
         "name": "合作伙伴",
         "tables": [
-          { "table": "partners", "desc": "合作伙伴", "key": "partner_type, tier, crypto_wallet_address" },
-          { "table": "partner_tasks", "desc": "伙伴任务", "key": "task_type, ai_draft, creative_brief, tracking_url" },
-          { "table": "partner_earnings", "desc": "收益记录", "key": "amount_usd, payment_method, tx_hash" },
-          { "table": "creator_leads", "desc": "达人线索", "key": "platform, handle, karma_estimate, status" }
+          {
+            "table": "partners",
+            "desc": "合作伙伴",
+            "key": "partner_type, tier, crypto_wallet_address"
+          },
+          {
+            "table": "partner_tasks",
+            "desc": "伙伴任务",
+            "key": "task_type, ai_draft, creative_brief, tracking_url"
+          },
+          {
+            "table": "partner_earnings",
+            "desc": "收益记录",
+            "key": "amount_usd, payment_method, tx_hash"
+          },
+          {
+            "table": "creator_leads",
+            "desc": "达人线索",
+            "key": "platform, handle, karma_estimate, status"
+          }
         ]
       },
       {
         "name": "系统",
         "tables": [
-          { "table": "scan_logs", "desc": "扫描日志", "key": "task_id, platform, mentions_found, api_cost_usd" },
-          { "table": "admin_audit_logs", "desc": "管理审计", "key": "admin_user_id, action_type, before/after_state" }
+          {
+            "table": "scan_logs",
+            "desc": "扫描日志",
+            "key": "task_id, platform, mentions_found, api_cost_usd"
+          },
+          {
+            "table": "admin_audit_logs",
+            "desc": "管理审计",
+            "key": "admin_user_id, action_type, before/after_state"
+          }
         ]
       }
     ]
   },
-
   "edge": {
     "badge": "ERD Edge Functions · Supabase",
     "title": "Edge Functions & RLS",
     "subtitle": "11 个 Edge Function 覆盖业务全链路 · 全表启用行级安全策略。",
     "functionsTitle": "Edge Functions 清单",
     "functions": [
-      { "name": "on_project_created", "trigger": "projects INSERT", "desc": "触发 LLM 分析 → 生成 tasks" },
-      { "name": "on_mention_scored", "trigger": "mentions INSERT", "desc": "评分 → 匹配项目 → 生成 reply_queue" },
-      { "name": "on_link_clicked", "trigger": "funnel_events INSERT", "desc": "反作弊过滤 → 标记 is_valid → 计费" },
-      { "name": "on_cpa_event", "trigger": "funnel_events INSERT (深度转化)", "desc": "CPA 事件 → 积分扣除" },
-      { "name": "on_partner_click", "trigger": "funnel_events (partner link)", "desc": "合作伙伴分成计算 → partner_earnings" },
-      { "name": "purchase_credits", "trigger": "用户发起", "desc": "Stripe Checkout → 充值积分" },
-      { "name": "process_payg_billing", "trigger": "Cron 每月 1 日", "desc": "PAYG 月结 → Stripe 扣款" },
-      { "name": "process_partner_payouts", "trigger": "Cron 每月 1 日", "desc": "合作伙伴月结 → Stripe Connect / Crypto" },
-      { "name": "apply_admin_adjustment", "trigger": "管理员操作", "desc": "计费调整 + 审计日志" },
-      { "name": "generate_competitor_report", "trigger": "Cron 每周一 / 手动", "desc": "LLM 生成竞品报告 + PDF" },
-      { "name": "manage_github_repo / publish_platform_post", "trigger": "审批触发", "desc": "GitHub 仓库管理 / 站内帖发布" }
+      {
+        "name": "on_project_created",
+        "trigger": "projects INSERT",
+        "desc": "触发 LLM 分析 → 生成 tasks"
+      },
+      {
+        "name": "on_mention_scored",
+        "trigger": "mentions INSERT",
+        "desc": "评分 → 匹配项目 → 生成 reply_queue"
+      },
+      {
+        "name": "on_link_clicked",
+        "trigger": "funnel_events INSERT",
+        "desc": "反作弊过滤 → 标记 is_valid → 计费"
+      },
+      {
+        "name": "on_cpa_event",
+        "trigger": "funnel_events INSERT (深度转化)",
+        "desc": "CPA 事件 → 积分扣除"
+      },
+      {
+        "name": "on_partner_click",
+        "trigger": "funnel_events (partner link)",
+        "desc": "合作伙伴分成计算 → partner_earnings"
+      },
+      {
+        "name": "purchase_credits",
+        "trigger": "用户发起",
+        "desc": "Stripe Checkout → 充值积分"
+      },
+      {
+        "name": "process_payg_billing",
+        "trigger": "Cron 每月 1 日",
+        "desc": "PAYG 月结 → Stripe 扣款"
+      },
+      {
+        "name": "process_partner_payouts",
+        "trigger": "Cron 每月 1 日",
+        "desc": "合作伙伴月结 → Stripe Connect / Crypto"
+      },
+      {
+        "name": "apply_admin_adjustment",
+        "trigger": "管理员操作",
+        "desc": "计费调整 + 审计日志"
+      },
+      {
+        "name": "generate_competitor_report",
+        "trigger": "Cron 每周一 / 手动",
+        "desc": "LLM 生成竞品报告 + PDF"
+      },
+      {
+        "name": "manage_github_repo / publish_platform_post",
+        "trigger": "审批触发",
+        "desc": "GitHub 仓库管理 / 站内帖发布"
+      }
     ],
     "rlsTitle": "RLS 策略矩阵",
     "rlsGroups": [
-      { "scope": "用户隔离", "rule": "user_id = auth.uid()", "tables": "projects, reply_queue (SELECT), user_billing, customer_collaborations" },
-      { "scope": "合作伙伴隔离", "rule": "email = auth.email()", "tables": "partners, partner_tasks, partner_earnings" },
-      { "scope": "系统只写", "rule": "SELECT only for user", "tables": "tasks, mentions, scan_logs, pain_points, validations, reply_logs, funnel_events" },
-      { "scope": "管理员全权", "rule": "role = 'admin'", "tables": "所有表完全读写" },
-      { "scope": "公开只读", "rule": "anon SELECT", "tables": "credit_packages" },
-      { "scope": "审计只读", "rule": "admin SELECT only", "tables": "admin_audit_logs" }
+      {
+        "scope": "用户隔离",
+        "rule": "user_id = auth.uid()",
+        "tables": "projects, reply_queue (SELECT), user_billing, customer_collaborations"
+      },
+      {
+        "scope": "合作伙伴隔离",
+        "rule": "email = auth.email()",
+        "tables": "partners, partner_tasks, partner_earnings"
+      },
+      {
+        "scope": "系统只写",
+        "rule": "SELECT only for user",
+        "tables": "tasks, mentions, scan_logs, pain_points, validations, reply_logs, funnel_events"
+      },
+      {
+        "scope": "管理员全权",
+        "rule": "role = 'admin'",
+        "tables": "所有表完全读写"
+      },
+      {
+        "scope": "公开只读",
+        "rule": "anon SELECT",
+        "tables": "credit_packages"
+      },
+      {
+        "scope": "审计只读",
+        "rule": "admin SELECT only",
+        "tables": "admin_audit_logs"
+      }
     ],
     "fraudTitle": "反作弊规则（on_link_clicked）",
     "fraudRules": [
-      { "rule": "bot_ua", "desc": "UA 命中爬虫特征 (bot/crawl/spider/curl)" },
-      { "rule": "ip_blacklist", "desc": "ipinfo.io 标记为数据中心 IP" },
-      { "rule": "high_freq_ip", "desc": "同 IP · 10 分钟内 · 同 project > 3 次" },
-      { "rule": "early_bounce", "desc": "落地页停留 < 2 秒" },
-      { "rule": "cross_project", "desc": "同 IP · 1 小时内 · 跨 5+ project" }
+      {
+        "rule": "bot_ua",
+        "desc": "UA 命中爬虫特征 (bot/crawl/spider/curl)"
+      },
+      {
+        "rule": "ip_blacklist",
+        "desc": "ipinfo.io 标记为数据中心 IP"
+      },
+      {
+        "rule": "high_freq_ip",
+        "desc": "同 IP · 10 分钟内 · 同 project > 3 次"
+      },
+      {
+        "rule": "early_bounce",
+        "desc": "落地页停留 < 2 秒"
+      },
+      {
+        "rule": "cross_project",
+        "desc": "同 IP · 1 小时内 · 跨 5+ project"
+      }
     ]
   },
-
   "billing": {
     "badge": "PRD §4.7",
     "title": "计费系统",
     "subtitle": "四种计费模型 · 灵活调整 · 反作弊保护。",
     "modelsTitle": "计费模型",
     "models": [
-      { "name": "预付费套餐 Prepaid", "desc": "购买积分包, 按量消费, 永不过期", "detail": "Starter $9/100 | Growth $39/500 | Scale $129/2000" },
-      { "name": "后付费 PAYG", "desc": "月底统计实际点击, Stripe 自动扣款", "detail": "默认 $0.10/click · 可配置" },
-      { "name": "免费额度 Free Tier", "desc": "注册时赠送 20 积分（可配置）", "detail": "管理员可通过 bill_adjustments 调整" },
-      { "name": "合作伙伴分成", "desc": "客户付费 → 平台抽成 → 合作伙伴按 tier 分成", "detail": "Bronze $0.02 → Gold $0.08 / Creator $0.06 → Elite $0.12" }
+      {
+        "name": "预付费套餐 Prepaid",
+        "desc": "购买积分包, 按量消费, 永不过期",
+        "detail": "Starter $9/100 | Growth $39/500 | Scale $129/2000",
+        "icon": "💳"
+      },
+      {
+        "name": "后付费 PAYG",
+        "desc": "月底统计实际点击, Stripe 自动扣款",
+        "detail": "默认 $0.10/click · 可配置",
+        "icon": "📊"
+      },
+      {
+        "name": "免费额度 Free Tier",
+        "desc": "注册时赠送 20 积分（可配置）",
+        "detail": "管理员可通过 bill_adjustments 调整",
+        "icon": "🎁"
+      },
+      {
+        "name": "合作伙伴分成",
+        "desc": "客户付费 → 平台抽成 → 合作伙伴按 tier 分成",
+        "detail": "Bronze $0.02 → Gold $0.08 / Creator $0.06 → Elite $0.12",
+        "icon": "🤝"
+      }
     ],
     "adjustTitle": "管理员调整类型",
     "adjustTypes": [
-      { "type": "discount_percent", "desc": "百分比折扣" },
-      { "type": "discount_flat", "desc": "固定金额减免" },
-      { "type": "credit_grant", "desc": "赠送积分" },
-      { "type": "credit_deduct", "desc": "扣除积分" },
-      { "type": "waive_all", "desc": "免除全部费用（可减至 $0）" }
+      {
+        "type": "discount_percent",
+        "desc": "百分比折扣",
+        "icon": "🏷️"
+      },
+      {
+        "type": "discount_flat",
+        "desc": "固定金额减免",
+        "icon": "💵"
+      },
+      {
+        "type": "credit_grant",
+        "desc": "赠送积分",
+        "icon": "🎁"
+      },
+      {
+        "type": "credit_deduct",
+        "desc": "扣除积分",
+        "icon": "➖"
+      },
+      {
+        "type": "waive_all",
+        "desc": "免除全部费用（可减至 $0）",
+        "icon": "🆓"
+      }
     ],
     "cryptoTitle": "加密货币支付",
     "cryptoChains": [
-      { "chain": "Ethereum (ERC-20)", "token": "USDT / USDC", "note": "主网标准" },
-      { "chain": "Tron (TRC-20)", "token": "USDT", "note": "低手续费" },
-      { "chain": "Polygon", "token": "USDC", "note": "L2 低 Gas" },
-      { "chain": "BSC (BEP-20)", "token": "USDT / USDC", "note": "亚洲用户偏好" }
+      {
+        "chain": "Ethereum (ERC-20)",
+        "token": "USDT / USDC",
+        "note": "主网标准",
+        "icon": "💎"
+      },
+      {
+        "chain": "Tron (TRC-20)",
+        "token": "USDT",
+        "note": "低手续费",
+        "icon": "⚡"
+      },
+      {
+        "chain": "Polygon",
+        "token": "USDC",
+        "note": "L2 低 Gas",
+        "icon": "🔷"
+      },
+      {
+        "chain": "BSC (BEP-20)",
+        "token": "USDT / USDC",
+        "note": "亚洲用户偏好",
+        "icon": "🟡"
+      }
     ]
   },
-
   "dashboard": {
     "badge": "PRD §4.9 – §4.10",
     "title": "仪表盘设计",
@@ -412,120 +1145,385 @@
       {
         "name": "用户后台 /dashboard",
         "modules": [
-          "Overview (项目状态 · 积分余额 · 本周点击)",
-          "Projects (产品列表 · CRUD)",
-          "Replies (回复列表 · 客户协同入口)",
-          "Assets (站内帖 · GitHub 仓库)",
-          "Competitor Reports (竞品报告下载)",
-          "Analytics (漏斗 · 点击趋势 · 平台分布)",
-          "Billing & Credits (充值 · 账单 · 交易记录)"
-        ]
+          "📊 Overview (项目状态 · 积分余额 · 本周点击)",
+          "📁 Projects (产品列表 · CRUD)",
+          "💬 Replies (回复列表 · 客户协同入口)",
+          "📎 Assets (站内帖 · GitHub 仓库)",
+          "📑 Competitor Reports (竞品报告下载)",
+          "📈 Analytics (漏斗 · 点击趋势 · 平台分布)",
+          "💳 Billing & Credits (充值 · 账单 · 交易记录)"
+        ],
+        "icon": "👤"
       },
       {
         "name": "管理后台 /admin",
         "modules": [
-          "Users (用户管理)",
-          "Projects (全局项目)",
-          "Tasks (任务监控)",
-          "Reply Queue (审核 · AI 重写 · 批量审批)",
-          "Billing (套餐 CRUD · CPA 权重 · 单价调整)",
-          "Fraud Monitor (可疑事件 · IP 黑名单)",
-          "Funnel Analytics (全局漏斗)",
-          "System Monitor (Cron 状态 · API 配额)",
-          "合作伙伴 & 达人管理 (线索池 · 任务 · 结算)"
-        ]
+          "👥 Users (用户管理)",
+          "📁 Projects (全局项目)",
+          "⚡ Tasks (任务监控)",
+          "📝 Reply Queue (审核 · AI 重写 · 批量审批)",
+          "💰 Billing (套餐 CRUD · CPA 权重 · 单价调整)",
+          "🛡️ Fraud Monitor (可疑事件 · IP 黑名单)",
+          "📊 Funnel Analytics (全局漏斗)",
+          "🖥️ System Monitor (Cron 状态 · API 配额)",
+          "🤝 合作伙伴 & 达人管理 (线索池 · 任务 · 结算)"
+        ],
+        "icon": "⚙️"
       },
       {
         "name": "合作伙伴门户 /partner",
         "modules": [
-          "Apply / Onboard (申请审核)",
-          "Task Center (任务列表 · AI 草稿 · 追踪链接)",
-          "AI Interactions (AI 交互时间线)",
-          "Earnings (收益看板 · tx_hash 链接)",
-          "Account (Stripe Connect · 加密钱包 · KYC)"
-        ]
+          "📋 Apply / Onboard (申请审核)",
+          "📌 Task Center (任务列表 · AI 草稿 · 追踪链接)",
+          "🤖 AI Interactions (AI 交互时间线)",
+          "💎 Earnings (收益看板 · tx_hash 链接)",
+          "🔐 Account (Stripe Connect · 加密钱包 · KYC)"
+        ],
+        "icon": "🤝"
       }
     ],
     "dataTitle": "数据源映射",
     "dataSources": [
-      { "panel": "用户后台", "tables": "projects, tasks, mentions, reply_queue, reply_logs, funnel_events, competitor_reports, user_billing, credit_transactions, bill_periods" },
-      { "panel": "管理后台", "tables": "全部 21 张表 + admin_audit_logs + creator_leads + partners + partner_tasks + partner_earnings" },
-      { "panel": "合作伙伴门户", "tables": "partners, partner_tasks, partner_earnings, creator_leads" }
+      {
+        "panel": "用户后台",
+        "tables": "projects, tasks, mentions, reply_queue, reply_logs, funnel_events, competitor_reports, user_billing, credit_transactions, bill_periods",
+        "icon": "👤"
+      },
+      {
+        "panel": "管理后台",
+        "tables": "全部 21 张表 + admin_audit_logs + creator_leads + partners + partner_tasks + partner_earnings",
+        "icon": "⚙️"
+      },
+      {
+        "panel": "合作伙伴门户",
+        "tables": "partners, partner_tasks, partner_earnings, creator_leads",
+        "icon": "🤝"
+      }
     ]
   },
-
   "schedule": {
     "badge": "PRD §5 · TDD D.7–D.8",
     "title": "调度策略 & 运维工具",
     "subtitle": "全自动化调度 · CLI 管理 · 质量控制配置。",
     "schedTitle": "调度时间表",
-    "schedules": [
-      { "task": "产品分析", "freq": "即时", "trigger": "projects INSERT Webhook" },
-      { "task": "Reddit 扫描", "freq": "每日 02:00", "trigger": "任务队列轮询" },
-      { "task": "Twitter/X 扫描", "freq": "每日 02:30", "trigger": "任务队列轮询" },
-      { "task": "Google PAA", "freq": "每日 04:00", "trigger": "任务队列轮询" },
-      { "task": "HN 扫描", "freq": "每日 04:30", "trigger": "任务队列轮询" },
-      { "task": "SO 扫描", "freq": "每日 05:00", "trigger": "任务队列轮询" },
-      { "task": "痛点提取 (Ollama)", "freq": "每日 06:00", "trigger": "扫描完成联动" },
-      { "task": "五轴验证", "freq": "每日 08:00", "trigger": "mention_count ≥ 5" },
-      { "task": "回复生成 (Ollama)", "freq": "每日 10:00", "trigger": "reply_queue 轮询" },
-      { "task": "回复发布", "freq": "14:00 / 20:00", "trigger": "已审批队列" },
-      { "task": "YouTube 扫描", "freq": "每周一", "trigger": "API Quota 限制" },
-      { "task": "Amazon 扫描", "freq": "每周二", "trigger": "按量计费控制" },
-      { "task": "多语言扫描 (ES/PT/JA/KO/RU)", "freq": "每周四–六", "trigger": "target_languages 触发" },
-      { "task": "PAYG 月结", "freq": "每月 1 日 01:00", "trigger": "Cron" },
-      { "task": "合作伙伴打款", "freq": "每月 1 日 02:00", "trigger": "Cron" },
-      { "task": "漏斗汇总", "freq": "每日 23:00", "trigger": "Cron" },
-      { "task": "周报生成", "freq": "每周日 09:00", "trigger": "Cron (Gemini Pro)" }
-    ],
     "cliTitle": "CLI 工具",
     "cliCommands": [
-      { "cmd": "mota.py projects list", "desc": "查看所有项目状态" },
-      { "cmd": "mota.py projects analyze --project-id {id}", "desc": "手动触发重分析" },
-      { "cmd": "mota.py tasks run --project-id {id} --platform reddit", "desc": "手动扫描" },
-      { "cmd": "mota.py replies pending --project-id {id}", "desc": "待审核回复" },
-      { "cmd": "mota.py replies approve --reply-id {id}", "desc": "批准回复" },
-      { "cmd": "mota.py replies stats --project-id {id} --days 30", "desc": "效果统计" }
+      {
+        "cmd": "mota.py projects list",
+        "desc": "查看所有项目状态"
+      },
+      {
+        "cmd": "mota.py projects analyze --project-id {id}",
+        "desc": "手动触发重分析"
+      },
+      {
+        "cmd": "mota.py tasks run --project-id {id} --platform reddit",
+        "desc": "手动扫描"
+      },
+      {
+        "cmd": "mota.py replies pending --project-id {id}",
+        "desc": "待审核回复"
+      },
+      {
+        "cmd": "mota.py replies approve --reply-id {id}",
+        "desc": "批准回复"
+      },
+      {
+        "cmd": "mota.py replies stats --project-id {id} --days 30",
+        "desc": "效果统计"
+      }
+    ],
+    "categories": [
+      {
+        "label": "即时",
+        "icon": "⚡",
+        "desc": "事件驱动，立即响应",
+        "tasks": [
+          {
+            "task": "产品分析",
+            "trigger": "projects INSERT Webhook",
+            "icon": "🔍"
+          }
+        ]
+      },
+      {
+        "label": "每月",
+        "icon": "📆",
+        "desc": "月度结算与分成",
+        "tasks": [
+          {
+            "task": "PAYG 月结",
+            "time": "1日 01:00",
+            "trigger": "Cron",
+            "icon": "💰"
+          },
+          {
+            "task": "合作伙伴打款",
+            "time": "1日 02:00",
+            "trigger": "Cron",
+            "icon": "🤝"
+          }
+        ]
+      },
+      {
+        "label": "每周",
+        "icon": "📅",
+        "desc": "周期性平台扫描与报告",
+        "tasks": [
+          {
+            "task": "YouTube 扫描",
+            "time": "周一",
+            "trigger": "API Quota 限制",
+            "icon": "📺"
+          },
+          {
+            "task": "Amazon 扫描",
+            "time": "周二",
+            "trigger": "按量计费控制",
+            "icon": "🛒"
+          },
+          {
+            "task": "多语言扫描 (ES/PT/JA/KO/RU)",
+            "time": "周四–六",
+            "trigger": "target_languages 触发",
+            "icon": "🌐"
+          },
+          {
+            "task": "周报生成",
+            "time": "周日 09:00",
+            "trigger": "Cron (Gemini Pro)",
+            "icon": "📋"
+          }
+        ]
+      },
+      {
+        "label": "每日",
+        "icon": "🔄",
+        "desc": "核心管线 · 扫描→提取→验证→回复",
+        "tasks": [
+          {
+            "task": "Reddit 扫描",
+            "time": "02:00",
+            "trigger": "任务队列轮询",
+            "icon": "📱"
+          },
+          {
+            "task": "Twitter/X 扫描",
+            "time": "02:30",
+            "trigger": "任务队列轮询",
+            "icon": "🐦"
+          },
+          {
+            "task": "Google PAA",
+            "time": "04:00",
+            "trigger": "任务队列轮询",
+            "icon": "🔎"
+          },
+          {
+            "task": "HN 扫描",
+            "time": "04:30",
+            "trigger": "任务队列轮询",
+            "icon": "📰"
+          },
+          {
+            "task": "SO 扫描",
+            "time": "05:00",
+            "trigger": "任务队列轮询",
+            "icon": "💬"
+          },
+          {
+            "task": "痛点提取 (Ollama)",
+            "time": "06:00",
+            "trigger": "扫描完成联动",
+            "icon": "🔮"
+          },
+          {
+            "task": "五轴验证",
+            "time": "08:00",
+            "trigger": "mention_count ≥ 5",
+            "icon": "✅"
+          },
+          {
+            "task": "回复生成 (Ollama)",
+            "time": "10:00",
+            "trigger": "reply_queue 轮询",
+            "icon": "💬"
+          },
+          {
+            "task": "回复发布",
+            "time": "14:00 / 20:00",
+            "trigger": "已审批队列",
+            "icon": "📤"
+          },
+          {
+            "task": "漏斗汇总",
+            "time": "23:00",
+            "trigger": "Cron",
+            "icon": "📊"
+          }
+        ]
+      }
     ]
   },
-
   "i18n": {
     "badge": "PRD §4.11–12 · TDD D.9–D.10",
     "title": "多语言 & 竞品报告",
     "subtitle": "6 种语言覆盖 · 本土平台技能 · 自动化竞品情报管线。",
     "langTitle": "语言 × 平台覆盖",
     "languages": [
-      { "lang": "English", "code": "en", "platforms": "Reddit, YouTube, Amazon, Quora, Twitter, HN, SO, G2, Trustpilot" },
-      { "lang": "Español", "code": "es", "platforms": "Taringa!, MercadoLibre, ForoCoches" },
-      { "lang": "Português", "code": "pt", "platforms": "Reclame Aqui, Mercado Livre BR" },
-      { "lang": "日本語", "code": "ja", "platforms": "Yahoo! 知恵袋, Kakaku.com, Amazon JP" },
-      { "lang": "한국어", "code": "ko", "platforms": "Naver 지식iN, Naver Cafe, Coupang" },
-      { "lang": "Русский", "code": "ru", "platforms": "VK, Pikabu, Otzovik, Yandex Q" }
+      {
+        "lang": "English",
+        "code": "en",
+        "platforms": "Reddit, YouTube, Amazon, Quora, Twitter, HN, SO, G2, Trustpilot"
+      },
+      {
+        "lang": "Español",
+        "code": "es",
+        "platforms": "Taringa!, MercadoLibre, ForoCoches"
+      },
+      {
+        "lang": "Português",
+        "code": "pt",
+        "platforms": "Reclame Aqui, Mercado Livre BR"
+      },
+      {
+        "lang": "日本語",
+        "code": "ja",
+        "platforms": "Yahoo! 知恵袋, Kakaku.com, Amazon JP"
+      },
+      {
+        "lang": "한국어",
+        "code": "ko",
+        "platforms": "Naver 지식iN, Naver Cafe, Coupang"
+      },
+      {
+        "lang": "Русский",
+        "code": "ru",
+        "platforms": "VK, Pikabu, Otzovik, Yandex Q"
+      }
     ],
     "ollamaTitle": "Ollama 多语言模型路由",
     "ollamaModels": [
-      { "lang": "en", "model": "llama3:8b" },
-      { "lang": "ja / ko / zh", "model": "qwen2.5:14b" },
-      { "lang": "es / pt / ru", "model": "Gamma 4:14b" },
-      { "lang": "回复生成", "model": "Gamma 4:14b (通用)" }
+      {
+        "lang": "en",
+        "model": "llama3:8b"
+      },
+      {
+        "lang": "ja / ko / zh",
+        "model": "qwen2.5:14b"
+      },
+      {
+        "lang": "es / pt / ru",
+        "model": "Gamma 4:14b"
+      },
+      {
+        "lang": "回复生成",
+        "model": "Gamma 4:14b (通用)"
+      }
     ],
     "reportTitle": "竞品情报报告",
     "reportPipeline": [
-      { "step": "数据聚合", "desc": "近 30 天竞品评论、痛点、平台分布" },
-      { "step": "LLM 生成", "desc": "Ollama Gamma 4:14b → Markdown 报告" },
-      { "step": "结构提取", "desc": "执行摘要 + Top 3 痛点 + 竞品矩阵" },
-      { "step": "导出", "desc": "WeasyPrint → PDF 下载 · 写入 competitor_reports 表" }
+      {
+        "step": "数据聚合",
+        "desc": "近 30 天竞品评论、痛点、平台分布",
+        "icon": "📊"
+      },
+      {
+        "step": "LLM 生成",
+        "desc": "Ollama Gamma 4:14b → Markdown 报告",
+        "icon": "🤖"
+      },
+      {
+        "step": "结构提取",
+        "desc": "执行摘要 + Top 3 痛点 + 竞品矩阵",
+        "icon": "🏗️"
+      },
+      {
+        "step": "导出",
+        "desc": "WeasyPrint → PDF 下载 · 写入 competitor_reports 表",
+        "icon": "📄"
+      }
     ],
-    "reportSections": ["执行摘要", "Top 3 高频痛点", "市场空白分析", "差异化建议", "竞品对比矩阵"],
+    "reportSections": [
+      {
+        "icon": "📋",
+        "label": "执行摘要"
+      },
+      {
+        "icon": "🔥",
+        "label": "Top 3 高频痛点"
+      },
+      {
+        "icon": "🔭",
+        "label": "市场空白分析"
+      },
+      {
+        "icon": "💡",
+        "label": "差异化建议"
+      },
+      {
+        "icon": "⚖️",
+        "label": "竞品对比矩阵"
+      }
+    ],
     "stackTitle": "核心技术栈",
     "stack": [
-      { "layer": "数据库", "tech": "Supabase (PostgreSQL 15) · RLS · Edge Functions" },
-      { "layer": "后端", "tech": "Python · FastAPI · Celery (任务队列)" },
-      { "layer": "AI/LLM", "tech": "Ollama (llama3/qwen2.5/Gamma 4) · Gemini 1.5 Flash/Pro" },
-      { "layer": "爬虫", "tech": "Playwright · PRAW · tweepy · stackapi" },
-      { "layer": "支付", "tech": "Stripe (Checkout + Connect) · USDT/USDC (4 链)" },
-      { "layer": "前端", "tech": "Next.js · Tailwind CSS · shadcn/ui" },
-      { "layer": "部署", "tech": "Cloudflare Pages · Supabase Cloud" }
-    ]
+      {
+        "layer": "数据库",
+        "tech": "Supabase (PostgreSQL 15) · RLS · Edge Functions",
+        "icon": "🗄️",
+        "desc": "Supabase 是基于 PostgreSQL 的开源 BaaS 平台，提供实时订阅、Row Level Security（行级安全策略）以及 Edge Functions 无服务器函数。本项目用它存储所有市场情报数据、用户信息与计费记录，RLS 确保多租户数据隔离。",
+        "url": "https://supabase.com/docs"
+      },
+      {
+        "layer": "后端",
+        "tech": "Python · FastAPI · Celery (任务队列)",
+        "icon": "⚙️",
+        "desc": "FastAPI 是高性能 Python 异步 Web 框架，内置 OpenAPI 文档与类型校验；Celery 是分布式任务队列，用于异步执行爬虫任务、AI 分析与报告生成等后台作业，支持定时调度与重试机制。",
+        "url": "https://fastapi.tiangolo.com/"
+      },
+      {
+        "layer": "AI/LLM",
+        "tech": "Ollama (llama3/qwen2.5/Gamma 4) · Gemini 1.5 Flash/Pro",
+        "icon": "🧠",
+        "desc": "Ollama 支持本地部署多种开源大语言模型（llama3、qwen2.5、Gamma 4），实现离线推理与数据隐私保护；Gemini 1.5 Flash/Pro 是 Google 的云端多模态 AI，用于高质量竞品摘要与情感分析。",
+        "url": "https://ollama.com/"
+      },
+      {
+        "layer": "爬虫",
+        "tech": "Playwright · PRAW · tweepy · stackapi",
+        "icon": "🕷️",
+        "desc": "Playwright 是微软开源的浏览器自动化框架，支持 Chromium/WebKit/Firefox 无头爬取；PRAW、tweepy、stackapi 分别对接 Reddit、Twitter(X)、StackOverflow API，实现多平台舆情数据采集。",
+        "url": "https://playwright.dev/python/docs/intro"
+      },
+      {
+        "layer": "支付",
+        "tech": "Stripe (Checkout + Connect) · USDT/USDC (4 链)",
+        "icon": "💳",
+        "desc": "Stripe Checkout 提供托管支付页面，Connect 支持平台分账与多方结算；同时集成 USDT/USDC 稳定币支付，覆盖 Ethereum、Polygon、BSC、Tron 四条链，满足全球化收款需求。",
+        "url": "https://docs.stripe.com/"
+      },
+      {
+        "layer": "前端",
+        "tech": "Next.js · Tailwind CSS · shadcn/ui",
+        "icon": "🖥️",
+        "desc": "Next.js 是 React 全栈框架，支持 SSR/SSG/ISR 多种渲染策略与 App Router；Tailwind CSS 提供原子化样式系统；shadcn/ui 是基于 Radix UI 的高质量组件库，保障一致的设计语言。",
+        "url": "https://nextjs.org/docs"
+      },
+      {
+        "layer": "部署",
+        "tech": "Cloudflare Pages · Supabase Cloud",
+        "icon": "☁️",
+        "desc": "Cloudflare Pages 提供全球 CDN 边缘部署，自动 CI/CD 与预览环境，首次字节延迟极低；Supabase Cloud 托管数据库与 Edge Functions，提供自动备份、监控与弹性扩缩。",
+        "url": "https://developers.cloudflare.com/pages/"
+      }
+    ],
+    "stackZones": {
+      "user": "用户层",
+      "app": "应用层",
+      "data": "数据层",
+      "connApi": "API 请求",
+      "connData": "读 / 写"
+    }
   }
 }

@@ -28,18 +28,18 @@ export function Collapsible({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className={`w-full flex items-center gap-2 px-4 py-3 text-left cursor-pointer ${theme === "dark" ? "hover:bg-white/5" : "hover:bg-gray-50"} transition-colors`}
+        className={`w-full flex items-center gap-3 px-5 py-4 text-left cursor-pointer ${theme === "dark" ? "hover:bg-white/5" : "hover:bg-[#DBD3ED]"} transition-colors`}
       >
         {/* Chevron */}
         <svg
-          className={`w-4 h-4 shrink-0 ${t.muted} transition-transform duration-200 ${open ? "rotate-90" : ""}`}
+          className={`w-5 h-5 shrink-0 ${t.muted} transition-transform duration-200 ${open ? "rotate-90" : ""}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
-        <span className={`flex-1 text-base font-semibold ${t.subheading}`}>{title}</span>
+        <span className={`flex-1 text-xl font-semibold ${t.subheading}`}>{title}</span>
         {badge && <span className="shrink-0">{badge}</span>}
       </button>
       <div

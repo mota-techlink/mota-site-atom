@@ -14,7 +14,10 @@
     "build:data": "node scripts/validate-content.mjs && node scripts/generate-assets.mjs && node scripts/build-search.mjs && node scripts/embed-docs.mjs && NEXT_PUBLIC_BASE_URL=https://motaiot.com node scripts/generate-sitemap.mjs && node scripts/generate-og-image.mjs",
     "db:pull": "supabase db pull",
     "db:push": "supabase db push",
-    "cf:sync-env": "node scripts/sync-env-to-cf.mjs"
+    "cf:sync-env": "node scripts/sync-env-to-cf.mjs",
+    "merge": "bash scripts/merge-to.sh",
+    "merge:release": "bash scripts/merge-to.sh release",
+    "merge:main": "bash scripts/merge-to.sh main"
   },
   "dependencies": {
     "@ai-sdk/google": "^1.2.22",
