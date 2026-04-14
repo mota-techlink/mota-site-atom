@@ -8,7 +8,8 @@ import {
   useContext,
 } from "react";
 import { useDeckLocale } from "@/components/pitch-deck";
-import { SECTION_IDS, contentMap, ContentType } from "./constants";
+import { SECTION_IDS, contentMap, ContentType, THEME, ThemeTokens } from "./constants";
+import { useDeckTheme } from "./theme";
 import zh from "./locale/zh.json";
 
 // ─── Contexts ─────────────────────────────────────────────────────────────────
@@ -83,4 +84,10 @@ export function usePageNav(options?: {
   }, [options]);
 
   return { activeIdx, goTo };
+}
+
+// ─── Theme tokens ─────────────────────────────────────────────────────────────
+export function useThemeTokens(): ThemeTokens {
+  const { theme } = useDeckTheme();
+  return THEME[theme];
 }

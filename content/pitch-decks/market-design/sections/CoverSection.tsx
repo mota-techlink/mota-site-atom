@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useContext } from "react";
-import { useContent, PageNavCtx } from "../hooks";
+import { useContent, PageNavCtx, useThemeTokens } from "../hooks";
 import { PAGE, PAGE_INNER, SECTION_MAP } from "../constants";
 
 /** Tooltip for hover descriptions */
@@ -21,6 +21,7 @@ export function CoverSection() {
   const c = useContent();
   const d = c.cover;
   const goTo = useContext(PageNavCtx);
+  const t = useThemeTokens();
 
   return (
     <section id="s-cover" className={PAGE}>
@@ -32,10 +33,10 @@ export function CoverSection() {
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">
+        <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${t.heading} mb-3`}>
           {d.title}
         </h1>
-        <p className="text-base sm:text-lg text-white/50 max-w-2xl mb-10">
+        <p className={`text-base sm:text-lg ${t.body} max-w-2xl mb-10`}>
           {d.subtitle}
         </p>
 
@@ -48,16 +49,16 @@ export function CoverSection() {
                   const target = doc.targetSection;
                   if (target && SECTION_MAP[target] != null) goTo(SECTION_MAP[target]);
                 }}
-                className="w-full rounded-xl bg-white/5 border border-white/8 p-4 hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-200 text-left cursor-pointer group"
+                className={`w-full rounded-xl ${t.cardBg} border ${t.cardBorder} p-4 hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-200 text-left cursor-pointer group`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors">{doc.label}</span>
+                  <span className={`text-sm font-bold ${t.heading} group-hover:text-indigo-300 transition-colors`}>{doc.label}</span>
                   <span className="text-xs px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 font-mono">
                     {doc.ver}
                   </span>
                 </div>
-                <p className="text-xs text-white/40 mb-1">{doc.desc}</p>
-                <p className="text-xs text-white/25 font-mono">{doc.sections}</p>
+                <p className={`text-xs ${t.body} mb-1`}>{doc.desc}</p>
+                <p className={`text-xs ${t.muted} font-mono`}>{doc.sections}</p>
                 <span className="block mt-2 text-xs text-indigo-400/50 opacity-0 group-hover:opacity-100 transition-opacity">
                   {doc.clickHint} →
                 </span>
@@ -67,7 +68,7 @@ export function CoverSection() {
         </div>
 
         {/* Pipeline — hover shows detail, click navigates to section */}
-        <h3 className="text-base font-semibold text-white/60 mb-4">{d.pipeline.title}</h3>
+        <h3 className={`text-base font-semibold ${t.subheading} mb-4`}>{d.pipeline.title}</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
           {d.pipeline.stages.map((s: any, i: number) => (
             <div key={i} className="relative">
@@ -77,15 +78,15 @@ export function CoverSection() {
                     const target = s.targetSection;
                     if (target && SECTION_MAP[target] != null) goTo(SECTION_MAP[target]);
                   }}
-                  className="w-full rounded-xl bg-gradient-to-br from-white/5 to-white/2 border border-white/8 p-4 text-center hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-200 cursor-pointer group"
+                  className={`w-full rounded-xl bg-gradient-to-br from-white/5 to-white/2 border ${t.cardBorder} p-4 text-center hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-200 cursor-pointer group`}
                 >
                   <div className="text-2xl mb-2">{s.icon}</div>
-                  <h4 className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors mb-1">{s.label}</h4>
-                  <p className="text-xs text-white/35 leading-relaxed">{s.desc}</p>
+                  <h4 className={`text-sm font-bold ${t.heading} group-hover:text-indigo-300 transition-colors mb-1`}>{s.label}</h4>
+                  <p className={`text-xs ${t.muted} leading-relaxed`}>{s.desc}</p>
                 </button>
               </Tip>
               {i < d.pipeline.stages.length - 1 && (
-                <div className="hidden sm:block absolute top-1/2 -right-2 text-white/15 text-xs">→</div>
+                <div className={`hidden sm:block absolute top-1/2 -right-2 ${t.muted} text-xs`}>→</div>
               )}
             </div>
           ))}
@@ -102,8 +103,8 @@ export function CoverSection() {
                 }}
                 className="text-center px-2 py-3 rounded-lg hover:bg-white/5 transition-all duration-200 cursor-pointer group"
               >
-                <div className="text-2xl sm:text-3xl font-bold text-white group-hover:text-indigo-300 transition-colors">{m.value}</div>
-                <div className="text-xs text-white/30 mt-1 group-hover:text-white/50 transition-colors">{m.label}</div>
+                <div className={`text-2xl sm:text-3xl font-bold ${t.heading} group-hover:text-indigo-300 transition-colors`}>{m.value}</div>
+                <div className={`text-xs ${t.muted} mt-1 group-hover:text-white/50 transition-colors`}>{m.label}</div>
               </button>
             </Tip>
           ))}

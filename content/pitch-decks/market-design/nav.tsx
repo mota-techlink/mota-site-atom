@@ -3,8 +3,9 @@
 import React, { useState, useContext } from "react";
 import Image from "next/image";
 import { useDeckLocale, useDeckAccess } from "@/components/pitch-deck";
-import { SECTION_IDS, LOCALES, LOCALE_LABELS } from "./constants";
+import { SECTION_IDS, LOCALES, LOCALE_LABELS, THEME } from "./constants";
 import { useContent, PageNavCtx, ActivePageCtx } from "./hooks";
+import { useDeckTheme } from "./theme";
 
 // ─── Section metadata (icon + nav label key) ─────────────────────────────────
 const SECTION_META: { icon: string; key: string }[] = [
@@ -36,14 +37,15 @@ export function Sidebar({
   const activeIdx = useContext(ActivePageCtx);
   const { canView, showGate, userTier } = useDeckAccess();
   const isAuth = userTier === "admin";
-  const { deckLocale, setDeckLocale } = useDeckLocale();
+  const { theme } = useDeckTheme();
+  const t = THEME[theme];
 
   return (
     <>
       {/* Mobile overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/60 z-40 lg:hidden"
+          className={`fixed inset-0 ${t.overlay} z-40 lg:hidden`}
           onClick={onClose}
         />
       )}
@@ -51,15 +53,20 @@ export function Sidebar({
       {/* Sidebar panel */}
       <aside
         className={`
-          fixed top-0 left-0 h-full z-50 w-64 bg-zinc-950 border-r border-white/8
-          flex flex-col transition-transform duration-300 ease-in-out
+          fixed top-0 left-0 h-full z-50 w-64 ${t.sidebarBg} border-r ${t.sidebarBorder}
+          flex flex-col transition-all duration-300 ease-in-out
           lg:translate-x-0 lg:static lg:z-auto
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
         {/* Header */}
-        <div className="shrink-0 px-4 py-4 border-b border-white/8">
-          <div className="flex items-center gap-2 mb-3">
+        <div className={`shrink-0 px-4 py-4 border-b ${t.divider}`}>
+          <a
+            href="https://motaiot.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 mb-3 hover:opacity-80 transition-opacity"
+          >
             <Image
               src="/logos/mota-icon-v2.webp"
               alt="Mota"
@@ -70,17 +77,17 @@ export function Sidebar({
                 (e.currentTarget as HTMLImageElement).style.display = "none";
               }}
             />
-            <span className="text-white/70 text-sm font-semibold">
+            <span className={`${t.subheading} text-sm font-semibold`}>
               {c.nav.title}
             </span>
-          </div>
+          </a>
 
           {/* Version badges */}
           <div className="flex gap-1.5 flex-wrap">
             {c.nav.versions.map((v: { label: string; ver: string }, i: number) => (
               <span
                 key={i}
-                className="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-white/40 font-mono"
+                className={`text-[10px] px-1.5 py-0.5 rounded ${t.badgeBg} ${t.badgeText} font-mono`}
               >
                 {v.label} {v.ver}
               </span>
@@ -112,10 +119,10 @@ export function Sidebar({
                   w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left text-sm
                   transition-all duration-200 mb-0.5 cursor-pointer
                   ${isActive
-                    ? "bg-indigo-500/15 text-indigo-300 font-medium"
+                    ? `${t.navActive} font-medium`
                     : isLocked
-                    ? "text-white/20 cursor-not-allowed"
-                    : "text-white/50 hover:text-white/80 hover:bg-white/5"}
+                    ? `${t.navLocked} cursor-not-allowed`
+                    : t.navInactive}
                 `}
               >
                 <span className="text-base shrink-0">{meta.icon}</span>
@@ -141,32 +148,51 @@ export function Sidebar({
           })}
         </nav>
 
-        {/* Footer — language switcher */}
-        <div className="shrink-0 px-4 py-3 border-t border-white/8">
-          <div className="flex items-center gap-1">
-            {LOCALES.map((locale) => (
-              <button
-                key={locale}
-                onClick={() => setDeckLocale(locale)}
-                className={`
-                  flex-1 px-2 py-1 rounded text-xs font-medium transition-all duration-200 cursor-pointer
-                  ${deckLocale === locale
-                    ? "bg-white text-black"
-                    : "text-white/40 hover:text-white hover:bg-white/10"}
-                `}
-              >
-                {LOCALE_LABELS[locale]}
-              </button>
-            ))}
-          </div>
-          {!isAuth && (
-            <p className="text-[10px] text-amber-400/60 mt-2 leading-relaxed">
+        {/* Footer — login hint */}
+        {!isAuth && (
+          <div className={`shrink-0 px-4 py-3 border-t ${t.divider}`}>
+            <p className="text-[10px] text-amber-400/60 leading-relaxed">
               🔒 {c.nav.loginHint}
             </p>
-          )}
-        </div>
+          </div>
+        )}
       </aside>
     </>
+  );
+}
+
+// ─── Top-right controls (lang + theme) ───────────────────────────────────────
+export function TopControls() {
+  const { deckLocale, setDeckLocale } = useDeckLocale();
+  const { theme, toggle: toggleTheme } = useDeckTheme();
+  const t = THEME[theme];
+  const isDark = theme === "dark";
+
+  return (
+    <div className={`fixed top-2 right-3 z-40 flex items-center gap-1 rounded-full px-1.5 py-1 backdrop-blur-md ${isDark ? "bg-black/30 border border-white/10" : "bg-white/70 border border-gray-200 shadow-sm"}`}>
+      {LOCALES.map((locale) => (
+        <button
+          key={locale}
+          onClick={() => setDeckLocale(locale)}
+          className={`
+            px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer
+            ${deckLocale === locale
+              ? isDark ? "bg-white/20 text-white" : "bg-gray-800 text-white"
+              : `${t.muted} ${isDark ? "hover:text-white hover:bg-white/10" : "hover:text-gray-700 hover:bg-white/40"}`}
+          `}
+        >
+          {LOCALE_LABELS[locale]}
+        </button>
+      ))}
+      <div className={`w-px h-4 ${isDark ? "bg-white/15" : "bg-gray-300"}`} />
+      <button
+        onClick={toggleTheme}
+        className={`w-7 h-7 rounded-full flex items-center justify-center text-sm transition-all duration-200 cursor-pointer ${isDark ? "text-white/60 hover:text-white hover:bg-white/10" : "text-gray-500 hover:text-gray-900 hover:bg-white/40"}`}
+        aria-label="Toggle theme"
+      >
+        {isDark ? "☀️" : "🌙"}
+      </button>
+    </div>
   );
 }
 
@@ -174,18 +200,20 @@ export function Sidebar({
 export function MobileTopBar({ onToggle }: { onToggle: () => void }) {
   const c = useContent();
   const activeIdx = useContext(ActivePageCtx);
+  const { theme } = useDeckTheme();
+  const t = THEME[theme];
   const meta = SECTION_META[activeIdx];
   const label = (c.nav.sections as Record<string, string>)[meta?.key] ?? "";
 
   return (
-    <header className="fixed top-0 inset-x-0 z-30 h-12 bg-zinc-950/95 backdrop-blur-md border-b border-white/8 flex items-center px-3 gap-3 lg:hidden">
+    <header className={`fixed top-0 inset-x-0 z-30 h-12 ${t.sidebarBg}/95 backdrop-blur-md border-b ${t.divider} flex items-center px-3 gap-3 lg:hidden`}>
       <button
         onClick={onToggle}
-        className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+        className={`w-8 h-8 flex items-center justify-center rounded-lg ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-gray-200"} transition-colors cursor-pointer`}
         aria-label="Toggle navigation"
       >
         <svg
-          className="w-5 h-5 text-white/70"
+          className={`w-5 h-5 ${t.subheading}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -198,10 +226,10 @@ export function MobileTopBar({ onToggle }: { onToggle: () => void }) {
           />
         </svg>
       </button>
-      <span className="text-sm text-white/60 truncate">
+      <span className={`text-sm ${t.subheading} truncate`}>
         {meta?.icon} {label}
       </span>
-      <span className="ml-auto text-[10px] text-white/25 font-mono">
+      <span className={`ml-auto text-[10px] ${t.muted} font-mono mr-24`}>
         {activeIdx + 1}/{SECTION_IDS.length}
       </span>
     </header>

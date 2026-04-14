@@ -9,9 +9,10 @@ import {
 } from "@/components/pitch-deck";
 import { DEFAULT_PREVIEW_SLIDES } from "@/config/pitch-decks";
 import type { DeckAccess } from "@/config/pitch-decks";
-import { SECTION_IDS, LOCALES, LOCALE_LABELS } from "./constants";
+import { SECTION_IDS, LOCALES, LOCALE_LABELS, THEME } from "./constants";
 import { usePageNav, PageNavCtx, ActivePageCtx } from "./hooks";
-import { Sidebar, MobileTopBar } from "./nav";
+import { DeckThemeProvider, useDeckTheme } from "./theme";
+import { Sidebar, MobileTopBar, TopControls } from "./nav";
 import { CoverSection } from "./sections/CoverSection";
 import { BackgroundSection } from "./sections/BackgroundSection";
 import { AnalysisSection } from "./sections/AnalysisSection";
@@ -45,6 +46,8 @@ const SECTIONS = [
 // ─── Inner deck (needs locale + access context) ───────────────────────────────
 function MarketDesignDeckInner() {
   const { canView, showGate, previewSlides } = useDeckAccess();
+  const { theme } = useDeckTheme();
+  const t = THEME[theme];
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const navOptions = useMemo(
@@ -63,7 +66,7 @@ function MarketDesignDeckInner() {
   return (
     <PageNavCtx.Provider value={goTo}>
       <ActivePageCtx.Provider value={activeIdx}>
-        <div className="h-full w-full flex bg-zinc-950 text-white overflow-hidden">
+        <div className={`h-full w-full flex ${t.bg} ${t.text} overflow-hidden transition-colors duration-300`}>
           {/* Sidebar */}
           <Sidebar
             isOpen={sidebarOpen}
@@ -75,6 +78,9 @@ function MarketDesignDeckInner() {
             {/* Mobile top bar */}
             <MobileTopBar onToggle={() => setSidebarOpen((v) => !v)} />
 
+            {/* Top-right controls (lang + theme) */}
+            <TopControls />
+
             {/* Page content */}
             <div className="h-full pt-12 lg:pt-0">
               <ActiveSection />
@@ -85,17 +91,17 @@ function MarketDesignDeckInner() {
               <button
                 onClick={() => goTo(activeIdx - 1)}
                 disabled={activeIdx === 0}
-                className="w-7 h-7 rounded-full bg-white/5 hover:bg-white/10 disabled:opacity-20 flex items-center justify-center text-white/50 text-xs transition-all cursor-pointer disabled:cursor-not-allowed"
+                className={`w-7 h-7 rounded-full ${t.cardBg} ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-gray-200"} disabled:opacity-20 flex items-center justify-center ${t.body} text-xs transition-all cursor-pointer disabled:cursor-not-allowed`}
               >
                 ▲
               </button>
-              <span className="text-[10px] text-white/30 font-mono tabular-nums min-w-[3rem] text-center">
+              <span className={`text-[10px] ${t.muted} font-mono tabular-nums min-w-[3rem] text-center`}>
                 {activeIdx + 1} / {SECTION_IDS.length}
               </span>
               <button
                 onClick={() => goTo(activeIdx + 1)}
                 disabled={activeIdx >= SECTION_IDS.length - 1}
-                className="w-7 h-7 rounded-full bg-white/5 hover:bg-white/10 disabled:opacity-20 flex items-center justify-center text-white/50 text-xs transition-all cursor-pointer disabled:cursor-not-allowed"
+                className={`w-7 h-7 rounded-full ${t.cardBg} ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-gray-200"} disabled:opacity-20 flex items-center justify-center ${t.body} text-xs transition-all cursor-pointer disabled:cursor-not-allowed`}
               >
                 ▼
               </button>
@@ -125,7 +131,8 @@ export function MarketDesignDeck({
   userRole,
 }: MarketDesignDeckProps) {
   return (
-    <DeckAccessProvider
+    <DeckThemeProvider>
+      <DeckAccessProvider
       access={access}
       previewSlides={previewSlides}
       totalSlides={SECTIONS.length}
@@ -142,5 +149,6 @@ export function MarketDesignDeck({
         <MarketDesignDeckInner />
       </DeckLocaleProvider>
     </DeckAccessProvider>
+    </DeckThemeProvider>
   );
 }
