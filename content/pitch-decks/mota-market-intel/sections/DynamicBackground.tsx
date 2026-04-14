@@ -24,7 +24,7 @@ const ACCENT_COLORS = {
   cyan:    { mesh1: "rgba(6,182,212,0.07)",   mesh2: "rgba(34,211,238,0.04)"  },
 };
 
-/** Stable seeded pseudo-random — no state, no refs, no side-effects */
+/** Stable seeded pseudo-random */
 function sr(seed: number): number {
   const x = Math.sin(seed + 1) * 43758.5453123;
   return x - Math.floor(x);
@@ -36,44 +36,52 @@ export function DynamicBackground({
   brightness = 1,
   className = "",
 }: DynamicBackgroundProps) {
-  // Hard cap at 12 particles — plenty of visual texture, negligible GPU cost
   const n = Math.min(count ?? 12, 12);
   const colors = ACCENT_COLORS[accent];
 
-  const particles = useMemo(
-    () =>
-      Array.from({ length: n }, (_, i) => ({
-        icon:  ICONS[Math.floor(sr(i * 31 + 0) * ICONS.length)],
-        left:  `${sr(i * 31 + 1) * 95}%`,
-        top:   `${sr(i * 31 + 2) * 90}%`,
-        size:   10 + sr(i * 31 + 3) * 10,
-        opacity: (0.07 + sr(i * 31 + 4) * 0.13) * brightness,
-        dur:   `${14 + sr(i * 31 + 5) * 18}s`,
-        delay: `${-(sr(i * 31 + 6) * 20)}s`,
-        rot:   `${Math.round((sr(i * 31 + 7) - 0.5) * 60)}deg`,
-        dx:    `${Math.round((sr(i * 31 + 8) - 0.5) * 60)}px`,
-        dy:    `${-30 - Math.round(sr(i * 31 + 9) * 60)}px`,
-      })),
-    [n, brightness],
-  );
+  /**
+   * Each particle gets its OWN @keyframes with hardcoded values.
+   * Uses a back-and-forth floating pattern with large movement for visibility.
+   * Duration 8-16s ensures motion is clearly perceivable.
+   */
+  const { items, css } = useMemo(() => {
+    const list = Array.from({ length: n }, (_, i) => {
+      // Very large movement — unmissable floating effect
+      const x1 = Math.round((sr(i * 31 + 8) - 0.5) * 300);
+      const y1 = Math.round((sr(i * 31 + 9) - 0.5) * 200);
+      const x2 = Math.round((sr(i * 31 + 10) - 0.5) * -260);
+      const y2 = Math.round((sr(i * 31 + 11) - 0.5) * -180);
+      const r1 = Math.round((sr(i * 31 + 7) - 0.5) * 50);
+      const r2 = Math.round((sr(i * 31 + 12) - 0.5) * -40);
+      const op = Number(((0.12 + sr(i * 31 + 4) * 0.18) * brightness).toFixed(3));
+      const kf = `mf${i}`;
+      return {
+        kf,
+        icon: ICONS[Math.floor(sr(i * 31) * ICONS.length)],
+        left: sr(i * 31 + 1) * 90 + 5,
+        top:  sr(i * 31 + 2) * 85 + 5,
+        size: 12 + sr(i * 31 + 3) * 12,
+        op,
+        dur:  8 + sr(i * 31 + 5) * 8,          // 8-16s — fast enough to see
+        delay: -(sr(i * 31 + 6) * 10),
+        // Back-and-forth loop: start → mid1 → mid2 → start (smooth loop)
+        rule: `@keyframes ${kf}{` +
+          `0%{transform:translate(0,0) rotate(0deg);opacity:${op}}` +
+          `25%{transform:translate(${x1}px,${y1}px) rotate(${r1}deg);opacity:${op}}` +
+          `50%{transform:translate(${x2}px,${y2}px) rotate(${r2}deg);opacity:${op}}` +
+          `75%{transform:translate(${-x1 * 0.6}px,${-y1 * 0.7}px) rotate(${-r1 * 0.5}deg);opacity:${op}}` +
+          `100%{transform:translate(0,0) rotate(0deg);opacity:${op}}}`,
+      };
+    });
+    return { items: list, css: list.map((p) => p.rule).join("\n") };
+  }, [n, brightness]);
 
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
-      {/*
-       * One tiny <style> block injected at mount — zero JS runs per frame.
-       * CSS animations are handled entirely by the compositor (GPU thread),
-       * freeing the main thread for scroll, keyboard, and React updates.
-       */}
-      <style>{`
-        @keyframes mi-float {
-          0%   { transform: translate(0,0) rotate(0deg); opacity: 0; }
-          10%  { opacity: 1; }
-          90%  { opacity: 1; }
-          100% { transform: translate(var(--mi-dx),var(--mi-dy)) rotate(var(--mi-rot)); opacity: 0; }
-        }
-      `}</style>
+      {/* Baked keyframes — one per particle, zero JS per frame */}
+      <style dangerouslySetInnerHTML={{ __html: css }} />
 
-      {/* Static gradient mesh — composited once, no per-frame work */}
+      {/* Static radial gradient mesh */}
       <div
         className="absolute inset-0"
         style={{
@@ -84,23 +92,20 @@ export function DynamicBackground({
         }}
       />
 
-      {/* Emoji particles — each is a GPU layer; no canvas, no rAF, no main-thread cost */}
-      {particles.map((p, i) => (
+      {/* Particles — each references its own named keyframe */}
+      {items.map((p) => (
         <span
-          key={i}
+          key={p.kf}
           aria-hidden="true"
           style={{
             position: "absolute",
-            left: p.left,
-            top: p.top,
+            left: `${p.left}%`,
+            top: `${p.top}%`,
             fontSize: `${p.size}px`,
             lineHeight: "1",
             opacity: 0,
             willChange: "transform, opacity",
-            ["--mi-dx" as string]: p.dx,
-            ["--mi-dy" as string]: p.dy,
-            ["--mi-rot" as string]: p.rot,
-            animation: `mi-float ${p.dur} ${p.delay} infinite linear`,
+            animation: `${p.kf} ${p.dur}s ${p.delay}s infinite ease-in-out`,
           }}
         >
           {p.icon}
