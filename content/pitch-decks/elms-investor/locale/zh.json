@@ -1,0 +1,348 @@
+{
+  "nav": { "tagline": "ELMS 智慧物流" },
+  "slide1": {
+    "subtitle": "欧洲物流管理系统",
+    "tagline": "跨境商务 AI 驱动基础设施",
+    "badges": [
+      { "icon": "🇪🇺", "text": "欧盟合规" },
+      { "icon": "🤖", "text": "AI 赋能" },
+      { "icon": "🔗", "text": "MCP 就绪" }
+    ],
+    "features": [
+      { "icon": "📦", "label": "多承运商 API" },
+      { "icon": "🛡️", "label": "AEO 认证" },
+      { "icon": "🌱", "label": "ISO 14067 碳排放" },
+      { "icon": "⚡", "label": "亚100ms 边缘" },
+      { "icon": "🔮", "label": "AI 自主决策" }
+    ],
+    "ctaLabel": "探索平台",
+    "bottomDate": "2026年4月"
+  },
+  "slide2": {
+    "badge": "核心痛点",
+    "title": "壁垒：",
+    "subtitle": "全球物流的碎片化困局",
+    "description": "三个孤立系统，零互操作性。每次交接都是故障点。",
+    "syncError": "同步错误",
+    "silos": [
+      {
+        "title": "电商平台",
+        "items": ["订单碎片化", "跨店铺 SKU 不匹配", "无实时库存同步", "手动 CSV 导出"]
+      },
+      {
+        "title": "海关合规",
+        "items": ["纸质报关", "HS 编码错误", "清关周期延迟", "监管盲区"]
+      },
+      {
+        "title": "末端配送",
+        "items": ["手工重录面单", "地址格式错误", "无签收确认", "碳排放追踪缺失"]
+      }
+    ],
+    "mobileLabels": { "ecommerce": "电商", "customs": "海关", "lastMile": "末端", "syncErr": "同步错误" },
+    "mobileExpand": "点击查看碎片化详情",
+    "stats": [
+      { "value": "37%", "label": "数据丢失" },
+      { "value": "€42亿", "label": "产业损耗" },
+      { "value": "72h", "label": "平均延误" }
+    ],
+    "mobileModal": {
+      "title": "碎片化物流系统",
+      "subtitle": "三大孤岛系统，每次交接都是故障点。",
+      "statLabels": ["交接数据丢失", "年度欧盟损失", "平均通关延迟"]
+    }
+  },
+  "slide3": {
+    "badge": "解决方案",
+    "title": "架构",
+    "titleHighlight": "双环",
+    "features": [
+      { "label": "无缝系统集成", "description": "消除系统壁垒。整条供应链的物流数据——统一来源。" },
+      { "label": "自动面单生成", "description": "基于同步运输数据，自动生成精准的末端配送面单。" },
+      { "label": "海关合规", "description": "可信验证数据，确保零人工错误的顺畅通关。" },
+      { "label": "碳排放追踪", "description": "内置碳排放追踪，满足欧盟环境标准与法规。" },
+      { "label": "AI 智能驱动", "description": "预测分析、路线优化和基于 MCP 的自动决策。" },
+      { "label": "IoT 设备集成", "description": "实时温度、位置和状态监控的 IoT 设备数据。" }
+    ],
+    "modules": [
+      { "label": "运输", "badge": "API 优先" },
+      { "label": "海关", "badge": "AEO 认证" },
+      { "label": "配送", "badge": "末端投递" },
+      { "label": "IoT", "badge": "实时监控" },
+      { "label": "AI / MCP", "badge": "MCP 原生" },
+      { "label": "碳排放", "badge": "ISO 14067" }
+    ],
+    "techNodes": [
+      { "label": "Cloudflare", "sublabel": "边缘 · CDN · WAF", "features": ["300+ PoPs 全球边缘网络", "亚100ms 响应", "DDoS 防护 & WAF", "零冷启动 Workers"] },
+      { "label": "GitHub", "sublabel": "CI/CD · GitOps", "features": ["推送 → 部署 <2分钟", "自动 CI/CD 管线", "代码扫描 & Dependabot", "分支保护审查"] },
+      { "label": "Supabase", "sublabel": "DB · Auth · RLS", "features": ["PostgreSQL 行级安全", "数据库内 RPC", "实时 WebSocket", "Auth + JWT + MFA"] },
+      { "label": "Next.js 15", "sublabel": "SSR · RSC · Edge", "features": ["React Server Components", "ISR + Edge Runtime", "App Router + 中间件", "流式 SSR"] },
+      { "label": "Tailwind", "sublabel": "实用优先 UI", "features": ["零运行时 CSS", "设计系统一致性", "移动优先响应式", "暗色模式内建"] },
+      { "label": "shadcn/ui", "sublabel": "组件 · 可访问性", "features": ["Radix UI 原语 (WAI-ARIA)", "复制粘贴所有权", "企业级组件", "完整可访问性"] }
+    ],
+    "coreLabel": "ELMS",
+    "coreSublabel": "核心",
+    "techStackLabel": "技术栈",
+    "mobileExpand": "点击查看架构",
+    "mobileModal": {
+      "title": "解决方案架构",
+      "subtitle": "双环设计 · 6大模块 · 6大技术节点"
+    }
+  },
+  "slide4": {
+    "badge": "竞争优势",
+    "title": "传统物流",
+    "titleVs": "对比",
+    "titleHighlight": "ELMS",
+    "subtitle": "六个关键维度的正面对比。",
+    "traditionalHeader": "传统方式",
+    "elmsHeader": "ELMS",
+    "rows": [
+      { "dimension": "系统集成", "traditional": { "tag": "孤立", "text": "碎片化手动同步" }, "elms": { "tag": "统一", "text": "即时API生态" } },
+      { "dimension": "海关通关", "traditional": { "tag": "手动", "text": "易错的纸质流程" }, "elms": { "tag": "自动驾驶", "text": "100%数字化验证" } },
+      { "dimension": "可持续性", "traditional": { "tag": "盲区", "text": "碳排放零可见" }, "elms": { "tag": "绿色合规", "text": "原生ISO追踪" } },
+      { "dimension": "IoT/实时", "traditional": { "tag": "延迟", "text": "批处理数据" }, "elms": { "tag": "实时", "text": "实时边缘智能" } },
+      { "dimension": "AI / MCP", "traditional": { "tag": "无", "text": "静态遗留软件" }, "elms": { "tag": "自主", "text": "MCP原生AI代理" } },
+      { "dimension": "成本模型", "traditional": { "tag": "固定", "text": "高额前置许可费" }, "elms": { "tag": "弹性", "text": "可扩展按需付费" } }
+    ],
+    "verdict": {
+      "traditional": { "label": "传统", "sublabel": "递减收益" },
+      "elms": { "label": "ELMS", "sublabel": "复合优势" }
+    },
+    "mobileExpand": "点击对比所有维度",
+    "mobileModal": {
+      "title": "ELMS 对比传统方案",
+      "subtitle": "6大维度对比"
+    }
+  },
+  "slide5": {
+    "badge": "实时演示",
+    "title": "AI 物流实验室",
+    "titleHighlight": "MCP",
+    "subtitle": "自然语言 → MCP 协议 → 自动执行运输任务",
+    "mcpProtocol": "MCP 协议",
+    "processing": "处理中",
+    "connected": "已连接",
+    "systemMessages": [
+      "ELMS AI 就绪。MCP 服务器已连接。",
+      "可用工具：ship, track, customs, carbon"
+    ],
+    "userPrompt": "从深圳发50箱电子产品到都柏林，走最快路线。",
+    "callingTools": "正在调用 MCP 工具...",
+    "aiResponse": "✅ 运单创建成功。点击追踪：",
+    "shipmentCreated": "运单已创建",
+    "shipmentId": "ELMS-2026-SZX-DUB-0847",
+    "miniRoute": ["SZX → DUB", "50箱", "顺丰国际"],
+    "viewRoute": "查看路线仪表盘 & 单据",
+    "inputPlaceholder": "向 ELMS 提问任何问题...",
+    "outputHeader": "运单输出",
+    "outputReady": "就绪",
+    "outputIdLabel": "运单号",
+    "outputFields": [
+      { "label": "承运商", "value": "顺丰国际速运" },
+      { "label": "服务", "value": "特快优先（2-3天）" },
+      { "label": "路线", "value": "SZX → DUB（经AMS中转）" },
+      { "label": "海关", "value": "欧盟合规 · 自动申报" },
+      { "label": "面单", "value": "50张已生成 · 二维码附着" },
+      { "label": "碳排放", "value": "1.2吨 CO₂ · 可抵消" }
+    ],
+    "outputFooter": ["1.2秒内生成", "调用3个MCP工具"],
+    "compatBar": { "compatible": "兼容", "protocol": "协议", "protocolValue": "MCP (模型上下文协议)", "latency": "延迟", "latencyValue": "< 2秒端到端" },
+    "mobileLabels": { "console": "AI 控制台", "mcp": "MCP", "output": "输出" },
+    "mobileExpand": "点击查看完整演示",
+    "businessLinks": ["ELMS 产品", "案例研究", "文档中心", "返回幻灯片"],
+    "mobileModal": {
+      "title": "AI 物流实验室 × MCP",
+      "subtitle": "自然语言 → 自动执行",
+      "userPromptLabel": "用户指令",
+      "mcpProtocolLabel": "MCP 协议",
+      "mcpTools": "调用3个工具: ship, customs, carbon",
+      "outputLabel": "运单输出"
+    }
+  },
+  "slide6": {
+    "badge": "实时运单追踪",
+    "title": "路线仪表盘",
+    "subtitle": "顺丰优先 · 深圳 → 阿姆斯特丹 → 都柏林 · 50箱",
+    "shipmentId": "ELMS-2026-SZX-DUB-0847",
+    "legend": { "completed": "已完成", "inProgress": "进行中", "pending": "待处理" },
+    "docStatuses": { "Approved": "已批准", "Pending": "待处理", "Processing": "处理中", "Generated": "已生成" },
+    "routeNodes": [
+      { "label": "始发仓库", "location": "中国深圳", "timestamp": "2026-02-14 09:30 CST", "documents": [{ "title": "采购订单", "details": { "订单号": "PO-20260214-001", "商品": "50 × 消费电子", "总价值": "€127,500.00" } }, { "title": "装箱单", "details": { "总箱数": "50", "毛重": "1,250 公斤", "托盘数": "4（欧标托盘）" } }, { "title": "商业发票", "details": { "发票号": "CI-20260214-001", "HS编码": "8471.30 / 8528.72", "条款": "DDP 爱尔兰都柏林" } }] },
+      { "label": "承运商揽收", "location": "深圳SZX集散中心", "timestamp": "2026-02-14 14:15 CST", "documents": [{ "title": "航空运单 (MAWB)", "details": { "运单号": "784-2026-0847", "承运商": "顺丰国际速运", "中转枢纽": "AMS（阿姆斯特丹史基浦）" } }, { "title": "运单标签（×50）", "details": { "标签数": "50张", "格式": "A6热敏（100×150mm）", "二维码": "嵌入 — 链接至ELMS追踪" } }] },
+      { "label": "转运枢纽", "location": "阿姆斯特丹史基浦 (AMS)", "timestamp": "2026-02-15 06:45 CET", "documents": [{ "title": "转运申报 (T1)", "details": { "T1 MRN": "26NL00T1AMS003391", "类型": "联盟转运 (T1)", "状态": "已放行" } }, { "title": "IoT 温度日志", "details": { "传感器ID": "ELMS-IOT-T7742", "平均温度": "20.4°C", "结果": "✅ 范围内" } }] },
+      { "label": "欧盟海关清关", "location": "都柏林机场 (DUB)", "timestamp": "2026-02-15 11:30 GMT — 处理中", "documents": [{ "title": "ICS2 进口申报", "details": { "MRN": "26IE00ICS2DUB00847", "关税税率": "0%（ITA协议）", "状态": "⏳ 审核中" } }, { "title": "原产地证明", "details": { "证书号": "COO-CN-2026-44871", "原产国": "中国 (CN)" } }, { "title": "碳排放报告", "details": { "总CO₂": "1.2吨", "欧盟标准": "CSRD / CBAM 对齐" } }] },
+      { "label": "末端配送", "location": "爱尔兰都柏林", "documents": [{ "title": "配送单", "details": { "收件人": "TechRetail Europe GmbH", "时间窗口": "2026-02-16 09:00–12:00 GMT" } }, { "title": "签收证明", "details": { "状态": "⏳ 尚未签收" } }] }
+    ],
+    "statusBar": { "nodesCompleted": "节点已完成", "documentsTracked": "单据已追踪", "customs": "海关:", "customsStatus": "处理中", "carbon": "碳排放:", "carbonValue": "1.2吨 CO₂" },
+    "clickHint": "点击任意单据查看详情",
+    "docsSuffix": "单据",
+    "documentModal": { "shipmentRef": "运单参考", "datePrefix": "日期:", "autoGenerated": "ELMS 自动生成单据" },
+    "mobileExpand": "点击查看路线与单据",
+    "mobileModal": { "title": "路线仪表盘", "subtitle": "ELMS-2026-SZX-DUB-0847 · 5节点 · 12单据", "stats": [{ "value": "3/5", "label": "已完成" }, { "value": "12", "label": "单据" }, { "value": "处理中", "label": "海关" }, { "value": "1.2吨", "label": "CO₂" }] }
+  },
+  "slide7": {
+    "badge": "融资计划",
+    "title": "财务",
+    "titleHighlight": "透明度",
+    "subtitle": "募集€15万，用12个月建设ELMS。资金分配完全透明。",
+    "fundAllocation": [
+      { "label": "产品研发 & AI", "pct": "40%", "detail": "€60,000 · BRC合规，ISO集成，AI/MCP开发" },
+      { "label": "市场 & 运营", "pct": "30%", "detail": "€45,000 · 物流引擎，通关能力，承运商API" },
+      { "label": "安全 & 合规", "pct": "20%", "detail": "€30,000 · 欧盟服务器，GDPR审计，ISO & BRC认证" },
+      { "label": "应急储备", "pct": "10%", "detail": "€15,000 · 监管变化和市场风险缓冲" }
+    ],
+    "totalRaise": "总融资",
+    "totalRaiseAmount": "€15万",
+    "valuationBar": { "preLabel": "投前估值", "preValue": "€20万", "postLabel": "投后估值", "postValue": "€35万" },
+    "investmentCard": { "title": "投资亮点", "items": ["技术资产价值：€20万", "全栈平台已生产就绪", "资本效率：2.3倍杠杆", "SaaS订阅 + 交易型收入双轮驱动"] },
+    "keyMetrics": [
+      { "label": "存续期", "value": "18月" },
+      { "label": "杠杆", "value": "2.3×" },
+      { "label": "毛利率", "value": "75%" }
+    ]
+  },
+  "slide8": {
+    "badge": "多层路线图",
+    "title": "产品",
+    "titleHighlight": "路线图",
+    "subtitle": "3条并行轨道 · 2026 Q2 → 2027+ · 基础设施 × 智能 × 合规",
+    "timeColumns": [
+      { "period": "2026 Q2", "label": "奠基" },
+      { "period": "2026 Q3–Q4", "label": "构建 & 扩展" },
+      { "period": "2027 Q1", "label": "整合" },
+      { "period": "2027+", "label": "主导" }
+    ],
+    "tracks": [
+      { "label": "基础设施 & 运营", "milestones": [{ "title": "核心运输引擎", "desc": "多承运商API · 面单生成", "detail": "统一REST + GraphQL网关，聚合40+承运商API（FedEx、DHL、UPS、顺丰、菜鸟）。自动面单生成支持条形码/QR码、海关CN22/CN23及退货面单。实时报价比价引擎横跨所有承运商。" }, { "title": "边缘原生扩展", "desc": "亚100ms · 300+全球PoPs", "detail": "基于Cloudflare Workers + Durable Objects，遍布全球300+节点。追踪和报价查询P95延迟保证低于100ms。从0到50K请求/秒自动扩展，零冷启动。区域数据驻留：欧盟（都柏林）、亚太（东京）、中国（上海）。" }, { "title": "WMS深度同步", "desc": "实时库存网格", "detail": "与ShipStation、ShipBob、Flexport及自定义WMS双向库存同步，通过webhook + 轮询回退。实时库存网格，防止10+销售渠道超卖。拣选-打包-发货工作流自动化，支持条码扫描验证。" }, { "title": "全球扩展", "desc": "多租户 · 白标", "detail": "全多租户架构，支持500+并发品牌账户。白标门户支持自定义域名、品牌和邮件模板。本地化结账支持25+货币及区域特定承运商偏好。3PL集成合作伙伴API市场。" }] },
+      { "label": "智能 & 创新", "milestones": [{ "title": "AI 地址解析", "desc": "多语言 · 99.7%准确率", "detail": "基于Transformer的NER模型，使用5000万+全球地址（12种语言）训练。处理非结构化输入、缩写和转写（中文↔拼音，日文↔罗马字）。99.7%准确率，自动纠错建议。投递失败率降低35%。" }, { "title": "MCP 协议 V1", "desc": "对话式物流", "detail": "模型上下文协议桥接ChatGPT、Claude、Gemini和Grok，连接实时物流数据。自然语言查询：'我的包裹在哪？' → 实时追踪 + 预计到达时间。工具调用架构注册12个函数：追踪、报价、预订、取消、改路线、文档、合规、分析、提醒、批量、退货、海关。" }, { "title": "IoT 节点网络", "desc": "冷链监控", "detail": "BLE/LoRa传感器网格，监测温度（-40°C至+80°C）、湿度、震动和光照。阈值突破时通过webhook + 短信 + 邮件实时告警。符合FDA 21 CFR Part 11的制药和食品物流审计追踪。路线冷链完整性热力图仪表盘。" }, { "title": "自主物流", "desc": "自优化AI", "detail": "强化学习引擎持续优化承运商选择、路线规划和拼箱方案。基于历史模式+外部信号（天气、节假日、罢工）的预测需求预测。围绕中断自动改路线并分析成本影响。目标：降低15%成本，加快22%配送速度。" }] },
+      { "label": "合规 & 绿色科技", "milestones": [{ "title": "GDPR & 隐私", "desc": "爱尔兰数据驻留", "detail": "完全符合GDPR第28条，在都柏林进行专用欧盟数据处理。Supabase行级安全（RLS）确保租户数据隔离。自动数据保留策略及被遗忘权工作流。隐私设计架构，PII字段级加密。" }, { "title": "碳排放 ISO 14067", "desc": "范围3追踪", "detail": "ISO 14067认证的每票货物碳足迹计算器。覆盖全物流链的范围3排放追踪：首英里、干线、末英里、仓储。碳补偿市场集成，支持验证积分（Gold Standard、Verra）。包含月度ESG报告的可持续发展仪表盘。" }, { "title": "海关自动驾驶", "desc": "100%无纸化", "detail": "AI驱动的HS编码分类，5000+产品类别准确率98.5%。自动生成商业发票、装箱单和原产地证书。与欧盟、美国、中国和日本海关当局电子申报直连。实时拒绝方筛查和两用物品检测。" }, { "title": "绿色标准领导者", "desc": "碳中和认证", "detail": "科学碳目标倡议（SBTi）认证的碳中和运营。绿色承运商评分算法优先选择电动车、铁路和拼箱运输。包装废物减少计划：AI驱动的箱体尺寸优化，减少40%填充物。附带验证范围1-3排放数据的年度可持续发展报告。" }] }
+    ],
+    "statusLabels": { "done": "已完成", "active": "进行中", "planned": "计划中", "vision": "愿景" }
+  },
+  "slide9": {
+    "badge": "安全指挥中心",
+    "title": "安全",
+    "titleHighlight": "合规",
+    "subtitle": "企业级防护 · Supabase Auth · PostgreSQL RLS · Cloudflare WAF",
+    "activeStatus": "运行中",
+    "trustScoreLabel": "信任评分",
+    "certBadges": ["GDPR", "ISO", "SOC2"],
+    "cards": [
+      { "title": "欧盟数据主权", "subtitle": "GDPR", "badgeLabel": "欧盟合规", "description": "数据严格存储于都柏林 (eu-west-1)。100% GDPR 及爱尔兰数据保护法 2018 合规。", "details": ["AWS eu-west-1 (爱尔兰) 数据驻留", "Supabase Auth 含 JWT + MFA", "爱尔兰数据保护法 2018 对齐", "数据处理协议 (DPA) 就绪", "内置删除权与数据携带权"] },
+      { "title": "股东保护", "subtitle": "法律", "badgeLabel": "已保障", "description": "机构级股东协议。清晰的知识产权保护和责任隔离。", "details": ["专业股东协议", "知识产权归属与许可明确", "责任限制框架", "董事会治理架构已定义", "退出策略与估值条款"] },
+      { "title": "军事级防御", "subtitle": "安全", "badgeLabel": "零信任", "description": "零信任架构：静态AES-256，传输TLS 1.3。PostgreSQL RLS 内核级安全。", "details": ["静态 AES-256 加密", "传输 TLS 1.3 加密", "PostgreSQL 行级安全 (RLS)", "Cloudflare WAF & DDoS 防护", "自动审计日志 & SIEM"] },
+      { "title": "ESG 自动化", "subtitle": "环保", "badgeLabel": "ISO 14067", "description": "内置 ISO 14067 碳核算。零人工满足欧盟环境标准。", "details": ["原生 ISO 14067 碳追踪", "自动化欧盟范围3报告", "每运单碳足迹计算", "利益相关方 ESG 仪表盘", "欧盟环境法规对齐"] }
+    ],
+    "mobileExpand": "点击查看安全详情",
+    "mobileModal": { "title": "安全 & 合规", "subtitle": "4大支柱 · 企业级防护", "trustScoreValue": "100%" }
+  },
+  "slide10": {
+    "badge": "范式转移已至",
+    "headline": {
+      "prefix": "在AI时代，没有",
+      "strikethrough": "追随者",
+      "only": "只有",
+      "architects": "架构师",
+      "and": "和",
+      "obsolete": "出局者"
+    },
+    "leftBlock": {
+      "heading": "不可逆转的现实",
+      "text1": "从实体到数字的物流桥梁",
+      "bold1": "终将",
+      "text2": "被建造。历史的窗口正在打开，但稍纵即逝。唯一的变量是——我们是",
+      "bold2": "拥有",
+      "text3": "这套基础设施，还是向竞争对手租用。"
+    },
+    "rightBlock": {
+      "heading": "洗牌时刻",
+      "text1": "这不是一次软件升级，而是对全球贸易的根本性重构。遗留系统无法在向",
+      "bold1": "代理驱动商业",
+      "text2": "的转型中存活。我们正在构筑这座堡垒。"
+    },
+    "cta": "与我们共筑未来",
+    "email": "contact@motaiot.com",
+    "brand": "MOTA TechLink",
+    "confidential": "机密文件"
+  },
+  "slide11": {
+    "badge": "目标市场",
+    "title": "目标市场",
+    "subtitle": "面向跨境运输易腐及受监管商品的中型SME。",
+    "segments": [
+      { "label": "食品 & 饮品", "stat": "€1200亿欧盟跨境", "detail": "需要温控、时效关键物流的易腐商品。", "growth": "+8.3% 年增" },
+      { "label": "制造业", "stat": "42%仍为纸质", "detail": "多供应商入库物流和欧盟跨境JIT配送。", "growth": "2025年数字化采用翻倍" },
+      { "label": "冷链 / 3PL", "stat": "12%年增长", "detail": "实时温度监控、偏差预警、合规审计追踪。", "growth": "2028年市场达€2350亿" },
+      { "label": "电商仓配", "stat": "320万SME发货商", "detail": "跨境退货、多承运商比价、海关单据。", "growth": "+23%年增" },
+      { "label": "海关清关", "stat": "€180亿合规成本", "detail": "不断变化的HS编码、制裁清单、绿色通道法规。", "growth": "脱欧后复杂度↑40%" },
+      { "label": "医药 & 保健品", "stat": "严格BRC/ISO", "detail": "GDP合规保管链、序列化追踪。", "growth": "€280亿，+6.1% CAGR" }
+    ],
+    "keyMessage": "320万欧盟中小企业缺乏可负担的合规物流软件。",
+    "stats": [
+      { "value": "€3400亿", "label": "可寻址市场" },
+      { "value": "72%", "label": "手动运营率" },
+      { "value": "< 5%", "label": "当前数字化率" }
+    ]
+  },
+  "slide12": {
+    "badge": "收入模型",
+    "title": "定价策略",
+    "subtitle": "三个简洁层级——无隐藏费用。",
+    "tiers": [
+      { "name": "许可证", "price": "€999", "period": "一次性", "tagline": "完整平台访问", "features": ["无限运单", "BRC & ISO 模板", "API 接入", "自托管选项"] },
+      { "name": "支持", "price": "$19.99", "period": "/月", "tagline": "优先帮助与更新", "features": ["7×24 工单支持", "每月功能更新", "入职电话", "自定义集成"] },
+      { "name": "积分", "price": "按需付费", "period": "", "tagline": "AI & 合规按量", "features": ["AI 单据扫描", "海关预清关", "路线优化", "批量折扣"] }
+    ]
+  },
+  "slide13": {
+    "badge": "AI 营销",
+    "title": "AI 营销智能",
+    "subtitle": "市场情报猎手——自动发现讨论痛点的用户。",
+    "steps": [
+      { "label": "产品导入", "detail": "客户提供产品名、描述、URL和目标语言。" },
+      { "label": "AI 分析", "detail": "LLM推断目标用户痛点，生成多平台扫描关键词。" },
+      { "label": "多平台扫描", "detail": "持续扫描Reddit、YouTube、Amazon、Quora、Twitter/X、G2。" },
+      { "label": "AI 回复生成", "detail": "生成有价值回复并嵌入追踪链接。可选人工审核。" },
+      { "label": "追踪 & 计费", "detail": "追踪点击和转化，生成按量计费账单。" }
+    ],
+    "advantages": [
+      "从被动投放到主动触达",
+      "有价值的回复而非垃圾信息——零封禁风险",
+      "按结果付费，非按展示付费"
+    ]
+  },
+  "slide14": {
+    "badge": "增长策略",
+    "title": "增长计划",
+    "subtitle": "自增强飞轮——从种子启动到网络效应。",
+    "phases": [
+      { "label": "启动 & 种子轮", "timeline": "2026 Q2–Q3", "detail": "在欧盟食品物流走廊引入20家试点商户。", "metric": "20家商户, €1万MRR" },
+      { "label": "推荐计划", "timeline": "2026 Q3–Q4", "detail": "启动推荐奖励——商户通过验证注册赚取积分。", "metric": "100家商户, 3×MRR" },
+      { "label": "市场扩展", "timeline": "2027 Q1–Q2", "detail": "扩展到亚太走廊（JP/KR/AU）。多语言平台。", "metric": "500家商户, 5条走廊" },
+      { "label": "网络效应", "timeline": "2027 H2+", "detail": "每个新商户增加数据密度，为所有人改善AI。", "metric": "2000+商户" }
+    ],
+    "earlyBird": [
+      "创始商户免费6个月支持层级",
+      "优先入职 & 专属成功经理",
+      "锁定价格——免受未来涨价影响"
+    ],
+    "summaryMetric": "2,000+",
+    "summaryLabel": "2027年底商户数"
+  },
+  "slideTitles": [
+    "ELMS",
+    "核心痛点",
+    "架构",
+    "竞争优势",
+    "目标市场",
+    "定价策略",
+    "融资 & 资金",
+    "AI × MCP",
+    "运单追踪",
+    "AI 营销",
+    "路线图",
+    "增长计划",
+    "安全 & 合规",
+    "行动号召"
+  ]
+}

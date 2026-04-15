@@ -1,0 +1,1312 @@
+"use client";
+
+import React, { useEffect, useState, useMemo } from "react";
+import {
+  Bot,
+  Send,
+  Cpu,
+  Package,
+  Truck,
+  ShieldCheck,
+  Zap,
+  ArrowRight,
+  ArrowLeft,
+  Sparkles,
+  Globe,
+  Clock,
+  CheckCircle2,
+  BarChart3,
+  Leaf,
+  ExternalLink,
+  FileCheck,
+  MapPin,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  MobileDetailModal,
+  MobileExpandButton,
+} from "@/components/pitch-deck";
+import { useContent, useNav, useActiveSlide } from "../hooks";
+import { SECTION } from "../constants";
+
+// ─── AI Brand Icons (inline SVGs) ────────────────────────────────
+function ChatGPTIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" />
+    </svg>
+  );
+}
+
+function GeminiIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 24C12 18.833 10.35 14.55 7.05 11.15C3.75 7.75 0 5.5 0 5.5C0 5.5 0 0 12 0C24 0 24 5.5 24 5.5C24 5.5 20.25 7.75 16.95 11.15C13.65 14.55 12 18.833 12 24Z"
+        fill="url(#gemini-grad)"
+      />
+      <defs>
+        <linearGradient id="gemini-grad" x1="0" y1="0" x2="24" y2="24">
+          <stop stopColor="#4285F4" />
+          <stop offset="0.5" stopColor="#9B72CB" />
+          <stop offset="1" stopColor="#D96570" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
+function GrokIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M2.04 4.055h4.032l6.781 9.89L19.64 4.054h4.032v.001L14.86 15.946l5.107 3.999h-4.032l-3.082-2.414-3.078 2.414H5.743l5.104-3.999L2.04 4.055z" />
+    </svg>
+  );
+}
+
+function ClaudeIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M14.957 4.386l-5.08 15.228h-3.68L11.277 4.386h3.68zm-2.68 0l5.08 15.228h3.68L15.957 4.386h-3.68z" />
+    </svg>
+  );
+}
+
+// ─── AI Brand Icons with Hover Tooltip & Sequential Glow ─────────
+const aiBrands = [
+  { name: "ChatGPT", Icon: ChatGPTIcon, color: "text-emerald-400", glowColor: "rgba(52,211,153,0.5)" },
+  { name: "Gemini", Icon: GeminiIcon, color: "", glowColor: "rgba(66,133,244,0.5)" },
+  { name: "Grok", Icon: GrokIcon, color: "text-white/80", glowColor: "rgba(255,255,255,0.4)" },
+  { name: "Claude", Icon: ClaudeIcon, color: "text-orange-400", glowColor: "rgba(251,146,60,0.5)" },
+] as const;
+
+function AIBrandIcons() {
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
+  return (
+    <div className="flex items-center gap-1.5">
+      {aiBrands.map((brand, i) => (
+        <div
+          key={brand.name}
+          className="relative"
+          onMouseEnter={() => setHoveredIdx(i)}
+          onMouseLeave={() => setHoveredIdx(null)}
+        >
+          {/* Sequential glow animation */}
+          <motion.div
+            className={`p-1 rounded-md transition-colors duration-200 ${
+              hoveredIdx === i ? "bg-white/10" : ""
+            }`}
+            animate={{
+              scale: hoveredIdx === null
+                ? [1, 1, 1.15, 1, 1]
+                : hoveredIdx === i ? 1.2 : 1,
+            }}
+            transition={
+              hoveredIdx === null
+                ? {
+                    duration: 2.4,
+                    repeat: Infinity,
+                    delay: i * 0.6,
+                    ease: "easeInOut",
+                  }
+                : { duration: 0.2 }
+            }
+          >
+            <motion.div
+              animate={
+                hoveredIdx === null
+                  ? {
+                      filter: [
+                        "drop-shadow(0 0 0px transparent)",
+                        "drop-shadow(0 0 0px transparent)",
+                        `drop-shadow(0 0 6px ${brand.glowColor})`,
+                        "drop-shadow(0 0 0px transparent)",
+                        "drop-shadow(0 0 0px transparent)",
+                      ],
+                    }
+                  : hoveredIdx === i
+                    ? { filter: `drop-shadow(0 0 8px ${brand.glowColor})` }
+                    : { filter: "drop-shadow(0 0 0px transparent)" }
+              }
+              transition={
+                hoveredIdx === null
+                  ? { duration: 2.4, repeat: Infinity, delay: i * 0.6, ease: "easeInOut" }
+                  : { duration: 0.2 }
+              }
+            >
+              <brand.Icon className={`w-4 h-4 ${brand.color}`} />
+            </motion.div>
+          </motion.div>
+
+          {/* Tooltip */}
+          <AnimatePresence>
+            {hoveredIdx === i && (
+              <motion.div
+                className="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-0.5 rounded-md bg-slate-800 border border-white/10 shadow-lg whitespace-nowrap z-20 pointer-events-none"
+                initial={{ opacity: 0, y: 4, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 4, scale: 0.9 }}
+                transition={{ duration: 0.15 }}
+              >
+                <span className="text-[9px] font-mono font-semibold text-white/90">
+                  {brand.name}
+                </span>
+                {/* Arrow */}
+                <div className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-2 h-2 rotate-45 bg-slate-800 border-r border-b border-white/10" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ─── Business Navigation Links ───────────────────────────────────
+function BusinessLinks() {
+  const content = useContent();
+  const c = content.slide5;
+  const links = [
+    { label: c.businessLinks[0], href: "/products/mota-ai/" },
+    { label: c.businessLinks[1], href: "/showcase" },
+    { label: c.businessLinks[2], href: "/docs" },
+  ];
+
+  return (
+    <motion.div
+      className="flex flex-wrap items-center gap-2 mt-2"
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.8 }}
+    >
+      <a
+        href="/pitch-deck/elms-investor"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[10px] lg:text-xs text-slate-400 font-mono hover:text-emerald-400 hover:border-emerald-400/30 hover:bg-emerald-500/5 transition-all duration-300 group"
+      >
+        <ArrowLeft className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
+        {c.businessLinks[3]}
+      </a>
+      {links.map((link) => (
+        <a
+          key={link.label}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[10px] lg:text-xs text-slate-400 font-mono hover:text-emerald-400 hover:border-emerald-400/30 hover:bg-emerald-500/5 transition-all duration-300 group"
+        >
+          {link.label}
+          <ExternalLink className="w-2.5 h-2.5 opacity-50 group-hover:opacity-100 transition-opacity" />
+        </a>
+      ))}
+    </motion.div>
+  );
+}
+
+// ─── Animation Step Constants ────────────────────────────────────
+const STEP_BLANK = 0;
+const STEP_SYSTEM = 1;
+const STEP_PROMPT = 2;
+const STEP_PROCESSING = 3;
+const STEP_STREAM_0 = 4;  // Querying ELMS Shipping API
+const STEP_STREAM_1 = 5;  // Found shipment
+const STEP_RIGHT_START = 6;
+const STEP_RIGHT_END = 11;
+const STEP_STREAM_2 = 12; // Route loaded
+const STEP_STREAM_3 = 13; // Fetching documents
+const STEP_STREAM_4 = 14; // All data retrieved
+const STEP_RESULT = 15;
+
+// ─── Typewriter Line Component ───────────────────────────────────
+function TypingLine({
+  text,
+  onDone,
+  speed = 35,
+}: {
+  text: string;
+  onDone?: () => void;
+  speed?: number;
+}) {
+  const [displayed, setDisplayed] = useState("");
+  const [done, setDone] = useState(false);
+  const onDoneRef = React.useRef(onDone);
+  onDoneRef.current = onDone;
+
+  useEffect(() => {
+    setDisplayed("");
+    setDone(false);
+    let idx = 0;
+    const interval = setInterval(() => {
+      idx++;
+      setDisplayed(text.slice(0, idx));
+      if (idx >= text.length) {
+        clearInterval(interval);
+        setDone(true);
+        onDoneRef.current?.();
+      }
+    }, speed);
+    return () => clearInterval(interval);
+  }, [text, speed]);
+
+  return (
+    <>
+      {done ? text : displayed}
+      {!done && (
+        <motion.span
+          className="inline-block w-0.5 h-3 bg-emerald-400 ml-0.5 align-middle"
+          animate={{ opacity: [1, 0] }}
+          transition={{ duration: 0.6, repeat: Infinity }}
+        />
+      )}
+    </>
+  );
+}
+
+// ─── Glowing Pulse Ring ──────────────────────────────────────────
+function PulseRing({
+  size = 80,
+  color = "emerald",
+  delay = 0,
+}: {
+  size?: number;
+  color?: string;
+  delay?: number;
+}) {
+  const colorMap: Record<string, string> = {
+    emerald: "border-emerald-400/40",
+    cyan: "border-cyan-400/30",
+    blue: "border-blue-400/30",
+  };
+  return (
+    <motion.div
+      className={`absolute rounded-full border ${colorMap[color] || colorMap.emerald}`}
+      style={{ width: size, height: size }}
+      initial={{ opacity: 0, scale: 0.6 }}
+      animate={{ opacity: [0, 0.6, 0], scale: [0.6, 1.3, 1.6] }}
+      transition={{
+        duration: 2.5,
+        repeat: Infinity,
+        delay,
+        ease: "easeOut",
+      }}
+    />
+  );
+}
+
+// ─── Data Flow Particle ──────────────────────────────────────────
+function DataParticle({
+  delay,
+  direction,
+}: {
+  delay: number;
+  direction: "left" | "right";
+}) {
+  const x = direction === "right" ? [0, 60] : [-60, 0];
+  return (
+    <motion.div
+      className="absolute w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.8)]"
+      initial={{ opacity: 0, x: x[0] }}
+      animate={{
+        opacity: [0, 1, 1, 0],
+        x: [x[0], x[0] + (x[1] - x[0]) * 0.4, x[0] + (x[1] - x[0]) * 0.8, x[1]],
+      }}
+      transition={{
+        duration: 1.6,
+        delay,
+        repeat: Infinity,
+        repeatDelay: 2,
+        ease: "easeInOut",
+      }}
+    />
+  );
+}
+
+// ─── MCP Bridge Node ─────────────────────────────────────────────
+function MCPBridgeNode({ active }: { active: boolean }) {
+  const content = useContent();
+  const c = content.slide5;
+  return (
+    <div className="relative flex flex-col items-center justify-center gap-3 px-3">
+      {/* Pulse rings */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <PulseRing size={90} delay={0} />
+        <PulseRing size={110} delay={0.8} />
+        <PulseRing size={130} delay={1.6} color="cyan" />
+      </div>
+
+      {/* Left data flow */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2">
+        {active && (
+          <>
+            <DataParticle delay={0} direction="right" />
+            <DataParticle delay={0.5} direction="right" />
+            <DataParticle delay={1.0} direction="right" />
+          </>
+        )}
+      </div>
+
+      {/* Right data flow */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2">
+        {active && (
+          <>
+            <DataParticle delay={0.3} direction="right" />
+            <DataParticle delay={0.8} direction="right" />
+            <DataParticle delay={1.3} direction="right" />
+          </>
+        )}
+      </div>
+
+      {/* Central node */}
+      <motion.div
+        className="relative z-10 flex flex-col items-center"
+        animate={active ? { scale: [1, 1.05, 1] } : {}}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <motion.div
+          className={`p-3 lg:p-4 rounded-2xl border-2 backdrop-blur-xl transition-all duration-700 ${
+            active
+              ? "bg-emerald-500/15 border-emerald-400/50 shadow-[0_0_30px_rgba(52,211,153,0.25)]"
+              : "bg-white/5 border-white/10"
+          }`}
+        >
+          <Cpu
+            className={`w-6 h-6 lg:w-7 lg:h-7 transition-colors duration-500 ${
+              active ? "text-emerald-400" : "text-slate-500"
+            }`}
+          />
+        </motion.div>
+
+        <motion.div
+          className="mt-2 text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <div
+            className={`text-[10px] lg:text-xs font-bold font-mono tracking-wider uppercase transition-colors duration-500 ${
+              active ? "text-emerald-400" : "text-slate-500"
+            }`}
+          >
+            {c.mcpProtocol}
+          </div>
+          <AnimatePresence>
+            {active && (
+              <motion.div
+                className="flex items-center gap-1 mt-1 text-[9px] lg:text-[10px] text-emerald-400/70 font-mono"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+              >
+                <Zap className="w-2.5 h-2.5" />
+                {c.processing}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+}
+
+// ─── Streaming Tool Messages ─────────────────────────────────────
+const STREAM_MESSAGES = [
+  { icon: "🔍", text: "Querying ELMS Shipping API…", color: "text-cyan-400/80" },
+  { icon: "📦", text: "Found shipment: ELMS-2026-SZX-DUB-0847", color: "text-emerald-400/80" },
+  { icon: "🗺️", text: "Route loaded: SZX → AMS → DUB (3 hops)", color: "text-blue-400/80" },
+  { icon: "📋", text: "Fetching 12 associated documents…", color: "text-violet-400/80" },
+  { icon: "✅", text: "All data retrieved — rendering card.", color: "text-emerald-400/90" },
+];
+
+// ─── Stream Message Row ──────────────────────────────────────────
+function StreamRow({
+  msg,
+  typing,
+  onDone,
+}: {
+  msg: (typeof STREAM_MESSAGES)[number];
+  typing: boolean;
+  onDone: () => void;
+}) {
+  return (
+    <motion.div
+      className="flex items-start gap-2 mt-1"
+      initial={{ opacity: 0, x: -8 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.25 }}
+    >
+      <span className="text-xs mt-0.5">{msg.icon}</span>
+      <span className={`text-[11px] lg:text-xs font-mono ${msg.color} leading-snug`}>
+        {typing ? <TypingLine text={msg.text} onDone={onDone} speed={25} /> : msg.text}
+      </span>
+    </motion.div>
+  );
+}
+
+// ─── AI Chat Console (Left) ──────────────────────────────────────
+function AIChatConsole({
+  step,
+  onStepDone,
+  onShipmentClick,
+}: {
+  step: number;
+  onStepDone: () => void;
+  onShipmentClick: () => void;
+}) {
+  const content = useContent();
+  const c = content.slide5;
+  const chatEndRef = React.useRef<HTMLDivElement>(null);
+
+  // Auto-scroll when step changes
+  useEffect(() => {
+    if (step > STEP_BLANK) {
+      const timer = setTimeout(() => {
+        chatEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+      }, 200);
+      return () => clearTimeout(timer);
+    }
+  }, [step]);
+
+  // Handle processing step (auto-advance after brief pause)
+  useEffect(() => {
+    if (step === STEP_PROCESSING) {
+      const timer = setTimeout(onStepDone, 800);
+      return () => clearTimeout(timer);
+    }
+  }, [step, onStepDone]);
+
+  return (
+    <motion.div
+      className="flex flex-col h-full rounded-2xl border border-white/10 bg-white/4 backdrop-blur-xl overflow-visible"
+      initial={{ opacity: 0, x: -30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      {/* Header */}
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/10 bg-white/2 rounded-t-2xl overflow-visible relative z-20">
+        <div className="flex items-center gap-1.5">
+          <Bot className="w-4 h-4 text-emerald-400" />
+          <AIBrandIcons />
+        </div>
+        <div className="ml-auto flex items-center gap-1">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="text-[9px] text-emerald-400/70 font-mono">
+            {c.connected}
+          </span>
+        </div>
+      </div>
+
+      {/* Chat area */}
+      <div className="flex-1 p-3 lg:p-4 space-y-3 overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+        {/* System message */}
+        {step >= STEP_SYSTEM && (
+          <motion.div
+            className="flex items-start gap-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <div className="p-1 rounded-md bg-emerald-500/10">
+              <Sparkles className="w-3 h-3 text-emerald-400" />
+            </div>
+            <div className="text-xs lg:text-sm text-slate-400 font-mono leading-relaxed">
+              {step === STEP_SYSTEM ? (
+                <TypingLine
+                  text={`${c.systemMessages[0]} ${c.systemMessages[1]}`}
+                  onDone={onStepDone}
+                  speed={18}
+                />
+              ) : (
+                <>
+                  {c.systemMessages[0]}
+                  <br />
+                  <span className="text-emerald-400/60">
+                    {c.systemMessages[1]}
+                  </span>
+                </>
+              )}
+            </div>
+          </motion.div>
+        )}
+
+        {/* User typing prompt */}
+        {step >= STEP_PROMPT && (
+          <div className="flex items-start gap-2 mt-2">
+            <div className="p-1 rounded-md bg-blue-500/10">
+              <Send className="w-3 h-3 text-blue-400" />
+            </div>
+            <div className="flex-1">
+              <div className="text-xs lg:text-sm text-white/90 font-mono leading-relaxed min-h-10">
+                {step === STEP_PROMPT ? (
+                  <TypingLine text={c.userPrompt} onDone={onStepDone} speed={35} />
+                ) : (
+                  c.userPrompt
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* AI processing indicator */}
+        <AnimatePresence>
+          {step === STEP_PROCESSING && (
+            <motion.div
+              className="flex items-center gap-2 mt-1"
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+            >
+              <div className="p-1 rounded-md bg-emerald-500/10">
+                <Sparkles className="w-3 h-3 text-emerald-400" />
+              </div>
+              <div className="flex items-center gap-1.5 text-xs text-emerald-400/80 font-mono">
+                <motion.div
+                  className="flex gap-0.5"
+                  animate={{ opacity: [0.4, 1, 0.4] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <span>●</span>
+                  <span>●</span>
+                  <span>●</span>
+                </motion.div>
+                {c.callingTools}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Stream messages — first batch (before right panel) */}
+        {step >= STEP_STREAM_0 && (
+          <StreamRow msg={STREAM_MESSAGES[0]} typing={step === STEP_STREAM_0} onDone={onStepDone} />
+        )}
+        {step >= STEP_STREAM_1 && (
+          <StreamRow msg={STREAM_MESSAGES[1]} typing={step === STEP_STREAM_1} onDone={onStepDone} />
+        )}
+
+        {/* Stream messages — second batch (after right panel fields) */}
+        {step >= STEP_STREAM_2 && (
+          <StreamRow msg={STREAM_MESSAGES[2]} typing={step === STEP_STREAM_2} onDone={onStepDone} />
+        )}
+        {step >= STEP_STREAM_3 && (
+          <StreamRow msg={STREAM_MESSAGES[3]} typing={step === STEP_STREAM_3} onDone={onStepDone} />
+        )}
+        {step >= STEP_STREAM_4 && (
+          <StreamRow msg={STREAM_MESSAGES[4]} typing={step === STEP_STREAM_4} onDone={onStepDone} />
+        )}
+
+        {/* ── Result Card ── */}
+        <AnimatePresence>
+          {step >= STEP_RESULT && (
+            <motion.div
+              className="mt-2"
+              initial={{ opacity: 0, y: 12, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              {/* AI response text */}
+              <div className="flex items-start gap-2 mb-2">
+                <div className="p-1 rounded-md bg-emerald-500/10">
+                  <Sparkles className="w-3 h-3 text-emerald-400" />
+                </div>
+                <div className="text-xs lg:text-sm text-emerald-400/80 font-mono leading-relaxed">
+                  {c.aiResponse}
+                </div>
+              </div>
+
+              {/* Clickable shipment card */}
+              <motion.button
+                onClick={onShipmentClick}
+                className="w-full group cursor-pointer rounded-xl border border-emerald-500/30 bg-linear-to-br from-emerald-500/10 via-emerald-500/5 to-cyan-500/5 p-3 lg:p-3.5 text-left transition-all duration-300 hover:border-emerald-400/50 hover:shadow-[0_0_20px_rgba(52,211,153,0.15)] hover:from-emerald-500/15 hover:to-cyan-500/10 active:scale-[0.98]"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <div className="p-1.5 rounded-lg bg-emerald-500/15 border border-emerald-500/20">
+                      <FileCheck className="w-3.5 h-3.5 text-emerald-400" />
+                    </div>
+                    <div>
+                      <div className="text-[9px] lg:text-[10px] text-emerald-400/60 font-mono uppercase tracking-wider">
+                        {c.shipmentCreated}
+                      </div>
+                      <div className="text-xs lg:text-sm text-emerald-300 font-mono font-bold">
+                        {c.shipmentId}
+                      </div>
+                    </div>
+                  </div>
+                  <motion.div
+                    className="text-emerald-400/60 group-hover:text-emerald-400 transition-colors"
+                    animate={{ x: [0, 3, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.div>
+                </div>
+                <div className="flex items-center gap-3 text-[9px] lg:text-[10px] font-mono text-slate-400">
+                  <span className="flex items-center gap-1">
+                    <MapPin className="w-2.5 h-2.5 text-emerald-400/50" />
+                    {c.miniRoute[0]}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Package className="w-2.5 h-2.5 text-cyan-400/50" />
+                    {c.miniRoute[1]}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Truck className="w-2.5 h-2.5 text-blue-400/50" />
+                    {c.miniRoute[2]}
+                  </span>
+                </div>
+                <div className="mt-2 pt-2 border-t border-emerald-500/10 flex items-center justify-center gap-1.5">
+                  <span className="text-[9px] lg:text-[10px] text-emerald-400/50 font-mono group-hover:text-emerald-400/80 transition-colors">
+                    {c.viewRoute}
+                  </span>
+                  <ArrowRight className="w-3 h-3 text-emerald-400/40 group-hover:text-emerald-400/80 group-hover:translate-x-0.5 transition-all" />
+                </div>
+              </motion.button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        {/* Scroll anchor */}
+        <div ref={chatEndRef} />
+      </div>
+
+      {/* Input bar */}
+      <div className="px-3 py-2 border-t border-white/10 bg-white/2">
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+          <span className="text-xs text-slate-500 font-mono flex-1">
+            {c.inputPlaceholder}
+          </span>
+          <Send className="w-3 h-3 text-slate-500" />
+        </div>
+      </div>
+
+      {/* Business navigation links */}
+      <div className="px-3 py-2 border-t border-white/5">
+        <BusinessLinks />
+      </div>
+    </motion.div>
+  );
+}
+
+// ─── Shipment Result Card (Right) ────────────────────────────────
+interface ShipmentField {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  color: string;
+}
+
+function ShipmentCard({
+  step,
+  onStepDone,
+}: {
+  step: number;
+  onStepDone: () => void;
+}) {
+  const content = useContent();
+  const c = content.slide5;
+  const fields: ShipmentField[] = useMemo(
+    () => [
+      { icon: <Truck className="w-3.5 h-3.5" />, label: c.outputFields[0].label, value: c.outputFields[0].value, color: "text-emerald-400" },
+      { icon: <Zap className="w-3.5 h-3.5" />, label: c.outputFields[1].label, value: c.outputFields[1].value, color: "text-cyan-400" },
+      { icon: <Globe className="w-3.5 h-3.5" />, label: c.outputFields[2].label, value: c.outputFields[2].value, color: "text-blue-400" },
+      { icon: <ShieldCheck className="w-3.5 h-3.5" />, label: c.outputFields[3].label, value: c.outputFields[3].value, color: "text-emerald-400" },
+      { icon: <Package className="w-3.5 h-3.5" />, label: c.outputFields[4].label, value: c.outputFields[4].value, color: "text-purple-400" },
+      { icon: <Leaf className="w-3.5 h-3.5" />, label: c.outputFields[5].label, value: c.outputFields[5].value, color: "text-green-400" },
+    ],
+    [c]
+  );
+
+  const visible = step >= STEP_RIGHT_START;
+  const visibleFields = Math.max(0, Math.min(6, step - STEP_RIGHT_START + 1));
+  const typingFieldIdx = step >= STEP_RIGHT_START && step <= STEP_RIGHT_END ? step - STEP_RIGHT_START : -1;
+
+  return (
+    <motion.div
+      className="flex flex-col h-full rounded-2xl border border-white/10 bg-white/4 backdrop-blur-xl overflow-hidden"
+      initial={{ opacity: 0, x: 30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+    >
+      {/* Header */}
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/10 bg-white/2">
+        <div className="flex items-center gap-1.5">
+          <Package className="w-4 h-4 text-emerald-400" />
+          <span className="text-xs font-semibold text-white/80 font-mono">
+            {c.outputHeader}
+          </span>
+        </div>
+        <div className="ml-auto">
+          <AnimatePresence>
+            {step > STEP_RIGHT_END && (
+              <motion.div
+                className="flex items-center gap-1"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+              >
+                <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                <span className="text-[9px] text-emerald-400 font-mono font-bold">
+                  {c.outputReady}
+                </span>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+
+      {/* Shipment ID */}
+      <div className="px-4 pt-3">
+        <AnimatePresence>
+          {visible && (
+            <motion.div
+              className="flex items-center justify-between px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20"
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+            >
+              <div>
+                <div className="text-[9px] text-emerald-400/60 font-mono uppercase">
+                  {c.outputIdLabel}
+                </div>
+                <div className="text-xs text-emerald-300 font-mono font-bold">
+                  {c.shipmentId}
+                </div>
+              </div>
+              <BarChart3 className="w-4 h-4 text-emerald-400/40" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Fields — revealed one by one with typewriter values */}
+      <div className="flex-1 p-3 lg:p-4 space-y-1.5 overflow-hidden">
+        {fields.slice(0, visibleFields).map((field, i) => (
+          <motion.div
+            key={field.label}
+            className="flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-white/3 border border-white/5 hover:bg-white/6 transition-colors"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            <div className={`${field.color} opacity-70`}>{field.icon}</div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[9px] text-slate-500 font-mono uppercase tracking-wider">
+                {field.label}
+              </div>
+              <div className="text-[11px] lg:text-xs text-white/90 font-mono font-medium truncate">
+                {i === typingFieldIdx ? (
+                  <TypingLine text={field.value} onDone={onStepDone} speed={28} />
+                ) : (
+                  field.value
+                )}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Footer stats */}
+      <AnimatePresence>
+        {step > STEP_RIGHT_END && (
+          <motion.div
+            className="px-4 py-2 border-t border-white/10 bg-white/2 flex items-center justify-between"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <div className="flex items-center gap-1 text-[9px] text-emerald-400/60 font-mono">
+              <Clock className="w-2.5 h-2.5" />
+              {c.outputFooter[0]}
+            </div>
+            <div className="flex items-center gap-1 text-[9px] text-emerald-400/60 font-mono">
+              <Zap className="w-2.5 h-2.5" />
+              {c.outputFooter[1]}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
+// ─── Connection Lines (SVG) ──────────────────────────────────────
+function ConnectionLine({
+  active,
+  side,
+}: {
+  active: boolean;
+  side: "left" | "right";
+}) {
+  const filterId = `glow-${side}`;
+  return (
+    <div className="hidden lg:flex items-center justify-center w-14 xl:w-20 relative">
+      <svg className="w-full h-20" viewBox="0 0 80 60" fill="none">
+        <motion.path
+          d="M0 30 H80"
+          stroke={active ? "rgba(52,211,153,0.4)" : "rgba(255,255,255,0.08)"}
+          strokeWidth="1.5"
+          strokeDasharray="4 4"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 0.8, delay: side === "left" ? 0.5 : 1.5 }}
+        />
+        {active && (
+          <>
+            {/* Primary message packet - large glowing orb */}
+            <motion.circle
+              cx="0"
+              cy="30"
+              r="4"
+              fill="#34D399"
+              filter={`url(#${filterId})`}
+              animate={{ cx: [0, 80] }}
+              transition={{
+                duration: 0.8,
+                repeat: Infinity,
+                repeatDelay: 1.2,
+                ease: "easeInOut",
+              }}
+            />
+            {/* Trail particle 1 */}
+            <motion.circle
+              cx="0"
+              cy="30"
+              r="2.5"
+              fill="#34D399"
+              opacity="0.5"
+              animate={{ cx: [0, 80] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.1,
+                repeat: Infinity,
+                repeatDelay: 1.2,
+                ease: "easeInOut",
+              }}
+            />
+            {/* Trail particle 2 */}
+            <motion.circle
+              cx="0"
+              cy="30"
+              r="1.5"
+              fill="#34D399"
+              opacity="0.3"
+              animate={{ cx: [0, 80] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                repeat: Infinity,
+                repeatDelay: 1.2,
+                ease: "easeInOut",
+              }}
+            />
+            {/* Second wave offset */}
+            <motion.circle
+              cx="0"
+              cy="30"
+              r="3.5"
+              fill="#06b6d4"
+              filter={`url(#${filterId})`}
+              animate={{ cx: [0, 80] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.8,
+                repeat: Infinity,
+                repeatDelay: 1.2,
+                ease: "easeInOut",
+              }}
+            />
+          </>
+        )}
+        <defs>
+          <filter id={filterId}>
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
+
+      {/* Message label floating above the line */}
+      {active && (
+        <motion.div
+          className="absolute top-0 left-1/2 -translate-x-1/2 text-[8px] font-mono text-emerald-400/60 whitespace-nowrap"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 1, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          {side === "left" ? "→ MCP" : "→ Output"}
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
+// ─── Flow Arrow (Mobile) ─────────────────────────────────────────
+function FlowArrow({ active }: { active: boolean }) {
+  return (
+    <div className="flex lg:hidden items-center justify-center py-1">
+      <motion.div
+        className={`transition-colors duration-500 ${
+          active ? "text-emerald-400" : "text-slate-600"
+        }`}
+        animate={active ? { y: [0, 3, 0] } : {}}
+        transition={{ duration: 1.5, repeat: Infinity }}
+      >
+        <ArrowRight className="w-4 h-4 rotate-90 lg:rotate-0" />
+      </motion.div>
+    </div>
+  );
+}
+
+// ─── Main Section Component ──────────────────────────────────────
+export function AILabSection() {
+  const [step, setStep] = useState(STEP_BLANK);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const goTo = useNav();
+  const activeIdx = useActiveSlide();
+  const content = useContent();
+  const c = content.slide5;
+
+  const advanceStep = React.useCallback(() => {
+    setStep((prev) => prev + 1);
+  }, []);
+
+  // Only start the animation sequence when this slide becomes active
+  const AILAB_IDX = 7;
+  useEffect(() => {
+    if (activeIdx === AILAB_IDX) {
+      setStep(STEP_BLANK);
+      const timer = setTimeout(() => setStep(STEP_SYSTEM), 500);
+      return () => clearTimeout(timer);
+    } else {
+      setStep(STEP_BLANK);
+    }
+  }, [activeIdx]);
+
+  // Derived states for visual indicators
+  const mcpActive = step >= STEP_STREAM_0;
+  const showResult = step >= STEP_RIGHT_START;
+
+  return (
+    <div className="w-full h-full flex flex-col justify-center items-center bg-slate-50 dark:bg-linear-to-br dark:from-slate-950 dark:via-[#0a1628] dark:to-slate-950 text-white relative overflow-hidden p-3 md:p-4 lg:p-6">
+      {/* Background effects */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(52,211,153,0.3) 1px, transparent 0)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+
+      {/* Emerald glow spots */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[100px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px]" />
+
+      {/* ── Header ── */}
+      <div className="relative z-10 text-center mb-3 md:mb-4 lg:mb-6">
+        <motion.div
+          className="flex items-center justify-center gap-2 mb-1.5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5 text-emerald-400/60" />
+          <span className="text-[10px] md:text-xs lg:text-sm font-mono text-emerald-400/70 tracking-[0.25em] uppercase">
+            {c.badge}
+          </span>
+          <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5 text-emerald-400/60" />
+        </motion.div>
+
+        <motion.h2
+          className="text-xl md:text-2xl lg:text-4xl xl:text-5xl font-black tracking-tight"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.5 }}
+        >
+          <span className="text-white">{c.title}</span>
+          <span className="text-emerald-400 ml-1 md:ml-2">×</span>
+          <span className="text-emerald-300 ml-1 md:ml-2">{c.titleHighlight}</span>
+        </motion.h2>
+
+        <motion.p
+          className="mt-1 text-[10px] md:text-xs lg:text-base text-slate-400 font-mono max-w-lg mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          {c.subtitle}
+        </motion.p>
+      </div>
+
+      {/* ── Desktop: Main 3-Panel Layout ── */}
+      <div className="relative z-10 hidden md:flex flex-col lg:flex-row items-stretch justify-center gap-2 lg:gap-0 w-full max-w-6xl 2xl:max-w-[85vw] flex-1 min-h-0 max-h-[65vh]">
+        {/* Left: AI Chat Console */}
+        <div className="flex-1 min-w-0 lg:max-w-sm xl:max-w-md min-h-36 lg:min-h-0">
+          <AIChatConsole
+            step={step}
+            onStepDone={advanceStep}
+            onShipmentClick={() => goTo(activeIdx + 1)}
+          />
+        </div>
+
+        {/* Connection: Left → MCP */}
+        <ConnectionLine active={mcpActive} side="left" />
+        <FlowArrow active={mcpActive} />
+
+        {/* Center: MCP Bridge */}
+        <div className="flex items-center justify-center px-2 lg:px-4 py-2 lg:py-0 min-w-25 lg:min-w-32">
+          <MCPBridgeNode active={mcpActive} />
+        </div>
+
+        {/* Connection: MCP → Output */}
+        <ConnectionLine active={showResult} side="right" />
+        <FlowArrow active={showResult} />
+
+        {/* Right: Shipment Output */}
+        <div className="flex-1 min-w-0 lg:max-w-sm xl:max-w-md min-h-36 lg:min-h-0">
+          <ShipmentCard step={step} onStepDone={advanceStep} />
+        </div>
+      </div>
+
+      {/* ── Mobile: Condensed flow diagram + expand ── */}
+      <div className="relative z-10 flex md:hidden flex-col items-center gap-3 flex-1 justify-center min-h-0">
+        {/* Flow diagram */}
+        <motion.div
+          className="flex items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          {/* AI Console mini */}
+          <div className="flex flex-col items-center gap-1 p-2.5 rounded-xl bg-white/4 border border-white/10">
+            <Bot className="w-4 h-4 text-emerald-400" />
+            <span className="text-[7px] font-mono text-slate-400">{c.mobileLabels.console}</span>
+          </div>
+
+          <motion.div
+            className="text-emerald-400/50"
+            animate={{ x: [0, 3, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            <ArrowRight className="w-3 h-3" />
+          </motion.div>
+
+          {/* MCP mini */}
+          <div className="flex flex-col items-center gap-1 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+            <Cpu className="w-4 h-4 text-emerald-400" />
+            <span className="text-[7px] font-mono text-emerald-400/70">{c.mobileLabels.mcp}</span>
+          </div>
+
+          <motion.div
+            className="text-emerald-400/50"
+            animate={{ x: [0, 3, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
+          >
+            <ArrowRight className="w-3 h-3" />
+          </motion.div>
+
+          {/* Output mini */}
+          <div className="flex flex-col items-center gap-1 p-2.5 rounded-xl bg-white/4 border border-white/10">
+            <Package className="w-4 h-4 text-emerald-400" />
+            <span className="text-[7px] font-mono text-slate-400">{c.mobileLabels.output}</span>
+          </div>
+        </motion.div>
+
+        {/* Mini shipment ID */}
+        <motion.div
+          className="px-3 py-1.5 rounded-lg bg-emerald-500/5 border border-emerald-500/15"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <span className="text-[9px] font-mono text-emerald-300 font-bold">
+            {c.shipmentId}
+          </span>
+        </motion.div>
+
+        <MobileExpandButton
+          label={c.mobileExpand}
+          onClick={() => setMobileOpen(true)}
+        />
+      </div>
+
+      {/* ── Desktop: Compatibility Bar ── */}
+      <motion.div
+        className="relative z-10 mt-3 md:mt-4 lg:mt-6 hidden md:flex flex-wrap items-center justify-center gap-3 lg:gap-6"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+      >
+        {[
+          {
+            label: c.compatBar.compatible,
+            value: (
+              <span className="inline-flex items-center gap-1.5">
+                <ClaudeIcon className="w-3.5 h-3.5 text-orange-400" />
+                <ChatGPTIcon className="w-3.5 h-3.5 text-emerald-400" />
+                <GeminiIcon className="w-3.5 h-3.5" />
+                <GrokIcon className="w-3.5 h-3.5 text-white/80" />
+              </span>
+            ),
+          },
+          { label: c.compatBar.protocol, value: c.compatBar.protocolValue },
+          { label: c.compatBar.latency, value: c.compatBar.latencyValue },
+        ].map((item) => (
+          <div
+            key={item.label}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/3 border border-white/5"
+          >
+            <span className="text-[9px] lg:text-[10px] text-slate-500 font-mono uppercase">
+              {item.label}
+            </span>
+            <span className="text-[10px] lg:text-xs text-emerald-300/80 font-mono font-semibold">
+              {item.value}
+            </span>
+          </div>
+        ))}
+      </motion.div>
+
+      {/* ── Mobile Detail Modal ── */}
+      <MobileDetailModal
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        title={c.mobileModal.title}
+        subtitle={c.mobileModal.subtitle}
+      >
+        <div className="space-y-4">
+          {/* Prompt */}
+          <div className="p-3 rounded-xl bg-white/4 border border-white/10">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="p-1 rounded-md bg-blue-500/10">
+                <Send className="w-3 h-3 text-blue-400" />
+              </div>
+              <span className="text-[10px] font-mono text-slate-500 uppercase">{c.mobileModal.userPromptLabel}</span>
+            </div>
+            <p className="text-xs text-white/90 font-mono leading-relaxed">
+              &quot;{c.userPrompt}&quot;
+            </p>
+          </div>
+
+          {/* MCP Processing */}
+          <div className="p-3 rounded-xl bg-emerald-500/5 border border-emerald-500/15">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="p-1 rounded-md bg-emerald-500/10">
+                <Cpu className="w-3 h-3 text-emerald-400" />
+              </div>
+              <span className="text-[10px] font-mono text-emerald-400/70 uppercase">{c.mobileModal.mcpProtocolLabel}</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-[10px] text-emerald-400/80 font-mono">
+              <Zap className="w-3 h-3" />
+              {c.mobileModal.mcpTools}
+            </div>
+          </div>
+
+          {/* Result fields */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="p-1 rounded-md bg-emerald-500/10">
+                <Package className="w-3 h-3 text-emerald-400" />
+              </div>
+              <span className="text-[10px] font-mono text-slate-500 uppercase">{c.mobileModal.outputLabel}</span>
+            </div>
+            {[
+              { icon: <Truck className="w-3.5 h-3.5" />, label: c.outputFields[0].label, value: c.outputFields[0].value, color: "text-emerald-400" },
+              { icon: <Zap className="w-3.5 h-3.5" />, label: c.outputFields[1].label, value: c.outputFields[1].value, color: "text-cyan-400" },
+              { icon: <Globe className="w-3.5 h-3.5" />, label: c.outputFields[2].label, value: c.outputFields[2].value, color: "text-blue-400" },
+              { icon: <ShieldCheck className="w-3.5 h-3.5" />, label: c.outputFields[3].label, value: c.outputFields[3].value, color: "text-emerald-400" },
+              { icon: <Package className="w-3.5 h-3.5" />, label: c.outputFields[4].label, value: c.outputFields[4].value, color: "text-purple-400" },
+              { icon: <Leaf className="w-3.5 h-3.5" />, label: c.outputFields[5].label, value: c.outputFields[5].value, color: "text-green-400" },
+            ].map((field) => (
+              <div
+                key={field.label}
+                className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-white/3 border border-white/5"
+              >
+                <span className={`${field.color} opacity-70`}>{field.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[9px] text-slate-500 font-mono uppercase tracking-wider">
+                    {field.label}
+                  </div>
+                  <div className="text-xs text-white/90 font-mono font-medium">
+                    {field.value}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Clickable shipment card — Mobile */}
+          <button
+            onClick={() => {
+              setMobileOpen(false);
+              setTimeout(() => goTo(activeIdx + 1), 300);
+            }}
+            className="w-full group rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-3 text-left transition-all duration-300 hover:border-emerald-400/50 active:scale-[0.98] mt-3"
+          >
+            <div className="flex items-center justify-between mb-1.5">
+              <div className="flex items-center gap-2">
+                <div className="p-1.5 rounded-lg bg-emerald-500/15 border border-emerald-500/20">
+                  <FileCheck className="w-3.5 h-3.5 text-emerald-400" />
+                </div>
+                <div>
+                  <div className="text-[9px] text-emerald-400/60 font-mono uppercase tracking-wider">
+                    {c.shipmentCreated}
+                  </div>
+                  <div className="text-xs text-emerald-300 font-mono font-bold">
+                    {c.shipmentId}
+                  </div>
+                </div>
+              </div>
+              <ArrowRight className="w-4 h-4 text-emerald-400/60 group-hover:text-emerald-400" />
+            </div>
+            <div className="flex items-center gap-3 text-[9px] font-mono text-slate-400">
+              <span className="flex items-center gap-1">
+                <MapPin className="w-2.5 h-2.5 text-emerald-400/50" />
+                {c.miniRoute[0]}
+              </span>
+              <span className="flex items-center gap-1">
+                <Package className="w-2.5 h-2.5 text-cyan-400/50" />
+                {c.miniRoute[1]}
+              </span>
+            </div>
+            <div className="mt-2 pt-2 border-t border-emerald-500/10 flex items-center justify-center gap-1.5">
+              <span className="text-[9px] text-emerald-400/50 font-mono">
+                {c.viewRoute} →
+              </span>
+            </div>
+          </button>
+
+          {/* Compatibility */}
+          <div className="grid grid-cols-3 gap-2 pt-2">
+            {[
+              {
+                label: c.compatBar.compatible,
+                value: (
+                  <span className="inline-flex items-center gap-1">
+                    <ClaudeIcon className="w-3 h-3 text-orange-400" />
+                    <ChatGPTIcon className="w-3 h-3 text-emerald-400" />
+                    <GeminiIcon className="w-3 h-3" />
+                    <GrokIcon className="w-3 h-3 text-white/80" />
+                  </span>
+                ),
+              },
+              { label: c.compatBar.protocol, value: c.compatBar.protocolValue },
+              { label: c.compatBar.latency, value: c.compatBar.latencyValue },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="text-center p-2 rounded-lg bg-white/3 border border-white/5"
+              >
+                <div className="text-[9px] text-slate-500 font-mono">{item.label}</div>
+                <div className="text-[10px] text-emerald-300/80 font-mono font-semibold mt-0.5">
+                  {item.value}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </MobileDetailModal>
+    </div>
+  );
+}
