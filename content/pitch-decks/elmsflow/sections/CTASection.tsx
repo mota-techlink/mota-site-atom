@@ -353,7 +353,7 @@ export function CTASection() {
             </span>
             <span className="w-1 h-1 bg-slate-700 rounded-full" />
             <a
-              href="https://atom.motaiot.com"
+              href="https://motaiot.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 font-medium tracking-wider text-blue-500 hover:text-blue-400 transition-colors"
