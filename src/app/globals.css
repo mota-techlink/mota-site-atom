@@ -224,6 +224,21 @@
     @apply bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 px-1.5 py-0.5 rounded-md text-[0.9em] font-medium border border-slate-200 dark:border-slate-700;
   }
 
+  /* ── Pitch Deck pages: reset global code-block overrides ─────────────────
+     Deck themes manage their own colours via THEME token classes.
+     Without this reset the :not(pre) > code rule applies bg-slate-100 /
+     text-slate-900 inside deck sections, making mono text invisible on
+     dark card backgrounds regardless of the deck's own class props. */
+  .pitch-deck-page :not(pre) > code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
   /* 高亮行 */
   [data-highlighted-line] {
     @apply bg-slate-800/50 border-l-2 border-blue-500 pl-3 -ml-4 block w-[calc(100%+2rem)];

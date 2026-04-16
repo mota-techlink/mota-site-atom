@@ -15,7 +15,7 @@
       { "icon": "⚡", "label": "Sub-100ms Edge" },
       { "icon": "🔮", "label": "AI Autonomous" }
     ],
-    "ctaLabel": "Explore the Platform",
+    "ctaLabel": "Start to Explore",
     "bottomDate": "April 2026"
   },
   "slide2": {
@@ -291,7 +291,7 @@
     "subtitle": "Three simple tiers — no hidden fees.",
     "tiers": [
       { "name": "Licence", "price": "€999", "period": "one-off", "tagline": "Full platform access", "features": ["📦 Unlimited shipments", "📋 BRC & ISO templates", "🔌 API access", "🏠 Self-hosted option"] },
-      { "name": "Support", "price": "$19.99", "period": "/month", "tagline": "Priority help & updates", "features": ["🛟 24/7 ticket support", "🚀 Monthly feature updates", "📞 Onboarding call", "🔧 Custom integrations"] },
+      { "name": "Support", "price": "€19.99", "period": "/month", "tagline": "Priority help & updates", "features": ["🛟 24/7 ticket support", "🚀 Monthly feature updates", "📞 Onboarding call", "🔧 Custom integrations"] },
       { "name": "Credits", "price": "Pay-as-you-go", "period": "", "tagline": "AI & compliance on demand", "features": ["🤖 AI document scan", "🛃 Customs pre-clearance", "🗺️ Route optimisation", "💰 Bulk discounts"] }
     ]
   },

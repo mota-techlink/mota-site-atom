@@ -15,7 +15,7 @@
       { "icon": "⚡", "label": "亚100ms 边缘" },
       { "icon": "🔮", "label": "AI 自主决策" }
     ],
-    "ctaLabel": "探索平台",
+    "ctaLabel": "开始探索",
     "bottomDate": "2026年4月"
   },
   "slide2": {
@@ -291,7 +291,7 @@
     "subtitle": "三个简洁层级——无隐藏费用。",
     "tiers": [
       { "name": "许可证", "price": "€999", "period": "一次性", "tagline": "完整平台访问", "features": ["无限运单", "BRC & ISO 模板", "API 接入", "自托管选项"] },
-      { "name": "支持", "price": "$19.99", "period": "/月", "tagline": "优先帮助与更新", "features": ["7×24 工单支持", "每月功能更新", "入职电话", "自定义集成"] },
+      { "name": "支持", "price": "€19.99", "period": "/月", "tagline": "优先帮助与更新", "features": ["7×24 工单支持", "每月功能更新", "入职电话", "自定义集成"] },
       { "name": "积分", "price": "按需付费", "period": "", "tagline": "AI & 合规按量", "features": ["AI 单据扫描", "海关预清关", "路线优化", "批量折扣"] }
     ]
   },

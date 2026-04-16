@@ -11,6 +11,7 @@
 import marketIntelMeta from "@content/pitch-decks/mota-market-intel/meta.json";
 import marketDesignMeta from "@content/pitch-decks/market-design/meta.json";
 import elmsInvestorMeta from "@content/pitch-decks/elmsflow/meta.json";
+import pitchDeckAgentMeta from "@content/pitch-decks/pitch-deck-agent/meta.json";
 
 /**
  * Access level for pitch deck slides beyond the preview limit.
@@ -44,7 +45,7 @@ export interface PitchDeckMeta {
  * Automatically populated from each deck's meta.json.
  */
 export const PITCH_DECK_REGISTRY: Record<string, PitchDeckMeta> = Object.fromEntries(
-  [marketIntelMeta, marketDesignMeta,  elmsInvestorMeta].map((m) => [m.slug, m as PitchDeckMeta])
+  [marketIntelMeta, marketDesignMeta, elmsInvestorMeta, pitchDeckAgentMeta].map((m) => [m.slug, m as PitchDeckMeta])
 );
 
 /**

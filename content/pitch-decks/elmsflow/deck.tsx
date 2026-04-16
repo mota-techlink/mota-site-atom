@@ -413,7 +413,7 @@ function ElmsInvestorDeckInner() {
   return (
     <div
       ref={rootRef}
-      className="h-full w-full overflow-hidden relative bg-d-bg text-d-fg"
+      className="pitch-deck-page h-full w-full overflow-hidden relative bg-d-bg text-d-fg"
       tabIndex={-1}
       style={{ outline: "none", touchAction: "none" }}
     >

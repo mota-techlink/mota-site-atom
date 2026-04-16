@@ -14,38 +14,28 @@ import { SECTION_IDS, LOCALES, LOCALE_LABELS, THEME } from "./constants";
 import { usePageNav, PageNavCtx, ActivePageCtx } from "./hooks";
 import { DeckThemeProvider, useDeckTheme } from "./theme";
 import { Sidebar, MobileTopBar, TopControls } from "./nav";
-import { CoverSection } from "./sections/CoverSection";
-import { BackgroundSection } from "./sections/BackgroundSection";
-import { AnalysisSection } from "./sections/AnalysisSection";
-import { ScannersSection } from "./sections/ScannersSection";
-import { MiningSection } from "./sections/MiningSection";
-import { ReplySection } from "./sections/ReplySection";
-import { PartnerSection } from "./sections/PartnerSection";
-import { ERDSection } from "./sections/ERDSection";
-import { EdgeFunctionsSection } from "./sections/EdgeFunctionsSection";
-import { BillingSection } from "./sections/BillingSection";
-import { DashboardSection } from "./sections/DashboardSection";
-import { ScheduleSection } from "./sections/ScheduleSection";
-import { I18nSection } from "./sections/I18nSection";
+import { HeroSection } from "./sections/HeroSection";
+import { RoleSection } from "./sections/RoleSection";
+import { StructureSection } from "./sections/StructureSection";
+import { DesignSection } from "./sections/DesignSection";
+import { ComponentsSection } from "./sections/ComponentsSection";
+import { BootstrapSection } from "./sections/BootstrapSection";
+import { WorkflowSection } from "./sections/WorkflowSection";
+import { CTASection } from "./sections/CTASection";
 
 const SECTIONS = [
-  BackgroundSection,
-  CoverSection,
-  AnalysisSection,
-  ScannersSection,
-  MiningSection,
-  ReplySection,
-  PartnerSection,
-  ERDSection,
-  EdgeFunctionsSection,
-  BillingSection,
-  DashboardSection,
-  ScheduleSection,
-  I18nSection,
+  HeroSection,
+  RoleSection,
+  StructureSection,
+  DesignSection,
+  ComponentsSection,
+  BootstrapSection,
+  WorkflowSection,
+  CTASection,
 ] as const;
 
-// ─── Inner deck (needs locale + access context) ───────────────────────────────
-function MarketDesignDeckInner() {
+// ─── Inner deck ───────────────────────────────────────────────────────────────
+function PitchDeckAgentInner() {
   const { canView, showGate, previewSlides } = useDeckAccess();
   const { deckLocale } = useDeckLocale();
   const { theme } = useDeckTheme();
@@ -68,7 +58,9 @@ function MarketDesignDeckInner() {
   return (
     <PageNavCtx.Provider value={goTo}>
       <ActivePageCtx.Provider value={activeIdx}>
-        <div className={`pitch-deck-page h-full w-full flex ${t.bg} ${t.text} overflow-hidden transition-colors duration-300`}>
+        <div
+          className={`pitch-deck-page h-full w-full flex ${t.bg} ${t.text} overflow-hidden transition-colors duration-300`}
+        >
           {/* Sidebar */}
           <Sidebar
             isOpen={sidebarOpen}
@@ -93,23 +85,33 @@ function MarketDesignDeckInner() {
               <button
                 onClick={() => goTo(activeIdx - 1)}
                 disabled={activeIdx === 0}
-                className={`w-9 h-9 rounded-full ${t.cardBg} ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-[#DBD3ED]"} disabled:opacity-20 flex items-center justify-center ${t.body} text-sm transition-all cursor-pointer disabled:cursor-not-allowed`}
+                className={`w-9 h-9 rounded-full ${t.cardBg} ${
+                  theme === "dark"
+                    ? "hover:bg-white/10"
+                    : "hover:bg-[#DBD3ED]"
+                } disabled:opacity-20 flex items-center justify-center ${t.body} text-sm transition-all cursor-pointer disabled:cursor-not-allowed`}
               >
                 ▲
               </button>
-              <span className={`text-xs ${t.muted} font-mono tabular-nums min-w-[3rem] text-center`}>
+              <span
+                className={`text-xs ${t.muted} font-mono tabular-nums min-w-[3rem] text-center`}
+              >
                 {activeIdx + 1} / {SECTION_IDS.length}
               </span>
               <button
                 onClick={() => goTo(activeIdx + 1)}
                 disabled={activeIdx >= SECTION_IDS.length - 1}
-                className={`w-9 h-9 rounded-full ${t.cardBg} ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-[#DBD3ED]"} disabled:opacity-20 flex items-center justify-center ${t.body} text-sm transition-all cursor-pointer disabled:cursor-not-allowed`}
+                className={`w-9 h-9 rounded-full ${t.cardBg} ${
+                  theme === "dark"
+                    ? "hover:bg-white/10"
+                    : "hover:bg-[#DBD3ED]"
+                } disabled:opacity-20 flex items-center justify-center ${t.body} text-sm transition-all cursor-pointer disabled:cursor-not-allowed`}
               >
                 ▼
               </button>
             </div>
 
-            {/* Login gate — z-50 overlay, shown when user tries to access locked slide */}
+            {/* Login gate */}
             <LoginGate onBack={handleGateBack} locale={deckLocale} />
           </main>
         </div>
@@ -119,38 +121,38 @@ function MarketDesignDeckInner() {
 }
 
 // ─── Public export ────────────────────────────────────────────────────────────
-interface MarketDesignDeckProps {
+interface PitchDeckAgentProps {
   access?: DeckAccess;
   previewSlides?: number;
   isAuthenticated?: boolean;
   userRole?: string;
 }
 
-export function MarketDesignDeck({
-  access = "admin",
+export function PitchDeckAgentDeck({
+  access = "public",
   previewSlides = DEFAULT_PREVIEW_SLIDES,
   isAuthenticated = false,
   userRole,
-}: MarketDesignDeckProps) {
+}: PitchDeckAgentProps) {
   return (
     <DeckThemeProvider>
       <DeckAccessProvider
-      access={access}
-      previewSlides={previewSlides}
-      totalSlides={SECTIONS.length}
-      serverAuth={
-        isAuthenticated
-          ? { isAuthenticated: true, role: userRole }
-          : undefined
-      }
-    >
-      <DeckLocaleProvider
-        availableLocales={[...LOCALES]}
-        localeLabels={LOCALE_LABELS}
+        access={access}
+        previewSlides={previewSlides}
+        totalSlides={SECTIONS.length}
+        serverAuth={
+          isAuthenticated
+            ? { isAuthenticated: true, role: userRole }
+            : undefined
+        }
       >
-        <MarketDesignDeckInner />
-      </DeckLocaleProvider>
-    </DeckAccessProvider>
+        <DeckLocaleProvider
+          availableLocales={[...LOCALES]}
+          localeLabels={LOCALE_LABELS}
+        >
+          <PitchDeckAgentInner />
+        </DeckLocaleProvider>
+      </DeckAccessProvider>
     </DeckThemeProvider>
   );
 }

@@ -22,6 +22,11 @@ const ElmsInvestorDeck = dynamic(
   { loading: () => <LoadingSpinner /> }
 );
 
+const PitchDeckAgentDeck = dynamic(
+  () => import("@content/pitch-decks/pitch-deck-agent/deck").then(mod => mod.PitchDeckAgentDeck),
+  { loading: () => <LoadingSpinner /> }
+);
+
 function LoadingSpinner() {
   return (
     <div className="w-full h-full flex items-center justify-center bg-black">
@@ -66,6 +71,15 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated, userRole }: Pitch
     case "elmsflow":
       return (
         <ElmsInvestorDeck
+          access={access}
+          previewSlides={preview}
+          isAuthenticated={isAuthenticated}
+          userRole={userRole}
+        />
+      );
+    case "pitch-deck-agent":
+      return (
+        <PitchDeckAgentDeck
           access={access}
           previewSlides={preview}
           isAuthenticated={isAuthenticated}
