@@ -55,6 +55,7 @@
     "badge": "The Solution",
     "title": "Architecture",
     "titleHighlight": "Dual-Ring",
+    "subtitle": "Infrastructure inside, functional modules outside — one interlocking ecosystem.",
     "features": [
       { "label": "Seamless System Integration", "description": "Eliminate barriers between systems. One source of truth for all logistics data across the entire supply chain." },
       { "label": "Auto Label Generation", "description": "Generate accurate last-mile delivery labels automatically from synced shipping data." },
@@ -329,6 +330,128 @@
     "summaryMetric": "2,000+",
     "summaryLabel": "Merchants by end of 2027"
   },
+  "slide15": {
+    "badge": "AI Compliance",
+    "title": "AI-Driven Compliance",
+    "subtitle": "Automate audits, eliminate human error, and achieve continuous certification across global food-safety standards.",
+    "stats": [
+      { "value": "92%", "label": "Audit Time Reduced", "icon": "TrendingDown" },
+      { "value": "100%", "label": "Automation Coverage", "icon": "Zap" },
+      { "value": "40+", "label": "Global Standards", "icon": "Globe" },
+      { "value": "5×", "label": "Risk Detection Speed", "icon": "BarChart3" }
+    ],
+    "features": [
+      {
+        "title": "BRC / BRCGS Auto-Audit",
+        "description": "Continuously scan operations against BRC Global Standards for food safety, packaging, and storage.",
+        "items": ["Real-time clause mapping", "Auto-generated corrective actions", "Grade prediction before audit"]
+      },
+      {
+        "title": "HACCP Digital Twin",
+        "description": "AI maintains a live digital twin of every Critical Control Point in your supply chain.",
+        "items": ["Sensor-fed CCP monitoring", "Predictive deviation alerts", "Instant compliance reports"]
+      },
+      {
+        "title": "ISO / IFS Auto-Mapping",
+        "description": "Map your processes to ISO 22000, IFS Food, and FSSC 22000 simultaneously — zero duplicate work.",
+        "items": ["Parallel standard alignment", "Gap analysis dashboard", "Cross-standard evidence sharing"]
+      },
+      {
+        "title": "Regulatory Radar",
+        "description": "Track regulatory changes across 40+ jurisdictions in real-time, auto-flag impact on your operations.",
+        "items": ["EU / UK / APAC scanning", "Auto-impact assessment", "Stakeholder notification"]
+      }
+    ],
+    "bottomNote": "Trusted by certified food-logistics operators across the EU."
+  },
+  "slide16": {
+    "badge": "Compliance Dashboard",
+    "title": "Live Compliance Intelligence",
+    "subtitle": "Real-time visibility into every standard, every facility, every risk.",
+    "topStats": [
+      { "label": "Active SMEs", "value": "1,247", "change": "+12.3% MoM" },
+      { "label": "Compliance Score", "value": "94.2%", "change": "+2.1% vs Q3" },
+      { "label": "Open Issues", "value": "23", "change": "-41% MoM" },
+      { "label": "Certifications", "value": "3,891", "change": "+287 this Q" }
+    ],
+    "charts": {
+      "barChart": {
+        "title": "SME Quantity by Region",
+        "bars": [
+          { "label": "DACH", "value":107 , "color": "#06b6d4" },
+          { "label": "BeNeLux", "value": 215, "color": "#10b981" },
+          { "label": "Nordics", "value": 90, "color": "#8b5cf6" },
+          { "label": "UK/IE", "value": 195, "color": "#f59e0b" },
+          { "label": "Iberia", "value": 142, "color": "#ef4444" },
+          { "label": "CEE", "value": 320, "color": "#ec4899" },
+          { "label": "APAC", "value": 178, "color": "#6366f1" }
+        ]
+      },
+      "pieChart": {
+        "title": "BRC Certification Types",
+        "segments": [
+          { "label": "BRC Food Safety", "value": 38, "color": "#06b6d4" },
+          { "label": "BRC Packaging", "value": 22, "color": "#10b981" },
+          { "label": "BRC Storage", "value": 18, "color": "#8b5cf6" },
+          { "label": "IFS Food", "value": 14, "color": "#f59e0b" },
+          { "label": "FSSC 22000", "value": 8, "color": "#ef4444" }
+        ]
+      },
+      "trendChart": {
+        "title": "Compliance Growth Trend",
+        "points": [
+          { "label": "Q1'25", "value": 71 },
+          { "label": "Q2'25", "value": 78 },
+          { "label": "Q3'25", "value": 61 },
+          { "label": "Q4'25", "value": 94 },
+          { "label": "Q1'26", "value": 84 },
+          { "label": "Q2'26", "value": 86 }
+        ]
+      },
+      "gauge": {
+        "title": "Overall Compliance",
+        "value": 94,
+        "label": "Weighted Score"
+      },
+      "stackedBar": {
+        "title": "Standards Coverage",
+        "items": [
+          { "label": "BRC", "value": 340, "color": "#06b6d4" },
+          { "label": "HACCP", "value": 285, "color": "#10b981" },
+          { "label": "ISO 22000", "value": 210, "color": "#8b5cf6" },
+          { "label": "IFS", "value": 165, "color": "#f59e0b" },
+          { "label": "FSSC", "value": 120, "color": "#ec4899" }
+        ]
+      },
+      "riskMatrix": {
+        "title": "Risk Heat Map",
+        "cells": [
+          { "level": "L", "color": "rgba(16,185,129,0.3)" },
+          { "level": "L", "color": "rgba(16,185,129,0.25)" },
+          { "level": "M", "color": "rgba(245,158,11,0.25)" },
+          { "level": "H", "color": "rgba(239,68,68,0.3)" },
+          { "level": "L", "color": "rgba(16,185,129,0.2)" },
+          { "level": "M", "color": "rgba(245,158,11,0.3)" },
+          { "level": "M", "color": "rgba(245,158,11,0.2)" },
+          { "level": "H", "color": "rgba(239,68,68,0.25)" },
+          { "level": "M", "color": "rgba(245,158,11,0.2)" },
+          { "level": "H", "color": "rgba(239,68,68,0.2)" },
+          { "level": "H", "color": "rgba(239,68,68,0.35)" },
+          { "level": "C", "color": "rgba(239,68,68,0.5)" },
+          { "level": "L", "color": "rgba(16,185,129,0.3)" },
+          { "level": "M", "color": "rgba(245,158,11,0.25)" },
+          { "level": "H", "color": "rgba(239,68,68,0.25)" },
+          { "level": "C", "color": "rgba(239,68,68,0.45)" }
+        ]
+      }
+    },
+    "aiButton": "Ask AI Compliance",
+    "chatMessages": [
+      { "role": "ai", "text": "Hello! I'm your AI Compliance Assistant. I can help you navigate BRC, HACCP, ISO 22000 and other food-safety standards. What would you like to know?" },
+      { "role": "user", "text": "What's our current BRC compliance status?" },
+      { "role": "ai", "text": "Your BRC Food Safety compliance is at 96.1% — Grade A projected. There are 3 minor non-conformances in cold-chain documentation that I recommend addressing before the next audit window on June 15." }
+    ]
+  },
   "slideTitles": [
     "ELMS",
     "The Problem",
@@ -343,6 +466,8 @@
     "Roadmap",
     "Growth Plan",
     "Security & Compliance",
+    "AI Compliance",
+    "Compliance Dashboard",
     "Call to Action"
   ]
 }

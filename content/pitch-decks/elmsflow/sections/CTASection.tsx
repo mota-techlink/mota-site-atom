@@ -253,7 +253,7 @@ export function CTASection() {
 
         {/* Main headline */}
         <motion.h2
-          className="ei-child text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white mb-4 md:mb-6 leading-[1.15]"
+          className="ei-child text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold tracking-tight text-white mb-4 md:mb-6 leading-[1.15]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}

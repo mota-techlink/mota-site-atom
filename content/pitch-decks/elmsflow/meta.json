@@ -1,6 +1,6 @@
 {
   "title": "ELMS — European Logistics Management System (Investor)",
-  "slug": "elms-investor",
+  "slug": "elmsflow",
   "description": "AI-Powered Logistics Infrastructure for European Cross-Border Commerce — Investor Pitch",
   "author": "MOTA TechLink",
   "date": "2026-04-15",
@@ -9,5 +9,5 @@
   "previewSlides": 4,
   "defaultTransition": "slide",
   "tags": ["logistics", "AI", "MCP", "europe", "cross-border", "investor"],
-  "coverImage": "/images/pitch-decks/elms-investor-cover.webp"
+  "coverImage": "/images/pitch-decks/elmsflow-cover.webp"
 }

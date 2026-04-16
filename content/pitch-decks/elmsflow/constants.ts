@@ -15,6 +15,8 @@ export const SECTION_IDS = [
   "s-roadmap",
   "s-growth",
   "s-security",
+  "s-compliance",
+  "s-compliance-dashboard",
   "s-cta",
 ] as const;
 

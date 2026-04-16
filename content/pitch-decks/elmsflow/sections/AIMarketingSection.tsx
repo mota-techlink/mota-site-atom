@@ -260,7 +260,7 @@ export function AIMarketingSection() {
 
         {/* Badge */}
         <motion.div
-          className="ei-child inline-flex items-center gap-2 mb-2 md:mb-3 px-3 py-1 rounded-full border border-violet-500/25 bg-violet-500/8"
+          className="ei-child inline-flex items-center gap-2 mb-3 md:mb-4 px-3 py-1 rounded-full border border-violet-500/25 bg-violet-500/8"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
         >

@@ -469,7 +469,7 @@ export function CompetitiveSection() {
 
   return (
     <section className={SECTION}>
-      <div className="w-full h-full flex flex-col items-center bg-slate-50 dark:bg-linear-to-br dark:from-slate-950 dark:via-[#060b18] dark:to-slate-950 text-white relative overflow-hidden p-2 md:p-3 lg:p-4">
+      <div className="w-full h-full flex flex-col items-center justify-center bg-slate-50 dark:bg-linear-to-br dark:from-slate-950 dark:via-[#060b18] dark:to-slate-950 text-white relative overflow-hidden px-2 md:px-3 lg:px-4 py-2 md:py-3">
         {/* Background grid dots */}
         <div className="absolute inset-0 opacity-30">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -486,33 +486,40 @@ export function CompetitiveSection() {
         <div className="absolute top-1/3 left-1/6 w-60 h-60 bg-red-500/3 rounded-full blur-[100px]" />
         <div className="absolute bottom-1/3 right-1/6 w-60 h-60 bg-emerald-500/5 rounded-full blur-[100px]" />
 
-        {/* Flex spacer top — pushes content to vertical center */}
-        <div className="flex-1 min-h-0" />
-
-        {/* ── Header ── */}
+        {/* Badge */}
         <motion.div
-          className="relative z-10 text-center mb-1 md:mb-2 lg:mb-3"
-          initial={{ opacity: 0, y: -12 }}
+          className="ei-child inline-flex items-center gap-2 mb-2 md:mb-3 px-3 py-1 rounded-full border border-blue-500/25 bg-blue-500/[0.08] relative z-10"
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
         >
-          <div className="flex items-center justify-center gap-2 mb-1">
-            <Zap className="w-4 h-4 md:w-5 md:h-5 text-blue-400/60" />
-            <span className="text-[10px] sm:text-xs md:text-sm lg:text-base font-mono text-blue-400/70 tracking-[0.25em] uppercase">
-              {c.badge}
-            </span>
-            <Zap className="w-4 h-4 md:w-5 md:h-5 text-blue-400/60" />
-          </div>
-          <h2 className="text-2xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-tight">
-            <span className="text-slate-400">{c.title}</span>
-            <span className="text-white/50 mx-1.5 md:mx-2">{c.titleVs}</span>
-            <span className="text-white">{c.titleHighlight}</span>
-          </h2>
-          <p className="text-xs md:text-sm lg:text-lg text-slate-500 mt-1">{c.subtitle}</p>
+          <Zap className="w-3.5 h-3.5 text-blue-400" />
+          <span className="text-[10px] md:text-sm font-mono tracking-[0.2em] uppercase text-blue-400/90">
+            {c.badge}
+          </span>
         </motion.div>
 
+        {/* Title */}
+        <motion.h2
+          className="ei-child text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold tracking-tight text-center mb-1 md:mb-2 relative z-10"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+        >
+          <span className="text-slate-400">{c.title}</span>
+          <span className="text-white/50 mx-1.5 md:mx-2">{c.titleVs}</span>
+          <span className="text-white">{c.titleHighlight}</span>
+        </motion.h2>
+        <motion.p
+          className="ei-child text-xs md:text-base text-white/50 text-center max-w-xl mb-3 md:mb-4 relative z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.25 }}
+        >
+          {c.subtitle}
+        </motion.p>
+
         {/* ── Desktop: Versus Layout ── */}
-        <div className="relative z-10 hidden md:flex w-full max-w-5xl 2xl:max-w-7xl gap-0 items-stretch" style={{ height: 'clamp(320px, 52vh, 560px)' }}>
+        <div className="relative z-10 hidden md:flex w-full max-w-5xl 2xl:max-w-7xl gap-0 items-stretch h-[55vh] max-h-130 min-h-90">
           {/* ═══ LEFT CARD: Traditional ═══ */}
           <motion.div
             className="flex-1 flex flex-col rounded-2xl border border-dashed border-white/8 bg-slate-900/50 overflow-hidden relative"
@@ -694,7 +701,7 @@ export function CompetitiveSection() {
             <div className="h-12 lg:h-14 shrink-0" />
 
             {/* Feature rows */}
-            <div className="flex-1 flex flex-col justify-center gap-0 py-[1%] px-0 pointer-events-auto">
+            <div className="flex-1 flex flex-col justify-evenly py-2 lg:py-3 px-0 pointer-events-auto">
               {comparisonRows.map((row, i) => (
                 <FeatureRow
                   key={i}
@@ -783,12 +790,9 @@ export function CompetitiveSection() {
           />
         </div>
 
-        {/* Flex spacer bottom — pushes stats to the bottom */}
-        <div className="flex-1 min-h-0" />
-
         {/* ── Bottom stats (desktop) ── */}
         <motion.div
-          className="relative z-10 mt-auto pb-1 md:pb-2 hidden md:flex items-center justify-center gap-4 lg:gap-6 text-[10px] lg:text-xs font-mono text-slate-600 shrink-0"
+          className="relative z-30 mt-2 md:mt-3 pb-1 md:pb-2 hidden md:flex items-center justify-center gap-4 lg:gap-6 text-[10px] lg:text-xs font-mono text-slate-600 shrink-0"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8 }}

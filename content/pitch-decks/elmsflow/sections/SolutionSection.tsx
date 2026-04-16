@@ -608,7 +608,7 @@ export function SolutionSection() {
               {c.title}
             </h2>
             <p className="text-xs md:text-sm text-slate-500 mt-1 max-w-xl mx-auto">
-              Infrastructure inside, functional modules outside — one interlocking ecosystem. Hover to explore.
+              {c.subtitle}
             </p>
           </motion.div>
 

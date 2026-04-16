@@ -321,7 +321,7 @@ function ShimmerTitle({ text }: { text: string }) {
       <h1
         className="font-black tracking-tighter leading-none ei-shimmer-title"
         style={{
-          fontSize: "clamp(3.75rem, 7.5vw, 14.3rem)",
+          fontSize: "clamp(3rem, 6vw, 11.44rem)",
           background:
             "linear-gradient(135deg, #e2e8f0 0%, #f8fafc 25%, #94a3b8 50%, #f1f5f9 75%, #cbd5e1 100%)",
           backgroundSize: "200% 200%",

@@ -18,7 +18,7 @@ const MarketDesignDeck = dynamic(
 );
 
 const ElmsInvestorDeck = dynamic(
-  () => import("@content/pitch-decks/elms-investor/deck").then(mod => mod.ElmsInvestorDeck),
+  () => import("@content/pitch-decks/elmsflow/deck").then(mod => mod.ElmsInvestorDeck),
   { loading: () => <LoadingSpinner /> }
 );
 
@@ -63,7 +63,7 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated, userRole }: Pitch
           userRole={userRole}
         />
       );    
-    case "elms-investor":
+    case "elmsflow":
       return (
         <ElmsInvestorDeck
           access={access}

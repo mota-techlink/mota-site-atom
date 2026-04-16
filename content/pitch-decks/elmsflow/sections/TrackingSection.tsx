@@ -690,14 +690,14 @@ export function TrackingSection() {
         </motion.div>
 
         <motion.h2
-          className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black tracking-tight"
+          className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold tracking-tight"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
           <span className="text-white">{c.title}</span>
           <span className="text-blue-400 mx-1 md:mx-2">—</span>
-          <span className="text-emerald-300 font-mono text-sm md:text-xl lg:text-2xl">
+          <span className="text-emerald-300 font-mono text-lg md:text-3xl lg:text-4xl">
             {c.shipmentId}
           </span>
         </motion.h2>

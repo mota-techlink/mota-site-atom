@@ -28,6 +28,8 @@ import { TrackingSection } from "./sections/TrackingSection";
 import { RoadmapSection } from "./sections/RoadmapSection";
 import { GrowthSection } from "./sections/GrowthSection";
 import { SecuritySection } from "./sections/SecuritySection";
+import { ComplianceSection } from "./sections/ComplianceSection";
+import { ComplianceDashboardSection } from "./sections/ComplianceDashboardSection";
 import { CTASection } from "./sections/CTASection";
 
 // ─── Section component list (index matches SECTION_IDS) ──────────────────────
@@ -45,6 +47,8 @@ const SECTIONS = [
   RoadmapSection,
   GrowthSection,
   SecuritySection,
+  ComplianceSection,
+  ComplianceDashboardSection,
   CTASection,
 ] as const;
 
@@ -127,11 +131,6 @@ const SLIDE_STYLES = `
     to   { opacity: 1; transform: translateY(0);    }
   }
 
-  /* ── Viewport-adaptive typography ───────────────────── */
-  .ei-slide h1 { font-size: clamp(1.25rem, 2vw + 0.5rem, 3.5rem); }
-  .ei-slide h2 { font-size: clamp(1.15rem, 1.8vw + 0.4rem, 2.5rem); }
-  .ei-slide h3 { font-size: clamp(0.8rem, 0.9vw + 0.3rem, 1.25rem); }
-
   /* ── Viewport-adaptive spacing ──────────────────────── */
   .ei-slide section .mb-auto-vh { margin-bottom: clamp(0.5rem, 1.5vh, 2.5rem); }
 
@@ -150,8 +149,6 @@ const SLIDE_STYLES = `
   /* ── Short-viewport compaction (≤ 750px tall) ───────── */
   @media (max-height: 750px) {
     .ei-slide section { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-    .ei-slide h2 { font-size: clamp(1rem, 1.4vw + 0.35rem, 1.75rem); }
-    .ei-slide p  { font-size: clamp(0.7rem, 0.65vw + 0.3rem, 0.95rem); }
   }
 
   @media (min-height: 900px) {
@@ -164,11 +161,6 @@ const SLIDE_STYLES = `
 
   /* ── 2K+ screens (native 2560×1440 or 4K at 150%) ──── */
   @media (min-width: 2200px) {
-    .ei-slide h2 { font-size: clamp(1.5rem, 2.2vw + 0.5rem, 4rem); }
-    .ei-slide h3 { font-size: clamp(1rem, 1.1vw + 0.3rem, 1.75rem); }
-    .ei-slide p, .ei-slide span, .ei-slide li {
-      font-size: clamp(0.75rem, 0.5vw + 0.4rem, 1.15rem);
-    }
     .ei-slide section > div {
       padding-left: 4rem; padding-right: 4rem;
       max-width: min(90vw, 1800px);
@@ -178,11 +170,6 @@ const SLIDE_STYLES = `
 
   /* ── Native 4K screens (3840×2160 at 100% scale) ───── */
   @media (min-width: 3200px) {
-    .ei-slide h2 { font-size: clamp(2rem, 2.5vw + 0.5rem, 5rem); }
-    .ei-slide h3 { font-size: clamp(1.25rem, 1.2vw + 0.4rem, 2.25rem); }
-    .ei-slide p, .ei-slide span, .ei-slide li {
-      font-size: clamp(0.9rem, 0.55vw + 0.4rem, 1.4rem);
-    }
     .ei-slide section > div {
       padding-left: 6rem; padding-right: 6rem;
       max-width: min(80vw, 2600px);

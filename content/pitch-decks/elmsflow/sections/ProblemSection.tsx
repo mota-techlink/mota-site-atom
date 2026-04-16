@@ -155,17 +155,17 @@ interface SiloCardProps {
 function SiloCard({ icon, title, items, delay, label }: SiloCardProps) {
   return (
     <motion.div
-      className="relative flex flex-col items-center p-5 lg:p-6 rounded-2xl border-2 border-dashed border-slate-500/40 bg-slate-800/40 backdrop-blur-sm group hover:border-red-500/30 transition-colors duration-500"
+      className="relative flex flex-col items-center p-5 lg:p-6 rounded-2xl border border-slate-200 dark:border-2 dark:border-dashed dark:border-slate-500/40 bg-white/80 dark:bg-slate-800/40 backdrop-blur-sm shadow-sm dark:shadow-none group hover:border-red-400/40 dark:hover:border-red-500/30 transition-colors duration-500"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.6, ease: "easeOut" }}
     >
       {/* Noise overlay */}
-      <div className="absolute inset-0 rounded-2xl opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2EpIi8+PC9zdmc+')]" />
+      <div className="absolute inset-0 rounded-2xl opacity-0 dark:opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2EpIi8+PC9zdmc+')]" />
 
       {/* Icon */}
       <div className="relative mb-3">
-        <div className="p-3 rounded-xl bg-slate-700/50 border border-slate-600/30 text-slate-400 group-hover:text-slate-300 transition-colors">
+          <div className="p-3 rounded-xl bg-slate-100 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600/30 text-slate-500 dark:text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
           {icon}
         </div>
         {/* Disconnected pulse ring */}
@@ -177,7 +177,7 @@ function SiloCard({ icon, title, items, delay, label }: SiloCardProps) {
       </div>
 
       {/* Title */}
-      <h3 className="text-sm lg:text-lg font-bold text-slate-200 mb-1 tracking-wide uppercase font-mono">
+      <h3 className="text-sm lg:text-lg font-bold text-slate-700 dark:text-slate-200 mb-1 tracking-wide uppercase font-mono">
         {title}
       </h3>
 
@@ -191,7 +191,7 @@ function SiloCard({ icon, title, items, delay, label }: SiloCardProps) {
         {items.map((item, i) => (
           <motion.li
             key={i}
-            className="flex items-center gap-2 text-xs lg:text-sm text-slate-400/80 font-mono"
+            className="flex items-center gap-2 text-xs lg:text-sm text-slate-500 dark:text-slate-400/80 font-mono"
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: delay + 0.8 + i * 0.1 }}
@@ -236,10 +236,10 @@ export function ProblemSection() {
 
   return (
     <section className={SECTION}>
-    <div className="w-full h-full flex flex-col justify-center items-center bg-slate-50 dark:bg-linear-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-white relative overflow-hidden p-3 sm:p-5 md:p-8 lg:p-12">
+    <div className="w-full h-full flex flex-col justify-center items-center bg-slate-50 dark:bg-linear-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-800 dark:text-white relative overflow-hidden p-3 sm:p-5 md:p-8 lg:p-12">
       {/* Background grid */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-0 dark:opacity-[0.04]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
@@ -254,51 +254,37 @@ export function ProblemSection() {
       <div className="absolute top-0 left-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl" />
 
-      {/* ── Header ── */}
-      <div className="relative text-center mb-4 md:mb-6 lg:mb-10 z-10">
-        <motion.div
-          className="flex items-center justify-center gap-2 mb-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.span
-            className="inline-block w-8 h-0.5 bg-red-500/60"
-            animate={{ scaleX: [1, 0.5, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-          <span className="text-[10px] lg:text-xs font-mono text-red-400/80 tracking-[0.3em] uppercase">
-            {c.badge}
-          </span>
-          <motion.span
-            className="inline-block w-8 h-0.5 bg-red-500/60"
-            animate={{ scaleX: [1, 0.5, 1] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-          />
-        </motion.div>
+      {/* Badge */}
+      <motion.div
+        className="ei-child inline-flex items-center gap-2 mb-2 md:mb-3 px-3 py-1 rounded-full border border-red-500/25 bg-red-500/[0.08] relative z-10"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <AlertTriangle className="w-3.5 h-3.5 text-red-400" />
+        <span className="text-[10px] md:text-sm font-mono tracking-[0.2em] uppercase text-red-400/90">
+          {c.badge}
+        </span>
+      </motion.div>
 
-        <motion.h2
-          className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-black tracking-tight font-mono"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
-          <GlitchText text={c.title} />
-          <br />
-          <span className="text-slate-400 text-lg md:text-3xl lg:text-5xl xl:text-6xl">
-            {c.subtitle}
-          </span>
-        </motion.h2>
-
-        <motion.p
-          className="mt-2 md:mt-3 text-xs md:text-sm lg:text-base text-slate-500 font-mono max-w-lg mx-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          {c.description}
-        </motion.p>
-      </div>
+      {/* Title */}
+      <motion.h2
+        className="ei-child text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold tracking-tight text-center mb-1 md:mb-2 relative z-10"
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15 }}
+      >
+        <GlitchText text={c.title} />
+        <br />
+        <span className="text-slate-500 dark:text-slate-400">{c.subtitle}</span>
+      </motion.h2>
+      <motion.p
+        className="ei-child text-xs md:text-base text-slate-500 dark:text-white/50 text-center max-w-xl mb-3 md:mb-4 relative z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.25 }}
+      >
+        {c.description}
+      </motion.p>
 
       {/* ── Desktop: 3-Column Grid with Broken Data Flows ── */}
       {mounted && (
@@ -358,15 +344,15 @@ export function ProblemSection() {
             item.label ? (
               <motion.div
                 key={i}
-                className="flex flex-col items-center gap-1 p-2 rounded-xl border border-dashed border-slate-500/30 bg-slate-800/40"
+                className="flex flex-col items-center gap-1 p-2 rounded-xl border border-dashed border-slate-200 dark:border-slate-500/30 bg-white/80 dark:bg-slate-800/40"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
               >
-                <div className="p-1.5 rounded-lg bg-slate-700/50 text-slate-400">
+                <div className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400">
                   {item.icon}
                 </div>
-                <span className="text-[8px] font-mono text-slate-400 uppercase">{item.label}</span>
+                <span className="text-[8px] font-mono text-slate-500 dark:text-slate-400 uppercase">{item.label}</span>
                 <div className="flex items-center gap-1">
                   <span className="w-1 h-1 rounded-full bg-red-500 animate-pulse" />
                   <span className="text-[7px] font-mono text-red-400/70">{c.mobileLabels.syncErr}</span>
@@ -405,14 +391,14 @@ export function ProblemSection() {
             <span className="text-red-400 font-bold">37%</span> {c.stats[0].label}
           </span>
         </div>
-        <div className="h-3 w-px bg-slate-700" />
+        <div className="h-3 w-px bg-slate-300 dark:bg-slate-700" />
         <div className="flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-amber-500/60 animate-pulse" />
           <span>
             <span className="text-amber-400 font-bold">€4.2B</span> {c.stats[1].label}
           </span>
         </div>
-        <div className="h-3 w-px bg-slate-700" />
+        <div className="h-3 w-px bg-slate-300 dark:bg-slate-700" />
         <div className="flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-red-500/60 animate-pulse" />
           <span>

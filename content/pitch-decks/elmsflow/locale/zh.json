@@ -55,6 +55,7 @@
     "badge": "解决方案",
     "title": "架构",
     "titleHighlight": "双环",
+    "subtitle": "基础设施在内，功能模块在外——一个联锁的生态系统。",
     "features": [
       { "label": "无缝系统集成", "description": "消除系统壁垒。整条供应链的物流数据——统一来源。" },
       { "label": "自动面单生成", "description": "基于同步运输数据，自动生成精准的末端配送面单。" },
@@ -329,6 +330,128 @@
     "summaryMetric": "2,000+",
     "summaryLabel": "2027年底商户数"
   },
+  "slide15": {
+    "badge": "AI 合规",
+    "title": "AI 驱动合规管理",
+    "subtitle": "自动化审计，消除人为错误，实现全球食品安全标准的持续认证。",
+    "stats": [
+      { "value": "92%", "label": "审计时间缩减", "icon": "TrendingDown" },
+      { "value": "100%", "label": "自动化覆盖率", "icon": "Zap" },
+      { "value": "40+", "label": "全球标准", "icon": "Globe" },
+      { "value": "5×", "label": "风险检测速度", "icon": "BarChart3" }
+    ],
+    "features": [
+      {
+        "title": "BRC / BRCGS 自动审计",
+        "description": "持续扫描运营流程，对标 BRC 食品安全、包装和仓储全球标准。",
+        "items": ["实时条款映射", "自动生成纠正措施", "审计前等级预测"]
+      },
+      {
+        "title": "HACCP 数字孪生",
+        "description": "AI 维护供应链中每个关键控制点的实时数字孪生。",
+        "items": ["传感器驱动 CCP 监控", "预测性偏差预警", "即时合规报告"]
+      },
+      {
+        "title": "ISO / IFS 自动映射",
+        "description": "同步将流程映射到 ISO 22000、IFS Food 和 FSSC 22000——零重复工作。",
+        "items": ["并行标准对齐", "差距分析仪表盘", "跨标准证据共享"]
+      },
+      {
+        "title": "法规雷达",
+        "description": "实时追踪 40+ 司法管辖区的法规变更，自动标记对运营的影响。",
+        "items": ["欧盟 / 英国 / 亚太扫描", "自动影响评估", "相关方通知"]
+      }
+    ],
+    "bottomNote": "受欧盟认证食品物流运营商信赖。"
+  },
+  "slide16": {
+    "badge": "合规仪表盘",
+    "title": "实时合规智能",
+    "subtitle": "每项标准、每个设施、每个风险的实时可视化。",
+    "topStats": [
+      { "label": "活跃中小企业", "value": "1,247", "change": "+12.3% 环比" },
+      { "label": "合规评分", "value": "94.2%", "change": "+2.1% 对比Q3" },
+      { "label": "待处理问题", "value": "23", "change": "-41% 环比" },
+      { "label": "认证数量", "value": "3,891", "change": "+287 本季度" }
+    ],
+    "charts": {
+      "barChart": {
+        "title": "各区域中小企业数量",
+        "bars": [
+          { "label": "德奥瑞", "value": 107, "color": "#06b6d4" },
+          { "label": "比荷卢", "value": 215, "color": "#10b981" },
+          { "label": "北欧", "value": 90, "color": "#8b5cf6" },
+          { "label": "英爱", "value": 195, "color": "#f59e0b" },
+          { "label": "伊比利亚", "value": 142, "color": "#ef4444" },
+          { "label": "中东欧", "value": 320, "color": "#ec4899" },
+          { "label": "亚太", "value": 178, "color": "#6366f1" }
+        ]
+      },
+      "pieChart": {
+        "title": "BRC 认证类型分布",
+        "segments": [
+          { "label": "BRC 食品安全", "value": 38, "color": "#06b6d4" },
+          { "label": "BRC 包装", "value": 22, "color": "#10b981" },
+          { "label": "BRC 仓储", "value": 18, "color": "#8b5cf6" },
+          { "label": "IFS Food", "value": 14, "color": "#f59e0b" },
+          { "label": "FSSC 22000", "value": 8, "color": "#ef4444" }
+        ]
+      },
+      "trendChart": {
+        "title": "合规增长趋势",
+        "points": [
+          { "label": "Q1'25", "value": 71 },
+          { "label": "Q2'25", "value": 78 },
+          { "label": "Q3'25", "value": 61 },
+          { "label": "Q4'25", "value": 94 },
+          { "label": "Q1'26", "value": 84 },
+          { "label": "Q2'26", "value": 86 }
+        ]
+      },
+      "gauge": {
+        "title": "综合合规",
+        "value": 94,
+        "label": "加权评分"
+      },
+      "stackedBar": {
+        "title": "标准覆盖率",
+        "items": [
+          { "label": "BRC", "value": 340, "color": "#06b6d4" },
+          { "label": "HACCP", "value": 285, "color": "#10b981" },
+          { "label": "ISO 22000", "value": 210, "color": "#8b5cf6" },
+          { "label": "IFS", "value": 165, "color": "#f59e0b" },
+          { "label": "FSSC", "value": 120, "color": "#ec4899" }
+        ]
+      },
+      "riskMatrix": {
+        "title": "风险热力图",
+        "cells": [
+          { "level": "低", "color": "rgba(16,185,129,0.3)" },
+          { "level": "低", "color": "rgba(16,185,129,0.25)" },
+          { "level": "中", "color": "rgba(245,158,11,0.25)" },
+          { "level": "高", "color": "rgba(239,68,68,0.3)" },
+          { "level": "低", "color": "rgba(16,185,129,0.2)" },
+          { "level": "中", "color": "rgba(245,158,11,0.3)" },
+          { "level": "中", "color": "rgba(245,158,11,0.2)" },
+          { "level": "高", "color": "rgba(239,68,68,0.25)" },
+          { "level": "中", "color": "rgba(245,158,11,0.2)" },
+          { "level": "高", "color": "rgba(239,68,68,0.2)" },
+          { "level": "高", "color": "rgba(239,68,68,0.35)" },
+          { "level": "危", "color": "rgba(239,68,68,0.5)" },
+          { "level": "低", "color": "rgba(16,185,129,0.3)" },
+          { "level": "中", "color": "rgba(245,158,11,0.25)" },
+          { "level": "高", "color": "rgba(239,68,68,0.25)" },
+          { "level": "危", "color": "rgba(239,68,68,0.45)" }
+        ]
+      }
+    },
+    "aiButton": "AI 合规助手",
+    "chatMessages": [
+      { "role": "ai", "text": "您好！我是您的 AI 合规助手。我可以帮助您了解 BRC、HACCP、ISO 22000 及其他食品安全标准。请问有什么需要？" },
+      { "role": "user", "text": "我们目前的 BRC 合规状态如何？" },
+      { "role": "ai", "text": "您的 BRC 食品安全合规率为 96.1%——预计等级 A。冷链文档方面有 3 项轻微不符合项，建议在 6 月 15 日下次审计窗口前进行整改。" }
+    ]
+  },
   "slideTitles": [
     "ELMS",
     "核心痛点",
@@ -343,6 +466,8 @@
     "路线图",
     "增长计划",
     "安全 & 合规",
+    "AI 合规",
+    "合规仪表盘",
     "行动号召"
   ]
 }

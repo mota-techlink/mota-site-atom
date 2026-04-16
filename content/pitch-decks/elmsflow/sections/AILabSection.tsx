@@ -181,7 +181,7 @@ function BusinessLinks() {
       transition={{ delay: 0.8 }}
     >
       <a
-        href="/pitch-deck/elms-investor"
+        href="/pitch-deck/elmsflow"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[10px] lg:text-xs text-slate-400 font-mono hover:text-emerald-400 hover:border-emerald-400/30 hover:bg-emerald-500/5 transition-all duration-300 group"
@@ -1005,40 +1005,37 @@ export function AILabSection() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[100px]" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px]" />
 
-      {/* ── Header ── */}
-      <div className="relative z-10 text-center mb-3 md:mb-4 lg:mb-6">
-        <motion.div
-          className="flex items-center justify-center gap-2 mb-1.5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5 text-emerald-400/60" />
-          <span className="text-[10px] md:text-xs lg:text-sm font-mono text-emerald-400/70 tracking-[0.25em] uppercase">
-            {c.badge}
-          </span>
-          <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5 text-emerald-400/60" />
-        </motion.div>
+      {/* Badge */}
+      <motion.div
+        className="ei-child inline-flex items-center gap-2 mb-2 md:mb-3 px-3 py-1 rounded-full border border-emerald-500/25 bg-emerald-500/[0.08] relative z-10"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+        <span className="text-[10px] md:text-sm font-mono tracking-[0.2em] uppercase text-emerald-400/90">
+          {c.badge}
+        </span>
+      </motion.div>
 
-        <motion.h2
-          className="text-xl md:text-2xl lg:text-4xl xl:text-5xl font-black tracking-tight"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.5 }}
-        >
-          <span className="text-white">{c.title}</span>
-          <span className="text-emerald-400 ml-1 md:ml-2">×</span>
-          <span className="text-emerald-300 ml-1 md:ml-2">{c.titleHighlight}</span>
-        </motion.h2>
-
-        <motion.p
-          className="mt-1 text-[10px] md:text-xs lg:text-base text-slate-400 font-mono max-w-lg mx-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          {c.subtitle}
-        </motion.p>
-      </div>
+      {/* Title */}
+      <motion.h2
+        className="ei-child text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold tracking-tight text-center mb-1 md:mb-2 relative z-10"
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15 }}
+      >
+        <span className="text-white">{c.title}</span>
+        <span className="text-emerald-400 ml-1 md:ml-2">×</span>
+        <span className="text-emerald-300 ml-1 md:ml-2">{c.titleHighlight}</span>
+      </motion.h2>
+      <motion.p
+        className="ei-child text-xs md:text-base text-white/50 text-center max-w-xl mb-3 md:mb-4 relative z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.25 }}
+      >
+        {c.subtitle}
+      </motion.p>
 
       {/* ── Desktop: Main 3-Panel Layout ── */}
       <div className="relative z-10 hidden md:flex flex-col lg:flex-row items-stretch justify-center gap-2 lg:gap-0 w-full max-w-6xl 2xl:max-w-[85vw] flex-1 min-h-0 max-h-[65vh]">

@@ -37,7 +37,7 @@ function SegmentCard({
     <motion.div
       className={`relative rounded-xl border ${theme.border} backdrop-blur-sm p-4 lg:p-5 flex flex-col gap-2 cursor-default overflow-visible`}
       style={{
-        background: `linear-gradient(135deg, rgba(${theme.accentRgb},0.08) 0%, rgba(15,23,42,0.7) 60%, rgba(${theme.accentRgb},0.04) 100%)`,
+        background: `var(--card-bg, linear-gradient(135deg, rgba(${theme.accentRgb},0.08) 0%, rgba(15,23,42,0.7) 60%, rgba(${theme.accentRgb},0.04) 100%))`,
       }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -49,6 +49,9 @@ function SegmentCard({
         transition: { type: "spring", stiffness: 300, damping: 18 },
       }}
     >
+      {/* Light-mode card fill — must fully cover the dark inline gradient */}
+      <div className="absolute inset-0 rounded-xl bg-white dark:bg-transparent pointer-events-none z-0 shadow-sm dark:shadow-none" />
+
       {/* Interactive glow background on hover */}
       <motion.div
         className="absolute inset-0 rounded-xl pointer-events-none"
@@ -84,17 +87,17 @@ function SegmentCard({
       {/* Card content */}
       <div className="relative z-20">
         <div className="flex items-center justify-between">
-          <span className="text-xs md:text-sm font-bold text-white/90 truncate">
+          <span className={`relative z-10 text-xs md:text-sm font-bold text-slate-700 dark:text-white/90 truncate`}>
             {label}
           </span>
-          <span className={`text-[10px] md:text-xs font-mono ${theme.text}`}>
+          <span className={`relative z-10 text-[10px] md:text-xs font-mono ${theme.text}`}>
             {growth}
           </span>
         </div>
-        <span className={`text-base md:text-lg lg:text-xl font-extrabold ${theme.text}`}>
+        <span className={`relative z-10 text-base md:text-lg lg:text-xl font-extrabold ${theme.text}`}>
           {stat}
         </span>
-        <p className="text-[9px] md:text-xs text-white/50 leading-snug line-clamp-2">
+        <p className="relative z-10 text-[9px] md:text-xs text-slate-500 dark:text-white/50 leading-snug line-clamp-2">
           {detail}
         </p>
       </div>
@@ -147,7 +150,7 @@ export function TargetMarketSection() {
     <section
       className={`${SECTION} bg-[#f0f4f8] dark:bg-linear-to-b dark:from-[#0a0e15] dark:via-[#0d1320] dark:to-[#0a0e15]`}
     >
-      <div className="relative w-full h-full flex flex-col items-center justify-center px-4 md:px-8 py-6 text-white overflow-hidden">
+      <div className="relative w-full h-full flex flex-col items-center justify-center px-4 md:px-8 py-6 text-slate-800 dark:text-white overflow-hidden">
         {/* Ambient glow */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-violet-600/[0.06] blur-[120px] rounded-full pointer-events-none" />
 
@@ -173,7 +176,7 @@ export function TargetMarketSection() {
           {c.title}
         </motion.h2>
         <motion.p
-          className="ei-child text-xs md:text-base text-white/50 text-center max-w-xl mb-4 md:mb-6"
+          className="ei-child text-xs md:text-base text-slate-500 dark:text-white/50 text-center max-w-xl mb-4 md:mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25 }}
@@ -197,7 +200,7 @@ export function TargetMarketSection() {
 
         {/* Key message */}
         <motion.p
-          className="ei-child text-xs md:text-base text-center text-violet-300/80 font-medium mt-4 md:mt-6 max-w-lg"
+          className="ei-child text-xs md:text-base text-center text-violet-600 dark:text-violet-300/80 font-medium mt-4 md:mt-6 max-w-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
@@ -215,10 +218,10 @@ export function TargetMarketSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 + i * 0.1 }}
             >
-              <div className="text-xl md:text-3xl font-extrabold text-white">
+              <div className="text-xl md:text-3xl font-extrabold text-slate-800 dark:text-white">
                 {s.value}
               </div>
-              <div className="text-[9px] md:text-xs text-white/40 font-mono uppercase tracking-wider">
+              <div className="text-[9px] md:text-xs text-slate-500 dark:text-white/40 font-mono uppercase tracking-wider">
                 {s.label}
               </div>
             </motion.div>
