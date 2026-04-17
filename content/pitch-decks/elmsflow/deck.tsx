@@ -28,7 +28,6 @@ import { TrackingSection } from "./sections/TrackingSection";
 import { RoadmapSection } from "./sections/RoadmapSection";
 import { GrowthSection } from "./sections/GrowthSection";
 import { SecuritySection } from "./sections/SecuritySection";
-import { ComplianceSection } from "./sections/ComplianceSection";
 import { ComplianceDashboardSection } from "./sections/ComplianceDashboardSection";
 import { CTASection } from "./sections/CTASection";
 
@@ -47,7 +46,6 @@ const SECTIONS = [
   RoadmapSection,
   GrowthSection,
   SecuritySection,
-  ComplianceSection,
   ComplianceDashboardSection,
   CTASection,
 ] as const;

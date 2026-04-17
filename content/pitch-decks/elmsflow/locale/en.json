@@ -1,10 +1,10 @@
 {
   "nav": { "tagline": "ELMS Logistics" },
   "slide1": {
-    "subtitle": "European Logistics Management System",
+    "subtitle": "Earth(global) Logistics Management System",
     "tagline": "AI-Powered Infrastructure for Cross-Border Commerce",
     "badges": [
-      { "icon": "🇪🇺", "text": "EU Compliant" },
+      { "icon": "🌍", "text": "Global Protocol" },
       { "icon": "🤖", "text": "AI-Empowered" },
       { "icon": "🔗", "text": "MCP Ready" }
     ],
@@ -221,10 +221,15 @@
     "statusLabels": { "done": "Done", "active": "Active", "planned": "Planned", "vision": "Vision" }
   },
   "slide9": {
-    "badge": "Security Command Center",
+    "badge": "Security, Compliance & IoT",
     "title": "Security",
-    "titleHighlight": "Compliance",
-    "subtitle": "Enterprise-grade protection · Supabase Auth · PostgreSQL RLS · Cloudflare WAF",
+    "titleHighlight": "& IoT Compliance",
+    "subtitle": "Enterprise-grade protection · IoT Sensor Integration · Pharma Cold-Chain · Cloudflare WAF",
+    "iotBanner": {
+      "title": "Pharma & Cold-Chain IoT Use Case",
+      "description": "Temperature-controlled shipments from America & Ireland to China — fully monitored end-to-end.",
+      "pills": ["IoT Sensor Integration", "Real-time Temperature Monitoring", "Automated Breach Recording for Insurance Claims"]
+    },
     "activeStatus": "Active",
     "trustScoreLabel": "Trust Score",
     "certBadges": ["GDPR", "ISO", "SOC2"],
@@ -299,6 +304,7 @@
     "badge": "AI Marketing",
     "title": "AI Marketing Intelligence",
     "subtitle": "Market Intelligence Hunter — automatically find users discussing pain points.",
+    "poweredBy": "Powered by Motatech AI: ELMS seamlessly leverages Motatech's enterprise-grade Marketing Intelligence engine to provide merchants with predictive sales and routing analytics.",
     "steps": [
       { "label": "Product Intake", "detail": "Client provides product name, description, URL and target languages." },
       { "label": "AI Analysis", "detail": "LLM infers target user pain points, generates multi-platform scan keywords." },
@@ -317,18 +323,18 @@
     "title": "Growth Plan",
     "subtitle": "A self-reinforcing flywheel — from seed launch to network effects.",
     "phases": [
-      { "label": "Launch & Seed", "timeline": "Q2–Q3 2026", "detail": "Onboard 20 pilot merchants across EU food-logistics corridors.", "metric": "20 merchants, €10K MRR" },
-      { "label": "Affiliate Program", "timeline": "Q3–Q4 2026", "detail": "Launch referral rewards — merchants earn credits for verified sign-ups.", "metric": "100 merchants, 3× MRR" },
-      { "label": "Market Expansion", "timeline": "Q1–Q2 2027", "detail": "Expand to Asia-Pacific corridors (JP / KR / AU). Multi-language platform.", "metric": "500 merchants, 5 corridors" },
-      { "label": "Network Effects", "timeline": "H2 2027+", "detail": "Every new merchant adds data density, improving AI for everyone.", "metric": "2000+ merchants" }
+      { "label": "Beta Test & Seed Launch", "timeline": "Q2–Q3 2026", "detail": "Beta test and build out the application with 1–2 anchor clients. Onboard 10 pilot merchants across EU food-logistics corridors.", "metric": "10 merchants, €10K MRR" },
+      { "label": "Affiliate Program & Viral Growth", "timeline": "Q4 2026", "detail": "Launch referral rewards program — merchants earn system credits for verified sign-ups.", "metric": "50 merchants, €30K MRR (3× MRR)" },
+      { "label": "Market Expansion", "timeline": "Q1–Q2 2027", "detail": "Expand to Asia-Pacific (APAC) corridors including Japan, Korea, and Australia. Launch full multi-language platform support.", "metric": "200 merchants across 5 global corridors" },
+      { "label": "Network Effects", "timeline": "H2 2027+", "detail": "Achieve critical mass where every new merchant adds data density, improving AI routing efficiency for the entire network.", "metric": "Critical mass · Self-optimising AI" }
     ],
     "earlyBird": [
       "6 months free Support tier for founding merchants",
       "Priority onboarding & dedicated success manager",
       "Locked-in pricing — immune to future increases"
     ],
-    "summaryMetric": "2,000+",
-    "summaryLabel": "Merchants by end of 2027"
+    "summaryMetric": "200+",
+    "summaryLabel": "Merchants across 5 global corridors by Q2 2027"
   },
   "slide15": {
     "badge": "AI Compliance",
@@ -465,8 +471,7 @@
     "AI Marketing",
     "Roadmap",
     "Growth Plan",
-    "Security & Compliance",
-    "AI Compliance",
+    "Compliance & Security",
     "Compliance Dashboard",
     "Call to Action"
   ]

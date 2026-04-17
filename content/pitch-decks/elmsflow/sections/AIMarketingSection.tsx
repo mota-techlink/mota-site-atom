@@ -288,6 +288,18 @@ export function AIMarketingSection() {
           {c.subtitle}
         </motion.p>
 
+        {/* ── Motatech AI Disclaimer ── */}
+        {c.poweredBy && (
+          <motion.p
+            className="ei-child text-[10px] md:text-xs text-emerald-400/70 text-center max-w-2xl mx-auto italic mb-2 md:mb-3 px-4 border-l-2 border-emerald-500/30 leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.32 }}
+          >
+            {c.poweredBy}
+          </motion.p>
+        )}
+
         {/* ── Language Typewriter + Platform Carousel row ── */}
         <motion.div
           className="ei-child flex flex-wrap items-center justify-center gap-3 mb-4 md:mb-5"
