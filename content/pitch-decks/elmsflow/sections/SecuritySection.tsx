@@ -113,14 +113,14 @@ function OrbitRing() {
 }
 
 /* ── Live Status ──────────────────────────────────────────── */
-function LiveStatus({ color }: { color: string }) {
+function LiveStatus({ color, label }: { color: string; label?: string }) {
   return (
     <div className="flex items-center gap-1">
       <span className="relative flex h-1.5 w-1.5">
         <span className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-60 ${color.replace("text-", "bg-")}`} />
         <span className={`relative inline-flex h-1.5 w-1.5 rounded-full ${color.replace("text-", "bg-")}`} />
       </span>
-      <span className="text-[9px] font-mono font-bold text-emerald-400/80 uppercase tracking-widest">Active</span>
+      <span className="text-[9px] font-mono font-bold text-emerald-400/80 uppercase tracking-widest">{label ?? "Active"}</span>
     </div>
   );
 }
@@ -148,7 +148,7 @@ function ScrollLock({ children }: { children: React.ReactNode }) {
   );
 }
 
-function SecurityCard({ card, index, loc }: { card: SecCard; index: number; loc: { title: string; subtitle: string; description: string; details: string[] } }) {
+function SecurityCard({ card, index, loc, activeStatus }: { card: SecCard; index: number; loc: { title: string; subtitle: string; description: string; details: string[] }; activeStatus?: string }) {
   const [hovered, setHovered] = useState(false);
   const { Icon } = card;
   return (
@@ -170,9 +170,9 @@ function SecurityCard({ card, index, loc }: { card: SecCard; index: number; loc:
             style={{ backgroundColor: `rgba(${card.accentRgb},0.14)`, borderColor: `rgba(${card.accentRgb},0.32)` }}>
             <Icon className={`w-5 h-5 ${card.color}`} />
           </div>
-          <LiveStatus color={card.color} />
+          <LiveStatus color={card.color} label={activeStatus} />
         </div>
-        <div className={`text-base lg:text-lg font-extrabold leading-tight ${card.color}`}>{loc.title}</div>
+        <div className={`text-sm lg:text-base font-extrabold leading-tight ${card.color}`}>{loc.title}</div>
         <div className="text-xs lg:text-sm font-mono text-slate-400 uppercase tracking-wide leading-snug">{loc.subtitle}</div>
         <div className="flex-1" />
         <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[10px] lg:text-xs font-mono font-bold uppercase tracking-widest self-start"
@@ -208,9 +208,15 @@ function SecurityCard({ card, index, loc }: { card: SecCard; index: number; loc:
 }
 
 /* ── IoT Strip (compact clickable + modal) ────────────────── */
-function IoTStrip({ banner }: { banner: { title: string; description: string; pills: string[] } }) {
+function IoTStrip({ banner }: { banner: { title: string; description: string; pills: string[]; tag?: string; items?: { emoji: string; label: string; body: string }[] } }) {
   const [open, setOpen] = useState(false);
   const PILL_EMOJIS = ["📡", "🌡️", "📋"];
+  const modalItems = banner.items ?? [
+    { emoji: "📡", label: "IoT Sensor Integration",     body: "Real-time sensor data ingestion from cold-chain hardware, GPS trackers, and environmental monitors across the shipment corridor." },
+    { emoji: "🌡️", label: "Temperature Monitoring",      body: "Continuous end-to-end temperature logging with configurable alert thresholds. Breach events are timestamped and signed for regulatory evidence." },
+    { emoji: "📋", label: "Insurance & Compliance Logs",  body: "Automated breach reports generated in HACCP-compliant format, ready for insurance claims and regulatory audits with full chain-of-custody." },
+    { emoji: "🏥", label: "Pharma Cold-Chain (IND→CHN)", body: "Supports GMP/GDP-aligned shipments from America & Ireland to China, with digitally sealed provenance records accepted by Chinese customs portals." },
+  ];
   return (
     <>
       {/* Compact clickable bar */}
@@ -229,7 +235,7 @@ function IoTStrip({ banner }: { banner: { title: string; description: string; pi
               {PILL_EMOJIS.map((em, i) => (
                 <span key={i} className="text-base">{em}</span>
               ))}
-              <span className="text-xs text-slate-400 font-mono">Pharma · IoT · Cold-Chain</span>
+              <span className="text-xs text-slate-400 font-mono">{banner.tag ?? "Pharma · IoT · Cold-Chain"}</span>
             </div>
           </div>
         </div>
@@ -268,12 +274,7 @@ function IoTStrip({ banner }: { banner: { title: string; description: string; pi
               </div>
               {/* body */}
               <div className="p-5 space-y-4">
-                {[
-                  { emoji: "📡", label: "IoT Sensor Integration",     body: "Real-time sensor data ingestion from cold-chain hardware, GPS trackers, and environmental monitors across the shipment corridor." },
-                  { emoji: "🌡️", label: "Temperature Monitoring",      body: "Continuous end-to-end temperature logging with configurable alert thresholds. Breach events are timestamped and signed for regulatory evidence." },
-                  { emoji: "📋", label: "Insurance & Compliance Logs",  body: "Automated breach reports generated in HACCP-compliant format, ready for insurance claims and regulatory audits with full chain-of-custody." },
-                  { emoji: "🏥", label: "Pharma Cold-Chain (IND→CHN)", body: "Supports GMP/GDP-aligned shipments from America & Ireland to China, with digitally sealed provenance records accepted by Chinese customs portals." },
-                ].map((item, i) => (
+                {modalItems.map((item, i) => (
                   <div key={i} className="flex gap-4 p-3 rounded-xl border border-white/[0.06] bg-white/[0.02]">
                     <span className="text-2xl shrink-0">{item.emoji}</span>
                     <div>
@@ -335,6 +336,7 @@ export function SecuritySection() {
 
   const [phase, setPhase] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
   useEffect(() => {
     const id = setInterval(() => setPhase((p) => (p + 1) % 4), PHASE);
@@ -342,6 +344,7 @@ export function SecuritySection() {
   }, []);
 
   const activeIdx = PHASE_MAP[phase];
+  const displayIdx = hoveredFeature !== null ? hoveredFeature : activeIdx;
 
   const secCards = SEC_CARDS.map((card, i) => ({ ...card, loc: c9.cards[i] }));
 
@@ -439,11 +442,14 @@ export function SecuritySection() {
             {/* 2×2 feature grid */}
             <div className="relative z-10 p-2.5 lg:p-3 grid grid-cols-2 gap-2 lg:gap-2.5 flex-1">
               {c15.features.map((f: { title: string; description: string; items: string[] }, i: number) => {
-                const on = i === activeIdx;
+                const on = i === displayIdx;
                 const a = ACC[i];
                 return (
-                  <motion.div key={i} className={`relative rounded-xl border backdrop-blur-sm p-2 lg:p-2.5 transition-all duration-700 flex flex-col ${on ? a.hi : a.lo}`}
-                    animate={{ opacity: on ? 1 : 0.38 }} transition={{ duration: 0.6 }}>
+                  <motion.div key={i}
+                    className={`relative rounded-xl border backdrop-blur-sm p-2 lg:p-2.5 transition-all duration-700 flex flex-col cursor-default ${on ? a.hi : a.lo}`}
+                    animate={{ opacity: on ? 1 : 0.38 }} transition={{ duration: 0.6 }}
+                    onMouseEnter={() => setHoveredFeature(i)}
+                    onMouseLeave={() => setHoveredFeature(null)}>
                     {on && (
                       <div key={`sl-${phase}`} className="absolute inset-x-0 h-px pointer-events-none z-20"
                         style={{ background: "linear-gradient(90deg, transparent, rgba(6,182,212,0.6), transparent)", animation: `scanDown ${PHASE}ms linear forwards` }} />
@@ -455,12 +461,7 @@ export function SecuritySection() {
                     <ul className="space-y-1.5 flex-1">
                       {f.items.map((item, j) => (
                         <li key={j} className="flex items-start gap-1.5 text-xs lg:text-sm text-white/70">
-                          <span className="shrink-0 leading-tight">{([
-                            ["📋","🔍","✏️","📊"],   // card 0 – Audit
-                            ["🛡️","🔒","⚠️","📡"],  // card 1 – Shield
-                            ["✨","🤖","💡","🧠"],   // card 2 – AI
-                            ["🌐","🗺️","📍","🔗"],  // card 3 – Globe
-                          ])[i][j % 4]}</span><span className="leading-snug">{item}</span>
+                          <span >{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -492,7 +493,7 @@ export function SecuritySection() {
           <div className="flex flex-col gap-2">
             <div className="grid grid-cols-2 gap-2 flex-1">
               {secCards.map((card, i) => (
-                <SecurityCard key={card.id} card={card} index={i} loc={card.loc} />
+                <SecurityCard key={card.id} card={card} index={i} loc={card.loc} activeStatus={c9.activeStatus} />
               ))}
             </div>
             {c9.iotBanner && <IoTStrip banner={c9.iotBanner} />}
@@ -541,7 +542,7 @@ export function SecuritySection() {
                     <div className="w-5 h-5 rounded-md flex items-center justify-center" style={{ backgroundColor: `rgba(${card.accentRgb},0.12)` }}>
                       <Icon className={`w-3 h-3 ${card.color}`} />
                     </div>
-                    <LiveStatus color={card.color} />
+                    <LiveStatus color={card.color} label={c9.activeStatus} />
                   </div>
                   <div className={`text-[9px] font-bold ${card.color}`}>{card.loc.title}</div>
                   <div className="text-[8px] text-slate-600 font-mono">{card.loc.subtitle}</div>
@@ -557,7 +558,7 @@ export function SecuritySection() {
         <MobileDetailModal open={mobileOpen} onClose={() => setMobileOpen(false)} title={c9.mobileModal.title} subtitle={c9.mobileModal.subtitle}>
           <div className="space-y-4">
             {/* Compliance features */}
-            <div className="text-[10px] font-mono text-cyan-400/80 uppercase tracking-wider border-b border-white/5 pb-2">AI-Driven Compliance Radar</div>
+            <div className="text-[10px] font-mono text-cyan-400/80 uppercase tracking-wider border-b border-white/5 pb-2">{c9.radarSectionLabel}</div>
             {c15.features.map((f: { title: string; description: string; items: string[] }, i: number) => {
               const a = ACC[i];
               return (
@@ -577,7 +578,7 @@ export function SecuritySection() {
             })}
 
             {/* Security cards */}
-            <div className="text-[10px] font-mono text-emerald-400/80 uppercase tracking-wider border-b border-white/5 pb-2 pt-1">Security & Compliance</div>
+            <div className="text-[10px] font-mono text-emerald-400/80 uppercase tracking-wider border-b border-white/5 pb-2 pt-1">{c9.secSectionLabel}</div>
             {secCards.map((card) => {
               const { Icon } = card;
               return (
@@ -591,12 +592,12 @@ export function SecuritySection() {
                       <div className={`text-xs font-bold ${card.color}`}>{card.loc.title}</div>
                       <div className="text-[9px] font-mono text-slate-500 uppercase tracking-wider">{card.loc.subtitle}</div>
                     </div>
-                    <LiveStatus color={card.color} />
+                    <LiveStatus color={card.color} label={c9.activeStatus} />
                   </div>
                   {card.id === "gdpr" && (
                     <div className="flex items-center gap-2 mb-1.5">
                       <EUFlag className="w-6 h-4" />
-                      <span className="text-[9px] font-mono text-blue-400/60">EU DATA SOVEREIGNTY</span>
+                      <span className="text-[9px] font-mono text-blue-400/60">{c9.euDataLabel}</span>
                     </div>
                   )}
                   <p className="text-[10px] text-slate-400 leading-relaxed mb-1.5">{card.loc.description}</p>

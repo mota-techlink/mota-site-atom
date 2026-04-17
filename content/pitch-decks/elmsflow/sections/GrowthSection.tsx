@@ -15,12 +15,12 @@ function GrowthChart({
   // Extract numeric values for chart scaling
   const values = [0, 20, 100, 500, 2000];
   const maxY = 2000;
-  const w = 400;
+  const w = 800;
   const h = 200;
-  const padL = 40;
+  const padL = 8;
   const padB = 30;
   const padT = 10;
-  const chartW = w - padL - 10;
+  const chartW = w - padL - 8;
   const chartH = h - padB - padT;
 
   const points = values.map((v, i) => ({
@@ -41,8 +41,8 @@ function GrowthChart({
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5 }}
     >
-      <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-auto max-h-[30vh]">
-        {/* Grid lines */}
+      <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-auto" preserveAspectRatio="xMidYMid meet">
+        {/* Grid lines + Y-axis labels (inside) */}
         {yLabels.map((v) => {
           const y = padT + chartH - (v / maxY) * chartH;
           return (
@@ -50,21 +50,23 @@ function GrowthChart({
               <line
                 x1={padL}
                 y1={y}
-                x2={w - 10}
+                x2={w - 8}
                 y2={y}
                 stroke="rgba(255,255,255,0.05)"
                 strokeWidth="0.5"
               />
-              <text
-                x={padL - 4}
-                y={y + 3}
-                textAnchor="end"
-                fill="rgba(255,255,255,0.25)"
-                fontSize="7"
-                fontFamily="monospace"
-              >
-                {v > 0 ? `${v}` : ""}
-              </text>
+              {v > 0 && (
+                <text
+                  x={padL + 3}
+                  y={y - 3}
+                  textAnchor="start"
+                  fill="rgba(255,255,255,0.22)"
+                  fontSize="7"
+                  fontFamily="monospace"
+                >
+                  {v}
+                </text>
+              )}
             </g>
           );
         })}
@@ -231,7 +233,7 @@ export function GrowthSection() {
         </motion.p>
 
         {/* Growth trend chart */}
-        <div className="ei-child w-full max-w-3xl 2xl:max-w-5xl mb-3 md:mb-4">
+        <div className="ei-child w-full max-w-4xl 2xl:max-w-6xl mb-3 md:mb-4">
           <GrowthChart phases={c.phases} />
         </div>
 

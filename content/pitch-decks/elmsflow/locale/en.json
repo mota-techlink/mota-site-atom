@@ -222,16 +222,26 @@
   },
   "slide9": {
     "badge": "Security, Compliance & IoT",
-    "title": "Security",
-    "titleHighlight": "& IoT Compliance",
+    "title": "Compliance ",
+    "titleHighlight": "& Security ",
     "subtitle": "Enterprise-grade protection · IoT Sensor Integration · Pharma Cold-Chain · Cloudflare WAF",
     "iotBanner": {
       "title": "Pharma & Cold-Chain IoT Use Case",
       "description": "Temperature-controlled shipments from America & Ireland to China — fully monitored end-to-end.",
-      "pills": ["IoT Sensor Integration", "Real-time Temperature Monitoring", "Automated Breach Recording for Insurance Claims"]
+      "pills": ["IoT Sensor Integration", "Real-time Temperature Monitoring", "Automated Breach Recording for Insurance Claims"],
+      "tag": "Pharma · IoT · Cold-Chain",
+      "items": [
+        { "emoji": "📡", "label": "IoT Sensor Integration",     "body": "Real-time sensor data ingestion from cold-chain hardware, GPS trackers, and environmental monitors across the shipment corridor." },
+        { "emoji": "🌡️", "label": "Temperature Monitoring",      "body": "Continuous end-to-end temperature logging with configurable alert thresholds. Breach events are timestamped and signed for regulatory evidence." },
+        { "emoji": "📋", "label": "Insurance & Compliance Logs",  "body": "Automated breach reports generated in HACCP-compliant format, ready for insurance claims and regulatory audits with full chain-of-custody." },
+        { "emoji": "🏥", "label": "Pharma Cold-Chain (IND→CHN)", "body": "Supports GMP/GDP-aligned shipments from America & Ireland to China, with digitally sealed provenance records accepted by Chinese customs portals." }
+      ]
     },
     "activeStatus": "Active",
     "trustScoreLabel": "Trust Score",
+    "radarSectionLabel": "AI-Driven Compliance Radar",
+    "secSectionLabel": "Security & Compliance",
+    "euDataLabel": "EU DATA SOVEREIGNTY",
     "certBadges": ["GDPR", "ISO", "SOC2"],
     "cards": [
       { "title": "EU Data Sovereignty", "subtitle": "GDPR", "badgeLabel": "EU COMPLIANT", "description": "Data strictly localized in Dublin (eu-west-1). 100% GDPR & Irish Data Protection Act 2018 compliant.", "details": ["AWS eu-west-1 (Ireland) data residency", "Supabase Auth with JWT + MFA", "Irish Data Protection Act 2018 aligned", "Data Processing Agreements (DPA) ready", "Right to erasure & portability built-in"] },
@@ -304,7 +314,7 @@
     "badge": "AI Marketing",
     "title": "AI Marketing Intelligence",
     "subtitle": "Market Intelligence Hunter — automatically find users discussing pain points.",
-    "poweredBy": "Powered by Motatech AI: ELMS seamlessly leverages Motatech's enterprise-grade Marketing Intelligence engine to provide merchants with predictive sales and routing analytics.",
+    "poweredBy": "Powered by MOTA TECHLINK AI: ELMS seamlessly leverages MOTA TECHLINK's enterprise-grade Marketing Intelligence engine to provide merchants with predictive sales and routing analytics.",
     "steps": [
       { "label": "Product Intake", "detail": "Client provides product name, description, URL and target languages." },
       { "label": "AI Analysis", "detail": "LLM infers target user pain points, generates multi-platform scan keywords." },
@@ -313,9 +323,12 @@
       { "label": "Track & Bill", "detail": "Track clicks and conversions, generate usage-based billing." }
     ],
     "advantages": [
-      "From passive ads to active outreach",
-      "Real-value replies, not spam — zero ban risk",
-      "Pay per result, not per impression"
+      "🎯 From passive ads to active outreach",
+      "🛡️ Real-value replies, not spam — zero ban risk",
+      "💰 Pay per result, not per impression",
+      "🌐 Reach 20+ platforms across 6 languages simultaneously",
+      "🤖 AI-generated replies with human-review option",
+      "📊 Full click & conversion tracking with usage-based billing"
     ]
   },
   "slide14": {
@@ -350,22 +363,22 @@
       {
         "title": "BRC / BRCGS Auto-Audit",
         "description": "Continuously scan operations against BRC Global Standards for food safety, packaging, and storage.",
-        "items": ["Real-time clause mapping", "Auto-generated corrective actions", "Grade prediction before audit"]
+        "items": ["🗺️ Real-time clause mapping", "⚙️ Auto-generated corrective actions", "🎯 Grade prediction before audit", "📸 Photo evidence auto-attach", "📅 Audit scheduling & reminders"]
       },
       {
         "title": "HACCP Digital Twin",
         "description": "AI maintains a live digital twin of every Critical Control Point in your supply chain.",
-        "items": ["Sensor-fed CCP monitoring", "Predictive deviation alerts", "Instant compliance reports"]
+        "items": ["🌡️ Sensor-fed CCP monitoring", "⚠️ Predictive deviation alerts", "📋 Instant compliance reports", "🔁 Automated corrective workflows", "📊 Historical trend analysis"]
       },
       {
         "title": "ISO / IFS Auto-Mapping",
         "description": "Map your processes to ISO 22000, IFS Food, and FSSC 22000 simultaneously — zero duplicate work.",
-        "items": ["Parallel standard alignment", "Gap analysis dashboard", "Cross-standard evidence sharing"]
+        "items": ["🔀 Parallel standard alignment", "🔍 Gap analysis dashboard", "🗂️ Cross-standard evidence sharing", "✅ Automated control mapping", "📈 Readiness score tracker"]
       },
       {
         "title": "Regulatory Radar",
         "description": "Track regulatory changes across 40+ jurisdictions in real-time, auto-flag impact on your operations.",
-        "items": ["EU / UK / APAC scanning", "Auto-impact assessment", "Stakeholder notification"]
+        "items": ["🌍 EU / UK / APAC scanning", "🎯 Auto-impact assessment", "📣 Stakeholder notification", "📰 Regulatory change digest", "⏱️ 48-hour change-to-alert SLA"]
       }
     ],
     "bottomNote": "Trusted by certified food-logistics operators across the EU."
