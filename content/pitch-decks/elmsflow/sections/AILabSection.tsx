@@ -27,7 +27,7 @@ import {
   MobileExpandButton,
 } from "@/components/pitch-deck";
 import { useContent, useNav, useActiveSlide } from "../hooks";
-import { SECTION } from "../constants";
+import { SECTION, SECTION_MAP } from "../constants";
 
 // ─── AI Brand Icons (inline SVGs) ────────────────────────────────
 function ChatGPTIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -974,7 +974,7 @@ export function AILabSection() {
   }, []);
 
   // Only start the animation sequence when this slide becomes active
-  const AILAB_IDX = 7;
+  const AILAB_IDX = SECTION_MAP["s-ai-lab"];
   useEffect(() => {
     if (activeIdx === AILAB_IDX) {
       setStep(STEP_BLANK);
