@@ -22,10 +22,10 @@ const INVESTOR_GOLD = "#d4a853";
 
 // ─── Fund Allocation Data ────────────────────────────────────────
 const fundAllocation = [
-  { name: "Product R&D & AI", value: 40, amount: "€60,000", color: "#3b82f6", icon: <Cpu className="w-4 h-4" /> },
-  { name: "Market & Operations", value: 30, amount: "€45,000", color: METALLIC_GOLD, icon: <Globe className="w-4 h-4" /> },
-  { name: "Security & Compliance", value: 20, amount: "€30,000", color: "#10b981", icon: <Lock className="w-4 h-4" /> },
-  { name: "Contingency Reserve", value: 10, amount: "€15,000", color: "#8b5cf6", icon: <ShieldCheck className="w-4 h-4" /> },
+  { name: "Product R&D & AI", value: 40, amount: "€120,000", color: "#3b82f6", icon: <Cpu className="w-4 h-4" /> },
+  { name: "Market & Operations", value: 18.3, amount: "€55,000", color: METALLIC_GOLD, icon: <Globe className="w-4 h-4" /> },
+  { name: "Security & Compliance", value: 11.7, amount: "€35,000", color: "#10b981", icon: <Lock className="w-4 h-4" /> },
+  { name: "Contingency & Acquisition", value: 30, amount: "€90,000", color: "#8b5cf6", icon: <ShieldCheck className="w-4 h-4" /> },
 ];
 
 // ─── SVG Icons for Pie Slices ────────────────────────────────────
@@ -53,7 +53,7 @@ const FUND_ICONS_SVG: Record<string, (c: string) => React.ReactNode> = {
       <circle cx="0" cy="1.5" r="0.8" fill="#fff" opacity="0.6" />
     </g>
   ),
-  "Contingency Reserve": (c) => (
+  "Contingency & Acquisition": (c) => (
     <g>
       <circle cx="0" cy="0" r="8" fill={c} opacity="0.85" />
       <path d="M0,-5.5 L4.5,-3 L4.5,0.5 C4.5,3.5 2.5,5 0,6.2 C-2.5,5 -4.5,3.5 -4.5,0.5 L-4.5,-3 Z" fill="none" stroke="#fff" strokeWidth="0.9" opacity="0.6" />
@@ -122,7 +122,7 @@ function ValuationBar({ c }: { c: any }) {
     >
       <div className="flex items-center justify-between mb-2">
         <span className="text-sm lg:text-base font-mono text-slate-400 uppercase tracking-wider">
-          {c.valuationBar.preLabel}
+          {c.totalRaise}
         </span>
         <motion.span
           className="text-base lg:text-lg font-black font-mono"
@@ -131,16 +131,16 @@ function ValuationBar({ c }: { c: any }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8 }}
         >
-          {c.valuationBar.postValue}
+          {c.totalRaiseAmount}
         </motion.span>
       </div>
 
       <div className="relative w-full h-11 lg:h-12 rounded-xl overflow-hidden bg-white/5 border border-white/10">
         <motion.div
           className="absolute inset-y-0 left-0 flex items-center justify-center"
-          style={{ backgroundColor: `${EQUITY_BLUE}cc`, width: "57.14%" }}
+          style={{ backgroundColor: `${EQUITY_BLUE}cc`, width: "40%" }}
           initial={{ width: 0 }}
-          animate={{ width: "57.14%" }}
+          animate={{ width: "40%" }}
           transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
         >
           <span className="text-xs lg:text-sm font-mono font-bold text-white/90 truncate px-2">
@@ -151,11 +151,11 @@ function ValuationBar({ c }: { c: any }) {
           className="absolute inset-y-0 flex items-center justify-center"
           style={{
             backgroundColor: `${INVESTOR_GOLD}cc`,
-            left: "57.14%",
-            width: "42.86%",
+            left: "40%",
+            width: "60%",
           }}
           initial={{ width: 0 }}
-          animate={{ width: "42.86%" }}
+          animate={{ width: "60%" }}
           transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
         >
           <span className="text-xs lg:text-sm font-mono font-bold text-slate-900 truncate px-2">

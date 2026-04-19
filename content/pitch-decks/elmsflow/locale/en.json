@@ -185,20 +185,20 @@
     "badge": "Investment Ask",
     "title": "Financial",
     "titleHighlight": "Transparency",
-    "subtitle": "Raising €150K to build out ELMS over 12 months. Full transparency on fund allocation.",
+    "subtitle": "Raising €300K to build out ELMS over 12 months. Full transparency on fund allocation.",
     "fundAllocation": [
-      { "label": "Product R&D & AI", "pct": "40%", "detail": "€60,000 · BRC compliance, ISO integration, AI/MCP development" },
-      { "label": "Market & Operations", "pct": "30%", "detail": "€45,000 · Logistics engine, customs capabilities, carrier APIs" },
-      { "label": "Security & Compliance", "pct": "20%", "detail": "€30,000 · EU servers, GDPR audit, ISO & BRC certification" },
-      { "label": "Contingency Reserve", "pct": "10%", "detail": "€15,000 · Risk buffer for regulatory & market changes" }
+      { "label": "Product R&D & AI", "pct": "40%", "detail": "€120,000 · BRC compliance, ISO integration, AI/MCP development" },
+      { "label": "Market & Operations", "pct": "18.3%", "detail": "€55,000 · Logistics engine, customs capabilities, carrier APIs" },
+      { "label": "Security & Compliance", "pct": "11.7%", "detail": "€35,000 · EU servers, GDPR audit, ISO & BRC certification" },
+      { "label": "Contingency & Acquisition", "pct": "30%", "detail": "€90,000 · Risk buffer & strategic acquisition" }
     ],
     "totalRaise": "Total Raise",
-    "totalRaiseAmount": "€150K",
-    "valuationBar": { "preLabel": "Pre-Money", "preValue": "€200K", "postLabel": "Post-Money", "postValue": "€350K" },
-    "investmentCard": { "title": "Investment Highlights", "items": ["Technical Equity: €200K asset value", "Full-stack platform already production-ready", "Capital Efficiency: 2.3× leverage", "Recurring SaaS + transaction-based revenue"] },
+    "totalRaiseAmount": "€300K",
+    "valuationBar": { "preLabel": "Pre-Money", "preValue": "€200K", "postLabel": "Post-Money", "postValue": "€500K" },
+    "investmentCard": { "title": "Investment Highlights", "items": ["Technical Equity: €200K asset value", "Full-stack platform already production-ready", "Capital Efficiency: 2.5× valuation uplift", "Recurring SaaS + transaction-based revenue"] },
     "keyMetrics": [
       { "label": "Runway", "value": "18 mo" },
-      { "label": "Leverage", "value": "2.3×" },
+      { "label": "Valuation Uplift", "value": "2.5×" },
       { "label": "Gross Margin", "value": "75%" }
     ]
   },

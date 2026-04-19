@@ -185,20 +185,20 @@
     "badge": "融资计划",
     "title": "财务",
     "titleHighlight": "透明度",
-    "subtitle": "募集€15万，用12个月建设ELMS。资金分配完全透明。",
+    "subtitle": "募集€30万，用12个月建设ELMS。资金分配完全透明。",
     "fundAllocation": [
-      { "label": "产品研发 & AI", "pct": "40%", "detail": "€60,000 · BRC合规，ISO集成，AI/MCP开发" },
-      { "label": "市场 & 运营", "pct": "30%", "detail": "€45,000 · 物流引擎，通关能力，承运商API" },
-      { "label": "安全 & 合规", "pct": "20%", "detail": "€30,000 · 欧盟服务器，GDPR审计，ISO & BRC认证" },
-      { "label": "应急储备", "pct": "10%", "detail": "€15,000 · 监管变化和市场风险缓冲" }
+      { "label": "产品研发 & AI", "pct": "40%", "detail": "€120,000 · BRC合规，ISO集成，AI/MCP开发" },
+      { "label": "市场 & 运营", "pct": "18.3%", "detail": "€55,000 · 物流引擎，通关能力，承运商API" },
+      { "label": "安全 & 合规", "pct": "11.7%", "detail": "€35,000 · 欧盟服务器，GDPR审计，ISO & BRC认证" },
+      { "label": "应急储备与收购", "pct": "30%", "detail": "€90,000 · 监管变化、市场风险缓冲及战略收购" }
     ],
     "totalRaise": "总融资",
-    "totalRaiseAmount": "€15万",
-    "valuationBar": { "preLabel": "投前估值", "preValue": "€20万", "postLabel": "投后估值", "postValue": "€35万" },
-    "investmentCard": { "title": "投资亮点", "items": ["技术资产价值：€20万", "全栈平台已生产就绪", "资本效率：2.3倍杠杆", "SaaS订阅 + 交易型收入双轮驱动"] },
+    "totalRaiseAmount": "€30万",
+    "valuationBar": { "preLabel": "投前估值", "preValue": "€20万", "postLabel": "投后估值", "postValue": "€50万" },
+    "investmentCard": { "title": "投资亮点", "items": ["技术资产价值：€20万", "全栈平台已生产就绪", "资本效率：2.5倍估值提升", "SaaS订阅 + 交易型收入双轮驱动"] },
     "keyMetrics": [
       { "label": "存续期", "value": "18月" },
-      { "label": "杠杆", "value": "2.3×" },
+      { "label": "估值提升", "value": "2.5×" },
       { "label": "毛利率", "value": "75%" }
     ]
   },
