@@ -29,6 +29,7 @@ import { RoadmapSection } from "./sections/RoadmapSection";
 import { GrowthSection } from "./sections/GrowthSection";
 import { SecuritySection } from "./sections/SecuritySection";
 import { ComplianceDashboardSection } from "./sections/ComplianceDashboardSection";
+import { CarbonCreditsSection } from "./sections/CarbonCreditsSection";
 import { CTASection } from "./sections/CTASection";
 
 // ─── Section component list (index matches SECTION_IDS) ──────────────────────
@@ -47,6 +48,7 @@ const SECTIONS = [
   FinancialSection,
   GrowthSection,
   RoadmapSection,
+  CarbonCreditsSection,
   CTASection,
 ] as const;
 

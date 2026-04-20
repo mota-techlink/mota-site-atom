@@ -16,6 +16,7 @@ export const SECTION_IDS = [
   "s-financial",
   "s-growth",
   "s-roadmap",
+  "s-carbon-credits",
   "s-cta",
 ] as const;
 

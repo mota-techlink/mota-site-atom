@@ -10,7 +10,7 @@
     ],
     "features": [
       { "icon": "📦", "label": "Multi-Carrier API" },
-      { "icon": "🛡️", "label": "AEO Certified" },
+      { "icon": "🛡️", "label": "BRC Certified" },
       { "icon": "🌱", "label": "ISO 14067 Carbon" },
       { "icon": "⚡", "label": "Sub-100ms Edge" },
       { "icon": "🔮", "label": "AI Autonomous" }
@@ -57,17 +57,17 @@
     "titleHighlight": "Dual-Ring",
     "subtitle": "Infrastructure inside, functional modules outside — one interlocking ecosystem.",
     "features": [
-      { "label": "Seamless System Integration", "description": "Eliminate barriers between systems. One source of truth for all logistics data across the entire supply chain." },
-      { "label": "Auto Label Generation", "description": "Generate accurate last-mile delivery labels automatically from synced shipping data." },
-      { "label": "Customs Compliance", "description": "Trustworthy, validated data ensures smooth customs clearance with zero manual errors." },
+      { "label": "Logistics Management", "description": "End-to-end logistics coordination across carriers, warehouses, and distribution networks — one unified source of truth." },
+      { "label": "Financial Accountancy", "description": "Automated invoicing, cost allocation, and financial reporting for every shipment across the supply chain." },
+      { "label": "Regulatory Compliance", "description": "BRC, ISO, and HACCP compliance automation with audit-ready documentation and zero manual errors." },
       { "label": "Carbon Emission Tracking", "description": "Integrated carbon emission tracking meeting EU environmental standards and regulations." },
       { "label": "AI-Powered Intelligence", "description": "Predictive analytics, route optimization, and automated decision-making via MCP." },
       { "label": "IoT Device Integration", "description": "Real-time data from IoT devices for temperature, location, and condition monitoring." }
     ],
     "modules": [
-      { "label": "Shipping", "badge": "API-First" },
-      { "label": "Customs", "badge": "AEO Certified" },
-      { "label": "Delivery", "badge": "Last-Mile" },
+      { "label": "Logistics", "badge": "API-First" },
+      { "label": "Compliance", "badge": "BRC Certified" },
+      { "label": "Accountancy", "badge": "Financial" },
       { "label": "IoT", "badge": "Real-Time" },
       { "label": "AI / MCP", "badge": "MCP Native" },
       { "label": "Carbon", "badge": "ISO 14067" }
@@ -194,11 +194,11 @@
     ],
     "totalRaise": "Total Raise",
     "totalRaiseAmount": "€300K",
-    "valuationBar": { "preLabel": "Pre-Money", "preValue": "€200K", "postLabel": "Post-Money", "postValue": "€500K" },
-    "investmentCard": { "title": "Investment Highlights", "items": ["Technical Equity: €200K asset value", "Full-stack platform already production-ready", "Capital Efficiency: 2.5× valuation uplift", "Recurring SaaS + transaction-based revenue"] },
+    "valuationBar": { "preLabel": "Pre-Money", "preValue": "€100K", "postLabel": "Post-Money", "postValue": "€400K" },
+    "investmentCard": { "title": "Investment Highlights", "items": ["Technical Equity: €100K asset value", "Full-stack platform already production-ready", "Capital Efficiency: 4× valuation uplift", "Recurring SaaS + transaction-based revenue"] },
     "keyMetrics": [
       { "label": "Runway", "value": "18 mo" },
-      { "label": "Valuation Uplift", "value": "2.5×" },
+      { "label": "Valuation Uplift", "value": "4×" },
       { "label": "Gross Margin", "value": "75%" }
     ]
   },
@@ -208,10 +208,10 @@
     "titleHighlight": "Roadmap",
     "subtitle": "3 parallel tracks · Q2 2026 → 2027+ · Infrastructure × Intelligence × Compliance",
     "timeColumns": [
-      { "period": "Q2 2026", "label": "Foundation" },
-      { "period": "Q3–Q4 2026", "label": "Build & Scale" },
-      { "period": "Q1 2027", "label": "Integrate" },
-      { "period": "2027+", "label": "Dominate" }
+      { "period": "Q2", "label": "Foundation" },
+      { "period": "Q3", "label": "Build & Scale" },
+      { "period": "Q4", "label": "Integrate" },
+      { "period": "Qtr 1 2027", "label": "Dominate" }
     ],
     "tracks": [
       { "label": "Infrastructure & Operations", "milestones": [{ "title": "Core Shipping Engine", "desc": "Multi-carrier API · Label generation", "detail": "Unified REST + GraphQL gateway aggregating 40+ carrier APIs (FedEx, DHL, UPS, SF Express, Cainiao). Automated label generation with barcode/QR, customs CN22/CN23, and return labels. Rate-shopping engine compares real-time quotes across all carriers." }, { "title": "Edge-Native Scaling", "desc": "Sub-100ms · 300+ global PoPs", "detail": "Cloudflare Workers + Durable Objects at 300+ PoPs worldwide. Guaranteed sub-100ms P95 latency for tracking and rate queries. Auto-scaling from 0 to 50K req/s with zero cold starts. Regional data residency for EU (Dublin), APAC (Tokyo), CN (Shanghai)." }, { "title": "WMS Deep Sync", "desc": "Real-time inventory mesh", "detail": "Bi-directional inventory sync with ShipStation, ShipBob, Flexport, and custom WMS via webhooks + polling fallback. Real-time stock level mesh prevents overselling across 10+ sales channels. Pick-pack-ship workflow automation with barcode scan verification." }, { "title": "Global Expansion", "desc": "Multi-tenant · White-label", "detail": "Full multi-tenant architecture supporting 500+ concurrent brand accounts. White-label portal with custom domains, branding, and email templates. Localized checkout with 25+ currencies and region-specific carrier preferences. Partner API marketplace for 3PL integrations." }] },
@@ -471,6 +471,67 @@
       { "role": "ai", "text": "Your BRC Food Safety compliance is at 96.1% — Grade A projected. There are 3 minor non-conformances in cold-chain documentation that I recommend addressing before the next audit window on June 15." }
     ]
   },
+  "slide17": {
+    "badge": "Carbon Credits",
+    "title": "Carbon Credits",
+    "titleHighlight": "Executive Brief",
+    "subtitle": "Tradable instruments representing verified emission reductions — the bridge between corporate climate ambition and measurable impact.",
+    "tabLabels": ["Executive Brief", "How It Works", "Why It Matters", "Governance"],
+    "tabHint": "👆 Click the tabs above to explore all sections",
+    "tabs": [
+      {
+        "definitionTitle": "What Is a Carbon Credit?",
+        "definition": "A carbon credit is a tradable instrument representing one metric tonne of CO₂e (carbon dioxide equivalent) that is avoided (not emitted) or removed from the atmosphere and verified under a recognised standard. Organisations buy credits to address residual emissions after internal reduction efforts, or to meet obligations in regulated schemes.",
+        "stats": [
+          { "value": "1t", "label": "CO₂e per Credit" },
+          { "value": "$50B+", "label": "Global Market" },
+          { "value": "170+", "label": "Countries" }
+        ],
+        "donutTitle": "Market Composition",
+        "donutSegments": [
+          { "label": "Compliance Market", "value": 83, "color": "#06b6d4" },
+          { "label": "Voluntary Market", "value": 17, "color": "#10b981" }
+        ]
+      },
+      {
+        "concepts": [
+          { "icon": "scale", "title": "Standardised Unit", "body": "1 credit = 1 metric tonne of CO₂e. This standardisation allows different greenhouse gases (methane, nitrous oxide, etc.) to be compared on a common baseline." },
+          { "icon": "globe", "title": "Two Market Types", "body": "Compliance markets are regulated and obligation-driven (e.g., EU ETS). Voluntary markets are self-initiated to support net-zero claims and stakeholder expectations." },
+          { "icon": "tree", "title": "Avoidance vs Removal", "body": "Avoidance credits prevent emissions from occurring. Removal credits take CO₂ from the atmosphere. Removals are increasingly preferred for long-term net-zero strategies." }
+        ],
+        "lifecycleTitle": "Credit Lifecycle",
+        "lifecycleSteps": [
+          { "label": "Validate", "detail": "A project's methodology and baseline are validated by an accredited third-party against a recognised standard (e.g., Verra VCS, Gold Standard)." },
+          { "label": "Verify", "detail": "Emissions impacts are independently verified through monitoring, reporting, and verification (MRV) to confirm real, measurable reductions or removals." },
+          { "label": "Issue", "detail": "Verified credits are issued by a registry (Verra, Gold Standard, ACR) with unique serial numbers ensuring full traceability." },
+          { "label": "Retire", "detail": "Credits are permanently retired in the registry upon use, preventing double-counting and ensuring each tonne is claimed only once." }
+        ]
+      },
+      {
+        "reasons": [
+          { "title": "Strategy & License to Operate", "body": "Credits support credible transition plans by addressing hard-to-abate residual emissions while core decarbonisation investments scale up over time." },
+          { "title": "Financial Planning", "body": "In regulated markets, allowances/credits represent a real cost of carbon; in voluntary markets, they are a budget line that should be governed like any other external spend." },
+          { "title": "Risk Management", "body": "Poor-quality credits create reputational, legal, and audit risk — 'greenwashing' allegations can undermine ESG disclosures and destroy stakeholder trust." },
+          { "title": "Capital Mobilisation", "body": "High-integrity credit demand unlocks financing for projects (nature, energy, engineered removals) that may not proceed without carbon revenue." },
+          { "title": "Funding Gap Bridge", "body": "Revenue from credit sales often provides the necessary capital to make clean energy or conservation projects financially viable and bankable." },
+          { "title": "Corporate Targets", "body": "Companies like Microsoft and Tesla use carbon credits to address residual emissions as they work toward net-zero goals and SBTi-validated targets." }
+        ]
+      },
+      {
+        "progressLabel": "Due Diligence Checklist",
+        "allPassedLabel": "All governance checks passed!",
+        "checklist": [
+          { "title": "Additionality", "body": "Would the project happen without carbon revenue? The emission reduction must be beyond business-as-usual." },
+          { "title": "MRV Quality", "body": "Clear methodology, independent verification, transparent data — the backbone of credit integrity and auditability." },
+          { "title": "Permanence", "body": "For removals, how long does the carbon stay out of the atmosphere? Buffer pools and insurance mechanisms must exist." },
+          { "title": "No Leakage", "body": "Does the activity shift emissions elsewhere? For example, avoided deforestation must not simply displace logging to a nearby region." },
+          { "title": "No Double Counting", "body": "Confirm registry controls and claims alignment so the same tonne isn't claimed by multiple parties or under different schemes." },
+          { "title": "Retirement Evidence", "body": "Ensure credits are retired in the registry and documented for audit, disclosures, and regulatory submissions." }
+        ]
+      }
+    ],
+    "bottomNote": "Aligned with ICVCM Core Carbon Principles · Verra VCS · Gold Standard · SBTi guidelines"
+  },
   "slideTitles": [
     "ELMS",
     "The Problem",
@@ -486,6 +547,7 @@
     "Growth Plan",
     "Compliance & Security",
     "Compliance Dashboard",
+    "Carbon Credits",
     "Call to Action"
   ]
 }

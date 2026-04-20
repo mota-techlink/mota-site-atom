@@ -11,7 +11,6 @@ import {
   Globe,
   Lock,
   ShieldCheck,
-  Rocket,
 } from "lucide-react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
@@ -337,63 +336,25 @@ export function FinancialSection() {
           </div>
         </div>
 
-        {/* Bottom row: Investment highlights + key metrics */}
-        <div className="ei-child w-full max-w-4xl 2xl:max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-3 mt-3 md:mt-4">
-          <motion.div
-            className="rounded-xl border border-white/10 bg-white/[0.03] p-3 md:p-4"
-            initial={{ opacity: 0, x: -15 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.4 }}
-          >
-            <h3 className="text-xs md:text-sm font-bold text-emerald-400 mb-2">
-              {c.investmentCard.title}
-            </h3>
-            <ul className="space-y-1.5">
-              {c.investmentCard.items.map((item: string, i: number) => (
-                <li key={i} className="text-[10px] md:text-sm text-white/60 flex items-start gap-1.5">
-                  <TrendingUp className="w-3 h-3 text-emerald-400/60 mt-0.5 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          <motion.div
-            className="rounded-xl border border-white/10 bg-white/[0.03] p-3 md:p-4 flex flex-col justify-center gap-3"
-            initial={{ opacity: 0, x: 15 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.5 }}
-          >
-            {c.keyMetrics.map((m: { label: string; value: string }) => (
-              <div key={m.label} className="flex items-center justify-between">
-                <span className="text-xs md:text-sm text-white/50 font-mono uppercase">
-                  {m.label}
-                </span>
-                <span className="text-lg md:text-2xl font-extrabold text-white">
-                  {m.value}
-                </span>
+        {/* Bottom row: Investment highlights (full-width) */}
+        <motion.div
+          className="ei-child w-full max-w-4xl 2xl:max-w-6xl mt-3 md:mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3 md:p-4"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.4 }}
+        >
+          <h3 className="text-xs md:text-sm font-bold text-emerald-400 mb-2">
+            {c.investmentCard.title}
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
+            {c.investmentCard.items.map((item: string, i: number) => (
+              <div key={i} className="text-[10px] md:text-sm text-white/60 flex items-start gap-1.5">
+                <TrendingUp className="w-3 h-3 text-emerald-400/60 mt-0.5 shrink-0" />
+                {item}
               </div>
             ))}
-
-            {/* Runway badge */}
-            <motion.div
-              className="flex items-center gap-2 mt-1 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2 }}
-            >
-              <Rocket className="w-3.5 h-3.5 text-emerald-400" />
-              <span className="text-xs md:text-sm font-mono text-emerald-400 font-bold">
-                18-Month Runway
-              </span>
-              <div className="relative ml-auto overflow-hidden rounded px-2 py-0.5">
-                <span className="text-[10px] md:text-xs font-mono text-emerald-300/80">
-                  Fully Funded
-                </span>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

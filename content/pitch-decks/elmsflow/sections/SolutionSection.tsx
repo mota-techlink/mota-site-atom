@@ -139,18 +139,18 @@ interface TechNode {
 // ═══════════════════════════════════════════════════════════════
 
 const features: FeatureItem[] = [
-  { Icon: Link, label: "Seamless System Integration", description: "Eliminate barriers between systems. One source of truth for all logistics data across the entire supply chain.", moduleKey: "shipping" },
-  { Icon: Printer, label: "Auto Label Generation", description: "Generate accurate last-mile delivery labels automatically from synced shipping data.", moduleKey: "delivery" },
-  { Icon: FileCheck, label: "Customs Compliance", description: "Trustworthy, validated data ensures smooth customs clearance with zero manual errors.", moduleKey: "customs" },
+  { Icon: Link, label: "Logistics Management", description: "End-to-end logistics coordination across carriers, warehouses, and distribution networks — one unified source of truth.", moduleKey: "shipping" },
+  { Icon: Printer, label: "Financial Accountancy", description: "Automated invoicing, cost allocation, and financial reporting for every shipment across the supply chain.", moduleKey: "delivery" },
+  { Icon: FileCheck, label: "Regulatory Compliance", description: "BRC, ISO, and HACCP compliance automation with audit-ready documentation and zero manual errors.", moduleKey: "customs" },
   { Icon: Leaf, label: "Carbon Emission Tracking", description: "Integrated carbon emission tracking meeting EU environmental standards and regulations.", moduleKey: "carbon" },
   { Icon: Cpu, label: "AI-Powered Intelligence", description: "Predictive analytics, route optimization, and automated decision-making via MCP.", moduleKey: "ai-mcp" },
   { Icon: Radio, label: "IoT Device Integration", description: "Real-time data from IoT devices for temperature, location, and condition monitoring.", moduleKey: "iot" },
 ];
 
 const modules: ModuleConfig[] = [
-  { key: "shipping", label: "Shipping", Icon: Ship, color: "text-blue-400", bgActive: "bg-blue-500/25", borderActive: "border-blue-400/60", glowShadow: "0 0 20px rgba(59,130,246,0.5), 0 0 40px rgba(59,130,246,0.2)", badge: "API-First" },
-  { key: "customs", label: "Customs", Icon: ShieldCheck, color: "text-emerald-400", bgActive: "bg-emerald-500/25", borderActive: "border-emerald-400/60", glowShadow: "0 0 20px rgba(52,211,153,0.5), 0 0 40px rgba(52,211,153,0.2)", badge: "AEO Certified" },
-  { key: "delivery", label: "Delivery", Icon: Truck, color: "text-purple-400", bgActive: "bg-purple-500/25", borderActive: "border-purple-400/60", glowShadow: "0 0 20px rgba(168,85,247,0.5), 0 0 40px rgba(168,85,247,0.2)", badge: "Last-Mile" },
+  { key: "shipping", label: "Logistics", Icon: Ship, color: "text-blue-400", bgActive: "bg-blue-500/25", borderActive: "border-blue-400/60", glowShadow: "0 0 20px rgba(59,130,246,0.5), 0 0 40px rgba(59,130,246,0.2)", badge: "API-First" },
+  { key: "customs", label: "Compliance", Icon: ShieldCheck, color: "text-emerald-400", bgActive: "bg-emerald-500/25", borderActive: "border-emerald-400/60", glowShadow: "0 0 20px rgba(52,211,153,0.5), 0 0 40px rgba(52,211,153,0.2)", badge: "BRC Certified" },
+  { key: "delivery", label: "Accountancy", Icon: Truck, color: "text-purple-400", bgActive: "bg-purple-500/25", borderActive: "border-purple-400/60", glowShadow: "0 0 20px rgba(168,85,247,0.5), 0 0 40px rgba(168,85,247,0.2)", badge: "Financial" },
   { key: "iot", label: "IoT", Icon: Radio, color: "text-orange-400", bgActive: "bg-orange-500/25", borderActive: "border-orange-400/60", glowShadow: "0 0 20px rgba(251,146,60,0.5), 0 0 40px rgba(251,146,60,0.2)", badge: "Real-Time" },
   { key: "ai-mcp", label: "AI / MCP", Icon: BrainCircuit, color: "text-cyan-400", bgActive: "bg-cyan-500/25", borderActive: "border-cyan-400/60", glowShadow: "0 0 20px rgba(34,211,238,0.5), 0 0 40px rgba(34,211,238,0.2)", badge: "MCP Native" },
   { key: "carbon", label: "Carbon", Icon: Footprints, color: "text-green-400", bgActive: "bg-green-500/25", borderActive: "border-green-400/60", glowShadow: "0 0 20px rgba(34,197,94,0.5), 0 0 40px rgba(34,197,94,0.2)", badge: "ISO 14067" },

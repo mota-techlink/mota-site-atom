@@ -679,11 +679,6 @@ function AIChatConsole({
           <Send className="w-3 h-3 text-slate-500" />
         </div>
       </div>
-
-      {/* Business navigation links */}
-      <div className="px-3 py-2 border-t border-white/5">
-        <BusinessLinks />
-      </div>
     </motion.div>
   );
 }
