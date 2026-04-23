@@ -1,0 +1,316 @@
+{
+  "nav": { "tagline": "RFDMS · RFD枢纽" },
+  "slide1": {
+    "subtitle": "洛克福德管理系统",
+    "tagline": "重塑中西部货运格局——将RFD打造为可持续的全球物流枢纽",
+    "badges": [
+      { "icon": "✈️", "text": "RFD机场" },
+      { "icon": "🌐", "text": "全球DDP" },
+      { "icon": "🏭", "text": "176号楼" }
+    ],
+    "features": [
+      { "icon": "📦", "label": "端到端供应链" },
+      { "icon": "🛡️", "label": "FTZ管理" },
+      { "icon": "🌱", "label": "食品医药合规" },
+      { "icon": "⚡", "label": "5-7日DDP配送" },
+      { "icon": "🔮", "label": "RFDMS平台" }
+    ],
+    "ctaLabel": "探索蓝图",
+    "bottomDate": "2026年4月"
+  },
+  "slide2": {
+    "badge": "核心挑战",
+    "title": "RFD毗邻问题：",
+    "subtitle": "突破奥黑尔机场在中西部货运的主导地位",
+    "description": "RFD长期处于奥黑尔机场的阴影之下。打破这一格局需要提供根本不同的价值主张。",
+    "syncError": "货量缺口",
+    "silos": [
+      {
+        "title": "ORD主导地位",
+        "items": ["奥黑尔处理中西部80%以上的空运货物", "承运商网络默认流向ORD", "托运方习惯性选择现有航线", "RFD地理位置造成认知障碍"]
+      },
+      {
+        "title": "分散化运营",
+        "items": ["RFD没有单一的端到端供应链运营商", "海关、仓储与快递服务各自为政", "缺乏统一的数字化货运管理平台", "电商DDP物流完全绕过RFD"]
+      },
+      {
+        "title": "回程货依赖",
+        "items": ["过度依赖随机回程货，不可持续", "无法实现可预测的双向货运流", "食品和医药监管能力有限", "全球B2B/B2C市场在RFD尚未开发"]
+      }
+    ],
+    "mobileLabels": { "ecommerce": "ORD阴影", "customs": "分散化", "lastMile": "回程货", "syncErr": "货量缺口" },
+    "mobileExpand": "点击查看挑战详情",
+    "stats": [
+      { "value": "80%+", "label": "ORD份额" },
+      { "value": "0", "label": "统一运营商" },
+      { "value": "$十亿+", "label": "流失货量" }
+    ],
+    "mobileModal": {
+      "title": "RFD面临的挑战",
+      "subtitle": "阻碍RFD货量增长的三大系统性障碍",
+      "statLabels": ["ORD中西部主导地位", "端到端运营商", "未开发电商潜力"]
+    }
+  },
+  "slide3": {
+    "badge": "解决方案",
+    "title": "RCCSCS LLC——",
+    "titleHighlight": "单一实体，完整解决方案",
+    "subtitle": "以联合体形式主租176号楼，在RFD提供端到端供应链服务。",
+    "features": [
+      { "label": "ECCF&CFS运营", "description": "设立快递承运快件处理设施和集装箱货运站，快速处理进出口货物。" },
+      { "label": "FTZ管理", "description": "由Capitol运营的自由贸易区，支持关税递延、操作和出口货运枢纽业务。" },
+      { "label": "全球DDP电商", "description": "通过顺丰和云途提供5-7日关税已付门对门配送，消除对随机回程货的依赖。" },
+      { "label": "合规监管", "description": "通过RFDMS平台实现食品和医药行业全面合规——自动化、可审计、随时备查。" },
+      { "label": "交叉转运&最后一公里", "description": "Uni-Uni专业交叉转运和小件处理，服务于小货物和B2C电商流程。" },
+      { "label": "RFDMS数字核心", "description": "统一平台整合所有进出口物流、合规、海关及监管需求。" }
+    ],
+    "modules": [
+      { "label": "ECCF/CFS", "badge": "快捷货运" },
+      { "label": "FTZ", "badge": "保税区" },
+      { "label": "DDP电商", "badge": "5-7日" },
+      { "label": "合规", "badge": "食品/医药" },
+      { "label": "交叉转运", "badge": "最后一公里" },
+      { "label": "RFDMS", "badge": "数字核心" }
+    ],
+    "techNodes": [
+      { "label": "T. Sheehan / RFD", "sublabel": "领导层·地理位置", "features": ["联合体战略领导层", "直接对接RFD机场当局", "176号楼主租约", "政府及当局联络"] },
+      { "label": "Micom CHB", "sublabel": "海关·合规", "features": ["持牌报关行", "进出口申报", "HS编码分类", "监管提交"] },
+      { "label": "Capitol FTZ", "sublabel": "FTZ·CFS·仓储", "features": ["自由贸易区管理运营", "集装箱货运站", "出口货运枢纽", "安全存储处理"] },
+      { "label": "顺丰/云途/Rich Sale", "sublabel": "国际快递", "features": ["B2B和B2C DDP解决方案", "中美直达货运航线", "代码共享进港合作", "优先快递服务"] },
+      { "label": "Uni-Uni", "sublabel": "交叉转运·最后一公里", "features": ["小件交叉转运", "最后一公里配送", "B2C电商履约", "安全通道接入"] },
+      { "label": "BGI/NG/UBS/YSL", "sublabel": "全球代理", "features": ["英国及欧盟销售网络", "经沙特阿拉伯覆盖海湾", "经韩国覆盖东南亚", "平衡双向货流"] }
+    ],
+    "coreLabel": "RFDMS",
+    "coreSublabel": "核心",
+    "techStackLabel": "联合体合作伙伴",
+    "mobileExpand": "点击查看解决方案架构",
+    "mobileModal": {
+      "title": "RCCSCS LLC解决方案",
+      "subtitle": "6大模块·6大合作支柱·1个数字核心"
+    }
+  },
+  "slide4": {
+    "badge": "联合体合作伙伴与网络",
+    "title": "合作伙伴舰队",
+    "subtitle": "Turlough Sheehan汇聚了多方合作伙伴，其综合能力在RFD构建了独特的「枢纽中的枢纽」。",
+    "partners": [
+      { "name": "T. Sheehan & RFD机场", "role": "战略领导层与地理位置", "detail": "联合体领头人和176号楼主租约持有人，直接对接洛克福德机场当局。", "tier": "lead", "icon": "✈️" },
+      { "name": "Micom CHB", "role": "报关行", "detail": "核心合规与报关服务，持牌报关行，负责进出口申报、HS分类和监管提交。", "tier": "core", "icon": "🛃" },
+      { "name": "Capitol Warehousing & FTZ", "role": "FTZ、CFS与出口枢纽", "detail": "自由贸易区管理、集装箱货运站运营及176号楼内出口货运枢纽。", "tier": "core", "icon": "🏭" },
+      { "name": "顺丰快递", "role": "国际快递——中国", "detail": "中美航线关键B2B和B2C DDP快递商，在176号楼提供安全通道优先快递服务。", "tier": "courier", "icon": "📦" },
+      { "name": "云途快递", "role": "国际快递——亚洲", "detail": "亚美B2C跨境电商快递商，已整合进入176号楼处理设施。", "tier": "courier", "icon": "🚚" },
+      { "name": "Rich Sale", "role": "代码共享进港合作伙伴", "detail": "启动代码共享运营，快速引入进港货量，在RFD建立稳定的货运基础。", "tier": "courier", "icon": "🤝" },
+      { "name": "Uni-Uni", "role": "交叉转运与最后一公里", "detail": "专业交叉转运和小件最后一公里处理，服务B2C电商履约。", "tier": "operations", "icon": "📮" },
+      { "name": "BGI", "role": "全球代理——亚太/欧盟", "detail": "亚太及欧洲走廊网络扩展的战略国际代理。", "tier": "global", "icon": "🌏" },
+      { "name": "NG Terminal", "role": "码头运营", "detail": "提供码头及地面处理专业支持，增强176号楼运营能力。", "tier": "global", "icon": "🏗️" },
+      { "name": "UBS UK Ltd", "role": "全球代理——英国及欧盟", "detail": "负责英国及欧盟的销售和业务拓展，确保平衡的双向货运流。", "tier": "global", "icon": "🇬🇧" },
+      { "name": "YSL Korea", "role": "全球代理——东南亚", "detail": "韩国代理，通过RCCSCS网络将东南亚货量引导至RFD。", "tier": "global", "icon": "🇰🇷" }
+    ],
+    "tiers": [
+      { "id": "lead", "label": "领导层", "color": "cyan" },
+      { "id": "core", "label": "核心运营", "color": "emerald" },
+      { "id": "courier", "label": "物流合作伙伴", "color": "violet" },
+      { "id": "operations", "label": "处理与最后一公里", "color": "amber" },
+      { "id": "global", "label": "全球代理", "color": "blue" }
+    ],
+    "mobileExpand": "点击查看所有合作伙伴",
+    "mobileModal": {
+      "title": "联合体合作伙伴",
+      "subtitle": "11家合作伙伴·5个层级·1个统一实体"
+    }
+  },
+  "slide5": {
+    "badge": "176号楼·运营蓝图",
+    "title": "枢纽",
+    "titleHighlight": "中的枢纽",
+    "subtitle": "RFD 176号楼内专业化的功能分区——各运营区域均与RFDMS数字核心相连。",
+    "zones": [
+      { "id": "eccf-cfs", "label": "ECCF & CFS", "operator": "Micom", "color": "cyan", "description": "快递承运快件处理设施和集装箱货运站，用于快速处理货物和单据合规。", "features": ["进出口快捷处理", "CFS拼拆箱", "Micom CHB驻场海关台", "Capitol出口货运枢纽管理"] },
+      { "id": "ftz", "label": "FTZ（围网区）", "operator": "Capitol", "color": "emerald", "description": "Capitol管理的围网自由贸易区，支持关税递延和特殊海关程序。", "features": ["关税递延与操作", "安全围网区域", "每周申报处理", "反向关税优惠"] },
+      { "id": "rfdms", "label": "RFDMS平台", "operator": "数字核心", "color": "violet", "description": "统一RFDMS数字平台，整合所有合作伙伴的物流、海关、合规和监管流程。", "features": ["统一数字运营", "实时货运追踪", "食品医药合规", "全体合作伙伴接入"] },
+      { "id": "sf-express", "label": "顺丰快递", "operator": "顺丰", "color": "red", "description": "顺丰B2B和B2C国际货物专用处理区，从FTZ区域安全通道接入。", "features": ["中美DDP货运", "B2B优先快递", "FTZ安全通道", "驻场标签生成"] },
+      { "id": "yun-express", "label": "云途快递", "operator": "云途", "color": "orange", "description": "云途跨境电商专用区，与Uni-Uni配合进行最后一公里交叉转运。", "features": ["亚美B2C电商", "与Uni-Uni交叉转运", "大批量小件处理", "RFDMS追踪接入"] },
+      { "id": "uni-uni", "label": "交叉转运与最后一公里", "operator": "Uni-Uni", "color": "amber", "description": "Uni-Uni专业交叉转运区，用于小件分拣、末端派发和B2C履约。", "features": ["小件交叉转运", "最后一公里分拣派发", "B2C履约运营", "退货处理"] }
+    ],
+    "floorLabels": {
+      "eccf": "ECCF & CFS",
+      "ftz": "FTZ（围网）",
+      "rfdms": "RFDMS平台核心",
+      "sfExpress": "顺丰快递",
+      "yunExpress": "云途快递",
+      "uniUni": "交叉转运·Uni-Uni",
+      "secureLabel": "顺丰和云途专属安全通道区"
+    },
+    "mobileExpand": "点击查看176号楼布局",
+    "mobileModal": {
+      "title": "176号楼·蓝图",
+      "subtitle": "6个运营分区·RFDMS数字核心"
+    }
+  },
+  "slide6": {
+    "badge": "全球连接与战略覆盖",
+    "title": "RFD成为",
+    "titleHighlight": "全球枢纽",
+    "subtitle": "联合服务舰队连接RFD与英国、欧盟、海湾和东南亚的B2B/B2C枢纽。",
+    "routes": [
+      { "from": "RFD", "to": "伦敦/英国", "agent": "UBS UK Ltd", "type": "B2B", "description": "通向英国配送中心的定期货运航线，UBS UK Ltd负责销售和业务拓展，确保平衡双向货流。", "volume": "进入英国市场" },
+      { "from": "RFD", "to": "欧盟（比荷卢/德奥瑞）", "agent": "BGI", "type": "B2B/B2C", "description": "BGI管理的欧盟网络，将RFD连接到比荷卢、德奥瑞等欧洲主要物流走廊。", "volume": "拓展欧盟市场" },
+      { "from": "RFD", "to": "经沙特阿拉伯覆盖海湾", "agent": "BGI / 合作伙伴", "type": "B2B", "description": "经沙特枢纽进入海湾合作委员会市场，为中西部来源货物开辟增长中的电商和工业货运走廊。", "volume": "海湾走廊" },
+      { "from": "RFD", "to": "经韩国覆盖东南亚", "agent": "YSL Korea", "type": "B2B/B2C", "description": "YSL Korea将东南亚货流引入RFD，提供平衡回程货量和电商履约服务。", "volume": "东南亚门户" },
+      { "from": "中国/亚洲", "to": "RFD", "agent": "顺丰/云途快递", "type": "B2C DDP", "description": "通过顺丰和云途的主要进港DDP货运航线，5-7日门对门服务。", "volume": "核心DDP进港" }
+    ],
+    "globalStats": [
+      { "value": "4", "label": "主要走廊" },
+      { "value": "5-7日", "label": "DDP配送" },
+      { "value": "英/欧/海湾/亚太", "label": "覆盖市场" }
+    ],
+    "ddpLabel": "DDP 5-7日电商配送",
+    "ddpDescription": "关税已付门对门配送，消除对随机回程货的依赖，实现可预测且可持续的货运量。",
+    "mobileExpand": "点击查看全球连接",
+    "mobileModal": {
+      "title": "全球市场覆盖",
+      "subtitle": "4条走廊·DDP货流·平衡双向货量"
+    }
+  },
+  "slide7": {
+    "badge": "竞争优势",
+    "title": "传统RFD运营",
+    "titleVs": "对比",
+    "titleHighlight": "RCCSCS LLC",
+    "subtitle": "六个关键维度的全面对比。",
+    "traditionalHeader": "传统模式",
+    "elmsHeader": "RCCSCS LLC",
+    "rows": [
+      { "dimension": "供应链整合", "traditional": { "tag": "分散化", "text": "多个互不相连的运营商" }, "elms": { "tag": "统一化", "text": "单一实体，端到端解决方案" } },
+      { "dimension": "海关与合规", "traditional": { "tag": "手动", "text": "外包，大量纸质流程" }, "elms": { "tag": "全面整合", "text": "Micom CHB驻场，RFDMS自动化" } },
+      { "dimension": "电商DDP", "traditional": { "tag": "缺失", "text": "RFD无直接DDP能力" }, "elms": { "tag": "5-7日", "text": "顺丰/云途DDP门对门" } },
+      { "dimension": "FTZ运营", "traditional": { "tag": "有限", "text": "利用率低，无托管方案" }, "elms": { "tag": "全面激活", "text": "Capitol全服务FTZ管理" } },
+      { "dimension": "全球销售网络", "traditional": { "tag": "缺失", "text": "无协调一致的国际代理" }, "elms": { "tag": "已激活", "text": "BGI、UBS、YSL覆盖4条走廊" } },
+      { "dimension": "货量可持续性", "traditional": { "tag": "被动", "text": "随机回程货，不可预测" }, "elms": { "tag": "可预测", "text": "设计驱动的平衡双向货流" } }
+    ],
+    "verdict": {
+      "traditional": { "label": "现状", "sublabel": "货量不可持续" },
+      "elms": { "label": "RCCSCS LLC", "sublabel": "结构性优势" }
+    },
+    "mobileExpand": "点击比较所有维度",
+    "mobileModal": {
+      "title": "RCCSCS对比传统RFD",
+      "subtitle": "六个维度对比"
+    }
+  },
+  "slide8": {
+    "badge": "监管合规与安全",
+    "title": "合规",
+    "titleHighlight": "与监管",
+    "subtitle": "通过RFDMS实现食品和医药全面合规——IoT监控、自动化单据和多标准认证。",
+    "iotBanner": {
+      "title": "食品和医药监管应用场景",
+      "description": "RFDMS自动化处理流经RFD的食品和医药货物合规——全程监控记录。",
+      "pills": ["RFDMS监管自动化", "实时温度监控", "自动合规文件生成"],
+      "tag": "食品·医药·监管",
+      "items": [
+        { "emoji": "🌡️", "label": "温度监控", "body": "冷链货物持续IoT传感器数据，可配置阈值，自动突破报警并带时间戳的合规记录。" },
+        { "emoji": "📋", "label": "自动合规文件", "body": "RFDMS自动生成食品安全、医药GDP和海关文件，符合USDA、FDA和CBP审计要求。" },
+        { "emoji": "🛃", "label": "Micom CHB集成", "body": "驻场报关行与RFDMS无缝连接，实时进行HS分类、PGA标记和报关申报。" },
+        { "emoji": "🏥", "label": "医药冷链（亚洲→美国）", "body": "从亚洲至美国中西部市场的GMP/GDP合规船运，RFDMS密封货物监管链记录。" }
+      ]
+    },
+    "activeStatus": "运行中",
+    "trustScoreLabel": "合规分数",
+    "radarSectionLabel": "RFDMS合规雷达",
+    "secSectionLabel": "合规与运营",
+    "euDataLabel": "监管覆盖范围",
+    "certBadges": ["FDA", "USDA", "CBP"],
+    "cards": [
+      { "title": "海关自动化", "subtitle": "CBP", "badgeLabel": "CBP已集成", "description": "RFDMS与Micom CHB集成，实现CBP报关自动申报、PGA审查和ISF提交。", "details": ["自动CBP报关申报", "PGA（FDA/USDA）预审", "进口商安全申报（ISF）", "连续担保管理", "ACE门户集成"] },
+      { "title": "FTZ合规", "subtitle": "法律", "badgeLabel": "FTZ认证", "description": "Capitol Warehousing运营CBP批准的FTZ，具有完整的每周申报处理和操作权限。", "details": ["CBP批准FTZ Zone 176", "每周申报处理", "FTZ操作权限", "反向关税项目", "RFDMS FTZ审计追踪"] },
+      { "title": "食品医药安全", "subtitle": "FDA/USDA", "badgeLabel": "合规受监管", "description": "通过RFDMS自动化流程，对易腐品和医药货物实现FSMA、PACA和GDP全面合规。", "details": ["FSMA预先通知申报", "冷链偏差报警", "FDA药品进口文件", "USDA APHIS植物检疫", "HACCP对标流程"] },
+      { "title": "平台安全", "subtitle": "技术", "badgeLabel": "零信任架构", "description": "RFDMS平台采用零信任架构，AES-256加密，所有合作伙伴基于角色访问控制。", "details": ["AES-256静态加密", "TLS 1.3传输加密", "基于角色的合作伙伴访问", "实时审计日志", "Cloudflare WAF防护"] }
+    ],
+    "mobileExpand": "点击查看合规详情",
+    "mobileModal": { "title": "合规与监管", "subtitle": "4大支柱·食品·医药·FTZ·安全", "trustScoreValue": "100%" },
+    "stats": [
+      { "value": "100%", "label": "自动化CBP申报" },
+      { "value": "4", "label": "合规支柱" },
+      { "value": "FDA/USDA", "label": "PGA标准" },
+      { "value": "零信任", "label": "平台安全" }
+    ],
+    "features": [
+      { "title": "海关自动化", "description": "通过Micom CHB集成自动化CBP申报、ISF和PGA文件提交。", "items": ["ACE门户集成", "持续担保管理", "自动ISF申报"] },
+      { "title": "自由贸易区176号", "description": "CBP批准的自由贸易区，具有每周入境处理和操控权限。", "items": ["每周入境处理", "关税倒置程序", "RFDMS审计跟踪"] },
+      { "title": "食品与医药安全", "description": "通过实时冷链监控符合FSMA、PACA和GDP法规。", "items": ["FSMA预先通知申请", "冷链偏差警报", "GDP制药文档"] },
+      { "title": "平台安全", "description": "采用AES-256加密和合作伙伴RBAC的零信任RFDMS平台。", "items": ["静态AES-256加密", "基于角色的合作伙伴访问", "实时审计日志"] }
+    ],
+    "bottomNote": "RFDMS合规雷达——176号楼所有运营的实时监管状态"
+  },
+  "slide9": {
+    "badge": "收入模型",
+    "title": "服务结构",
+    "subtitle": "面向租户、电商运营商和全球托运方的模块化服务层级。",
+    "tiers": [
+      { "name": "租户服务", "price": "定制报价", "period": "按协议", "tagline": "176号楼租户套餐", "features": ["📦 ECCF/CFS设施使用", "🏭 FTZ分区利用", "🛃 Micom CHB驻场台", "🔌 RFDMS平台接入"] },
+      { "name": "DDP电商", "price": "按货量", "period": "每票货", "tagline": "5-7日门对门", "features": ["🚀 顺丰/云途航线", "🌐 美国全国末端", "📋 含全程清关", "🏠 DDP门对门"] },
+      { "name": "合规积分", "price": "按使用付费", "period": "", "tagline": "按需监管服务", "features": ["🛃 海关预清关", "🌡️ 冷链监控", "📄 PGA文件自动生成", "💰 批量折扣"] }
+    ]
+  },
+  "slide10": {
+    "badge": "多阶段实施路线图",
+    "title": "运营",
+    "titleHighlight": "路线图",
+    "subtitle": "3条并行轨道·2026年Q2→2027年以后·运营×技术×全球拓展",
+    "timeColumns": [
+      { "period": "Q2", "label": "基础搭建" },
+      { "period": "Q3", "label": "全面激活" },
+      { "period": "Q4", "label": "深度整合" },
+      { "period": "2027年Q1", "label": "规模扩张" }
+    ],
+    "tracks": [
+      { "label": "运营与基础设施", "milestones": [{ "title": "176号楼租约", "desc": "RCCSCS LLC正式签约", "detail": "Turlough Sheehan代表RCCSCS LLC签署176号楼主租约，完成设施分区、合作伙伴使用协议和布局规划，ECCF、CFS、FTZ各区域移交相应运营商。" }, { "title": "ECCF & CFS启动", "desc": "快件处理正式开通", "detail": "Micom CHB在现场设立海关台，Capitol Warehousing激活CFS和出口货运枢纽，首批商业货物通过ECCF处理，顺丰和云途安全通道开通运营。" }, { "title": "FTZ激活", "desc": "Capitol FTZ正式开仓", "detail": "CBP批准的FTZ区域在Capitol管理下激活，每周报关处理及操作权限生效，反向关税项目向所有176号楼租户开放，RFDMS FTZ模块整合用于实时库存追踪。" }, { "title": "全面运营", "desc": "所有区域上线——峰值就绪", "detail": "176号楼六个区域全面运营，Uni-Uni交叉转运处理B2C履约，RFDMS食品和医药合规流程上线，RFD当局报告确认货运量增长目标持续达成。" }] },
+      { "label": "技术与合规", "milestones": [{ "title": "RFDMS平台部署", "desc": "核心数字平台上线", "detail": "RFDMS平台部署，为11家联合体成员提供访问门户，实现176号楼所有分区的实时货运可见性，自动化海关单据生成与Micom CBP申报系统连接。" }, { "title": "食品医药合规", "desc": "FDA/USDA流程自动化", "detail": "通过RFDMS自动化FSMA预先通知申报，冷链IoT传感器对温控货物实时整合，医药GDP单据流程上线，FDA药品进口和USDA APHIS植物检疫自动生成激活。" }, { "title": "DDP电商平台", "desc": "5-7日DDP端到端上线", "detail": "顺丰和云途DDP航线与RFDMS标签生成、追踪和交付确认完全集成，连接美国全国末端承运商，实现从RFD到消费者门口的全程实时追踪。" }, { "title": "分析与报告", "desc": "RFD当局仪表板上线", "detail": "为RFD当局提供货运量报告仪表板，显示实时货物吞吐量、DDP货运量、FTZ利用率和合规KPI，每月食品/医药运营ESG可持续报告。" }] },
+      { "label": "销售与全球拓展", "milestones": [{ "title": "代码共享启动", "desc": "Rich Sale & 快递进港", "detail": "Rich Sale代码共享运营启动引入RFD进港货量，初期货运量建立处理先例和运营就绪度，Micom CHB为进口商预注册以加速清关。" }, { "title": "英国&欧盟市场进入", "desc": "UBS UK Ltd & BGI激活", "detail": "UBS UK Ltd开始积极拓展英国配送网络销售，BGI针对比荷卢和德奥瑞进口商发起欧盟走廊营销，美国出境货物销售从Q3起提供平衡双向货流。" }, { "title": "海湾&东南亚拓展", "desc": "BGI/沙特 & YSL Korea上线", "detail": "BGI通过沙特阿拉伯枢纽激活海湾合作委员会销售渠道，YSL Korea将东南亚出口货量引导至RFD，来自四条全球走廊的综合进港货量实现可持续平衡货流。" }, { "title": "网络效应", "desc": "自我强化货运飞轮", "detail": "全球代理、快递商和DDP货量的临界规模在RFD创造自我强化的货运飞轮，每个新合作伙伴都增加航线密度，RCCSCS LLC成为ORD之外中西部国际货运的首选替代方案。" }] }
+    ],
+    "statusLabels": { "done": "已完成", "active": "进行中", "planned": "计划中", "vision": "愿景" }
+  },
+  "slide11": {
+    "badge": "加入RCCSCS联合体",
+    "headline": {
+      "prefix": "RFD可持续货运的未来",
+      "strikethrough": "从以后开始",
+      "only": "从",
+      "architects": "现在",
+      "and": "与",
+      "obsolete": "RCCSCS LLC共同开始"
+    },
+    "leftBlock": {
+      "heading": "战略紧迫性",
+      "text1": "将RFD打造为ORD之外中西部货运首选的窗口",
+      "bold1": "现在已经开启。",
+      "text2": " RCCSCS LLC已汇聚所有必要能力——唯一的变量是",
+      "bold2": "激活速度。",
+      "text3": " 176号楼已经准备就绪。"
+    },
+    "rightBlock": {
+      "heading": "不作为的代价",
+      "text1": "每推迟一个季度，就意味着又一个季度的不可持续回程货、流失的DDP电商货量，以及中西部货运自动流向",
+      "bold1": "ORD。",
+      "text2": " RCCSCS LLC就是RFD当局需要的答案。"
+    },
+    "cta": "与RCCSCS LLC合作",
+    "email": "contact@rccscs.com",
+    "brand": "RCCSCS LLC · T. Sheehan",
+    "confidential": "保密文件"
+  },
+  "slideTitles": [
+    "RFDMS",
+    "核心挑战",
+    "解决方案",
+    "联合体合作伙伴",
+    "176号楼",
+    "全球覆盖",
+    "竞争优势",
+    "合规监管",
+    "服务层级",
+    "路线图",
+    "行动号召"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "RFDMS — Rockford Management System (Strategic Blueprint)",
+  "slug": "rfdms",
+  "description": "A Strategy to Reshape Midwest Cargo Flows — Establishing RFD as a Sustainable Global Logistics Hub",
+  "author": "RCCSCS LLC / T. Sheehan",
+  "date": "2026-04-23",
+  "status": "published",
+  "access": "public",
+  "previewSlides": 3,
+  "defaultTransition": "slide",
+  "tags": ["logistics", "RFD", "cargo", "midwest", "supply-chain", "RCCSCS"],
+  "coverImage": "/images/pitch-decks/elmsflow-cover.webp"
+}

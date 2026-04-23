@@ -22,6 +22,11 @@ const ElmsInvestorDeck = dynamic(
   { loading: () => <LoadingSpinner /> }
 );
 
+const RfdmsDeck = dynamic(
+  () => import("@content/pitch-decks/rfdms/deck").then(mod => mod.RfdmsDeck),
+  { loading: () => <LoadingSpinner /> }
+);
+
 function LoadingSpinner() {
   return (
     <div className="w-full h-full flex items-center justify-center bg-black">
@@ -66,6 +71,15 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated, userRole }: Pitch
     case "elmsflow":
       return (
         <ElmsInvestorDeck
+          access={access}
+          previewSlides={preview}
+          isAuthenticated={isAuthenticated}
+          userRole={userRole}
+        />
+      );
+    case "rfdms":
+      return (
+        <RfdmsDeck
           access={access}
           previewSlides={preview}
           isAuthenticated={isAuthenticated}

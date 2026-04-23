@@ -1,0 +1,316 @@
+{
+  "nav": { "tagline": "RFDMS · RFD Hub" },
+  "slide1": {
+    "subtitle": "Rockford Management System",
+    "tagline": "Reshaping Midwest Cargo Flows — Establishing RFD as a Sustainable Global Logistics Hub",
+    "badges": [
+      { "icon": "✈️", "text": "RFD Airport" },
+      { "icon": "🌐", "text": "Global DDP" },
+      { "icon": "🏭", "text": "Building 176" }
+    ],
+    "features": [
+      { "icon": "📦", "label": "End-to-End Supply Chain" },
+      { "icon": "🛡️", "label": "FTZ Managed" },
+      { "icon": "🌱", "label": "Food & Pharma Compliant" },
+      { "icon": "⚡", "label": "5–7 Day DDP" },
+      { "icon": "🔮", "label": "RFDMS Platform" }
+    ],
+    "ctaLabel": "Explore the Blueprint",
+    "bottomDate": "April 2026"
+  },
+  "slide2": {
+    "badge": "The Challenge",
+    "title": "The RFD Proximity Problem:",
+    "subtitle": "Overcoming ORD Dominance in Midwest Cargo",
+    "description": "RFD sits in the shadow of O'Hare. Breaking this gravitational pull requires a fundamentally different value proposition.",
+    "syncError": "Volume Gap",
+    "silos": [
+      {
+        "title": "ORD Dominance",
+        "items": ["O'Hare handles 80%+ of Midwest air cargo", "Established carrier networks flow to ORD by default", "Shippers default to incumbent routes", "RFD proximity creates perception barriers"]
+      },
+      {
+        "title": "Fragmented Solutions",
+        "items": ["No single end-to-end supply chain operator at RFD", "Disconnected customs, warehousing & courier services", "No unified digital platform for cargo management", "E-commerce DDP flows bypassing RFD entirely"]
+      },
+      {
+        "title": "Backload Dependency",
+        "items": ["Unsustainable reliance on random backloads", "No predictable two-way cargo flows", "Limited Food & Pharma regulatory capabilities", "Global B2B/B2C markets untapped from RFD"]
+      }
+    ],
+    "mobileLabels": { "ecommerce": "ORD Shadow", "customs": "Fragmented", "lastMile": "Backloads", "syncErr": "VOLUME GAP" },
+    "mobileExpand": "Tap to view challenge details",
+    "stats": [
+      { "value": "80%+", "label": "ORD share" },
+      { "value": "0", "label": "unified ops" },
+      { "value": "$B+", "label": "missed volume" }
+    ],
+    "mobileModal": {
+      "title": "The RFD Challenge",
+      "subtitle": "Three systemic barriers preventing RFD volume growth.",
+      "statLabels": ["ORD Midwest dominance", "End-to-end operators", "Untapped e-commerce"]
+    }
+  },
+  "slide3": {
+    "badge": "The Solution",
+    "title": "RCCSCS LLC —",
+    "titleHighlight": "One Entity, Complete Solution",
+    "subtitle": "A consortium-led master-lease of Building 176 delivering end-to-end supply chain services at RFD.",
+    "features": [
+      { "label": "ECCF & CFS Operations", "description": "Dedicated Express Carrier Consignment Facilities and Container Freight Stations for rapid processing of inbound and outbound cargo." },
+      { "label": "FTZ Management", "description": "Capitol-operated Foreign Trade Zone enabling duty deferral, manipulation, and export cargo hub operations within Building 176." },
+      { "label": "Global DDP E-Commerce", "description": "5-to-7-day Duty Paid door-to-door solutions via SF Express and Yun Express, eliminating random backload dependency." },
+      { "label": "Regulatory Compliance", "description": "Full Food & Pharma sector compliance via the RFDMS platform — automated, auditable, and always ready for inspection." },
+      { "label": "Cross-Dock & Last Mile", "description": "Uni-Uni specialized cross-docking and parcel handling for small cargo and B2C e-commerce flows." },
+      { "label": "RFDMS Digital Core", "description": "Unified platform integrating all inbound/outbound logistics, compliance, customs, and regulatory requirements across partners." }
+    ],
+    "modules": [
+      { "label": "ECCF/CFS", "badge": "Express Cargo" },
+      { "label": "FTZ", "badge": "Duty-Free Zone" },
+      { "label": "DDP E-com", "badge": "5–7 Day" },
+      { "label": "Compliance", "badge": "Food/Pharma" },
+      { "label": "Cross-Dock", "badge": "Last Mile" },
+      { "label": "RFDMS", "badge": "Digital Core" }
+    ],
+    "techNodes": [
+      { "label": "T. Sheehan / RFD", "sublabel": "Leadership · Location", "features": ["Strategic consortium leadership", "Direct RFD airport relationship", "Building 176 master lease", "Government & authority liaison"] },
+      { "label": "Micom CHB", "sublabel": "Customs · Compliance", "features": ["Licensed Customs House Brokerage", "Import/export declarations", "HS code classification", "Regulatory submissions"] },
+      { "label": "Capitol FTZ", "sublabel": "FTZ · CFS · Warehousing", "features": ["FTZ management & operations", "Container Freight Station", "Export Cargo Hub", "Secure storage & handling"] },
+      { "label": "SF / Yun / Rich Sale", "sublabel": "International Couriers", "features": ["B2B and B2C DDP solutions", "China-US direct cargo lanes", "Code-share inbound partnerships", "Priority express services"] },
+      { "label": "Uni-Uni", "sublabel": "Cross-Dock · Last Mile", "features": ["Small parcel cross-docking", "Last-mile delivery handling", "B2C e-commerce fulfilment", "Secure access integration"] },
+      { "label": "BGI / NG / UBS / YSL", "sublabel": "Global Agents", "features": ["UK & EU sales network", "GCC via Saudi Arabia", "SE Asia via Korea", "Balanced two-way flows"] }
+    ],
+    "coreLabel": "RFDMS",
+    "coreSublabel": "CORE",
+    "techStackLabel": "Consortium Partners",
+    "mobileExpand": "Tap to view solution architecture",
+    "mobileModal": {
+      "title": "RCCSCS LLC Solution",
+      "subtitle": "6 modules · 6 partner pillars · 1 digital core"
+    }
+  },
+  "slide4": {
+    "badge": "Consortium Partners & Network",
+    "title": "The Partnership Flotilla",
+    "subtitle": "Turlough Sheehan has assembled a multi-partner consortium whose collective capabilities create a unique 'hub within a hub' at RFD.",
+    "partners": [
+      { "name": "T. Sheehan & RFD Airport", "role": "Strategic Leadership & Location", "detail": "Consortium lead and master-lease holder for Building 176. Direct relationship with Rockford Airport authority.", "tier": "lead", "icon": "✈️" },
+      { "name": "Micom CHB", "role": "Customs House Brokerage", "detail": "Core compliance and brokerage services. Licensed CHB for import/export declarations, HS classification, and regulatory submissions.", "tier": "core", "icon": "🛃" },
+      { "name": "Capitol Warehousing & FTZ", "role": "FTZ, CFS & Export Hub", "detail": "Foreign Trade Zone management, Container Freight Station operations, and Export Cargo Hub within Building 176.", "tier": "core", "icon": "🏭" },
+      { "name": "SF Express", "role": "International Courier — China", "detail": "Key B2B and B2C DDP courier for China-US lanes. Priority express services with secure Building 176 access.", "tier": "courier", "icon": "📦" },
+      { "name": "Yun Express", "role": "International Courier — Asia", "detail": "Cross-border e-commerce courier for Asia-US B2C flows. Integrated into Building 176 handling facilities.", "tier": "courier", "icon": "🚚" },
+      { "name": "Rich Sale", "role": "Code-Share Inbound Partner", "detail": "Initial code-share operations to kick-start inbound traffic and establish reliable cargo volume at RFD.", "tier": "courier", "icon": "🤝" },
+      { "name": "Uni-Uni", "role": "Cross-Docking & Last Mile", "detail": "Specialized cross-docking and small parcel last-mile handling for B2C e-commerce fulfilment.", "tier": "operations", "icon": "📮" },
+      { "name": "BGI", "role": "Global Agent — APAC/EU", "detail": "Strategic international agent for network expansion across Asia-Pacific and European corridors.", "tier": "global", "icon": "🌏" },
+      { "name": "NG Terminal", "role": "Terminal Operations", "detail": "Terminal and ground handling expertise supporting Building 176 operational capacity.", "tier": "global", "icon": "🏗️" },
+      { "name": "UBS UK Ltd", "role": "Global Agent — UK & EU", "detail": "Sales and business development across the UK and EU, securing balanced two-way cargo flows.", "tier": "global", "icon": "🇬🇧" },
+      { "name": "YSL Korea", "role": "Global Agent — SE Asia", "detail": "Korea-based agent driving volume from SE Asia corridors into RFD via the RCCSCS network.", "tier": "global", "icon": "🇰🇷" }
+    ],
+    "tiers": [
+      { "id": "lead", "label": "Leadership", "color": "cyan" },
+      { "id": "core", "label": "Core Operations", "color": "emerald" },
+      { "id": "courier", "label": "Logistics Partners", "color": "violet" },
+      { "id": "operations", "label": "Handling & Last Mile", "color": "amber" },
+      { "id": "global", "label": "Global Agents", "color": "blue" }
+    ],
+    "mobileExpand": "Tap to view all partners",
+    "mobileModal": {
+      "title": "Consortium Partners",
+      "subtitle": "11 partners · 5 tiers · 1 unified entity"
+    }
+  },
+  "slide5": {
+    "badge": "Building 176 · Operational Blueprint",
+    "title": "The Hub",
+    "titleHighlight": "Within a Hub",
+    "subtitle": "A specialized floor plan within Building 176 at RFD — distinct operational zones all connected by the RFDMS digital core.",
+    "zones": [
+      { "id": "eccf-cfs", "label": "ECCF & CFS", "operator": "Micom", "color": "cyan", "description": "Express Carrier Consignment Facility and Container Freight Station for rapid cargo processing and documentary compliance.", "features": ["Import/export express processing", "CFS for consolidation/deconsolidation", "Micom CHB customs desk on-site", "Capitol Export Cargo Hub managed"] },
+      { "id": "ftz", "label": "FTZ (Fenced-Off)", "operator": "Capitol", "color": "emerald", "description": "Capitol-managed Foreign Trade Zone with secure perimeter. Enables duty deferral and special customs procedures.", "features": ["Duty deferral & manipulation", "Secure fenced perimeter", "Weekly entry processing", "Inverted tariff reduction"] },
+      { "id": "rfdms", "label": "RFDMS Platform", "operator": "Digital Core", "color": "violet", "description": "Central RFDMS digital platform unifying all partner operations — logistics, customs, compliance, and regulatory workflows.", "features": ["Unified digital operations", "Real-time cargo tracking", "Food & Pharma compliance", "All partners integrated"] },
+      { "id": "sf-express", "label": "SF Express", "operator": "SF Express", "color": "red", "description": "Dedicated handling area for SF Express B2B and B2C international shipments. Secure access from FTZ zone.", "features": ["China-US DDP shipments", "B2B priority express", "Secure FTZ access lane", "Label generation on-site"] },
+      { "id": "yun-express", "label": "Yun Express", "operator": "Yun Express", "color": "orange", "description": "Dedicated zone for Yun Express cross-border e-commerce. Last-mile cross-docking with Uni-Uni collaboration.", "features": ["Asia-US B2C e-commerce", "Cross-docking with Uni-Uni", "High-volume parcel processing", "Integrated RFDMS tracking"] },
+      { "id": "uni-uni", "label": "Cross-Dock & Last Mile", "operator": "Uni-Uni", "color": "amber", "description": "Uni-Uni specialized cross-docking zone for small parcel sorting, final-mile dispatch, and B2C fulfilment.", "features": ["Small parcel cross-docking", "Last-mile sorting & dispatch", "B2C fulfilment operations", "Returns processing"] }
+    ],
+    "floorLabels": {
+      "eccf": "ECCF & CFS",
+      "ftz": "FTZ (Fenced)",
+      "rfdms": "RFDMS PLATFORM CORE",
+      "sfExpress": "SF EXPRESS",
+      "yunExpress": "YUN EXPRESS",
+      "uniUni": "CROSS-DOCK · UNI-UNI",
+      "secureLabel": "Secure Access Areas for SF & Yun Express"
+    },
+    "mobileExpand": "Tap to view Building 176 layout",
+    "mobileModal": {
+      "title": "Building 176 · Blueprint",
+      "subtitle": "6 operational zones · RFDMS digital core"
+    }
+  },
+  "slide6": {
+    "badge": "Global Connection & Strategic Reach",
+    "title": "RFD as a",
+    "titleHighlight": "Global Hub",
+    "subtitle": "A cohesive flotilla of services connecting RCCSCS at RFD to B2B/B2C hubs across UK, EU, GCC, and SE Asia.",
+    "routes": [
+      { "from": "RFD", "to": "London / UK", "agent": "UBS UK Ltd", "type": "B2B", "description": "Regular cargo lanes to UK distribution centres. UBS UK Ltd manages sales and business development to secure balanced two-way flows.", "volume": "UK market entry" },
+      { "from": "RFD", "to": "EU (BeNeLux/DACH)", "agent": "BGI", "type": "B2B/B2C", "description": "BGI-managed EU network connecting RFD to major European logistics corridors across BeNeLux, DACH and beyond.", "volume": "EU market expansion" },
+      { "from": "RFD", "to": "GCC via Saudi Arabia", "agent": "BGI / Partners", "type": "B2B", "description": "Gulf Cooperation Council access via Saudi hub. Growing e-commerce and industrial cargo corridor for Midwest-origin goods.", "volume": "GCC corridor" },
+      { "from": "RFD", "to": "SE Asia via Korea", "agent": "YSL Korea", "type": "B2B/B2C", "description": "YSL Korea channels Southeast Asian cargo flows into RFD, providing balanced return volumes and e-commerce fulfilment.", "volume": "SE Asia gateway" },
+      { "from": "China / Asia", "to": "RFD", "agent": "SF Express / Yun Express", "type": "B2C DDP", "description": "Primary inbound DDP cargo lanes from China via SF Express and Yun Express. 5-7 day door-to-door service.", "volume": "Core DDP inbound" }
+    ],
+    "globalStats": [
+      { "value": "4", "label": "major corridors" },
+      { "value": "5–7d", "label": "DDP delivery" },
+      { "value": "UK/EU/GCC/APAC", "label": "markets reached" }
+    ],
+    "ddpLabel": "DDP 5–7 Day E-Commerce",
+    "ddpDescription": "Duty Paid, door-to-door delivery eliminating the reliance on random backloads and enabling predictable, sustainable cargo volume.",
+    "mobileExpand": "Tap to view global connections",
+    "mobileModal": {
+      "title": "Global Market Reach",
+      "subtitle": "4 corridors · DDP flows · balanced two-way volumes"
+    }
+  },
+  "slide7": {
+    "badge": "Competitive Advantage",
+    "title": "Traditional RFD Ops",
+    "titleVs": "vs",
+    "titleHighlight": "RCCSCS LLC",
+    "subtitle": "Side-by-side comparison across 6 critical dimensions.",
+    "traditionalHeader": "Traditional",
+    "elmsHeader": "RCCSCS LLC",
+    "rows": [
+      { "dimension": "Supply Chain Integration", "traditional": { "tag": "Fragmented", "text": "Multiple disconnected operators" }, "elms": { "tag": "Unified", "text": "Single entity, end-to-end solution" } },
+      { "dimension": "Customs & Compliance", "traditional": { "tag": "Manual", "text": "Outsourced, paper-heavy processes" }, "elms": { "tag": "Integrated", "text": "Micom CHB on-site, RFDMS automated" } },
+      { "dimension": "E-Commerce DDP", "traditional": { "tag": "None", "text": "No direct DDP capability at RFD" }, "elms": { "tag": "5–7 Day", "text": "SF / Yun Express DDP door-to-door" } },
+      { "dimension": "FTZ Operations", "traditional": { "tag": "Limited", "text": "Underutilised, no managed solution" }, "elms": { "tag": "Activated", "text": "Capitol full-service FTZ management" } },
+      { "dimension": "Global Sales Network", "traditional": { "tag": "Absent", "text": "No coordinated international agents" }, "elms": { "tag": "Active", "text": "BGI, UBS, YSL across 4 corridors" } },
+      { "dimension": "Volume Sustainability", "traditional": { "tag": "Reactive", "text": "Random backloads, unpredictable" }, "elms": { "tag": "Predictable", "text": "Balanced two-way flows by design" } }
+    ],
+    "verdict": {
+      "traditional": { "label": "Status Quo", "sublabel": "Unsustainable Volume" },
+      "elms": { "label": "RCCSCS LLC", "sublabel": "Structural Advantage" }
+    },
+    "mobileExpand": "Tap to compare all dimensions",
+    "mobileModal": {
+      "title": "RCCSCS vs Traditional RFD",
+      "subtitle": "6 dimensions compared"
+    }
+  },
+  "slide8": {
+    "badge": "Regulatory Compliance & Security",
+    "title": "Compliance ",
+    "titleHighlight": "& Regulatory",
+    "subtitle": "Full Food & Pharma compliance via RFDMS — IoT monitoring, automated documentation, and multi-standard certification.",
+    "iotBanner": {
+      "title": "Food & Pharma Regulatory Use Case",
+      "description": "RFDMS automates compliance for Food and Pharmaceutical cargo flowing through RFD — fully monitored and documented end-to-end.",
+      "pills": ["RFDMS Regulatory Automation", "Real-time Temperature Monitoring", "Automated Compliance Documentation"],
+      "tag": "Food · Pharma · Regulatory",
+      "items": [
+        { "emoji": "🌡️", "label": "Temperature Monitoring",     "body": "Continuous IoT sensor data for cold-chain cargo. Configurable thresholds with automated breach alerts and timestamped compliance records." },
+        { "emoji": "📋", "label": "Automated Compliance Docs",  "body": "RFDMS auto-generates Food Safety, Pharma GDP, and customs documentation. Audit-ready records for USDA, FDA, and CBP requirements." },
+        { "emoji": "🛃", "label": "Micom CHB Integration",       "body": "On-site Customs House Brokerage seamlessly connected to RFDMS for real-time HS classification, PGA flags, and entry filing." },
+        { "emoji": "🏥", "label": "Pharma Cold-Chain (Asia→US)", "body": "GMP/GDP-aligned shipments from Asia to Midwest US market via RFD, with RFDMS-sealed chain-of-custody records." }
+      ]
+    },
+    "activeStatus": "Active",
+    "trustScoreLabel": "Compliance Score",
+    "radarSectionLabel": "RFDMS Compliance Radar",
+    "secSectionLabel": "Compliance & Operations",
+    "euDataLabel": "REGULATORY COVERAGE",
+    "certBadges": ["FDA", "USDA", "CBP"],
+    "cards": [
+      { "title": "Customs Automation", "subtitle": "CBP", "badgeLabel": "CBP INTEGRATED", "description": "RFDMS integrates with Micom CHB for automated CBP entry filing, PGA screening, and ISF submissions.", "details": ["Automated CBP entry filing", "PGA (FDA/USDA) pre-screening", "Importer Security Filing (ISF)", "Continuous bond management", "ACE portal integration"] },
+      { "title": "FTZ Compliance", "subtitle": "Legal", "badgeLabel": "FTZ CERTIFIED", "description": "Capitol Warehousing operates a CBP-approved FTZ with full weekly entry processing and manipulation authority.", "details": ["CBP-approved FTZ Zone 176", "Weekly entry processing", "FTZ manipulation authority", "Inverted tariff programs", "FTZ audit trail via RFDMS"] },
+      { "title": "Food & Pharma Safety", "subtitle": "FDA/USDA", "badgeLabel": "REGULATED", "description": "Full FSMA, PACA, and GDP compliance for perishable and pharmaceutical cargo via RFDMS automated workflows.", "details": ["FSMA prior notice filing", "Cold-chain deviation alerts", "FDA Drug Import Documentation", "USDA APHIS phytosanitary", "HACCP-aligned processes"] },
+      { "title": "Platform Security", "subtitle": "Tech", "badgeLabel": "ZERO-TRUST", "description": "RFDMS platform built on zero-trust architecture with AES-256 encryption and role-based access for all partners.", "details": ["AES-256 encryption at-rest", "TLS 1.3 in-transit", "Role-based partner access", "Real-time audit logging", "Cloudflare WAF protection"] }
+    ],
+    "mobileExpand": "Tap to view compliance details",
+    "mobileModal": { "title": "Compliance & Regulatory", "subtitle": "4 pillars · Food · Pharma · FTZ · Security", "trustScoreValue": "100%" },
+    "stats": [
+      { "value": "100%", "label": "Automated CBP Filings" },
+      { "value": "4", "label": "Compliance Pillars" },
+      { "value": "FDA/USDA", "label": "PGA Standards" },
+      { "value": "Zero-Trust", "label": "Platform Security" }
+    ],
+    "features": [
+      { "title": "Customs Automation", "description": "Automated CBP entry, ISF, and PGA filings via Micom CHB integration.", "items": ["ACE portal integration", "Continuous bond management", "Automated ISF filings"] },
+      { "title": "FTZ Zone 176", "description": "CBP-approved FTZ with weekly entry processing and manipulation authority.", "items": ["Weekly entry processing", "Inverted tariff programs", "Audit trail via RFDMS"] },
+      { "title": "Food & Pharma Safety", "description": "FSMA, PACA, and GDP compliance with real-time cold-chain monitoring.", "items": ["FSMA prior notice filing", "Cold-chain deviation alerts", "GDP pharma documentation"] },
+      { "title": "Platform Security", "description": "Zero-trust RFDMS platform with AES-256 encryption and partner RBAC.", "items": ["AES-256 encryption at-rest", "Role-based partner access", "Real-time audit logging"] }
+    ],
+    "bottomNote": "RFDMS Compliance Radar — Live regulatory status across all Building 176 operations"
+  },
+  "slide9": {
+    "badge": "Revenue Model",
+    "title": "Service Structure",
+    "subtitle": "Modular service tiers for tenants, e-commerce operators, and global shippers.",
+    "tiers": [
+      { "name": "Tenant Services", "price": "Custom", "period": "per agreement", "tagline": "Building 176 tenancy package", "features": ["📦 ECCF/CFS facility access", "🏭 FTZ zone utilisation", "🛃 Micom CHB on-site desk", "🔌 RFDMS platform access"] },
+      { "name": "DDP E-Commerce", "price": "Per Volume", "period": "per shipment", "tagline": "5–7 day door-to-door", "features": ["🚀 SF / Yun Express lanes", "🌐 US national last mile", "📋 Full customs included", "🏠 Door-to-door DDP"] },
+      { "name": "Compliance Credits", "price": "Pay-as-you-go", "period": "", "tagline": "Regulatory on demand", "features": ["🛃 Customs pre-clearance", "🌡️ Cold-chain monitoring", "📄 PGA document auto-gen", "💰 Volume discounts"] }
+    ]
+  },
+  "slide10": {
+    "badge": "Multi-Phase Implementation Map",
+    "title": "Operational",
+    "titleHighlight": "Roadmap",
+    "subtitle": "3 parallel tracks · Q2 2026 → 2027+ · Operations × Technology × Global Expansion",
+    "timeColumns": [
+      { "period": "Q2", "label": "Foundation" },
+      { "period": "Q3", "label": "Activation" },
+      { "period": "Q4", "label": "Integration" },
+      { "period": "Qtr 1 2027", "label": "Scale" }
+    ],
+    "tracks": [
+      { "label": "Operations & Infrastructure", "milestones": [{ "title": "Building 176 Lease", "desc": "Master lease signed — RCCSCS LLC", "detail": "Turlough Sheehan executes master lease for Building 176 at RFD on behalf of RCCSCS LLC. Facility zoning, partner access agreements, and layout planning completed. ECCF, CFS, FTZ sections demarcated and handed to respective operators." }, { "title": "ECCF & CFS Launch", "desc": "Express cargo processing live", "detail": "Micom CHB establishes on-site customs desk. Capitol Warehousing activates CFS and Export Cargo Hub. First commercial shipments processed through ECCF. SF Express and Yun Express secure access lanes operational." }, { "title": "FTZ Activation", "desc": "Capitol FTZ operations open", "detail": "CBP-approved FTZ Zone activated under Capitol management. Weekly entry processing and manipulation authority in operation. Inverted tariff programs available to all Building 176 tenants. RFDMS FTZ module integrated for real-time inventory tracking." }, { "title": "Full Operational Capacity", "desc": "All zones live — peak readiness", "detail": "All six Building 176 zones fully operational. Uni-Uni cross-dock running B2C fulfilment. Food and Pharma compliance workflows live via RFDMS. RFD authority reporting confirms consistent cargo volume growth targets met." }] },
+      { "label": "Technology & Compliance", "milestones": [{ "title": "RFDMS Platform Deploy", "desc": "Core digital platform live", "detail": "RFDMS platform deployed with partner access portals for all 11 consortium members. Real-time cargo visibility across all Building 176 zones. Automated customs document generation connected to Micom CBP filing system." }, { "title": "Food & Pharma Compliance", "desc": "FDA/USDA workflows automated", "detail": "FSMA prior notice filing automated via RFDMS. Cold-chain IoT sensor integration live for temperature-controlled cargo. Pharma GDP documentation workflows operational. FDA Drug Import and USDA APHIS phytosanitary auto-generation active." }, { "title": "DDP E-Commerce Platform", "desc": "5-7 day DDP live end-to-end", "detail": "SF Express and Yun Express DDP routes fully integrated with RFDMS label generation, tracking, and delivery confirmation. US national last-mile carriers connected. Real-time tracking from RFD to consumer doorstep." }, { "title": "Analytics & Reporting", "desc": "RFD authority dashboard live", "detail": "Volume reporting dashboard for RFD authority showing real-time cargo throughput, DDP shipment volumes, FTZ utilisation rates, and compliance KPIs. Monthly ESG and sustainability reporting for food/pharma operations." }] },
+      { "label": "Sales & Global Expansion", "milestones": [{ "title": "Code-Share Launch", "desc": "Rich Sale & courier inbound", "detail": "Rich Sale code-share operations kick-start inbound traffic to RFD. Initial cargo volume establishes handling precedents and operational readiness. Micom CHB pre-registers importers for accelerated clearance." }, { "title": "UK & EU Market Entry", "desc": "UBS UK Ltd & BGI activation", "detail": "UBS UK Ltd begins active sales into UK distribution networks. BGI launches EU corridor campaigns targeting BeNeLux and DACH importers. Outbound US-origin cargo sales provide balanced two-way flow from Q3." }, { "title": "GCC & SE Asia Expansion", "desc": "BGI/Saudi & YSL Korea live", "detail": "BGI activates Gulf Cooperation Council sales channel via Saudi Arabia hub. YSL Korea channels SE Asian export volumes to RFD. Combined inbound volumes from all four global corridors provide sustainable, balanced flows." }, { "title": "Network Effects", "desc": "Self-reinforcing cargo flywheel", "detail": "Critical mass of global agents, couriers, and DDP volumes create a self-reinforcing cargo flywheel at RFD. Every new partner adds route density. RCCSCS LLC becomes the default Midwest alternative to ORD for international cargo." }] }
+    ],
+    "statusLabels": { "done": "Done", "active": "Active", "planned": "Planned", "vision": "Vision" }
+  },
+  "slide11": {
+    "badge": "Join the RCCSCS Consortium",
+    "headline": {
+      "prefix": "RFD's sustainable volume future",
+      "strikethrough": "starts later",
+      "only": "Starts",
+      "architects": "Now",
+      "and": "with",
+      "obsolete": "RCCSCS LLC"
+    },
+    "leftBlock": {
+      "heading": "The Strategic Imperative",
+      "text1": "The window to establish RFD as the premier Midwest cargo alternative to ORD",
+      "bold1": "is open now.",
+      "text2": " RCCSCS LLC has assembled every capability required — the only variable is",
+      "bold2": "speed of activation.",
+      "text3": " Building 176 awaits."
+    },
+    "rightBlock": {
+      "heading": "The Cost of Inaction",
+      "text1": "Every quarter without a unified solution is another quarter of unsustainable backloads, missed DDP e-commerce volumes, and ceding Midwest cargo flows to",
+      "bold1": "ORD by default.",
+      "text2": " RCCSCS LLC is the answer the RFD Authority needs."
+    },
+    "cta": "Partner with RCCSCS LLC",
+    "email": "contact@rccscs.com",
+    "brand": "RCCSCS LLC · T. Sheehan",
+    "confidential": "Confidential"
+  },
+  "slideTitles": [
+    "RFDMS",
+    "The Challenge",
+    "The Solution",
+    "Consortium Partners",
+    "Building 176",
+    "Global Reach",
+    "Competitive Edge",
+    "Compliance",
+    "Service Tiers",
+    "Roadmap",
+    "Call to Action"
+  ]
+}
