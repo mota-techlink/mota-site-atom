@@ -350,7 +350,7 @@ function MemberSheet({
                   <div
                     key={l.alt}
                     title={l.alt}
-                    className="h-12 w-12 rounded-xl flex items-center justify-center p-2 bg-slate-200 border border-slate-200/25"
+                    className="h-12 w-12 rounded-xl flex items-center justify-center p-2 bg-slate-300 border border-slate-200/25"
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
@@ -543,14 +543,17 @@ export function ShareholdersSection() {
               }}
               onMouseLeave={() => setSectionHovered(false)}
               initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ delay: 0.5 + i * 0.12, duration: 0.55, ease: "easeOut" }}
-              style={{
-                transform: activeIndex === i ? "translateY(-6px)" : undefined,
-                boxShadow: activeIndex === i ? theme.hoverShadow : undefined,
-                borderColor: activeIndex === i ? theme.hoverBorder : undefined,
-                transition: "transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out",
+              animate={{
+                opacity: 1,
+                y: activeIndex === i ? -6 : 0,
+                filter: "blur(0px)",
+                boxShadow: activeIndex === i ? theme.hoverShadow : "none",
+                borderColor: activeIndex === i ? theme.hoverBorder : "rgba(255,255,255,0.1)",
               }}
+              transition={activeIndex !== null
+                ? { duration: 0.15, ease: "easeOut" }
+                : { delay: 0.5 + i * 0.12, duration: 0.55, ease: "easeOut" }
+              }
               whileHover={{
                 y: -4,
                 boxShadow: theme.hoverShadow,
