@@ -5,10 +5,12 @@ import { createOpenAI } from '@ai-sdk/openai';
 
 export const runtime = 'edge';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+}
 
 const cloudflare = createOpenAI({
   baseURL: `https://api.cloudflare.com/client/v4/accounts/${process.env.CLOUDFLARE_ACCOUNT_ID}/ai/v1`,
@@ -68,7 +70,7 @@ export async function POST(req: Request) {
     // A. 生成向量
     const embedding = await getEmbedding(searchQuery);
     
-    const { data: documents } = await supabase.rpc('match_documents', {
+    const { data: documents } = await getSupabase().rpc('match_documents', {
       query_embedding: embedding,
       match_threshold: 0.3, 
       match_count: 5,
