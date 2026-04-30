@@ -38,6 +38,58 @@ const MEMBER_LOGOS: MemberLogos[] = [
   { badges: ["⚖️ Matheson", "📊 CIMA", "🏢 McHugh & Assoc."] },
 ];
 
+// ─── Per-role theme tokens ────────────────────────────────────────────────────
+const ROLE_THEME: Record<
+  string,
+  {
+    topBar: string;
+    cardBg: string;
+    halo: string;
+    badge: string;
+    hoverShadow: string;
+    hoverBorder: string;
+  }
+> = {
+  CEO: {
+    topBar: "bg-gradient-to-r from-amber-400 to-yellow-500",
+    cardBg: "bg-gradient-to-b from-amber-500/[0.08] to-transparent",
+    halo: "bg-amber-400/20",
+    badge: "border-l-2 border-amber-400 bg-amber-500/15 text-amber-300",
+    hoverShadow:
+      "0 0 35px rgba(245,158,11,0.22), 0 8px 32px rgba(245,158,11,0.1)",
+    hoverBorder: "rgba(245,158,11,0.45)",
+  },
+  CTO: {
+    topBar: "bg-gradient-to-r from-cyan-400 to-blue-500",
+    cardBg: "bg-gradient-to-b from-cyan-500/[0.08] to-transparent",
+    halo: "bg-cyan-400/20",
+    badge: "border-l-2 border-cyan-400 bg-cyan-500/15 text-cyan-300",
+    hoverShadow:
+      "0 0 35px rgba(34,211,238,0.22), 0 8px 32px rgba(34,211,238,0.1)",
+    hoverBorder: "rgba(34,211,238,0.45)",
+  },
+  COO: {
+    topBar: "bg-gradient-to-r from-emerald-400 to-teal-500",
+    cardBg: "bg-gradient-to-b from-emerald-500/[0.08] to-transparent",
+    halo: "bg-emerald-400/20",
+    badge: "border-l-2 border-emerald-400 bg-emerald-500/15 text-emerald-300",
+    hoverShadow:
+      "0 0 35px rgba(52,211,153,0.22), 0 8px 32px rgba(52,211,153,0.1)",
+    hoverBorder: "rgba(52,211,153,0.45)",
+  },
+  CFO: {
+    topBar: "bg-gradient-to-r from-violet-400 to-purple-500",
+    cardBg: "bg-gradient-to-b from-violet-500/[0.08] to-transparent",
+    halo: "bg-violet-400/20",
+    badge: "border-l-2 border-violet-400 bg-violet-500/15 text-violet-300",
+    hoverShadow:
+      "0 0 35px rgba(167,139,250,0.22), 0 8px 32px rgba(167,139,250,0.1)",
+    hoverBorder: "rgba(167,139,250,0.45)",
+  },
+};
+
+const DEFAULT_THEME = ROLE_THEME.COO;
+
 // Deterministic pseudo-random so SSR & client match
 const PARTICLES = Array.from({ length: 24 }, (_, i) => {
   const seed = (i + 1) * 9301;
@@ -288,28 +340,36 @@ export function ShareholdersSection() {
 
         {/* Member grid */}
         <div className="ei-child grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {c.members.map((m, i) => (
+          {c.members.map((m, i) => {
+            const theme = ROLE_THEME[m.role] ?? DEFAULT_THEME;
+            return (
             <motion.div
               key={m.name}
-              className="group relative bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-5 md:p-6 flex flex-col items-center text-center transition-colors overflow-hidden"
+              className={`group relative bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-5 md:p-6 pt-6 md:pt-7 flex flex-col items-center text-center transition-colors overflow-hidden`}
               initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ delay: 0.5 + i * 0.12, duration: 0.55, ease: "easeOut" }}
               whileHover={{
                 y: -4,
-                boxShadow: "0 0 30px rgba(52,211,153,0.18)",
-                borderColor: "rgba(52,211,153,0.4)",
+                boxShadow: theme.hoverShadow,
+                borderColor: theme.hoverBorder,
               }}
             >
+              {/* Role-colored top accent bar */}
+              <div className={`absolute top-0 left-0 right-0 h-1 ${theme.topBar} rounded-t-2xl pointer-events-none`} />
+
+              {/* Role-tinted background wash */}
+              <div className={`absolute inset-0 ${theme.cardBg} pointer-events-none rounded-2xl`} />
+
               {/* Index badge */}
-              <span className="absolute top-3 right-3 text-[10px] font-mono tracking-widest text-emerald-400/40 group-hover:text-emerald-400/70 transition-colors">
+              <span className="absolute top-3 right-3 z-10 text-[10px] font-mono tracking-widest text-white/30 group-hover:text-white/60 transition-colors">
                 {String(i + 1).padStart(2, "0")}
               </span>
 
               {/* Shimmer scan line on hover */}
               <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
                 <motion.div
-                  className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/70 to-transparent opacity-0 group-hover:opacity-100"
+                  className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 group-hover:opacity-100"
                   initial={{ top: "-10%" }}
                   animate={{ top: "110%" }}
                   transition={{
@@ -320,21 +380,26 @@ export function ShareholdersSection() {
                 />
               </div>
 
-              {/* Photo frame — per-role design */}
-              <PhotoFrame role={m.role} photo={m.photo} name={m.name} />
+              {/* Photo frame — per-role design, with role-colored halo behind */}
+              <div className="relative z-10 isolate flex items-center justify-center">
+                <div
+                  className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 rounded-full ${theme.halo} blur-2xl -z-10 pointer-events-none`}
+                />
+                <PhotoFrame role={m.role} photo={m.photo} name={m.name} />
+              </div>
 
-              {/* Role badge */}
-              <span className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold px-2 py-0.5 rounded-full mb-2">
+              {/* Role badge — left-bar style */}
+              <span className={`relative z-10 inline-block text-[11px] md:text-xs font-semibold px-3 py-1 rounded-md mb-2 ${theme.badge}`}>
                 {m.role}
               </span>
 
               {/* Name */}
-              <h3 className="text-white font-bold text-base md:text-lg mb-2">
+              <h3 className="relative z-10 text-white text-lg md:text-xl font-extrabold tracking-tight mb-2">
                 {m.name}
               </h3>
 
               {/* Bio */}
-              <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
+              <p className="relative z-10 text-slate-400 text-xs md:text-sm leading-relaxed">
                 {m.bio}
               </p>
 
@@ -343,7 +408,11 @@ export function ShareholdersSection() {
                 const entry = MEMBER_LOGOS[i];
                 if (!entry || (!entry.logos?.length && !entry.badges?.length)) return null;
                 return (
-                  <div className="mt-3 pt-3 border-t border-white/8 w-full flex items-center gap-2 flex-wrap justify-center">
+                  <div className="relative z-10 mt-3 pt-3 border-t border-white/8 w-full flex flex-col items-center">
+                    <p className="text-[9px] font-mono tracking-[0.25em] uppercase text-white/25 mb-1.5 w-full text-center">
+                      Career · Highlights
+                    </p>
+                    <div className="flex items-center gap-2 flex-wrap justify-center">
                     {entry.logos?.map((l) => (
                       <div
                         key={l.alt}
@@ -366,11 +435,13 @@ export function ShareholdersSection() {
                         {b}
                       </span>
                     ))}
+                    </div>
                   </div>
                 );
               })()}
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
