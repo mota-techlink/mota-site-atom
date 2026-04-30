@@ -35,7 +35,8 @@ const nextConfig: NextConfig = {
     // - connect-src: 覆盖 Supabase (auth + realtime)、Stripe、Google Analytics
     // - frame-src: Stripe Elements iframe
     // - img-src: 允许 data: / https: 以兼容各类第三方图片
-    const csp = [
+    const isDev = process.env.NODE_ENV !== "production";
+    const cspDirectives = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://js.stripe.com",
       "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://api.stripe.com wss://ws.stripe.com https://www.googletagmanager.com",
@@ -48,8 +49,9 @@ const nextConfig: NextConfig = {
       "base-uri 'self'",
       "form-action 'self'",
       "frame-ancestors 'none'",
-      "upgrade-insecure-requests",
-    ].join("; ");
+    ];
+    if (!isDev) cspDirectives.push("upgrade-insecure-requests");
+    const csp = cspDirectives.join("; ");
 
     // 所有路由共用的安全头
     const securityHeaders = [
