@@ -413,7 +413,7 @@ export function ShareholdersSection() {
     if (sectionHovered || autoIndex === null) return;
     const timer = setTimeout(() => {
       setAutoIndex((prev) => (prev === null ? 0 : (prev + 1) % memberCount));
-    }, 1800);
+    }, 500);
     return () => clearTimeout(timer);
   }, [autoIndex, sectionHovered, memberCount]);
 
@@ -665,7 +665,7 @@ export function ShareholdersSection() {
                 <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-md mb-2 self-start shrink-0 ${theme.badge}`}>
                   About
                 </span>
-                <p className="text-xs text-slate-700 dark:text-slate-200 leading-relaxed overflow-y-auto flex-1">
+                <p className="text-[0.8rem] text-slate-700 dark:text-slate-200 leading-relaxed overflow-y-auto flex-1 flex items-center justify-center text-center">
                   {m.bio}
                 </p>
               </div>
