@@ -392,9 +392,33 @@ export function ShareholdersSection() {
   const content = useContent();
   const c = content.slideShareholders;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   const close = useCallback(() => setOpenIndex(null), []);
   const [sectionHovered, setSectionHovered] = useState(false);
+
+  // Auto-carousel: cycle through cards showing bio tooltip, pause when mouse hovers
+  const [autoIndex, setAutoIndex] = useState<number | null>(null);
+  const memberCount = (c.members as Member[]).length;
+
+  useEffect(() => {
+    if (sectionHovered) {
+      setAutoIndex(null);
+      return;
+    }
+    // Start with first card after a short delay
+    const start = setTimeout(() => setAutoIndex(0), 1500);
+    return () => clearTimeout(start);
+  }, [sectionHovered]);
+
+  useEffect(() => {
+    if (sectionHovered || autoIndex === null) return;
+    const timer = setTimeout(() => {
+      setAutoIndex((prev) => (prev === null ? 0 : (prev + 1) % memberCount));
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [autoIndex, sectionHovered, memberCount]);
+
+  // activeIndex: mouse hover takes priority over auto
+  const activeIndex = sectionHovered ? null : autoIndex;
 
   const openMember =
     openIndex !== null ? (c.members[openIndex] as Member) : null;
@@ -509,6 +533,7 @@ export function ShareholdersSection() {
               }}
               className={`group relative bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-3 md:p-4 lg:p-6 pt-5 md:pt-5 lg:pt-7 flex flex-col items-center text-center transition-colors overflow-hidden cursor-pointer lg:cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30`}
               onMouseEnter={(e) => {
+                setSectionHovered(true);
                 const card = e.currentTarget;
                 const divider = card.querySelector('[data-ch-divider]') as HTMLElement | null;
                 if (divider) {
@@ -516,9 +541,15 @@ export function ShareholdersSection() {
                   card.style.setProperty('--tooltip-top', `${pct}%`);
                 }
               }}
-              initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ delay: 0.5 + i * 0.12, duration: 0.55, ease: "easeOut" }}
+              onMouseLeave={() => setSectionHovered(false)}
+              animate={{
+                opacity: 1,
+                y: activeIndex === i ? -4 : 0,
+                filter: "blur(0px)",
+                boxShadow: activeIndex === i ? theme.hoverShadow : "none",
+                borderColor: activeIndex === i ? theme.hoverBorder : "rgba(255,255,255,0.1)",
+              }}
+              transition={{ delay: sectionHovered ? 0 : 0.5 + i * 0.12, duration: 0.55, ease: "easeOut" }}
               whileHover={{
                 y: -4,
                 boxShadow: theme.hoverShadow,
@@ -627,7 +658,8 @@ export function ShareholdersSection() {
 
               {/* Bio hover tooltip — from Career Highlights divider down */}
               <div
-                className="hidden lg:flex flex-col absolute left-0 right-0 bottom-0 z-20 px-5 pb-5 pt-4 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150 rounded-b-2xl border-t border-black/8 dark:border-white/8 bg-white/95 dark:bg-[#0d1117] backdrop-blur-sm overflow-hidden"
+                className={`hidden lg:flex flex-col absolute left-0 right-0 bottom-0 z-20 px-5 pb-5 pt-4 pointer-events-none translate-y-1 transition-all duration-150 rounded-b-2xl border-t border-black/8 dark:border-white/8 bg-white/95 dark:bg-[#0d1117] backdrop-blur-sm overflow-hidden
+                  ${activeIndex === i ? 'opacity-100 translate-y-0' : 'opacity-0 group-hover:opacity-100 group-hover:translate-y-0'}`}
                 style={{ top: 'var(--tooltip-top, 60%)' }}
               >
                 <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-md mb-2 self-start shrink-0 ${theme.badge}`}>
