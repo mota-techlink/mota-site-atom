@@ -212,7 +212,7 @@ export function ShareholdersSection() {
                       <div
                         key={l.alt}
                         title={l.alt}
-                        className={`h-8 w-8 rounded-lg flex items-center justify-center p-1.5 transition-all duration-200 hover:scale-110 ${l.lightBg ? "bg-white/80 dark:bg-white/15" : "bg-black/5 dark:bg-white/8"}`}
+                        className={`h-8 w-8 rounded-lg flex items-center justify-center p-1.5 transition-all duration-200 hover:scale-110 ${l.lightBg ? "bg-white/80 dark:bg-white/8" : "bg-black/5 dark:bg-white/4"}`}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -225,7 +225,7 @@ export function ShareholdersSection() {
                     {entry.badges?.map((b) => (
                       <span
                         key={b}
-                        className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/8 border border-white/10 text-slate-400 hover:text-slate-200 transition-colors"
+                        className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/5 dark:bg-white/4 border border-black/8 dark:border-white/8 text-slate-500 dark:text-slate-500 hover:text-slate-300 transition-colors"
                       >
                         {b}
                       </span>
