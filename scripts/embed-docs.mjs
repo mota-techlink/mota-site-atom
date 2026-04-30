@@ -5,12 +5,13 @@ import matter from 'gray-matter';
 import dotenv from 'dotenv';
 import crypto from 'crypto';
 
+// 本地开发读 .env.local，生产环境直接用系统环境变量（Cloudflare / CI）
 dotenv.config({ path: '.env.local' });
 
-// 检查必要的环境变量
+// 检查必要的环境变量，缺失时跳过（CI 环境不需要嵌入向量）
 if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
-  console.error('❌ Error: SUPABASE_SERVICE_ROLE_KEY is missing in .env.local');
-  process.exit(1);
+  console.warn('⚠️  SUPABASE_SERVICE_ROLE_KEY not set — skipping doc embedding.');
+  process.exit(0);
 }
 
 const supabase = createClient(
