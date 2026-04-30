@@ -1,19 +1,45 @@
 {
-  "nav": { "tagline": "ELMS Logistics" },
+  "nav": {
+    "tagline": "ELMS Logistics"
+  },
   "slide1": {
     "subtitle": "Earth's Logistics Management System",
     "tagline": "AI-Powered Infrastructure for Cross-Border Commerce",
     "badges": [
-      { "icon": "🌍", "text": "Global Protocol" },
-      { "icon": "🤖", "text": "AI-Empowered" },
-      { "icon": "🔗", "text": "MCP Ready" }
+      {
+        "icon": "🌍",
+        "text": "Global Protocol"
+      },
+      {
+        "icon": "🤖",
+        "text": "AI-Empowered"
+      },
+      {
+        "icon": "🔗",
+        "text": "MCP Ready"
+      }
     ],
     "features": [
-      { "icon": "📦", "label": "Multi-Carrier API" },
-      { "icon": "🛡️", "label": "BRC Certified" },
-      { "icon": "🌱", "label": "ISO 14067 Carbon" },
-      { "icon": "⚡", "label": "Sub-100ms Edge" },
-      { "icon": "🔮", "label": "AI Autonomous" }
+      {
+        "icon": "📦",
+        "label": "Multi-Carrier API"
+      },
+      {
+        "icon": "🛡️",
+        "label": "BRC Certified"
+      },
+      {
+        "icon": "🌱",
+        "label": "ISO 14067 Carbon"
+      },
+      {
+        "icon": "⚡",
+        "label": "Sub-100ms Edge"
+      },
+      {
+        "icon": "🔮",
+        "label": "AI Autonomous"
+      }
     ],
     "ctaLabel": "Start to Explore",
     "bottomDate": "April 2026"
@@ -27,28 +53,61 @@
     "silos": [
       {
         "title": "E-commerce Platforms",
-        "items": ["Order fragmentation", "SKU mismatch across stores", "No real-time inventory sync", "Manual CSV exports"]
+        "items": [
+          "Order fragmentation",
+          "SKU mismatch across stores",
+          "No real-time inventory sync",
+          "Manual CSV exports"
+        ]
       },
       {
         "title": "Customs Compliance",
-        "items": ["Paper-based declarations", "HS code errors", "Delayed clearance cycles", "Regulatory blind spots"]
+        "items": [
+          "Paper-based declarations",
+          "HS code errors",
+          "Delayed clearance cycles",
+          "Regulatory blind spots"
+        ]
       },
       {
         "title": "Last-Mile Carriers",
-        "items": ["Label re-entry by hand", "Wrong address formats", "No delivery confirmation", "Carbon tracking gap"]
+        "items": [
+          "Label re-entry by hand",
+          "Wrong address formats",
+          "No delivery confirmation",
+          "Carbon tracking gap"
+        ]
       }
     ],
-    "mobileLabels": { "ecommerce": "E-commerce", "customs": "Customs", "lastMile": "Last-Mile", "syncErr": "SYNC ERR" },
+    "mobileLabels": {
+      "ecommerce": "E-commerce",
+      "customs": "Customs",
+      "lastMile": "Last-Mile",
+      "syncErr": "SYNC ERR"
+    },
     "mobileExpand": "Tap to view silo details",
     "stats": [
-      { "value": "37%", "label": "data lost" },
-      { "value": "€4.2B", "label": "cost" },
-      { "value": "72h", "label": "delay" }
+      {
+        "value": "37%",
+        "label": "data lost"
+      },
+      {
+        "value": "€4.2B",
+        "label": "cost"
+      },
+      {
+        "value": "72h",
+        "label": "delay"
+      }
     ],
     "mobileModal": {
       "title": "Fragmented Logistics Silos",
       "subtitle": "Three isolated systems. Every handoff is a failure point.",
-      "statLabels": ["Data lost in handoffs", "Annual EU cost", "Avg customs delay"]
+      "statLabels": [
+        "Data lost in handoffs",
+        "Annual EU cost",
+        "Avg customs delay"
+      ]
     }
   },
   "slide3": {
@@ -57,28 +116,118 @@
     "titleHighlight": "Dual-Ring",
     "subtitle": "Infrastructure inside, functional modules outside — one interlocking ecosystem.",
     "features": [
-      { "label": "Logistics Management", "description": "End-to-end logistics coordination across carriers, warehouses, and distribution networks — one unified source of truth." },
-      { "label": "Financial Accountancy", "description": "Automated invoicing, cost allocation, and financial reporting for every shipment across the supply chain." },
-      { "label": "Regulatory Compliance", "description": "BRC, ISO, and HACCP compliance automation with audit-ready documentation and zero manual errors." },
-      { "label": "Carbon Emission Tracking", "description": "Integrated carbon emission tracking meeting EU environmental standards and regulations." },
-      { "label": "AI-Powered Intelligence", "description": "Predictive analytics, route optimization, and automated decision-making via MCP." },
-      { "label": "IoT Device Integration", "description": "Real-time data from IoT devices for temperature, location, and condition monitoring." }
+      {
+        "label": "Logistics Management",
+        "description": "End-to-end logistics coordination across carriers, warehouses, and distribution networks — one unified source of truth."
+      },
+      {
+        "label": "Financial Accountancy",
+        "description": "Automated invoicing, cost allocation, and financial reporting for every shipment across the supply chain."
+      },
+      {
+        "label": "Regulatory Compliance",
+        "description": "BRC, ISO, and HACCP compliance automation with audit-ready documentation and zero manual errors."
+      },
+      {
+        "label": "Carbon Emission Tracking",
+        "description": "Integrated carbon emission tracking meeting EU environmental standards and regulations."
+      },
+      {
+        "label": "AI-Powered Intelligence",
+        "description": "Predictive analytics, route optimization, and automated decision-making via MCP."
+      },
+      {
+        "label": "IoT Device Integration",
+        "description": "Real-time data from IoT devices for temperature, location, and condition monitoring."
+      }
     ],
     "modules": [
-      { "label": "Logistics", "badge": "API-First" },
-      { "label": "Compliance", "badge": "BRC Certified" },
-      { "label": "Accountancy", "badge": "Financial" },
-      { "label": "IoT", "badge": "Real-Time" },
-      { "label": "AI / MCP", "badge": "MCP Native" },
-      { "label": "Carbon", "badge": "ISO 14067" }
+      {
+        "label": "Logistics",
+        "badge": "API-First"
+      },
+      {
+        "label": "Compliance",
+        "badge": "BRC Certified"
+      },
+      {
+        "label": "Accountancy",
+        "badge": "Financial"
+      },
+      {
+        "label": "IoT",
+        "badge": "Real-Time"
+      },
+      {
+        "label": "AI / MCP",
+        "badge": "MCP Native"
+      },
+      {
+        "label": "Carbon",
+        "badge": "ISO 14067"
+      }
     ],
     "techNodes": [
-      { "label": "Cloudflare", "sublabel": "Edge · CDN · WAF", "features": ["300+ PoPs global edge network", "Sub-100ms response", "DDoS protection & WAF", "Zero cold-start Workers"] },
-      { "label": "GitHub", "sublabel": "CI/CD · GitOps", "features": ["Push → deploy in <2 min", "Automated CI/CD", "Code scanning & Dependabot", "Branch protection gates"] },
-      { "label": "Supabase", "sublabel": "DB · Auth · RLS", "features": ["PostgreSQL Row-Level Security", "In-database RPC", "Real-time WebSocket", "Auth + JWT + MFA"] },
-      { "label": "Next.js 15", "sublabel": "SSR · RSC · Edge", "features": ["React Server Components", "ISR + Edge Runtime", "App Router + Middleware", "Streaming SSR"] },
-      { "label": "Tailwind", "sublabel": "Utility-First UI", "features": ["Zero-runtime CSS", "Design system consistency", "Mobile-first responsive", "Dark mode built-in"] },
-      { "label": "shadcn/ui", "sublabel": "Components · A11y", "features": ["Radix UI primitives (WAI-ARIA)", "Copy-paste ownership", "Enterprise components", "Full accessibility"] }
+      {
+        "label": "Cloudflare",
+        "sublabel": "Edge · CDN · WAF",
+        "features": [
+          "300+ PoPs global edge network",
+          "Sub-100ms response",
+          "DDoS protection & WAF",
+          "Zero cold-start Workers"
+        ]
+      },
+      {
+        "label": "GitHub",
+        "sublabel": "CI/CD · GitOps",
+        "features": [
+          "Push → deploy in <2 min",
+          "Automated CI/CD",
+          "Code scanning & Dependabot",
+          "Branch protection gates"
+        ]
+      },
+      {
+        "label": "Supabase",
+        "sublabel": "DB · Auth · RLS",
+        "features": [
+          "PostgreSQL Row-Level Security",
+          "In-database RPC",
+          "Real-time WebSocket",
+          "Auth + JWT + MFA"
+        ]
+      },
+      {
+        "label": "Next.js 15",
+        "sublabel": "SSR · RSC · Edge",
+        "features": [
+          "React Server Components",
+          "ISR + Edge Runtime",
+          "App Router + Middleware",
+          "Streaming SSR"
+        ]
+      },
+      {
+        "label": "Tailwind",
+        "sublabel": "Utility-First UI",
+        "features": [
+          "Zero-runtime CSS",
+          "Design system consistency",
+          "Mobile-first responsive",
+          "Dark mode built-in"
+        ]
+      },
+      {
+        "label": "shadcn/ui",
+        "sublabel": "Components · A11y",
+        "features": [
+          "Radix UI primitives (WAI-ARIA)",
+          "Copy-paste ownership",
+          "Enterprise components",
+          "Full accessibility"
+        ]
+      }
     ],
     "coreLabel": "ELMS",
     "coreSublabel": "CORE",
@@ -98,16 +247,82 @@
     "traditionalHeader": "Traditional",
     "elmsHeader": "ELMS",
     "rows": [
-      { "dimension": "System Integration", "traditional": { "tag": "Siloed", "text": "Fragmented manual sync" }, "elms": { "tag": "Unified", "text": "Instant API Ecosystem" } },
-      { "dimension": "Customs", "traditional": { "tag": "Manual", "text": "Error-prone paper trails" }, "elms": { "tag": "Auto-Pilot", "text": "100% Validated Digital" } },
-      { "dimension": "Sustainability", "traditional": { "tag": "Blind", "text": "Zero visibility on Carbon" }, "elms": { "tag": "Eco-Compliant", "text": "Native ISO Tracking" } },
-      { "dimension": "IoT / Real-time", "traditional": { "tag": "Delayed", "text": "Batch-processed data" }, "elms": { "tag": "Live", "text": "Real-time Edge Intelligence" } },
-      { "dimension": "AI / MCP", "traditional": { "tag": "None", "text": "Static legacy software" }, "elms": { "tag": "Autonomous", "text": "MCP-Native AI Agent" } },
-      { "dimension": "Cost Model", "traditional": { "tag": "Fixed", "text": "Heavy upfront licensing" }, "elms": { "tag": "Elastic", "text": "Scalable Pay-as-you-go" } }
+      {
+        "dimension": "System Integration",
+        "traditional": {
+          "tag": "Siloed",
+          "text": "Fragmented manual sync"
+        },
+        "elms": {
+          "tag": "Unified",
+          "text": "Instant API Ecosystem"
+        }
+      },
+      {
+        "dimension": "Customs",
+        "traditional": {
+          "tag": "Manual",
+          "text": "Error-prone paper trails"
+        },
+        "elms": {
+          "tag": "Auto-Pilot",
+          "text": "100% Validated Digital"
+        }
+      },
+      {
+        "dimension": "Sustainability",
+        "traditional": {
+          "tag": "Blind",
+          "text": "Zero visibility on Carbon"
+        },
+        "elms": {
+          "tag": "Eco-Compliant",
+          "text": "Native ISO Tracking"
+        }
+      },
+      {
+        "dimension": "IoT / Real-time",
+        "traditional": {
+          "tag": "Delayed",
+          "text": "Batch-processed data"
+        },
+        "elms": {
+          "tag": "Live",
+          "text": "Real-time Edge Intelligence"
+        }
+      },
+      {
+        "dimension": "AI / MCP",
+        "traditional": {
+          "tag": "None",
+          "text": "Static legacy software"
+        },
+        "elms": {
+          "tag": "Autonomous",
+          "text": "MCP-Native AI Agent"
+        }
+      },
+      {
+        "dimension": "Cost Model",
+        "traditional": {
+          "tag": "Fixed",
+          "text": "Heavy upfront licensing"
+        },
+        "elms": {
+          "tag": "Elastic",
+          "text": "Scalable Pay-as-you-go"
+        }
+      }
     ],
     "verdict": {
-      "traditional": { "label": "Legacy", "sublabel": "Diminishing Returns" },
-      "elms": { "label": "ELMS", "sublabel": "Compounding Advantage" }
+      "traditional": {
+        "label": "Legacy",
+        "sublabel": "Diminishing Returns"
+      },
+      "elms": {
+        "label": "ELMS",
+        "sublabel": "Compounding Advantage"
+      }
     },
     "mobileExpand": "Tap to compare all dimensions",
     "mobileModal": {
@@ -132,25 +347,65 @@
     "aiResponse": "✅ Shipment created successfully. Click to track:",
     "shipmentCreated": "Shipment Created",
     "shipmentId": "ELMS-2026-SZX-DUB-0847",
-    "miniRoute": ["SZX → DUB", "50 boxes", "SF Express"],
+    "miniRoute": [
+      "SZX → DUB",
+      "50 boxes",
+      "SF Express"
+    ],
     "viewRoute": "View Route Dashboard & Documents",
     "inputPlaceholder": "Ask ELMS anything...",
     "outputHeader": "Shipment Output",
     "outputReady": "READY",
     "outputIdLabel": "Shipment ID",
     "outputFields": [
-      { "label": "Carrier", "value": "SF Express International" },
-      { "label": "Service", "value": "Priority Express (2-3 days)" },
-      { "label": "Route", "value": "SZX → DUB (via AMS hub)" },
-      { "label": "Customs", "value": "EU-Compliant · Auto-declared" },
-      { "label": "Labels", "value": "50x generated · QR attached" },
-      { "label": "Carbon", "value": "1.2t CO₂ · Offset available" }
+      {
+        "label": "Carrier",
+        "value": "SF Express International"
+      },
+      {
+        "label": "Service",
+        "value": "Priority Express (2-3 days)"
+      },
+      {
+        "label": "Route",
+        "value": "SZX → DUB (via AMS hub)"
+      },
+      {
+        "label": "Customs",
+        "value": "EU-Compliant · Auto-declared"
+      },
+      {
+        "label": "Labels",
+        "value": "50x generated · QR attached"
+      },
+      {
+        "label": "Carbon",
+        "value": "1.2t CO₂ · Offset available"
+      }
     ],
-    "outputFooter": ["Generated in 1.2s", "3 MCP tools called"],
-    "compatBar": { "compatible": "Compatible", "protocol": "Protocol", "protocolValue": "MCP (Model Context Protocol)", "latency": "Latency", "latencyValue": "< 2s end-to-end" },
-    "mobileLabels": { "console": "AI Console", "mcp": "MCP", "output": "Output" },
+    "outputFooter": [
+      "Generated in 1.2s",
+      "3 MCP tools called"
+    ],
+    "compatBar": {
+      "compatible": "Compatible",
+      "protocol": "Protocol",
+      "protocolValue": "MCP (Model Context Protocol)",
+      "latency": "Latency",
+      "latencyValue": "< 2s end-to-end"
+    },
+    "mobileLabels": {
+      "console": "AI Console",
+      "mcp": "MCP",
+      "output": "Output"
+    },
     "mobileExpand": "Tap to view full demo",
-    "businessLinks": ["ELMS Products", "Case Studies", "Documentation", "Back to Deck"],
+    "businessLinks": [
+      "ELMS Products",
+      "Case Studies",
+      "Documentation",
+      "Back to Deck"
+    ],
     "mobileModal": {
       "title": "AI Logistics Lab × MCP",
       "subtitle": "Natural language → Automated execution",
@@ -165,21 +420,182 @@
     "title": "Route Dashboard",
     "subtitle": "SF Express Priority · Shenzhen → Amsterdam → Dublin · 50 boxes",
     "shipmentId": "ELMS-2026-SZX-DUB-0847",
-    "legend": { "completed": "Completed", "inProgress": "In Progress", "pending": "Pending" },
-    "docStatuses": { "Approved": "Approved", "Pending": "Pending", "Processing": "Processing", "Generated": "Generated" },
+    "legend": {
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "pending": "Pending"
+    },
+    "docStatuses": {
+      "Approved": "Approved",
+      "Pending": "Pending",
+      "Processing": "Processing",
+      "Generated": "Generated"
+    },
     "routeNodes": [
-      { "label": "Origin Warehouse", "location": "Shenzhen, China", "timestamp": "2026-02-14 09:30 CST", "documents": [{ "title": "Purchase Order", "details": { "Order ID": "PO-20260214-001", "Items": "50 × Consumer Electronics", "Total Value": "€127,500.00" } }, { "title": "Packing List", "details": { "Total Boxes": "50", "Gross Weight": "1,250 kg", "Pallet Count": "4 (Euro Pallets)" } }, { "title": "Commercial Invoice", "details": { "Invoice No": "CI-20260214-001", "HS Code": "8471.30 / 8528.72", "Terms": "DDP Dublin, Ireland" } }] },
-      { "label": "Carrier Pickup", "location": "SZX Hub, Shenzhen", "timestamp": "2026-02-14 14:15 CST", "documents": [{ "title": "Air Waybill (MAWB)", "details": { "AWB Number": "784-2026-0847", "Carrier": "SF Express International", "Transit Hub": "AMS (Amsterdam Schiphol)" } }, { "title": "Shipping Labels (×50)", "details": { "Label Count": "50 labels", "Format": "A6 Thermal (100×150mm)", "QR Code": "Embedded — links to ELMS tracking" } }] },
-      { "label": "Transit Hub", "location": "Amsterdam Schiphol (AMS)", "timestamp": "2026-02-15 06:45 CET", "documents": [{ "title": "Transit Declaration (T1)", "details": { "T1 MRN": "26NL00T1AMS003391", "Type": "Union Transit (T1)", "Status": "Released" } }, { "title": "IoT Temperature Log", "details": { "Sensor ID": "ELMS-IOT-T7742", "Avg Temp": "20.4°C", "Result": "✅ Within Range" } }] },
-      { "label": "EU Customs Clearance", "location": "Dublin Airport (DUB)", "timestamp": "2026-02-15 11:30 GMT — Processing", "documents": [{ "title": "ICS2 Import Declaration", "details": { "MRN": "26IE00ICS2DUB00847", "Duty Rate": "0% (ITA Agreement)", "Status": "⏳ Under Review" } }, { "title": "Certificate of Origin", "details": { "Certificate No": "COO-CN-2026-44871", "Country": "China (CN)" } }, { "title": "Carbon Emission Report", "details": { "Total CO₂": "1.2 tonnes", "EU Standard": "CSRD / CBAM Aligned" } }] },
-      { "label": "Last-Mile Delivery", "location": "Dublin, Ireland", "documents": [{ "title": "Delivery Order", "details": { "Recipient": "TechRetail Europe GmbH", "Time Window": "2026-02-16 09:00–12:00 GMT" } }, { "title": "Proof of Delivery", "details": { "Status": "⏳ Not Yet Delivered" } }] }
+      {
+        "label": "Origin Warehouse",
+        "location": "Shenzhen, China",
+        "timestamp": "2026-02-14 09:30 CST",
+        "documents": [
+          {
+            "title": "Purchase Order",
+            "details": {
+              "Order ID": "PO-20260214-001",
+              "Items": "50 × Consumer Electronics",
+              "Total Value": "€127,500.00"
+            }
+          },
+          {
+            "title": "Packing List",
+            "details": {
+              "Total Boxes": "50",
+              "Gross Weight": "1,250 kg",
+              "Pallet Count": "4 (Euro Pallets)"
+            }
+          },
+          {
+            "title": "Commercial Invoice",
+            "details": {
+              "Invoice No": "CI-20260214-001",
+              "HS Code": "8471.30 / 8528.72",
+              "Terms": "DDP Dublin, Ireland"
+            }
+          }
+        ]
+      },
+      {
+        "label": "Carrier Pickup",
+        "location": "SZX Hub, Shenzhen",
+        "timestamp": "2026-02-14 14:15 CST",
+        "documents": [
+          {
+            "title": "Air Waybill (MAWB)",
+            "details": {
+              "AWB Number": "784-2026-0847",
+              "Carrier": "SF Express International",
+              "Transit Hub": "AMS (Amsterdam Schiphol)"
+            }
+          },
+          {
+            "title": "Shipping Labels (×50)",
+            "details": {
+              "Label Count": "50 labels",
+              "Format": "A6 Thermal (100×150mm)",
+              "QR Code": "Embedded — links to ELMS tracking"
+            }
+          }
+        ]
+      },
+      {
+        "label": "Transit Hub",
+        "location": "Amsterdam Schiphol (AMS)",
+        "timestamp": "2026-02-15 06:45 CET",
+        "documents": [
+          {
+            "title": "Transit Declaration (T1)",
+            "details": {
+              "T1 MRN": "26NL00T1AMS003391",
+              "Type": "Union Transit (T1)",
+              "Status": "Released"
+            }
+          },
+          {
+            "title": "IoT Temperature Log",
+            "details": {
+              "Sensor ID": "ELMS-IOT-T7742",
+              "Avg Temp": "20.4°C",
+              "Result": "✅ Within Range"
+            }
+          }
+        ]
+      },
+      {
+        "label": "EU Customs Clearance",
+        "location": "Dublin Airport (DUB)",
+        "timestamp": "2026-02-15 11:30 GMT — Processing",
+        "documents": [
+          {
+            "title": "ICS2 Import Declaration",
+            "details": {
+              "MRN": "26IE00ICS2DUB00847",
+              "Duty Rate": "0% (ITA Agreement)",
+              "Status": "⏳ Under Review"
+            }
+          },
+          {
+            "title": "Certificate of Origin",
+            "details": {
+              "Certificate No": "COO-CN-2026-44871",
+              "Country": "China (CN)"
+            }
+          },
+          {
+            "title": "Carbon Emission Report",
+            "details": {
+              "Total CO₂": "1.2 tonnes",
+              "EU Standard": "CSRD / CBAM Aligned"
+            }
+          }
+        ]
+      },
+      {
+        "label": "Last-Mile Delivery",
+        "location": "Dublin, Ireland",
+        "documents": [
+          {
+            "title": "Delivery Order",
+            "details": {
+              "Recipient": "TechRetail Europe GmbH",
+              "Time Window": "2026-02-16 09:00–12:00 GMT"
+            }
+          },
+          {
+            "title": "Proof of Delivery",
+            "details": {
+              "Status": "⏳ Not Yet Delivered"
+            }
+          }
+        ]
+      }
     ],
-    "statusBar": { "nodesCompleted": "nodes completed", "documentsTracked": "documents tracked", "customs": "Customs:", "customsStatus": "Processing", "carbon": "Carbon:", "carbonValue": "1.2t CO₂" },
+    "statusBar": {
+      "nodesCompleted": "nodes completed",
+      "documentsTracked": "documents tracked",
+      "customs": "Customs:",
+      "customsStatus": "Processing",
+      "carbon": "Carbon:",
+      "carbonValue": "1.2t CO₂"
+    },
     "clickHint": "Click any document to view details",
     "docsSuffix": "docs",
-    "documentModal": { "shipmentRef": "Shipment Reference", "datePrefix": "Date:", "autoGenerated": "ELMS Auto-Generated Document" },
+    "documentModal": {
+      "shipmentRef": "Shipment Reference",
+      "datePrefix": "Date:",
+      "autoGenerated": "ELMS Auto-Generated Document"
+    },
     "mobileExpand": "Tap to view route & documents",
-    "mobileModal": { "title": "Route Dashboard", "subtitle": "ELMS-2026-SZX-DUB-0847 · 5 nodes · 12 documents", "stats": [{ "value": "3/5", "label": "Completed" }, { "value": "12", "label": "Documents" }, { "value": "Processing", "label": "Customs" }, { "value": "1.2t", "label": "CO₂" }] }
+    "mobileModal": {
+      "title": "Route Dashboard",
+      "subtitle": "ELMS-2026-SZX-DUB-0847 · 5 nodes · 12 documents",
+      "stats": [
+        {
+          "value": "3/5",
+          "label": "Completed"
+        },
+        {
+          "value": "12",
+          "label": "Documents"
+        },
+        {
+          "value": "Processing",
+          "label": "Customs"
+        },
+        {
+          "value": "1.2t",
+          "label": "CO₂"
+        }
+      ]
+    }
   },
   "slide7": {
     "badge": "Investment Ask",
@@ -187,19 +603,57 @@
     "titleHighlight": "Transparency",
     "subtitle": "Raising €300K to build out ELMS over 12 months. Full transparency on fund allocation.",
     "fundAllocation": [
-      { "label": "Product R&D & AI", "pct": "40%", "detail": "€120,000 · BRC compliance, ISO integration, AI/MCP development" },
-      { "label": "Market & Operations", "pct": "18.3%", "detail": "€55,000 · Logistics engine, customs capabilities, carrier APIs" },
-      { "label": "Security & Compliance", "pct": "11.7%", "detail": "€35,000 · EU servers, GDPR audit, ISO & BRC certification" },
-      { "label": "Contingency & Acquisition", "pct": "30%", "detail": "€90,000 · Risk buffer & strategic acquisition" }
+      {
+        "label": "Product R&D & AI",
+        "pct": "40%",
+        "detail": "€120,000 · BRC compliance, ISO integration, AI/MCP development"
+      },
+      {
+        "label": "Market & Operations",
+        "pct": "18.3%",
+        "detail": "€55,000 · Logistics engine, customs capabilities, carrier APIs"
+      },
+      {
+        "label": "Security & Compliance",
+        "pct": "11.7%",
+        "detail": "€35,000 · EU servers, GDPR audit, ISO & BRC certification"
+      },
+      {
+        "label": "Contingency & Acquisition",
+        "pct": "30%",
+        "detail": "€90,000 · Risk buffer & strategic acquisition"
+      }
     ],
     "totalRaise": "Total Raise",
     "totalRaiseAmount": "€300K",
-    "valuationBar": { "preLabel": "Pre-Money", "preValue": "€100K", "postLabel": "Post-Money", "postValue": "€400K" },
-    "investmentCard": { "title": "Investment Highlights", "items": ["Technical Equity: €100K asset value", "Full-stack platform already production-ready", "Capital Efficiency: 4× valuation uplift", "Recurring SaaS + transaction-based revenue"] },
+    "valuationBar": {
+      "preLabel": "Pre-Money",
+      "preValue": "€100K",
+      "postLabel": "Post-Money",
+      "postValue": "€400K"
+    },
+    "investmentCard": {
+      "title": "Investment Highlights",
+      "items": [
+        "Technical Equity: €100K asset value",
+        "Full-stack platform already production-ready",
+        "Capital Efficiency: 4× valuation uplift",
+        "Recurring SaaS + transaction-based revenue"
+      ]
+    },
     "keyMetrics": [
-      { "label": "Runway", "value": "18 mo" },
-      { "label": "Valuation Uplift", "value": "4×" },
-      { "label": "Gross Margin", "value": "75%" }
+      {
+        "label": "Runway",
+        "value": "18 mo"
+      },
+      {
+        "label": "Valuation Uplift",
+        "value": "4×"
+      },
+      {
+        "label": "Gross Margin",
+        "value": "75%"
+      }
     ]
   },
   "slide8": {
@@ -208,17 +662,106 @@
     "titleHighlight": "Roadmap",
     "subtitle": "3 parallel tracks · Q2 2026 → 2027+ · Infrastructure × Intelligence × Compliance",
     "timeColumns": [
-      { "period": "Q2", "label": "Foundation" },
-      { "period": "Q3", "label": "Build & Scale" },
-      { "period": "Q4", "label": "Integrate" },
-      { "period": "Qtr 1 2027", "label": "Dominate" }
+      {
+        "period": "Q2",
+        "label": "Foundation"
+      },
+      {
+        "period": "Q3",
+        "label": "Build & Scale"
+      },
+      {
+        "period": "Q4",
+        "label": "Integrate"
+      },
+      {
+        "period": "Qtr 1 2027",
+        "label": "Dominate"
+      }
     ],
     "tracks": [
-      { "label": "Infrastructure & Operations", "milestones": [{ "title": "Core Shipping Engine", "desc": "Multi-carrier API · Label generation", "detail": "Unified REST + GraphQL gateway aggregating 40+ carrier APIs (FedEx, DHL, UPS, SF Express, Cainiao). Automated label generation with barcode/QR, customs CN22/CN23, and return labels. Rate-shopping engine compares real-time quotes across all carriers." }, { "title": "Edge-Native Scaling", "desc": "Sub-100ms · 300+ global PoPs", "detail": "Cloudflare Workers + Durable Objects at 300+ PoPs worldwide. Guaranteed sub-100ms P95 latency for tracking and rate queries. Auto-scaling from 0 to 50K req/s with zero cold starts. Regional data residency for EU (Dublin), APAC (Tokyo), CN (Shanghai)." }, { "title": "WMS Deep Sync", "desc": "Real-time inventory mesh", "detail": "Bi-directional inventory sync with ShipStation, ShipBob, Flexport, and custom WMS via webhooks + polling fallback. Real-time stock level mesh prevents overselling across 10+ sales channels. Pick-pack-ship workflow automation with barcode scan verification." }, { "title": "Global Expansion", "desc": "Multi-tenant · White-label", "detail": "Full multi-tenant architecture supporting 500+ concurrent brand accounts. White-label portal with custom domains, branding, and email templates. Localized checkout with 25+ currencies and region-specific carrier preferences. Partner API marketplace for 3PL integrations." }] },
-      { "label": "Intelligence & Innovation", "milestones": [{ "title": "AI Address Parsing", "desc": "Multi-lingual · 99.7% accuracy", "detail": "Transformer-based NER model trained on 50M+ global addresses across 12 languages. Handles unstructured input, abbreviations, and transliteration (Chinese ↔ Pinyin, Japanese ↔ Romaji). 99.7% accuracy with auto-correction suggestions. Reduces failed deliveries by 35%." }, { "title": "MCP Protocol V1", "desc": "Conversational logistics", "detail": "Model Context Protocol bridge connecting ChatGPT, Claude, Gemini, and Grok to live logistics data. Natural language queries: 'Where is my shipment?' → real-time tracking + ETA. Tool-calling architecture with 12 registered functions: track, quote, book, cancel, reroute, documents, compliance, analytics, alerts, bulk, returns, customs." }, { "title": "IoT Node Network", "desc": "Cold-chain monitoring", "detail": "BLE/LoRa sensor mesh for temperature (-40°C to +80°C), humidity, shock, and light exposure. Real-time alerts via webhook + SMS + email when thresholds are breached. FDA 21 CFR Part 11 compliant audit trail for pharmaceutical and food logistics. Dashboard with heatmaps showing cold-chain integrity across routes." }, { "title": "Autonomous Logistics", "desc": "Self-optimizing AI", "detail": "Reinforcement learning engine that continuously optimizes carrier selection, routing, and consolidation. Predictive demand forecasting based on historical patterns + external signals (weather, holidays, strikes). Auto-rerouting around disruptions with cost-impact analysis. Target: 15% cost reduction and 22% faster delivery times." }] },
-      { "label": "Compliance & Green Tech", "milestones": [{ "title": "GDPR & Privacy", "desc": "Ireland data residency", "detail": "Full GDPR Article 28 compliance with dedicated EU data processing in Dublin. Supabase Row-Level Security (RLS) ensuring tenant data isolation. Automated data retention policies with right-to-erasure workflows. Privacy-by-design architecture with field-level encryption for PII." }, { "title": "Carbon ISO 14067", "desc": "Scope-3 tracking", "detail": "ISO 14067-certified carbon footprint calculator for every shipment. Scope-3 emissions tracking across the full logistics chain: first-mile, line-haul, last-mile, warehousing. Carbon offset marketplace integration with verified credits (Gold Standard, Verra). Sustainability dashboard with monthly ESG reporting for enterprise clients." }, { "title": "Customs Autopilot", "desc": "100% paperless", "detail": "AI-powered HS code classification with 98.5% accuracy across 5,000+ product categories. Automated generation of commercial invoices, packing lists, and certificates of origin. Direct integration with customs authorities in EU, US, CN, and JP for e-filing. Denied party screening and dual-use goods detection in real-time." }, { "title": "Green Standards Leader", "desc": "Carbon-neutral certified", "detail": "Carbon-neutral operations certified by Science Based Targets initiative (SBTi). Green carrier scoring algorithm prioritizing EVs, rail, and consolidated shipments. Packaging waste reduction program: AI-driven box-size optimization reduces void fill by 40%. Annual sustainability report with verified Scope 1-3 emissions data." }] }
+      {
+        "label": "Infrastructure & Operations",
+        "milestones": [
+          {
+            "title": "Core Shipping Engine",
+            "desc": "Multi-carrier API · Label generation",
+            "detail": "Unified REST + GraphQL gateway aggregating 40+ carrier APIs (FedEx, DHL, UPS, SF Express, Cainiao). Automated label generation with barcode/QR, customs CN22/CN23, and return labels. Rate-shopping engine compares real-time quotes across all carriers."
+          },
+          {
+            "title": "Edge-Native Scaling",
+            "desc": "Sub-100ms · 300+ global PoPs",
+            "detail": "Cloudflare Workers + Durable Objects at 300+ PoPs worldwide. Guaranteed sub-100ms P95 latency for tracking and rate queries. Auto-scaling from 0 to 50K req/s with zero cold starts. Regional data residency for EU (Dublin), APAC (Tokyo), CN (Shanghai)."
+          },
+          {
+            "title": "WMS Deep Sync",
+            "desc": "Real-time inventory mesh",
+            "detail": "Bi-directional inventory sync with ShipStation, ShipBob, Flexport, and custom WMS via webhooks + polling fallback. Real-time stock level mesh prevents overselling across 10+ sales channels. Pick-pack-ship workflow automation with barcode scan verification."
+          },
+          {
+            "title": "Global Expansion",
+            "desc": "Multi-tenant · White-label",
+            "detail": "Full multi-tenant architecture supporting 500+ concurrent brand accounts. White-label portal with custom domains, branding, and email templates. Localized checkout with 25+ currencies and region-specific carrier preferences. Partner API marketplace for 3PL integrations."
+          }
+        ]
+      },
+      {
+        "label": "Intelligence & Innovation",
+        "milestones": [
+          {
+            "title": "AI Address Parsing",
+            "desc": "Multi-lingual · 99.7% accuracy",
+            "detail": "Transformer-based NER model trained on 50M+ global addresses across 12 languages. Handles unstructured input, abbreviations, and transliteration (Chinese ↔ Pinyin, Japanese ↔ Romaji). 99.7% accuracy with auto-correction suggestions. Reduces failed deliveries by 35%."
+          },
+          {
+            "title": "MCP Protocol V1",
+            "desc": "Conversational logistics",
+            "detail": "Model Context Protocol bridge connecting ChatGPT, Claude, Gemini, and Grok to live logistics data. Natural language queries: 'Where is my shipment?' → real-time tracking + ETA. Tool-calling architecture with 12 registered functions: track, quote, book, cancel, reroute, documents, compliance, analytics, alerts, bulk, returns, customs."
+          },
+          {
+            "title": "IoT Node Network",
+            "desc": "Cold-chain monitoring",
+            "detail": "BLE/LoRa sensor mesh for temperature (-40°C to +80°C), humidity, shock, and light exposure. Real-time alerts via webhook + SMS + email when thresholds are breached. FDA 21 CFR Part 11 compliant audit trail for pharmaceutical and food logistics. Dashboard with heatmaps showing cold-chain integrity across routes."
+          },
+          {
+            "title": "Autonomous Logistics",
+            "desc": "Self-optimizing AI",
+            "detail": "Reinforcement learning engine that continuously optimizes carrier selection, routing, and consolidation. Predictive demand forecasting based on historical patterns + external signals (weather, holidays, strikes). Auto-rerouting around disruptions with cost-impact analysis. Target: 15% cost reduction and 22% faster delivery times."
+          }
+        ]
+      },
+      {
+        "label": "Compliance & Green Tech",
+        "milestones": [
+          {
+            "title": "GDPR & Privacy",
+            "desc": "Ireland data residency",
+            "detail": "Full GDPR Article 28 compliance with dedicated EU data processing in Dublin. Supabase Row-Level Security (RLS) ensuring tenant data isolation. Automated data retention policies with right-to-erasure workflows. Privacy-by-design architecture with field-level encryption for PII."
+          },
+          {
+            "title": "Carbon ISO 14067",
+            "desc": "Scope-3 tracking",
+            "detail": "ISO 14067-certified carbon footprint calculator for every shipment. Scope-3 emissions tracking across the full logistics chain: first-mile, line-haul, last-mile, warehousing. Carbon offset marketplace integration with verified credits (Gold Standard, Verra). Sustainability dashboard with monthly ESG reporting for enterprise clients."
+          },
+          {
+            "title": "Customs Autopilot",
+            "desc": "100% paperless",
+            "detail": "AI-powered HS code classification with 98.5% accuracy across 5,000+ product categories. Automated generation of commercial invoices, packing lists, and certificates of origin. Direct integration with customs authorities in EU, US, CN, and JP for e-filing. Denied party screening and dual-use goods detection in real-time."
+          },
+          {
+            "title": "Green Standards Leader",
+            "desc": "Carbon-neutral certified",
+            "detail": "Carbon-neutral operations certified by Science Based Targets initiative (SBTi). Green carrier scoring algorithm prioritizing EVs, rail, and consolidated shipments. Packaging waste reduction program: AI-driven box-size optimization reduces void fill by 40%. Annual sustainability report with verified Scope 1-3 emissions data."
+          }
+        ]
+      }
     ],
-    "statusLabels": { "done": "Done", "active": "Active", "planned": "Planned", "vision": "Vision" }
+    "statusLabels": {
+      "done": "Done",
+      "active": "Active",
+      "planned": "Planned",
+      "vision": "Vision"
+    }
   },
   "slide9": {
     "badge": "Security, Compliance & IoT",
@@ -228,13 +771,33 @@
     "iotBanner": {
       "title": "Pharma & Cold-Chain IoT Use Case",
       "description": "Temperature-controlled shipments from America & Ireland to China — fully monitored end-to-end.",
-      "pills": ["IoT Sensor Integration", "Real-time Temperature Monitoring", "Automated Breach Recording for Insurance Claims"],
+      "pills": [
+        "IoT Sensor Integration",
+        "Real-time Temperature Monitoring",
+        "Automated Breach Recording for Insurance Claims"
+      ],
       "tag": "Pharma · IoT · Cold-Chain",
       "items": [
-        { "emoji": "📡", "label": "IoT Sensor Integration",     "body": "Real-time sensor data ingestion from cold-chain hardware, GPS trackers, and environmental monitors across the shipment corridor." },
-        { "emoji": "🌡️", "label": "Temperature Monitoring",      "body": "Continuous end-to-end temperature logging with configurable alert thresholds. Breach events are timestamped and signed for regulatory evidence." },
-        { "emoji": "📋", "label": "Insurance & Compliance Logs",  "body": "Automated breach reports generated in HACCP-compliant format, ready for insurance claims and regulatory audits with full chain-of-custody." },
-        { "emoji": "🏥", "label": "Pharma Cold-Chain (IND→CHN)", "body": "Supports GMP/GDP-aligned shipments from America & Ireland to China, with digitally sealed provenance records accepted by Chinese customs portals." }
+        {
+          "emoji": "📡",
+          "label": "IoT Sensor Integration",
+          "body": "Real-time sensor data ingestion from cold-chain hardware, GPS trackers, and environmental monitors across the shipment corridor."
+        },
+        {
+          "emoji": "🌡️",
+          "label": "Temperature Monitoring",
+          "body": "Continuous end-to-end temperature logging with configurable alert thresholds. Breach events are timestamped and signed for regulatory evidence."
+        },
+        {
+          "emoji": "📋",
+          "label": "Insurance & Compliance Logs",
+          "body": "Automated breach reports generated in HACCP-compliant format, ready for insurance claims and regulatory audits with full chain-of-custody."
+        },
+        {
+          "emoji": "🏥",
+          "label": "Pharma Cold-Chain (IND→CHN)",
+          "body": "Supports GMP/GDP-aligned shipments from America & Ireland to China, with digitally sealed provenance records accepted by Chinese customs portals."
+        }
       ]
     },
     "activeStatus": "Active",
@@ -242,15 +805,71 @@
     "radarSectionLabel": "AI-Driven Compliance Radar",
     "secSectionLabel": "Security & Compliance",
     "euDataLabel": "EU DATA SOVEREIGNTY",
-    "certBadges": ["GDPR", "ISO", "SOC2"],
+    "certBadges": [
+      "GDPR",
+      "ISO",
+      "SOC2"
+    ],
     "cards": [
-      { "title": "EU Data Sovereignty", "subtitle": "GDPR", "badgeLabel": "EU COMPLIANT", "description": "Data strictly localized in Dublin (eu-west-1). 100% GDPR & Irish Data Protection Act 2018 compliant.", "details": ["AWS eu-west-1 (Ireland) data residency", "Supabase Auth with JWT + MFA", "Irish Data Protection Act 2018 aligned", "Data Processing Agreements (DPA) ready", "Right to erasure & portability built-in"] },
-      { "title": "Shareholder Protection", "subtitle": "Legal", "badgeLabel": "SECURED", "description": "Institutional-grade Shareholder Agreements. Clear IP protections and liability shielding.", "details": ["Professional shareholder agreements", "IP ownership & licensing clarity", "Liability limitation framework", "Board governance structure defined", "Exit strategy & valuation clauses"] },
-      { "title": "Military-Grade Defense", "subtitle": "Security", "badgeLabel": "ZERO-TRUST", "description": "Zero-Trust Architecture: AES-256 at-rest, TLS 1.3 in-transit. PostgreSQL RLS at kernel level.", "details": ["AES-256 encryption at-rest", "TLS 1.3 in-transit encryption", "PostgreSQL Row-Level Security (RLS)", "Cloudflare WAF & DDoS protection", "Automated audit logging & SIEM"] },
-      { "title": "ESG Automation", "subtitle": "Eco", "badgeLabel": "ISO 14067", "description": "Built-in ISO 14067 carbon accounting. Meet EU environmental standards with zero manual effort.", "details": ["Native ISO 14067 carbon tracking", "Automated EU scope-3 reporting", "Per-shipment carbon footprint calc", "ESG dashboard for stakeholders", "EU environmental regulation aligned"] }
+      {
+        "title": "EU Data Sovereignty",
+        "subtitle": "GDPR",
+        "badgeLabel": "EU COMPLIANT",
+        "description": "Data strictly localized in Dublin (eu-west-1). 100% GDPR & Irish Data Protection Act 2018 compliant.",
+        "details": [
+          "AWS eu-west-1 (Ireland) data residency",
+          "Supabase Auth with JWT + MFA",
+          "Irish Data Protection Act 2018 aligned",
+          "Data Processing Agreements (DPA) ready",
+          "Right to erasure & portability built-in"
+        ]
+      },
+      {
+        "title": "Shareholder Protection",
+        "subtitle": "Legal",
+        "badgeLabel": "SECURED",
+        "description": "Institutional-grade Shareholder Agreements. Clear IP protections and liability shielding.",
+        "details": [
+          "Professional shareholder agreements",
+          "IP ownership & licensing clarity",
+          "Liability limitation framework",
+          "Board governance structure defined",
+          "Exit strategy & valuation clauses"
+        ]
+      },
+      {
+        "title": "Military-Grade Defense",
+        "subtitle": "Security",
+        "badgeLabel": "ZERO-TRUST",
+        "description": "Zero-Trust Architecture: AES-256 at-rest, TLS 1.3 in-transit. PostgreSQL RLS at kernel level.",
+        "details": [
+          "AES-256 encryption at-rest",
+          "TLS 1.3 in-transit encryption",
+          "PostgreSQL Row-Level Security (RLS)",
+          "Cloudflare WAF & DDoS protection",
+          "Automated audit logging & SIEM"
+        ]
+      },
+      {
+        "title": "ESG Automation",
+        "subtitle": "Eco",
+        "badgeLabel": "ISO 14067",
+        "description": "Built-in ISO 14067 carbon accounting. Meet EU environmental standards with zero manual effort.",
+        "details": [
+          "Native ISO 14067 carbon tracking",
+          "Automated EU scope-3 reporting",
+          "Per-shipment carbon footprint calc",
+          "ESG dashboard for stakeholders",
+          "EU environmental regulation aligned"
+        ]
+      }
     ],
     "mobileExpand": "Tap to view security details",
-    "mobileModal": { "title": "Security & Compliance", "subtitle": "4 pillars · Enterprise-grade protection", "trustScoreValue": "100%" }
+    "mobileModal": {
+      "title": "Security & Compliance",
+      "subtitle": "4 pillars · Enterprise-grade protection",
+      "trustScoreValue": "100%"
+    }
   },
   "slide10": {
     "badge": "The Paradigm Shift is Here",
@@ -286,18 +905,57 @@
     "title": "Target Market",
     "subtitle": "Mid-market SMEs shipping perishable & regulated goods across borders.",
     "segments": [
-      { "label": "Food & Beverage", "stat": "€120B EU cross-border", "detail": "Perishable goods requiring temperature-controlled, time-critical logistics.", "growth": "+8.3% YoY" },
-      { "label": "Manufacturing", "stat": "42% still paper-based", "detail": "Multi-supplier inbound logistics and JIT delivery across EU borders.", "growth": "Digital adoption 2× in 2025" },
-      { "label": "Cold-Chain / 3PL", "stat": "12% annual growth", "detail": "Real-time temperature monitoring, deviation alerts, compliance audit trails.", "growth": "€235B market by 2028" },
-      { "label": "E-Commerce Fulfilment", "stat": "3.2M SME shippers", "detail": "Cross-border returns, multi-carrier rate shopping, customs docs.", "growth": "+23% YoY" },
-      { "label": "Customs Clearance", "stat": "€18B compliance", "detail": "Evolving HS codes, sanctions lists, Green Corridor regulations.", "growth": "Complexity ↑ 40% post-Brexit" },
-      { "label": "Pharma & Supplements", "stat": "Strict BRC / ISO", "detail": "GDP-compliant chain-of-custody, serialisation tracking.", "growth": "€28B, +6.1% CAGR" }
+      {
+        "label": "Food & Beverage",
+        "stat": "€120B EU cross-border",
+        "detail": "Perishable goods requiring temperature-controlled, time-critical logistics.",
+        "growth": "+8.3% YoY"
+      },
+      {
+        "label": "Manufacturing",
+        "stat": "42% still paper-based",
+        "detail": "Multi-supplier inbound logistics and JIT delivery across EU borders.",
+        "growth": "Digital adoption 2× in 2025"
+      },
+      {
+        "label": "Cold-Chain / 3PL",
+        "stat": "12% annual growth",
+        "detail": "Real-time temperature monitoring, deviation alerts, compliance audit trails.",
+        "growth": "€235B market by 2028"
+      },
+      {
+        "label": "E-Commerce Fulfilment",
+        "stat": "3.2M SME shippers",
+        "detail": "Cross-border returns, multi-carrier rate shopping, customs docs.",
+        "growth": "+23% YoY"
+      },
+      {
+        "label": "Customs Clearance",
+        "stat": "€18B compliance",
+        "detail": "Evolving HS codes, sanctions lists, Green Corridor regulations.",
+        "growth": "Complexity ↑ 40% post-Brexit"
+      },
+      {
+        "label": "Pharma & Supplements",
+        "stat": "Strict BRC / ISO",
+        "detail": "GDP-compliant chain-of-custody, serialisation tracking.",
+        "growth": "€28B, +6.1% CAGR"
+      }
     ],
     "keyMessage": "3.2 million EU SMEs lack affordable, compliant logistics software.",
     "stats": [
-      { "value": "€340B", "label": "Addressable market" },
-      { "value": "72%", "label": "Manual ops rate" },
-      { "value": "< 5%", "label": "Digitised today" }
+      {
+        "value": "€340B",
+        "label": "Addressable market"
+      },
+      {
+        "value": "72%",
+        "label": "Manual ops rate"
+      },
+      {
+        "value": "< 5%",
+        "label": "Digitised today"
+      }
     ]
   },
   "slide12": {
@@ -305,9 +963,42 @@
     "title": "Pricing Strategy",
     "subtitle": "Three simple tiers — no hidden fees.",
     "tiers": [
-      { "name": "Licence", "price": "€999", "period": "one-off", "tagline": "Full platform access", "features": ["📦 Unlimited shipments", "📋 BRC & ISO templates", "🔌 API access", "🏠 Self-hosted option"] },
-      { "name": "Support", "price": "€19.99", "period": "/month", "tagline": "Priority help & updates", "features": ["🛟 24/7 ticket support", "🚀 Monthly feature updates", "📞 Onboarding call", "🔧 Custom integrations"] },
-      { "name": "Credits", "price": "Pay-as-you-go", "period": "", "tagline": "AI & compliance on demand", "features": ["🤖 AI document scan", "🛃 Customs pre-clearance", "🗺️ Route optimisation", "💰 Bulk discounts"] }
+      {
+        "name": "Licence",
+        "price": "€999",
+        "period": "one-off",
+        "tagline": "Full platform access",
+        "features": [
+          "📦 Unlimited shipments",
+          "📋 BRC & ISO templates",
+          "🔌 API access",
+          "🏠 Self-hosted option"
+        ]
+      },
+      {
+        "name": "Support",
+        "price": "€19.99",
+        "period": "/month",
+        "tagline": "Priority help & updates",
+        "features": [
+          "🛟 24/7 ticket support",
+          "🚀 Monthly feature updates",
+          "📞 Onboarding call",
+          "🔧 Custom integrations"
+        ]
+      },
+      {
+        "name": "Credits",
+        "price": "Pay-as-you-go",
+        "period": "",
+        "tagline": "AI & compliance on demand",
+        "features": [
+          "🤖 AI document scan",
+          "🛃 Customs pre-clearance",
+          "🗺️ Route optimisation",
+          "💰 Bulk discounts"
+        ]
+      }
     ]
   },
   "slide13": {
@@ -316,11 +1007,26 @@
     "subtitle": "Market Intelligence Hunter — automatically find users discussing pain points.",
     "poweredBy": "Powered by MOTA TECHLINK AI: ELMS seamlessly leverages MOTA TECHLINK's enterprise-grade Marketing Intelligence engine to provide merchants with predictive sales and routing analytics.",
     "steps": [
-      { "label": "Product Intake", "detail": "Client provides product name, description, URL and target languages." },
-      { "label": "AI Analysis", "detail": "LLM infers target user pain points, generates multi-platform scan keywords." },
-      { "label": "Multi-Platform Scan", "detail": "Continuously scan Reddit, YouTube, Amazon, Quora, Twitter/X, G2." },
-      { "label": "AI Reply Generation", "detail": "Valuable replies with embedded tracking links. Optional human review." },
-      { "label": "Track & Bill", "detail": "Track clicks and conversions, generate usage-based billing." }
+      {
+        "label": "Product Intake",
+        "detail": "Client provides product name, description, URL and target languages."
+      },
+      {
+        "label": "AI Analysis",
+        "detail": "LLM infers target user pain points, generates multi-platform scan keywords."
+      },
+      {
+        "label": "Multi-Platform Scan",
+        "detail": "Continuously scan Reddit, YouTube, Amazon, Quora, Twitter/X, G2."
+      },
+      {
+        "label": "AI Reply Generation",
+        "detail": "Valuable replies with embedded tracking links. Optional human review."
+      },
+      {
+        "label": "Track & Bill",
+        "detail": "Track clicks and conversions, generate usage-based billing."
+      }
     ],
     "advantages": [
       "🎯 From passive ads to active outreach",
@@ -336,10 +1042,30 @@
     "title": "Growth Plan",
     "subtitle": "A self-reinforcing flywheel — from seed launch to network effects.",
     "phases": [
-      { "label": "Beta Test & Seed Launch", "timeline": "Q2–Q3 2026", "detail": "Beta test and build out the application with 1–2 anchor clients. Onboard 10 pilot merchants across EU food-logistics corridors.", "metric": "10 merchants, €10K MRR" },
-      { "label": "Affiliate Program & Viral Growth", "timeline": "Q4 2026", "detail": "Launch referral rewards program — merchants earn system credits for verified sign-ups.", "metric": "50 merchants, €30K MRR (3× MRR)" },
-      { "label": "Market Expansion", "timeline": "Q1–Q2 2027", "detail": "Expand to Asia-Pacific (APAC) corridors including Japan, Korea, and Australia. Launch full multi-language platform support.", "metric": "200 merchants across 5 global corridors" },
-      { "label": "Network Effects", "timeline": "H2 2027+", "detail": "Achieve critical mass where every new merchant adds data density, improving AI routing efficiency for the entire network.", "metric": "Critical mass · Self-optimising AI" }
+      {
+        "label": "Beta Test & Seed Launch",
+        "timeline": "Q2–Q3 2026",
+        "detail": "Beta test and build out the application with 1–2 anchor clients. Onboard 10 pilot merchants across EU food-logistics corridors.",
+        "metric": "10 merchants, €10K MRR"
+      },
+      {
+        "label": "Affiliate Program & Viral Growth",
+        "timeline": "Q4 2026",
+        "detail": "Launch referral rewards program — merchants earn system credits for verified sign-ups.",
+        "metric": "50 merchants, €30K MRR (3× MRR)"
+      },
+      {
+        "label": "Market Expansion",
+        "timeline": "Q1–Q2 2027",
+        "detail": "Expand to Asia-Pacific (APAC) corridors including Japan, Korea, and Australia. Launch full multi-language platform support.",
+        "metric": "200 merchants across 5 global corridors"
+      },
+      {
+        "label": "Network Effects",
+        "timeline": "H2 2027+",
+        "detail": "Achieve critical mass where every new merchant adds data density, improving AI routing efficiency for the entire network.",
+        "metric": "Critical mass · Self-optimising AI"
+      }
     ],
     "earlyBird": [
       "6 months free Support tier for founding merchants",
@@ -354,31 +1080,71 @@
     "title": "AI-Driven Compliance",
     "subtitle": "Automate audits, eliminate human error, and achieve continuous certification across global food-safety standards.",
     "stats": [
-      { "value": "92%", "label": "Audit Time Reduced", "icon": "TrendingDown" },
-      { "value": "100%", "label": "Automation Coverage", "icon": "Zap" },
-      { "value": "40+", "label": "Global Standards", "icon": "Globe" },
-      { "value": "5×", "label": "Risk Detection Speed", "icon": "BarChart3" }
+      {
+        "value": "92%",
+        "label": "Audit Time Reduced",
+        "icon": "TrendingDown"
+      },
+      {
+        "value": "100%",
+        "label": "Automation Coverage",
+        "icon": "Zap"
+      },
+      {
+        "value": "40+",
+        "label": "Global Standards",
+        "icon": "Globe"
+      },
+      {
+        "value": "5×",
+        "label": "Risk Detection Speed",
+        "icon": "BarChart3"
+      }
     ],
     "features": [
       {
         "title": "BRC / BRCGS Auto-Audit",
         "description": "Continuously scan operations against BRC Global Standards for food safety, packaging, and storage.",
-        "items": ["🗺️ Real-time clause mapping", "⚙️ Auto-generated corrective actions", "🎯 Grade prediction before audit", "📸 Photo evidence auto-attach", "📅 Audit scheduling & reminders"]
+        "items": [
+          "🗺️ Real-time clause mapping",
+          "⚙️ Auto-generated corrective actions",
+          "🎯 Grade prediction before audit",
+          "📸 Photo evidence auto-attach",
+          "📅 Audit scheduling & reminders"
+        ]
       },
       {
         "title": "HACCP Digital Twin",
         "description": "AI maintains a live digital twin of every Critical Control Point in your supply chain.",
-        "items": ["🌡️ Sensor-fed CCP monitoring", "⚠️ Predictive deviation alerts", "📋 Instant compliance reports", "🔁 Automated corrective workflows", "📊 Historical trend analysis"]
+        "items": [
+          "🌡️ Sensor-fed CCP monitoring",
+          "⚠️ Predictive deviation alerts",
+          "📋 Instant compliance reports",
+          "🔁 Automated corrective workflows",
+          "📊 Historical trend analysis"
+        ]
       },
       {
         "title": "ISO / IFS Auto-Mapping",
         "description": "Map your processes to ISO 22000, IFS Food, and FSSC 22000 simultaneously — zero duplicate work.",
-        "items": ["🔀 Parallel standard alignment", "🔍 Gap analysis dashboard", "🗂️ Cross-standard evidence sharing", "✅ Automated control mapping", "📈 Readiness score tracker"]
+        "items": [
+          "🔀 Parallel standard alignment",
+          "🔍 Gap analysis dashboard",
+          "🗂️ Cross-standard evidence sharing",
+          "✅ Automated control mapping",
+          "📈 Readiness score tracker"
+        ]
       },
       {
         "title": "Regulatory Radar",
         "description": "Track regulatory changes across 40+ jurisdictions in real-time, auto-flag impact on your operations.",
-        "items": ["🌍 EU / UK / APAC scanning", "🎯 Auto-impact assessment", "📣 Stakeholder notification", "📰 Regulatory change digest", "⏱️ 48-hour change-to-alert SLA"]
+        "items": [
+          "🌍 EU / UK / APAC scanning",
+          "🎯 Auto-impact assessment",
+          "📣 Stakeholder notification",
+          "📰 Regulatory change digest",
+          "⏱️ 48-hour change-to-alert SLA"
+        ]
       }
     ],
     "bottomNote": "Trusted by certified food-logistics operators across the EU."
@@ -388,43 +1154,125 @@
     "title": "Live Compliance Intelligence",
     "subtitle": "Real-time visibility into every standard, every facility, every risk.",
     "topStats": [
-      { "label": "Active SMEs", "value": "1,247", "change": "+12.3% MoM" },
-      { "label": "Compliance Score", "value": "94.2%", "change": "+2.1% vs Q3" },
-      { "label": "Open Issues", "value": "23", "change": "-41% MoM" },
-      { "label": "Certifications", "value": "3,891", "change": "+287 this Q" }
+      {
+        "label": "Active SMEs",
+        "value": "1,247",
+        "change": "+12.3% MoM"
+      },
+      {
+        "label": "Compliance Score",
+        "value": "94.2%",
+        "change": "+2.1% vs Q3"
+      },
+      {
+        "label": "Open Issues",
+        "value": "23",
+        "change": "-41% MoM"
+      },
+      {
+        "label": "Certifications",
+        "value": "3,891",
+        "change": "+287 this Q"
+      }
     ],
     "charts": {
       "barChart": {
         "title": "SME Quantity by Region",
         "bars": [
-          { "label": "DACH", "value":107 , "color": "#06b6d4" },
-          { "label": "BeNeLux", "value": 215, "color": "#10b981" },
-          { "label": "Nordics", "value": 90, "color": "#8b5cf6" },
-          { "label": "UK/IE", "value": 195, "color": "#f59e0b" },
-          { "label": "Iberia", "value": 142, "color": "#ef4444" },
-          { "label": "CEE", "value": 320, "color": "#ec4899" },
-          { "label": "APAC", "value": 178, "color": "#6366f1" }
+          {
+            "label": "DACH",
+            "value": 107,
+            "color": "#06b6d4"
+          },
+          {
+            "label": "BeNeLux",
+            "value": 215,
+            "color": "#10b981"
+          },
+          {
+            "label": "Nordics",
+            "value": 90,
+            "color": "#8b5cf6"
+          },
+          {
+            "label": "UK/IE",
+            "value": 195,
+            "color": "#f59e0b"
+          },
+          {
+            "label": "Iberia",
+            "value": 142,
+            "color": "#ef4444"
+          },
+          {
+            "label": "CEE",
+            "value": 320,
+            "color": "#ec4899"
+          },
+          {
+            "label": "APAC",
+            "value": 178,
+            "color": "#6366f1"
+          }
         ]
       },
       "pieChart": {
         "title": "BRC Certification Types",
         "segments": [
-          { "label": "BRC Food Safety", "value": 38, "color": "#06b6d4" },
-          { "label": "BRC Packaging", "value": 22, "color": "#10b981" },
-          { "label": "BRC Storage", "value": 18, "color": "#8b5cf6" },
-          { "label": "IFS Food", "value": 14, "color": "#f59e0b" },
-          { "label": "FSSC 22000", "value": 8, "color": "#ef4444" }
+          {
+            "label": "BRC Food Safety",
+            "value": 38,
+            "color": "#06b6d4"
+          },
+          {
+            "label": "BRC Packaging",
+            "value": 22,
+            "color": "#10b981"
+          },
+          {
+            "label": "BRC Storage",
+            "value": 18,
+            "color": "#8b5cf6"
+          },
+          {
+            "label": "IFS Food",
+            "value": 14,
+            "color": "#f59e0b"
+          },
+          {
+            "label": "FSSC 22000",
+            "value": 8,
+            "color": "#ef4444"
+          }
         ]
       },
       "trendChart": {
         "title": "Compliance Growth Trend",
         "points": [
-          { "label": "Q1'25", "value": 71 },
-          { "label": "Q2'25", "value": 78 },
-          { "label": "Q3'25", "value": 61 },
-          { "label": "Q4'25", "value": 94 },
-          { "label": "Q1'26", "value": 84 },
-          { "label": "Q2'26", "value": 86 }
+          {
+            "label": "Q1'25",
+            "value": 71
+          },
+          {
+            "label": "Q2'25",
+            "value": 78
+          },
+          {
+            "label": "Q3'25",
+            "value": 61
+          },
+          {
+            "label": "Q4'25",
+            "value": 94
+          },
+          {
+            "label": "Q1'26",
+            "value": 84
+          },
+          {
+            "label": "Q2'26",
+            "value": 86
+          }
         ]
       },
       "gauge": {
@@ -435,40 +1283,117 @@
       "stackedBar": {
         "title": "Standards Coverage",
         "items": [
-          { "label": "BRC", "value": 340, "color": "#06b6d4" },
-          { "label": "HACCP", "value": 285, "color": "#10b981" },
-          { "label": "ISO 22000", "value": 210, "color": "#8b5cf6" },
-          { "label": "IFS", "value": 165, "color": "#f59e0b" },
-          { "label": "FSSC", "value": 120, "color": "#ec4899" }
+          {
+            "label": "BRC",
+            "value": 340,
+            "color": "#06b6d4"
+          },
+          {
+            "label": "HACCP",
+            "value": 285,
+            "color": "#10b981"
+          },
+          {
+            "label": "ISO 22000",
+            "value": 210,
+            "color": "#8b5cf6"
+          },
+          {
+            "label": "IFS",
+            "value": 165,
+            "color": "#f59e0b"
+          },
+          {
+            "label": "FSSC",
+            "value": 120,
+            "color": "#ec4899"
+          }
         ]
       },
       "riskMatrix": {
         "title": "Risk Heat Map",
         "cells": [
-          { "level": "L", "color": "rgba(16,185,129,0.3)" },
-          { "level": "L", "color": "rgba(16,185,129,0.25)" },
-          { "level": "M", "color": "rgba(245,158,11,0.25)" },
-          { "level": "H", "color": "rgba(239,68,68,0.3)" },
-          { "level": "L", "color": "rgba(16,185,129,0.2)" },
-          { "level": "M", "color": "rgba(245,158,11,0.3)" },
-          { "level": "M", "color": "rgba(245,158,11,0.2)" },
-          { "level": "H", "color": "rgba(239,68,68,0.25)" },
-          { "level": "M", "color": "rgba(245,158,11,0.2)" },
-          { "level": "H", "color": "rgba(239,68,68,0.2)" },
-          { "level": "H", "color": "rgba(239,68,68,0.35)" },
-          { "level": "C", "color": "rgba(239,68,68,0.5)" },
-          { "level": "L", "color": "rgba(16,185,129,0.3)" },
-          { "level": "M", "color": "rgba(245,158,11,0.25)" },
-          { "level": "H", "color": "rgba(239,68,68,0.25)" },
-          { "level": "C", "color": "rgba(239,68,68,0.45)" }
+          {
+            "level": "L",
+            "color": "rgba(16,185,129,0.3)"
+          },
+          {
+            "level": "L",
+            "color": "rgba(16,185,129,0.25)"
+          },
+          {
+            "level": "M",
+            "color": "rgba(245,158,11,0.25)"
+          },
+          {
+            "level": "H",
+            "color": "rgba(239,68,68,0.3)"
+          },
+          {
+            "level": "L",
+            "color": "rgba(16,185,129,0.2)"
+          },
+          {
+            "level": "M",
+            "color": "rgba(245,158,11,0.3)"
+          },
+          {
+            "level": "M",
+            "color": "rgba(245,158,11,0.2)"
+          },
+          {
+            "level": "H",
+            "color": "rgba(239,68,68,0.25)"
+          },
+          {
+            "level": "M",
+            "color": "rgba(245,158,11,0.2)"
+          },
+          {
+            "level": "H",
+            "color": "rgba(239,68,68,0.2)"
+          },
+          {
+            "level": "H",
+            "color": "rgba(239,68,68,0.35)"
+          },
+          {
+            "level": "C",
+            "color": "rgba(239,68,68,0.5)"
+          },
+          {
+            "level": "L",
+            "color": "rgba(16,185,129,0.3)"
+          },
+          {
+            "level": "M",
+            "color": "rgba(245,158,11,0.25)"
+          },
+          {
+            "level": "H",
+            "color": "rgba(239,68,68,0.25)"
+          },
+          {
+            "level": "C",
+            "color": "rgba(239,68,68,0.45)"
+          }
         ]
       }
     },
     "aiButton": "Ask AI Compliance",
     "chatMessages": [
-      { "role": "ai", "text": "Hello! I'm your AI Compliance Assistant. I can help you navigate BRC, HACCP, ISO 22000 and other food-safety standards. What would you like to know?" },
-      { "role": "user", "text": "What's our current BRC compliance status?" },
-      { "role": "ai", "text": "Your BRC Food Safety compliance is at 96.1% — Grade A projected. There are 3 minor non-conformances in cold-chain documentation that I recommend addressing before the next audit window on June 15." }
+      {
+        "role": "ai",
+        "text": "Hello! I'm your AI Compliance Assistant. I can help you navigate BRC, HACCP, ISO 22000 and other food-safety standards. What would you like to know?"
+      },
+      {
+        "role": "user",
+        "text": "What's our current BRC compliance status?"
+      },
+      {
+        "role": "ai",
+        "text": "Your BRC Food Safety compliance is at 96.1% — Grade A projected. There are 3 minor non-conformances in cold-chain documentation that I recommend addressing before the next audit window on June 15."
+      }
     ]
   },
   "slide17": {
@@ -476,61 +1401,173 @@
     "title": "Carbon Credits",
     "titleHighlight": "Executive Brief",
     "subtitle": "Tradable instruments representing verified emission reductions — the bridge between corporate climate ambition and measurable impact.",
-    "tabLabels": ["Executive Brief", "How It Works", "Why It Matters", "Governance"],
+    "tabLabels": [
+      "Executive Brief",
+      "How It Works",
+      "Why It Matters",
+      "Governance"
+    ],
     "tabHint": "👆 Click the tabs above to explore all sections",
     "tabs": [
       {
         "definitionTitle": "What Is a Carbon Credit?",
         "definition": "A carbon credit is a tradable instrument representing one metric tonne of CO₂e (carbon dioxide equivalent) that is avoided (not emitted) or removed from the atmosphere and verified under a recognised standard. Organisations buy credits to address residual emissions after internal reduction efforts, or to meet obligations in regulated schemes.",
         "stats": [
-          { "value": "1t", "label": "CO₂e per Credit" },
-          { "value": "$50B+", "label": "Global Market" },
-          { "value": "170+", "label": "Countries" }
+          {
+            "value": "1t",
+            "label": "CO₂e per Credit"
+          },
+          {
+            "value": "$50B+",
+            "label": "Global Market"
+          },
+          {
+            "value": "170+",
+            "label": "Countries"
+          }
         ],
         "donutTitle": "Market Composition",
         "donutSegments": [
-          { "label": "Compliance Market", "value": 83, "color": "#06b6d4" },
-          { "label": "Voluntary Market", "value": 17, "color": "#10b981" }
+          {
+            "label": "Compliance Market",
+            "value": 83,
+            "color": "#06b6d4"
+          },
+          {
+            "label": "Voluntary Market",
+            "value": 17,
+            "color": "#10b981"
+          }
         ]
       },
       {
         "concepts": [
-          { "icon": "scale", "title": "Standardised Unit", "body": "1 credit = 1 metric tonne of CO₂e. This standardisation allows different greenhouse gases (methane, nitrous oxide, etc.) to be compared on a common baseline." },
-          { "icon": "globe", "title": "Two Market Types", "body": "Compliance markets are regulated and obligation-driven (e.g., EU ETS). Voluntary markets are self-initiated to support net-zero claims and stakeholder expectations." },
-          { "icon": "tree", "title": "Avoidance vs Removal", "body": "Avoidance credits prevent emissions from occurring. Removal credits take CO₂ from the atmosphere. Removals are increasingly preferred for long-term net-zero strategies." }
+          {
+            "icon": "scale",
+            "title": "Standardised Unit",
+            "body": "1 credit = 1 metric tonne of CO₂e. This standardisation allows different greenhouse gases (methane, nitrous oxide, etc.) to be compared on a common baseline."
+          },
+          {
+            "icon": "globe",
+            "title": "Two Market Types",
+            "body": "Compliance markets are regulated and obligation-driven (e.g., EU ETS). Voluntary markets are self-initiated to support net-zero claims and stakeholder expectations."
+          },
+          {
+            "icon": "tree",
+            "title": "Avoidance vs Removal",
+            "body": "Avoidance credits prevent emissions from occurring. Removal credits take CO₂ from the atmosphere. Removals are increasingly preferred for long-term net-zero strategies."
+          }
         ],
         "lifecycleTitle": "Credit Lifecycle",
         "lifecycleSteps": [
-          { "label": "Validate", "detail": "A project's methodology and baseline are validated by an accredited third-party against a recognised standard (e.g., Verra VCS, Gold Standard)." },
-          { "label": "Verify", "detail": "Emissions impacts are independently verified through monitoring, reporting, and verification (MRV) to confirm real, measurable reductions or removals." },
-          { "label": "Issue", "detail": "Verified credits are issued by a registry (Verra, Gold Standard, ACR) with unique serial numbers ensuring full traceability." },
-          { "label": "Retire", "detail": "Credits are permanently retired in the registry upon use, preventing double-counting and ensuring each tonne is claimed only once." }
+          {
+            "label": "Validate",
+            "detail": "A project's methodology and baseline are validated by an accredited third-party against a recognised standard (e.g., Verra VCS, Gold Standard)."
+          },
+          {
+            "label": "Verify",
+            "detail": "Emissions impacts are independently verified through monitoring, reporting, and verification (MRV) to confirm real, measurable reductions or removals."
+          },
+          {
+            "label": "Issue",
+            "detail": "Verified credits are issued by a registry (Verra, Gold Standard, ACR) with unique serial numbers ensuring full traceability."
+          },
+          {
+            "label": "Retire",
+            "detail": "Credits are permanently retired in the registry upon use, preventing double-counting and ensuring each tonne is claimed only once."
+          }
         ]
       },
       {
         "reasons": [
-          { "title": "Strategy & License to Operate", "body": "Credits support credible transition plans by addressing hard-to-abate residual emissions while core decarbonisation investments scale up over time." },
-          { "title": "Financial Planning", "body": "In regulated markets, allowances/credits represent a real cost of carbon; in voluntary markets, they are a budget line that should be governed like any other external spend." },
-          { "title": "Risk Management", "body": "Poor-quality credits create reputational, legal, and audit risk — 'greenwashing' allegations can undermine ESG disclosures and destroy stakeholder trust." },
-          { "title": "Capital Mobilisation", "body": "High-integrity credit demand unlocks financing for projects (nature, energy, engineered removals) that may not proceed without carbon revenue." },
-          { "title": "Funding Gap Bridge", "body": "Revenue from credit sales often provides the necessary capital to make clean energy or conservation projects financially viable and bankable." },
-          { "title": "Corporate Targets", "body": "Companies like Microsoft and Tesla use carbon credits to address residual emissions as they work toward net-zero goals and SBTi-validated targets." }
+          {
+            "title": "Strategy & License to Operate",
+            "body": "Credits support credible transition plans by addressing hard-to-abate residual emissions while core decarbonisation investments scale up over time."
+          },
+          {
+            "title": "Financial Planning",
+            "body": "In regulated markets, allowances/credits represent a real cost of carbon; in voluntary markets, they are a budget line that should be governed like any other external spend."
+          },
+          {
+            "title": "Risk Management",
+            "body": "Poor-quality credits create reputational, legal, and audit risk — 'greenwashing' allegations can undermine ESG disclosures and destroy stakeholder trust."
+          },
+          {
+            "title": "Capital Mobilisation",
+            "body": "High-integrity credit demand unlocks financing for projects (nature, energy, engineered removals) that may not proceed without carbon revenue."
+          },
+          {
+            "title": "Funding Gap Bridge",
+            "body": "Revenue from credit sales often provides the necessary capital to make clean energy or conservation projects financially viable and bankable."
+          },
+          {
+            "title": "Corporate Targets",
+            "body": "Companies like Microsoft and Tesla use carbon credits to address residual emissions as they work toward net-zero goals and SBTi-validated targets."
+          }
         ]
       },
       {
         "progressLabel": "Due Diligence Checklist",
         "allPassedLabel": "All governance checks passed!",
         "checklist": [
-          { "title": "Additionality", "body": "Would the project happen without carbon revenue? The emission reduction must be beyond business-as-usual." },
-          { "title": "MRV Quality", "body": "Clear methodology, independent verification, transparent data — the backbone of credit integrity and auditability." },
-          { "title": "Permanence", "body": "For removals, how long does the carbon stay out of the atmosphere? Buffer pools and insurance mechanisms must exist." },
-          { "title": "No Leakage", "body": "Does the activity shift emissions elsewhere? For example, avoided deforestation must not simply displace logging to a nearby region." },
-          { "title": "No Double Counting", "body": "Confirm registry controls and claims alignment so the same tonne isn't claimed by multiple parties or under different schemes." },
-          { "title": "Retirement Evidence", "body": "Ensure credits are retired in the registry and documented for audit, disclosures, and regulatory submissions." }
+          {
+            "title": "Additionality",
+            "body": "Would the project happen without carbon revenue? The emission reduction must be beyond business-as-usual."
+          },
+          {
+            "title": "MRV Quality",
+            "body": "Clear methodology, independent verification, transparent data — the backbone of credit integrity and auditability."
+          },
+          {
+            "title": "Permanence",
+            "body": "For removals, how long does the carbon stay out of the atmosphere? Buffer pools and insurance mechanisms must exist."
+          },
+          {
+            "title": "No Leakage",
+            "body": "Does the activity shift emissions elsewhere? For example, avoided deforestation must not simply displace logging to a nearby region."
+          },
+          {
+            "title": "No Double Counting",
+            "body": "Confirm registry controls and claims alignment so the same tonne isn't claimed by multiple parties or under different schemes."
+          },
+          {
+            "title": "Retirement Evidence",
+            "body": "Ensure credits are retired in the registry and documented for audit, disclosures, and regulatory submissions."
+          }
         ]
       }
     ],
     "bottomNote": "Aligned with ICVCM Core Carbon Principles · Verra VCS · Gold Standard · SBTi guidelines"
+  },
+  "slideShareholders": {
+    "title": "Our Team",
+    "subtitle": "Decades of combined expertise in logistics, technology, finance and operations",
+    "members": [
+      {
+        "name": "Turlough Sheehan",
+        "role": "CEO",
+        "bio": "40+ years pioneering global logistics and customs compliance, architect of DDP shipping and Section 321 strategies that define cross-border trade today.",
+        "photo": "/images/team/Turlough.jpg"
+      },
+      {
+        "name": "Harling Sun",
+        "role": "CTO",
+        "bio": "30-year veteran systems architect and AI-native founder; built eBay China's API infrastructure and now drives 10-100x productivity through agentic AI frameworks.",
+        "photo": "/images/team/Harling.jpg"
+      },
+      {
+        "name": "Paul Brennan",
+        "role": "COO",
+        "bio": "45+ years across McDonald's Europe, Smurfit Kappa and global blue chips; chartered logistician and food technologist who led McDonald's European supply chain for a decade.",
+        "photo": "/images/team/Paul.jpg"
+      },
+      {
+        "name": "Siobhain McHugh",
+        "role": "CFO",
+        "bio": "CIMA-qualified finance leader with a cross-sector career spanning London law firms, Matheson Dublin, and founder of McHugh & Associates.",
+        "photo": "/images/team/Siobhain.jpg"
+      }
+    ]
   },
   "slideTitles": [
     "ELMS",
@@ -548,6 +1585,7 @@
     "Compliance & Security",
     "Compliance Dashboard",
     "Carbon Credits",
+    "Our Team",
     "Call to Action"
   ]
 }
