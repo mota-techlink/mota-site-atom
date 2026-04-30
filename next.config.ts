@@ -7,7 +7,7 @@ const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
 const nextConfig: NextConfig = {
   // 1. ✅ 正确的配置位置：顶层配置
   // 允许通过 IP 访问开发服务器
-  allowedDevOrigins: ["localhost:3000", "192.168.50.188:3000"],
+  allowedDevOrigins: ["localhost:3000", "192.168.50.188:3000", "192.168.50.188", "192.168.50.*"],
 
   // 2. 依然保留 Server Actions 的允许源 (双保险)
   // 因为表单提交 (Server Actions) 有独立的安全检查
