@@ -412,7 +412,12 @@ export function ShareholdersSection() {
   useEffect(() => {
     if (sectionHovered || autoIndex === null) return;
     const timer = setTimeout(() => {
-      setAutoIndex((prev) => (prev === null ? 0 : (prev + 1) % memberCount));
+      setAutoIndex((prev) => {
+        let next = Math.floor(Math.random() * memberCount);
+        // avoid repeating the same card
+        if (memberCount > 1 && next === prev) next = (next + 1) % memberCount;
+        return next;
+      });
     }, 500);
     return () => clearTimeout(timer);
   }, [autoIndex, sectionHovered, memberCount]);
