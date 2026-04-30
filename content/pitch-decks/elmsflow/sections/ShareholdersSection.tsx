@@ -8,37 +8,33 @@ import { useContent } from "../hooks";
 import { SECTION } from "../constants";
 
 // Logos/badges per shareholder (index-aligned with locale members array)
+type LogoItem = { src: string; alt: string; bg?: string };
 type MemberLogos = {
-  imgLogos?: { src: string; alt: string }[];
+  logos?: LogoItem[];
   badges?: string[];
 };
 const MEMBER_LOGOS: MemberLogos[] = [
   // 0: Turlough Sheehan (CEO)
-  { badges: ["🚚 40+ Yrs Logistics", "🌐 DDP Pioneer", "📋 Section 321"] },
+  { badges: ["🚢 DDP Pioneer", "📋 Section 321", "⏳ 40+ Yrs"] },
   // 1: Harling Sun (CTO)
   {
-    imgLogos: [
-      { src: "https://logo.clearbit.com/ebay.com", alt: "eBay" },
-      { src: "https://logo.clearbit.com/ibm.com", alt: "IBM" },
-      { src: "https://logo.clearbit.com/konami.com", alt: "KONAMI" },
+    logos: [
+      { src: "/images/company-logos/ebay.svg", alt: "eBay", bg: "#E53238" },
+      { src: "/images/company-logos/ibm.svg", alt: "IBM", bg: "#1F70C1" },
+      { src: "/images/company-logos/konami.svg", alt: "KONAMI", bg: "#B60014" },
     ],
   },
   // 2: Paul Brennan (COO)
   {
-    imgLogos: [
-      { src: "https://logo.clearbit.com/mcdonalds.com", alt: "McDonald's" },
-      { src: "https://logo.clearbit.com/apple.com", alt: "Apple" },
-      { src: "https://logo.clearbit.com/microsoft.com", alt: "Microsoft" },
-      { src: "https://logo.clearbit.com/smurfitkappa.com", alt: "Smurfit Kappa" },
+    logos: [
+      { src: "/images/company-logos/mcdonalds.svg", alt: "McDonald's", bg: "#FBC817" },
+      { src: "/images/company-logos/apple.svg", alt: "Apple", bg: "#555555" },
+      { src: "/images/company-logos/microsoft.svg", alt: "Microsoft", bg: "#737373" },
     ],
+    badges: ["📦 Smurfit Kappa"],
   },
   // 3: Siobhain McHugh (CFO)
-  {
-    imgLogos: [
-      { src: "https://logo.clearbit.com/matheson.com", alt: "Matheson" },
-    ],
-    badges: ["CIMA", "McHugh & Associates"],
-  },
+  { badges: ["⚖️ Matheson", "📊 CIMA", "🏢 McHugh & Assoc."] },
 ];
 
 // Deterministic pseudo-random so SSR & client match
@@ -206,27 +202,30 @@ export function ShareholdersSection() {
 
               {/* Career logos / badges */}
               {(() => {
-                const logos = MEMBER_LOGOS[i];
-                if (!logos || (!logos.imgLogos?.length && !logos.badges?.length)) return null;
+                const entry = MEMBER_LOGOS[i];
+                if (!entry || (!entry.logos?.length && !entry.badges?.length)) return null;
                 return (
-                  <div className="mt-3 pt-3 border-t border-white/10 w-full flex items-center gap-2.5 flex-wrap justify-center">
-                    {logos.imgLogos?.map((l) => (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        key={l.src}
-                        src={l.src}
-                        alt={l.alt}
+                  <div className="mt-3 pt-3 border-t border-white/10 w-full flex items-center gap-2 flex-wrap justify-center">
+                    {entry.logos?.map((l) => (
+                      <div
+                        key={l.alt}
                         title={l.alt}
-                        className="h-5 w-auto max-w-[60px] object-contain opacity-50 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300 rounded"
-                        onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).style.display = "none";
-                        }}
-                      />
+                        className="relative h-7 w-7 rounded-md flex items-center justify-center overflow-hidden opacity-70 hover:opacity-100 transition-opacity duration-200"
+                        style={{ backgroundColor: l.bg + "22", border: `1px solid ${l.bg}44` }}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={l.src}
+                          alt={l.alt}
+                          className="h-4 w-4 object-contain"
+                          style={{ filter: `drop-shadow(0 0 2px ${l.bg}88)` }}
+                        />
+                      </div>
                     ))}
-                    {logos.badges?.map((b) => (
+                    {entry.badges?.map((b) => (
                       <span
                         key={b}
-                        className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/10 border border-white/10 text-slate-500 hover:text-slate-300 transition-colors"
+                        className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/8 border border-white/10 text-slate-400 hover:text-slate-200 transition-colors"
                       >
                         {b}
                       </span>
