@@ -418,11 +418,8 @@ export function ShareholdersSection() {
         }}
       />
 
-      {/* Floating particles — pause on section hover */}
-      <div
-        className="absolute inset-0 pointer-events-none overflow-hidden"
-        style={{ animationPlayState: sectionHovered ? "paused" : "running" }}
-      >
+      {/* Floating particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {PARTICLES.map((p, i) => (
           <motion.div
             key={i}
@@ -433,14 +430,15 @@ export function ShareholdersSection() {
               width: `${p.size}px`,
               height: `${p.size}px`,
             }}
-            animate={sectionHovered ? "paused" : "floating"}
-            variants={{
-              floating: {
-                y: [0, -30, 0],
-                opacity: [0, 0.8, 0],
-                transition: { duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" },
-              },
-              paused: { y: 0, opacity: 0, transition: { duration: 0.5 } },
+            animate={{
+              y: [0, -30, 0],
+              opacity: sectionHovered ? 0 : [0, 0.8, 0],
+            }}
+            transition={{
+              duration: p.duration,
+              delay: p.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
             }}
           />
         ))}
@@ -629,13 +627,13 @@ export function ShareholdersSection() {
 
               {/* Bio hover tooltip — from Career Highlights divider down */}
               <div
-                className="hidden lg:flex flex-col absolute left-0 right-0 bottom-0 z-20 px-5 pb-5 pt-4 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150 rounded-b-2xl border-t border-black/8 dark:border-white/8 bg-white/95 dark:bg-[#0d1117] backdrop-blur-sm"
-                style={{ top: 'var(--tooltip-top, 62%)' }}
+                className="hidden lg:flex flex-col absolute left-0 right-0 bottom-0 z-20 px-5 pb-5 pt-4 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150 rounded-b-2xl border-t border-black/8 dark:border-white/8 bg-white/95 dark:bg-[#0d1117] backdrop-blur-sm overflow-hidden"
+                style={{ top: 'var(--tooltip-top, 60%)' }}
               >
-                <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-md mb-3 self-start ${theme.badge}`}>
+                <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-md mb-2 self-start shrink-0 ${theme.badge}`}>
                   About
                 </span>
-                <p className="text-slate-700 dark:text-slate-200 leading-relaxed overflow-hidden" style={{ fontSize: "clamp(0.7rem, 1.8vw, 1rem)", display: "-webkit-box", WebkitLineClamp: 6, WebkitBoxOrient: "vertical" }}>
+                <p className="text-sm text-slate-700 dark:text-slate-200 leading-relaxed overflow-y-auto flex-1">
                   {m.bio}
                 </p>
               </div>
