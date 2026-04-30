@@ -24,6 +24,7 @@ const MEMBER_LOGOS: MemberLogos[] = [
       { src: "/icons/konami.svg", alt: "Konami" },
       { src: "/icons/sun-microsystems.svg", alt: "Sun Microsystems" },
     ],
+    badges: ["☕ Java Certified"],
   },
   // 2: Paul Brennan (COO)
   {
@@ -211,16 +212,6 @@ function PhotoFrame({ role, photo, name }: { role: string; photo: string; name: 
       >
         <Image src={photo} alt={name} fill sizes={sizes} className="object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-b from-emerald-400/6 via-transparent to-transparent pointer-events-none" />
-        {/* Subtle scan lines */}
-        {[25, 50, 75].map((pct) => (
-          <motion.div
-            key={pct}
-            className="absolute left-0 right-0 h-px bg-emerald-400/10 pointer-events-none"
-            style={{ top: `${pct}%` }}
-            animate={{ opacity: [0, 0.5, 0] }}
-            transition={{ duration: 3, repeat: Infinity, delay: pct / 100 }}
-          />
-        ))}
       </motion.div>
     </div>
   );
@@ -627,11 +618,11 @@ export function ShareholdersSection() {
               ) : null}
 
               {/* Bio hover tooltip — desktop only, covers lower half on hover */}
-              <div className="hidden lg:block absolute bottom-0 left-0 right-0 z-20 px-4 pb-5 pt-8 opacity-0 pointer-events-none translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150 bg-gradient-to-t from-[#0a0e15]/[0.98] via-[#0a0e15]/90 to-transparent rounded-b-2xl">
-                <span className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-md ${theme.badge}`}>
+              <div className="hidden lg:flex flex-col absolute left-0 right-0 bottom-0 z-20 px-4 pb-5 pt-4 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150 bg-slate-800 dark:bg-[#0d1117] rounded-b-2xl border-t border-white/8">
+                <span className={`inline-block text-[11px] font-semibold px-2.5 py-0.5 rounded-md mb-2 self-start ${theme.badge}`}>
                   About
                 </span>
-                <p className="text-xs text-slate-300 leading-relaxed mt-1">
+                <p className="text-sm text-slate-200 dark:text-slate-300 leading-relaxed">
                   {m.bio}
                 </p>
               </div>
