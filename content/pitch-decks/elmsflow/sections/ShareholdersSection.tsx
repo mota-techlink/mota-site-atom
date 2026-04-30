@@ -207,12 +207,12 @@ export function ShareholdersSection() {
                 const entry = MEMBER_LOGOS[i];
                 if (!entry || (!entry.logos?.length && !entry.badges?.length)) return null;
                 return (
-                  <div className="mt-3 pt-3 border-t border-black/10 dark:border-white/10 w-full flex items-center gap-2 flex-wrap justify-center">
+                  <div className="mt-3 pt-3 border-t border-white/10 w-full flex items-center gap-2 flex-wrap justify-center">
                     {entry.logos?.map((l) => (
                       <div
                         key={l.alt}
                         title={l.alt}
-                        className={`h-8 w-8 rounded-lg flex items-center justify-center p-1.5 transition-all duration-200 hover:scale-110 ${l.lightBg ? "bg-white/80 dark:bg-white/8" : "bg-black/5 dark:bg-white/4"}`}
+                        className={`h-9 w-9 rounded-lg flex items-center justify-center p-1.5 backdrop-blur-md border border-emerald-500/20 bg-emerald-500/5 transition-all duration-200 hover:scale-110 hover:bg-emerald-500/10 ${l.lightBg ? "dark:bg-white/15" : ""}`}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -225,7 +225,7 @@ export function ShareholdersSection() {
                     {entry.badges?.map((b) => (
                       <span
                         key={b}
-                        className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/5 dark:bg-white/4 border border-black/8 dark:border-white/8 text-slate-500 dark:text-slate-500 hover:text-slate-300 transition-colors"
+                        className="text-[11px] font-medium px-2.5 py-1 rounded-full backdrop-blur-md border border-emerald-500/20 bg-emerald-500/5 text-emerald-300/90 hover:bg-emerald-500/10 transition-colors"
                       >
                         {b}
                       </span>
