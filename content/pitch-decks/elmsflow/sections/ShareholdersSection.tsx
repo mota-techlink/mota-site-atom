@@ -542,14 +542,15 @@ export function ShareholdersSection() {
                 }
               }}
               onMouseLeave={() => setSectionHovered(false)}
-              animate={{
-                opacity: 1,
-                y: activeIndex === i ? -4 : 0,
-                filter: "blur(0px)",
-                boxShadow: activeIndex === i ? theme.hoverShadow : "none",
-                borderColor: activeIndex === i ? theme.hoverBorder : "rgba(255,255,255,0.1)",
+              initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ delay: 0.5 + i * 0.12, duration: 0.55, ease: "easeOut" }}
+              style={{
+                transform: activeIndex === i ? "translateY(-6px)" : undefined,
+                boxShadow: activeIndex === i ? theme.hoverShadow : undefined,
+                borderColor: activeIndex === i ? theme.hoverBorder : undefined,
+                transition: "transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out",
               }}
-              transition={{ delay: sectionHovered ? 0 : 0.5 + i * 0.12, duration: 0.55, ease: "easeOut" }}
               whileHover={{
                 y: -4,
                 boxShadow: theme.hoverShadow,
