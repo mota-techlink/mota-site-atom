@@ -168,7 +168,7 @@ export function ShareholdersSection() {
               </div>
 
               {/* Photo with pulsing ring */}
-              <div className="relative w-28 h-36 md:w-32 md:h-[10.5rem] mb-4">
+              <div className="relative w-28 h-40 md:w-32 md:h-44 mb-4">
                 {/* Pulse ring (animates on hover) */}
                 <motion.span
                   className="absolute inset-0 rounded-2xl border-2 border-emerald-400/0 group-hover:border-emerald-400/60"
@@ -181,7 +181,7 @@ export function ShareholdersSection() {
                     alt={m.name}
                     fill
                     sizes="(max-width: 768px) 112px, 128px"
-                    className="object-cover object-top"
+                    className="object-cover object-[center_8%]"
                   />
                 </div>
               </div>
