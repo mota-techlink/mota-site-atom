@@ -418,8 +418,11 @@ export function ShareholdersSection() {
         }}
       />
 
-      {/* Floating particles — pause on card hover via CSS group */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* Floating particles — pause on section hover */}
+      <div
+        className="absolute inset-0 pointer-events-none overflow-hidden"
+        style={{ animationPlayState: sectionHovered ? "paused" : "running" }}
+      >
         {PARTICLES.map((p, i) => (
           <motion.div
             key={i}
@@ -430,15 +433,14 @@ export function ShareholdersSection() {
               width: `${p.size}px`,
               height: `${p.size}px`,
             }}
-            animate={sectionHovered ? { y: 0, opacity: 0 } : {
-              y: [0, -30, 0],
-              opacity: [0, 0.8, 0],
-            }}
-            transition={sectionHovered ? { duration: 0.3 } : {
-              duration: p.duration,
-              delay: p.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
+            animate={sectionHovered ? "paused" : "floating"}
+            variants={{
+              floating: {
+                y: [0, -30, 0],
+                opacity: [0, 0.8, 0],
+                transition: { duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" },
+              },
+              paused: { y: 0, opacity: 0, transition: { duration: 0.5 } },
             }}
           />
         ))}
@@ -585,9 +587,6 @@ export function ShareholdersSection() {
                 if (!entry || (!entry.logos?.length && !entry.badges?.length)) return null;
                 return (
                   <div className="hidden lg:flex relative z-10 mt-3 pt-3 border-t border-white/8 w-full flex-col items-center" data-ch-divider>
-                    <p className="text-[9px] font-mono tracking-[0.25em] uppercase text-white/25 mb-1.5 w-full text-center">
-                      Career · Highlights
-                    </p>
                     <div className="flex items-center gap-2 flex-wrap justify-center">
                     {entry.logos?.map((l) => (
                       <div
@@ -636,7 +635,7 @@ export function ShareholdersSection() {
                 <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-md mb-3 self-start ${theme.badge}`}>
                   About
                 </span>
-                <p className="text-base text-slate-700 dark:text-slate-200 leading-relaxed">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed overflow-hidden" style={{ fontSize: "clamp(0.7rem, 1.8vw, 1rem)", display: "-webkit-box", WebkitLineClamp: 6, WebkitBoxOrient: "vertical" }}>
                   {m.bio}
                 </p>
               </div>
