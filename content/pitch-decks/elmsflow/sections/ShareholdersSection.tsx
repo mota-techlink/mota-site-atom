@@ -8,7 +8,7 @@ import { useContent } from "../hooks";
 import { SECTION } from "../constants";
 
 // Logos/badges per shareholder (index-aligned with locale members array)
-type LogoItem = { src: string; alt: string; bg?: string };
+type LogoItem = { src: string; alt: string };
 type MemberLogos = {
   logos?: LogoItem[];
   badges?: string[];
@@ -19,17 +19,18 @@ const MEMBER_LOGOS: MemberLogos[] = [
   // 1: Harling Sun (CTO)
   {
     logos: [
-      { src: "/images/company-logos/ebay.svg", alt: "eBay", bg: "#E53238" },
-      { src: "/images/company-logos/ibm.svg", alt: "IBM", bg: "#1F70C1" },
-      { src: "/images/company-logos/konami.svg", alt: "KONAMI", bg: "#B60014" },
+      { src: "/images/company-logos/ebay.svg", alt: "eBay" },
+      { src: "/images/company-logos/ibm.svg", alt: "IBM" },
+      { src: "/images/company-logos/konami.svg", alt: "KONAMI" },
+      { src: "/images/company-logos/sun-microsystems.svg", alt: "Sun Microsystems" },
     ],
   },
   // 2: Paul Brennan (COO)
   {
     logos: [
-      { src: "/images/company-logos/mcdonalds.svg", alt: "McDonald's", bg: "#FBC817" },
-      { src: "/images/company-logos/apple.svg", alt: "Apple", bg: "#555555" },
-      { src: "/images/company-logos/microsoft.svg", alt: "Microsoft", bg: "#737373" },
+      { src: "/images/company-logos/mcdonalds.svg", alt: "McDonald's" },
+      { src: "/images/company-logos/apple.svg", alt: "Apple" },
+      { src: "/images/company-logos/microsoft.svg", alt: "Microsoft" },
     ],
     badges: ["📦 Smurfit Kappa"],
   },
@@ -210,15 +211,14 @@ export function ShareholdersSection() {
                       <div
                         key={l.alt}
                         title={l.alt}
-                        className="relative h-7 w-7 rounded-md flex items-center justify-center overflow-hidden opacity-70 hover:opacity-100 transition-opacity duration-200"
-                        style={{ backgroundColor: l.bg + "22", border: `1px solid ${l.bg}44` }}
+                        className="h-8 w-8 rounded-lg flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all duration-200 p-1.5"
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={l.src}
                           alt={l.alt}
-                          className="h-4 w-4 object-contain"
-                          style={{ filter: `drop-shadow(0 0 2px ${l.bg}88)` }}
+                          className="h-full w-full object-contain"
+                          style={{ filter: "brightness(0) invert(1) opacity(0.75)" }}
                         />
                       </div>
                     ))}
