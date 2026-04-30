@@ -7,16 +7,22 @@ import { getPaymentMethodAddedEmailHtml, getOrderConfirmationEmailHtml } from '@
 
 export const runtime = 'edge';
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+function getSupabaseAdmin() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+}
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2026-01-28.clover', 
-});
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: '2026-01-28.clover',
+  });
+}
 
-const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!;
+function getEndpointSecret() {
+  return process.env.STRIPE_WEBHOOK_SECRET!;
+}
 
 // 辅助函数：生成友好订单号
 function generateOrderNumber() {
@@ -76,8 +82,9 @@ export async function POST(req: Request) {
     let event: Stripe.Event;
 
     try {
+      const endpointSecret = getEndpointSecret();
       if (!sig || !endpointSecret) throw new Error('Missing Stripe signature');
-      event = await stripe.webhooks.constructEventAsync(body, sig, endpointSecret);
+      event = await getStripe().webhooks.constructEventAsync(body, sig, endpointSecret);
     } catch (err: any) {
       console.error(`Webhook Signature Error: ${err.message}`);
       return NextResponse.json({ error: `Webhook Error: ${err.message}` }, { status: 400 });
@@ -96,7 +103,7 @@ export async function POST(req: Request) {
       // 如果 session.metadata 中没有 userId，尝试从 customer 对象的 metadata 中获取
       if (!userId && customerId) {
         try {
-          const customer = await stripe.customers.retrieve(customerId);
+          const customer = await getStripe().customers.retrieve(customerId);
           if ('metadata' in customer && customer.metadata?.userId) {
             userId = customer.metadata.userId as string;
             console.log(`✅ Retrieved userId from customer metadata: ${userId}`);
@@ -165,6 +172,7 @@ export async function POST(req: Request) {
         }
         
         // 4. 创建订单 (Insert into Orders)
+        const supabaseAdmin = getSupabaseAdmin();
         const { error: dbError } = await supabaseAdmin.from('orders').insert({
           order_number: orderNumber,
           user_id: finalUserId && finalUserId !== '' ? finalUserId : null,

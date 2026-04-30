@@ -4,9 +4,11 @@ import Stripe from "stripe";
 
 export const runtime = 'edge';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2026-01-28.clover",
-});
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: "2026-01-28.clover",
+  });
+}
 
 export async function POST(req: Request) {
   const supabase = await createClient();
@@ -27,7 +29,7 @@ export async function POST(req: Request) {
 
   try {
     // 2. 创建 Stripe Portal Session
-    const session = await stripe.billingPortal.sessions.create({
+    const session = await getStripe().billingPortal.sessions.create({
       customer: profile.stripe_customer_id,
       return_url: `${process.env.NEXT_PUBLIC_BASE_URL}/dashboard/settings`,
     });

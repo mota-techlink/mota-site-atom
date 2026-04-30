@@ -5,9 +5,11 @@ import Stripe from "stripe";
 
 export const runtime = 'edge';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2026-01-28.clover",
-});
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: "2026-01-28.clover",
+  });
+}
 
 export async function POST(req: Request) {
   const supabase = await createClient();
@@ -29,7 +31,7 @@ export async function POST(req: Request) {
   if (!customerId) {
     console.log("Creating new Stripe Customer for user:", user.email);
     
-    const newCustomer = await stripe.customers.create({
+    const newCustomer = await getStripe().customers.create({
       email: user.email,
       name: profile?.full_name || 'Mota User',
       metadata: {
@@ -50,7 +52,7 @@ export async function POST(req: Request) {
     const successUrl = `${origin}/en/dashboard/settings?session_id={CHECKOUT_SESSION_ID}`;
     const cancelUrl = `${origin}/en/dashboard/settings`;
     // 3. 创建 Setup Session (关键点：mode = setup)
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       customer: customerId, // 必须传 ID，否则 Stripe 不知道把卡绑给谁
       payment_method_types: ['card'],
       mode: 'setup', // 🟢 关键：这表示“只绑卡，不扣款”
