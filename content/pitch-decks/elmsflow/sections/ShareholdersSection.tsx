@@ -212,7 +212,7 @@ export function ShareholdersSection() {
                       <div
                         key={l.alt}
                         title={l.alt}
-                        className="h-9 w-9 rounded-xl flex items-center justify-center p-1.5 transition-all duration-200 hover:scale-110 hover:-translate-y-0.5 bg-slate-200/20 border border-slate-200/25 hover:bg-slate-200/30"
+                        className="h-9 w-9 rounded-xl flex items-center justify-center p-1.5 transition-all duration-200 hover:scale-110 hover:-translate-y-0.5 bg-white border border-white/20 hover:bg-white/90"
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
