@@ -659,7 +659,7 @@ export function ShareholdersSection() {
               {/* Bio hover tooltip — from Career Highlights divider down */}
               <div
                 className={`hidden lg:flex flex-col absolute left-0 right-0 bottom-0 z-20 px-5 pb-5 pt-4 pointer-events-none translate-y-1 transition-all duration-150 rounded-b-2xl border-t border-black/8 dark:border-white/8 bg-white/95 dark:bg-[#0d1117] backdrop-blur-sm overflow-hidden
-                  ${activeIndex === i ? 'opacity-100 translate-y-0' : 'opacity-0 group-hover:opacity-100 group-hover:translate-y-0'}`}
+                  opacity-0 group-hover:opacity-100 group-hover:translate-y-0`}
                 style={{ top: 'var(--tooltip-top, 60%)' }}
               >
                 <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-md mb-2 self-start shrink-0 ${theme.badge}`}>
