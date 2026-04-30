@@ -618,11 +618,11 @@ export function ShareholdersSection() {
               ) : null}
 
               {/* Bio hover tooltip — desktop only, covers lower half on hover */}
-              <div className="hidden lg:flex flex-col absolute left-0 right-0 bottom-0 z-20 px-4 pb-5 pt-4 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150 bg-slate-800 dark:bg-[#0d1117] rounded-b-2xl border-t border-white/8">
-                <span className={`inline-block text-[11px] font-semibold px-2.5 py-0.5 rounded-md mb-2 self-start ${theme.badge}`}>
+              <div className="hidden lg:flex flex-col absolute left-0 right-0 bottom-0 z-20 px-5 pb-6 pt-5 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150 bg-[#0d1117] rounded-b-2xl border-t border-white/8" style={{top: '52%'}}>
+                <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-md mb-3 self-start ${theme.badge}`}>
                   About
                 </span>
-                <p className="text-sm text-slate-200 dark:text-slate-300 leading-relaxed">
+                <p className="text-base text-slate-200 leading-relaxed">
                   {m.bio}
                 </p>
               </div>
