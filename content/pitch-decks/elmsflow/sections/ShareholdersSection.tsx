@@ -29,7 +29,7 @@ const MEMBER_LOGOS: MemberLogos[] = [
   {
     logos: [
       { src: "/icons/mcdonalds.svg", alt: "McDonald's" },
-      { src: "/icons/apple-white.svg", alt: "Apple", lightBg: true },
+      { src: "/icons/apple-black.svg", alt: "Apple", lightBg: true },
       { src: "/icons/microsoft.svg", alt: "Microsoft" },
     ],
     badges: ["📦 Smurfit Kappa"],
@@ -168,7 +168,7 @@ export function ShareholdersSection() {
               </div>
 
               {/* Photo with pulsing ring */}
-              <div className="relative w-32 h-32 md:w-36 md:h-36 mb-4">
+              <div className="relative w-24 h-24 md:w-28 md:h-28 mb-4">
                 {/* Pulse ring (animates on hover) */}
                 <motion.span
                   className="absolute inset-0 rounded-full border-2 border-emerald-400/0 group-hover:border-emerald-400/60"
@@ -181,7 +181,7 @@ export function ShareholdersSection() {
                     alt={m.name}
                     fill
                     sizes="(max-width: 768px) 128px, 144px"
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                   />
                 </div>
               </div>
@@ -211,7 +211,7 @@ export function ShareholdersSection() {
                       <div
                         key={l.alt}
                         title={l.alt}
-                        className="h-11 w-11 rounded-xl flex items-center justify-center p-2 transition-all duration-200 hover:scale-110 hover:-translate-y-0.5 bg-slate-200/20 border border-slate-200/25 hover:bg-slate-200/30"
+                        className="h-11 w-11 rounded-xl flex items-center justify-center p-2 transition-all duration-200 hover:scale-110 hover:-translate-y-0.5 bg-slate-200 border border-slate-200/25 hover:bg-slate-200/30"
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
