@@ -168,19 +168,19 @@ export function ShareholdersSection() {
               </div>
 
               {/* Photo with pulsing ring */}
-              <div className="relative w-24 h-24 md:w-28 md:h-28 mb-4">
+              <div className="relative w-40 h-40 md:w-44 md:h-44 mb-4">
                 {/* Pulse ring (animates on hover) */}
                 <motion.span
                   className="absolute inset-0 rounded-full border-2 border-emerald-400/0 group-hover:border-emerald-400/60"
                   animate={{ scale: [1, 1.15, 1], opacity: [0.6, 0, 0.6] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "easeOut" }}
                 />
                 <div className="relative w-full h-full rounded-full overflow-hidden ring-2 ring-emerald-500/30 group-hover:ring-emerald-500/70 transition-all">
                   <Image
                     src={m.photo}
                     alt={m.name}
                     fill
-                    sizes="(max-width: 768px) 128px, 144px"
+                    sizes="(max-width: 768px) 160px, 176px"
                     className="object-cover object-center"
                   />
                 </div>
@@ -224,7 +224,7 @@ export function ShareholdersSection() {
                     {entry.badges?.map((b) => (
                       <span
                         key={b}
-                        className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-white/8 border border-white/12 text-slate-300 hover:bg-white/14 hover:text-white transition-all"
+                        className="text-[13px] font-medium px-3 py-1.5 rounded-full bg-white/8 border border-white/12 text-slate-300 hover:bg-white/14 hover:text-white transition-all"
                       >
                         {b}
                       </span>
