@@ -4,9 +4,11 @@
 import { createClient } from "@/lib/supabase/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2026-01-28.clover",
-});
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: "2026-01-28.clover",
+  });
+}
 
 export async function getPaymentMethods() {
   const supabase = await createClient();
@@ -26,13 +28,13 @@ export async function getPaymentMethods() {
   // 2. 从 Stripe 获取绑定的信用卡
   if (profile?.stripe_customer_id) {
     try {
-      const paymentMethods = await stripe.paymentMethods.list({
+      const paymentMethods = await getStripe().paymentMethods.list({
         customer: profile.stripe_customer_id,
         type: 'card',
       });
       
       // 获取默认支付方式 (为了标记 "Default")
-      const customer = await stripe.customers.retrieve(profile.stripe_customer_id) as Stripe.Customer;
+      const customer = await getStripe().customers.retrieve(profile.stripe_customer_id) as Stripe.Customer;
       const defaultPaymentMethodId = customer.invoice_settings.default_payment_method;
 
       cards.push(...paymentMethods.data.map(pm => ({
