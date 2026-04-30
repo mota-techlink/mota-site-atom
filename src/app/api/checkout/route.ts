@@ -5,14 +5,15 @@ import { createClient } from '@/lib/supabase/server'
 
 export const runtime = 'edge';
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('Missing STRIPE_SECRET_KEY in environment variables');
+// 懒加载：build 阶段不初始化，运行时才创建
+function getStripe() {
+  if (!process.env.STRIPE_SECRET_KEY) {
+    throw new Error('Missing STRIPE_SECRET_KEY in environment variables');
+  }
+  return new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: '2026-01-28.clover',
+  });
 }
-
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2026-01-28.clover', // 或者 '2025-01-27.acacia'
-});
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -81,7 +82,7 @@ export async function GET(request: NextRequest) {
       sessionConfig.customer_email = user.email;
     }
 
-    const session = await stripe.checkout.sessions.create(sessionConfig);
+    const session = await getStripe().checkout.sessions.create(sessionConfig);
 
     if (session.url) {
       return NextResponse.redirect(session.url, 303);
