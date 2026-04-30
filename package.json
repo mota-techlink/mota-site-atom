@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "node scripts/validate-content.mjs && node scripts/generate-assets.mjs && node scripts/build-search.mjs && node scripts/embed-docs.mjs && node scripts/generate-sitemap.mjs && node scripts/generate-og-image.mjs && next dev",
-    "build": "node scripts/validate-content.mjs && node scripts/generate-assets.mjs && node scripts/build-search.mjs && node scripts/embed-docs.mjs && NEXT_PUBLIC_BASE_URL=https://motaiot.com node scripts/generate-sitemap.mjs && node scripts/generate-og-image.mjs && next build",
+    "build": "node scripts/validate-content.mjs && node scripts/generate-assets.mjs && node scripts/build-search.mjs && NEXT_PUBLIC_BASE_URL=https://motaiot.com node scripts/generate-sitemap.mjs && node scripts/generate-og-image.mjs && next build",
+    "embed": "node scripts/embed-docs.mjs",
     "start": "next start",
     "lint": "eslint",
     "content:validate": "node scripts/validate-content.mjs",
