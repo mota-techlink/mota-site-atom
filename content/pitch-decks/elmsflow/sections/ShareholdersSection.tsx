@@ -23,13 +23,14 @@ const MEMBER_LOGOS: MemberLogos[] = [
       { src: "/icons/ibm.svg", alt: "IBM" },
       { src: "/icons/konami.svg", alt: "Konami" },
       { src: "/icons/oracle.svg", alt: "Oracle" },
+      { src: "/icons/sun-microsystems.svg", alt: "Sun Microsystems" },
     ],
   },
   // 2: Paul Brennan (COO)
   {
     logos: [
       { src: "/icons/mcdonalds.svg", alt: "McDonald's" },
-      { src: "/icons/apple.svg", alt: "Apple", lightBg: true },
+      { src: "/icons/apple-black.svg", alt: "Apple", lightBg: true },
       { src: "/icons/microsoft.svg", alt: "Microsoft" },
     ],
     badges: ["📦 Smurfit Kappa"],
