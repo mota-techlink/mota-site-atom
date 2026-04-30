@@ -8,7 +8,7 @@ import { useContent } from "../hooks";
 import { SECTION } from "../constants";
 
 // Logos/badges per shareholder (index-aligned with locale members array)
-type LogoItem = { src: string; alt: string };
+type LogoItem = { src: string; alt: string; lightBg?: boolean };
 type MemberLogos = {
   logos?: LogoItem[];
   badges?: string[];
@@ -19,18 +19,18 @@ const MEMBER_LOGOS: MemberLogos[] = [
   // 1: Harling Sun (CTO)
   {
     logos: [
-      { src: "/images/company-logos/ebay.svg", alt: "eBay" },
-      { src: "/images/company-logos/ibm.svg", alt: "IBM" },
-      { src: "/images/company-logos/konami.svg", alt: "KONAMI" },
-      { src: "/images/company-logos/sun-microsystems.svg", alt: "Sun Microsystems" },
+      { src: "/icons/ebay.svg", alt: "eBay" },
+      { src: "/icons/ibm.svg", alt: "IBM" },
+      { src: "/icons/konami.svg", alt: "Konami" },
+      { src: "/icons/oracle.svg", alt: "Oracle" },
     ],
   },
   // 2: Paul Brennan (COO)
   {
     logos: [
-      { src: "/images/company-logos/mcdonalds.svg", alt: "McDonald's" },
-      { src: "/images/company-logos/apple.svg", alt: "Apple" },
-      { src: "/images/company-logos/microsoft.svg", alt: "Microsoft" },
+      { src: "/icons/mcdonalds.svg", alt: "McDonald's" },
+      { src: "/icons/apple.svg", alt: "Apple", lightBg: true },
+      { src: "/icons/microsoft.svg", alt: "Microsoft" },
     ],
     badges: ["📦 Smurfit Kappa"],
   },
@@ -206,19 +206,18 @@ export function ShareholdersSection() {
                 const entry = MEMBER_LOGOS[i];
                 if (!entry || (!entry.logos?.length && !entry.badges?.length)) return null;
                 return (
-                  <div className="mt-3 pt-3 border-t border-white/10 w-full flex items-center gap-2 flex-wrap justify-center">
+                  <div className="mt-3 pt-3 border-t border-black/10 dark:border-white/10 w-full flex items-center gap-2 flex-wrap justify-center">
                     {entry.logos?.map((l) => (
                       <div
                         key={l.alt}
                         title={l.alt}
-                        className="h-8 w-8 rounded-lg flex items-center justify-center bg-white/10 hover:bg-white/20 transition-all duration-200 p-1.5"
+                        className={`h-8 w-8 rounded-lg flex items-center justify-center p-1.5 transition-all duration-200 hover:scale-110 ${l.lightBg ? "bg-white/80 dark:bg-white/15" : "bg-black/5 dark:bg-white/8"}`}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={l.src}
                           alt={l.alt}
                           className="h-full w-full object-contain"
-                          style={{ filter: "brightness(0) invert(1) opacity(0.75)" }}
                         />
                       </div>
                     ))}
