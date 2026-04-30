@@ -1547,25 +1547,49 @@
         "name": "Turlough Sheehan",
         "role": "CEO",
         "bio": "深耕全球物流与关务合规逾40年，DDP 交付模式与 Section 321 跨境策略的重要推动者。",
-        "photo": "/images/team/Turlough.jpg"
+        "photo": "/images/team/Turlough.jpg",
+        "responsibilities": [
+          "🚀 战略规划与融资",
+          "🤝 全球客户开发",
+          "🚢 DDP/Section 321 合规",
+          "📋 股东关系管理"
+        ]
       },
       {
         "name": "Harling Sun",
         "role": "CTO",
         "bio": "30年全栈架构经验，世界500强核心技术骨干；eBay 中国 API 团队创始人；AI 能力横跨工业、物联网、互联网与智能体四大领域。",
-        "photo": "/images/team/Harling.jpg"
+        "photo": "/images/team/Harling.jpg",
+        "responsibilities": [
+          "⚙️ 系统架构设计",
+          "🤖 AI 智能体开发",
+          "🔌 API 平台集成",
+          "📦 技术团队管理"
+        ]
       },
       {
         "name": "Paul Brennan",
         "role": "COO",
         "bio": "横跨麦当劳欧洲、斯密菲卡帕等顶级企业45年，特许物流工程师与食品技术专家，曾担任麦当劳欧洲供应链总经理长达十年。",
-        "photo": "/images/team/Paul.jpg"
+        "photo": "/images/team/Paul.jpg",
+        "responsibilities": [
+          "📦 运营流程优化",
+          "🏭 供应链管理",
+          "👥 合作伙伴关系",
+          "📊 KPI 指标体系"
+        ]
       },
       {
         "name": "Siobhain McHugh",
         "role": "CFO",
         "bio": "CIMA 认证财务领袖，职业生涯贯穿伦敦律所、都柏林 Matheson 及 McHugh & Associates，专注治理架构与战略财务管控。",
-        "photo": "/images/team/Siobhain.jpg"
+        "photo": "/images/team/Siobhain.jpg",
+        "responsibilities": [
+          "💰 财务规划与预算",
+          "⚖️ 法律合规审查",
+          "📈 投资者关系",
+          "🏦 资金管理"
+        ]
       }
     ]
   },

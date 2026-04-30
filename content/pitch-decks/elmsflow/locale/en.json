@@ -1547,25 +1547,49 @@
         "name": "Turlough Sheehan",
         "role": "CEO",
         "bio": "40+ years pioneering global logistics and customs compliance, architect of DDP shipping and Section 321 strategies that define cross-border trade today.",
-        "photo": "/images/team/Turlough.jpg"
+        "photo": "/images/team/Turlough.jpg",
+        "responsibilities": [
+          "🚀 Strategy & Fundraising",
+          "🤝 Global Business Development",
+          "🚢 DDP/Section 321 Compliance",
+          "📋 Shareholder Relations"
+        ]
       },
       {
         "name": "Harling Sun",
         "role": "CTO",
         "bio": "30 years of full-stack architecture experience; core tech lead at Fortune 500 companies; founded eBay China's API team. AI expertise spans Industrial, IoT, Internet platforms, and autonomous agents.",
-        "photo": "/images/team/Harling.jpg"
+        "photo": "/images/team/Harling.jpg",
+        "responsibilities": [
+          "⚙️ System Architecture",
+          "🤖 AI Agent Development",
+          "🔌 API Platform Integration",
+          "📦 Engineering Team"
+        ]
       },
       {
         "name": "Paul Brennan",
         "role": "COO",
         "bio": "45+ years across McDonald's Europe, Smurfit Kappa and global blue chips; chartered logistician and food technologist who led McDonald's European supply chain for a decade.",
-        "photo": "/images/team/Paul.jpg"
+        "photo": "/images/team/Paul.jpg",
+        "responsibilities": [
+          "📦 Operations & Logistics",
+          "🏭 Supply Chain Management",
+          "👥 Partner Relations",
+          "📊 KPI & Performance"
+        ]
       },
       {
         "name": "Siobhain McHugh",
         "role": "CFO",
         "bio": "CIMA-qualified finance leader with a cross-sector career spanning London law firms, Matheson Dublin, and founder of McHugh & Associates.",
-        "photo": "/images/team/Siobhain.jpg"
+        "photo": "/images/team/Siobhain.jpg",
+        "responsibilities": [
+          "💰 Financial Planning",
+          "⚖️ Legal & Compliance",
+          "📈 Investor Relations",
+          "🏦 Treasury Management"
+        ]
       }
     ]
   },

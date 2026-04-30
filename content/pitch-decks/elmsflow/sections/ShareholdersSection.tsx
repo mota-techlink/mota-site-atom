@@ -47,6 +47,7 @@ type RoleTheme = {
   hoverShadow: string;
   hoverBorder: string;
   ringColor: string;
+  dotColor: string;
 };
 const ROLE_THEME: Record<string, RoleTheme> = {
   CEO: {
@@ -58,6 +59,7 @@ const ROLE_THEME: Record<string, RoleTheme> = {
       "0 0 35px rgba(245,158,11,0.22), 0 8px 32px rgba(245,158,11,0.1)",
     hoverBorder: "rgba(245,158,11,0.45)",
     ringColor: "ring-amber-400/60",
+    dotColor: "bg-amber-400",
   },
   CTO: {
     topBar: "bg-gradient-to-r from-cyan-400 to-blue-500",
@@ -68,6 +70,7 @@ const ROLE_THEME: Record<string, RoleTheme> = {
       "0 0 35px rgba(34,211,238,0.22), 0 8px 32px rgba(34,211,238,0.1)",
     hoverBorder: "rgba(34,211,238,0.45)",
     ringColor: "ring-cyan-400/60",
+    dotColor: "bg-cyan-400",
   },
   COO: {
     topBar: "bg-gradient-to-r from-emerald-400 to-teal-500",
@@ -78,6 +81,7 @@ const ROLE_THEME: Record<string, RoleTheme> = {
       "0 0 35px rgba(52,211,153,0.22), 0 8px 32px rgba(52,211,153,0.1)",
     hoverBorder: "rgba(52,211,153,0.45)",
     ringColor: "ring-emerald-400/60",
+    dotColor: "bg-emerald-400",
   },
   CFO: {
     topBar: "bg-gradient-to-r from-violet-400 to-purple-500",
@@ -88,6 +92,7 @@ const ROLE_THEME: Record<string, RoleTheme> = {
       "0 0 35px rgba(167,139,250,0.22), 0 8px 32px rgba(167,139,250,0.1)",
     hoverBorder: "rgba(167,139,250,0.45)",
     ringColor: "ring-violet-400/60",
+    dotColor: "bg-violet-400",
   },
 };
 
@@ -166,15 +171,15 @@ function PhotoFrame({ role, photo, name }: { role: string; photo: string; name: 
       <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 h-4 rounded-full blur-lg bg-cyan-400/25 pointer-events-none" />
       {/* Photo */}
       <motion.div
-        className="relative w-full h-full rounded-xl overflow-hidden"
+        className="group/cto relative w-full h-full rounded-xl overflow-hidden"
         style={{ boxShadow: "0 0 0 1px rgba(34,211,238,0.3)" }}
         whileHover={{ boxShadow: "0 0 0 1.5px rgba(34,211,238,0.7), 0 4px 24px rgba(34,211,238,0.2)" }}
         transition={{ duration: 0.3 }}
       >
         <Image src={photo} alt={name} fill sizes={sizes} className="object-cover object-top" />
-        {/* Scan line */}
+        {/* Scan line — only on hover */}
         <motion.div
-          className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent pointer-events-none"
+          className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent pointer-events-none opacity-0 group-hover/cto:opacity-100 transition-opacity"
           animate={{ top: ["-5%", "105%"] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "linear", repeatDelay: 1.5 }}
         />
@@ -259,7 +264,7 @@ function PhotoFrame({ role, photo, name }: { role: string; photo: string; name: 
 }
 
 // ─── Bottom-sheet Modal for compact (< lg) view ───────────────────────────────
-type Member = { name: string; role: string; photo: string; bio: string };
+type Member = { name: string; role: string; photo: string; bio: string; responsibilities?: string[] };
 
 function MemberSheet({
   member,
@@ -516,6 +521,7 @@ export function ShareholdersSection() {
                 y: -4,
                 boxShadow: theme.hoverShadow,
                 borderColor: theme.hoverBorder,
+                transition: { duration: 0.1, ease: "easeOut" },
               }}
             >
               {/* Role-colored top accent bar */}
@@ -566,8 +572,8 @@ export function ShareholdersSection() {
                 {m.name}
               </h3>
 
-              {/* Bio — desktop only */}
-              <p className="hidden lg:block relative z-10 text-slate-400 text-xs md:text-sm leading-relaxed">
+              {/* Bio — hidden (kept for compact sheet only); shown as hover tooltip on lg */}
+              <p className="hidden relative z-10 text-slate-400 text-xs md:text-sm leading-relaxed">
                 {m.bio}
               </p>
 
@@ -607,6 +613,28 @@ export function ShareholdersSection() {
                   </div>
                 );
               })()}
+
+              {/* Responsibilities — desktop only */}
+              {m.responsibilities && m.responsibilities.length > 0 ? (
+                <div className="hidden lg:flex relative z-10 mt-3 w-full flex-col gap-1.5">
+                  {m.responsibilities.map((r) => (
+                    <div key={r} className="flex items-center gap-2 text-left">
+                      <span className={`w-1.5 h-1.5 rounded-full ${theme.dotColor} shrink-0`} />
+                      <span className="text-xs text-slate-400">{r}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+              {/* Bio hover tooltip — desktop only, covers lower half on hover */}
+              <div className="hidden lg:block absolute bottom-0 left-0 right-0 z-20 px-4 pb-5 pt-8 opacity-0 pointer-events-none translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150 bg-gradient-to-t from-[#0a0e15]/[0.98] via-[#0a0e15]/90 to-transparent rounded-b-2xl">
+                <span className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-md ${theme.badge}`}>
+                  About
+                </span>
+                <p className="text-xs text-slate-300 leading-relaxed mt-1">
+                  {m.bio}
+                </p>
+              </div>
             </motion.div>
             );
           })}
