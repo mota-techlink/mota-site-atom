@@ -394,6 +394,7 @@ export function ShareholdersSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setOpenIndex(null), []);
+  const [sectionHovered, setSectionHovered] = useState(false);
 
   const openMember =
     openIndex !== null ? (c.members[openIndex] as Member) : null;
@@ -404,6 +405,8 @@ export function ShareholdersSection() {
   return (
     <section
       className={`${SECTION} bg-[#f0f4f8] dark:bg-[#0a0e15] text-slate-900 dark:text-white relative overflow-hidden`}
+      onMouseEnter={() => setSectionHovered(true)}
+      onMouseLeave={() => setSectionHovered(false)}
     >
       {/* Animated dot grid background */}
       <div
@@ -415,7 +418,7 @@ export function ShareholdersSection() {
         }}
       />
 
-      {/* Floating particles */}
+      {/* Floating particles — pause on card hover via CSS group */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {PARTICLES.map((p, i) => (
           <motion.div
@@ -427,11 +430,11 @@ export function ShareholdersSection() {
               width: `${p.size}px`,
               height: `${p.size}px`,
             }}
-            animate={{
+            animate={sectionHovered ? { y: 0, opacity: 0 } : {
               y: [0, -30, 0],
               opacity: [0, 0.8, 0],
             }}
-            transition={{
+            transition={sectionHovered ? { duration: 0.3 } : {
               duration: p.duration,
               delay: p.delay,
               repeat: Infinity,
@@ -505,6 +508,14 @@ export function ShareholdersSection() {
                 }
               }}
               className={`group relative bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-3 md:p-4 lg:p-6 pt-5 md:pt-5 lg:pt-7 flex flex-col items-center text-center transition-colors overflow-hidden cursor-pointer lg:cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30`}
+              onMouseEnter={(e) => {
+                const card = e.currentTarget;
+                const divider = card.querySelector('[data-ch-divider]') as HTMLElement | null;
+                if (divider) {
+                  const pct = ((divider.offsetTop) / card.offsetHeight) * 100;
+                  card.style.setProperty('--tooltip-top', `${pct}%`);
+                }
+              }}
               initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ delay: 0.5 + i * 0.12, duration: 0.55, ease: "easeOut" }}
@@ -573,7 +584,7 @@ export function ShareholdersSection() {
                 const entry = MEMBER_LOGOS[i];
                 if (!entry || (!entry.logos?.length && !entry.badges?.length)) return null;
                 return (
-                  <div className="hidden lg:flex relative z-10 mt-3 pt-3 border-t border-white/8 w-full flex-col items-center">
+                  <div className="hidden lg:flex relative z-10 mt-3 pt-3 border-t border-white/8 w-full flex-col items-center" data-ch-divider>
                     <p className="text-[9px] font-mono tracking-[0.25em] uppercase text-white/25 mb-1.5 w-full text-center">
                       Career · Highlights
                     </p>
@@ -617,12 +628,15 @@ export function ShareholdersSection() {
                 </div>
               ) : null}
 
-              {/* Bio hover tooltip — desktop only, covers lower half on hover */}
-              <div className="hidden lg:flex flex-col absolute left-0 right-0 bottom-0 z-20 px-5 pb-6 pt-5 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150 bg-[#0d1117] rounded-b-2xl border-t border-white/8" style={{top: '52%'}}>
+              {/* Bio hover tooltip — from Career Highlights divider down */}
+              <div
+                className="hidden lg:flex flex-col absolute left-0 right-0 bottom-0 z-20 px-5 pb-5 pt-4 opacity-0 pointer-events-none translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150 rounded-b-2xl border-t border-black/8 dark:border-white/8 bg-white/95 dark:bg-[#0d1117] backdrop-blur-sm"
+                style={{ top: 'var(--tooltip-top, 62%)' }}
+              >
                 <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-md mb-3 self-start ${theme.badge}`}>
                   About
                 </span>
-                <p className="text-base text-slate-200 leading-relaxed">
+                <p className="text-base text-slate-700 dark:text-slate-200 leading-relaxed">
                   {m.bio}
                 </p>
               </div>
