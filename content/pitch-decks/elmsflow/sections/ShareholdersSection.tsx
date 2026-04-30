@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Users } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Users, Plus, X } from "lucide-react";
 import { useContent } from "../hooks";
 import { SECTION } from "../constants";
 
@@ -39,17 +39,16 @@ const MEMBER_LOGOS: MemberLogos[] = [
 ];
 
 // ─── Per-role theme tokens ────────────────────────────────────────────────────
-const ROLE_THEME: Record<
-  string,
-  {
-    topBar: string;
-    cardBg: string;
-    halo: string;
-    badge: string;
-    hoverShadow: string;
-    hoverBorder: string;
-  }
-> = {
+type RoleTheme = {
+  topBar: string;
+  cardBg: string;
+  halo: string;
+  badge: string;
+  hoverShadow: string;
+  hoverBorder: string;
+  ringColor: string;
+};
+const ROLE_THEME: Record<string, RoleTheme> = {
   CEO: {
     topBar: "bg-gradient-to-r from-amber-400 to-yellow-500",
     cardBg: "bg-gradient-to-b from-amber-500/[0.08] to-transparent",
@@ -58,6 +57,7 @@ const ROLE_THEME: Record<
     hoverShadow:
       "0 0 35px rgba(245,158,11,0.22), 0 8px 32px rgba(245,158,11,0.1)",
     hoverBorder: "rgba(245,158,11,0.45)",
+    ringColor: "ring-amber-400/60",
   },
   CTO: {
     topBar: "bg-gradient-to-r from-cyan-400 to-blue-500",
@@ -67,6 +67,7 @@ const ROLE_THEME: Record<
     hoverShadow:
       "0 0 35px rgba(34,211,238,0.22), 0 8px 32px rgba(34,211,238,0.1)",
     hoverBorder: "rgba(34,211,238,0.45)",
+    ringColor: "ring-cyan-400/60",
   },
   COO: {
     topBar: "bg-gradient-to-r from-emerald-400 to-teal-500",
@@ -76,6 +77,7 @@ const ROLE_THEME: Record<
     hoverShadow:
       "0 0 35px rgba(52,211,153,0.22), 0 8px 32px rgba(52,211,153,0.1)",
     hoverBorder: "rgba(52,211,153,0.45)",
+    ringColor: "ring-emerald-400/60",
   },
   CFO: {
     topBar: "bg-gradient-to-r from-violet-400 to-purple-500",
@@ -85,6 +87,7 @@ const ROLE_THEME: Record<
     hoverShadow:
       "0 0 35px rgba(167,139,250,0.22), 0 8px 32px rgba(167,139,250,0.1)",
     hoverBorder: "rgba(167,139,250,0.45)",
+    ringColor: "ring-violet-400/60",
   },
 };
 
@@ -255,10 +258,152 @@ function PhotoFrame({ role, photo, name }: { role: string; photo: string; name: 
   );
 }
 
+// ─── Bottom-sheet Modal for compact (< lg) view ───────────────────────────────
+type Member = { name: string; role: string; photo: string; bio: string };
+
+function MemberSheet({
+  member,
+  entry,
+  theme,
+  onClose,
+}: {
+  member: Member;
+  entry: MemberLogos | undefined;
+  theme: RoleTheme;
+  onClose: () => void;
+}) {
+  // Lock body scroll while open
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+
+  return (
+    <div className="lg:hidden">
+      {/* Backdrop */}
+      <motion.div
+        className="fixed inset-0 bg-black/75 backdrop-blur-sm z-[60]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.25 }}
+        onClick={onClose}
+      />
+      {/* Panel */}
+      <motion.div
+        className="fixed bottom-0 left-0 right-0 z-[61] bg-[#0d1117] rounded-t-3xl max-h-[85vh] landscape:max-h-[92vh] overflow-y-auto border-t border-white/10 shadow-2xl"
+        initial={{ y: "100%" }}
+        animate={{ y: 0 }}
+        exit={{ y: "100%" }}
+        transition={{ type: "spring", damping: 28, stiffness: 280 }}
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${member.name} details`}
+      >
+        {/* Drag handle */}
+        <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mt-3 mb-5" />
+
+        <div className="px-5 pb-5">
+          {/* Hero row */}
+          <div className="flex gap-4 items-start">
+            <div
+              className={`relative w-24 h-32 shrink-0 rounded-2xl overflow-hidden ring-2 ${theme.ringColor}`}
+            >
+              <Image
+                src={member.photo}
+                alt={member.name}
+                fill
+                sizes="96px"
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-xl font-extrabold tracking-tight text-white mb-2 leading-tight">
+                {member.name}
+              </h3>
+              <span
+                className={`inline-block text-[11px] font-semibold px-3 py-1 rounded-md ${theme.badge}`}
+              >
+                {member.role}
+              </span>
+              <p className="text-sm text-slate-400 mt-2 line-clamp-4 leading-relaxed">
+                {member.bio}
+              </p>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-white/10 my-4" />
+
+          {/* Career Highlights */}
+          {entry && (entry.logos?.length || entry.badges?.length) ? (
+            <div>
+              <p className="text-[10px] font-mono tracking-[0.25em] uppercase text-white/30 mb-3">
+                Career · Highlights
+              </p>
+              <div className="flex items-center gap-2 flex-wrap">
+                {entry.logos?.map((l) => (
+                  <div
+                    key={l.alt}
+                    title={l.alt}
+                    className="h-12 w-12 rounded-xl flex items-center justify-center p-2 bg-slate-200 border border-slate-200/25"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={l.src}
+                      alt={l.alt}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                ))}
+                {entry.badges?.map((b) => (
+                  <span
+                    key={b}
+                    className="text-[13px] font-medium px-3 py-1.5 rounded-full bg-white/8 border border-white/12 text-slate-300"
+                  >
+                    {b}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          {/* Close button */}
+          <button
+            type="button"
+            onClick={onClose}
+            className="w-full py-3 rounded-2xl bg-white/8 text-white/60 text-sm mt-4 flex items-center justify-center gap-2 hover:bg-white/12 hover:text-white/80 transition-colors"
+          >
+            <X className="w-4 h-4" />
+            Close
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 // ─── Main Section ─────────────────────────────────────────────────────────────
 export function ShareholdersSection() {
   const content = useContent();
   const c = content.slideShareholders;
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const close = useCallback(() => setOpenIndex(null), []);
+
+  const openMember =
+    openIndex !== null ? (c.members[openIndex] as Member) : null;
+  const openTheme =
+    openMember ? (ROLE_THEME[openMember.role] ?? DEFAULT_THEME) : null;
+  const openEntry = openIndex !== null ? MEMBER_LOGOS[openIndex] : undefined;
 
   return (
     <section
@@ -338,14 +483,32 @@ export function ShareholdersSection() {
           </motion.p>
         </div>
 
-        {/* Member grid */}
-        <div className="ei-child grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        {/* Member grid:
+            < sm  -> 2 cols (compact)
+            sm-md -> 4 cols (compact)
+            >= lg -> 4 cols (full) */}
+        <div className="ei-child grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {c.members.map((m, i) => {
             const theme = ROLE_THEME[m.role] ?? DEFAULT_THEME;
             return (
             <motion.div
               key={m.name}
-              className={`group relative bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-5 md:p-6 pt-6 md:pt-7 flex flex-col items-center text-center transition-colors overflow-hidden`}
+              role="button"
+              tabIndex={0}
+              onClick={() => {
+                // Only treat clicks as "open" on compact (< lg). On lg+ the click is a no-op
+                // since the full card already shows everything.
+                if (typeof window !== "undefined" && window.innerWidth < 1024) {
+                  setOpenIndex(i);
+                }
+              }}
+              onKeyDown={(e) => {
+                if ((e.key === "Enter" || e.key === " ") && typeof window !== "undefined" && window.innerWidth < 1024) {
+                  e.preventDefault();
+                  setOpenIndex(i);
+                }
+              }}
+              className={`group relative bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-3 md:p-4 lg:p-6 pt-5 md:pt-5 lg:pt-7 flex flex-col items-center text-center transition-colors overflow-hidden cursor-pointer lg:cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30`}
               initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ delay: 0.5 + i * 0.12, duration: 0.55, ease: "easeOut" }}
@@ -361,13 +524,18 @@ export function ShareholdersSection() {
               {/* Role-tinted background wash */}
               <div className={`absolute inset-0 ${theme.cardBg} pointer-events-none rounded-2xl`} />
 
-              {/* Index badge */}
-              <span className="absolute top-3 right-3 z-10 text-[10px] font-mono tracking-widest text-white/30 group-hover:text-white/60 transition-colors">
+              {/* Index badge — desktop only to keep compact tiles clean */}
+              <span className="hidden lg:inline absolute top-3 right-3 z-10 text-[10px] font-mono tracking-widest text-white/30 group-hover:text-white/60 transition-colors">
                 {String(i + 1).padStart(2, "0")}
               </span>
 
-              {/* Shimmer scan line on hover */}
-              <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
+              {/* "Tap for details" affordance — compact only */}
+              <span className="lg:hidden absolute bottom-2 right-2 z-10 inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/10 text-white/60 backdrop-blur-sm">
+                <Plus className="w-3.5 h-3.5" />
+              </span>
+
+              {/* Shimmer scan line on hover (desktop) */}
+              <div className="hidden lg:block pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
                 <motion.div
                   className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 group-hover:opacity-100"
                   initial={{ top: "-10%" }}
@@ -389,26 +557,26 @@ export function ShareholdersSection() {
               </div>
 
               {/* Role badge — left-bar style */}
-              <span className={`relative z-10 inline-block text-[11px] md:text-xs font-semibold px-3 py-1 rounded-md mb-2 ${theme.badge}`}>
+              <span className={`relative z-10 inline-block text-[10px] sm:text-[11px] md:text-xs font-semibold px-2 sm:px-3 py-1 rounded-md mb-2 ${theme.badge}`}>
                 {m.role}
               </span>
 
               {/* Name */}
-              <h3 className="relative z-10 text-white text-lg md:text-xl font-extrabold tracking-tight mb-2">
+              <h3 className="relative z-10 text-white text-sm sm:text-base lg:text-xl font-extrabold tracking-tight mb-2 leading-tight">
                 {m.name}
               </h3>
 
-              {/* Bio */}
-              <p className="relative z-10 text-slate-400 text-xs md:text-sm leading-relaxed">
+              {/* Bio — desktop only */}
+              <p className="hidden lg:block relative z-10 text-slate-400 text-xs md:text-sm leading-relaxed">
                 {m.bio}
               </p>
 
-              {/* Career logos / badges */}
+              {/* Career logos / badges — desktop only */}
               {(() => {
                 const entry = MEMBER_LOGOS[i];
                 if (!entry || (!entry.logos?.length && !entry.badges?.length)) return null;
                 return (
-                  <div className="relative z-10 mt-3 pt-3 border-t border-white/8 w-full flex flex-col items-center">
+                  <div className="hidden lg:flex relative z-10 mt-3 pt-3 border-t border-white/8 w-full flex-col items-center">
                     <p className="text-[9px] font-mono tracking-[0.25em] uppercase text-white/25 mb-1.5 w-full text-center">
                       Career · Highlights
                     </p>
@@ -444,6 +612,19 @@ export function ShareholdersSection() {
           })}
         </div>
       </div>
+
+      {/* Bottom-sheet detail modal — only mounts on compact (< lg) via wrapper class */}
+      <AnimatePresence>
+        {openMember && openTheme ? (
+          <MemberSheet
+            key={openMember.name}
+            member={openMember}
+            entry={openEntry}
+            theme={openTheme}
+            onClose={close}
+          />
+        ) : null}
+      </AnimatePresence>
     </section>
   );
 }
