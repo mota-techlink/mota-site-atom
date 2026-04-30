@@ -7,6 +7,40 @@ import { Users } from "lucide-react";
 import { useContent } from "../hooks";
 import { SECTION } from "../constants";
 
+// Logos/badges per shareholder (index-aligned with locale members array)
+type MemberLogos = {
+  imgLogos?: { src: string; alt: string }[];
+  badges?: string[];
+};
+const MEMBER_LOGOS: MemberLogos[] = [
+  // 0: Turlough Sheehan (CEO)
+  { badges: ["🚚 40+ Yrs Logistics", "🌐 DDP Pioneer", "📋 Section 321"] },
+  // 1: Harling Sun (CTO)
+  {
+    imgLogos: [
+      { src: "https://logo.clearbit.com/ebay.com", alt: "eBay" },
+      { src: "https://logo.clearbit.com/ibm.com", alt: "IBM" },
+      { src: "https://logo.clearbit.com/konami.com", alt: "KONAMI" },
+    ],
+  },
+  // 2: Paul Brennan (COO)
+  {
+    imgLogos: [
+      { src: "https://logo.clearbit.com/mcdonalds.com", alt: "McDonald's" },
+      { src: "https://logo.clearbit.com/apple.com", alt: "Apple" },
+      { src: "https://logo.clearbit.com/microsoft.com", alt: "Microsoft" },
+      { src: "https://logo.clearbit.com/smurfitkappa.com", alt: "Smurfit Kappa" },
+    ],
+  },
+  // 3: Siobhain McHugh (CFO)
+  {
+    imgLogos: [
+      { src: "https://logo.clearbit.com/matheson.com", alt: "Matheson" },
+    ],
+    badges: ["CIMA", "McHugh & Associates"],
+  },
+];
+
 // Deterministic pseudo-random so SSR & client match
 const PARTICLES = Array.from({ length: 24 }, (_, i) => {
   const seed = (i + 1) * 9301;
@@ -169,6 +203,37 @@ export function ShareholdersSection() {
               <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
                 {m.bio}
               </p>
+
+              {/* Career logos / badges */}
+              {(() => {
+                const logos = MEMBER_LOGOS[i];
+                if (!logos || (!logos.imgLogos?.length && !logos.badges?.length)) return null;
+                return (
+                  <div className="mt-3 pt-3 border-t border-white/10 w-full flex items-center gap-2.5 flex-wrap justify-center">
+                    {logos.imgLogos?.map((l) => (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        key={l.src}
+                        src={l.src}
+                        alt={l.alt}
+                        title={l.alt}
+                        className="h-5 w-auto max-w-[60px] object-contain opacity-50 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300 rounded"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).style.display = "none";
+                        }}
+                      />
+                    ))}
+                    {logos.badges?.map((b) => (
+                      <span
+                        key={b}
+                        className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/10 border border-white/10 text-slate-500 hover:text-slate-300 transition-colors"
+                      >
+                        {b}
+                      </span>
+                    ))}
+                  </div>
+                );
+              })()}
             </motion.div>
           ))}
         </div>
