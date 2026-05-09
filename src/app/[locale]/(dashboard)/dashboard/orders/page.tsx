@@ -56,12 +56,11 @@ export default async function OrdersPage({
     const fallbackResult = await fallbackQuery
     orders = fallbackResult.data
     error = fallbackResult.error
-    console.warn("📋 Fallback to orders table - error:", error?.message || JSON.stringify(error))
   }
 
   if (error) {
     const errorMsg = error?.message || JSON.stringify(error) || "Unknown error"
-    console.error("❌ Error fetching orders:", errorMsg, "Type:", typeof error, "Keys:", Object.keys(error || {}))
+    console.error("❌ Error fetching orders:", errorMsg)
     return <div className="text-red-600">Failed to load orders: {errorMsg}</div>
   }
 

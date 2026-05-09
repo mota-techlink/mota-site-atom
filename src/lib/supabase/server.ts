@@ -1,13 +1,18 @@
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
+import { createFetchWithSchema } from './fetch-with-schema';
 
 export async function createClient() {
   const cookieStore = await cookies();
+  const schema = process.env.NEXT_PUBLIC_SUPABASE_DB_SCHEMA || 'public';
+  const fetchWithSchema = createFetchWithSchema(schema);
 
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
+      global: { fetch: fetchWithSchema },
+      db: { schema },
       cookies: {
         getAll() {
           return cookieStore.getAll();
