@@ -41,7 +41,7 @@ export default async function OrdersPage({
   let { data: orders, error } = await buildViewQuery()
 
   if (error) {
-    console.warn("order_details_view query failed, fallback to orders table:", error)
+    console.warn("⚠️ order_details_view query failed:", error?.message || JSON.stringify(error))
 
     let fallbackQuery = supabase
       .from("orders")
@@ -56,11 +56,13 @@ export default async function OrdersPage({
     const fallbackResult = await fallbackQuery
     orders = fallbackResult.data
     error = fallbackResult.error
+    console.warn("📋 Fallback to orders table - error:", error?.message || JSON.stringify(error))
   }
 
   if (error) {
-    console.error("Error fetching orders:", error)
-    return <div>Failed to load orders.</div>
+    const errorMsg = error?.message || JSON.stringify(error) || "Unknown error"
+    console.error("❌ Error fetching orders:", errorMsg, "Type:", typeof error, "Keys:", Object.keys(error || {}))
+    return <div className="text-red-600">Failed to load orders: {errorMsg}</div>
   }
 
   return (
