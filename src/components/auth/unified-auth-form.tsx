@@ -97,7 +97,8 @@ export default function UnifiedAuthForm({
       } else {
         params.delete('view');
       }
-      router.replace(`${pathname}?${params.toString()}`);
+      const newUrl = `${pathname}${params.toString() ? `?${params.toString()}` : ''}`;
+      window.location.assign(newUrl);
     } else {
       setLocalIsSignup(!localIsSignup);
     }
@@ -182,7 +183,8 @@ export default function UnifiedAuthForm({
           if (mode === 'page') {
             const params = new URLSearchParams(searchParams.toString());
             params.delete('view');
-            router.replace(`${pathname}?${params.toString()}`);
+            const newUrl = `${pathname}${params.toString() ? `?${params.toString()}` : ''}`;
+            window.location.assign(newUrl);
           } else {
             // Stay in modal, show success message
           }
