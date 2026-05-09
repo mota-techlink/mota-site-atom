@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "title": "Engine Pipeline & Data Flow",
+    "versions": [
+      { "label": "PIPELINE", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "Pipeline Overview",
+      "stages": "Six-Stage Pipeline",
+      "data-flow": "Key Data Flows",
+      "back": "← Back to Main Doc"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "PRD §3.1 · §4.4–§4.6",
+    "title": "Execution Pipeline & Data Flow",
+    "subtitle": "From product intake to billing events, this is not a collection of isolated features — it is a continuous data chain built around shared project_id, mention_id, and tracking_url values.",
+    "highlights": [
+      { "icon": "🔗", "label": "Continuous Data Chain", "desc": "6 stages linked by project_id / mention_id / tracking_url — fully traceable end-to-end" },
+      { "icon": "⚙️", "label": "Async Orchestration", "desc": "Decoupled stages coordinated by task queue, with retry and rollback support" },
+      { "icon": "💰", "label": "Billing Loop", "desc": "From reply publication to funnel_events — triggers Credits deduction and partner revenue sharing" }
+    ],
+    "description": "MOTA is not a set of isolated features — it is a full end-to-end execution pipeline from product intake to billing events. Each stage produces data structures consumed by downstream stages, forming a continuous data flow loop."
+  },
+  "stages": {
+    "badge": "Six-Stage Pipeline",
+    "title": "Six-Stage Execution Pipeline",
+    "subtitle": "From product intake to billing feedback — each stage is decoupled and asynchronously orchestrated.",
+    "stages": [
+      {
+        "step": "1",
+        "label": "Product Intake",
+        "desc": "The user enters product details and creates a projects record."
+      },
+      {
+        "step": "2",
+        "label": "Product Analysis",
+        "desc": "The LLM infers pain points, competitors, platforms, and structured queries."
+      },
+      {
+        "step": "3",
+        "label": "Scanning",
+        "desc": "Scanner Agents collect mentions, scan_logs, and raw content."
+      },
+      {
+        "step": "4",
+        "label": "Mining & Validation",
+        "desc": "pain_points are aggregated, five-axis validation is triggered, and priorities are assigned."
+      },
+      {
+        "step": "5",
+        "label": "Reply Generation",
+        "desc": "Create reply_queue entries, tracking_url values, quality_score values, and review states."
+      },
+      {
+        "step": "6",
+        "label": "Tracking & Billing",
+        "desc": "reply_logs and funnel_events feed back into billing, reporting, and partner revenue."
+      }
+    ]
+  },
+  "data-flow": {
+    "badge": "Key Data Flows",
+    "title": "Key Data Flows",
+    "subtitle": "6 core data flows connecting each stage, ensuring a complete and traceable data chain.",
+    "flows": [
+      {
+        "from": "projects",
+        "to": "tasks",
+        "type": "Analysis output",
+        "desc": "The product analysis engine writes platform queries and multilingual settings into the task queue."
+      },
+      {
+        "from": "tasks",
+        "to": "mentions / scan_logs",
+        "type": "Scan execution",
+        "desc": "Scanners collect content and record source, platform, cost, and execution results."
+      },
+      {
+        "from": "mentions",
+        "to": "pain_points / validations",
+        "type": "Mining validation",
+        "desc": "The Mining Agent performs pain-point extraction, cross-source merging, and five-axis scoring."
+      },
+      {
+        "from": "mentions",
+        "to": "reply_queue",
+        "type": "Reply candidates",
+        "desc": "Highly relevant mentions enter the reply generation queue together with product context."
+      },
+      {
+        "from": "reply_queue",
+        "to": "reply_logs",
+        "type": "Review and publish",
+        "desc": "After manual or automatic approval, replies are published and written into permanent logs."
+      },
+      {
+        "from": "reply_logs",
+        "to": "funnel_events / credit_transactions / bill_periods",
+        "type": "Billing feedback",
+        "desc": "Clicks and conversion events trigger deductions, monthly closing, reporting, and partner revenue sharing."
+      }
+    ]
+  },
+  "back": {
+    "badge": "Back",
+    "title": "Return to Main Document",
+    "subtitle": "← Back to PRD Guide",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-pipeline"
+  }
+}

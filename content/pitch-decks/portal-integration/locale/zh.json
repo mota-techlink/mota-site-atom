@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "title": "三端门户集成详解",
+    "versions": [
+      { "label": "PORTAL", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "门户总览",
+      "portals": "三种门户",
+      "back": "← 返回主文档"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "PRD §4.8–§4.10",
+    "title": "三端门户设计",
+    "subtitle": "同一套数据底座，面向三类用户角色输出三种完全不同的工作面板。",
+    "description": "Portal（公开门户）负责价值传递与注册转化，User Dashboard（客户工作台）负责项目管理与效果追踪，Admin Dashboard（管理后台）负责全局监控与运营管理。",
+    "highlights": [
+      { "icon": "🌐", "label": "公开门户", "desc": "访客入口——五步闭环动效、三层定价、注册转化" },
+      { "icon": "💻", "label": "客户工作台", "desc": "已付费客户——项目、回复、资产、分析与账单" },
+      { "icon": "⚙️", "label": "管理后台", "desc": "内部运营——任务监控、审核发布、伙伴管理与反欺诈" }
+    ]
+  },
+  "portals": {
+    "badge": "三种门户",
+    "title": "核心门户设计",
+    "subtitle": "三种门户共用同一套数据底座，但界面、功能与 KPI 各不相同。",
+    "portals": [
+      {
+        "name": "Portal",
+        "route": "/",
+        "audience": "访客 / 潜在客户",
+        "goal": "价值传递 + 注册转化",
+        "modules": ["Hero 与五步闭环动效", "三层产品定价说明", "脱敏案例展示", "注册 / 登录"],
+        "kpis": ["注册转化率", "报告解锁率", "定价页到注册页点击率"]
+      },
+      {
+        "name": "User Dashboard",
+        "route": "/dashboard",
+        "audience": "已注册客户",
+        "goal": "项目管理 + 回复审核 + 效果查看 + 账单支付",
+        "modules": ["Overview / Projects", "Replies / Customer Collaboration", "Assets / Competitor Reports", "Analytics / Billing"],
+        "kpis": ["活跃项目数", "有效点击与转化率", "余额消耗与月账单"]
+      },
+      {
+        "name": "Admin Dashboard",
+        "route": "/admin",
+        "audience": "内部运营",
+        "goal": "全局监控、审核发布、计费调整、伙伴管理",
+        "modules": ["Users / Projects / Tasks", "Reply Queue + AI 改写", "Billing + Fraud Monitoring", "Partner & Creator Management"],
+        "kpis": ["待审核回复量", "无效点击过滤率", "伙伴收益与任务完成率"]
+      }
+    ]
+  },
+  "back": {
+    "badge": "返回",
+    "title": "返回主文档",
+    "subtitle": "← 回到 PRD Guide 主文档",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-portals"
+  }
+}

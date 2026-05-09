@@ -1,0 +1,12 @@
+{
+  "title": "定价模型详解",
+  "slug": "billing-model",
+  "description": "MOTA 混合计费架构详解：订阅制、X402 微支付、平台佣金、管理员调账与审计体系",
+  "author": "MOTA Team",
+  "date": "2025-04-27",
+  "status": "published",
+  "previewSlides": 8,
+  "defaultTransition": "fade",
+  "tags": ["billing", "pricing", "x402", "settlement"],
+  "access": "public"
+}

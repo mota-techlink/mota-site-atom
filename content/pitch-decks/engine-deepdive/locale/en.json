@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "title": "Engine Module Deep Dive",
+    "versions": [
+      { "label": "ENGINE", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "Engine Overview",
+      "flow": "Analysis Flow",
+      "prompt-fields": "Prompt Output Fields",
+      "task-fields": "Tasks Table",
+      "trigger": "Trigger Mechanism",
+      "back": "← Back to Main Doc"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "PRD §4.1",
+    "title": "Product Analysis Engine",
+    "subtitle": "The automation core at the system entrance: understand the product, define target users, find where to reach them, and determine what topics to use.",
+    "description": "The engine uses AI Agent orchestration to understand product definitions, infer target audiences, search platforms, and query terms, then auto-generates scanning tasks. Core outputs include domain_tags, keywords, multilingual_queries, and other structured fields.",
+    "highlights": [
+      { "icon": "🤖", "label": "AI Agent Orchestration", "desc": "LLM-driven multi-step reasoning chain — from product description to audience, platform, and query derivation" },
+      { "icon": "🔗", "label": "Pipeline Integration", "desc": "Outputs feed directly into the tasks queue, seamlessly connecting to scanners and reply modules" },
+      { "icon": "🌐", "label": "Multilingual Support", "desc": "Auto-generates localized queries for ja/ko/es/pt/ru, covering global communities" }
+    ]
+  },
+  "flow": {
+    "badge": "Analysis Engine Flow",
+    "title": "5-Step Analysis Pipeline",
+    "subtitle": "The complete reasoning chain from product description to scanning task enqueuing.",
+    "steps": [
+      {
+        "step": "1",
+        "label": "Read Product Description",
+        "detail": "Fetch the product name, summary, URL, target languages, competitors, and reply style.",
+        "output": "Product context"
+      },
+      {
+        "step": "2",
+        "label": "Infer Pain Points and Audience",
+        "detail": "Identify the core problem the product solves, user profiles, and typical failure scenarios.",
+        "output": "target_audience_pain"
+      },
+      {
+        "step": "3",
+        "label": "Infer Platforms and Competitors",
+        "detail": "Return likely active platforms, communities, subreddits, and competitor sets.",
+        "output": "domain_tags + inferred_competitors"
+      },
+      {
+        "step": "4",
+        "label": "Generate Structured Queries",
+        "detail": "Output platform-specific queries for Reddit, YouTube, Google, Amazon, Quora, Twitter, HN, SO, review sites, and local-language platforms.",
+        "output": "keywords + platform queries"
+      },
+      {
+        "step": "5",
+        "label": "Generate Tasks and Activate Project",
+        "detail": "Write into the tasks queue, backfill projects.domain_tags, and switch the project status to active.",
+        "output": "Queued tasks"
+      }
+    ]
+  },
+  "prompt-fields": {
+    "badge": "Output Fields",
+    "title": "Prompt Output Fields",
+    "subtitle": "10 core fields output by the engine's AI reasoning — covering domain labeling, audience definition, platform queries, and multilingual expansion.",
+    "fields": [
+      {
+        "field": "domain_tags",
+        "type": "string[]",
+        "desc": "Up to 3 domain tags used for platform matching and partner matching."
+      },
+      {
+        "field": "target_audience_pain",
+        "type": "string",
+        "desc": "A single-sentence description of the audience's most critical pain point."
+      },
+      {
+        "field": "inferred_competitors",
+        "type": "string[]",
+        "desc": "If the user does not provide competitors, the system infers an alternative-product list automatically."
+      },
+      {
+        "field": "keywords",
+        "type": "string[]",
+        "desc": "5–10 baseline search terms that can work across platforms."
+      },
+      {
+        "field": "subreddits",
+        "type": "string[]",
+        "desc": "5–15 target subreddits where the product can credibly enter the conversation."
+      },
+      {
+        "field": "youtube_queries",
+        "type": "string[]",
+        "desc": "Queries used to find tutorial videos and review content."
+      },
+      {
+        "field": "google_seeds",
+        "type": "string[]",
+        "desc": "Seed terms for Google PAA and autocomplete discovery."
+      },
+      {
+        "field": "amazon_queries",
+        "type": "string[]",
+        "desc": "Queries used to locate competitor negative reviews and similar-product commentary."
+      },
+      {
+        "field": "twitter_keywords",
+        "type": "string[]",
+        "desc": "Topic and emotion terms used to capture real-time complaints."
+      },
+      {
+        "field": "multilingual_queries",
+        "type": "object",
+        "desc": "Outputs local-platform targets and localized queries for ja / ko / es / pt / ru."
+      }
+    ]
+  },
+  "task-fields": {
+    "badge": "Tasks Table",
+    "title": "Core Fields in the tasks Table",
+    "subtitle": "The data structure written to the tasks queue by the analysis engine, consumed by scanners and reply modules.",
+    "fields": [
+      {
+        "field": "task_id / project_id",
+        "desc": "Each task belongs to a project and can be split for execution by platform or language batch."
+      },
+      {
+        "field": "target_audience_pain",
+        "desc": "The shared audience pain point used by scanners and the reply module."
+      },
+      {
+        "field": "domain_tags",
+        "desc": "Used by partner matching, report classification, and dashboard filters."
+      },
+      {
+        "field": "keywords / subreddits / youtube_queries / google_seeds",
+        "desc": "Structured query parameters for English-language platforms."
+      },
+      {
+        "field": "multilingual_queries",
+        "desc": "Expansion parameters and target languages for local-language platforms."
+      },
+      {
+        "field": "status",
+        "desc": "queued → scanning → completed / failed, used for scheduling and retries."
+      }
+    ]
+  },
+  "trigger": {
+    "badge": "Trigger Mechanism",
+    "title": "Engine Trigger & Configuration",
+    "subtitle": "Auto-triggered on project creation. Supports manual re-analysis and prompt template overrides.",
+    "triggerNote": "Trigger: after the user creates a project, the analysis engine runs asynchronously and automatically enqueues scanning tasks.",
+    "configItems": [
+      {
+        "label": "Auto Trigger",
+        "desc": "Engine executes automatically on project creation, no manual intervention needed."
+      },
+      {
+        "label": "Manual Re-analysis",
+        "desc": "Admins can trigger re-analysis to update domain_tags and query terms (overrides previous results)."
+      },
+      {
+        "label": "Prompt Templates",
+        "desc": "Engine AI prompt templates can be overridden via system configuration for different vertical industries."
+      }
+    ]
+  },
+  "back": {
+    "badge": "Back",
+    "title": "Return to Main Document",
+    "subtitle": "← Back to PRD Guide",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-engine"
+  }
+}

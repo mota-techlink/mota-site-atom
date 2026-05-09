@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "title": "定价模型详解",
+    "versions": [
+      { "label": "BILLING", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "计费总览",
+      "tier-system": "三级定价体系",
+      "tier-detail": "三层/五层/七层定价",
+      "x402": "X402 微支付机制",
+      "platform-commission": "平台佣金模型",
+      "qa-billing": "QA 计费与调价策略",
+      "settlement": "结算与对账",
+      "adjustment": "管理员调账",
+      "back": "← 返回主文档"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "计费总览",
+    "title": "MOTA 定价模型与结算体系",
+    "subtitle": "融合订阅制、预付制、按效果付费与微支付的混合计费架构，支持灵活的分层定价与可审计调账。",
+    "principles": [
+      { "icon": "🎯", "label": "按效果付费", "desc": "Reply Outreach 按有效点击（CTA Link Click）计费，成本与业务产出挂钩。" },
+      { "icon": "💰", "label": "三层并行", "desc": "Subscription（固定成本）、Report（按次）+ Outreach（按效果），三种收入流并行运作。" },
+      { "icon": "🔢", "label": "倍率调节", "desc": "平台 Tier 倍率（1.0–4.0）反应运营成本差异；管理员可折扣/豁免/赠送。" },
+      { "icon": "📊", "label": "可审计", "desc": "所有扣费、调整、退款写入 audit_log 与 bill_adjustments，强制记录原因。" }
+    ]
+  },
+  "tier-system": {
+    "badge": "三级定价体系",
+    "title": "Subscription / Report / Outreach",
+    "subtitle": "三条并行业务线分别对应固定成本覆盖、按次研究与按效果触达。",
+    "subscription": {
+      "summary": "按项目按月收费，覆盖扫描、代理、API 与基础 AI 分析成本。项目暂停即停止扣费。",
+      "levels": ["Basic $99/月", "Pro $299/月", "Enterprise $999+/月"]
+    },
+    "report": {
+      "summary": "按次生成结构化市场调研报告，可作为引流产品与销售前置。",
+      "levels": ["Preview $0", "Standard $99", "Premium $299"]
+    },
+    "outreach": {
+      "summary": "按社区回复产生的有效点击计费，CPA 模式确保效果绑定。",
+      "description": "详见 X402 微支付机制与平台佣金模型"
+    }
+  },
+  "x402": {
+    "badge": "X402 微支付",
+    "title": "X402 微支付机制",
+    "subtitle": "按有效点击（CTA Link Click）实时扣费，Prepaid 扣 Credits，PAYG 月末结算。",
+    "flow": [
+      { "step": "1", "action": "回复发布", "detail": "系统生成追踪链接并发布到社区回复中" },
+      { "step": "2", "action": "用户点击", "detail": "访客点击链接跳转到落地页，触发 funnel_events 记录" },
+      { "step": "3", "action": "有效性判定", "detail": "反爬虫/反刷量验证 + 去重 + 时间窗口判定" },
+      { "step": "4", "action": "扣费", "detail": "Prepaid 实时扣减 Project Credits；PAYG 写入月度账单汇总" },
+      { "step": "5", "action": "结算", "detail": "月末生成 invoice，Stripe 批量扣款或触发邮件催缴" }
+    ],
+    "creditSystem": "Project Credits 是 X402 的核心计量单位——每次有效点击消耗 Credits（按 Tier 倍率折算），充值即 Prepaid，Credit 余额不足时 Outreach 暂停但仍继续扫描。"
+  },
+  "platform-commission": {
+    "badge": "平台佣金",
+    "title": "平台 Tier 佣金模型",
+    "subtitle": "按平台运营成本划分 Tier，倍率影响每次点击的实际扣费。",
+    "tiers": [
+      { "tier": "Tier 1", "multiplier": "1.0", "platforms": "Reddit, Hacker News", "costReason": "API 友好，无审查风险" },
+      { "tier": "Tier 2", "multiplier": "1.5", "platforms": "Twitter/X", "costReason": "实时扫描需近实时额度，风控成本中等" },
+      { "tier": "Tier 3", "multiplier": "2.5", "platforms": "YouTube, Quora", "costReason": "需 Playwright 无界面抓取 + 反爬策略" },
+      { "tier": "Tier 4", "multiplier": "4.0", "platforms": "Amazon, G2, Trustpilot", "costReason": "高反爬 + 法律合规 + 审查成本" }
+    ]
+  },
+  "qa-billing": {
+    "badge": "QA 计费",
+    "title": "QA 计费与调价策略",
+    "subtitle": "管理员可对项目级别的定价做折扣、豁免或额外费率调整，所有调整必须填写原因。",
+    "adjustTypes": [
+      { "type": "Discount", "desc": "永久或限时折扣，按百分比或固定金额" },
+      { "type": "Override", "desc": "覆盖某平台 Tier 倍率" },
+      { "type": "Waive", "desc": "豁免特定时间段或特定用户的费用" },
+      { "type": "Grant", "desc": "赠送额外 Credits（不计费）" },
+      { "type": "Penalty", "desc": "因违规使用而加收费用" }
+    ],
+    "rules": "所有 bill_adjustments 强制记录 operator、reason、amount、type、scope、有效起止日期与审批路径。"
+  },
+  "settlement": {
+    "badge": "结算",
+    "title": "结算与对账",
+    "subtitle": "Prepaid 实时消耗，PAYG 月末结算，Stripe 主通道，支持伙伴分账。",
+    "methods": [
+      { "name": "Prepaid", "desc": "客户先充 Project Credits，每次有效点击实时扣减，余额为 0 时 Outreach 暂停" },
+      { "name": "PAYG", "desc": "月末汇总当月有效点击 + 平台倍率，生成 invoice 通过 Stripe 扣款" },
+      { "name": "Partnership", "desc": "Stripe Connect 自动分账，伙伴按约定比例获取分成" }
+    ]
+  },
+  "adjustment": {
+    "badge": "管理员调账",
+    "title": "管理员调账与审计",
+    "subtitle": "完整审计日志，所有扣费与调整可追溯。",
+    "auditFields": ["operator", "reason", "amount", "type", "scope", "effective_from", "effective_until", "approval_path"],
+    "notes": "账单每 6 小时自动汇总一次，欠费超 15 天自动暂停项目 Outreach 模块。"
+  },
+  "back": {
+    "badge": "返回",
+    "title": "返回主文档",
+    "subtitle": "← 回到 PRD Guide 主文档",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-billing"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "title": "Portal Integration Deep Dive",
+    "versions": [
+      { "label": "PORTAL", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "Portal Overview",
+      "portals": "Three Portals",
+      "back": "← Back to Main Doc"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "PRD §4.8–§4.10",
+    "title": "Three-Portal Design",
+    "subtitle": "The same underlying data platform powers three very different work surfaces for three different user roles.",
+    "description": "The public Portal handles value communication and signup conversion. The User Dashboard handles project management and performance tracking. The Admin Dashboard handles global monitoring and operations management.",
+    "highlights": [
+      { "icon": "🌐", "label": "Public Portal", "desc": "Visitor entry — five-step loop animation, three-tier pricing, signup conversion" },
+      { "icon": "💻", "label": "User Dashboard", "desc": "Paying customers — projects, replies, assets, analytics, and billing" },
+      { "icon": "⚙️", "label": "Admin Dashboard", "desc": "Internal operations — task monitoring, review publishing, partner management, fraud detection" }
+    ]
+  },
+  "portals": {
+    "badge": "Three Portals",
+    "title": "Core Portal Design",
+    "subtitle": "Three portals share the same data foundation but differ in interface, functionality, and KPIs.",
+    "portals": [
+      {
+        "name": "Portal",
+        "route": "/",
+        "audience": "Visitors / prospects",
+        "goal": "Communicate value and convert signups",
+        "modules": ["Hero and five-step loop animation", "Three-layer product pricing explanation", "Redacted case studies", "Register / sign in"],
+        "kpis": ["Signup conversion rate", "Report unlock rate", "Click-through rate from pricing to signup"]
+      },
+      {
+        "name": "User Dashboard",
+        "route": "/dashboard",
+        "audience": "Registered customers",
+        "goal": "Project management, reply review, performance visibility, and billing payment",
+        "modules": ["Overview / Projects", "Replies / Customer Collaboration", "Assets / Competitor Reports", "Analytics / Billing"],
+        "kpis": ["Active project count", "Valid clicks and conversion rate", "Balance burn and monthly bill"]
+      },
+      {
+        "name": "Admin Dashboard",
+        "route": "/admin",
+        "audience": "Internal operations",
+        "goal": "Global monitoring, publishing review, billing adjustments, and partner management",
+        "modules": ["Users / Projects / Tasks", "Reply Queue + AI Rewriting", "Billing + Fraud Monitoring", "Partner & Creator Management"],
+        "kpis": ["Replies awaiting review", "Invalid click filtering rate", "Partner revenue and task completion rate"]
+      }
+    ]
+  },
+  "back": {
+    "badge": "Back",
+    "title": "Return to Main Document",
+    "subtitle": "← Back to PRD Guide",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-portals"
+  }
+}

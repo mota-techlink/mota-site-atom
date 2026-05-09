@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "title": "Billing Model Deep Dive",
+    "versions": [
+      { "label": "BILLING", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "Billing Overview",
+      "tier-system": "Three-Tier Pricing",
+      "tier-detail": "Basic/Pro/Enterprise Pricing",
+      "x402": "X402 Micropayment",
+      "platform-commission": "Platform Commission",
+      "qa-billing": "QA Billing & Adjustments",
+      "settlement": "Settlement & Reconciliation",
+      "adjustment": "Admin Adjustments",
+      "back": "← Back to Main Doc"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "Billing Overview",
+    "title": "MOTA Pricing Model & Settlement System",
+    "subtitle": "A hybrid billing architecture combining subscription, prepaid, pay-per-performance, and micropayments with flexible tiered pricing and auditable adjustments.",
+    "principles": [
+      { "icon": "🎯", "label": "Pay per Performance", "desc": "Reply Outreach charges by valid CTA Link Clicks — cost tied directly to business outcomes." },
+      { "icon": "💰", "label": "Three Parallel Streams", "desc": "Subscription (fixed cost), Report (per-use), Outreach (per-performance) running concurrently." },
+      { "icon": "🔢", "label": "Multiplier System", "desc": "Platform Tier multipliers (1.0–4.0) reflect operational cost differences; admins can discount/waive/grant." },
+      { "icon": "📊", "label": "Auditable", "desc": "All deductions, adjustments, and refunds logged to audit_log and bill_adjustments with mandatory reason recording." }
+    ]
+  },
+  "tier-system": {
+    "badge": "Three-Tier Pricing",
+    "title": "Subscription / Report / Outreach",
+    "subtitle": "Three parallel business lines covering fixed costs, per-study research, and performance-based outreach.",
+    "subscription": {
+      "summary": "Monthly per-project fee covering scanning, proxy, API, and basic AI analysis costs. Project pause stops billing.",
+      "levels": ["Basic $99/mo", "Pro $299/mo", "Enterprise $999+/mo"]
+    },
+    "report": {
+      "summary": "Pay-per-report for structured market intelligence reports. Serves as a lead generation and pre-sales tool.",
+      "levels": ["Preview $0", "Standard $99", "Premium $299"]
+    },
+    "outreach": {
+      "summary": "CPA model — charged per valid click generated from community replies. Cost tied to real engagement.",
+      "description": "See X402 Micropayment and Platform Commission sections for details"
+    }
+  },
+  "x402": {
+    "badge": "X402 Micropayment",
+    "title": "X402 Micropayment Mechanism",
+    "subtitle": "Real-time deduction per valid CTA Link Click. Prepaid deducts Credits, PAYG settles at end of month.",
+    "flow": [
+      { "step": "1", "action": "Reply Published", "detail": "System generates tracking link embedded in community reply" },
+      { "step": "2", "action": "User Clicks", "detail": "Visitor clicks link to landing page, triggering funnel_events record" },
+      { "step": "3", "action": "Validation", "detail": "Anti-bot/anti-fraud + dedup + time window validation" },
+      { "step": "4", "action": "Deduction", "detail": "Prepaid deducts Project Credits in real time; PAYG adds to monthly invoice" },
+      { "step": "5", "action": "Settlement", "detail": "Monthly invoice generation, Stripe batch charge or payment reminder" }
+    ],
+    "creditSystem": "Project Credits are the core X402 unit — each valid click consumes Credits (adjusted by Tier multiplier). Top-up = Prepaid. When Credits run out, Outreach pauses but scanning continues."
+  },
+  "platform-commission": {
+    "badge": "Platform Commission",
+    "title": "Platform Tier Commission Model",
+    "subtitle": "Tiers reflect platform operating costs. Multiplier affects per-click deduction.",
+    "tiers": [
+      { "tier": "Tier 1", "multiplier": "1.0", "platforms": "Reddit, Hacker News", "costReason": "API-friendly, low moderation risk" },
+      { "tier": "Tier 2", "multiplier": "1.5", "platforms": "Twitter/X", "costReason": "Real-time scanning requires near-real-time quota, moderate moderation cost" },
+      { "tier": "Tier 3", "multiplier": "2.5", "platforms": "YouTube, Quora", "costReason": "Requires Playwright headless scraping + anti-bot strategy" },
+      { "tier": "Tier 4", "multiplier": "4.0", "platforms": "Amazon, G2, Trustpilot", "costReason": "High anti-scraping + legal compliance + moderation cost" }
+    ]
+  },
+  "qa-billing": {
+    "badge": "QA Billing",
+    "title": "QA Billing & Adjustment Strategy",
+    "subtitle": "Admins can apply discounts, overrides, waivers, or surcharges at the project level. All adjustments must include a reason.",
+    "adjustTypes": [
+      { "type": "Discount", "desc": "Permanent or time-limited discount, percentage or fixed amount" },
+      { "type": "Override", "desc": "Override platform Tier multiplier for a specific project" },
+      { "type": "Waive", "desc": "Waive fees for a specific period or user" },
+      { "type": "Grant", "desc": "Grant free Credits (no charge)" },
+      { "type": "Penalty", "desc": "Surcharge for policy violation" }
+    ],
+    "rules": "All bill_adjustments must record: operator, reason, amount, type, scope, effective dates, and approval path."
+  },
+  "settlement": {
+    "badge": "Settlement",
+    "title": "Settlement & Reconciliation",
+    "subtitle": "Prepaid real-time consumption, PAYG end-of-month settlement, Stripe main channel, partnership split supported.",
+    "methods": [
+      { "name": "Prepaid", "desc": "Customer tops up Project Credits, each valid click deducts in real time. Outreach pauses at zero balance" },
+      { "name": "PAYG", "desc": "Monthly summary of valid clicks × platform multiplier, invoice generated via Stripe" },
+      { "name": "Partnership", "desc": "Stripe Connect auto-split, partners receive agreed percentage" }
+    ]
+  },
+  "adjustment": {
+    "badge": "Admin Adjustments",
+    "title": "Admin Adjustment & Audit",
+    "subtitle": "Full audit log — all deductions and adjustments are traceable.",
+    "auditFields": ["operator", "reason", "amount", "type", "scope", "effective_from", "effective_until", "approval_path"],
+    "notes": "Billing summary auto-generated every 6 hours. Outstanding balance over 15 days auto-pauses project Outreach."
+  },
+  "back": {
+    "badge": "Back",
+    "title": "Return to Main Document",
+    "subtitle": "← Back to PRD Guide",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-billing"
+  }
+}

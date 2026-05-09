@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "title": "引擎管线与数据流详解",
+    "versions": [
+      { "label": "PIPELINE", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "管线总览",
+      "stages": "六阶段管线",
+      "data-flow": "关键数据流",
+      "back": "← 返回主文档"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "PRD §3.1 · §4.4–§4.6",
+    "title": "执行管线与数据流",
+    "subtitle": "从产品录入到计费事件，不是单点功能，而是一条共享 project_id / mention_id / tracking_url 的连续数据链路。",
+    "highlights": [
+      { "icon": "🔗", "label": "连续数据链路", "desc": "6 个阶段通过 project_id / mention_id / tracking_url 串接，端到端可追溯" },
+      { "icon": "⚙️", "label": "异步编排", "desc": "各阶段解耦执行，由任务队列调度，支持重试与回滚" },
+      { "icon": "💰", "label": "计费闭环", "desc": "从回复发布到 funnel_events 回流，触发 Credits 扣费与伙伴分账" }
+    ],
+    "description": "MOTA 不是一批独立功能——它是一个从产品录入到计费事件的全链路执行管线。每个阶段产生的数据结构被下游阶段消费，最终形成连续数据流闭环。"
+  },
+  "stages": {
+    "badge": "六阶段管线",
+    "title": "六阶段执行管线",
+    "subtitle": "从产品录入到计费回流，每个阶段解耦执行、异步编排。",
+    "stages": [
+      {
+        "step": "1",
+        "label": "Product Intake",
+        "desc": "用户录入产品资料，创建 projects 记录。"
+      },
+      {
+        "step": "2",
+        "label": "Product Analysis",
+        "desc": "LLM 推断痛点、竞品、平台与结构化查询词。"
+      },
+      {
+        "step": "3",
+        "label": "Scanning",
+        "desc": "Scanner Agents 抓取 mentions、scan_logs 与原始内容。"
+      },
+      {
+        "step": "4",
+        "label": "Mining & Validation",
+        "desc": "聚合 pain_points，触发五轴验证并产出优先级。"
+      },
+      {
+        "step": "5",
+        "label": "Reply Generation",
+        "desc": "生成 reply_queue、tracking_url、quality_score 与审核状态。"
+      },
+      {
+        "step": "6",
+        "label": "Tracking & Billing",
+        "desc": "reply_logs 与 funnel_events 回流到计费、报表与伙伴收益。"
+      }
+    ]
+  },
+  "data-flow": {
+    "badge": "关键数据流",
+    "title": "关键数据流",
+    "subtitle": "6 条核心数据流连接各阶段，确保数据链路完整可追踪。",
+    "flows": [
+      {
+        "from": "projects",
+        "to": "tasks",
+        "type": "分析输出",
+        "desc": "产品分析引擎把平台查询词与多语言配置写入任务队列。"
+      },
+      {
+        "from": "tasks",
+        "to": "mentions / scan_logs",
+        "type": "扫描执行",
+        "desc": "扫描器抓取内容并记录来源、平台、成本与执行结果。"
+      },
+      {
+        "from": "mentions",
+        "to": "pain_points / validations",
+        "type": "挖掘验证",
+        "desc": "Mining Agent 做痛点抽取、跨源合并与五轴评分。"
+      },
+      {
+        "from": "mentions",
+        "to": "reply_queue",
+        "type": "回复候选",
+        "desc": "高相关 mention 进入回复生成队列，附带产品上下文。"
+      },
+      {
+        "from": "reply_queue",
+        "to": "reply_logs",
+        "type": "审核发布",
+        "desc": "人工或自动审核通过后发布，并写入永久日志。"
+      },
+      {
+        "from": "reply_logs",
+        "to": "funnel_events / credit_transactions / bill_periods",
+        "type": "计费回流",
+        "desc": "点击与转化事件触发扣费、月结、报表与伙伴分成。"
+      }
+    ]
+  },
+  "back": {
+    "badge": "返回",
+    "title": "返回主文档",
+    "subtitle": "← 回到 PRD Guide 主文档",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-pipeline"
+  }
+}

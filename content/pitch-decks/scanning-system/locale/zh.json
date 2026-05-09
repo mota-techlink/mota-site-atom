@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "title": "扫描系统详解",
+    "versions": [
+      { "label": "SCAN", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "扫描总览",
+      "scanners": "13 扫描器矩阵",
+      "skills": "12 平台 Skills",
+      "back": "← 返回主文档"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "PRD §4.2–§4.3",
+    "title": "扫描器矩阵与平台 Skills",
+    "subtitle": "扫描器负责抓取，Skills 负责复用平台能力——两者组合覆盖评论、差评、问答、搜索建议与本土社区。",
+    "description": "13 个平台扫描器覆盖 Reddit、YouTube、Google、Amazon、Quora、Twitter/X、V2EX、微博及本土平台。每个扫描器都有对应的 Skill 封装，支持 Link Policy 控制输出行为。",
+    "highlights": [
+      { "icon": "🔍", "label": "13 平台覆盖", "desc": "从 Reddit 到本土平台，覆盖英文社区与中文平台" },
+      { "icon": "🧩", "label": "12 个 Skills", "desc": "每个 Skill 封装输入/输出/限流/Link Policy，可组合编排" },
+      { "icon": "📊", "label": "Tier 化调度", "desc": "扫描任务按平台 Tier 分配倍率，成本与价值自动匹配" }
+    ]
+  },
+  "scanners": {
+    "badge": "13-Scanner Matrix",
+    "title": "13 扫描器矩阵",
+    "subtitle": "每个平台使用专有的扫描方法，按频率、限流策略与聚焦目标差异化调度。",
+    "scanners": [
+      {
+        "platform": "Reddit",
+        "method": "PRAW / Reddit API",
+        "cost": "🟢 零成本 · JSON API 免费读取",
+        "freq": "任务队列触发",
+        "rateLimit": "多账号轮换 · 控制 karma / 频率",
+        "focus": "Subreddit 内负向帖子与求助讨论"
+      },
+      {
+        "platform": "YouTube",
+        "method": "yt-dlp（免费开源）",
+        "cost": "🟢 零成本 · yt-dlp 替代付费 API",
+        "freq": "每周",
+        "rateLimit": "受官方 quota 限制",
+        "focus": "教程视频评论中的抱怨与追问"
+      },
+      {
+        "platform": "Google",
+        "method": "SerpAPI / Serper.dev",
+        "cost": "🔴 付费 API · 按量计费",
+        "freq": "每日",
+        "rateLimit": "24h 缓存优先",
+        "focus": "PAA、Autocomplete、相关搜索建议"
+      },
+      {
+        "platform": "Amazon",
+        "method": "Rainforest API / 电商代理",
+        "cost": "🔴 付费 API · 按量计费",
+        "freq": "每周",
+        "rateLimit": "高价值任务优先调用",
+        "focus": "1–3 星差评与 Verified Purchase 评论"
+      },
+      {
+        "platform": "Quora",
+        "method": "Playwright",
+        "cost": "🟢 零成本 · 无头浏览器免费抓取",
+        "freq": "每周",
+        "rateLimit": "无头浏览器低频抓取",
+        "focus": "关注高、回答少、未被满意解决的问题"
+      },
+      {
+        "platform": "Twitter/X",
+        "method": "twitter-cli（Cookie 方案）",
+        "cost": "🟢 零成本 · 浏览器 Cookie 替代 API Key",
+        "freq": "每日或实时",
+        "rateLimit": "Cookie 认证，免 API 配额",
+        "focus": "实时抱怨、吐槽与强情绪信号"
+      },
+      {
+        "platform": "App Store",
+        "method": "app-store-scraper",
+        "cost": "🟢 零成本 · 开源免费库",
+        "freq": "每两周",
+        "rateLimit": "抓取近 90 天评论",
+        "focus": "1–3 星应用评论"
+      },
+      {
+        "platform": "Google Play",
+        "method": "google-play-scraper",
+        "cost": "🟢 零成本 · 开源免费库",
+        "freq": "每两周",
+        "rateLimit": "同 App 14 天内不重复抓取",
+        "focus": "Android 端差评与功能抱怨"
+      },
+      {
+        "platform": "Review Sites",
+        "method": "Playwright + 结构化解析",
+        "cost": "🟢 零成本 · 无头免费抓取",
+        "freq": "每两周",
+        "rateLimit": "随机 UA + 低频执行",
+        "focus": "Trustpilot / G2 / Capterra 的 Pros/Cons 与职位信息"
+      },
+      {
+        "platform": "Hacker News",
+        "method": "Algolia HN Search API",
+        "cost": "🟢 零成本 · 免费公共 API",
+        "freq": "每周",
+        "rateLimit": "24h 缓存",
+        "focus": "Ask HN、低分评论少的未解答技术讨论"
+      },
+      {
+        "platform": "Stack Overflow",
+        "method": "Stack Exchange API",
+        "cost": "🟢 零成本 · 免费公共 API",
+        "freq": "每周",
+        "rateLimit": "问题 ID 去重",
+        "focus": "无 accepted answer 或 answers=0 的技术问题"
+      },
+      {
+        "platform": "V2EX",
+        "method": "V2EX 公开 REST API",
+        "cost": "🟢 零成本 · 无需认证",
+        "freq": "每日",
+        "rateLimit": "请求间隔 1~3 秒",
+        "focus": "中文开发者社区的产品/技术讨论信号"
+      },
+      {
+        "platform": "微博",
+        "method": "微博移动端接口",
+        "cost": "🟢 零成本 · 自动生成访客 Cookie",
+        "freq": "每日",
+        "rateLimit": "请求间隔 1~3 秒",
+        "focus": "热搜榜与关键词搜索中的产品抱怨信号"
+      }
+    ]
+  },
+  "skills": {
+    "badge": "10 Platform Skills",
+    "title": "10 个平台 Skills",
+    "subtitle": "每个 Skill 封装完整的输入参数、输出结构与发布策略——实现扫描与回复的自动编排。",
+    "skills": [
+      {
+        "skill": "GooglePaaAutocompleteSkill",
+        "input": "关键词列表",
+        "output": "PAA 问题 + 自动补全建议",
+        "linkPolicy": "只读信号，不直接发布"
+      },
+      {
+        "skill": "YouTubeCommentSkill",
+        "input": "视频 ID",
+        "output": "评论列表 + 挫败感标记 + Channel ID",
+        "linkPolicy": "优先超链接文字；必要时转入私信跟进队列"
+      },
+      {
+        "skill": "RedditSearchSkill",
+        "input": "关键词 · Subreddit · 时间范围",
+        "output": "帖子列表 + 元数据 + 规则缓存",
+        "linkPolicy": "先检查版规；限制外链时改为产品名 + DM 跟进"
+      },
+      {
+        "skill": "AmazonReviewsSkill",
+        "input": "ASIN · 星级范围",
+        "output": "1–3 星评论 + 7 天缓存",
+        "linkPolicy": "只读信号，不可直接触达"
+      },
+      {
+        "skill": "QuoraScraperSkill",
+        "input": "关键词 · 页数",
+        "output": "关注高、回答少的问题列表",
+        "linkPolicy": "单答案最多 1 条外链；被折叠时改为产品名或资料页"
+      },
+      {
+        "skill": "TwitterSearchSkill",
+        "input": "关键词 · 时间范围 · 语言",
+        "output": "负向情绪推文",
+        "linkPolicy": "允许 URL，直接注入 t.co 可追踪链接"
+      },
+      {
+        "skill": "AppStoreGooglePlaySkill",
+        "input": "App ID · 星级范围",
+        "output": "应用评论批次",
+        "linkPolicy": "只读信号，不发布回复"
+      },
+      {
+        "skill": "ReviewSitesSkill",
+        "input": "产品名 · 平台来源",
+        "output": "评论、Pros/Cons、评论者职位",
+        "linkPolicy": "只读信号，用于痛点印证"
+      },
+      {
+        "skill": "HackerNewsSkill",
+        "input": "关键词 · ask/story/comment",
+        "output": "低分或低讨论技术帖子",
+        "linkPolicy": "高相关可在完整技术解答尾部引用 GitHub 跳板"
+      },
+      {
+        "skill": "StackOverflowSkill",
+        "input": "关键词 · 标签",
+        "output": "零回答或无 accepted answer 问题",
+        "linkPolicy": "必须先给完整解法，再附商业托管方案链接"
+      }
+    ]
+  },
+  "back": {
+    "badge": "返回",
+    "title": "返回主文档",
+    "subtitle": "← 回到 PRD Guide 主文档",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-scanning"
+  }
+}

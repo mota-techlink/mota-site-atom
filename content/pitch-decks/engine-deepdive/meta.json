@@ -1,0 +1,12 @@
+{
+  "title": "引擎模块详解",
+  "slug": "engine-deepdive",
+  "description": "MOTA 产品分析引擎详解：AI Agent 编排流程、Prompt 输出字段、tasks 表结构、触发机制与配置调优",
+  "author": "MOTA Team",
+  "date": "2025-04-27",
+  "status": "published",
+  "previewSlides": 6,
+  "defaultTransition": "fade",
+  "tags": ["engine", "ai-agent", "prompt", "orchestration", "task-queue"],
+  "access": "public"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "MOTA Market Intelligence — 产品需求详解",
+  "slug": "prd-guide",
+  "description": "Product-oriented PRD walkthrough: three-tier product model, scanner architecture, analysis engine, billing system for the Market Intelligence Hunter platform.",
+  "author": "MOTA TechLink",
+  "date": "2026-04-27",
+  "status": "published",
+  "access": "public",
+  "previewSlides": 999,
+  "defaultTransition": "fade",
+  "tags": ["PRD", "product", "business", "market-intelligence"],
+  "coverImage": "/images/pitch-decks/prd-guide-cover.webp"
+}

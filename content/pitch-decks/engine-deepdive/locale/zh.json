@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "title": "引擎模块详解",
+    "versions": [
+      { "label": "ENGINE", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "引擎总览",
+      "flow": "分析流程",
+      "prompt-fields": "Prompt 输出字段",
+      "task-fields": "Tasks 表结构",
+      "trigger": "触发机制",
+      "back": "← 返回主文档"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "PRD §4.1",
+    "title": "产品分析引擎",
+    "subtitle": "它是整个系统的入口自动化核心：理解产品，定义谁是目标用户，应该去哪找他们，以及要用什么话题去找。",
+    "description": "引擎通过 AI Agent 编排理解产品定义，反向推断目标用户、检索平台和查询词，自动生成扫描任务入队。核心输出包括 domain_tags、keywords、multilingual_queries 等结构化字段。",
+    "highlights": [
+      { "icon": "🤖", "label": "AI Agent 编排", "desc": "LLM 驱动的多步推理链，从产品描述自动推导受众、平台、查询词" },
+      { "icon": "🔗", "label": "Pipeline 集成", "desc": "输出直接入队 tasks 队列，无缝对接扫描器与回复模块" },
+      { "icon": "🌐", "label": "多语言支持", "desc": "自动生成 ja/ko/es/pt/ru 本土语言查询词，覆盖全球社区" }
+    ]
+  },
+  "flow": {
+    "badge": "分析引擎流程",
+    "title": "5 步分析流程",
+    "subtitle": "产品描述到扫描任务入队的完整推理链路。",
+    "steps": [
+      {
+        "step": "1",
+        "label": "读取产品描述",
+        "detail": "获取产品名称、介绍、URL、目标语言、竞品与回复风格。",
+        "output": "产品上下文"
+      },
+      {
+        "step": "2",
+        "label": "推断痛点与受众",
+        "detail": "识别产品解决的核心问题、用户画像与典型失败场景。",
+        "output": "target_audience_pain"
+      },
+      {
+        "step": "3",
+        "label": "推断平台与竞品",
+        "detail": "给出可能活跃的平台、社区、Subreddit 与竞品集合。",
+        "output": "domain_tags + inferred_competitors"
+      },
+      {
+        "step": "4",
+        "label": "生成结构化查询词",
+        "detail": "按 Reddit / YouTube / Google / Amazon / Quora / Twitter / HN / SO / Review Sites / 本土语言平台输出查询。",
+        "output": "keywords + platform queries"
+      },
+      {
+        "step": "5",
+        "label": "生成 tasks 并激活项目",
+        "detail": "写入 tasks 队列，回填 projects.domain_tags，并把 project 状态切换为 active。",
+        "output": "queued tasks"
+      }
+    ]
+  },
+  "prompt-fields": {
+    "badge": "输出字段",
+    "title": "Prompt 输出字段详解",
+    "subtitle": "引擎 AI 推理输出的 10 个核心字段，覆盖领域标注、受众定义、平台查询与多语言扩展。",
+    "fields": [
+      {
+        "field": "domain_tags",
+        "type": "string[]",
+        "desc": "最多 3 个领域标签，用于平台匹配与伙伴匹配。"
+      },
+      {
+        "field": "target_audience_pain",
+        "type": "string",
+        "desc": "目标受众最核心的一句痛点描述。"
+      },
+      {
+        "field": "inferred_competitors",
+        "type": "string[]",
+        "desc": "若用户未填写竞品，系统自动推断可替代产品列表。"
+      },
+      {
+        "field": "keywords",
+        "type": "string[]",
+        "desc": "5–10 个跨平台基础搜索词。"
+      },
+      {
+        "field": "subreddits",
+        "type": "string[]",
+        "desc": "适合切入的 5–15 个目标版块。"
+      },
+      {
+        "field": "youtube_queries",
+        "type": "string[]",
+        "desc": "用于查找教程视频与测评内容的查询词。"
+      },
+      {
+        "field": "google_seeds",
+        "type": "string[]",
+        "desc": "Google PAA / 自动补全的种子词。"
+      },
+      {
+        "field": "amazon_queries",
+        "type": "string[]",
+        "desc": "定位竞品差评与相似产品评论的检索词。"
+      },
+      {
+        "field": "twitter_keywords",
+        "type": "string[]",
+        "desc": "用于实时抱怨捕获的话题词与情绪词。"
+      },
+      {
+        "field": "multilingual_queries",
+        "type": "object",
+        "desc": "按 ja / ko / es / pt / ru 输出本土平台与本地化查询词。"
+      }
+    ]
+  },
+  "task-fields": {
+    "badge": "Tasks 表结构",
+    "title": "tasks 表核心字段",
+    "subtitle": "分析引擎写入 tasks 队列的数据结构，供扫描器与回复模块消费。",
+    "fields": [
+      {
+        "field": "task_id / project_id",
+        "desc": "每个任务归属于一个 project，可按平台或语言批次拆分执行。"
+      },
+      {
+        "field": "target_audience_pain",
+        "desc": "供扫描器与回复模块共享的核心受众痛点。"
+      },
+      {
+        "field": "domain_tags",
+        "desc": "供伙伴匹配、报告分类和看板筛选使用。"
+      },
+      {
+        "field": "keywords / subreddits / youtube_queries / google_seeds",
+        "desc": "英语平台的结构化查询参数。"
+      },
+      {
+        "field": "multilingual_queries",
+        "desc": "本土语言平台扩展参数与对应目标语言。"
+      },
+      {
+        "field": "status",
+        "desc": "queued → scanning → completed / failed，用于调度与重试。"
+      }
+    ]
+  },
+  "trigger": {
+    "badge": "触发机制",
+    "title": "引擎触发与配置调优",
+    "subtitle": "创建 project 后自动触发，支持手动重新分析和提示词模板覆盖。",
+    "triggerNote": "触发方式：用户创建 project 后，分析引擎异步执行并自动入队扫描任务。",
+    "configItems": [
+      {
+        "label": "自动触发",
+        "desc": "project 创建后引擎自动执行，无需人工干预。"
+      },
+      {
+        "label": "手动重分析",
+        "desc": "管理员可触发重新分析，更新 domain_tags 和查询词（覆盖旧结果）。"
+      },
+      {
+        "label": "Prompt 模板",
+        "desc": "可通过系统配置覆盖引擎使用的 AI Prompt 模板，适配不同垂直行业。"
+      }
+    ]
+  },
+  "back": {
+    "badge": "返回",
+    "title": "返回主文档",
+    "subtitle": "← 回到 PRD Guide 主文档",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-engine"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "title": "扫描系统详解",
+  "slug": "scanning-system",
+  "description": "MOTA 扫描器矩阵与平台 Skills 详解：11 个扫描器、10 个 Skills、多 Tier 任务分发与 Link Policy 策略",
+  "author": "MOTA Team",
+  "date": "2025-04-27",
+  "status": "published",
+  "previewSlides": 5,
+  "defaultTransition": "fade",
+  "tags": ["scanner", "platform", "skill", "crawling", "api"],
+  "access": "public"
+}

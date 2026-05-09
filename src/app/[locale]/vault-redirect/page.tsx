@@ -37,8 +37,8 @@ export default async function VaultRedirectPage({
   }
 
   // Fallback: 跳回主站登录页，让用户在主站重新完成登录流程
+  const nextParam = `/vault-redirect?redirectFrom=${encodeURIComponent(targetPath)}`;
   const fallbackUrl = new URL('https://motaiot.com/login');
-  fallbackUrl.searchParams.set('next', '/vault-redirect');
-  fallbackUrl.searchParams.set('redirectFrom', targetPath);
+  fallbackUrl.searchParams.set('next', nextParam);
   redirect(fallbackUrl.toString());
 }

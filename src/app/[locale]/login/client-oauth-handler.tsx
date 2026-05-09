@@ -23,10 +23,12 @@ export default function ClientOAuthHandler({
         // 2. 设置 loading 状态 (防止重复点击)
         setIsNavigating(true);
 
-        // 3. 🟢 核心修改：直接导航到 GET API 路由
-        // 路径格式: /api/auth/{providerId}
-        // 浏览器会发起 GET 请求，由 Route Handler 处理重定向
-        window.location.href = `/auth/${provider.id}`;
+        // 3. 导航到 GET API 路由，保留当前页面的 next 参数
+        const params = new URLSearchParams(window.location.search);
+        const next = params.get('next');
+        let target = `/auth/${provider.id}`;
+        if (next) target += `?next=${encodeURIComponent(next)}`;
+        window.location.href = target;
       }}
     />
   );

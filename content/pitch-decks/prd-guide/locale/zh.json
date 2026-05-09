@@ -1,0 +1,558 @@
+{
+  "nav": {
+    "title": "PRD Guide",
+    "versions": [
+      {
+        "label": "PRD",
+        "ver": "v1.5"
+      },
+      {
+        "label": "ARCH",
+        "ver": "v1.0"
+      },
+      {
+        "label": "BILLING",
+        "ver": "v1.0"
+      }
+    ],
+    "sections": {
+      "cover": "系统封面",
+      "background": "背景与目标",
+      "products": "三层产品",
+      "scanning": "扫描矩阵",
+      "engine": "分析引擎",
+      "pipeline": "执行管线",
+      "billing": "计费模型",
+      "architecture": "系统架构",
+      "portals": "三端门户",
+      "partners": "伙伴生态"
+    },
+    "loginHint": "登录管理员账号可切换到完整 PRD 导览视图"
+  },
+  "lock": {
+    "title": "需要管理员权限",
+    "description": "此页面用于展示 MOTA Market Intelligence PRD 全量 walkthrough。请登录具有管理员或 Staff 角色的账号以查看完整内容。",
+    "cta": "登录"
+  },
+  "authDict": {
+    "loginTitle": "欢迎回来",
+    "loginDesc": "登录您的账号以解锁全部页面",
+    "signupTitle": "创建账号",
+    "signupDesc": "输入您的邮箱以创建新账号",
+    "email": "邮箱",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "signIn": "登录",
+    "signUp": "注册",
+    "noAccount": "还没有账号？",
+    "hasAccount": "已有账号？",
+    "signUpNow": "立即注册",
+    "signInNow": "立即登录",
+    "forgotPassword": "忘记密码？",
+    "invalidEmail": "邮箱地址格式有误",
+    "passwordTooShort": "密码至少需要 6 个字符",
+    "passwordMismatch": "两次输入的密码不一致",
+    "invalidCredentials": "邮箱或密码错误",
+    "loginSuccess": "登录成功！"
+  },
+  "cover": {
+    "badge": "MOTA Market Intelligence Hunter",
+    "title": "PRD Walkthrough",
+    "subtitle": "以产品为起点的全球市场情报系统：自动分析、持续扫描、生成回复、按效果结算。",
+    "docRefs": [
+      {
+        "label": "PRD",
+        "desc": "产品需求主文档",
+        "sections": "§1 – §10",
+        "hoverDesc": "覆盖背景、方法论、扫描器、回复、计费、门户、伙伴生态与技术栈的完整业务定义。",
+        "targetSection": "s-background",
+        "clickHint": "跳转到背景与目标"
+      },
+      {
+        "label": "架构",
+        "desc": "三层产品与三端系统",
+        "sections": "产品线 + 门户拓扑",
+        "hoverDesc": "从 Project Subscription、Market Report、Reply Outreach 到 Portal / User / Admin 的整体映射。",
+        "targetSection": "s-architecture",
+        "clickHint": "跳转到系统架构"
+      },
+      {
+        "label": "计费",
+        "desc": "三层计费与倍率规则",
+        "sections": "Subscription / Report / Outreach",
+        "hoverDesc": "包含 Prepaid、PAYG、CPA、平台 Tier 倍率以及管理员调整权限。",
+        "targetSection": "s-billing",
+        "clickHint": "跳转到计费模型"
+      }
+    ],
+    "pipeline": {
+      "title": "六阶段业务闭环（Hover 查看详情）",
+      "stages": [
+        {
+          "icon": "📝",
+          "label": "录入",
+          "desc": "产品名 · 描述 · URL · 语言",
+          "hoverDesc": "用户在后台录入产品/服务信息，系统创建 project 并进入 analyzing 状态。",
+          "targetSection": "s-background"
+        },
+        {
+          "icon": "🧠",
+          "label": "分析",
+          "desc": "LLM 反推痛点与查询词",
+          "hoverDesc": "Ollama Gamma 4 推断目标受众痛点、竞品、平台、关键词与多语言查询。",
+          "targetSection": "s-engine"
+        },
+        {
+          "icon": "📡",
+          "label": "扫描",
+          "desc": "13 类 Scanner 全网持续发现",
+          "hoverDesc": "覆盖 Reddit、YouTube、Google、Amazon、Quora、Twitter/X、V2EX、微博以及日/韩/西/葡/俄本土平台。",
+          "targetSection": "s-scanning"
+        },
+        {
+          "icon": "🔎",
+          "label": "挖掘",
+          "desc": "相关性筛选 · 五轴验证",
+          "hoverDesc": "对 mentions 做痛点聚合、跨源验证、信号评分，形成可回复的高价值线索。",
+          "targetSection": "s-pipeline"
+        },
+        {
+          "icon": "💬",
+          "label": "回复",
+          "desc": "生成价值内容并注入追踪链接",
+          "hoverDesc": "系统按平台规则生成自然回复、进入审核队列并发布到对应社区。",
+          "targetSection": "s-products"
+        },
+        {
+          "icon": "💳",
+          "label": "结算",
+          "desc": "有效点击计费 · 可人工调整",
+          "hoverDesc": "链接点击写入 funnel_events，Prepaid 实时扣减，PAYG 月末结算，管理员可折扣或豁免。",
+          "targetSection": "s-billing"
+        }
+      ]
+    },
+    "metrics": [
+      {
+        "icon": "📡",
+        "value": "13",
+        "label": "扫描器",
+        "hoverDesc": "13 个独立扫描器覆盖问答、评论、差评、搜索建议、V2EX、微博与本土社区。",
+        "targetSection": "s-scanning"
+      },
+      {
+        "icon": "🧩",
+        "value": "12",
+        "label": "平台 Skills",
+        "hoverDesc": "12 个可复用 Skill 为 Scanner / Mining / Reply 模块提供底层能力。",
+        "targetSection": "s-scanning"
+      },
+      {
+        "icon": "🌐",
+        "value": "6",
+        "label": "目标语言",
+        "hoverDesc": "英语、西班牙语、葡萄牙语、日语、韩语、俄语。",
+        "targetSection": "s-background"
+      },
+      {
+        "icon": "💰",
+        "value": "4",
+        "label": "平台 Tier",
+        "hoverDesc": "回复触达服务按平台运营成本划分为 Tier1-Tier4 四档倍率。",
+        "targetSection": "s-billing"
+      }
+    ],
+    "stackTitle": "核心技术栈",
+    "stack": [
+      {
+        "name": "Next.js 15",
+        "layer": "Frontend",
+        "desc": "App Router + SSR/SSG，负责 Portal、用户后台与管理后台前端承载。"
+      },
+      {
+        "name": "Tailwind CSS + shadcn/ui",
+        "layer": "Design",
+        "desc": "统一界面系统，支撑三端响应式与高密度数据视图。"
+      },
+      {
+        "name": "Supabase Auth",
+        "layer": "Identity",
+        "desc": "邮箱 + OAuth 身份体系，配合 RLS 做用户、伙伴、管理员隔离。"
+      },
+      {
+        "name": "Supabase PostgreSQL 15",
+        "layer": "Data",
+        "desc": "核心业务表、计费表、追踪事件表与审计日志统一落库。"
+      },
+      {
+        "name": "Cloudflare R2 + D1",
+        "layer": "Data",
+        "desc": "R2 存储原始抓取内容与报告归档（零出站费）；D1 做热点查询边缘缓存。"
+      },
+      {
+        "name": "FastAPI",
+        "layer": "Backend",
+        "desc": "对外 API 与业务编排中心，承接前端请求与任务触发。"
+      },
+      {
+        "name": "Celery + Beat",
+        "layer": "Orchestration",
+        "desc": "负责定时扫描、异步挖掘、报告生成与月度结算任务。"
+      },
+      {
+        "name": "Ollama Gamma 4",
+        "layer": "LLM",
+        "desc": "本地执行产品分析、回复生成、低成本文本分类。"
+      },
+      {
+        "name": "Gemini 1.5 Flash / Pro",
+        "layer": "LLM",
+        "desc": "用于高质量聚合推理、报告摘要与回复润色 fallback。"
+      },
+      {
+        "name": "Playwright + PRAW + Tweepy",
+        "layer": "Acquisition",
+        "desc": "覆盖网页抓取、Reddit、Twitter/X 与无 API 平台的自动化采集。"
+      },
+      {
+        "name": "Stripe + Stripe Connect",
+        "layer": "Payments",
+        "desc": "用户付款、PAYG 扣款、伙伴分账与月度结算主通道。"
+      }
+    ]
+  },
+  "background": {
+    "badge": "PRD §1–§2",
+    "title": "项目背景与目标",
+    "subtitle": "不是向陌生人硬推广告，而是在用户公开表达挫败感与求助需求时，用真实价值切入对话。",
+    "problem": {
+      "title": "传统获客的结构性问题",
+      "points": [
+        "搜索广告和信息流主要面向尚未进入需求期的人群，CPC 高而转化低。",
+        "KOL 合作具备曝光但缺乏精准意图，ROI 受创作者与平台波动影响大。",
+        "市场调研与触达通常分离，客户先做研究、再找渠道，反馈周期长。",
+        "跨语言市场信号分散在不同社区，本土平台难以靠人工持续监控。"
+      ]
+    },
+    "solution": {
+      "title": "MOTA 的解法",
+      "points": [
+        "从客户产品描述反向推出用户痛点、竞品与多平台搜索意图。",
+        "持续扫描公开社区中的抱怨、提问、差评、评论与实时舆情。",
+        "用 AI 生成先帮助、后引导的自然回复，并植入可归因追踪链接。",
+        "按有效点击与深度转化计费，让成本直接绑定真实效果。"
+      ]
+    },
+    "workflowTitle": "五步闭环工作流",
+    "workflow": [
+      {
+        "step": "1",
+        "icon": "📥",
+        "label": "录入产品",
+        "brief": "产品名称、描述、URL、目标语言",
+        "detail": "用户后台创建项目，填写产品介绍、落地页 URL、目标市场语言、可选竞品与回复语气。"
+      },
+      {
+        "step": "2",
+        "icon": "🧠",
+        "label": "分析产品",
+        "brief": "反推痛点、平台与查询词",
+        "detail": "LLM 输出 domain_tags、target_audience_pain、competitors、keywords、subreddits 与 multilingual_queries。"
+      },
+      {
+        "step": "3",
+        "icon": "📡",
+        "label": "全平台扫描",
+        "brief": "持续抓取高意图信号",
+        "detail": "13 类扫描器按队列与定时策略运行，在英语、V2EX、微博与本土平台中发现抱怨、求助、差评和未解答问题。"
+      },
+      {
+        "step": "4",
+        "icon": "💬",
+        "label": "输出三层价值",
+        "brief": "订阅、报告、回复触达",
+        "detail": "系统一边持续扫描，一边生成市场调研报告，并对高相关 mention 生成带追踪链接的回复草稿。"
+      },
+      {
+        "step": "5",
+        "icon": "📈",
+        "label": "追踪并计费",
+        "brief": "有效点击、CPA、人工调整",
+        "detail": "追踪事件写入 funnel_events，Prepaid 扣 Credits、PAYG 月结、管理员可折扣、免除或赠送额度。"
+      }
+    ],
+    "goalsTitle": "核心业务目标",
+    "goals": [
+      {
+        "icon": "🎯",
+        "title": "产品优先",
+        "desc": "客户不需要先写 prompt 或做市场研究，系统直接从产品信息出发。",
+        "details": [
+          "自动推断目标受众与核心痛点。",
+          "自动拆解平台查询词与语言版本。",
+          "自动进入持续扫描与回复管线。"
+        ]
+      },
+      {
+        "icon": "💎",
+        "title": "三层商业化",
+        "desc": "把扫描成本、调研价值、触达效果拆成三个可分别售卖的产品层。",
+        "details": [
+          "Project Subscription 覆盖长期监控成本。",
+          "Market Intelligence Report 作为引流与研究产品。",
+          "Reply Outreach 按效果计费。"
+        ]
+      },
+      {
+        "icon": "🌍",
+        "title": "全球多语言覆盖",
+        "desc": "不只盯英语市场，而是直达本土社区与本地平台。",
+        "details": [
+          "支持 EN / ES / PT / JA / KO / RU。",
+          "兼顾英语主流平台与本土渠道。",
+          "让触达半径从公开互联网延伸到地区社区。"
+        ]
+      },
+      {
+        "icon": "✨",
+        "title": "真实价值回复",
+        "desc": "先解决问题，再自然引出产品，降低广告感与封号风险。",
+        "details": [
+          "回复必须包含可执行建议。",
+          "敏感社区与高价值痛点强制人工审核。",
+          "支持 AI 改写以匹配社区语气。"
+        ]
+      },
+      {
+        "icon": "🧾",
+        "title": "可审计可调账",
+        "desc": "所有点击、扣费、调整、伙伴分成都有清晰记录。",
+        "details": [
+          "funnel_events 保留有效与无效点击。",
+          "bill_adjustments 强制填写原因。",
+          "支持 Prepaid、PAYG、CPA 并行。"
+        ]
+      }
+    ],
+    "methodTitle": "8 大信号捕获方法论",
+    "methods": [
+      {
+        "id": "M1",
+        "icon": "😤",
+        "name": "负向搜索法",
+        "platforms": "Reddit · Google · Twitter/X",
+        "detail": "围绕“not working / frustrated / broken”一类挫败表达，捕获已经尝试过通用方案但仍未解决的人群。"
+      },
+      {
+        "id": "M2",
+        "icon": "❓",
+        "name": "社区问答雷达",
+        "platforms": "Reddit · Quora · Hacker News",
+        "detail": "优先抓取未被充分回答、回答质量低或仍在追问的问题，寻找产品成为更好答案的切口。"
+      },
+      {
+        "id": "M3",
+        "icon": "🎥",
+        "name": "视频评论挖掘",
+        "platforms": "YouTube",
+        "detail": "教程视频评论区天然聚集了“哪里不够好”“我也有同样问题”的真实反馈。"
+      },
+      {
+        "id": "M4",
+        "icon": "⭐",
+        "name": "差评反向定位",
+        "platforms": "Amazon · App Store · Google Play · Trustpilot · G2",
+        "detail": "竞品差评就是现成的市场空白说明书，能快速找到“想解决但没被满足”的用户。"
+      },
+      {
+        "id": "M5",
+        "icon": "⚡",
+        "name": "实时舆情监控",
+        "platforms": "Twitter/X",
+        "detail": "对实时抱怨与热点话题做近实时扫描，在用户公开吐槽的时间窗口快速介入。"
+      },
+      {
+        "id": "M6",
+        "icon": "🔧",
+        "name": "技术问答捕获",
+        "platforms": "Stack Overflow · HN",
+        "detail": "针对高浏览、低回答、无 accepted answer 的技术问题，适配工具类与开发者产品。"
+      },
+      {
+        "id": "M7",
+        "icon": "🔗",
+        "name": "跨源验证",
+        "platforms": "多平台交叉",
+        "detail": "同一痛点在不同社区重复出现时，信号强度与商业可信度大幅提升。"
+      },
+      {
+        "id": "M8",
+        "icon": "🌐",
+        "name": "本土语言平台扩张",
+        "platforms": "Taringa! · Reclame Aqui · Yahoo!知恵袋 · Naver · Pikabu",
+        "detail": "把触达范围从英语互联网扩展到西语、葡语、日语、韩语、俄语本土社群。"
+      }
+    ]
+  },
+  "products": {
+    "badge": "PRD §1.1 · §4.7",
+    "title": "三层产品体系",
+    "subtitle": "把“持续扫描成本”“研究报告价值”“社区触达效果”拆成可独立售卖的三条产品线。",
+    "subscription": {
+      "title": "第 1 层：项目订阅费（Project Subscription）",
+      "summary": "按项目按月收费，覆盖扫描、代理、API 与基础 AI 分析成本；项目暂停即停止订阅扣费。"
+    },
+    "report": {
+      "title": "第 2 层：市场调研报告（Market Intelligence Report）",
+      "summary": "只做研究不做触达，把分散的市场抱怨与需求整理成结构化报告，适合作为引流产品与销售前置。"
+    },
+    "outreach": {
+      "title": "第 3 层：回复触达服务（Reply Outreach）",
+      "summary": "回复发布本身不收费，仅在真人点击追踪链接并通过防作弊验证后，按平台倍率消耗 Credits 或记入 PAYG 账单。"
+    }
+  },
+  "scanning": {
+    "badge": "PRD §4.2–§4.3",
+    "title": "扫描器矩阵与平台 Skills",
+    "subtitle": "扫描器负责抓取，Skills 负责复用平台能力；两者组合覆盖评论、差评、问答、搜索建议与本土社区。",
+    "deepDive": {
+      "href": "/pitch-deck/scanning-system",
+      "label": "查看扫描系统详解 →"
+    }
+  },
+  "engine": {
+    "badge": "PRD §4.1",
+    "title": "产品分析引擎",
+    "subtitle": "它是整个系统的入口自动化核心：理解产品，定义谁是目标用户，应该去哪找他们，以及要用什么话题去找。",
+    "deepDive": {
+      "href": "/pitch-deck/engine-deepdive",
+      "label": "查看引擎技术详解 →"
+    }
+  },
+  "pipeline": {
+    "badge": "PRD §3.1 · §4.4–§4.6",
+    "title": "执行管线与数据流",
+    "subtitle": "从产品录入到计费事件，不是单点功能，而是一条共享 project_id / mention_id / tracking_url 的连续数据链路。",
+    "deepDive": {
+      "href": "/pitch-deck/engine-pipeline",
+      "label": "查看流水线详解 →"
+    }
+  },
+  "billing": {
+    "badge": "PRD §4.7",
+    "title": "计费模型与倍率规则",
+    "subtitle": "三层产品分别承担不同成本结构，而 Reply Outreach 进一步通过 Prepaid / PAYG / CPA 与平台倍率完成精细化收费。",
+    "deepDive": {
+      "href": "/pitch-deck/billing-model",
+      "label": "查看定价模型详解 →"
+    }
+  },
+  "architecture": {
+    "badge": "PRD §3 · §8",
+    "title": "产品架构与门户架构",
+    "subtitle": "产品层回答“卖什么”，门户层回答“谁来用、在哪里完成动作”。二者共同构成可运营的完整系统。",
+    "deepDive": {
+      "href": "/pitch-deck/architecture-deepdive",
+      "label": "查看架构详解 →"
+    }
+  },
+  "portals": {
+    "badge": "PRD §4.8–§4.10",
+    "title": "三端门户设计",
+    "subtitle": "同一套数据底座，面向三类用户角色输出三种完全不同的工作面板。",
+    "deepDive": {
+      "href": "/pitch-deck/portal-integration",
+      "label": "查看门户集成详解 →"
+    }
+  },
+  "partners": {
+    "badge": "PRD §4.6.11–§4.7.10",
+    "title": "伙伴生态与 AI 匹配",
+    "subtitle": "当系统账号不足以获得社区信任时，AI 会把机会转交给真实社区成员、本土运营者与达人共创者，完成最后一公里。",
+    "programsTitle": "3 类伙伴计划",
+    "programs": [
+      {
+        "name": "平台原住用户合作伙伴计划",
+        "target": "具备真实账号积累的普通社区成员",
+        "compensation": "Bronze $0.02 / Silver $0.04 / Gold $0.08 每次有效点击",
+        "flow": "申请 → AI 评级 → 任务接收 → 自己账号发布 → 月度结算",
+        "fit": "适合 Reddit、Quora、HN 等需要社区可信身份的场景"
+      },
+      {
+        "name": "本土平台驻地计划",
+        "target": "掌握本土账号、本地语言和本地 IP 的区域运营者",
+        "compensation": "按 Tier 4 平台任务单独倍率与 CPA 加成结算",
+        "flow": "平台资格审核 → 语言/领域匹配 → 本土平台任务分发 → 链接验证 → 收益结算",
+        "fit": "适合 VK、Naver、Yahoo!知恵袋、Reclame Aqui 等高运营成本平台"
+      },
+      {
+        "name": "达人共创计划",
+        "target": "高影响力创作者与意见领袖",
+        "compensation": "Creator $0.06 / Elite $0.12 每次有效点击，支持 Stripe 或加密结算",
+        "flow": "AI 发现达人 → 定向邀请 → Creative Brief → 自主创作 → 合规扫描 → 发布结算",
+        "fit": "适合需要高信任、高创意自由度的品牌型投放"
+      }
+    ],
+    "matchingTitle": "AI 匹配逻辑",
+    "matching": [
+      {
+        "factor": "领域匹配",
+        "weight": "30%",
+        "desc": "比较 project.domain_tags、伙伴擅长标签与历史完成任务类别。"
+      },
+      {
+        "factor": "平台资质",
+        "weight": "20%",
+        "desc": "看账号年龄、Karma、粉丝量、历史合规记录与发布成功率。"
+      },
+      {
+        "factor": "语言与地域",
+        "weight": "20%",
+        "desc": "优先把 JA / KO / ES / PT / RU 项目分配给对应语言与本地平台运营者。"
+      },
+      {
+        "factor": "内容风格匹配",
+        "weight": "15%",
+        "desc": "根据伙伴历史发帖语气与社区偏好选择 helpful / expert / casual 的最佳人选。"
+      },
+      {
+        "factor": "商业优先级",
+        "weight": "15%",
+        "desc": "结合项目预算、平台 Tier、Gold Mine 信号等级与任务时效性动态调整分发顺序。"
+      }
+    ],
+    "aiStagesTitle": "AI 驱动协作阶段",
+    "aiStages": [
+      {
+        "stage": "1",
+        "label": "发现",
+        "desc": "在日常扫描中自动识别潜在伙伴与达人线索，写入 partners / creator_leads 候选池。"
+      },
+      {
+        "stage": "2",
+        "label": "邀请",
+        "desc": "基于历史发帖风格自动生成个性化邀请私信。"
+      },
+      {
+        "stage": "3",
+        "label": "匹配",
+        "desc": "按领域、平台、语言、预算和质量要求给任务打分并分配。"
+      },
+      {
+        "stage": "4",
+        "label": "简报",
+        "desc": "为合作伙伴输出 AI 草稿，为达人输出 Creative Brief。"
+      },
+      {
+        "stage": "5",
+        "label": "合规",
+        "desc": "自动检测违禁词、竞品攻击、夸大宣传与链接有效性。"
+      },
+      {
+        "stage": "6",
+        "label": "结算",
+        "desc": "月末自动汇总有效点击，走 Stripe Connect 或链上转账。"
+      }
+    ]
+  }
+}

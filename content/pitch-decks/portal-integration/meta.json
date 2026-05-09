@@ -1,0 +1,12 @@
+{
+  "title": "三端门户集成详解",
+  "slug": "portal-integration",
+  "description": "MOTA 三端门户设计详解：公开门户、客户工作台、管理后台的界面结构、功能模块与核心 KPI",
+  "author": "MOTA Team",
+  "date": "2025-04-27",
+  "status": "published",
+  "previewSlides": 3,
+  "defaultTransition": "fade",
+  "tags": ["portal", "dashboard", "ui", "user-experience"],
+  "access": "public"
+}

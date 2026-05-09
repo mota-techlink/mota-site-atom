@@ -28,9 +28,11 @@ export async function GET(
     // queryParams = { ... };
   }
 
-  // 2. 构造 Supabase 回调地址
-  // 这里的 redirectTo 是指 Supabase 认证完跳回 Next.js 的地址
-  const redirectTo = `${origin}/auth/callback`; 
+  // 2. 读取 next 参数（如果有），传递到回调 URL
+  const next = requestUrl.searchParams.get('next') || '/dashboard';
+
+  // 3. 构造 Supabase 回调地址，携带 next 参数
+  const redirectTo = `${origin}/auth/callback?next=${encodeURIComponent(next)}`; 
   console.log(`[OAuth Debug] RedirectTo: ${redirectTo}`);
   // 3. 调用 Supabase
   const { data, error } = await supabase.auth.signInWithOAuth({

@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "title": "Scanning System Deep Dive",
+    "versions": [
+      { "label": "SCAN", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "Scanning Overview",
+      "scanners": "13-Scanner Matrix",
+      "skills": "12 Platform Skills",
+      "back": "← Back to Main Doc"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "PRD §4.2–§4.3",
+    "title": "Scanner Matrix & Platform Skills",
+    "subtitle": "Scanners handle collection, Skills encapsulate reusable platform capabilities — together covering comments, negative reviews, Q&A, search suggestions, and local communities.",
+    "description": "13 platform scanners cover Reddit, YouTube, Google, Amazon, Quora, Twitter/X, V2EX, Weibo, and local platforms. Each scanner has a corresponding Skill that encapsulates input/output/throttling/link policy.",
+    "highlights": [
+      { "icon": "🔍", "label": "13 Platforms", "desc": "From Reddit to local platforms — covering English and Chinese communities" },
+      { "icon": "🧩", "label": "12 Skills", "desc": "Each Skill encapsulates input/output/rate-limit/Link Policy for composable orchestration" },
+      { "icon": "📊", "label": "Tiered Scheduling", "desc": "Scanning tasks distributed by platform Tier — cost and value matched automatically" }
+    ]
+  },
+  "scanners": {
+    "badge": "13-Scanner Matrix",
+    "title": "13-Scanner Matrix",
+    "subtitle": "Each platform uses a dedicated scanning method with differentiated frequency, rate-limiting, and targeting strategy.",
+    "scanners": [
+      {
+        "platform": "Reddit",
+        "method": "PRAW / Reddit API",
+        "cost": "🟢 $0 · Free JSON API",
+        "freq": "Task queue triggered",
+        "rateLimit": "Multi-account rotation · controlled karma/posting frequency",
+        "focus": "Negative posts and help-seeking discussions inside subreddits"
+      },
+      {
+        "platform": "YouTube",
+        "method": "yt-dlp (free open-source)",
+        "cost": "🟢 $0 · yt-dlp replaces paid API",
+        "freq": "Weekly",
+        "rateLimit": "Constrained by official quota limits",
+        "focus": "Complaints and follow-up questions in tutorial video comments"
+      },
+      {
+        "platform": "Google",
+        "method": "SerpAPI / Serper.dev",
+        "cost": "🔴 Paid API · Usage-based billing",
+        "freq": "Daily",
+        "rateLimit": "Prefer 24h caching",
+        "focus": "People Also Ask, autocomplete, and related search suggestions"
+      },
+      {
+        "platform": "Amazon",
+        "method": "Rainforest API / e-commerce proxies",
+        "cost": "🔴 Paid API · Usage-based billing",
+        "freq": "Weekly",
+        "rateLimit": "Prioritize high-value tasks",
+        "focus": "1–3 star reviews and Verified Purchase feedback"
+      },
+      {
+        "platform": "Quora",
+        "method": "Playwright",
+        "cost": "🟢 $0 · Free headless browser",
+        "freq": "Weekly",
+        "rateLimit": "Low-frequency headless scraping",
+        "focus": "High-follow, low-answer, still-unresolved questions"
+      },
+      {
+        "platform": "Twitter/X",
+        "method": "twitter-cli (Cookie auth)",
+        "cost": "🟢 $0 · Browser Cookie replaces API Key",
+        "freq": "Daily or real time",
+        "rateLimit": "Cookie-based auth, no API quota",
+        "focus": "Real-time complaints, venting, and strong-emotion signals"
+      },
+      {
+        "platform": "App Store",
+        "method": "app-store-scraper",
+        "cost": "🟢 $0 · Free open-source library",
+        "freq": "Biweekly",
+        "rateLimit": "Collect reviews from the last 90 days",
+        "focus": "1–3 star app reviews"
+      },
+      {
+        "platform": "Google Play",
+        "method": "google-play-scraper",
+        "cost": "🟢 $0 · Free open-source library",
+        "freq": "Biweekly",
+        "rateLimit": "Do not re-scrape the same app within 14 days",
+        "focus": "Android-side negative reviews and feature complaints"
+      },
+      {
+        "platform": "Review Sites",
+        "method": "Playwright + structured parsing",
+        "cost": "🟢 $0 · Free headless scraping",
+        "freq": "Biweekly",
+        "rateLimit": "Randomized UA + low-frequency execution",
+        "focus": "Pros/Cons and reviewer job titles from Trustpilot, G2, and Capterra"
+      },
+      {
+        "platform": "Hacker News",
+        "method": "Algolia HN Search API",
+        "cost": "🟢 $0 · Free public API",
+        "freq": "Weekly",
+        "rateLimit": "24h caching",
+        "focus": "Ask HN and lightly discussed unresolved technical threads"
+      },
+      {
+        "platform": "Stack Overflow",
+        "method": "Stack Exchange API",
+        "cost": "🟢 $0 · Free public API",
+        "freq": "Weekly",
+        "rateLimit": "Deduplicate by question ID",
+        "focus": "Technical questions with no accepted answer or zero answers"
+      },
+      {
+        "platform": "V2EX",
+        "method": "V2EX public REST API",
+        "cost": "🟢 $0 · No auth needed",
+        "freq": "Daily",
+        "rateLimit": "1–3s request interval",
+        "focus": "Product/tech discussion signals from Chinese developer community"
+      },
+      {
+        "platform": "Weibo",
+        "method": "Weibo mobile API",
+        "cost": "🟢 $0 · Auto-generated visitor cookie",
+        "freq": "Daily",
+        "rateLimit": "1–3s request interval",
+        "focus": "Product complaint signals from trending topics and keyword search"
+      }
+    ]
+  },
+  "skills": {
+    "badge": "10 Platform Skills",
+    "title": "10 Platform Skills",
+    "subtitle": "Each Skill encapsulates complete input parameters, output structure, and publishing policy — enabling automated scanning-to-reply orchestration.",
+    "skills": [
+      {
+        "skill": "GooglePaaAutocompleteSkill",
+        "input": "Keyword list",
+        "output": "PAA questions + autocomplete suggestions",
+        "linkPolicy": "Read-only signals; never publish directly"
+      },
+      {
+        "skill": "YouTubeCommentSkill",
+        "input": "Video ID",
+        "output": "Comment list + frustration markers + Channel ID",
+        "linkPolicy": "Prefer hyperlinked text; if needed, route into a DM follow-up queue"
+      },
+      {
+        "skill": "RedditSearchSkill",
+        "input": "Keyword · subreddit · time range",
+        "output": "Post list + metadata + cached rules",
+        "linkPolicy": "Check subreddit rules first; if external links are restricted, use product name + DM follow-up"
+      },
+      {
+        "skill": "AmazonReviewsSkill",
+        "input": "ASIN · star range",
+        "output": "1–3 star reviews + 7-day cache",
+        "linkPolicy": "Read-only signals; no direct outreach"
+      },
+      {
+        "skill": "QuoraScraperSkill",
+        "input": "Keyword · page count",
+        "output": "Questions with high follow count and few answers",
+        "linkPolicy": "Max one external link per answer; if collapsed, fall back to product name or resource page"
+      },
+      {
+        "skill": "TwitterSearchSkill",
+        "input": "Keyword · time range · language",
+        "output": "Negative-sentiment tweets",
+        "linkPolicy": "URLs allowed; inject tracked t.co links directly"
+      },
+      {
+        "skill": "AppStoreGooglePlaySkill",
+        "input": "App ID · star range",
+        "output": "Batched app reviews",
+        "linkPolicy": "Read-only signals; no reply publishing"
+      },
+      {
+        "skill": "ReviewSitesSkill",
+        "input": "Product name · source platform",
+        "output": "Reviews, pros/cons, and reviewer job titles",
+        "linkPolicy": "Read-only signals used for pain-point validation"
+      },
+      {
+        "skill": "HackerNewsSkill",
+        "input": "Keyword · ask/story/comment",
+        "output": "Low-score or lightly discussed technical threads",
+        "linkPolicy": "For highly relevant posts, cite a GitHub bridge only after a complete technical answer"
+      },
+      {
+        "skill": "StackOverflowSkill",
+        "input": "Keyword · tags",
+        "output": "Questions with zero answers or no accepted answer",
+        "linkPolicy": "A complete solution must come first, followed by a commercial hosted-option link"
+      }
+    ]
+  },
+  "back": {
+    "badge": "Back",
+    "title": "Return to Main Document",
+    "subtitle": "← Back to PRD Guide",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-scanning"
+  }
+}

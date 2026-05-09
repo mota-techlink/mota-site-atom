@@ -1,0 +1,558 @@
+{
+  "nav": {
+    "title": "PRD Guide",
+    "versions": [
+      {
+        "label": "PRD",
+        "ver": "v1.5"
+      },
+      {
+        "label": "ARCH",
+        "ver": "v1.0"
+      },
+      {
+        "label": "BILLING",
+        "ver": "v1.0"
+      }
+    ],
+    "sections": {
+      "cover": "System Overview",
+      "background": "Background & Goals",
+      "products": "Three Product Layers",
+      "scanning": "Scanner Matrix",
+      "engine": "Analysis Engine",
+      "pipeline": "Execution Pipeline",
+      "billing": "Billing Model",
+      "architecture": "System Architecture",
+      "portals": "Three Portals",
+      "partners": "Partner Ecosystem"
+    },
+    "loginHint": "Sign in with an admin account to switch to the full PRD walkthrough view"
+  },
+  "lock": {
+    "title": "Admin Access Required",
+    "description": "This page presents the full MOTA Market Intelligence PRD walkthrough. Please sign in with an admin or staff account to view the complete content.",
+    "cta": "Sign In"
+  },
+  "authDict": {
+    "loginTitle": "Welcome back",
+    "loginDesc": "Sign in to unlock all pages",
+    "signupTitle": "Create an account",
+    "signupDesc": "Enter your email to create a new account",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signUpNow": "Sign Up Now",
+    "signInNow": "Sign In Now",
+    "forgotPassword": "Forgot password?",
+    "invalidEmail": "Invalid email address",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "passwordMismatch": "Passwords do not match",
+    "invalidCredentials": "Invalid email or password",
+    "loginSuccess": "Signed in successfully!"
+  },
+  "cover": {
+    "badge": "MOTA Market Intelligence Hunter",
+    "title": "PRD Walkthrough",
+    "subtitle": "A product-led global market intelligence system: automated analysis, continuous scanning, response generation, and outcome-based billing.",
+    "docRefs": [
+      {
+        "label": "PRD",
+        "desc": "Core product requirements",
+        "sections": "§1 – §10",
+        "hoverDesc": "Complete business definitions covering background, methodology, scanners, replies, billing, portals, partner ecosystem, and the technical stack.",
+        "targetSection": "s-background",
+        "clickHint": "Go to Background & Goals"
+      },
+      {
+        "label": "Architecture",
+        "desc": "Three product layers and three portals",
+        "sections": "Product lines + portal topology",
+        "hoverDesc": "The full mapping from Project Subscription, Market Intelligence Report, and Reply Outreach to the Portal, User Dashboard, and Admin Dashboard.",
+        "targetSection": "s-architecture",
+        "clickHint": "Go to System Architecture"
+      },
+      {
+        "label": "Billing",
+        "desc": "Three-layer pricing and multiplier rules",
+        "sections": "Subscription / Report / Outreach",
+        "hoverDesc": "Includes Prepaid, PAYG, CPA, platform tier multipliers, and administrator adjustment permissions.",
+        "targetSection": "s-billing",
+        "clickHint": "Go to Billing Model"
+      }
+    ],
+    "pipeline": {
+      "title": "Six-Stage Business Loop (Hover for details)",
+      "stages": [
+        {
+          "icon": "📝",
+          "label": "Intake",
+          "desc": "Product name · description · URL · language",
+          "hoverDesc": "The user enters product or service details in the dashboard. The system creates a project and moves it into analyzing status.",
+          "targetSection": "s-background"
+        },
+        {
+          "icon": "🧠",
+          "label": "Analyze",
+          "desc": "LLM infers pain points and queries",
+          "hoverDesc": "Ollama Gamma 4 infers target audience pain points, competitors, platforms, keywords, and multilingual queries.",
+          "targetSection": "s-engine"
+        },
+        {
+          "icon": "📡",
+          "label": "Scan",
+          "desc": "13 scanner types discover signals continuously",
+          "hoverDesc": "Covers Reddit, YouTube, Google, Amazon, Quora, Twitter/X, V2EX, Weibo, plus Japanese, Korean, Spanish, Portuguese, and Russian local platforms.",
+          "targetSection": "s-scanning"
+        },
+        {
+          "icon": "🔎",
+          "label": "Mine",
+          "desc": "Relevance filtering · five-axis validation",
+          "hoverDesc": "Mentions are clustered by pain point, validated across sources, and scored into high-value reply opportunities.",
+          "targetSection": "s-pipeline"
+        },
+        {
+          "icon": "💬",
+          "label": "Reply",
+          "desc": "Generate useful content with tracked links",
+          "hoverDesc": "The system drafts natural, platform-aware replies, routes them into review, and publishes them to the right communities.",
+          "targetSection": "s-products"
+        },
+        {
+          "icon": "💳",
+          "label": "Settle",
+          "desc": "Bill for valid clicks · allow manual adjustments",
+          "hoverDesc": "Link clicks are written to funnel_events. Prepaid deducts in real time, PAYG bills monthly, and admins can discount or waive charges.",
+          "targetSection": "s-billing"
+        }
+      ]
+    },
+    "metrics": [
+      {
+        "icon": "📡",
+        "value": "13",
+        "label": "Scanners",
+        "hoverDesc": "13 dedicated scanners cover Q&A, comments, negative reviews, search suggestions, V2EX, Weibo, and local-language communities.",
+        "targetSection": "s-scanning"
+      },
+      {
+        "icon": "🧩",
+        "value": "12",
+        "label": "Platform Skills",
+        "hoverDesc": "12 reusable skills provide the core capabilities for scanning, mining, and reply generation.",
+        "targetSection": "s-scanning"
+      },
+      {
+        "icon": "🌐",
+        "value": "6",
+        "label": "Target Languages",
+        "hoverDesc": "English, Spanish, Portuguese, Japanese, Korean, and Russian.",
+        "targetSection": "s-background"
+      },
+      {
+        "icon": "💰",
+        "value": "4",
+        "label": "Platform Tiers",
+        "hoverDesc": "Reply outreach is priced across four multiplier tiers based on platform operating cost.",
+        "targetSection": "s-billing"
+      }
+    ],
+    "stackTitle": "Core Tech Stack",
+    "stack": [
+      {
+        "name": "Next.js 15",
+        "layer": "Frontend",
+        "desc": "App Router + SSR/SSG for the marketing portal, user dashboard, and admin dashboard front ends."
+      },
+      {
+        "name": "Tailwind CSS + shadcn/ui",
+        "layer": "Design",
+        "desc": "A shared UI system that supports responsive layouts and dense data views across all three portals."
+      },
+      {
+        "name": "Supabase Auth",
+        "layer": "Identity",
+        "desc": "Email + OAuth identity, combined with RLS to isolate customers, partners, and administrators."
+      },
+      {
+        "name": "Supabase PostgreSQL 15",
+        "layer": "Data",
+        "desc": "Stores core business tables, billing records, tracking events, and audit logs in one place."
+      },
+      {
+        "name": "Cloudflare R2 + D1",
+        "layer": "Data",
+        "desc": "R2 stores raw crawl output and report archives (zero egress); D1 serves as edge cache for hot queries."
+      },
+      {
+        "name": "FastAPI",
+        "layer": "Backend",
+        "desc": "The external API and business orchestration layer that handles frontend requests and task triggers."
+      },
+      {
+        "name": "Celery + Beat",
+        "layer": "Orchestration",
+        "desc": "Runs scheduled scans, asynchronous mining, report generation, and monthly billing jobs."
+      },
+      {
+        "name": "Ollama Gamma 4",
+        "layer": "LLM",
+        "desc": "Executes local product analysis, reply generation, and low-cost text classification."
+      },
+      {
+        "name": "Gemini 1.5 Flash / Pro",
+        "layer": "LLM",
+        "desc": "Used as the high-quality fallback for aggregation reasoning, report summarization, and reply polishing."
+      },
+      {
+        "name": "Playwright + PRAW + Tweepy",
+        "layer": "Acquisition",
+        "desc": "Supports web scraping, Reddit, Twitter/X, and automated collection on platforms without usable APIs."
+      },
+      {
+        "name": "Stripe + Stripe Connect",
+        "layer": "Payments",
+        "desc": "Primary channel for customer payments, PAYG billing, partner revenue sharing, and monthly settlements."
+      }
+    ]
+  },
+  "background": {
+    "badge": "PRD §1–§2",
+    "title": "Project Background & Goals",
+    "subtitle": "Instead of pushing ads at strangers, we enter the conversation with real value when users publicly express frustration and ask for help.",
+    "problem": {
+      "title": "Structural Problems in Traditional Acquisition",
+      "points": [
+        "Search ads and feed ads mainly target people who have not yet entered an active buying cycle, driving CPC up while conversions stay low.",
+        "KOL campaigns create exposure but lack precise intent, and ROI fluctuates heavily with creators and platform changes.",
+        "Market research and outreach are usually separated, so customers research first and hunt for channels later, creating a long feedback loop.",
+        "Signals across multilingual markets are scattered across different communities, and local platforms are difficult to monitor continuously by hand."
+      ]
+    },
+    "solution": {
+      "title": "The MOTA Approach",
+      "points": [
+        "Start from the customer's product description and reverse-engineer user pain points, competitors, and multi-platform search intent.",
+        "Continuously scan public communities for complaints, questions, negative reviews, comments, and real-time sentiment.",
+        "Use AI to generate natural replies that help first and guide second, with attributable tracking links embedded.",
+        "Bill on valid clicks and deeper conversions so cost is directly tied to measurable outcomes."
+      ]
+    },
+    "workflowTitle": "Five-Step Closed-Loop Workflow",
+    "workflow": [
+      {
+        "step": "1",
+        "icon": "📥",
+        "label": "Enter Product",
+        "brief": "Product name, description, URL, target languages",
+        "detail": "The customer creates a project in the dashboard and fills in the product intro, landing page URL, target market languages, optional competitors, and reply tone."
+      },
+      {
+        "step": "2",
+        "icon": "🧠",
+        "label": "Analyze Product",
+        "brief": "Infer pain points, platforms, and queries",
+        "detail": "The LLM outputs domain_tags, target_audience_pain, competitors, keywords, subreddits, and multilingual_queries."
+      },
+      {
+        "step": "3",
+        "icon": "📡",
+        "label": "Scan All Platforms",
+        "brief": "Continuously capture high-intent signals",
+        "detail": "Eleven scanner types run on queues and schedules to find complaints, requests for help, negative reviews, and unanswered questions across English and local-language platforms."
+      },
+      {
+        "step": "4",
+        "icon": "💬",
+        "label": "Deliver Three Layers of Value",
+        "brief": "Subscription, report, and outreach",
+        "detail": "The system scans continuously, generates market research reports, and drafts tracked replies for highly relevant mentions."
+      },
+      {
+        "step": "5",
+        "icon": "📈",
+        "label": "Track and Bill",
+        "brief": "Valid clicks, CPA, and manual adjustments",
+        "detail": "Tracking events are written to funnel_events, Credits are deducted for Prepaid, PAYG is settled monthly, and admins can discount, waive, or grant credits."
+      }
+    ],
+    "goalsTitle": "Core Business Goals",
+    "goals": [
+      {
+        "icon": "🎯",
+        "title": "Product First",
+        "desc": "Customers should not need to write prompts or do upfront market research; the system starts directly from product information.",
+        "details": [
+          "Automatically infer the target audience and core pain points.",
+          "Automatically generate platform queries and language variants.",
+          "Automatically enter the continuous scanning and reply pipeline."
+        ]
+      },
+      {
+        "icon": "💎",
+        "title": "Three-Layer Monetization",
+        "desc": "Separate scanning cost, research value, and outreach outcomes into three independently sellable product layers.",
+        "details": [
+          "Project Subscription covers long-term monitoring costs.",
+          "Market Intelligence Report acts as a lead-gen and research product.",
+          "Reply Outreach is billed on outcomes."
+        ]
+      },
+      {
+        "icon": "🌍",
+        "title": "Global Multilingual Coverage",
+        "desc": "The system should not stop at English markets; it should reach local communities and local platforms directly.",
+        "details": [
+          "Supports EN / ES / PT / JA / KO / RU.",
+          "Balances mainstream English platforms with local channels.",
+          "Extends outreach from the public web into regional communities."
+        ]
+      },
+      {
+        "icon": "✨",
+        "title": "Replies with Real Value",
+        "desc": "Solve the problem first, then introduce the product naturally to reduce ad fatigue and account-risk exposure.",
+        "details": [
+          "Replies must include actionable guidance.",
+          "Sensitive communities and high-value pain points require manual review.",
+          "Supports AI rewriting to match community tone."
+        ]
+      },
+      {
+        "icon": "🧾",
+        "title": "Auditable and Adjustable",
+        "desc": "Every click, charge, adjustment, and partner payout must be traceable.",
+        "details": [
+          "funnel_events keeps both valid and invalid clicks.",
+          "bill_adjustments always require a reason.",
+          "Supports Prepaid, PAYG, and CPA in parallel."
+        ]
+      }
+    ],
+    "methodTitle": "8 Signal Capture Methods",
+    "methods": [
+      {
+        "id": "M1",
+        "icon": "😤",
+        "name": "Negative Search Method",
+        "platforms": "Reddit · Google · Twitter/X",
+        "detail": "Capture users who already tried generic solutions and still failed by searching around frustration phrases such as “not working,” “frustrated,” or “broken.”"
+      },
+      {
+        "id": "M2",
+        "icon": "❓",
+        "name": "Community Q&A Radar",
+        "platforms": "Reddit · Quora · Hacker News",
+        "detail": "Prioritize questions that remain under-answered, poorly answered, or still unresolved to find openings where the product can become the better answer."
+      },
+      {
+        "id": "M3",
+        "icon": "🎥",
+        "name": "Video Comment Mining",
+        "platforms": "YouTube",
+        "detail": "Tutorial comment sections naturally accumulate real feedback like “this still doesn’t solve it” and “I have the same problem.”"
+      },
+      {
+        "id": "M4",
+        "icon": "⭐",
+        "name": "Negative Review Reverse Mapping",
+        "platforms": "Amazon · App Store · Google Play · Trustpilot · G2",
+        "detail": "Competitor negative reviews are ready-made blueprints for unmet demand and quickly reveal users who want a solution but still feel underserved."
+      },
+      {
+        "id": "M5",
+        "icon": "⚡",
+        "name": "Real-Time Sentiment Monitoring",
+        "platforms": "Twitter/X",
+        "detail": "Scan real-time complaints and trending topics almost immediately to join the conversation during the short window when users are actively venting."
+      },
+      {
+        "id": "M6",
+        "icon": "🔧",
+        "name": "Technical Q&A Capture",
+        "platforms": "Stack Overflow · HN",
+        "detail": "Target technical questions with high views, weak answers, or no accepted answer, making the method a strong fit for tools and developer products."
+      },
+      {
+        "id": "M7",
+        "icon": "🔗",
+        "name": "Cross-Source Validation",
+        "platforms": "Cross-platform",
+        "detail": "When the same pain point appears repeatedly across different communities, both signal strength and commercial confidence rise sharply."
+      },
+      {
+        "id": "M8",
+        "icon": "🌐",
+        "name": "Local-Language Platform Expansion",
+        "platforms": "Taringa! · Reclame Aqui · Yahoo! Chiebukuro · Naver · Pikabu",
+        "detail": "Extend reach from the English-language internet into Spanish, Portuguese, Japanese, Korean, and Russian native communities."
+      }
+    ]
+  },
+  "products": {
+    "badge": "PRD §1.1 · §4.7",
+    "title": "Three-Layer Product System",
+    "subtitle": "Break continuous scanning cost, research report value, and community outreach outcomes into three product lines that can each be sold independently.",
+    "subscription": {
+      "title": "Layer 1: Project Subscription",
+      "summary": "Charged monthly per project to cover scanning, proxy usage, APIs, and baseline AI analysis. When a project is paused, subscription deductions stop."
+    },
+    "report": {
+      "title": "Layer 2: Market Intelligence Report",
+      "summary": "Research only, without outreach. It turns scattered market complaints and demand signals into a structured report, making it ideal as a lead-gen product and a pre-sales asset."
+    },
+    "outreach": {
+      "title": "Layer 3: Reply Outreach",
+      "summary": "Publishing replies is free. Charges occur only after a real user clicks the tracked link and passes anti-fraud checks, consuming Credits or posting to a PAYG invoice according to platform multipliers."
+    }
+  },
+  "scanning": {
+    "badge": "PRD §4.2–§4.3",
+    "title": "Scanner Matrix & Platform Skills",
+    "subtitle": "Scanners are responsible for collection, while Skills encapsulate reusable platform capabilities. Together they cover comments, negative reviews, Q&A, search suggestions, and local communities.",
+    "deepDive": {
+      "href": "/pitch-deck/scanning-system",
+      "label": "View Scanning System Deep Dive →"
+    }
+  },
+  "engine": {
+    "badge": "PRD §4.1",
+    "title": "Product Analysis Engine",
+    "subtitle": "This is the automation core at the system entrance: understand the product, define who the target users are, where to find them, and what topics to use to reach them.",
+    "deepDive": {
+      "href": "/pitch-deck/engine-deepdive",
+      "label": "View Engine Deep Dive →"
+    }
+  },
+  "pipeline": {
+    "badge": "PRD §3.1 · §4.4–§4.6",
+    "title": "Execution Pipeline & Data Flow",
+    "subtitle": "From product intake to billing events, this is not a collection of isolated features. It is a continuous data chain built around shared project_id, mention_id, and tracking_url values.",
+    "deepDive": {
+      "href": "/pitch-deck/engine-pipeline",
+      "label": "View Pipeline Deep Dive →"
+    }
+  },
+  "billing": {
+    "badge": "PRD §4.7",
+    "title": "Billing Model & Multiplier Rules",
+    "subtitle": "Each of the three product layers carries a different cost structure, while Reply Outreach adds finer-grained billing through Prepaid, PAYG, CPA, and platform multipliers.",
+    "deepDive": {
+      "href": "/pitch-deck/billing-model",
+      "label": "View Billing Model Deep Dive →"
+    }
+  },
+  "architecture": {
+    "badge": "PRD §3 · §8",
+    "title": "Product Architecture & Portal Architecture",
+    "subtitle": "The product layer answers “what we sell,” while the portal layer answers “who uses it and where actions happen.” Together they form a complete, operable system.",
+    "deepDive": {
+      "href": "/pitch-deck/architecture-deepdive",
+      "label": "View Architecture Deep Dive →"
+    }
+  },
+  "portals": {
+    "badge": "PRD §4.8–§4.10",
+    "title": "Three-Portal Design",
+    "subtitle": "The same underlying data platform powers three very different work surfaces for three different user roles.",
+    "deepDive": {
+      "href": "/pitch-deck/portal-integration",
+      "label": "View Portal Integration Deep Dive →"
+    }
+  },
+  "partners": {
+    "badge": "PRD §4.6.11–§4.7.10",
+    "title": "Partner Ecosystem & AI Matching",
+    "subtitle": "When system-owned accounts cannot earn enough community trust, AI hands the opportunity to real community members, local operators, and creator partners to finish the last mile.",
+    "programsTitle": "Three Partner Programs",
+    "programs": [
+      {
+        "name": "Native Platform User Partner Program",
+        "target": "Regular community members with credible real-account history",
+        "compensation": "Bronze $0.02 / Silver $0.04 / Gold $0.08 per valid click",
+        "flow": "Apply → AI rating → task acceptance → publish through personal account → monthly settlement",
+        "fit": "Best for communities like Reddit, Quora, and HN where authentic identity matters"
+      },
+      {
+        "name": "Local Platform Operator Program",
+        "target": "Regional operators with local accounts, native language capability, and local IP resources",
+        "compensation": "Settled with dedicated Tier 4 multipliers and CPA bonuses per task",
+        "flow": "Platform qualification review → language/domain match → local-platform task dispatch → link validation → revenue settlement",
+        "fit": "Best for high-operations-cost platforms such as VK, Naver, Yahoo! Chiebukuro, and Reclame Aqui"
+      },
+      {
+        "name": "Creator Co-Creation Program",
+        "target": "High-influence creators and opinion leaders",
+        "compensation": "Creator $0.06 / Elite $0.12 per valid click, with Stripe or crypto settlement",
+        "flow": "AI discovers creators → targeted invitation → creative brief → independent creation → compliance scan → publish and settle",
+        "fit": "Best for brand campaigns that need high trust and high creative freedom"
+      }
+    ],
+    "matchingTitle": "AI Matching Logic",
+    "matching": [
+      {
+        "factor": "Domain Fit",
+        "weight": "30%",
+        "desc": "Compare project.domain_tags against partner specialties and historical task categories."
+      },
+      {
+        "factor": "Platform Qualification",
+        "weight": "20%",
+        "desc": "Evaluate account age, Karma, follower count, compliance history, and publishing success rate."
+      },
+      {
+        "factor": "Language and Geography",
+        "weight": "20%",
+        "desc": "Prioritize JA / KO / ES / PT / RU projects for matching operators who cover the corresponding language and local platforms."
+      },
+      {
+        "factor": "Content Style Fit",
+        "weight": "15%",
+        "desc": "Select the best person for helpful, expert, or casual tone based on the partner's historical posting style and community preferences."
+      },
+      {
+        "factor": "Commercial Priority",
+        "weight": "15%",
+        "desc": "Dynamically adjust dispatch order based on project budget, platform tier, Gold Mine signal level, and task urgency."
+      }
+    ],
+    "aiStagesTitle": "AI-Driven Collaboration Stages",
+    "aiStages": [
+      {
+        "stage": "1",
+        "label": "Discover",
+        "desc": "Automatically identify potential partner and creator leads during everyday scanning and write them into candidate pools in partners / creator_leads."
+      },
+      {
+        "stage": "2",
+        "label": "Invite",
+        "desc": "Generate personalized outreach messages based on historical posting style."
+      },
+      {
+        "stage": "3",
+        "label": "Match",
+        "desc": "Score and assign tasks based on domain, platform, language, budget, and quality requirements."
+      },
+      {
+        "stage": "4",
+        "label": "Brief",
+        "desc": "Provide AI drafts for partners and creative briefs for creators."
+      },
+      {
+        "stage": "5",
+        "label": "Compliance",
+        "desc": "Automatically detect banned terms, competitor attacks, exaggerated claims, and link validity."
+      },
+      {
+        "stage": "6",
+        "label": "Settle",
+        "desc": "Aggregate valid clicks automatically at month end and settle through Stripe Connect or on-chain transfers."
+      }
+    ]
+  }
+}

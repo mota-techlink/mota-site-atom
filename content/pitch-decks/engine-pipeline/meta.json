@@ -1,0 +1,12 @@
+{
+  "title": "引擎管线与数据流详解",
+  "slug": "engine-pipeline",
+  "description": "MOTA 六阶段执行管线与关键数据流：从产品录入到计费事件的连续数据链路",
+  "author": "MOTA Team",
+  "date": "2025-04-27",
+  "status": "published",
+  "previewSlides": 4,
+  "defaultTransition": "fade",
+  "tags": ["pipeline", "data-flow", "execution", "orchestration"],
+  "access": "public"
+}
