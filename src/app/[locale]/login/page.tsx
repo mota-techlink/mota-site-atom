@@ -45,7 +45,7 @@ export default async function LoginPage({
   };
 
   return (
-    <div className="flex w-full flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 landscape:justify-start landscape:py-6 md:landscape:justify-center relative overflow-y-auto">
+    <div className="flex min-h-screen w-full flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 landscape:justify-start landscape:py-6 md:landscape:justify-center relative overflow-y-auto">
 
       <LoginPanel
         specificProviders={specificProviders}

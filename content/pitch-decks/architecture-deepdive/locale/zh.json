@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "title": "系统架构详解",
+    "versions": [
+      { "label": "ARCH", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "架构总览",
+      "product-arch": "产品架构",
+      "portal-arch": "门户架构",
+      "back": "← 返回主文档"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "PRD §3 · §8",
+    "title": "产品架构与门户架构",
+    "subtitle": "产品层回答「卖什么」，门户层回答「谁来用、在哪里完成动作」。二者共同构成可运营的完整系统。",
+    "description": "MOTA 的架构分为两个正交维度：产品架构定义了三层可售卖服务（Subscription / Report / Outreach），门户架构定义了三种用户操作界面（公开门户 / 客户工作台 / 管理后台）。",
+    "highlights": [
+      { "icon": "🏗️", "label": "三层产品堆叠", "desc": "从持续扫描到按次报告，再到按效果付费的回复触达，每层可独立售卖" },
+      { "icon": "🚪", "label": "三端门户分离", "desc": "公开门户面向访客，工作台面向客户，后台面向运营——同一数据底座" },
+      { "icon": "🔗", "label": "数据贯穿三层", "desc": "projects → mentions → pain_points → reply_logs → funnel_events，端到端链路" }
+    ]
+  },
+  "product-arch": {
+    "badge": "产品架构",
+    "title": "产品架构（What we sell）",
+    "subtitle": "从持续扫描到按效果付费的三层产品堆叠，每层可独立售卖也支持组合消费。",
+    "layers": [
+      {
+        "layer": "Layer 1",
+        "name": "Project Subscription",
+        "desc": "持续扫描监控层，负责平台覆盖、关键词配额与任务调度。",
+        "components": ["subscription_plans", "project_subscriptions", "tasks", "scan_logs"]
+      },
+      {
+        "layer": "Layer 2",
+        "name": "Market Intelligence Report",
+        "desc": "把 mentions、pain_points、validations 聚合成可售卖的研究资产。",
+        "components": ["report_pricing", "report_purchases", "pain_points", "competitor_reports"]
+      },
+      {
+        "layer": "Layer 3",
+        "name": "Reply Outreach",
+        "desc": "把高相关 mention 转为社区回复、点击事件与实际收入。",
+        "components": ["reply_queue", "reply_logs", "funnel_events", "credit_transactions"]
+      }
+    ]
+  },
+  "portal-arch": {
+    "badge": "门户架构",
+    "title": "门户架构（Who operates it）",
+    "subtitle": "同一套数据底座，面向三类用户角色输出三个完全不同的工作面板。",
+    "portals": [
+      {
+        "portal": "Portal",
+        "audience": "访客 / 潜在客户",
+        "goal": "理解产品价值并完成注册转化",
+        "surfaces": ["首页 Hero 与五步演示", "三层定价说明", "案例展示与 FAQ", "注册 / 登录入口"]
+      },
+      {
+        "portal": "User Dashboard",
+        "audience": "已付费客户",
+        "goal": "管理项目、回复、报告、账单与效果追踪",
+        "surfaces": ["Projects", "Replies", "Assets", "Analytics / Billing"]
+      },
+      {
+        "portal": "Admin Dashboard",
+        "audience": "内部运营团队",
+        "goal": "监控任务、审核回复、管理计费、运营伙伴生态",
+        "surfaces": ["Users / Projects / Tasks", "Reply Queue / Billing", "Fraud Monitoring", "Partner & Creator Management"]
+      }
+    ]
+  },
+  "back": {
+    "badge": "返回",
+    "title": "返回主文档",
+    "subtitle": "← 回到 PRD Guide 主文档",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-architecture"
+  }
+}

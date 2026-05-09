@@ -1,0 +1,12 @@
+{
+  "title": "系统架构详解",
+  "slug": "architecture-deepdive",
+  "description": "MOTA 系统架构详解：三层产品架构与三端门户设计，从产品订阅到回复触达的完整技术栈",
+  "author": "MOTA Team",
+  "date": "2025-04-27",
+  "status": "published",
+  "previewSlides": 4,
+  "defaultTransition": "fade",
+  "tags": ["architecture", "product", "portal", "layer", "design"],
+  "access": "public"
+}

@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "title": "Architecture Deep Dive",
+    "versions": [
+      { "label": "ARCH", "ver": "v1.0" }
+    ],
+    "sections": {
+      "overview": "Architecture Overview",
+      "product-arch": "Product Architecture",
+      "portal-arch": "Portal Architecture",
+      "back": "← Back to Main Doc"
+    },
+    "loginHint": ""
+  },
+  "lock": {},
+  "authDict": {},
+  "overview": {
+    "badge": "PRD §3 · §8",
+    "title": "Product Architecture & Portal Architecture",
+    "subtitle": "The product layer answers \"what we sell,\" while the portal layer answers \"who uses it and where actions happen.\" Together they form a complete, operable system.",
+    "description": "MOTA's architecture has two orthogonal dimensions: the product architecture defines three sellable service layers (Subscription / Report / Outreach), and the portal architecture defines three user-facing interfaces (public portal / customer dashboard / admin dashboard).",
+    "highlights": [
+      { "icon": "🏗️", "label": "Three-Layer Stack", "desc": "From continuous scanning to per-report research to pay-per-performance outreach — each layer is independently sellable" },
+      { "icon": "🚪", "label": "Three Portal Separation", "desc": "Public portal for visitors, dashboard for customers, admin for operations — same data foundation" },
+      { "icon": "🔗", "label": "End-to-End Data Chain", "desc": "projects → mentions → pain_points → reply_logs → funnel_events" }
+    ]
+  },
+  "product-arch": {
+    "badge": "Product Architecture",
+    "title": "Product Architecture (What we sell)",
+    "subtitle": "A three-layer product stack from continuous scanning to performance-based outreach. Each layer is independently sellable or combinable.",
+    "layers": [
+      {
+        "layer": "Layer 1",
+        "name": "Project Subscription",
+        "desc": "The continuous scanning and monitoring layer that handles platform coverage, keyword quotas, and task scheduling.",
+        "components": ["subscription_plans", "project_subscriptions", "tasks", "scan_logs"]
+      },
+      {
+        "layer": "Layer 2",
+        "name": "Market Intelligence Report",
+        "desc": "Aggregates mentions, pain_points, and validations into sellable research assets.",
+        "components": ["report_pricing", "report_purchases", "pain_points", "competitor_reports"]
+      },
+      {
+        "layer": "Layer 3",
+        "name": "Reply Outreach",
+        "desc": "Turns highly relevant mentions into community replies, click events, and real revenue.",
+        "components": ["reply_queue", "reply_logs", "funnel_events", "credit_transactions"]
+      }
+    ]
+  },
+  "portal-arch": {
+    "badge": "Portal Architecture",
+    "title": "Portal Architecture (Who operates it)",
+    "subtitle": "Same data foundation, three completely different workspaces for three user roles.",
+    "portals": [
+      {
+        "portal": "Portal",
+        "audience": "Visitors / prospects",
+        "goal": "Understand the product value and convert into signups",
+        "surfaces": ["Homepage hero and five-step demo", "Three-layer pricing explanation", "Case studies and FAQ", "Register / sign-in entry"]
+      },
+      {
+        "portal": "User Dashboard",
+        "audience": "Paying customers",
+        "goal": "Manage projects, replies, reports, bills, and performance tracking",
+        "surfaces": ["Projects", "Replies", "Assets", "Analytics / Billing"]
+      },
+      {
+        "portal": "Admin Dashboard",
+        "audience": "Internal operations team",
+        "goal": "Monitor tasks, review replies, manage billing, and run the partner ecosystem",
+        "surfaces": ["Users / Projects / Tasks", "Reply Queue / Billing", "Fraud Monitoring", "Partner & Creator Management"]
+      }
+    ]
+  },
+  "back": {
+    "badge": "Back",
+    "title": "Return to Main Document",
+    "subtitle": "← Back to PRD Guide",
+    "targetDeck": "/pitch-deck/prd-guide",
+    "targetSection": "s-architecture"
+  }
+}
