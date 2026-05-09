@@ -30,7 +30,7 @@ export async function middleware(request: NextRequest) {
     supabaseAnonKey,
     {
       global: { fetch: fetchWithSchema },
-      db: { schema },
+      db: { schema },  // Provide schema in config
       cookies: {
         getAll() {
           return request.cookies.getAll();

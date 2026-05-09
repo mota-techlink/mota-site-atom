@@ -12,7 +12,7 @@ export async function createClient() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       global: { fetch: fetchWithSchema },
-      db: { schema },
+      db: { schema },  // Provide schema in config
       cookies: {
         getAll() {
           return cookieStore.getAll();

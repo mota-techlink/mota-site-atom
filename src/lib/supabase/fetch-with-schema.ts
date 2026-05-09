@@ -4,10 +4,10 @@
  */
 export function createFetchWithSchema(schema: string) {
   return async (input: RequestInfo | URL, init?: RequestInit) => {
-    // 确只在 PostgREST 请求上添加 schema header
     let url = typeof input === 'string' ? input : input instanceof Request ? input.url : input.toString();
     
-    if (url.includes('/rest/v1/')) {
+    // 在 PostgREST 请求和任何 Supabase API 请求上添加 schema header
+    if (url.includes('/rest/v1/') || url.includes('/functions/')) {
       // 确保 headers 对象存在
       if (!init) init = {};
       if (!init.headers) init.headers = {};
@@ -17,9 +17,13 @@ export function createFetchWithSchema(schema: string) {
         ? Object.fromEntries(init.headers.entries())
         : { ...init.headers };
       
-      // 添加 schema header
+      // 添加 schema header - 不只在 PostgREST 上，而是在所有相关请求上
       headers['Content-Profile'] = schema;
       init.headers = headers;
+      
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`📡 [Supabase Fetch] Schema=${schema}, URL=${url.split('?')[0].substring(url.length - 50)}`);
+      }
     }
     
     // 使用原生 fetch

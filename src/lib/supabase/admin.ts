@@ -10,7 +10,7 @@ export function createAdminClient() {
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
     {
       global: { fetch: fetchWithSchema },
-      db: { schema },
+      db: { schema },  // Provide schema in config
     }
   );
 }

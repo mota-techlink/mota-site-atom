@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import { OrdersTable } from "./orders-table"
+import { queryPostgREST } from "@/lib/supabase/direct-postgrest"
 
 export const metadata = {
   title: "My Orders",
@@ -23,45 +24,64 @@ export default async function OrdersPage({
   // 🟢 2. 关键修改：先 await 解析参数，再使用
   const params = await searchParams;
   const queryTerm = params.q || ""
+  const schema = process.env.NEXT_PUBLIC_SUPABASE_DB_SCHEMA || 'public';
 
-  const buildViewQuery = () => {
-    let query = supabase
-      .from("order_details_view")
-      .select("*")
-      .eq("user_id", user.id)
-      .order("created_at", { ascending: false })
-
-    if (queryTerm) {
-      query = query.or(`order_number.ilike.%${queryTerm}%,product_name.ilike.%${queryTerm}%`)
-    }
-
-    return query
+  // 使用直接 PostgREST API 绕过 Supabase JS 库的 schema 缓存限制
+  // 构建 PostgREST 查询参数
+  const postgrestParams: Record<string, string> = {
+    'select': '*',
+    'user_id': `eq.${user.id}`,
+    'order': 'created_at.desc'
+  };
+  
+  if (queryTerm) {
+    // PostgREST 的 OR 操作符格式
+    postgrestParams['or'] = `(order_number.ilike.*${queryTerm}*,product_name.ilike.*${queryTerm}*)`;
   }
 
-  let { data: orders, error } = await buildViewQuery()
+  let orders: any[] = [];
+  let error: Error | null = null;
 
-  if (error) {
-    console.warn("⚠️ order_details_view query failed:", error?.message || JSON.stringify(error))
+  // 首先尝试使用 order_details_view（可能有关联信息）
+  const {
+    data: viewData,
+    error: viewError
+  } = await queryPostgREST(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    'order_details_view',
+    schema,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    postgrestParams
+  );
 
-    let fallbackQuery = supabase
-      .from("orders")
-      .select("*")
-      .eq("user_id", user.id)
-      .order("created_at", { ascending: false })
-
-    if (queryTerm) {
-      fallbackQuery = fallbackQuery.or(`order_number.ilike.%${queryTerm}%,product_name.ilike.%${queryTerm}%`)
+  if (viewError) {
+    console.warn("⚠️ order_details_view query failed:", viewError.message)
+    
+    // 退回到 orders 表
+    const {
+      data: tableData,
+      error: tableError
+    } = await queryPostgREST(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      'orders',
+      schema,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      postgrestParams
+    );
+    
+    orders = tableData || [];
+    error = tableError;
+    
+    if (error) {
+      console.error("❌ Error fetching orders:", error.message)
     }
-
-    const fallbackResult = await fallbackQuery
-    orders = fallbackResult.data
-    error = fallbackResult.error
+  } else {
+    orders = viewData || [];
   }
 
   if (error) {
-    const errorMsg = error?.message || JSON.stringify(error) || "Unknown error"
-    console.error("❌ Error fetching orders:", errorMsg)
-    return <div className="text-red-600">Failed to load orders: {errorMsg}</div>
+    const errorMsg = error.message || "Unknown error"
+    return <div className="text-red-600 p-4">Failed to load orders: {errorMsg}</div>
   }
 
   return (
