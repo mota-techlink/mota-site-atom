@@ -26,7 +26,11 @@ export async function queryPostgREST<T>(
 
     const url = `${baseUrl}/rest/v1/${table}${params.size > 0 ? '?' + params.toString() : ''}`;
     
-    console.log(`📡 PostgREST Query: ${table} in schema=${schema}`);
+    console.log(`\n🔍 [PostgREST Direct Query]`);
+    console.log(`   Table: ${table}`);
+    console.log(`   Schema: ${schema}`);
+    console.log(`   User Filter: user_id=eq.${queryParams['user_id']?.split('.')[1] || 'unknown'}`);
+    console.log(`   URL: ${url.substring(0, 80)}...`);
 
     const response = await fetch(url, {
       method: 'GET',
@@ -45,9 +49,9 @@ export async function queryPostgREST<T>(
     }
 
     const data = await response.json();
+    console.log(`✅ Got ${data?.length || 0} rows from ${schema}.${table}`);
     return { data, error: null };
   } catch (error) {
     const err = error instanceof Error ? error : new Error(String(error));
     return { data: null, error: err };
   }
-}

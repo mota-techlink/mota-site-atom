@@ -42,6 +42,10 @@ export default async function OrdersPage({
   let orders: any[] = [];
   let error: Error | null = null;
 
+  console.log(`\n📋 [OrdersPage Debug]`);
+  console.log(`   User ID: ${user.id}`);
+  console.log(`   Schema: ${schema}`);
+
   // 首先尝试使用 order_details_view（可能有关联信息）
   const {
     data: viewData,
@@ -55,7 +59,7 @@ export default async function OrdersPage({
   );
 
   if (viewError) {
-    console.warn("⚠️ order_details_view query failed:", viewError.message)
+    console.warn(`⚠️  order_details_view failed: ${viewError.message}`)
     
     // 退回到 orders 表
     const {
@@ -72,11 +76,18 @@ export default async function OrdersPage({
     orders = tableData || [];
     error = tableError;
     
-    if (error) {
-      console.error("❌ Error fetching orders:", error.message)
+    if (!error) {
+      console.log(`✅ Successfully fetched ${orders.length} orders from ${schema}.orders`);
+      if (orders.length > 0) {
+        console.log(`   First order: ${orders[0].order_number}`);
+      }
     }
   } else {
     orders = viewData || [];
+    console.log(`✅ Successfully fetched ${orders.length} orders from ${schema}.order_details_view`);
+    if (orders.length > 0) {
+      console.log(`   First order: ${orders[0].order_number}`);
+    }
   }
 
   if (error) {
