@@ -23,20 +23,40 @@ export default async function OrdersPage({
   // 🟢 2. 关键修改：先 await 解析参数，再使用
   const params = await searchParams;
   const queryTerm = params.q || ""
-  
-  let query = supabase
-    .from("order_details_view")
-    .select("*")
-    .eq("user_id", user.id)
-    .order("created_at", { ascending: false })
 
-  // 3. 如果有搜索关键词
-  if (queryTerm) {
-    // 简单的模糊搜索
-    query = query.or(`order_number.ilike.%${queryTerm}%,product_name.ilike.%${queryTerm}%`)
+  const buildViewQuery = () => {
+    let query = supabase
+      .from("order_details_view")
+      .select("*")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false })
+
+    if (queryTerm) {
+      query = query.or(`order_number.ilike.%${queryTerm}%,product_name.ilike.%${queryTerm}%`)
+    }
+
+    return query
   }
 
-  const { data: orders, error } = await query
+  let { data: orders, error } = await buildViewQuery()
+
+  if (error) {
+    console.warn("order_details_view query failed, fallback to orders table:", error)
+
+    let fallbackQuery = supabase
+      .from("orders")
+      .select("*")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false })
+
+    if (queryTerm) {
+      fallbackQuery = fallbackQuery.or(`order_number.ilike.%${queryTerm}%,product_name.ilike.%${queryTerm}%`)
+    }
+
+    const fallbackResult = await fallbackQuery
+    orders = fallbackResult.data
+    error = fallbackResult.error
+  }
 
   if (error) {
     console.error("Error fetching orders:", error)

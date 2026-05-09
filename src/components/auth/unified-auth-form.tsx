@@ -157,6 +157,8 @@ export default function UnifiedAuthForm({
               router.refresh();
             }, 800);
           } else {
+            await fetch('/api/auth/ensure-profile', { method: 'POST' });
+
             if (isExternalLoginNextTarget(nextTarget)) {
               window.location.assign(nextTarget);
               return;
