@@ -13,6 +13,7 @@ export async function middleware(request: NextRequest) {
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const schema = process.env.NEXT_PUBLIC_SUPABASE_DB_SCHEMA || 'public';
 
   // 公开页面不应因鉴权环境变量缺失而 500
   if (!supabaseUrl || !supabaseAnonKey) {
@@ -24,6 +25,7 @@ export async function middleware(request: NextRequest) {
     supabaseUrl,
     supabaseAnonKey,
     {
+      db: { schema },
       cookies: {
         getAll() {
           return request.cookies.getAll();

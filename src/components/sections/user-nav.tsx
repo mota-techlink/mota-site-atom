@@ -16,11 +16,11 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { createBrowserClient } from "@supabase/ssr";
 import { useRouter } from "next/navigation";
 import { CreditCard, LogOut, Plus, Settings, User, LayoutDashboard, Shield } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link, usePathname } from "@/navigation"
+import { createClient } from "@/lib/supabase/client";
 
 interface UserNavProps {
   user?: any; // 可选，如果不提供则自己获取
@@ -34,10 +34,7 @@ export function UserNav({ user: userProp }: UserNavProps) {
   const [isLoading, setIsLoading] = useState(true);
   
   // 初始化 Supabase 客户端
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
+  const supabase = useMemo(() => createClient(), []);
 
   // 如果没有提供 user prop，则自己获取用户信息（用于 dashboard 内部）
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { createBrowserClient } from "@supabase/ssr";
+import { createClient } from "@/lib/supabase/client";
 
 export type UserRole = 'member' | 'staff' | 'admin';
 
@@ -9,10 +9,7 @@ export type UserRole = 'member' | 'staff' | 'admin';
  */
 export async function getUserRole(userId: string): Promise<UserRole> {
   try {
-    const supabase = createBrowserClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
+    const supabase = createClient();
 
     const { data: profile, error } = await supabase
       .from('profiles')

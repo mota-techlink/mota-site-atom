@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Link } from "@/navigation"
@@ -15,9 +15,9 @@ import { BionicToggle } from '@/components/ui/bionic-toggle';
 import { SiteFooter } from "@/components/sections/site-footer"
 import { GlobalToggles } from '@/components/global-toggles';
 import { UserNav } from "@/components/sections/user-nav";
-import { createBrowserClient } from "@supabase/ssr";
 import { GlobalLogo } from '../GlobalLogo';
 import dynamic from "next/dynamic";
+import { createClient } from '@/lib/supabase/client';
 
 // 🔧 动态导入 LoginModal - 仅在未登录用户点击登录按钮时才加载
 const LoginModal = dynamic(
@@ -43,10 +43,7 @@ export function PortalHeader({
   const [isLoading, setIsLoading] = useState(true);
 
   // 初始化 Supabase 客户端
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
+  const supabase = useMemo(() => createClient(), []);
 
   // 获取当前用户信息
   useEffect(() => {
@@ -95,8 +92,8 @@ export function PortalHeader({
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center max-w-screen-xl mx-auto pl-[2%] pr-[2%] ">                    
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+        <div className="container flex h-14 items-center max-w-7xl mx-auto pl-[2%] pr-[2%] ">                    
           <GlobalLogo/>
 
           <div className="hidden md:flex flex-1 justify-center">

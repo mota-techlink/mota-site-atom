@@ -12,6 +12,10 @@ import ClientOAuthHandler from '@/app/[locale]/login/client-oauth-handler';
 import { OAuthProviderConfig } from '@/config/site';
 import { useRouter } from '@/navigation';
 import { useSearchParams, usePathname } from 'next/navigation';
+import {
+  isExternalLoginNextTarget,
+  resolveLoginNextTarget,
+} from '@/lib/auth/login-redirect';
 
 interface UnifiedAuthFormProps {
   specificProviders: OAuthProviderConfig[];
@@ -23,7 +27,7 @@ interface UnifiedAuthFormProps {
   /** Translation dictionary */
   dict: any;
   /** 
-   * 'page' = standalone login page (uses URL params for view toggle, redirects to /dashboard)
+    * 'page' = standalone login page (uses URL params for view toggle, redirects to next/dashboard)
    * 'modal' = dialog modal (uses local state, calls onClose, refreshes in-place)
    */
   mode?: 'page' | 'modal';
@@ -49,6 +53,7 @@ export default function UnifiedAuthForm({
 
   const supabase = createClient();
   const allProviders = [...commonProviders, ...specificProviders];
+  const nextTarget = resolveLoginNextTarget(searchParams.get('next'));
 
   // View toggle: page mode uses URL params, modal mode uses local state
   const [localIsSignup, setLocalIsSignup] = useState(isSignup);
@@ -148,7 +153,11 @@ export default function UnifiedAuthForm({
               router.refresh();
             }, 800);
           } else {
-            router.push('/dashboard');
+            if (isExternalLoginNextTarget(nextTarget)) {
+              window.location.assign(nextTarget);
+              return;
+            }
+            router.push(nextTarget);
             router.refresh();
           }
         }
@@ -158,7 +167,7 @@ export default function UnifiedAuthForm({
           email,
           password,
           options: {
-            emailRedirectTo: `${origin}/auth/callback`,
+            emailRedirectTo: `${origin}/auth/callback?next=${encodeURIComponent(nextTarget)}`,
           },
         });
 

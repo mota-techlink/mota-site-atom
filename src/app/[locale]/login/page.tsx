@@ -45,18 +45,19 @@ export default async function LoginPage({
   };
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center bg-slate-50 dark:bg-slate-950 landscape:justify-start landscape:py-6 md:landscape:justify-center relative overflow-y-auto">
+    <div className="relative min-h-screen w-full bg-slate-50 dark:bg-slate-950 overflow-y-auto">
+      <div className="flex min-h-screen w-full items-center justify-center px-4 py-8 landscape:items-start landscape:py-6 md:landscape:items-center">
+        <LoginPanel
+          specificProviders={specificProviders}
+          commonProviders={commonProviders}
+          dict={dict}
+          mode="page"
+          error={errorMessage}
+          message={msgString}
+        />
+      </div>
 
-      <LoginPanel
-        specificProviders={specificProviders}
-        commonProviders={commonProviders}
-        dict={dict}
-        mode="page"
-        error={errorMessage}
-        message={msgString}
-      />
-
-      <p className="mt-8 mb-2 text-[15px] text-slate-400 text-center px-4 max-w-md mx-auto leading-relaxed pb-20">
+      <p className="pointer-events-none absolute inset-x-0 bottom-3 text-[15px] text-slate-400 text-center px-4 max-w-md mx-auto leading-relaxed">
         © {new Date().getFullYear()} {siteConfig.name}. By continuing, you agree to our Terms of Service and Privacy Policy.
       </p>
     </div>

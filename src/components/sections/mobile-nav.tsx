@@ -18,7 +18,7 @@ import { Menu } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { mainNavConfig } from "@/config/nav" // 🟢 引入同一个配置
 import { LoginModal } from "@/components/auth/login-modal"
-import { createBrowserClient } from "@supabase/ssr"
+import { createClient } from "@/lib/supabase/client"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
@@ -29,10 +29,7 @@ export function MobileNav() {
 
   // 🟢 初始化 Supabase 客户端
   const supabase = React.useMemo(() => 
-    createBrowserClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    ),
+    createClient(),
     []
   )
 
