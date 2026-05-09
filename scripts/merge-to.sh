@@ -5,7 +5,7 @@
 set -e
 
 TARGET="$1"
-RETURN_TO="content"
+RETURN_TO="$1"
 
 if [[ -z "$TARGET" ]]; then
   echo "Usage: $0 <target-branch>"
