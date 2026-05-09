@@ -1,18 +1,25 @@
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { createFetchWithSchema } from './fetch-with-schema';
+import { resolveDbSchema } from './schema-mode';
 
 export async function createClient() {
   const cookieStore = await cookies();
-  const schema = process.env.NEXT_PUBLIC_SUPABASE_DB_SCHEMA || 'public';
-  const fetchWithSchema = createFetchWithSchema(schema);
+  const schemaResolution = resolveDbSchema();
+  const schema = schemaResolution.schema;
+  const useCustomSchemaTransport = schemaResolution.mode === 'custom';
+  const fetchWithSchema = useCustomSchemaTransport ? createFetchWithSchema(schema) : undefined;
 
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
-      global: { fetch: fetchWithSchema },
-      db: { schema },  // Provide schema in config
+      ...(useCustomSchemaTransport
+        ? {
+            global: { fetch: fetchWithSchema },
+            db: { schema },
+          }
+        : {}),
       cookies: {
         getAll() {
           return cookieStore.getAll();
@@ -30,8 +37,7 @@ export async function createClient() {
       },
     }
   );
-    
+
 }
 
 
-  

@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import { OrdersTable } from "./orders-table"
 import { queryPostgREST } from "@/lib/supabase/direct-postgrest"
+import { resolveDbSchema } from "@/lib/supabase/schema-mode"
 
 export const metadata = {
   title: "My Orders",
@@ -17,6 +18,7 @@ export default async function OrdersPage({
 
   // 1. 验证用户登录
   const { data: { user } } = await supabase.auth.getUser()
+  const { data: { session } } = await supabase.auth.getSession()
   if (!user) {
     redirect("/login")
   }
@@ -24,7 +26,9 @@ export default async function OrdersPage({
   // 🟢 2. 关键修改：先 await 解析参数，再使用
   const params = await searchParams;
   const queryTerm = params.q || ""
-  const schema = process.env.NEXT_PUBLIC_SUPABASE_DB_SCHEMA || 'public';
+  const schemaResolution = resolveDbSchema();
+  const schema = schemaResolution.schema;
+  const useDirectPostgrest = schemaResolution.mode === 'custom';
 
   // 使用直接 PostgREST API 绕过 Supabase JS 库的 schema 缓存限制
   // 构建 PostgREST 查询参数
@@ -42,52 +46,33 @@ export default async function OrdersPage({
   let orders: any[] = [];
   let error: Error | null = null;
 
-  console.log(`\n📋 [OrdersPage Debug]`);
-  console.log(`   User ID: ${user.id}`);
-  console.log(`   Schema: ${schema}`);
-
-  // 首先尝试使用 order_details_view（可能有关联信息）
-  const {
-    data: viewData,
-    error: viewError
-  } = await queryPostgREST(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    'order_details_view',
-    schema,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    postgrestParams
-  );
-
-  if (viewError) {
-    console.warn(`⚠️  order_details_view failed: ${viewError.message}`)
-    
-    // 退回到 orders 表
-    const {
-      data: tableData,
-      error: tableError
-    } = await queryPostgREST(
+  if (useDirectPostgrest) {
+    const authToken = session?.access_token
+    const { data: viewData, error: viewError } = await queryPostgREST(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      'orders',
+      'order_details_view',
       schema,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      authToken,
       postgrestParams
-    );
-    
-    orders = tableData || [];
-    error = tableError;
-    
-    if (!error) {
-      console.log(`✅ Successfully fetched ${orders.length} orders from ${schema}.orders`);
-      if (orders.length > 0) {
-        console.log(`   First order: ${orders[0].order_number}`);
-      }
-    }
+    )
+
+    orders = viewData || []
+    error = viewError
   } else {
-    orders = viewData || [];
-    console.log(`✅ Successfully fetched ${orders.length} orders from ${schema}.order_details_view`);
-    if (orders.length > 0) {
-      console.log(`   First order: ${orders[0].order_number}`);
+    let query = supabase
+      .from('order_details_view')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false })
+
+    if (queryTerm) {
+      query = query.or(`order_number.ilike.%${queryTerm}%,product_name.ilike.%${queryTerm}%`)
     }
+
+    const { data: viewData, error: viewError } = await query
+    orders = viewData || []
+    error = viewError as Error | null
   }
 
   if (error) {

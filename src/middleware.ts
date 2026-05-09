@@ -2,6 +2,7 @@ import { type NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 import { createServerClient } from '@supabase/ssr';
 import { routing } from './routing';
+import { resolveDbSchema } from './lib/supabase/schema-mode';
 
 // 1. 初始化 Intl 中间件（使用统一的 routing 配置）
 const intlMiddleware = createMiddleware(routing);
@@ -13,24 +14,32 @@ export async function middleware(request: NextRequest) {
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  const schema = process.env.NEXT_PUBLIC_SUPABASE_DB_SCHEMA || 'public';
+  const schemaResolution = resolveDbSchema();
+  const schema = schemaResolution.schema;
+  const useCustomSchemaTransport = schemaResolution.mode === 'custom';
 
   // 公开页面不应因鉴权环境变量缺失而 500
   if (!supabaseUrl || !supabaseAnonKey) {
     return response;
   }
 
-  // 动态导入 fetch-with-schema（因为这是在 middleware 中）
-  const { createFetchWithSchema } = await import('./lib/supabase/fetch-with-schema');
-  const fetchWithSchema = createFetchWithSchema(schema);
+  let fetchWithSchema: ReturnType<(typeof import('./lib/supabase/fetch-with-schema'))['createFetchWithSchema']> | undefined;
+  if (useCustomSchemaTransport) {
+    const { createFetchWithSchema } = await import('./lib/supabase/fetch-with-schema');
+    fetchWithSchema = createFetchWithSchema(schema);
+  }
 
   // 3. 初始化 Supabase Client
   const supabase = createServerClient(
     supabaseUrl,
     supabaseAnonKey,
     {
-      global: { fetch: fetchWithSchema },
-      db: { schema },  // Provide schema in config
+      ...(useCustomSchemaTransport
+        ? {
+            global: { fetch: fetchWithSchema },
+            db: { schema },
+          }
+        : {}),
       cookies: {
         getAll() {
           return request.cookies.getAll();

@@ -17,7 +17,8 @@ export function createFetchWithSchema(schema: string) {
         ? Object.fromEntries(init.headers.entries())
         : { ...init.headers };
       
-      // 添加 schema header - 不只在 PostgREST 上，而是在所有相关请求上
+      // 添加 schema header（GET 使用 Accept-Profile，写操作使用 Content-Profile）
+      headers['Accept-Profile'] = schema;
       headers['Content-Profile'] = schema;
       init.headers = headers;
       

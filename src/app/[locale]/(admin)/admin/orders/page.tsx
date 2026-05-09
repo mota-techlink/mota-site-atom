@@ -2,6 +2,8 @@ import { createClient } from "@/lib/supabase/server";
 import { requireAdmin } from "@/lib/auth/admin";
 import { redirect } from "next/navigation";
 import { AdminOrdersTable } from "@/components/admin/orders-table";
+import { queryPostgREST } from "@/lib/supabase/direct-postgrest";
+import { resolveDbSchema } from "@/lib/supabase/schema-mode";
 
 export const metadata = {
   title: "Orders Management",
@@ -16,6 +18,7 @@ export default async function AdminOrdersPage({
 
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
+  const { data: { session } } = await supabase.auth.getSession();
 
   if (!user) {
     redirect("/login");
@@ -24,23 +27,56 @@ export default async function AdminOrdersPage({
   const params = await searchParams;
   const queryTerm = params.q || "";
   const statusFilter = params.status || "";
+  const schemaResolution = resolveDbSchema();
+  const schema = schemaResolution.schema;
+  const useDirectPostgrest = schemaResolution.mode === 'custom';
+  const authToken = session?.access_token;
 
-  let query = supabase
-    .from("order_details_view")
-    .select("*")
-    .order("created_at", { ascending: false });
+  const postgrestParams: Record<string, string> = {
+    select: "*",
+    order: "created_at.desc",
+  };
 
-  // 如果有搜索关键词
   if (queryTerm) {
-    query = query.or(`order_number.ilike.%${queryTerm}%,product_name.ilike.%${queryTerm}%,customer_email.ilike.%${queryTerm}%`);
+    postgrestParams.or = `(order_number.ilike.*${queryTerm}*,product_name.ilike.*${queryTerm}*,customer_email.ilike.*${queryTerm}*)`;
   }
 
-  // 如果有状态筛选
   if (statusFilter) {
-    query = query.eq("status", statusFilter);
+    postgrestParams.status = `eq.${statusFilter}`;
   }
 
-  const { data: orders, error } = await query;
+  let orders: any[] | null = null;
+  let error: Error | null = null;
+
+  if (useDirectPostgrest) {
+    const result = await queryPostgREST(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      "order_details_view",
+      schema,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      authToken,
+      postgrestParams
+    );
+    orders = result.data;
+    error = result.error;
+  } else {
+    let query = supabase
+      .from("order_details_view")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (queryTerm) {
+      query = query.or(`order_number.ilike.%${queryTerm}%,product_name.ilike.%${queryTerm}%,customer_email.ilike.%${queryTerm}%`);
+    }
+
+    if (statusFilter) {
+      query = query.eq("status", statusFilter);
+    }
+
+    const result = await query;
+    orders = result.data;
+    error = result.error as Error | null;
+  }
 
   if (error) {
     console.error("Error fetching orders:", error);

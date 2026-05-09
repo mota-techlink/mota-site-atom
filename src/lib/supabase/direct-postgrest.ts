@@ -7,6 +7,7 @@ export async function queryPostgREST<T>(
   table: string,
   schema: string,
   anonKey: string,
+  accessToken?: string,
   queryParams: Record<string, any> = {}
 ): Promise<{ data: T[] | null; error: Error | null }> {
   try {
@@ -34,10 +35,12 @@ export async function queryPostgREST<T>(
 
     const response = await fetch(url, {
       method: 'GET',
+      cache: 'no-store',
       headers: {
         'apikey': anonKey,
-        'Authorization': `Bearer ${anonKey}`,
-        'Content-Profile': schema,  // 这是关键 - 指定 schema
+        'Authorization': `Bearer ${accessToken || anonKey}`,
+        'Accept-Profile': schema,
+        'Content-Profile': schema,
         'Accept': 'application/json',
       },
     });
@@ -55,3 +58,5 @@ export async function queryPostgREST<T>(
     const err = error instanceof Error ? error : new Error(String(error));
     return { data: null, error: err };
   }
+
+}
