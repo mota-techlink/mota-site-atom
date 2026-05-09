@@ -14,6 +14,7 @@ import { useRouter } from '@/navigation';
 import { useSearchParams, usePathname } from 'next/navigation';
 import {
   isExternalLoginNextTarget,
+  localizeInternalPath,
   resolveLoginNextTarget,
 } from '@/lib/auth/login-redirect';
 
@@ -157,8 +158,11 @@ export default function UnifiedAuthForm({
               window.location.assign(nextTarget);
               return;
             }
-            router.push(nextTarget);
-            router.refresh();
+
+            const localeFromPath = pathname.split('/')[1];
+            const localizedTarget = localizeInternalPath(nextTarget, localeFromPath);
+            window.location.assign(localizedTarget);
+            return;
           }
         }
       } else {
