@@ -5,10 +5,10 @@ type Accent = "indigo" | "amber" | "rose" | "emerald";
 
 // All accents remap to blue/cyan/indigo family (smart-elevator blue theme).
 const ACCENT_COLORS: Record<Accent, string> = {
-  indigo:  "99,102,241",   // indigo-500
-  amber:   "129,140,248",  // indigo-400 (was warm → cool)
-  rose:    "59,130,246",   // blue-500   (was warm → cool)
-  emerald: "34,211,238",   // cyan-400   (was green → cyan)
+  indigo:  "180,83,9",   // indigo-500
+  amber:   "245,158,11",  // indigo-400 (was warm → cool)
+  rose:    "234,88,12",   // blue-500   (was warm → cool)
+  emerald: "120,53,15",   // cyan-400   (was green → cyan)
 };
 
 interface Props {

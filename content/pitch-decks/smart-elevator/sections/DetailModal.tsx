@@ -79,13 +79,13 @@ export function DetailModal({ open, onClose, title, icon, eyebrow, children }: D
         {/* Header */}
         <div className="px-5 pt-5 pr-12">
           {eyebrow ? (
-            <div className="text-[10px] uppercase tracking-wider text-cyan-300/80 mb-1.5 font-medium">
+            <div className="text-[10px] uppercase tracking-wider text-amber-400/80 mb-1.5 font-medium">
               {eyebrow}
             </div>
           ) : null}
           <div className="flex items-start gap-3">
             {icon ? (
-              <div className="shrink-0 w-9 h-9 rounded-lg bg-cyan-400/10 border border-cyan-400/20
+              <div className="shrink-0 w-9 h-9 rounded-lg bg-cyan-400/10 border border-amber-600/30
                               flex items-center justify-center text-lg">
                 {icon}
               </div>

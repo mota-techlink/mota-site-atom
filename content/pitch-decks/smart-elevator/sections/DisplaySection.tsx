@@ -13,13 +13,13 @@ export function DisplaySection() {
   const active = openIdx !== null ? d.items[openIdx] : null;
 
   return (
-    <section id="s-display" className={`${SECTION} bg-slate-950 relative`}>
+    <section id="s-display" className={`${SECTION} bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="amber" brightness={1.3} count={14} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">
-          <span className="mi-child inline-block px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs sm:text-sm font-medium mb-2">{d.badge}</span>
+          <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-500/15 border border-amber-600/40 text-amber-400 text-xs sm:text-sm font-medium mb-2">{d.badge}</span>
           <h2 className="mi-child text-white font-bold mb-2">{d.title}</h2>
-          <p className="mi-child text-blue-200/70 text-sm sm:text-base max-w-2xl mx-auto">{d.subtitle}</p>
+          <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{d.subtitle}</p>
         </div>
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
           {d.items.map((item: any, i: number) => (
@@ -28,11 +28,11 @@ export function DisplaySection() {
               onClick={isMobile ? () => setOpenIdx(i) : undefined}
               role={isMobile ? "button" : undefined}
               tabIndex={isMobile ? 0 : undefined}
-              className={`mi-child rounded-xl bg-slate-900/60 border border-cyan-400/20 p-4 sm:p-5 ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
+              className={`mi-child rounded-xl bg-stone-900/60 border border-amber-600/30 p-4 sm:p-5 ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
             >
               <div className="text-2xl mb-2">{item.icon}</div>
               <div className="text-white font-semibold text-xs sm:text-sm mb-1">{item.title}</div>
-              <div className="text-blue-200/60 text-[10px] sm:text-xs leading-relaxed">{item.desc}</div>
+              <div className="text-stone-300/60 text-[10px] sm:text-xs leading-relaxed">{item.desc}</div>
             </div>
           ))}
         </div>
