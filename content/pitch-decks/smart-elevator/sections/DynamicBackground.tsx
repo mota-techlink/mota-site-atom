@@ -1,13 +1,16 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 
-type Accent = "indigo" | "amber" | "rose" | "emerald";
+type Accent = "indigo" | "amber" | "rose" | "emerald" | "teal" | "lime" | "green";
 
 const ACCENT_COLORS: Record<Accent, string> = {
   indigo: "99,102,241",
   amber:  "245,158,11",
   rose:   "244,63,94",
   emerald:"16,185,129",
+  teal:   "20,184,166",
+  lime:   "132,204,22",
+  green:  "34,197,94",
 };
 
 interface Props {

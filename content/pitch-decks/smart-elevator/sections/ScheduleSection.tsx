@@ -5,8 +5,10 @@ import { SECTION } from "../constants";
 import { DynamicBackground } from "./DynamicBackground";
 
 const COLOR_MAP: Record<string, { bg: string; border: string; badge: string; text: string }> = {
-  amber:  { bg: "bg-d-amber-s/30",  border: "border-d-amber/25",  badge: "bg-amber-500/15 text-d-amber",  text: "text-d-amber" },
-  indigo: { bg: "bg-d-indigo-s/40", border: "border-d-indigo/25", badge: "bg-indigo-500/15 text-d-indigo", text: "text-d-indigo" },
+  teal:    { bg: "bg-d-amber-s/30",  border: "border-d-amber/25",  badge: "bg-teal-500/15 text-d-amber",  text: "text-d-amber" },
+  emerald: { bg: "bg-d-indigo-s/40", border: "border-d-indigo/25", badge: "bg-emerald-500/15 text-d-indigo", text: "text-d-indigo" },
+  amber:   { bg: "bg-d-amber-s/30",  border: "border-d-amber/25",  badge: "bg-teal-500/15 text-d-amber",  text: "text-d-amber" },
+  indigo:  { bg: "bg-d-indigo-s/40", border: "border-d-indigo/25", badge: "bg-emerald-500/15 text-d-indigo", text: "text-d-indigo" },
 };
 
 export function ScheduleSection() {
@@ -14,10 +16,10 @@ export function ScheduleSection() {
   const sc = c.schedule;
   return (
     <section id="s-schedule" className={`${SECTION} bg-d-bg relative`}>
-      <DynamicBackground accent="amber" brightness={1.3} count={12} />
+      <DynamicBackground accent="teal" brightness={1.3} count={12} />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-5 sm:mb-8">
-          <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-d-amber text-xs sm:text-sm font-medium mb-2">{sc.badge}</span>
+          <span className="mi-child inline-block px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-d-amber text-xs sm:text-sm font-medium mb-2">{sc.badge}</span>
           <h2 className="mi-child text-d-fg font-bold mb-2">{sc.title}</h2>
           <p className="mi-child text-d-fg/50 text-sm sm:text-base max-w-2xl mx-auto">{sc.subtitle}</p>
         </div>

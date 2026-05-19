@@ -44,7 +44,7 @@ export function FloatingNav({ pastHero }: { pastHero: boolean }) {
     <div className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${pastHero ? "bg-d-bg/80 backdrop-blur-md border-b border-d-fg/8" : "bg-transparent"}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-12 sm:h-14 flex items-center justify-between">
         <button onClick={() => goTo(0)} className="flex items-center gap-2 cursor-pointer">
-          <Image src="/logos/mota-logo.svg" alt="MOTA" width={22} height={22} className="opacity-80" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
+          <Image src="/logos/mota-icon-v2.webp" alt="MOTA" width={22} height={22} className="opacity-80" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
           <span className="text-d-fg/70 text-xs sm:text-sm font-medium hidden sm:block">{c.nav.tagline}</span>
         </button>
         <div className="flex items-center gap-2">

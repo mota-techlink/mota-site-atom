@@ -170,7 +170,7 @@
         "label": "Morning Rush",
         "icon": "🌅",
         "strategy": "Comfort Priority",
-        "color": "amber",
+        "color": "teal",
         "items": [
           "All cars coordinated, multiple dispatch",
           "Minimum wait, rapid dispersion",
@@ -183,7 +183,7 @@
         "label": "Daytime Off-Peak",
         "icon": "☀️",
         "strategy": "Energy Priority",
-        "color": "indigo",
+        "color": "emerald",
         "items": [
           "On-demand single-car operation",
           "Batch same-direction passengers",
@@ -196,7 +196,7 @@
         "label": "Evening Rush",
         "icon": "🌆",
         "strategy": "Comfort Priority",
-        "color": "amber",
+        "color": "teal",
         "items": [
           "Coordination mode re-activated",
           "Downward priority strategy",
@@ -209,7 +209,7 @@
         "label": "Night",
         "icon": "🌙",
         "strategy": "Energy Priority",
-        "color": "indigo",
+        "color": "emerald",
         "items": [
           "Single standby car",
           "Ultra-low-power standby",

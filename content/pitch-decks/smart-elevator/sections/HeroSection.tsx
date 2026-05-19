@@ -11,11 +11,11 @@ export function HeroSection() {
 
   return (
     <section id="s-hero" className={`${SECTION} bg-d-bg relative`}>
-      <DynamicBackground accent="indigo" brightness={1.5} count={18} />
+      <DynamicBackground accent="emerald" brightness={1.5} count={18} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Badge */}
         <div className="mi-child mb-4 sm:mb-6">
-          <span className="inline-block px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-d-indigo text-xs sm:text-sm font-medium">
+          <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-d-indigo text-xs sm:text-sm font-medium">
             {h.badge}
           </span>
         </div>

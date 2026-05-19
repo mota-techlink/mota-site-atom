@@ -9,9 +9,9 @@ export function CTASection() {
   const ct = c.cta;
   return (
     <section id="s-cta" className={`${SECTION} bg-d-bg relative`}>
-      <DynamicBackground accent="indigo" brightness={2.0} count={20} />
+      <DynamicBackground accent="emerald" brightness={2.0} count={20} />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <span className="mi-child inline-block px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-d-indigo text-xs sm:text-sm font-medium mb-4">
+        <span className="mi-child inline-block px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-d-indigo text-xs sm:text-sm font-medium mb-4">
           {ct.badge}
         </span>
         <h2 className="mi-child text-d-fg font-bold mb-4 max-w-2xl mx-auto">{ct.title}</h2>
