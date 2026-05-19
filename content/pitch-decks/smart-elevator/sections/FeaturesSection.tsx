@@ -13,7 +13,7 @@ export function FeaturesSection() {
   const active = openIdx !== null ? f.items[openIdx] : null;
 
   return (
-    <section id="s-features" className={`${SECTION} bg-white dark:bg-[#1a0f0a] relative`}>
+    <section id="s-features" className={`${SECTION} bg-violet-50 dark:bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="emerald" brightness={1.3} count={14} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">
@@ -28,7 +28,7 @@ export function FeaturesSection() {
               onClick={isMobile ? () => setOpenIdx(i) : undefined}
               role={isMobile ? "button" : undefined}
               tabIndex={isMobile ? 0 : undefined}
-              className={`mi-child flex gap-4 rounded-xl bg-stone-100 dark:bg-stone-900/60 border border-cyan-400/15 p-5 ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
+              className={`mi-child flex gap-4 rounded-xl bg-violet-100/70 dark:bg-stone-900/60 border border-cyan-400/15 p-5 ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
             >
               <div className="w-10 h-10 rounded-full bg-amber-500/15 border border-amber-600/40 flex items-center justify-center text-lg shrink-0">{item.icon}</div>
               <div>

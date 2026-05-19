@@ -13,7 +13,7 @@ export function ProblemSection() {
   const active = openIdx !== null ? p.items[openIdx] : null;
 
   return (
-    <section id="s-problem" className={`${SECTION} bg-white dark:bg-[#1a0f0a] relative`}>
+    <section id="s-problem" className={`${SECTION} bg-violet-50 dark:bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="rose" brightness={1.4} count={16} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">
@@ -31,7 +31,7 @@ export function ProblemSection() {
               onClick={isMobile ? () => setOpenIdx(i) : undefined}
               role={isMobile ? "button" : undefined}
               tabIndex={isMobile ? 0 : undefined}
-              className={`mi-child flex gap-4 rounded-xl bg-stone-100 dark:bg-stone-900/60 border border-cyan-400/15 p-4 sm:p-5 ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
+              className={`mi-child flex gap-4 rounded-xl bg-violet-100/70 dark:bg-stone-900/60 border border-cyan-400/15 p-4 sm:p-5 ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
             >
               <div className="text-2xl sm:text-3xl shrink-0 mt-0.5">{item.icon}</div>
               <div>

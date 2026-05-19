@@ -13,7 +13,7 @@ export function AccessControlSection() {
   const active = openIdx !== null ? a.steps[openIdx] : null;
 
   return (
-    <section id="s-access-control" className={`${SECTION} bg-white dark:bg-[#1a0f0a] relative`}>
+    <section id="s-access-control" className={`${SECTION} bg-violet-50 dark:bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="indigo" brightness={1.4} count={16} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">
@@ -28,7 +28,7 @@ export function AccessControlSection() {
               onClick={isMobile ? () => setOpenIdx(i) : undefined}
               role={isMobile ? "button" : undefined}
               tabIndex={isMobile ? 0 : undefined}
-              className={`mi-child relative rounded-xl bg-stone-100 dark:bg-[#1a0f0a]/60 border border-indigo-300/40 dark:border-indigo-400/25 p-4 text-center ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
+              className={`mi-child relative rounded-xl bg-violet-100/70 dark:bg-[#1a0f0a]/60 border border-indigo-300/40 dark:border-indigo-400/25 p-4 text-center ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
             >
               {i < a.steps.length - 1 && (
                 <div className="hidden sm:block absolute top-1/2 -right-4 text-amber-300/50 text-lg z-10">→</div>

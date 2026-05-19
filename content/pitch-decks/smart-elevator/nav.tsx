@@ -40,7 +40,7 @@ export function FloatingNav({ pastHero }: { pastHero: boolean }) {
   const c = useContent();
 
   return (
-    <div className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${pastHero ? "bg-white/80 dark:bg-[#1a0f0a]/70 backdrop-blur-md border-b border-stone-200 dark:border-amber-800/20" : "bg-transparent"}`}>
+    <div className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${pastHero ? "bg-violet-50/90 dark:bg-[#1a0f0a]/70 backdrop-blur-md border-b border-violet-200 dark:border-amber-800/20" : "bg-transparent"}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-12 sm:h-14 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-stone-700 dark:text-stone-200/80 text-xs sm:text-sm font-medium hidden sm:block">{c.nav.tagline}</span>

@@ -13,7 +13,7 @@ export function SolutionSection() {
   const active = openIdx !== null ? s.items[openIdx] : null;
 
   return (
-    <section id="s-solution" className={`${SECTION} bg-white dark:bg-[#1a0f0a] relative`}>
+    <section id="s-solution" className={`${SECTION} bg-violet-50 dark:bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="indigo" brightness={1.3} count={14} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">
@@ -31,7 +31,7 @@ export function SolutionSection() {
               onClick={isMobile ? () => setOpenIdx(i) : undefined}
               role={isMobile ? "button" : undefined}
               tabIndex={isMobile ? 0 : undefined}
-              className={`mi-child rounded-xl bg-stone-100 dark:bg-[#1a0f0a]/60 border border-indigo-300/40 dark:border-indigo-400/25 p-5 sm:p-6 relative overflow-hidden ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
+              className={`mi-child rounded-xl bg-violet-100/70 dark:bg-[#1a0f0a]/60 border border-indigo-300/40 dark:border-indigo-400/25 p-5 sm:p-6 relative overflow-hidden ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full blur-2xl pointer-events-none" />
               <div className="text-2xl mb-3">{item.icon}</div>

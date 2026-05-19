@@ -13,7 +13,7 @@ export function EnergySection() {
   const active = openIdx !== null ? e.stats[openIdx] : null;
 
   return (
-    <section id="s-energy" className={`${SECTION} bg-white dark:bg-[#1a0f0a] relative`}>
+    <section id="s-energy" className={`${SECTION} bg-violet-50 dark:bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="emerald" brightness={1.4} count={16} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">
@@ -28,7 +28,7 @@ export function EnergySection() {
               onClick={isMobile ? () => setOpenIdx(i) : undefined}
               role={isMobile ? "button" : undefined}
               tabIndex={isMobile ? 0 : undefined}
-              className={`mi-child rounded-xl bg-stone-100 dark:bg-stone-900/60 border border-amber-400/50 dark:border-amber-600/30 p-4 sm:p-5 text-center ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
+              className={`mi-child rounded-xl bg-violet-100/70 dark:bg-stone-900/60 border border-amber-400/50 dark:border-amber-600/30 p-4 sm:p-5 text-center ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
             >
               <div className="text-amber-400 font-bold text-xl sm:text-2xl lg:text-3xl mb-1">{stat.value}</div>
               <div className="text-stone-900 dark:text-white text-xs sm:text-sm font-medium mb-1">{stat.label}</div>
