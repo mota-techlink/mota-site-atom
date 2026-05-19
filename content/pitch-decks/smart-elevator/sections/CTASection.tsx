@@ -8,7 +8,7 @@ export function CTASection() {
   const c = useContent();
   const ct = c.cta;
   return (
-    <section id="s-cta" className={`${SECTION} bg-d-bg relative`}>
+    <section id="s-cta" className={`${SECTION} bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="indigo" brightness={2.0} count={20} />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-600/15 border border-amber-600/30 text-amber-300 text-xs sm:text-sm font-medium mb-4">

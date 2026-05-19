@@ -13,7 +13,7 @@ export function ProblemSection() {
   const active = openIdx !== null ? p.items[openIdx] : null;
 
   return (
-    <section id="s-problem" className={`${SECTION} bg-d-bg relative`}>
+    <section id="s-problem" className={`${SECTION} bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="rose" brightness={1.4} count={16} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">

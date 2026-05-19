@@ -13,7 +13,7 @@ export function FeaturesSection() {
   const active = openIdx !== null ? f.items[openIdx] : null;
 
   return (
-    <section id="s-features" className={`${SECTION} bg-d-bg relative`}>
+    <section id="s-features" className={`${SECTION} bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="emerald" brightness={1.3} count={14} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">

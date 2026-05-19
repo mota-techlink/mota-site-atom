@@ -10,7 +10,7 @@ export function HeroSection() {
   const h = c.hero;
 
   return (
-    <section id="s-hero" className={`${SECTION} bg-d-bg relative`}>
+    <section id="s-hero" className={`${SECTION} bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="indigo" brightness={1.5} count={18} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Badge */}

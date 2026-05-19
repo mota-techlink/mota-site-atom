@@ -13,7 +13,7 @@ export function RoadmapSection() {
   const active = openIdx !== null ? r.items[openIdx] : null;
 
   return (
-    <section id="s-roadmap" className={`${SECTION} bg-d-bg relative`}>
+    <section id="s-roadmap" className={`${SECTION} bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="indigo" brightness={1.2} count={12} />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">
