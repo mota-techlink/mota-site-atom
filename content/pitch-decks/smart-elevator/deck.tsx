@@ -17,6 +17,7 @@ import { EnergySection }        from "./sections/EnergySection";
 import { HowWorksSection }      from "./sections/HowWorksSection";
 import { ValueSection }         from "./sections/ValueSection";
 import { BizModelSection }      from "./sections/BizModelSection";
+import { PricingSection }       from "./sections/PricingSection";
 import { RoadmapSection }       from "./sections/RoadmapSection";
 import { CTASection }           from "./sections/CTASection";
 
@@ -32,6 +33,7 @@ const SECTIONS = [
   HowWorksSection,
   ValueSection,
   BizModelSection,
+  PricingSection,
   RoadmapSection,
   CTASection,
 ] as const;
