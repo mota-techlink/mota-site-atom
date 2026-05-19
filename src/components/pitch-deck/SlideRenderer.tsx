@@ -1,7 +1,6 @@
 "use client";
 
 import React, { ReactNode, useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/navigation";
 import { useDeck } from "./DeckProvider";
@@ -136,7 +135,7 @@ export function SlideRenderer({ slides, slideTitles }: SlideRendererProps) {
               )}
             </div>
 
-            {/* Right: Language dropdown + MOTA TECHLINK logo */}
+            {/* Right: Language dropdown */}
             <div className="flex items-center gap-1 sm:gap-2 pointer-events-auto">
               {/* ── Language dropdown ── */}
               <div ref={langRef} className="relative">
@@ -194,27 +193,6 @@ export function SlideRenderer({ slides, slideTitles }: SlideRendererProps) {
                   </div>
                 )}
               </div>
-
-              {/* MOTA TECHLINK logo */}
-              <a
-                href="https://motaiot.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 sm:gap-2 md:gap-2.5 px-1.5 py-1 sm:px-2.5 sm:py-1.5 rounded-lg hover:bg-white/5 transition-colors"
-                aria-label="MOTA TechLink — Open homepage"
-              >
-                <Image
-                  src="/logos/mota-icon-v2.webp"
-                  alt="MOTA TechLink"
-                  width={28}
-                  height={28}
-                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7 rounded-sm"
-                />
-                <span className="hidden sm:flex flex-col items-start leading-none font-mono tracking-wider uppercase">
-                  <span className="text-xs md:text-sm text-blue-400 font-semibold">MOTA</span>
-                  <span className="text-[8px] md:text-[10px] text-blue-400">TECHLINK</span>
-                </span>
-              </a>
             </div>
           </div>
         </div>
