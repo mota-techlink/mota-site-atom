@@ -13,6 +13,7 @@ export const SECTION_IDS = [
   "s-howworks",
   "s-value",
   "s-bizmodel",
+  "s-pricing",
   "s-roadmap",
   "s-cta",
 ] as const;

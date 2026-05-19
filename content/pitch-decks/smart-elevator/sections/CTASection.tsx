@@ -16,12 +16,9 @@ export function CTASection() {
         </span>
         <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-4 max-w-2xl mx-auto">{ct.title}</h2>
         <p className="mi-child text-stone-600/70 dark:text-stone-300/70 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">{ct.subtitle}</p>
-        <div className="mi-child flex flex-col sm:flex-row gap-3 justify-center mb-6">
+        <div className="mi-child flex justify-center mb-6">
           <button className="px-8 py-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-400 text-stone-900 dark:text-white font-semibold text-sm sm:text-base hover:opacity-90 transition-opacity">
             {ct.primary}
-          </button>
-          <button className="px-8 py-3 rounded-full bg-white/5 border border-amber-600/40 text-stone-900 dark:text-white font-semibold text-sm sm:text-base hover:bg-white/10 transition-colors">
-            {ct.secondary}
           </button>
         </div>
         <p className="mi-child text-stone-200/45 text-xs sm:text-sm">{ct.contact}</p>

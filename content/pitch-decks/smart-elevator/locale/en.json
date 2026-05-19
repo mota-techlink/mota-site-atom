@@ -343,6 +343,54 @@
     ],
     "note": "💡 Pricing is customised based on building scale (floors x number of cars). Contact us to schedule a free site survey."
   },
+  "pricing": {
+    "badge": "Pricing",
+    "title": "Transparent Pricing, Tailored to Your Needs",
+    "subtitle": "Reference pricing for 4 freight elevators + 1 passenger elevator. Final pricing subject to on-site survey.",
+    "cards": [
+      {
+        "icon": "🖥️",
+        "category": "Hardware",
+        "items": [
+          "Dual-redundancy main controller (industrial 7×24)",
+          "5 elevator status displays (compact or ad-screen)",
+          "Sensors / gateways / cabling"
+        ],
+        "range": "¥ 80K–150K"
+      },
+      {
+        "icon": "⚙️",
+        "category": "Software Development",
+        "items": [
+          "Dispatch algorithm development (~7.5 person-months)",
+          "Elevator vendor protocol integration (open API required)",
+          "Admin dashboard + display data pipeline"
+        ],
+        "range": "¥ 300K–500K"
+      },
+      {
+        "icon": "🔧",
+        "category": "Installation",
+        "items": [
+          "On-site survey & solution confirmation",
+          "Device installation, commissioning & acceptance",
+          "Shanghai → Fuzhou travel (2 persons)"
+        ],
+        "range": "¥ 30K–50K"
+      },
+      {
+        "icon": "🛡️",
+        "category": "Annual Maintenance",
+        "items": [
+          "Remote monitoring & incident response",
+          "2 on-site inspections/year (2 persons, incl. travel)",
+          "Software updates & upgrades"
+        ],
+        "range": "¥ 30K–50K / yr"
+      }
+    ],
+    "note": "⚠️ Software pricing assumes elevator vendor provides open dispatch interface (Modbus / BACnet or proprietary protocol docs). Additional cost may apply for protocol reverse engineering."
+  },
   "roadmap": {
     "badge": "Delivery Timeline",
     "title": "From Contract to Full Operation - Typically 4-6 Weeks",
