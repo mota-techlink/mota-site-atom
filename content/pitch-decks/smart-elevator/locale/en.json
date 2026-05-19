@@ -353,20 +353,22 @@
         "category": "Hardware",
         "items": [
           "Dual-redundancy main controller (industrial 7×24)",
-          "5 elevator status displays (compact or ad-screen)",
+          "5 elevator status displays",
           "Sensors / gateways / cabling"
         ],
-        "range": "¥ 80K–150K"
+        "range": "≥ ¥50K",
+        "value": 5
       },
       {
         "icon": "⚙️",
         "category": "Software Development",
         "items": [
-          "Dispatch algorithm development (~7.5 person-months)",
+          "Dispatch algorithm (≥7 person-months × ¥30K/pm)",
           "Elevator vendor protocol integration (open API required)",
           "Admin dashboard + display data pipeline"
         ],
-        "range": "¥ 300K–500K"
+        "range": "≥ ¥210K",
+        "value": 21
       },
       {
         "icon": "🔧",
@@ -376,7 +378,8 @@
           "Device installation, commissioning & acceptance",
           "Shanghai → Fuzhou travel (2 persons)"
         ],
-        "range": "¥ 30K–50K"
+        "range": "≥ ¥30K",
+        "value": 3
       },
       {
         "icon": "🛡️",
@@ -386,9 +389,15 @@
           "2 on-site inspections/year (2 persons, incl. travel)",
           "Software updates & upgrades"
         ],
-        "range": "¥ 30K–50K / yr"
+        "range": "¥50K / yr",
+        "value": 5
       }
     ],
+    "totalLabel": "One-time Total",
+    "totalValue": "≥ ¥290K",
+    "totalNote": "(Hardware + Software + Installation)",
+    "annualLabel": "Annual Maintenance",
+    "annualValue": "¥50K / yr",
     "note": "⚠️ Software pricing assumes elevator vendor provides open dispatch interface (Modbus / BACnet or proprietary protocol docs). Additional cost may apply for protocol reverse engineering."
   },
   "roadmap": {
