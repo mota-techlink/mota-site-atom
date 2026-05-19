@@ -27,7 +27,7 @@ export function HeroSection() {
         </h1>
 
         {/* Subtitle */}
-        <p className="mi-child text-stone-300/90 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base lg:text-lg mb-6 sm:mb-8">
+        <p className="mi-child text-stone-600/90 dark:text-stone-300/90 max-w-2xl mx-auto leading-relaxed text-sm sm:text-base lg:text-lg mb-6 sm:mb-8">
           {h.subtitle}
         </p>
 
@@ -52,7 +52,7 @@ export function HeroSection() {
           {h.stats.map((s: any, i: number) => (
             <div key={i} className="rounded-xl bg-stone-100 dark:bg-stone-900/60 border border-amber-400/50 dark:border-amber-600/30 px-3 py-3 sm:px-4 sm:py-4">
               <div className="text-amber-400 font-bold text-lg sm:text-2xl lg:text-3xl">{s.value}</div>
-              <div className="text-stone-300/60 text-[10px] sm:text-xs mt-0.5">{s.label}</div>
+              <div className="text-stone-600/60 dark:text-stone-300/60 text-[10px] sm:text-xs mt-0.5">{s.label}</div>
             </div>
           ))}
         </div>

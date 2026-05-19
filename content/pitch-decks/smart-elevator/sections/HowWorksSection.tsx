@@ -19,7 +19,7 @@ export function HowWorksSection() {
         <div className="text-center mb-8 sm:mb-12">
           <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-600/15 border border-amber-400/50 dark:border-amber-600/30 text-amber-300 text-xs sm:text-sm font-medium mb-2">{h.badge}</span>
           <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-2">{h.title}</h2>
-          <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{h.subtitle}</p>
+          <p className="mi-child text-stone-600/70 dark:text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{h.subtitle}</p>
         </div>
 
         {/* Desktop: horizontal timeline */}
@@ -35,7 +35,7 @@ export function HowWorksSection() {
                 {/* Card body */}
                 <div className="w-full rounded-xl bg-stone-100 dark:bg-stone-900/70 border border-amber-600/25 px-4 py-4">
                   <div className="text-stone-900 dark:text-white font-semibold text-sm mb-1.5">{step.title}</div>
-                  <div className="text-stone-300/65 text-xs leading-relaxed">{step.desc}</div>
+                  <div className="text-stone-600/65 dark:text-stone-300/65 text-xs leading-relaxed">{step.desc}</div>
                 </div>
               </div>
               {/* Connector arrow (between steps) */}

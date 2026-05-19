@@ -19,7 +19,7 @@ export function AccessControlSection() {
         <div className="text-center mb-6 sm:mb-10">
           <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-600/15 border border-amber-400/50 dark:border-amber-600/30 text-amber-300 text-xs sm:text-sm font-medium mb-2">{a.badge}</span>
           <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-2">{a.title}</h2>
-          <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{a.subtitle}</p>
+          <p className="mi-child text-stone-600/70 dark:text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{a.subtitle}</p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-4">
           {a.steps.map((step: any, i: number) => (
@@ -35,7 +35,7 @@ export function AccessControlSection() {
               )}
               <div className="text-amber-400 font-bold text-lg sm:text-xl mb-1">{step.step}</div>
               <div className="text-stone-900 dark:text-white font-semibold text-xs sm:text-sm mb-1">{step.title}</div>
-              <div className="text-stone-300/60 text-[10px] sm:text-xs leading-snug">{step.desc}</div>
+              <div className="text-stone-600/60 dark:text-stone-300/60 text-[10px] sm:text-xs leading-snug">{step.desc}</div>
             </div>
           ))}
         </div>

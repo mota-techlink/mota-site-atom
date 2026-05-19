@@ -21,7 +21,7 @@ export function SolutionSection() {
             {s.badge}
           </span>
           <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-2">{s.title}</h2>
-          <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{s.subtitle}</p>
+          <p className="mi-child text-stone-600/70 dark:text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{s.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -21,7 +21,7 @@ export function ProblemSection() {
             {p.badge}
           </span>
           <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-2 max-w-3xl mx-auto">{p.title}</h2>
-          <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{p.subtitle}</p>
+          <p className="mi-child text-stone-600/70 dark:text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{p.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -36,7 +36,7 @@ export function ProblemSection() {
               <div className="text-2xl sm:text-3xl shrink-0 mt-0.5">{item.icon}</div>
               <div>
                 <div className="text-stone-900 dark:text-white font-semibold text-sm sm:text-base mb-1">{item.title}</div>
-                <div className="text-stone-300/60 text-xs sm:text-sm leading-relaxed">{item.desc}</div>
+                <div className="text-stone-600/60 dark:text-stone-300/60 text-xs sm:text-sm leading-relaxed">{item.desc}</div>
               </div>
             </div>
           ))}

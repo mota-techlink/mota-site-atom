@@ -19,7 +19,7 @@ export function DisplaySection() {
         <div className="text-center mb-6 sm:mb-10">
           <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-500/15 border border-amber-600/40 text-amber-400 text-xs sm:text-sm font-medium mb-2">{d.badge}</span>
           <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-2">{d.title}</h2>
-          <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{d.subtitle}</p>
+          <p className="mi-child text-stone-600/70 dark:text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{d.subtitle}</p>
         </div>
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
           {d.items.map((item: any, i: number) => (
@@ -32,7 +32,7 @@ export function DisplaySection() {
             >
               <div className="text-2xl mb-2">{item.icon}</div>
               <div className="text-stone-900 dark:text-white font-semibold text-xs sm:text-sm mb-1">{item.title}</div>
-              <div className="text-stone-300/60 text-[10px] sm:text-xs leading-relaxed">{item.desc}</div>
+              <div className="text-stone-600/60 dark:text-stone-300/60 text-[10px] sm:text-xs leading-relaxed">{item.desc}</div>
             </div>
           ))}
         </div>

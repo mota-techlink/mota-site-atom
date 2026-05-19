@@ -32,7 +32,7 @@ export function RoadmapSection() {
               <div className="min-w-[4rem] text-amber-400 font-bold text-xs sm:text-sm shrink-0 pt-0.5">{item.week}</div>
               <div>
                 <div className="text-stone-900 dark:text-white font-semibold text-sm sm:text-base mb-0.5">{item.title}</div>
-                <div className="text-stone-200/65 text-xs sm:text-sm">{item.desc}</div>
+                <div className="text-stone-700/65 dark:text-stone-200/65 text-xs sm:text-sm">{item.desc}</div>
               </div>
             </div>
           ))}

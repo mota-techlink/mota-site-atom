@@ -19,7 +19,7 @@ export function FeaturesSection() {
         <div className="text-center mb-6 sm:mb-10">
           <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-500/15 border border-amber-600/40 text-amber-400 text-xs sm:text-sm font-medium mb-2">{f.badge}</span>
           <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-2">{f.title}</h2>
-          <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{f.subtitle}</p>
+          <p className="mi-child text-stone-600/70 dark:text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{f.subtitle}</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {f.items.map((item: any, i: number) => (

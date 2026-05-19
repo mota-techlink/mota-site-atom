@@ -19,7 +19,7 @@ export function BizModelSection() {
         <div className="text-center mb-6 sm:mb-10">
           <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-500/15 border border-amber-600/40 text-amber-400 text-xs sm:text-sm font-medium mb-2">{b.badge}</span>
           <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-2">{b.title}</h2>
-          <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{b.subtitle}</p>
+          <p className="mi-child text-stone-600/70 dark:text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{b.subtitle}</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           {b.phases.map((phase: any, i: number) => (
@@ -39,7 +39,7 @@ export function BizModelSection() {
               </div>
               <ul className="space-y-2">
                 {phase.items.map((li: string, j: number) => (
-                  <li key={j} className="flex items-start gap-2 text-stone-300/70 text-xs sm:text-sm">
+                  <li key={j} className="flex items-start gap-2 text-stone-600/70 dark:text-stone-300/70 text-xs sm:text-sm">
                     <span className="text-amber-400 mt-0.5 shrink-0">·</span>{li}
                   </li>
                 ))}
@@ -47,7 +47,7 @@ export function BizModelSection() {
             </div>
           ))}
         </div>
-        <p className="mi-child text-center text-stone-300/60 text-xs sm:text-sm px-4">{b.note}</p>
+        <p className="mi-child text-center text-stone-600/60 dark:text-stone-300/60 text-xs sm:text-sm px-4">{b.note}</p>
       </div>
 
       <DetailModal

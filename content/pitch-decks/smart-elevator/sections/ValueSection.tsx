@@ -19,7 +19,7 @@ export function ValueSection() {
         <div className="text-center mb-6 sm:mb-10">
           <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-600/15 border border-amber-400/50 dark:border-amber-600/30 text-amber-300 text-xs sm:text-sm font-medium mb-2">{v.badge}</span>
           <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-2">{v.title}</h2>
-          <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{v.subtitle}</p>
+          <p className="mi-child text-stone-600/70 dark:text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{v.subtitle}</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {v.items.map((item: any, i: number) => (
@@ -34,7 +34,7 @@ export function ValueSection() {
               <div className="text-stone-900 dark:text-white font-bold text-sm sm:text-base mb-3">{item.title}</div>
               <ul className="space-y-1.5">
                 {item.items.map((li: string, j: number) => (
-                  <li key={j} className="flex items-start gap-2 text-stone-300/70 text-xs sm:text-sm">
+                  <li key={j} className="flex items-start gap-2 text-stone-600/70 dark:text-stone-300/70 text-xs sm:text-sm">
                     <span className="text-amber-400 mt-0.5 shrink-0">✓</span>{li}
                   </li>
                 ))}

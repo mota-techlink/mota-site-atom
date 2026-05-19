@@ -25,7 +25,7 @@ export function ScheduleSection() {
         <div className="text-center mb-5 sm:mb-8">
           <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-500/15 border border-amber-600/40 text-amber-400 text-xs sm:text-sm font-medium mb-2">{sc.badge}</span>
           <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-2">{sc.title}</h2>
-          <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{sc.subtitle}</p>
+          <p className="mi-child text-stone-600/70 dark:text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{sc.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -40,7 +40,7 @@ export function ScheduleSection() {
                 className={`mi-child rounded-xl ${col.bg} ${col.border} border p-4 sm:p-5 ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
               >
                 <div className="text-xl mb-2">{mode.icon}</div>
-                <div className="text-stone-300/60 text-[10px] sm:text-xs mb-1">{mode.time}</div>
+                <div className="text-stone-600/60 dark:text-stone-300/60 text-[10px] sm:text-xs mb-1">{mode.time}</div>
                 <div className="text-stone-900 dark:text-white font-bold text-xs sm:text-sm mb-1">{mode.label}</div>
                 <span className={`inline-block px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-medium ${col.badge} mb-3`}>{mode.strategy}</span>
                 <ul className="space-y-1">
