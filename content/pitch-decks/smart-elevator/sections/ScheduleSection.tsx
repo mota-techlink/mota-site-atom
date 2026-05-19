@@ -19,7 +19,7 @@ export function ScheduleSection() {
   const active = openIdx !== null ? sc.modes[openIdx] : null;
 
   return (
-    <section id="s-schedule" className={`${SECTION} bg-[#1a0f0a] relative`}>
+    <section id="s-schedule" className={`${SECTION} bg-d-bg relative`}>
       <DynamicBackground accent="amber" brightness={1.3} count={12} />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-5 sm:mb-8">

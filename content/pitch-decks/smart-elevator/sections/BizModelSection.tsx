@@ -13,7 +13,7 @@ export function BizModelSection() {
   const active = openIdx !== null ? b.phases[openIdx] : null;
 
   return (
-    <section id="s-bizmodel" className={`${SECTION} bg-[#1a0f0a] relative`}>
+    <section id="s-bizmodel" className={`${SECTION} bg-d-bg relative`}>
       <DynamicBackground accent="amber" brightness={1.3} count={14} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">

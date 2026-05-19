@@ -13,7 +13,7 @@ export function EnergySection() {
   const active = openIdx !== null ? e.stats[openIdx] : null;
 
   return (
-    <section id="s-energy" className={`${SECTION} bg-[#1a0f0a] relative`}>
+    <section id="s-energy" className={`${SECTION} bg-d-bg relative`}>
       <DynamicBackground accent="emerald" brightness={1.4} count={16} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-10">
