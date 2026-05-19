@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { useTheme } from "next-themes";
 import { Moon, Sun, Monitor } from "lucide-react";
 import { useDeckLocale, useDeckAccess } from "@/components/pitch-deck";
@@ -44,10 +42,9 @@ export function FloatingNav({ pastHero }: { pastHero: boolean }) {
   return (
     <div className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${pastHero ? "bg-[#1a0f0a]/70 backdrop-blur-md border-b border-amber-800/20" : "bg-transparent"}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-12 sm:h-14 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 cursor-pointer" aria-label="Go to homepage">
-          <Image src="/logos/mota-icon-v2.webp" alt="MOTA" width={22} height={22} className="opacity-90 rounded-sm" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
+        <div className="flex items-center gap-2">
           <span className="text-stone-200/80 text-xs sm:text-sm font-medium hidden sm:block">{c.nav.tagline}</span>
-        </Link>
+        </div>
         <div className="flex items-center gap-2">
           {/* Locale switcher */}
           <div className="flex items-center gap-1 bg-d-fg/8 rounded-full px-1.5 py-1">
