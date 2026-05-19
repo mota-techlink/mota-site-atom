@@ -10,7 +10,7 @@ export function HeroSection() {
   const h = c.hero;
 
   return (
-    <section id="s-hero" className={`${SECTION} bg-[#1a0f0a] relative`}>
+    <section id="s-hero" className={`${SECTION} bg-white dark:bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="indigo" brightness={1.5} count={18} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Badge */}
@@ -21,7 +21,7 @@ export function HeroSection() {
         </div>
 
         {/* Headline */}
-        <h1 className="mi-child text-white font-bold mb-3 sm:mb-5 leading-tight">
+        <h1 className="mi-child text-stone-900 dark:text-white font-bold mb-3 sm:mb-5 leading-tight">
           {h.title}{" "}
           <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">{h.titleHighlight}</span>
         </h1>
@@ -35,13 +35,13 @@ export function HeroSection() {
         <div className="mi-child flex flex-col sm:flex-row gap-3 justify-center mb-8 sm:mb-12">
           <button
             onClick={() => goTo(SECTION_MAP["s-cta"])}
-            className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-400 text-white text-sm sm:text-base font-semibold hover:opacity-90 transition-opacity"
+            className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-400 text-stone-900 dark:text-white text-sm sm:text-base font-semibold hover:opacity-90 transition-opacity"
           >
             {h.cta}
           </button>
           <button
             onClick={() => goTo(SECTION_MAP["s-solution"])}
-            className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full bg-white/5 border border-amber-600/40 text-white text-sm sm:text-base font-semibold hover:bg-white/10 transition-colors"
+            className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full bg-white/5 border border-amber-600/40 text-stone-900 dark:text-white text-sm sm:text-base font-semibold hover:bg-white/10 transition-colors"
           >
             {h.ctaSecondary}
           </button>
@@ -50,7 +50,7 @@ export function HeroSection() {
         {/* Stats */}
         <div className="mi-child grid grid-cols-3 gap-3 sm:gap-6 max-w-2xl mx-auto">
           {h.stats.map((s: any, i: number) => (
-            <div key={i} className="rounded-xl bg-stone-900/60 border border-amber-600/30 px-3 py-3 sm:px-4 sm:py-4">
+            <div key={i} className="rounded-xl bg-stone-100 dark:bg-stone-900/60 border border-amber-400/50 dark:border-amber-600/30 px-3 py-3 sm:px-4 sm:py-4">
               <div className="text-amber-400 font-bold text-lg sm:text-2xl lg:text-3xl">{s.value}</div>
               <div className="text-stone-300/60 text-[10px] sm:text-xs mt-0.5">{s.label}</div>
             </div>

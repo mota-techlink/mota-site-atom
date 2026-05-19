@@ -13,12 +13,12 @@ export function HowWorksSection() {
   const active = openIdx !== null ? h.steps[openIdx] : null;
 
   return (
-    <section id="s-howworks" className={`${SECTION} bg-[#1a0f0a] relative`}>
+    <section id="s-howworks" className={`${SECTION} bg-white dark:bg-[#1a0f0a] relative`}>
       <DynamicBackground accent="amber" brightness={1.2} count={10} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8 sm:mb-12">
-          <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-600/15 border border-amber-600/30 text-amber-300 text-xs sm:text-sm font-medium mb-2">{h.badge}</span>
-          <h2 className="mi-child text-white font-bold mb-2">{h.title}</h2>
+          <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-600/15 border border-amber-400/50 dark:border-amber-600/30 text-amber-300 text-xs sm:text-sm font-medium mb-2">{h.badge}</span>
+          <h2 className="mi-child text-stone-900 dark:text-white font-bold mb-2">{h.title}</h2>
           <p className="mi-child text-stone-300/70 text-sm sm:text-base max-w-2xl mx-auto">{h.subtitle}</p>
         </div>
 
@@ -33,8 +33,8 @@ export function HowWorksSection() {
                   {step.step}
                 </div>
                 {/* Card body */}
-                <div className="w-full rounded-xl bg-stone-900/70 border border-amber-600/25 px-4 py-4">
-                  <div className="text-white font-semibold text-sm mb-1.5">{step.title}</div>
+                <div className="w-full rounded-xl bg-stone-100 dark:bg-stone-900/70 border border-amber-600/25 px-4 py-4">
+                  <div className="text-stone-900 dark:text-white font-semibold text-sm mb-1.5">{step.title}</div>
                   <div className="text-stone-300/65 text-xs leading-relaxed">{step.desc}</div>
                 </div>
               </div>
@@ -58,13 +58,13 @@ export function HowWorksSection() {
               onClick={() => setOpenIdx(i)}
               role="button"
               tabIndex={0}
-              className="mi-child flex items-start gap-4 rounded-xl bg-stone-900/60 border border-amber-600/25 p-4 cursor-pointer active:scale-[0.98] transition-transform"
+              className="mi-child flex items-start gap-4 rounded-xl bg-stone-100 dark:bg-stone-900/60 border border-amber-600/25 p-4 cursor-pointer active:scale-[0.98] transition-transform"
             >
               <div className="w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500/50 flex items-center justify-center text-amber-300 font-bold text-sm shrink-0">
                 {step.step}
               </div>
               <div>
-                <div className="text-white font-semibold text-sm mb-0.5">{step.title}</div>
+                <div className="text-stone-900 dark:text-white font-semibold text-sm mb-0.5">{step.title}</div>
                 <div className="text-stone-200/60 text-xs leading-relaxed">{step.desc}</div>
               </div>
             </div>
