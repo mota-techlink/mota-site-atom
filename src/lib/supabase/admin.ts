@@ -1,22 +1,21 @@
-// src/lib/supabase/client.ts
-import { createBrowserClient } from '@supabase/ssr'
-import { createFetchWithSchema } from './fetch-with-schema'
-import { resolveDbSchema } from './schema-mode'
+import { createClient } from '@supabase/supabase-js';
+import { createFetchWithSchema } from './fetch-with-schema';
+import { resolveDbSchema } from './schema-mode';
 
-export function createClient() {
+export function createAdminClient() {
   const schemaResolution = resolveDbSchema();
   const schema = schemaResolution.schema;
   const useCustomSchemaTransport = schemaResolution.mode === 'custom';
   const fetchWithSchema = useCustomSchemaTransport ? createFetchWithSchema(schema) : undefined;
   
-  return createBrowserClient(
+  return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
     useCustomSchemaTransport
       ? {
           global: { fetch: fetchWithSchema },
           db: { schema },
         }
       : undefined
-  )
+  );
 }
