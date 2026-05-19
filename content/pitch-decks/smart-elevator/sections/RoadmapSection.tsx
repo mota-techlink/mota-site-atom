@@ -20,7 +20,7 @@ export function RoadmapSection() {
           <span className="mi-child inline-block px-3 py-1 rounded-full bg-amber-600/15 border border-amber-600/30 text-amber-300 text-xs sm:text-sm font-medium mb-2">{r.badge}</span>
           <h2 className="mi-child text-white font-bold mb-2">{r.title}</h2>
         </div>
-        <div className="flex flex-col md:flex-row md:gap-4 space-y-3 md:space-y-0">
+        <div className="space-y-3">
           {r.items.map((item: any, i: number) => (
             <div
               key={i}

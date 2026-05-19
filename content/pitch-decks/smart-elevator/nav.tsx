@@ -58,11 +58,7 @@ export function FloatingNav({ pastHero }: { pastHero: boolean }) {
               </button>
             ))}
           </div>
-          {/* Theme toggle */}
-          <button onClick={() => setTheme(theme === "dark" ? "light" : theme === "light" ? "system" : "dark")}
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-d-fg/8 flex items-center justify-center text-d-fg/50 hover:text-d-fg transition-colors">
-            {theme === "dark" ? <Moon size={13} /> : theme === "light" ? <Sun size={13} /> : <Monitor size={13} />}
-          </button>
+          {/* Theme toggle hidden */}
         </div>
       </div>
     </div>
