@@ -398,7 +398,7 @@
     "totalNote": "(Hardware + Software + Installation)",
     "annualLabel": "Annual Maintenance",
     "annualValue": "¥50K / yr",
-    "note": "⚠️ Software pricing assumes elevator vendor provides open dispatch interface (Modbus / BACnet or proprietary protocol docs). Additional cost may apply for protocol reverse engineering."
+    "note": "⚠️ Pricing will be re-evaluated based on the elevator manufacturer's actual ability to open dispatch interfaces (Modbus / BACnet or proprietary protocol documentation)."
   },
   "roadmap": {
     "badge": "Delivery Timeline",

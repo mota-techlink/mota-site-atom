@@ -88,7 +88,7 @@ export function PricingSection() {
         {/* Main: Donut (left) + Card list (right) */}
         <div className="mi-child grid grid-cols-1 sm:grid-cols-[45%_55%] gap-6 sm:gap-8 items-center mb-6">
           {/* LEFT: Donut */}
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center">
             <svg
               viewBox="0 0 120 120"
               className="w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] shrink-0"
@@ -161,6 +161,9 @@ export function PricingSection() {
                 </>
               )}
             </svg>
+            <span className="text-xs text-stone-400 dark:text-stone-500 text-center mt-2 flex items-center justify-center gap-1">
+              👆 点击扇形查看明细
+            </span>
           </div>
 
           {/* RIGHT: Compact card list */}
@@ -199,7 +202,7 @@ export function PricingSection() {
                   <span className="text-indigo-600 dark:text-indigo-300 font-semibold text-xs sm:text-sm whitespace-nowrap">
                     {card.range}
                   </span>
-                  <span className="text-indigo-400 text-xs">›</span>
+                  <span className="text-indigo-400/60 text-sm ml-1">›</span>
                 </li>
               );
             })}

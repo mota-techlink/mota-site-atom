@@ -398,7 +398,7 @@
     "totalNote": "（含硬件 + 软件开发 + 实施安装）",
     "annualLabel": "年度维护",
     "annualValue": "¥5 万 / 年",
-    "note": "⚠️ 将根据电梯厂方须开放调度接口（Modbus / BACnet 或私有协议文档）的实际情况，重新评估项目报价。"
+    "note": "⚠️ 将根据电梯厂方开放接口（Modbus / BACnet 或私有协议文档）的实际情况，重新评估项目报价"
   },
   "roadmap": {
     "badge": "交付路线",
