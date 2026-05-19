@@ -343,6 +343,63 @@
     ],
     "note": "💡 Pricing is customised based on building scale (floors x number of cars). Contact us to schedule a free site survey."
   },
+  "pricing": {
+    "badge": "Pricing",
+    "title": "Transparent Pricing, Tailored to Your Needs",
+    "subtitle": "Reference pricing for 4 freight elevators + 1 passenger elevator. Final pricing subject to on-site survey.",
+    "cards": [
+      {
+        "icon": "🖥️",
+        "category": "Hardware",
+        "items": [
+          "Dual-redundancy main controller (industrial 7×24)",
+          "5 elevator status displays",
+          "Sensors / gateways / cabling"
+        ],
+        "range": "≥ ¥50K",
+        "value": 5
+      },
+      {
+        "icon": "⚙️",
+        "category": "Software Development",
+        "items": [
+          "Dispatch algorithm (≥7 person-months × ¥30K/pm)",
+          "Elevator vendor protocol integration (open API required)",
+          "Admin dashboard + display data pipeline"
+        ],
+        "range": "≥ ¥210K",
+        "value": 21
+      },
+      {
+        "icon": "🔧",
+        "category": "Installation",
+        "items": [
+          "On-site survey & solution confirmation",
+          "Device installation, commissioning & acceptance",
+          "Shanghai → Fuzhou travel (2 persons)"
+        ],
+        "range": "≥ ¥30K",
+        "value": 3
+      },
+      {
+        "icon": "🛡️",
+        "category": "Annual Maintenance",
+        "items": [
+          "Remote monitoring & incident response",
+          "2 on-site inspections/year (2 persons, incl. travel)",
+          "Software updates & upgrades"
+        ],
+        "range": "¥50K / yr",
+        "value": 5
+      }
+    ],
+    "totalLabel": "One-time Total",
+    "totalValue": "≥ ¥290K",
+    "totalNote": "(Hardware + Software + Installation)",
+    "annualLabel": "Annual Maintenance",
+    "annualValue": "¥50K / yr",
+    "note": "⚠️ Pricing will be re-evaluated based on the elevator manufacturer's actual ability to open dispatch interfaces (Modbus / BACnet or proprietary protocol documentation)."
+  },
   "roadmap": {
     "badge": "Delivery Timeline",
     "title": "From Contract to Full Operation - Typically 4-6 Weeks",
