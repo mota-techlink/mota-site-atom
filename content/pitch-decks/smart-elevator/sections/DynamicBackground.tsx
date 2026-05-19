@@ -74,7 +74,7 @@ export function DynamicBackground({ accent = "indigo", brightness = 1.4, count =
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none hidden dark:block"
       style={{ zIndex: 0 }}
     />
   );
