@@ -37,19 +37,6 @@ const SECTIONS = [
 ] as const;
 
 const SLIDE_STYLES = `
-  .pitch-deck-page {
-    /* Force dark green palette regardless of global light/dark theme */
-    --d-bg: #06140a;
-    --d-bg2: #0a1f12;
-    --d-fg: #ecfdf5;
-    --d-indigo: #34d399;
-    --d-emerald: #34d399;
-    --d-amber: #5eead4;
-    --d-rose: #a3e635;
-    --d-indigo-s: #052e1a;
-    --d-amber-s: #042f2e;
-    --d-rose-s: #1a2e05;
-  }
   .se-slide { position: absolute; inset: 0; overflow: hidden; }
   .se-slide[data-state="idle"] { visibility: hidden; pointer-events: none; z-index: 0; }
   .se-slide[data-state="active"] { z-index: 2; }
@@ -101,7 +88,7 @@ function SmartElevatorDeckInner() {
   const handleGateBack = useCallback(() => { goTo(previewSlides - 1); }, [goTo, previewSlides]);
 
   return (
-    <div ref={rootRef} className="pitch-deck-page h-full w-full overflow-hidden relative bg-[#06140a] text-white"
+    <div ref={rootRef} className="pitch-deck-page h-full w-full overflow-hidden relative bg-d-bg text-d-fg"
       tabIndex={-1} style={{ outline: "none", touchAction: "none" }}>
       <style>{SLIDE_STYLES}</style>
       <FloatingNav pastHero={activeIdx > 0} />
@@ -137,7 +124,7 @@ export function SmartElevatorDeck({ access = "public", previewSlides = DEFAULT_P
   return (
     <DeckAccessProvider access={access} previewSlides={previewSlides} totalSlides={SECTIONS.length}
       serverAuth={isAuthenticated ? { isAuthenticated: true, role: userRole } : undefined}>
-      <DeckLocaleProvider availableLocales={[...LOCALES]} localeLabels={LOCALE_LABELS}>
+      <DeckLocaleProvider availableLocales={[...LOCALES]} localeLabels={LOCALE_LABELS} defaultLocale="zh">
         <SmartElevatorDeckInner />
       </DeckLocaleProvider>
     </DeckAccessProvider>

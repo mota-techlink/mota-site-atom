@@ -1,43 +1,71 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useContent } from "../hooks";
-import { SectionShell } from "./SectionShell";
+import { SECTION } from "../constants";
+import { DynamicBackground } from "./DynamicBackground";
+import { DetailModal, useIsMobile } from "./DetailModal";
 
 export function BizModelSection() {
   const c = useContent();
   const b = c.bizmodel;
+  const isMobile = useIsMobile();
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const active = openIdx !== null ? b.phases[openIdx] : null;
+
   return (
-    <SectionShell
-      id="s-bizmodel"
-      accent="teal"
-      brightness={1.3}
-      particleCount={14}
-      maxWidth="max-w-5xl"
-      badge={b.badge}
-      title={b.title}
-      subtitle={b.subtitle}
-    >
+    <section id="s-bizmodel" className={`${SECTION} bg-blue-950 relative`}>
+      <DynamicBackground accent="amber" brightness={1.3} count={14} />
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-6 sm:mb-10">
+          <span className="mi-child inline-block px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs sm:text-sm font-medium mb-2">{b.badge}</span>
+          <h2 className="mi-child text-white font-bold mb-2">{b.title}</h2>
+          <p className="mi-child text-blue-200/70 text-sm sm:text-base max-w-2xl mx-auto">{b.subtitle}</p>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                  {b.phases.map((phase: any, i: number) => (
-                    <div key={i} className="mi-child rounded-xl bg-d-amber-s/30 border border-d-amber/20 p-5 sm:p-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="text-2xl">{phase.icon}</span>
-                        <div>
-                          <div className="text-d-amber text-xs font-medium">{phase.phase}</div>
-                          <div className="text-d-fg font-bold text-sm sm:text-base">{phase.title}</div>
-                        </div>
-                      </div>
-                      <ul className="space-y-2">
-                        {phase.items.map((li: string, j: number) => (
-                          <li key={j} className="flex items-start gap-2 text-d-fg/65 text-xs sm:text-sm">
-                            <span className="text-d-amber mt-0.5 shrink-0">·</span>{li}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+          {b.phases.map((phase: any, i: number) => (
+            <div
+              key={i}
+              onClick={isMobile ? () => setOpenIdx(i) : undefined}
+              role={isMobile ? "button" : undefined}
+              tabIndex={isMobile ? 0 : undefined}
+              className={`mi-child rounded-xl bg-slate-900/60 border border-cyan-400/25 p-5 sm:p-6 ${isMobile ? "cursor-pointer active:scale-[0.98] transition-transform" : ""}`}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl">{phase.icon}</span>
+                <div>
+                  <div className="text-cyan-300 text-xs font-medium">{phase.phase}</div>
+                  <div className="text-white font-bold text-sm sm:text-base">{phase.title}</div>
                 </div>
-                <p className="mi-child text-center text-d-fg/50 text-xs sm:text-sm px-4">{b.note}</p>
-    </SectionShell>
+              </div>
+              <ul className="space-y-2">
+                {phase.items.map((li: string, j: number) => (
+                  <li key={j} className="flex items-start gap-2 text-blue-200/70 text-xs sm:text-sm">
+                    <span className="text-cyan-400 mt-0.5 shrink-0">·</span>{li}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <p className="mi-child text-center text-blue-200/60 text-xs sm:text-sm px-4">{b.note}</p>
+      </div>
+
+      <DetailModal
+        open={openIdx !== null}
+        onClose={() => setOpenIdx(null)}
+        title={active?.title ?? ""}
+        icon={active?.icon}
+        eyebrow={active ? `${b.badge} · ${active.phase}` : b.badge}
+      >
+        <ul className="space-y-2">
+          {active?.items.map((li: string, j: number) => (
+            <li key={j} className="flex items-start gap-2">
+              <span className="text-cyan-400 mt-0.5 shrink-0">·</span>
+              <span>{li}</span>
+            </li>
+          ))}
+        </ul>
+      </DetailModal>
+    </section>
   );
 }

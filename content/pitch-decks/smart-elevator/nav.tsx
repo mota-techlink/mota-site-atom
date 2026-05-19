@@ -1,11 +1,12 @@
 "use client";
-import React, { useContext } from "react";
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTheme } from "next-themes";
 import { Moon, Sun, Monitor } from "lucide-react";
 import { useDeckLocale, useDeckAccess } from "@/components/pitch-deck";
 import { SECTION_IDS, LOCALES, LOCALE_LABELS } from "./constants";
-import { useContent, PageNavCtx } from "./hooks";
+import { useContent } from "./hooks";
 
 export function SectionDots({ activeIdx, goTo }: { activeIdx: number; goTo: (idx: number) => void }) {
   const lastIdx = SECTION_IDS.length - 1;
@@ -37,16 +38,16 @@ export function SectionDots({ activeIdx, goTo }: { activeIdx: number; goTo: (idx
 export function FloatingNav({ pastHero }: { pastHero: boolean }) {
   const { deckLocale, setDeckLocale } = useDeckLocale();
   const { theme, setTheme } = useTheme();
-  const goTo = useContext(PageNavCtx);
+  // Logo now navigates to "/" via <Link>; PageNavCtx no longer used here.
   const c = useContent();
 
   return (
-    <div className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${pastHero ? "bg-d-bg/80 backdrop-blur-md border-b border-d-fg/8" : "bg-transparent"}`}>
+    <div className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${pastHero ? "bg-blue-950/70 backdrop-blur-md border-b border-cyan-400/10" : "bg-transparent"}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-12 sm:h-14 flex items-center justify-between">
-        <button onClick={() => goTo(0)} className="flex items-center gap-2 cursor-pointer">
-          <Image src="/logos/mota-icon-v2.webp" alt="MOTA" width={22} height={22} className="opacity-80" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
-          <span className="text-d-fg/70 text-xs sm:text-sm font-medium hidden sm:block">{c.nav.tagline}</span>
-        </button>
+        <Link href="/" className="flex items-center gap-2 cursor-pointer" aria-label="Go to homepage">
+          <Image src="/logos/mota-icon-v2.webp" alt="MOTA" width={22} height={22} className="opacity-90 rounded-sm" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
+          <span className="text-blue-100/80 text-xs sm:text-sm font-medium hidden sm:block">{c.nav.tagline}</span>
+        </Link>
         <div className="flex items-center gap-2">
           {/* Locale switcher */}
           <div className="flex items-center gap-1 bg-d-fg/8 rounded-full px-1.5 py-1">
