@@ -27,6 +27,8 @@ interface DeckLocaleProviderProps {
   availableLocales: string[];
   /** Display labels for each locale */
   localeLabels: Record<string, string>;
+  /** Optional deck-specific default locale that overrides URL/global locale on first mount */
+  defaultLocale?: string;
 }
 
 /**
@@ -40,17 +42,26 @@ export function DeckLocaleProvider({
   children,
   availableLocales,
   localeLabels,
+  defaultLocale,
 }: DeckLocaleProviderProps) {
   const globalLocale = useLocale();
-  const initial = availableLocales.includes(globalLocale) ? globalLocale : availableLocales[0];
+  // Deck-specific defaultLocale takes precedence on first mount; otherwise fall back to URL locale.
+  const initial =
+    defaultLocale && availableLocales.includes(defaultLocale)
+      ? defaultLocale
+      : availableLocales.includes(globalLocale)
+        ? globalLocale
+        : availableLocales[0];
   const [deckLocale, setDeckLocale] = useState(initial);
 
-  // Sync with URL locale changes (e.g. user navigates /en → /zh externally)
+  // Sync with URL locale changes (e.g. user navigates /en → /zh externally),
+  // but only when the deck has no explicit defaultLocale override.
   useEffect(() => {
+    if (defaultLocale) return;
     if (availableLocales.includes(globalLocale)) {
       setDeckLocale(globalLocale);
     }
-  }, [globalLocale, availableLocales]);
+  }, [globalLocale, availableLocales, defaultLocale]);
 
   return (
     <DeckLocaleContext.Provider

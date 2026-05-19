@@ -1,0 +1,13 @@
+{
+  "title": "智慧电梯管理系统 — 让每一次出行更智能、更节能",
+  "slug": "smart-elevator",
+  "description": "存量楼宇智能化改造解决方案：门禁联动派梯、高峰自动联动、节能优先调度，硬件+开发+年度运维一体化交付。",
+  "author": "MOTA TechLink",
+  "date": "2026-05-19",
+  "status": "published",
+  "access": "public",
+  "previewSlides": 13,
+  "defaultTransition": "fade",
+  "tags": ["smart-elevator", "IoT", "building-automation", "B2B", "energy-saving"],
+  "coverImage": "/images/pitch-decks/smart-elevator-cover.webp"
+}

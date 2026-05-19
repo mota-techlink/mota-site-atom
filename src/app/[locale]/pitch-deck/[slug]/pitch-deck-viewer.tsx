@@ -27,6 +27,11 @@ const RfdmsDeck = dynamic(
   { loading: () => <LoadingSpinner /> }
 );
 
+const SmartElevatorDeck = dynamic(
+  () => import("@content/pitch-decks/smart-elevator/deck").then(mod => mod.SmartElevatorDeck),
+  { loading: () => <LoadingSpinner /> }
+);
+
 function LoadingSpinner() {
   return (
     <div className="w-full h-full flex items-center justify-center bg-black">
@@ -80,6 +85,15 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated, userRole }: Pitch
     case "rfdms":
       return (
         <RfdmsDeck
+          access={access}
+          previewSlides={preview}
+          isAuthenticated={isAuthenticated}
+          userRole={userRole}
+        />
+      );
+    case "smart-elevator":
+      return (
+        <SmartElevatorDeck
           access={access}
           previewSlides={preview}
           isAuthenticated={isAuthenticated}

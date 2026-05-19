@@ -18,6 +18,8 @@ export default function ClientOAuthHandler({
       enable={provider.enable}
       isLoading={isNavigating} // 传递 loading 状态给按钮
       onClick={async () => {
+        if (isNavigating) return;
+
         // 1. 检查是否启用
         if (!provider.enable) return;
 

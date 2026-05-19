@@ -106,6 +106,8 @@ export default function UnifiedAuthForm({
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isLoading) return;
+
     const formData = new FormData(e.currentTarget);
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
@@ -155,6 +157,8 @@ export default function UnifiedAuthForm({
               router.refresh();
             }, 800);
           } else {
+            await fetch('/api/auth/ensure-profile', { method: 'POST' });
+
             if (isExternalLoginNextTarget(nextTarget)) {
               window.location.assign(nextTarget);
               return;

@@ -1,0 +1,380 @@
+{
+  "nav": {
+    "tagline": "Smart Elevator Management"
+  },
+  "hero": {
+    "badge": "Retrofit Existing Buildings",
+    "title": "Make Your Elevator",
+    "titleHighlight": "Work Smarter for You",
+    "subtitle": "Peak-hour auto-coordination, access-control-triggered dispatch, comfort-first in the morning rush, energy-first at all other times. Breathe new life into existing buildings.",
+    "cta": "Book a Demo",
+    "ctaSecondary": "Explore the Solution",
+    "stats": [
+      {
+        "value": "30-50%",
+        "label": "Wait time reduced"
+      },
+      {
+        "value": "20-40%",
+        "label": "Energy savings"
+      },
+      {
+        "value": "0",
+        "label": "Business disruption"
+      }
+    ]
+  },
+  "problem": {
+    "badge": "Industry Pain Points",
+    "title": "Traditional Elevators Are Quietly Eroding Your Building's Value",
+    "subtitle": "Every day, congestion, waste and complaints chip away at tenant satisfaction and property premiums",
+    "items": [
+      {
+        "icon": "⏳",
+        "title": "Peak Congestion",
+        "desc": "Average 60-90s wait during rush hour; tenant complaints remain persistently high"
+      },
+      {
+        "icon": "💸",
+        "title": "Energy Waste",
+        "desc": "Traditional elevators run empty up to 40% of the time; elevators account for 3-8% of total building energy"
+      },
+      {
+        "icon": "🤦",
+        "title": "Inefficient Dispatch",
+        "desc": "Each car runs independently with no awareness of traffic flow; multiple cars travel the same direction empty"
+      },
+      {
+        "icon": "📉",
+        "title": "Rental Value Impact",
+        "desc": "Slow elevators has become a significant negative factor in office lease renewal decisions"
+      }
+    ]
+  },
+  "solution": {
+    "badge": "Our Solution",
+    "title": "One System, Four Upgrades",
+    "subtitle": "Non-destructive retrofit - add control modules with no business downtime",
+    "items": [
+      {
+        "icon": "🔗",
+        "title": "Peak Coordination",
+        "desc": "Auto-detects traffic; multi-car coordination during peak, independent energy-saving mode off-peak"
+      },
+      {
+        "icon": "🚪",
+        "title": "Access Dispatch",
+        "desc": "Entry card tap instantly dispatches elevator; passengers grouped by floor to reduce stops"
+      },
+      {
+        "icon": "📺",
+        "title": "Smart Display",
+        "desc": "In-car screens show real-time status, destination floors and current operating mode"
+      },
+      {
+        "icon": "🌿",
+        "title": "Energy Priority",
+        "desc": "Outside morning rush, switches to energy mode: batch passengers, reduce empty runs, smart standby"
+      }
+    ]
+  },
+  "features": {
+    "badge": "Core Features",
+    "title": "Sense in Real Time, Respond Dynamically",
+    "subtitle": "The system continuously collects traffic data, responds in milliseconds, and optimises around the clock",
+    "items": [
+      {
+        "icon": "📡",
+        "title": "Real-Time Traffic",
+        "desc": "Camera + access-control data fusion gives instant per-floor occupancy"
+      },
+      {
+        "icon": "🧠",
+        "title": "Smart Dispatch Engine",
+        "desc": "Dynamically calculates optimal dispatch based on current floor distribution - millisecond response"
+      },
+      {
+        "icon": "🔄",
+        "title": "Auto Mode Switch",
+        "desc": "Peak to coordination mode / Off-peak to energy mode, fully automatic, no manual intervention"
+      },
+      {
+        "icon": "📊",
+        "title": "Management Dashboard",
+        "desc": "Operations reports, energy stats, fault alerts - property managers see everything in one screen"
+      }
+    ]
+  },
+  "access_control": {
+    "badge": "Access Control Integration",
+    "title": "By the Time You Walk In, the Elevator Is Already Waiting",
+    "subtitle": "Integrated with existing building access control for elevator-arrives-before-you-do experience",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Badge In",
+        "desc": "Employee or visitor taps card at building entrance"
+      },
+      {
+        "step": "02",
+        "title": "Floor Recognition",
+        "desc": "System reads personnel profile and retrieves target floor"
+      },
+      {
+        "step": "03",
+        "title": "Smart Dispatch",
+        "desc": "Dispatch engine assigns optimal elevator based on current traffic"
+      },
+      {
+        "step": "04",
+        "title": "Elevator Ready",
+        "desc": "Car arrives in advance; drastically reduces wait time"
+      }
+    ],
+    "note": "Compatible with Hikvision, Dahua, Suprema and other major access control systems - no hardware replacement required"
+  },
+  "display": {
+    "badge": "In-Car Display",
+    "title": "Transparency Builds Confidence",
+    "subtitle": "Every car has a display screen that shows real-time information, eliminating uncertainty",
+    "items": [
+      {
+        "icon": "🏢",
+        "title": "Destination Floors",
+        "desc": "Shows planned stops for this car - passengers know at a glance"
+      },
+      {
+        "icon": "⚡",
+        "title": "Operating Mode",
+        "desc": "Coordination mode / energy mode switch shown live"
+      },
+      {
+        "icon": "⏱️",
+        "title": "Estimated Wait",
+        "desc": "Real-time ETA reduces anxiety"
+      },
+      {
+        "icon": "📢",
+        "title": "Property Announcements",
+        "desc": "Scrolling notices, emergency alerts, ad content management"
+      }
+    ]
+  },
+  "schedule": {
+    "badge": "Smart Time-of-Day Strategy",
+    "title": "Comfort First in the Morning Rush, Energy First the Rest of the Day",
+    "subtitle": "The system automatically switches strategy by time slot - balancing experience and efficiency",
+    "modes": [
+      {
+        "time": "07:30-09:30",
+        "label": "Morning Rush",
+        "icon": "🌅",
+        "strategy": "Comfort Priority",
+        "color": "amber",
+        "items": [
+          "All cars coordinated, multiple dispatch",
+          "Minimum wait, rapid dispersion",
+          "Access-triggered dispatch prioritised",
+          "Empty cars pre-positioned at lobby"
+        ]
+      },
+      {
+        "time": "09:30-17:30",
+        "label": "Daytime Off-Peak",
+        "icon": "☀️",
+        "strategy": "Energy Priority",
+        "color": "indigo",
+        "items": [
+          "On-demand single-car operation",
+          "Batch same-direction passengers",
+          "Standby during low-traffic periods",
+          "AI-predicted floor demand"
+        ]
+      },
+      {
+        "time": "17:30-19:30",
+        "label": "Evening Rush",
+        "icon": "🌆",
+        "strategy": "Comfort Priority",
+        "color": "amber",
+        "items": [
+          "Coordination mode re-activated",
+          "Downward priority strategy",
+          "Rapidly clear departing commuters",
+          "Integrated with security systems"
+        ]
+      },
+      {
+        "time": "19:30-07:30",
+        "label": "Night",
+        "icon": "🌙",
+        "strategy": "Energy Priority",
+        "color": "indigo",
+        "items": [
+          "Single standby car",
+          "Ultra-low-power standby",
+          "Security system integration",
+          "Scheduled maintenance mode"
+        ]
+      }
+    ]
+  },
+  "energy": {
+    "badge": "Energy & Efficiency",
+    "title": "Not Just Cost Savings - A Green Asset",
+    "subtitle": "Quantified benefits based on industry benchmarks for a typical office building retrofit",
+    "stats": [
+      {
+        "value": "20-40%",
+        "label": "Elevator energy reduction",
+        "note": "Source: IEA / Green Building Standards"
+      },
+      {
+        "value": "30-50%",
+        "label": "Peak wait time reduction",
+        "note": "Source: Schindler / KONE white papers"
+      },
+      {
+        "value": "3-8%",
+        "label": "Elevator share of building energy",
+        "note": "Retrofit significantly compresses this ratio"
+      },
+      {
+        "value": "∞",
+        "label": "Tenant satisfaction uplift",
+        "note": "Fast elevators becomes a lease renewal positive"
+      }
+    ],
+    "note": "* Figures based on publicly available industry benchmarks; actual results depend on building scale and usage."
+  },
+  "howworks": {
+    "badge": "Retrofit Process",
+    "title": "Non-Destructive Retrofit - As Little As 48 Hours Per Car",
+    "subtitle": "Modular add-on installation; phased rollout with zero downtime",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Site Survey",
+        "desc": "Engineers visit to assess elevator make/model, access control system and network environment"
+      },
+      {
+        "step": "2",
+        "title": "Custom Solution",
+        "desc": "Tailored dispatch strategy and hardware BOM based on floors, number of cars and daily traffic"
+      },
+      {
+        "step": "3",
+        "title": "Hardware Installation",
+        "desc": "Control module, sensors and display screen fitted; approximately 4-8 hours per car"
+      },
+      {
+        "step": "4",
+        "title": "System Integration",
+        "desc": "Connect to access control, configure dispatch algorithm parameters, full-system testing"
+      },
+      {
+        "step": "5",
+        "title": "Go Live & Handover",
+        "desc": "System launches, property team trained, Year 1 service period begins"
+      }
+    ]
+  },
+  "value": {
+    "badge": "Business Value",
+    "title": "Not Just an Elevator Upgrade - A Building Asset Enhancement",
+    "subtitle": "Three dimensions of value, hitting exactly what property decision-makers care about most",
+    "items": [
+      {
+        "icon": "💰",
+        "title": "Lower Operating Costs",
+        "items": [
+          "20-40% reduction in elevator energy",
+          "Predictive alerts cut downtime losses",
+          "Property management efficiency gains"
+        ]
+      },
+      {
+        "icon": "🏆",
+        "title": "Better Tenant Experience",
+        "items": [
+          "Peak wait times halved",
+          "Transparent info eliminates anxiety",
+          "Smart building as a differentiated selling point"
+        ]
+      },
+      {
+        "icon": "📈",
+        "title": "Building Asset Appreciation",
+        "items": [
+          "Green certification scoring boost",
+          "Smart-building label lifts market valuation",
+          "Improved retention and occupancy rates"
+        ]
+      }
+    ]
+  },
+  "bizmodel": {
+    "badge": "Partnership Model",
+    "title": "One Investment, Long-Term Support",
+    "subtitle": "Project-based delivery + annual service - smart elevators keep creating value for you",
+    "phases": [
+      {
+        "phase": "One-Time",
+        "icon": "🔧",
+        "title": "Hardware + Development",
+        "items": [
+          "Control modules, sensors, display screens and other hardware",
+          "Custom dispatch software development",
+          "Integration with existing access control / BMS",
+          "On-site installation, commissioning and acceptance"
+        ]
+      },
+      {
+        "phase": "Annual",
+        "icon": "🛡️",
+        "title": "Annual Maintenance Service",
+        "items": [
+          "24x7 remote monitoring and incident response",
+          "Software upgrades and feature iteration",
+          "Regular inspections and parameter optimisation",
+          "Property operations team training and support"
+        ]
+      }
+    ],
+    "note": "💡 Pricing is customised based on building scale (floors x number of cars). Contact us to schedule a free site survey."
+  },
+  "roadmap": {
+    "badge": "Delivery Timeline",
+    "title": "From Contract to Full Operation - Typically 4-6 Weeks",
+    "items": [
+      {
+        "week": "W1-2",
+        "title": "Survey & Solution Sign-off",
+        "desc": "Site assessment, custom solution, contract signing"
+      },
+      {
+        "week": "W2-4",
+        "title": "Hardware Procurement & Installation",
+        "desc": "Equipment delivered; control modules and display screens fitted in phases"
+      },
+      {
+        "week": "W4-5",
+        "title": "Integration & System Test",
+        "desc": "Access control connection, dispatch algorithm configuration, full-system testing"
+      },
+      {
+        "week": "W5-6",
+        "title": "Trial Run & Handover",
+        "desc": "1-week trial operation, parameter fine-tuning, formal handover and annual service start"
+      }
+    ]
+  },
+  "cta": {
+    "badge": "Take Action",
+    "title": "Let Your Building Run Smart - Starting Today",
+    "subtitle": "Book a free on-site survey. Our engineers will assess retrofit feasibility and ROI for your specific building.",
+    "primary": "Book Free Survey",
+    "secondary": "Download Solution Brief",
+    "contact": "Or reach us at: contact@mota-techlink.com"
+  }
+}
