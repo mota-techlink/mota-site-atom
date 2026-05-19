@@ -36,7 +36,7 @@ export function SolutionSection() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full blur-2xl pointer-events-none" />
               <div className="text-2xl mb-3">{item.icon}</div>
               <div className="text-stone-900 dark:text-white font-semibold text-sm sm:text-base mb-1.5">{item.title}</div>
-              <div className="text-stone-200/65 text-xs sm:text-sm leading-relaxed">{item.desc}</div>
+              <div className="text-stone-600 dark:text-stone-200/65 text-xs sm:text-sm leading-relaxed">{item.desc}</div>
             </div>
           ))}
         </div>

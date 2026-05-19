@@ -33,7 +33,7 @@ export function FeaturesSection() {
               <div className="w-10 h-10 rounded-full bg-amber-500/15 border border-amber-600/40 flex items-center justify-center text-lg shrink-0">{item.icon}</div>
               <div>
                 <div className="text-stone-900 dark:text-white font-semibold text-sm sm:text-base mb-1">{item.title}</div>
-                <div className="text-stone-200/65 text-xs sm:text-sm leading-relaxed">{item.desc}</div>
+                <div className="text-stone-600 dark:text-stone-200/65 text-xs sm:text-sm leading-relaxed">{item.desc}</div>
               </div>
             </div>
           ))}

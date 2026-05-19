@@ -39,7 +39,7 @@ export function AccessControlSection() {
             </div>
           ))}
         </div>
-        <p className="mi-child text-center text-stone-200/50 text-xs sm:text-sm mt-2 px-2">{a.note}</p>
+        <p className="mi-child text-center text-stone-500 dark:text-stone-200/50 text-xs sm:text-sm mt-2 px-2">{a.note}</p>
       </div>
 
       <DetailModal
