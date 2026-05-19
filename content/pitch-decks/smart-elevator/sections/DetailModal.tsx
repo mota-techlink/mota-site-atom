@@ -70,7 +70,7 @@ export function DetailModal({ open, onClose, title, icon, eyebrow, children }: D
           onClick={onClose}
           aria-label="Close"
           className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20
-                     border border-white/15 flex items-center justify-center text-white/80
+                     border border-white/15 flex items-center justify-center text-stone-700 dark:text-white/80
                      transition-colors z-10"
         >
           <span className="text-lg leading-none">×</span>
@@ -85,12 +85,12 @@ export function DetailModal({ open, onClose, title, icon, eyebrow, children }: D
           ) : null}
           <div className="flex items-start gap-3">
             {icon ? (
-              <div className="shrink-0 w-9 h-9 rounded-lg bg-cyan-400/10 border border-amber-600/30
+              <div className="shrink-0 w-9 h-9 rounded-lg bg-cyan-400/10 border border-amber-400/50 dark:border-amber-600/30
                               flex items-center justify-center text-lg">
                 {icon}
               </div>
             ) : null}
-            <h3 className="text-white font-semibold text-base sm:text-lg leading-tight pt-0.5">
+            <h3 className="text-stone-900 dark:text-white font-semibold text-base sm:text-lg leading-tight pt-0.5">
               {title}
             </h3>
           </div>
