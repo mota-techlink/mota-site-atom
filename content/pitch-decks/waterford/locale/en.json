@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "title": "Waterford Packaging Campus",
+    "versions": [{"label":"Brief","ver":"1.0"},{"label":"EN","ver":"only"}],
+    "sections": {
+      "background": "Overview",
+      "cover": "What we are building",
+      "analysis": "Production story",
+      "scanners": "Factory concept",
+      "mining": "Delivery model",
+      "reply": "Jobs and support",
+      "partner": "The ask",
+      "overview": "Overview",
+      "opportunity": "What we are building",
+      "process": "Production story",
+      "campus": "Factory concept",
+      "delivery": "Delivery model",
+      "employment": "Jobs and support",
+      "close": "The ask"
+    },
+    "loginHint": "Public ministerial briefing",
+    "overview": "Overview",
+    "opportunity": "What we are building",
+    "process": "Production story",
+    "campus": "Factory concept",
+    "delivery": "Delivery model",
+    "employment": "Jobs and support",
+    "close": "The ask"
+  },
+  "overview": {
+    "badge": "MINISTERIAL BRIEFING · WATERFORD",
+    "title": "Building a local packaging manufacturing base.",
+    "subtitle": "A phased manufacturing campus for pizza boxes, takeaway paper products and, subject to regulatory design, pharmaceutical packaging.",
+    "description": "A practical plan to turn packaging demand into local production capability, skilled work and a scalable industrial site.",
+    "highlights": [
+      {"icon":"🍕","label":"Pizza boxes","desc":"The first product line and the starting point for equipment validation."},
+      {"icon":"🥡","label":"Takeaway paper products","desc":"A second paper-based line with shared upstream planning where practical."},
+      {"icon":"🏥","label":"Pharma packaging","desc":"A later, separately assessed phase with stricter quality requirements."}
+    ],
+    "note": "This is packaging-material manufacturing — not food production and not pharmaceutical production."
+  },
+  "opportunity": {
+    "badge": "THE OPPORTUNITY",
+    "title": "From packaging demand to a local production ecosystem.",
+    "cards": [
+      {"title":"A clear first step","body":"Start with pizza boxes: a defined product, a visible production story and a focused equipment-validation path."},
+      {"title":"A broader campus","body":"Add takeaway packaging and integrate receiving, storage and dispatch where the operating model supports it."},
+      {"title":"A controlled expansion","body":"Assess pharmaceutical packaging as a separate regulated phase rather than mixing unconfirmed requirements into phase one."}
+    ],
+    "callout": "The project boundary is clear: manufacture packaging materials for food, catering and future regulated markets."
+  },
+  "process": {
+    "badge": "THE PRODUCTION STORY",
+    "title": "Material in. Finished packaging out.",
+    "steps": [
+      {"n":"01","title":"Material","body":"Paper and board intake"},
+      {"n":"02","title":"Print","body":"Graphics and brand information"},
+      {"n":"03","title":"Convert","body":"Die-cutting and creasing"},
+      {"n":"04","title":"Finish","body":"Folding, gluing and QC"},
+      {"n":"05","title":"Fulfil","body":"Pack, store and dispatch"}
+    ],
+    "cards": [
+      {"title":"Automation + people","body":"Machines handle repeatable, high-volume steps. People operate lines, change formats, inspect quality, maintain equipment and coordinate logistics."},
+      {"title":"AI-assisted planning","body":"AI compares layouts, material flows, capacity scenarios and staffing assumptions. Final design remains subject to engineering and compliance approval."}
+    ]
+  },
+  "campus": {
+    "badge": "THE CAMPUS",
+    "title": "One coordinated campus, with the right separation.",
+    "leftTitle": "Shared planning",
+    "left": ["Raw-material receiving","Paper-packaging production","Finished-goods storage","Loading and dispatch","Maintenance and training"],
+    "rightTitle": "Protected functions",
+    "right": ["Pharmaceutical packaging zone","Quality and validation areas","Independent management offices","Staff welfare and accommodation options","Power and expansion reserve"],
+    "note": "Shared logistics is an option for pizza and takeaway packaging. Pharma separation must be confirmed by regulatory and engineering review."
+  },
+  "delivery": {
+    "badge": "DELIVERY MODEL",
+    "title": "Use global equipment expertise. Build local operating capability.",
+    "phases": [
+      {"title":"Phase 1","body":"Confirm product specification, machine configuration, supplier shortlist and site requirements."},
+      {"title":"Phase 2","body":"Planning, detailed engineering, funding applications and equipment due diligence."},
+      {"title":"Phase 3","body":"Construction, installation, commissioning, training and quality systems."},
+      {"title":"Phase 4","body":"Ramp production, add product lines and assess pharmaceutical packaging separately."}
+    ],
+    "cards": [
+      {"title":"Supplier discipline","body":"Verify technical parameters, certifications, references, delivery capability and after-sales support before commitment."},
+      {"title":"Local capability","body":"Employment grows around operations, maintenance, quality, warehousing, management and future technical development."}
+    ]
+  },
+  "employment": {
+    "badge": "EMPLOYMENT + SUPPORT",
+    "title": "Help us turn a credible plan into local jobs.",
+    "jobsTitle": "Employment model",
+    "jobsBody": "Final job numbers depend on machine configuration, throughput and shift pattern. We will submit a measured baseline, operating case and expansion case — not an unsupported promise.",
+    "jobs": ["Machine operators","Quality","Maintenance","Warehouse","Management"],
+    "supportTitle": "Government support requested",
+    "support": ["Planning and site coordination","IDA and local authority engagement","Grant and investment programmes","Training and employment connections","Cross-agency project facilitation"],
+    "callout": "Decision needed: support a coordinated route to confirm site, planning, engineering assumptions and funding options."
+  },
+  "close": {
+    "badge": "THE CLOSE",
+    "quote": "We are not asking government to approve an untested promise. We are asking for the coordination needed to validate and deliver a real packaging manufacturing project in Waterford.",
+    "leftTitle": "Next 30 days",
+    "leftBody": "Confirm equipment data, site requirements, preliminary layout, supplier diligence and a defensible employment model.",
+    "rightTitle": "Next decision",
+    "rightBody": "Agree the public-sector coordination pathway and the evidence required for the next stage.",
+    "source": "Prepared from the ministerial meeting strategy and the packaging manufacturing discussion. Unconfirmed items are intentionally labelled as such."
+  }
+}

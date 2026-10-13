@@ -32,6 +32,11 @@ const SmartElevatorDeck = dynamic(
   { loading: () => <LoadingSpinner /> }
 );
 
+const WaterfordDeck = dynamic(
+  () => import("@content/pitch-decks/waterford/deck").then(mod => mod.WaterfoldDeck),
+  { loading: () => <LoadingSpinner /> }
+);
+
 function LoadingSpinner() {
   return (
     <div className="w-full h-full flex items-center justify-center bg-black">
@@ -94,6 +99,15 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated, userRole }: Pitch
     case "smart-elevator":
       return (
         <SmartElevatorDeck
+          access={access}
+          previewSlides={preview}
+          isAuthenticated={isAuthenticated}
+          userRole={userRole}
+        />
+      );
+    case "waterford":
+      return (
+        <WaterfordDeck
           access={access}
           previewSlides={preview}
           isAuthenticated={isAuthenticated}
