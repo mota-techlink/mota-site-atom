@@ -9,19 +9,13 @@ import { useDeckTheme } from "./theme";
 
 // ─── Section metadata (icon + nav label key) ─────────────────────────────────
 const SECTION_META: { icon: string; key: string }[] = [
-  { icon: "🎯", key: "background" },
-  { icon: "📋", key: "cover" },
-  { icon: "🔍", key: "analysis" },
-  { icon: "📡", key: "scanners" },
-  { icon: "🔮", key: "mining" },
-  { icon: "💬", key: "reply" },
+  { icon: "🏭", key: "background" },
+  { icon: "📦", key: "cover" },
+  { icon: "🔄", key: "analysis" },
+  { icon: "🏗️", key: "scanners" },
+  { icon: "🚚", key: "mining" },
+  { icon: "👷", key: "reply" },
   { icon: "🤝", key: "partner" },
-  { icon: "🗄️", key: "erd" },
-  { icon: "⚡", key: "edge" },
-  { icon: "💰", key: "billing" },
-  { icon: "📊", key: "dashboard" },
-  { icon: "⏱️", key: "schedule" },
-  { icon: "🌐", key: "i18n" },
 ];
 
 // ─── Sidebar ──────────────────────────────────────────────────────────────────
