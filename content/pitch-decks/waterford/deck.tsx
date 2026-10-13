@@ -49,6 +49,7 @@ function WaterfoldDeckInner() {
   const { theme } = useDeckTheme();
   const t = THEME[theme];
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const navOptions = useMemo(() => ({ canView, onGated: showGate }), [canView, showGate]);
   const { activeIdx, goTo } = usePageNav(navOptions);
   const ActiveSection = SECTIONS[activeIdx];
@@ -61,6 +62,8 @@ function WaterfoldDeckInner() {
             <Sidebar
               isOpen={sidebarOpen}
               onClose={() => setSidebarOpen(false)}
+              collapsed={sidebarCollapsed}
+              onToggleCollapse={() => setSidebarCollapsed((v) => !v)}
             />
             <main className="flex-1 h-full overflow-hidden relative">
               <MobileTopBar onToggle={() => setSidebarOpen((v) => !v)} />

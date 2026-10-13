@@ -22,9 +22,13 @@ const SECTION_META: { icon: string; key: string }[] = [
 export function Sidebar({
   isOpen,
   onClose,
+  collapsed,
+  onToggleCollapse,
 }: {
   isOpen: boolean;
   onClose: () => void;
+  collapsed: boolean;
+  onToggleCollapse: () => void;
 }) {
   const c = useContent();
   const goTo = useContext(PageNavCtx);
@@ -47,19 +51,19 @@ export function Sidebar({
       {/* Sidebar panel */}
       <aside
         className={`
-          fixed top-0 left-0 h-full z-50 w-80 ${t.sidebarBg} border-r ${t.sidebarBorder}
+          fixed top-0 left-0 h-full z-50 w-80 ${collapsed ? "lg:w-20" : "lg:w-80"} ${t.sidebarBg} border-r ${t.sidebarBorder}
           flex flex-col transition-all duration-300 ease-in-out
           lg:translate-x-0 lg:static lg:z-auto
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
         {/* Header */}
-        <div className={`shrink-0 px-4 py-4 border-b ${t.divider}`}>
+        <div className={`relative shrink-0 px-4 py-4 border-b ${t.divider} ${collapsed ? "lg:px-2" : ""}`}>
           <a
             href="https://motaiot.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 mb-3 hover:opacity-80 transition-opacity"
+            className={`flex items-center gap-2 mb-3 hover:opacity-80 transition-opacity ${collapsed ? "lg:justify-center" : ""}`}
           >
             <Image
               src="/logos/mota-icon-v2.webp"
@@ -71,13 +75,13 @@ export function Sidebar({
                 (e.currentTarget as HTMLImageElement).style.display = "none";
               }}
             />
-            <span className={`${t.subheading} text-lg font-semibold`}>
+            <span className={`${t.subheading} text-lg font-semibold ${collapsed ? "lg:hidden" : ""}`}>
               {c.nav.title}
             </span>
           </a>
 
           {/* Version badges */}
-          <div className="flex gap-1.5 flex-wrap">
+          <div className={`flex gap-1.5 flex-wrap ${collapsed ? "lg:hidden" : ""}`}>
             {c.nav.versions.map((v: { label: string; ver: string }, i: number) => (
               <span
                 key={i}
@@ -87,6 +91,19 @@ export function Sidebar({
               </span>
             ))}
           </div>
+
+          {/* Desktop collapse control */}
+          <button
+            type="button"
+            onClick={onToggleCollapse}
+            className={`hidden lg:flex absolute top-3 ${collapsed ? "right-1" : "right-3"} w-8 h-8 items-center justify-center rounded-lg ${theme === "dark" ? "hover:bg-white/10" : "hover:bg-[#DBD3ED]"} ${t.subheading} transition-colors cursor-pointer`}
+            aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+            title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={collapsed ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
+            </svg>
+          </button>
         </div>
 
         {/* Nav items — scrollable */}
@@ -109,8 +126,9 @@ export function Sidebar({
                   }
                 }}
                 disabled={isLocked}
+                title={collapsed ? label : undefined}
                 className={`
-                  w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-left text-lg
+                  w-full flex items-center gap-3 ${collapsed ? "lg:justify-center lg:px-2" : "px-4"} py-2.5 rounded-lg text-left text-lg
                   transition-all duration-200 mb-0.5 cursor-pointer
                   ${isActive
                     ? `${t.navActive} font-medium`
@@ -120,7 +138,7 @@ export function Sidebar({
                 `}
               >
                 <span className="text-xl shrink-0">{meta.icon}</span>
-                <span className="flex-1 truncate">{label}</span>
+                <span className={`flex-1 truncate ${collapsed ? "lg:hidden" : ""}`}>{label}</span>
                 {isLocked && (
                   <svg
                     className="w-3.5 h-3.5 text-white/20 shrink-0"
@@ -144,7 +162,7 @@ export function Sidebar({
 
         {/* Footer — login hint */}
         {!isAuth && (
-          <div className={`shrink-0 px-4 py-3 border-t ${t.divider}`}>
+          <div className={`shrink-0 px-4 py-3 border-t ${t.divider} ${collapsed ? "lg:hidden" : ""}`}>
             <p className="text-xs text-amber-400/60 leading-relaxed">
               🔒 {c.nav.loginHint}
             </p>
