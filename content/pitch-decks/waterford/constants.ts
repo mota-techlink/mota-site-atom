@@ -18,7 +18,7 @@ export type ContentType = typeof en;
 
 export const PAGE =
   "h-full overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent";
-export const PAGE_INNER = "w-[85%] mx-auto py-8 sm:py-12";
+export const PAGE_INNER = "w-[85%] mx-auto py-10 sm:py-12";
 
 export const THEME = {
   dark: {

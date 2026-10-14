@@ -181,7 +181,7 @@ export function TopControls() {
   const isDark = theme === "dark";
 
   return (
-    <div className={`fixed top-3 right-4 z-40 flex items-center gap-1.5 rounded-full px-2 py-1.5 backdrop-blur-md ${isDark ? "bg-black/30 border border-white/10" : "bg-[#E8E3F3]/80 border border-[#D0C8E4] shadow-sm"}`}>
+    <div className={`hidden lg:flex fixed top-3 right-4 z-40 items-center gap-1.5 rounded-full px-2 py-1.5 backdrop-blur-md ${isDark ? "bg-black/30 border border-white/10" : "bg-[#E8E3F3]/80 border border-[#D0C8E4] shadow-sm"}`}>
       {LOCALES.map((locale) => (
         <button
           key={locale}
@@ -212,7 +212,8 @@ export function TopControls() {
 export function MobileTopBar({ onToggle }: { onToggle: () => void }) {
   const c = useContent();
   const activeIdx = useContext(ActivePageCtx);
-  const { theme } = useDeckTheme();
+  const { theme, toggle: toggleTheme } = useDeckTheme();
+  const { deckLocale, setDeckLocale } = useDeckLocale();
   const t = THEME[theme];
   const meta = SECTION_META[activeIdx];
   const label = (c.nav.sections as Record<string, string>)[meta?.key] ?? "";
@@ -241,9 +242,13 @@ export function MobileTopBar({ onToggle }: { onToggle: () => void }) {
       <span className={`text-lg ${t.subheading} truncate`}>
         {meta?.icon} {label}
       </span>
-      <span className={`ml-auto text-xs ${t.muted} font-mono mr-24`}>
+      <span className={`ml-auto text-xs ${t.muted} font-mono mr-1`}>
         {activeIdx + 1}/{SECTION_IDS.length}
       </span>
+      <div className={`flex items-center gap-1 rounded-full px-1 py-0.5 ${theme === "dark" ? "bg-black/30 border border-white/10" : "bg-[#E8E3F3]/80 border border-[#D0C8E4]"}`}>
+        <button onClick={() => setDeckLocale("en")} className={`px-2 py-1 rounded-full text-xs font-medium ${deckLocale === "en" ? "bg-white/20 text-white" : t.muted}`}>EN</button>
+        <button onClick={toggleTheme} className="w-7 h-7 rounded-full flex items-center justify-center text-sm" aria-label="Toggle theme">{theme === "dark" ? "☀️" : "🌙"}</button>
+      </div>
     </header>
   );
 }
