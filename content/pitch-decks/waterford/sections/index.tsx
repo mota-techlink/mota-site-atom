@@ -35,7 +35,7 @@ function Intro({ text }: { text?: string }) {
 
 export function OverviewSection() {
   const d = useContent().overview as AnyRecord;
-  return <Frame badge={d.badge} title={d.title}><figure className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-cyan-950/20 mb-4"><img src={d.image} alt={d.imageAlt} className="block w-full h-36 sm:h-44 object-cover object-center" /></figure><p className="text-xl sm:text-2xl text-slate-300 max-w-4xl leading-relaxed mb-4">{d.subtitle}</p><p className="text-base text-slate-400 max-w-4xl mb-2">{d.description}</p><Metrics items={d.metrics} /><div className="grid grid-cols-1 sm:grid-cols-3 gap-4">{d.highlights.map((x: AnyRecord) => <Card key={x.label} icon={x.icon} title={x.label} body={x.desc} />)}</div><div className="mt-6 border-l-4 border-emerald-400 bg-emerald-400/10 rounded-r-xl p-4 text-emerald-100 text-sm">{d.note}</div></Frame>;
+  return <Frame badge={d.badge} title={d.title}><figure className="overflow-hidden rounded-2xl bg-slate-950 p-1.5 border-2 border-cyan-400/60 ring-1 ring-white/20 shadow-2xl shadow-cyan-950/50 mb-4"><img src={d.image} alt={d.imageAlt} className="block w-full h-36 sm:h-44 rounded-xl object-cover object-center" /></figure><p className="text-xl sm:text-2xl text-slate-300 max-w-4xl leading-relaxed mb-4">{d.subtitle}</p><p className="text-base text-slate-400 max-w-4xl mb-2">{d.description}</p><Metrics items={d.metrics} /><div className="grid grid-cols-1 sm:grid-cols-3 gap-4">{d.highlights.map((x: AnyRecord) => <Card key={x.label} icon={x.icon} title={x.label} body={x.desc} />)}</div><div className="mt-6 border-l-4 border-emerald-400 bg-emerald-400/10 rounded-r-xl p-4 text-emerald-100 text-sm">{d.note}</div></Frame>;
 }
 
 export function OpportunitySection() {
