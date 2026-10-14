@@ -56,7 +56,21 @@ export function CampusSection() {
 
 export function DeliverySection() {
   const d = useContent().delivery as AnyRecord; const { theme } = useDeckTheme(); const t = THEME[theme];
-  return <Frame badge={d.badge} title={d.title}><Intro text={d.intro} /><Metrics items={d.metrics} /><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">{d.phases.map((x: AnyRecord, i: number) => <div key={x.title} className={`border-t-4 ${i === 1 ? "border-emerald-400" : i === 2 ? "border-amber-400" : "border-cyan-400"} pt-4`}><div className="text-2xl mb-2">{x.icon}</div><h3 className={`font-semibold ${t.heading}`}>{x.title}</h3><p className={`text-sm ${t.body} leading-relaxed mt-2`}>{x.body}</p></div>)}</div><div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">{d.cards.map((x: AnyRecord) => <Card key={x.title} icon={x.icon} title={x.title} body={x.body} />)}</div><div className="mt-6 border-l-4 border-amber-400 bg-amber-400/10 rounded-r-xl p-4 text-amber-100 text-sm">💡 {d.callout}</div></Frame>;
+  return <Frame badge={d.badge} title={d.title}>
+    <Intro text={d.intro} />
+    <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.15fr)_minmax(300px,0.85fr)] gap-5 mt-5 items-start">
+      <div>
+        <Metrics items={d.metrics} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4 mt-5">
+          {d.phases.map((x: AnyRecord, i: number) => <div key={x.title} className={`border-t-4 ${i === 1 ? "border-emerald-400" : i === 2 ? "border-amber-400" : "border-cyan-400"} pt-3`}><div className="text-xl mb-1">{x.icon}</div><h3 className={`font-semibold ${t.heading}`}>{x.title}</h3><p className={`text-xs ${t.body} leading-relaxed mt-1`}>{x.body}</p></div>)}
+        </div>
+        <div className="mt-5"><Card title={d.cards[0].title} body={d.cards[0].body} icon={d.cards[0].icon} /></div>
+      </div>
+      <figure className={`overflow-hidden rounded-2xl ${t.cardBg} border ${t.cardBorder} shadow-2xl shadow-cyan-950/20`}>
+        <img src={d.image} alt={d.imageAlt} className="block w-full aspect-[16/9] object-cover object-center" />
+      </figure>
+    </div>
+  </Frame>;
 }
 
 export function EmploymentSection() {
