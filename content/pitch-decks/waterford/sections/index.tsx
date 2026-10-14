@@ -35,7 +35,7 @@ function Intro({ text }: { text?: string }) {
 
 export function OverviewSection() {
   const d = useContent().overview as AnyRecord;
-  return <Frame badge={d.badge} title={d.title}><p className="text-xl sm:text-2xl text-slate-300 max-w-4xl leading-relaxed mb-4">{d.subtitle}</p><p className="text-base text-slate-400 max-w-4xl mb-2">{d.description}</p><Metrics items={d.metrics} /><div className="grid grid-cols-1 sm:grid-cols-3 gap-4">{d.highlights.map((x: AnyRecord) => <Card key={x.label} icon={x.icon} title={x.label} body={x.desc} />)}</div><div className="mt-6 border-l-4 border-emerald-400 bg-emerald-400/10 rounded-r-xl p-4 text-emerald-100 text-sm">{d.note}</div></Frame>;
+  return <Frame badge={d.badge} title={d.title}><figure className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-cyan-950/20 mb-4"><img src={d.image} alt={d.imageAlt} className="block w-full h-36 sm:h-44 object-cover object-center" /></figure><p className="text-xl sm:text-2xl text-slate-300 max-w-4xl leading-relaxed mb-4">{d.subtitle}</p><p className="text-base text-slate-400 max-w-4xl mb-2">{d.description}</p><Metrics items={d.metrics} /><div className="grid grid-cols-1 sm:grid-cols-3 gap-4">{d.highlights.map((x: AnyRecord) => <Card key={x.label} icon={x.icon} title={x.label} body={x.desc} />)}</div><div className="mt-6 border-l-4 border-emerald-400 bg-emerald-400/10 rounded-r-xl p-4 text-emerald-100 text-sm">{d.note}</div></Frame>;
 }
 
 export function OpportunitySection() {
@@ -56,21 +56,7 @@ export function CampusSection() {
 
 export function DeliverySection() {
   const d = useContent().delivery as AnyRecord; const { theme } = useDeckTheme(); const t = THEME[theme];
-  return <Frame badge={d.badge} title={d.title}>
-    <Intro text={d.intro} />
-    <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.15fr)_minmax(300px,0.85fr)] gap-5 mt-5 items-start">
-      <div>
-        <Metrics items={d.metrics} />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4 mt-5">
-          {d.phases.map((x: AnyRecord, i: number) => <div key={x.title} className={`border-t-4 ${i === 1 ? "border-emerald-400" : i === 2 ? "border-amber-400" : "border-cyan-400"} pt-3`}><div className="text-xl mb-1">{x.icon}</div><h3 className={`font-semibold ${t.heading}`}>{x.title}</h3><p className={`text-xs ${t.body} leading-relaxed mt-1`}>{x.body}</p></div>)}
-        </div>
-        <div className="mt-5"><Card title={d.cards[0].title} body={d.cards[0].body} icon={d.cards[0].icon} /></div>
-      </div>
-      <figure className={`overflow-hidden rounded-2xl ${t.cardBg} border ${t.cardBorder} shadow-2xl shadow-cyan-950/20`}>
-        <img src={d.image} alt={d.imageAlt} className="block w-full aspect-[16/9] object-cover object-center" />
-      </figure>
-    </div>
-  </Frame>;
+  return <Frame badge={d.badge} title={d.title}><Intro text={d.intro} /><Metrics items={d.metrics} /><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">{d.phases.map((x: AnyRecord, i: number) => <div key={x.title} className={`border-t-4 ${i === 1 ? "border-emerald-400" : i === 2 ? "border-amber-400" : "border-cyan-400"} pt-4`}><div className="text-2xl mb-2">{x.icon}</div><h3 className={`font-semibold ${t.heading}`}>{x.title}</h3><p className={`text-sm ${t.body} leading-relaxed mt-2`}>{x.body}</p></div>)}</div><div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.7fr)_minmax(260px,0.8fr)] gap-5 mt-8 items-stretch"><figure className={`overflow-hidden rounded-2xl ${t.cardBg} border ${t.cardBorder} shadow-2xl shadow-cyan-950/20`}><img src={d.image} alt={d.imageAlt} className="block w-full h-full min-h-[210px] max-h-[300px] object-cover object-center" /></figure><div className="flex items-center"><Card title={d.cards[0].title} body={d.cards[0].body} icon={d.cards[0].icon} /></div></div></Frame>;
 }
 
 export function EmploymentSection() {
@@ -80,5 +66,5 @@ export function EmploymentSection() {
 
 export function CloseSection() {
   const d = useContent().close as AnyRecord; const { theme } = useDeckTheme(); const t = THEME[theme];
-  return <Frame badge={d.badge} title={d.title}><p className={`text-2xl sm:text-4xl font-semibold leading-tight ${t.heading} max-w-5xl mt-4`}>“{d.quote}”</p><div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-9">{d.nextSteps.map((x: AnyRecord) => <Card key={x.title} icon={x.icon} title={x.title} body={x.body} />)}</div><div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-7"><Card title={d.leftTitle} body={d.leftBody} icon="📁" /><Card title={d.rightTitle} body={d.rightBody} icon="✅" /></div><p className={`text-xs ${t.muted} mt-7`}>📚 {d.source}</p></Frame>;
+  return <Frame badge={d.badge} title={d.title}><figure className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-cyan-950/20 mb-5"><img src={d.image} alt={d.imageAlt} className="block w-full h-44 sm:h-56 object-cover object-center" /></figure><p className={`text-2xl sm:text-4xl font-semibold leading-tight ${t.heading} max-w-5xl mt-4`}>“{d.quote}”</p><div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-9">{d.nextSteps.map((x: AnyRecord) => <Card key={x.title} icon={x.icon} title={x.title} body={x.body} />)}</div><div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-7"><Card title={d.leftTitle} body={d.leftBody} icon="📁" /><Card title={d.rightTitle} body={d.rightBody} icon="✅" /></div><p className={`text-xs ${t.muted} mt-7`}>📚 {d.source}</p></Frame>;
 }
