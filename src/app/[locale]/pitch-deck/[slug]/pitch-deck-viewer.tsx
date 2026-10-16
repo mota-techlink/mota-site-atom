@@ -37,6 +37,11 @@ const WaterfordDeck = dynamic(
   { loading: () => <LoadingSpinner /> }
 );
 
+const IrelandGatewayDeck = dynamic(
+  () => import("@content/pitch-decks/ireland-gateway/deck").then(mod => mod.IrelandGatewayDeck),
+  { loading: () => <LoadingSpinner /> }
+);
+
 function LoadingSpinner() {
   return (
     <div className="w-full h-full flex items-center justify-center bg-black">
@@ -108,6 +113,15 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated, userRole }: Pitch
     case "waterford":
       return (
         <WaterfordDeck
+          access={access}
+          previewSlides={preview}
+          isAuthenticated={isAuthenticated}
+          userRole={userRole}
+        />
+      );
+    case "ireland-gateway":
+      return (
+        <IrelandGatewayDeck
           access={access}
           previewSlides={preview}
           isAuthenticated={isAuthenticated}

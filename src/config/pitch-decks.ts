@@ -14,6 +14,7 @@ import elmsInvestorMeta from "@content/pitch-decks/elmsflow/meta.json";
 import rfdmsMeta from "@content/pitch-decks/rfdms/meta.json";
 import smartElevatorMeta from "@content/pitch-decks/smart-elevator/meta.json";
 import waterfordMeta from "@content/pitch-decks/waterford/meta.json";
+import irelandGatewayMeta from "@content/pitch-decks/ireland-gateway/meta.json";
 
 /**
  * Access level for pitch deck slides beyond the preview limit.
@@ -47,7 +48,7 @@ export interface PitchDeckMeta {
  * Automatically populated from each deck's meta.json.
  */
 export const PITCH_DECK_REGISTRY: Record<string, PitchDeckMeta> = Object.fromEntries(
-  [marketIntelMeta, marketDesignMeta, elmsInvestorMeta, rfdmsMeta, smartElevatorMeta, waterfordMeta].map((m) => [m.slug, m as PitchDeckMeta])
+  [marketIntelMeta, marketDesignMeta, elmsInvestorMeta, rfdmsMeta, smartElevatorMeta, waterfordMeta, irelandGatewayMeta].map((m) => [m.slug, m as PitchDeckMeta])
 );
 
 /**

@@ -1,0 +1,530 @@
+{
+  "nav": {
+    "brand": "ELMSFLOW",
+    "title": "Ireland Gateway",
+    "hint": "Scroll to move through the brief",
+    "sections": {
+      "hero": "Gateway",
+      "why": "Why Ireland",
+      "platform": "Market Access",
+      "tax": "Tax & Investment",
+      "waterford": "Waterford",
+      "sectors": "Priority Sectors",
+      "food": "Food Packaging",
+      "medical": "Medical Packaging",
+      "cold": "Cold Storage",
+      "construction": "Construction",
+      "cases": "Proven Path",
+      "compliance": "Compliance",
+      "risk": "Opportunity & Risk",
+      "elmsflow": "ELMSFLOW",
+      "cta": "Next Steps"
+    }
+  },
+  "hero": {
+    "eyebrow": "Ireland · European Union · 2026",
+    "title": "Ireland — the gateway for Chinese manufacturers entering the European Union",
+    "subtitle": "A stable, English-speaking base inside the EU for food packaging, medical packaging, mobile cold storage and construction supply — anchored in Waterford.",
+    "stats": [
+      { "value": "EU", "label": "Full access to the single market" },
+      { "value": "EN", "label": "English-speaking business environment" },
+      { "value": "12.5%", "label": "Corporate tax on trading income" },
+      { "value": "Waterford", "label": "Deep-water port landing point" }
+    ],
+    "scroll": "Scroll to continue",
+    "footer": "ELMSFLOW · Government liaison · Compliance pathways · Investment landing"
+  },
+  "why": {
+    "badge": "01 · Why Ireland",
+    "title": "A stable, English-speaking base inside the European Union",
+    "intro": "Ireland combines EU membership, a common-law legal system and an open, export-oriented economy. For a Chinese manufacturer serving European customers, it is one of the few places where market access, language and investor infrastructure all point the same way.",
+    "points": [
+      {
+        "icon": "🇪🇺",
+        "title": "EU, euro area and EEA member",
+        "body": "Full single-market access with a stable political system and a mature legal framework. Goods produced in Ireland enter the European Union without internal customs friction."
+      },
+      {
+        "icon": "🗣️",
+        "title": "English as the working language",
+        "body": "Ireland is the only EU member state where English is the primary working language, and one of the few common-law jurisdictions in the Union. Commercial contracts, regulatory files and customer relationships run in English."
+      },
+      {
+        "icon": "📈",
+        "title": "Consistently top-tier competitiveness",
+        "body": "Ireland ranks among the highest in the world for GDP per capita and economic competitiveness, and is widely recognised as an investor-friendly jurisdiction."
+      },
+      {
+        "icon": "🤝",
+        "title": "Sustained Ireland–China engagement",
+        "body": "The two countries work under a reciprocal strategic partnership, with continuing government-level engagement that keeps two-way investment on the agenda."
+      },
+      {
+        "icon": "🏭",
+        "title": "Deep industrial cluster",
+        "body": "Nine of the world's top ten IT companies and nine of the top ten pharmaceutical companies have operations in Ireland, giving local customers, suppliers and a skilled workforce."
+      }
+    ],
+    "footnote": "Sources: IDA Ireland and Irish Government publications. Company-count figures refer to published IDA Ireland statistics."
+  },
+  "platform": {
+    "badge": "02 · Market access",
+    "title": "From Ireland to the EU, the United Kingdom and North America",
+    "intro": "Ireland sits between the European single market and the transatlantic routes. A base here gives a manufacturer one operating site serving three commercial directions.",
+    "markets": [
+      {
+        "icon": "🇪🇺",
+        "name": "European Union",
+        "body": "Direct access to the single market with no internal customs or tariff barriers for goods produced in Ireland and compliant with EU rules."
+      },
+      {
+        "icon": "🇬🇧",
+        "name": "United Kingdom",
+        "body": "A large English-speaking market with closely connected trade, transport and standards frameworks between the two islands."
+      },
+      {
+        "icon": "🌎",
+        "name": "North America",
+        "body": "Established transatlantic air and sea links used by Ireland's life-sciences and technology exporters."
+      }
+    ],
+    "logistics": {
+      "title": "Ports, airports and freight",
+      "items": [
+        {
+          "icon": "🚢",
+          "title": "Dublin and Cork ports",
+          "body": "Handle the majority of Ireland's containerised sea freight, with frequent European and transatlantic services."
+        },
+        {
+          "icon": "⚓",
+          "title": "Waterford's Belview port",
+          "body": "Ireland's closest deep-water port to continental Europe — handling lift-on/lift-off, bulk liquid, bulk solid and break-bulk cargo."
+        },
+        {
+          "icon": "✈️",
+          "title": "Dublin and Shannon airports",
+          "body": "Support high-value air freight, with Shannon specialised in life-sciences and pharmaceutical cargo."
+        }
+      ]
+    }
+  },
+  "tax": {
+    "badge": "03 · Tax, innovation and investment",
+    "title": "A competitive environment for international business",
+    "intro": "Ireland's corporate tax regime is transparent and well documented, with targeted reliefs for research, intellectual property and cross-border structures.",
+    "cards": [
+      {
+        "value": "12.5%",
+        "label": "Corporate tax",
+        "body": "Applicable to trading income earned by Irish-resident companies."
+      },
+      {
+        "value": "15%",
+        "label": "Global minimum tax",
+        "body": "Applies to large groups under the OECD Pillar Two rules."
+      },
+      {
+        "value": "R&D credit",
+        "label": "Research and development",
+        "body": "Tax credit on qualifying research and development expenditure, with a cash-refund option for eligible claims."
+      },
+      {
+        "value": "10%",
+        "label": "Knowledge Development Box",
+        "body": "Reduced rate on income from qualifying intellectual property assets."
+      }
+    ],
+    "footnote": "Ireland has double taxation agreements with more than 70 economies, supporting profit repatriation and cross-border structuring.",
+    "disclaimer": "Rates and reliefs are summarised for orientation only and are subject to current Irish Revenue rules and company-specific conditions. Confirm with a qualified adviser before relying on any figure."
+  },
+  "waterford": {
+    "badge": "04 · Location",
+    "title": "Waterford — a practical landing point in Ireland's southeast",
+    "intro": "Waterford combines a working deep-water port with industrial land, an existing manufacturing base and a full set of city services. It is the recommended core location for the packaging, cold-storage and construction projects in this brief.",
+    "points": [
+      {
+        "icon": "🏛️",
+        "title": "Ireland's oldest city",
+        "body": "One of the oldest cities in the country and the fifth largest, on the River Suir in the southeast — known locally as the Sunny South East."
+      },
+      {
+        "icon": "⚓",
+        "title": "Belview deep-water port",
+        "body": "The closest Irish port to continental Europe, handling lift-on/lift-off, bulk liquid, bulk solid and break-bulk cargo. A natural gateway for European-facing production."
+      },
+      {
+        "icon": "🛣️",
+        "title": "Road access to Dublin and Cork",
+        "body": "Reasonable driving times to both Dublin and Cork, connecting the site to the country's two largest population and logistics centres."
+      },
+      {
+        "icon": "🏗️",
+        "title": "Port plus industry plus lifestyle",
+        "body": "Industrial land, development zones, port logistics and everyday city amenities are available within one working area."
+      }
+    ],
+    "highlight": {
+      "title": "Why this matters for a landing project",
+      "body": "A packaging or cold-storage plant needs heavy inbound material, reliable outbound shipping and a workforce that can be recruited and retained. Waterford offers all three in one location, at a cost base below Dublin."
+    }
+  },
+  "sectors": {
+    "badge": "05 · Priority sectors",
+    "title": "Four priority sectors for a first landing",
+    "intro": "Each of the four directions below matches an identifiable Irish or European demand with equipment, materials and know-how that Chinese suppliers already have.",
+    "items": [
+      {
+        "icon": "📦",
+        "title": "Food packaging",
+        "body": "Local production and printing for a market that currently imports much of its packaging.",
+        "bullets": [
+          "Food and beverage packaging, cartons and corrugated boxes",
+          "Local sourcing pressure driven by EU carbon rules",
+          "Flexible entry: machine export, local assembly or full production line"
+        ]
+      },
+      {
+        "icon": "💉",
+        "title": "Medical packaging",
+        "body": "Sterile and clean packaging for Ireland's pharmaceutical and medical-device base.",
+        "bullets": [
+          "Aseptic and cleanroom-compatible packaging formats",
+          "Validation and quality-control services",
+          "Long-term supply relationships once compliance is proven"
+        ]
+      },
+      {
+        "icon": "❄️",
+        "title": "Mobile cold storage",
+        "body": "Modular refrigerated capacity that Ireland needs and China can supply quickly.",
+        "bullets": [
+          "Serves agriculture, seafood, pharmaceutical and fresh-food operators",
+          "Short build cycle, repeatable and leasable units",
+          "Equipment export combined with an operating-service model"
+        ]
+      },
+      {
+        "icon": "🏗️",
+        "title": "Construction and industrial systems",
+        "body": "Equipment, prefabrication and specialist subcontracting for an expanding construction market.",
+        "bullets": [
+          "Construction machinery and plant equipment",
+          "Prefabricated and modular building systems",
+          "Mechanical, electrical and cleanroom fit-out"
+        ]
+      }
+    ]
+  },
+  "food": {
+    "badge": "06 · Food packaging",
+    "title": "Local production for a changing European supply chain",
+    "intro": "Ireland's food and beverage sector is export-oriented and packaging-intensive, yet a large share of packaging is imported. That gap is the entry point.",
+    "bullets": [
+      {
+        "icon": "🧭",
+        "title": "Identifiable market gap",
+        "body": "Food packaging, carton and pizza-box categories are currently served largely by imports, leaving room for local production and import substitution."
+      },
+      {
+        "icon": "🌍",
+        "title": "Local sourcing is accelerating",
+        "body": "EU carbon border rules and the cost of moving bulky, low-density goods favour producing packaging close to the customer."
+      },
+      {
+        "icon": "🧩",
+        "title": "Three flexible entry modes",
+        "body": "Start with complete-machine export, add local assembly, and scale into full production-line output as order volume grows."
+      },
+      {
+        "icon": "♻️",
+        "title": "Printing that meets EU packaging rules",
+        "body": "Recyclable materials and low-migration inks align production with the direction of EU packaging regulation."
+      }
+    ],
+    "modes": {
+      "title": "Suggested sequencing",
+      "items": [
+        "Machine export and technical support",
+        "Local assembly and warehousing",
+        "Full production line and regional supply"
+      ]
+    }
+  },
+  "medical": {
+    "badge": "07 · Medical packaging",
+    "title": "Packaging for Ireland's life-sciences economy",
+    "intro": "Ireland is one of the world's significant biopharmaceutical and medical-device manufacturing locations. That concentration creates steady, export-oriented demand for qualified packaging.",
+    "bullets": [
+      {
+        "icon": "🧪",
+        "title": "Sterile and clean packaging",
+        "body": "Formats suitable for aseptic filling environments, cleanroom operation and validated processes."
+      },
+      {
+        "icon": "✅",
+        "title": "Validation and quality control",
+        "body": "Supporting services for qualification, documentation and ongoing quality assurance that regulated customers require."
+      },
+      {
+        "icon": "🌐",
+        "title": "Export-facing customer base",
+        "body": "Produces for EU GMP manufacturing sites as well as UK and North American customers."
+      },
+      {
+        "icon": "🔒",
+        "title": "Compliance is the barrier",
+        "body": "Certification is demanding, but once achieved it creates a stable, long-term supply position that is difficult for competitors to displace."
+      }
+    ],
+    "note": "Medical packaging sits behind a higher compliance threshold than food packaging. It is recommended as a second-phase build, once a first production site is operating."
+  },
+  "cold": {
+    "badge": "08 · Mobile cold storage",
+    "title": "Modular cold-chain capacity where it is needed",
+    "intro": "Cold-chain and refrigerated storage capacity is a recognised national requirement in Ireland. Modular and mobile units let a supplier meet that need without a long construction cycle.",
+    "bullets": [
+      {
+        "icon": "🚜",
+        "title": "Multiple end markets",
+        "body": "Agriculture, seafood, pharmaceuticals and fresh food all need temperature-controlled storage, often at dispersed locations."
+      },
+      {
+        "icon": "🔧",
+        "title": "Short build cycle",
+        "body": "Modular units are manufactured off site, delivered and commissioned quickly, and can be replicated as demand grows."
+      },
+      {
+        "icon": "🔁",
+        "title": "Lease as well as sell",
+        "body": "Units can be leased or rented, generating recurring revenue rather than one-off equipment sales."
+      },
+      {
+        "icon": "🤝",
+        "title": "Equipment plus service",
+        "body": "Chinese refrigeration equipment combined with local installation, maintenance and operating services."
+      }
+    ],
+    "note": "This is an attractive first step because it combines equipment export with a service and operating layer, without requiring a full manufacturing plant from day one."
+  },
+  "construction": {
+    "badge": "09 · Construction and industrial systems",
+    "title": "Supporting Ireland's next generation of infrastructure",
+    "intro": "Ireland's construction sector is in an expansion phase driven by housing need, data-centre investment, life-sciences facilities, port works and energy projects.",
+    "bullets": [
+      {
+        "icon": "🏘️",
+        "title": "Housing and data centres",
+        "body": "Sustained demand across residential development and data-centre construction, both requiring large volumes of equipment and components."
+      },
+      {
+        "icon": "🧬",
+        "title": "Life-sciences and industrial facilities",
+        "body": "New pharmaceutical and medical-device plants need cleanroom construction, mechanical and electrical works and specialist fit-out."
+      },
+      {
+        "icon": "🏗️",
+        "title": "Prefabrication and modular build",
+        "body": "Prefabricated components and modular construction suit a market with labour shortages and long on-site programmes."
+      },
+      {
+        "icon": "⚙️",
+        "title": "Machinery, plant and specialist subcontracting",
+        "body": "Construction machinery, plant equipment and specialist subcontracting address a genuine local capacity gap."
+      },
+      {
+        "icon": "🔗",
+        "title": "Bundled with the other sectors",
+        "body": "A construction capability compounds the packaging and cold-storage projects: build the plant, equip it, then supply and operate it."
+      }
+    ],
+    "note": "Local labour shortages and long planning approval timelines are well documented constraints — which is precisely where imported equipment and specialist subcontracting are complementary rather than competitive."
+  },
+  "cases": {
+    "badge": "10 · Proven path",
+    "title": "Chinese companies have already built the path into Ireland",
+    "intro": "Life sciences, technology, e-commerce and finance all have Chinese companies operating successfully in Ireland. The route is established; the opportunity is to extend it into packaging, cold storage and construction supply.",
+    "cases": [
+      {
+        "name": "WuXi Biologics",
+        "body": "Built a biopharmaceutical manufacturing site in Dundalk and took it through the full chain from construction to GMP certification and commercial production — an asset with international liquidity."
+      },
+      {
+        "name": "Huawei",
+        "body": "Established a European research, development and cloud operations hub, drawing on Ireland's technology talent base."
+      },
+      {
+        "name": "TikTok",
+        "body": "Located European data-centre and operations functions in Ireland, using the country as a regional base."
+      },
+      {
+        "name": "JD.com",
+        "body": "Uses Ireland for European e-commerce operations and settlement activities."
+      },
+      {
+        "name": "Aviation leasing and finance",
+        "body": "Several Chinese leasing institutions and banks have established a presence, demonstrating a mature cross-border financial ecosystem."
+      }
+    ],
+    "path": {
+      "title": "The sequence that works",
+      "steps": [
+        "Sales and service presence",
+        "Local assembly and warehousing",
+        "Manufacturing under Irish and EU standards",
+        "EU export from an Irish base"
+      ]
+    },
+    "insight": "For packaging, cold storage and construction companies, Ireland already offers a stable, high-value customer base and continuing infrastructure demand. A staged entry — selling and servicing first, manufacturing second — is the lower-risk route."
+  },
+  "compliance": {
+    "badge": "11 · Compliance",
+    "title": "Compliance is the entry ticket — and the long-term moat",
+    "intro": "European market access is governed by certification. It is the single largest gate between a Chinese supplier and an Irish or EU customer, and it is also the barrier that protects those who pass it.",
+    "groups": [
+      {
+        "icon": "🇪🇺",
+        "title": "Product and market access",
+        "items": [
+          {
+            "name": "CE marking",
+            "body": "The mandatory conformity marking for many products placed on the EU and EEA market, covering machinery, electrical equipment and construction products."
+          },
+          {
+            "name": "Food-contact materials",
+            "body": "Regulation (EC) 1935/2004 and the good manufacturing practice rules in (EC) 2023/2006 govern materials intended to contact food."
+          },
+          {
+            "name": "Medical devices",
+            "body": "Regulation (EU) 2017/745 (MDR) applies to medical devices placed on the EU market."
+          }
+        ]
+      },
+      {
+        "icon": "📋",
+        "title": "Management systems",
+        "items": [
+          { "name": "ISO 9001", "body": "Quality management systems." },
+          { "name": "ISO 14001", "body": "Environmental management systems." },
+          { "name": "ISO 22000", "body": "Food safety management systems." }
+        ]
+      },
+      {
+        "icon": "🏭",
+        "title": "Sector-specific schemes",
+        "items": [
+          {
+            "name": "BRCGS",
+            "body": "The global food safety and packaging materials standard commonly required by suppliers and brand owners."
+          },
+          {
+            "name": "BSI",
+            "body": "The British Standards Institution provides management-system and product certification used across the UK and Irish markets."
+          },
+          {
+            "name": "ISO 15378 and ISO 13485",
+            "body": "Good manufacturing practice for primary packaging materials for medicinal products, and quality management for medical devices."
+          }
+        ]
+      }
+    ],
+    "note": "NSAI, the National Standards Authority of Ireland, is the local authoritative channel for Irish standards and certification. Certification requirements should always be confirmed against the current official text and the relevant certification body."
+  },
+  "risk": {
+    "badge": "12 · Opportunity and risk",
+    "title": "The opportunity is real — preparation decides the outcome",
+    "intro": "The case for Ireland is strong, but it is a small domestic market with well-known infrastructure constraints. Landing successfully means planning for both sides of the picture.",
+    "opportunity": {
+      "title": "Opportunity",
+      "items": [
+        "EU single-market access from an English-speaking base",
+        "Competitive corporate tax regime with research and IP reliefs",
+        "Mature foreign-investment ecosystem and support agencies",
+        "Deep-water port connectivity to continental Europe",
+        "High-value pharmaceutical, medical-device and food customers",
+        "Long-term export platform for the EU, UK and North America"
+      ]
+    },
+    "challenges": {
+      "title": "Challenges to plan for",
+      "items": [
+        "Domestic market is small — the business case must be EU-export oriented",
+        "Skilled labour is scarce and housing supply is tight",
+        "Electrical grid capacity must be assessed before committing to a site",
+        "Planning approval timelines can be long",
+        "EU foreign-investment screening and external tariff changes need monitoring",
+        "Compliance certification takes time and investment before first revenue"
+      ]
+    },
+    "conclusion": "Compliance certification is the hard gate into this market — and the reason it becomes a durable competitive position for those who prepare early."
+  },
+  "elmsflow": {
+    "badge": "13 · What ELMSFLOW does",
+    "title": "From opportunity discovery to local execution",
+    "intro": "ELMSFLOW connects Chinese suppliers and investors with real project opportunities in Ireland and supports them through the practical stages of landing: site, government, compliance and setup.",
+    "steps": [
+      "Opportunity",
+      "Site selection",
+      "Government liaison",
+      "Compliance planning",
+      "Local setup",
+      "Production and export"
+    ],
+    "pillars": [
+      {
+        "icon": "🎯",
+        "title": "Opportunity",
+        "body": "Consolidating local government resources and project information to connect Chinese companies with genuine landing opportunities."
+      },
+      {
+        "icon": "🤝",
+        "title": "Support",
+        "body": "End-to-end assistance for exporters and overseas investors: site selection, introductions, compliance and implementation."
+      },
+      {
+        "icon": "📑",
+        "title": "Compliance",
+        "body": "Working with local standards and certification resources such as NSAI to help companies satisfy CE, BRCGS and BSI requirements."
+      },
+      {
+        "icon": "🏛️",
+        "title": "Access",
+        "body": "Experience with government-facing and publicly funded project channels, connecting clients into council and regional agendas."
+      }
+    ],
+    "note": "ELMSFLOW's role is to organise the route — counterparties, site, certification sequence and local execution — so that a Chinese supplier does not have to build that network from scratch."
+  },
+  "cta": {
+    "badge": "14 · Next steps",
+    "title": "Build your European base in Ireland",
+    "intro": "The recommended first move is a structured assessment, not a commitment. The following sequence takes a company from interest to a costed landing plan.",
+    "actions": [
+      {
+        "title": "Market visit",
+        "body": "See the market, the ports and the industrial locations first hand."
+      },
+      {
+        "title": "Customer meetings",
+        "body": "Meet prospective customers and distributors in packaging, cold chain and construction."
+      },
+      {
+        "title": "Waterford site assessment",
+        "body": "Review available industrial land, port access and utility capacity."
+      },
+      {
+        "title": "Feasibility study",
+        "body": "Establish volumes, investment requirement and operating cost base."
+      },
+      {
+        "title": "Certification roadmap",
+        "body": "Define the CE, BRCGS, BSI and ISO path and the realistic timeline to first delivery."
+      },
+      {
+        "title": "Landing timeline",
+        "body": "Agree the staged plan: sales and service, local assembly, then manufacturing and EU export."
+      }
+    ],
+    "contact": "ELMSFLOW · Ireland gateway programme",
+    "disclaimer": "For external distribution, confirm any investment amount, equity term, individual name or verbal government statement in writing before publication. Certification requirements follow the latest official regulations and the relevant certification body."
+  }
+}
