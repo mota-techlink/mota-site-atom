@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-export type Official = { name: string; role: string; photo: string; link: string };
+export type Official = { name: string; role: string; photo: string; links: { label: string; href: string }[] };
 
 export function OfficialModal({ official, onClose, labels }: { official: Official; onClose: () => void; labels: { close: string; officialTitle: string } }) {
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -27,7 +27,13 @@ export function OfficialModal({ official, onClose, labels }: { official: Officia
         <p className="mtl-modal-kicker">{labels.officialTitle}</p>
         <h2 id="mtl-official-name">{official.name}</h2>
         <p className="mtl-official-role">{official.role}</p>
-        <a className="mtl-link" href={official.link} target="_blank" rel="noopener noreferrer">elmsflo.com ↗</a>
+        <ul className="mtl-official-links">
+          {official.links?.map((l) => (
+            <li key={l.href + l.label}>
+              <a className="mtl-link" href={l.href} target="_blank" rel="noopener noreferrer">{l.label} ↗</a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>, document.body,
   );

@@ -71,7 +71,7 @@ const STYLES = `
 .mtl-project-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1.2vw,18px);width:100%;max-width:1000px}
 .mtl-project-card{display:grid;justify-items:center;gap:.55em;padding:1em .7em;background:var(--surface);border:1px solid var(--line);border-radius:16px;color:var(--ink);font-size:.85em;font-weight:700;transition:border-color .2s,transform .2s}
 .mtl-project-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.mtl-project-card img{height:38px;width:auto;object-fit:contain;filter:brightness(1.02)}
+.mtl-project-card img{height:auto;width:auto;max-height:74px;max-width:210px;object-fit:contain;filter:brightness(1.02)}
 .light .mtl-project-card img{filter:none}
 .mtl-wordmark{font-size:1.15em;font-weight:900;letter-spacing:.06em;color:var(--ink);line-height:1.1}
 .mtl-wordmark-wrap{display:grid;justify-items:center;gap:.15em}
@@ -237,6 +237,8 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 .mtl-modal.is-official h2{font-size:clamp(19px,2vw,26px);color:var(--m-ink);margin:0}
 .mtl-official-role{color:var(--m-muted);font-size:.86em;line-height:1.45;margin:0 0 .3em}
 .mtl-modal.is-official .mtl-link{color:var(--m-accent)}
+.mtl-official-links{list-style:none;margin:.15em 0 0;padding:0;display:grid;gap:.3em;justify-items:center}
+.mtl-official-links .mtl-link{font-size:.82em;text-align:center;line-height:1.35}
 
 /* ---------- MOTA technology ---------- */
 .mtl-tech{display:grid;gap:.45em;align-content:start;padding:clamp(14px,1.5vw,24px);background:var(--surface);border:1px solid var(--line);border-radius:22px}

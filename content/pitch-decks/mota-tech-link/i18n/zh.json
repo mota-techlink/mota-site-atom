@@ -550,16 +550,18 @@
       "name": "Vito He 贺稀",
       "role": "吉晟株式会社 创始人",
       "photo": "/images/pitch-deck/yoshisei/vito-he.jpg",
-      "roleDesc": "负责中日 AI 视频平台，从日本侧需求到中国侧制作。",
+      "roleDesc": "吉晟株式会社创始人，国际咨询公司合伙人，二十年以上跨国企业 B2B 销售、咨询与数字营销经验。",
       "caps": [
-        "20 年以上跨国企业 B2B 销售、咨询与数字营销",
-        "0 到 1 团队搭建",
-        "同济大学计算机科学学士；SBS 瑞士商学院 MBA"
+        "国际咨询公司合伙人",
+        "20 年以上跨国企业 B2B 销售、咨询与团队管理",
+        "主导 500 万美元以上战略项目，直接对接 CXO 与董事长",
+        "数字营销：SEO、效果营销与邮件营销 SaaS"
       ],
       "exp": [
         "创立吉晟株式会社，东京本社，大阪与福冈设支社",
-        "团队从 3 人扩展到 30 人以上",
-        "2018 年业绩增长 7 倍至 2200 万元"
+        "区域经营与 0 到 1 开拓：团队 3 人扩至 30 人以上，2018 年业绩增长 7 倍至 2200 万元",
+        "曾任职 Brandtology、Emailvision China，具 Netconcepts 网络营销背景",
+        "同济大学计算机科学学士；SBS 瑞士商学院 MBA"
       ]
     },
     "allen": {
@@ -598,21 +600,48 @@
   "officials": {
     "cummins": {
       "name": "John Cummins TD",
-      "role": "地方政府与规划事务国务部长",
+      "role": "Minister of State for Local Government & Planning",
       "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
-      "link": "https://www.gov.ie/en/organisation/department-of-housing-local-government-and-heritage/"
+      "links": [
+        {
+          "label": "View public profile",
+          "href": "https://www.google.com/search?q=John+Cummins+TD+Minister+of+State+for+Local+Government+and+Planning"
+        },
+        {
+          "label": "Department of Housing, Local Government and Heritage",
+          "href": "https://www.gov.ie/en/organisation/department-of-housing-local-government-and-heritage/"
+        }
+      ]
     },
     "evans": {
       "name": "Gareth Evans",
-      "role": "沃特福德市郡议会 首席执行官",
+      "role": "General Manager, Waterford City & County Council",
       "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
-      "link": "https://waterfordcouncil.ie/"
+      "links": [
+        {
+          "label": "LinkedIn profile",
+          "href": "https://www.linkedin.com/in/gwevans/"
+        },
+        {
+          "label": "Waterford City & County Council",
+          "href": "https://waterfordcouncil.ie/"
+        }
+      ]
     },
     "hurley": {
       "name": "Gerald Hurley",
-      "role": "沃特福德商会 首席执行官",
+      "role": "Chief Executive, Waterford Chamber",
       "photo": "/images/pitch-deck/elmsflow/gerald-hurley.jpg",
-      "link": "https://www.waterfordchamber.ie/"
+      "links": [
+        {
+          "label": "Appointment announcement",
+          "href": "https://chambersawards.ie/gerald-hurley-appointed-ceo-waterford-chamber/"
+        },
+        {
+          "label": "Waterford Chamber",
+          "href": "https://www.waterfordchamber.ie/"
+        }
+      ]
     }
   }
 }

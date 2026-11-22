@@ -550,16 +550,18 @@
       "name": "Vito He 贺稀",
       "role": "Founder, Yoshi Sei Corporation",
       "photo": "/images/pitch-deck/yoshisei/vito-he.jpg",
-      "roleDesc": "Leads the Japan–China AI video platform, from Japan-side demand to China-side production.",
+      "roleDesc": "Founder of Yoshisei. A partner at a global consulting firm, with more than twenty years in B2B sales, consulting and digital marketing for multinationals.",
       "caps": [
-        "20+ years in B2B sales, consulting and digital marketing",
-        "Cross-border team building from 0 to 1",
-        "Tongji University computer science; SBS Swiss Business School MBA"
+        "Partner at a global consulting firm",
+        "20+ years of B2B sales, consulting and team management at multinationals",
+        "Led strategic projects above USD 5 million, dealing directly with CXOs and chairmen",
+        "Digital marketing: SEO, performance marketing and email SaaS"
       ],
       "exp": [
-        "Founder of Yoshi Sei Corporation, Tokyo HQ with Osaka and Fukuoka branches",
-        "Built teams from 3 to 30+ people",
-        "Grew revenue 7× to ¥22M by 2018"
+        "Founder of Yoshisei Corporation; Tokyo HQ with branches in Osaka and Fukuoka",
+        "Regional management and zero-to-one market entry: team 3 to 30+, revenue up sevenfold to CNY 22 million in 2018",
+        "Earlier roles at Brandtology and Emailvision China, with a Netconcepts background",
+        "BSc Computer Science, Tongji University; MBA, SBS Swiss Business School"
       ]
     },
     "allen": {
@@ -598,21 +600,48 @@
   "officials": {
     "cummins": {
       "name": "John Cummins TD",
-      "role": "Minister of State for Local Government and Planning",
+      "role": "Minister of State for Local Government & Planning",
       "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
-      "link": "https://www.gov.ie/en/organisation/department-of-housing-local-government-and-heritage/"
+      "links": [
+        {
+          "label": "View public profile",
+          "href": "https://www.google.com/search?q=John+Cummins+TD+Minister+of+State+for+Local+Government+and+Planning"
+        },
+        {
+          "label": "Department of Housing, Local Government and Heritage",
+          "href": "https://www.gov.ie/en/organisation/department-of-housing-local-government-and-heritage/"
+        }
+      ]
     },
     "evans": {
       "name": "Gareth Evans",
-      "role": "Chief Executive, Waterford City & County Council",
+      "role": "General Manager, Waterford City & County Council",
       "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
-      "link": "https://waterfordcouncil.ie/"
+      "links": [
+        {
+          "label": "LinkedIn profile",
+          "href": "https://www.linkedin.com/in/gwevans/"
+        },
+        {
+          "label": "Waterford City & County Council",
+          "href": "https://waterfordcouncil.ie/"
+        }
+      ]
     },
     "hurley": {
       "name": "Gerald Hurley",
       "role": "Chief Executive, Waterford Chamber",
       "photo": "/images/pitch-deck/elmsflow/gerald-hurley.jpg",
-      "link": "https://www.waterfordchamber.ie/"
+      "links": [
+        {
+          "label": "Appointment announcement",
+          "href": "https://chambersawards.ie/gerald-hurley-appointed-ceo-waterford-chamber/"
+        },
+        {
+          "label": "Waterford Chamber",
+          "href": "https://www.waterfordchamber.ie/"
+        }
+      ]
     }
   }
 }
