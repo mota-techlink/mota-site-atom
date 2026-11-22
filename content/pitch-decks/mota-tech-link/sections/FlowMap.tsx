@@ -7,14 +7,14 @@ type Key = "na" | "uk" | "ie" | "cn" | "jp" | "th" | "sg" | "oc";
 const NODE_FLAG: Record<Key, string> = { na: "us", uk: "gb", ie: "ie", cn: "cn", jp: "jp", th: "th", sg: "sg", oc: "au" };
 
 const NODES: Record<Key, { x: number; y: number; anchor: "above" | "below" }> = {
-  na: { x: 112, y: 128, anchor: "below" },
-  uk: { x: 392, y: 104, anchor: "above" },
-  ie: { x: 344, y: 166, anchor: "below" },
-  cn: { x: 690, y: 178, anchor: "below" },
-  jp: { x: 818, y: 146, anchor: "above" },
-  th: { x: 648, y: 258, anchor: "below" },
-  sg: { x: 706, y: 316, anchor: "below" },
-  oc: { x: 846, y: 356, anchor: "below" },
+  na: { x: 112, y: 150, anchor: "below" },
+  uk: { x: 392, y: 130, anchor: "above" },
+  ie: { x: 352, y: 186, anchor: "below" },
+  cn: { x: 700, y: 200, anchor: "below" },
+  jp: { x: 832, y: 168, anchor: "above" },
+  th: { x: 652, y: 280, anchor: "below" },
+  sg: { x: 712, y: 330, anchor: "below" },
+  oc: { x: 856, y: 380, anchor: "below" },
 };
 
 const C = { elms: "#3fc7a8", video: "#ffbe72", vflux: "#c77dff", aura: "#ff9a3d" };
@@ -55,7 +55,7 @@ export function FlowMap({ labels }: { labels: { title: string; nodes: Record<Key
   const [hover, setHover] = useState<string | null>(null);
   return (
     <div className="mtl-flowmap">
-      <svg viewBox="0 0 1000 420" role="img" aria-label={labels.title} preserveAspectRatio="xMidYMid meet">
+      <svg viewBox="0 0 1000 466" role="img" aria-label={labels.title} preserveAspectRatio="xMidYMid meet">
         <defs>
           {Object.entries(C).map(([k, color]) => (
             <marker key={k} id={`fm-arr-${k}`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
@@ -92,8 +92,13 @@ export function FlowMap({ labels }: { labels: { title: string; nodes: Record<Key
             <g key={k} className={isHub ? "mtl-fm-node is-hub" : "mtl-fm-node"}>
               {isHub ? <circle cx={n.x} cy={n.y} r="22" fill="url(#fm-glow)" /> : null}
               <circle cx={n.x} cy={n.y} r={isHub ? 6.6 : 5.2} className="mtl-fm-dot" />
-              <image href={flagSrc(NODE_FLAG[k])} x={n.x - 23} y={(n.anchor === "above" ? n.y - 13 : n.y + 22) - 32} width={46} height={31} opacity={0.97} />
-              <text x={n.x} y={n.anchor === "above" ? n.y - 3 : n.y + 34} textAnchor="middle" className={isHub ? "mtl-fm-label is-hub" : "mtl-fm-label"}>
+              <image
+                href={flagSrc(NODE_FLAG[k])}
+                x={n.x - 23}
+                y={n.anchor === "above" ? n.y - 80 : n.y + 12}
+                width={46} height={31} opacity={0.97}
+              />
+              <text x={n.x} y={n.anchor === "above" ? n.y - 24 : n.y + 68} textAnchor="middle" className={isHub ? "mtl-fm-label is-hub" : "mtl-fm-label"}>
                 {labels.nodes[k]}
               </text>
             </g>

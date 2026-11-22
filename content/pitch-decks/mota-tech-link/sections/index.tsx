@@ -426,7 +426,8 @@ function Vflux({ t, open }: { t: Deck; open: (p: Person) => void }) {
     <>
       <div className="mtl-head mtl-head-row">
         <span className="mtl-logo is-vflux-logo">
-          <Image src="/images/pitch-deck/vflux-icon.png" alt="VFlux" width={92} height={92} />
+          <Image src="/images/pitch-deck/vflux-icon.png" alt="VFlux" width={84} height={84} />
+          <span className="mtl-logo-word">VFlux</span>
         </span>
         <div>
           <p className="mtl-eyebrow">{t.vflux.eyebrow}</p>

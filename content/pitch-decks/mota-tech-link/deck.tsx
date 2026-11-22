@@ -63,7 +63,9 @@ const STYLES = `
 .mtl-logo.is-mota{background:transparent!important;border:0!important;padding:0;min-width:0}
 .mtl-logo.is-mota img{max-height:92px;width:clamp(150px,14vw,210px)}
 .mtl-logo.is-vflux-logo{background:#000!important;border-color:rgba(255,255,255,.2)!important;padding:10px 14px}
-.mtl-logo.is-vflux-logo img{max-height:66px}
+.mtl-logo.is-vflux-logo img{max-height:60px}
+.mtl-logo.is-vflux-logo{grid-auto-flow:row;gap:.2em;padding:10px 14px 8px}
+.mtl-logo-word{font-size:.95em;font-weight:800;letter-spacing:.04em;color:#fff;line-height:1}
 
 /* ---------- cover ---------- */
 .mtl-cover{display:grid;justify-items:center;gap:clamp(14px,2.2vh,26px);text-align:center;max-width:1180px;margin-inline:auto}
@@ -129,7 +131,15 @@ const STYLES = `
 .mtl-globe-ring::before{inset:18% 34%}
 .mtl-globe-ring::after{inset:34% 18%}
 .mtl-globe-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:.4em;padding:.55em .9em;border-radius:999px;background:var(--surface);border:1px solid var(--accent);font-size:.92em;font-weight:800;white-space:nowrap;box-shadow:0 8px 22px rgba(0,0,0,.24)}
-.mtl-globe-node{position:absolute;display:inline-flex;align-items:center;gap:.35em;font-style:normal;font-size:.78em;font-weight:700;padding:.36em .68em;border-radius:999px;background:var(--deep);border:1px solid var(--line);white-space:nowrap;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.mtl-globe-node{position:absolute;display:inline-flex;align-items:center;gap:.35em;font-style:normal;font-size:.78em;font-weight:700;padding:.36em .68em;border-radius:999px;background:var(--deep);border:1px solid var(--line);white-space:nowrap;box-shadow:0 6px 16px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s,border-color .2s,background-color .2s;cursor:default}
+.mtl-globe-node:hover,.mtl-globe-node:focus-visible{transform:translateY(-3px) scale(1.04);border-color:var(--accent);box-shadow:0 12px 26px rgba(0,0,0,.3);z-index:3}
+.mtl-globe-core{transition:transform .2s,box-shadow .2s,border-color .2s}
+.mtl-globe-core:hover{transform:translate(-50%,-50%) translateY(-3px) scale(1.04);box-shadow:0 14px 30px rgba(0,0,0,.32)}
+.mtl-vblock,.mtl-vstat,.mtl-vstats,.mtl-vlist li{transition:transform .2s,box-shadow .2s,border-color .2s}
+.mtl-vblock:hover,.mtl-vstat:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.26);border-color:var(--accent)}
+.light .mtl-vblock:hover,.light .mtl-vstat:hover{box-shadow:0 14px 26px rgba(14,43,58,.16)}
+.mtl-vlist li:hover{transform:translateX(3px)}
+.mtl-vstats:hover{border-color:var(--accent)}
 .mtl-globe-node.n1{left:50%;top:-4%;transform:translateX(-50%)}
 .mtl-globe-node.n2{right:-6%;top:50%;transform:translateY(-50%)}
 .mtl-globe-node.n3{left:50%;bottom:-4%;transform:translateX(-50%)}
@@ -497,7 +507,7 @@ function Inner() {
 
   /* Touch devices get the same lift feedback the desktop hover provides. */
   useEffect(() => {
-    const sel = ".mtl-panel,.mtl-project-card,.mtl-hub-card,.mtl-client-chip,.mtl-vbox,.mtl-gap-card,.mtl-lines article,.mtl-why-grid article,.mtl-tech-grid article,.mtl-pillar,.mtl-chip-person,.mtl-official-card,.mtl-official-thumb,.mtl-team-card,.mtl-service-chips span,.mtl-tax-band,.mtl-programme,.mtl-hex,.mtl-vblock,.mtl-vstat,.mtl-slice,.mtl-cta-logo,.mtl-contact>div,.mtl-fm-legend li";
+    const sel = ".mtl-panel,.mtl-project-card,.mtl-hub-card,.mtl-client-chip,.mtl-vbox,.mtl-gap-card,.mtl-lines article,.mtl-why-grid article,.mtl-tech-grid article,.mtl-pillar,.mtl-chip-person,.mtl-official-card,.mtl-official-thumb,.mtl-team-card,.mtl-service-chips span,.mtl-tax-band,.mtl-programme,.mtl-hex,.mtl-vblock,.mtl-vstat,.mtl-slice,.mtl-cta-logo,.mtl-contact>div,.mtl-fm-legend li,.mtl-globe-node,.mtl-vstats";
     let timer: number | undefined;
     const onTouch = (ev: TouchEvent) => {
       const target = ev.target as Element | null;
