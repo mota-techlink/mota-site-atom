@@ -147,7 +147,16 @@
     ],
     "teamTitle": "Team",
     "officialsTitle": "Government & business engagement",
-    "officialsNote": "Public engagement only — not an endorsement or funding commitment."
+    "officialsNote": "Public engagement only — not an endorsement or funding commitment.",
+    "taxLabel": "Tax and headquarters advantage",
+    "taxTitle": "European headquarters for global IT and pharma",
+    "taxBody": "Trading income is taxed at 12.5%, and the research credit plus single-market access have made Ireland the European base for global technology and pharmaceutical groups.",
+    "taxItems": [
+      "12.5% corporate tax on trading income",
+      "R&D tax credit",
+      "EU single-market access",
+      "English-language legal and talent base"
+    ]
   },
   "aura": {
     "eyebrow": "03 · AURAIGHT",
@@ -191,25 +200,31 @@
     "resources": [
       {
         "name": "China · Shanghai",
-        "note": "Private-hospital diagnostics and treatment pathways"
+        "note": "Private-hospital diagnostics and treatment pathways",
+        "flag": "🇨🇳"
       },
       {
         "name": "Japan",
-        "note": "Advanced cell and gene therapy access"
+        "note": "Advanced cell and gene therapy access",
+        "flag": "🇯🇵"
       }
     ],
     "clients": [
       {
-        "name": "United Kingdom"
+        "name": "United Kingdom",
+        "flag": "🇬🇧"
       },
       {
-        "name": "Nigeria"
+        "name": "Nigeria",
+        "flag": "🇳🇬"
       },
       {
-        "name": "New Zealand"
+        "name": "New Zealand",
+        "flag": "🇳🇿"
       },
       {
-        "name": "Thailand"
+        "name": "Thailand",
+        "flag": "🇹🇭"
       }
     ],
     "whyTitle": "Why China and Japan",
@@ -367,7 +382,7 @@
     "addressLabel": "Address",
     "address": "1329 Willoughby Ave, Brooklyn, NY 11237-3177, USA",
     "websiteLabel": "Website",
-    "email": "hello@motaiot.com",
+    "email": "contract@motaiot.com",
     "copyright": "© 2026 MOTA TECHLINK. All rights reserved.",
     "back": "Back to MOTA overview",
     "dots": [
@@ -412,12 +427,12 @@
       "name": "Franklin Ng",
       "role": "Co-founder · corporate affairs",
       "photo": "",
-      "roleDesc": "Runs corporate affairs. A New York resident, he owns the building at 1329 Willoughby Ave and built Kingsway Trade into a nationwide Chinese-medicine supplier, acquired in 2017 by the listed Chinese pharmaceutical group Yixintang, which opened a Fifth Avenue flagship store.",
+      "roleDesc": "Owns corporate affairs: US entity administration, tax compliance, and finance and collections, supported by a New York base and company-owned premises.",
       "caps": [
         "Corporate affairs and governance",
-        "US entity, real estate and local operations",
-        "Chinese-medicine supply chain across the United States",
-        "Retail and wholesale distribution"
+        "US entity and tax compliance",
+        "Finance and collections",
+        "New York real estate and local operations"
       ],
       "exp": [
         "Kingsway Trade — nationwide Chinese-medicine supplier",
@@ -478,8 +493,9 @@
       "name": "Ethan",
       "role": "Clinical-AI research & market strategy",
       "photo": "",
-      "roleDesc": "Bridges clinical evidence, market entry and technical strategy for Auraight.",
+      "roleDesc": "Sources overseas patients for Auraight and links clinical evidence, market entry and technical strategy.",
       "caps": [
+        "Overseas patient sourcing and referral network",
         "Cancer prognosis and outcome prediction",
         "Clinical AI research",
         "UK, North America and Nigeria market access"

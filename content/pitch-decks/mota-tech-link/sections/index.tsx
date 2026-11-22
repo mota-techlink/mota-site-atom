@@ -104,7 +104,6 @@ export function MotaSection({ index, goTo: navigate }: { index: number; goTo?: (
     <section className="mtl-section">
       <div className="mtl-content">
         <div className="mtl-kicker">
-          {index > 0 && <button type="button" onClick={() => goTo(1)}>↩ {t.nav.overview}</button>}
           {index > 0 && <span className="mtl-progress">{t.nav.page} {index + 1}/{7}</span>}
         </div>
         {page}
@@ -283,6 +282,14 @@ function Elms({ t, open, openOfficial }: { t: Deck; open: (p: Person) => void; o
           </div>
         </div>
       </div>
+      <div className="mtl-tax-band">
+        <div className="mtl-tax-lead">
+          <p className="mtl-label">{t.elms.taxLabel}</p>
+          <b>{t.elms.taxTitle}</b>
+        </div>
+        <p className="mtl-tax-body">{t.elms.taxBody}</p>
+        <ul>{t.elms.taxItems.map((x) => <li key={x}>{x}</li>)}</ul>
+      </div>
     </>
   );
 }
@@ -315,20 +322,28 @@ function Aura({ t, open }: { t: Deck; open: (p: Person) => void }) {
         <div className="mtl-panel">
           <p className="mtl-label">{t.aura.mapTitle}</p>
           <div className="mtl-hubs">
-            <div className="mtl-hubs-col is-resource">
+            <div className="mtl-hubs-block is-resource">
               <p className="mtl-hubs-head"><i />{t.aura.resourceLabel}</p>
-              {t.aura.resources.map((r, i) => (
-                <div className={`mtl-hub h${i + 1}`} key={r.name}>
-                  <b>{r.name}</b>
-                  <small>{r.note}</small>
+              {t.aura.resources.map((r) => (
+                <div className="mtl-hub-card" key={r.name}>
+                  <span className="mtl-hub-flag">{r.flag}</span>
+                  <div>
+                    <b>{r.name}</b>
+                    <small>{r.note}</small>
+                  </div>
                 </div>
               ))}
             </div>
-            <div className="mtl-hubs-col is-client">
+            <div className="mtl-hub-arrow" aria-hidden="true">↦</div>
+            <div className="mtl-hubs-block is-client">
               <p className="mtl-hubs-head"><i />{t.aura.clientLabel}</p>
-              {t.aura.clients.map((c, i) => (
-                <div className={`mtl-hub c${i + 1}`} key={c.name}><b>{c.name}</b></div>
-              ))}
+              <div className="mtl-client-grid">
+                {t.aura.clients.map((c) => (
+                  <div className="mtl-client-chip" key={c.name}>
+                    <span>{c.flag}</span>{c.name}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -415,13 +430,11 @@ function Video({ t, open }: { t: Deck; open: (p: Person) => void }) {
         <div className="mtl-panel">
           <p className="mtl-label">{t.video.demandTitle}</p>
           <ul className="mtl-ticks">{t.video.demand.map((d) => <li key={d}>{d}</li>)}</ul>
-          <div className="mtl-flag">🇯🇵</div>
         </div>
         <div className="mtl-bridge" aria-hidden="true"><span>⇄</span></div>
         <div className="mtl-panel">
           <p className="mtl-label">{t.video.supplyTitle}</p>
           <ul className="mtl-ticks">{t.video.supply.map((d) => <li key={d}>{d}</li>)}</ul>
-          <div className="mtl-flag">🇨🇳</div>
         </div>
       </div>
       <div className="mtl-market">
@@ -478,7 +491,6 @@ function Cta({ t, goTo }: { t: Deck; goTo: (i: number) => void }) {
         <div><b>{t.cta.addressLabel}</b><span>{t.cta.address}</span></div>
         <div><b>{t.cta.websiteLabel}</b><LinkOut href="https://motaiot.com">motaiot.com</LinkOut></div>
       </div>
-      <button type="button" className="mtl-action" onClick={() => goTo(1)}>{t.cta.back} →</button>
       <p className="mtl-hint mtl-center">{t.cta.copyright}</p>
     </div>
   );

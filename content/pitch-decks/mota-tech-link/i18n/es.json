@@ -147,7 +147,16 @@
     ],
     "teamTitle": "Equipo",
     "officialsTitle": "Relación institucional y empresarial",
-    "officialsNote": "Solo registro de encuentros públicos, no implican aval ni compromiso de financiación."
+    "officialsNote": "Solo registro de encuentros públicos, no implican aval ni compromiso de financiación.",
+    "taxLabel": "Ventaja fiscal y de sede",
+    "taxTitle": "Sede europea de las grandes tecnológicas y farmacéuticas",
+    "taxBody": "La renta operativa tributa al 12,5%, y la deducción por I+D junto con el acceso al mercado único han convertido a Irlanda en la base europea de los grupos tecnológicos y farmacéuticos globales.",
+    "taxItems": [
+      "Impuesto de sociedades del 12,5% sobre renta operativa",
+      "Deducción por I+D",
+      "Acceso al mercado único de la UE",
+      "Entorno legal y de talento en inglés"
+    ]
   },
   "aura": {
     "eyebrow": "03 · AURAIGHT",
@@ -191,25 +200,31 @@
     "resources": [
       {
         "name": "China · Shanghái",
-        "note": "Diagnóstico y tratamiento en hospitales privados"
+        "note": "Diagnóstico y tratamiento en hospitales privados",
+        "flag": "🇨🇳"
       },
       {
         "name": "Japón",
-        "note": "Acceso a terapias celulares y génicas avanzadas"
+        "note": "Acceso a terapias celulares y génicas avanzadas",
+        "flag": "🇯🇵"
       }
     ],
     "clients": [
       {
-        "name": "Reino Unido"
+        "name": "Reino Unido",
+        "flag": "🇬🇧"
       },
       {
-        "name": "Nigeria"
+        "name": "Nigeria",
+        "flag": "🇳🇬"
       },
       {
-        "name": "Nueva Zelanda"
+        "name": "Nueva Zelanda",
+        "flag": "🇳🇿"
       },
       {
-        "name": "Tailandia"
+        "name": "Tailandia",
+        "flag": "🇹🇭"
       }
     ],
     "whyTitle": "Por qué China y Japón",
@@ -367,7 +382,7 @@
     "addressLabel": "Dirección",
     "address": "1329 Willoughby Ave, Brooklyn, NY 11237-3177, USA",
     "websiteLabel": "Sitio web",
-    "email": "hello@motaiot.com",
+    "email": "contract@motaiot.com",
     "copyright": "© 2026 MOTA TECHLINK. Todos los derechos reservados.",
     "back": "Volver al resumen MOTA",
     "dots": [
@@ -412,12 +427,12 @@
       "name": "Franklin Ng",
       "role": "Cofundador · asuntos corporativos",
       "photo": "",
-      "roleDesc": "Dirige los asuntos corporativos. Residente en Nueva York, es propietario del edificio de 1329 Willoughby Ave y creó Kingsway Trade, proveedor nacional de medicina china adquirido en 2017 por el grupo farmacéutico chino cotizado Yixintang, que abrió una tienda insignia en Fifth Avenue.",
+      "roleDesc": "Dirige los asuntos corporativos: administración de la entidad estadounidense, cumplimiento fiscal y gestión financiera y de cobros, con base en Nueva York y locales propios.",
       "caps": [
         "Asuntos corporativos y gobernanza",
-        "Entidad estadounidense, inmuebles y operación local",
-        "Cadena de suministro de medicina china en EE. UU.",
-        "Distribución minorista y mayorista"
+        "Entidad estadounidense y cumplimiento fiscal",
+        "Finanzas y cobros",
+        "Inmuebles y operación local en Nueva York"
       ],
       "exp": [
         "Kingsway Trade — proveedor nacional de medicina china",
@@ -478,8 +493,9 @@
       "name": "Ethan",
       "role": "Investigación en IA clínica y estrategia de mercado",
       "photo": "",
-      "roleDesc": "Conecta evidencia clínica, entrada al mercado y estrategia técnica para Auraight.",
+      "roleDesc": "Capta pacientes internacionales para Auraight y conecta la evidencia clínica, la entrada al mercado y la estrategia técnica.",
       "caps": [
+        "Captación internacional de pacientes y red de derivación",
         "Pronóstico y predicción de resultados en cáncer",
         "Investigación en IA clínica",
         "Acceso a mercados de Reino Unido, Norteamérica y Nigeria"

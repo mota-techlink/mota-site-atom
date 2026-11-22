@@ -147,7 +147,16 @@
     ],
     "teamTitle": "团队",
     "officialsTitle": "政府与商业交流",
-    "officialsNote": "仅为公开交流记录，不构成背书或资金承诺。"
+    "officialsNote": "仅为公开交流记录，不构成背书或资金承诺。",
+    "taxLabel": "税收与总部优势",
+    "taxTitle": "全球 IT 巨头与药企的欧洲总部",
+    "taxBody": "营业所得适用 12.5% 企业所得税，叠加研发税收抵免与欧盟单一市场准入，爱尔兰因此成为全球 IT 与制药企业的欧洲总部所在地。",
+    "taxItems": [
+      "12.5% 企业所得税（营业所得）",
+      "研发税收抵免",
+      "欧盟单一市场准入",
+      "英语法律与人才环境"
+    ]
   },
   "aura": {
     "eyebrow": "03 · AURAIGHT",
@@ -191,25 +200,31 @@
     "resources": [
       {
         "name": "中国 · 上海",
-        "note": "私立医院诊断与治疗路径"
+        "note": "私立医院诊断与治疗路径",
+        "flag": "🇨🇳"
       },
       {
         "name": "日本",
-        "note": "先进细胞与基因治疗资源"
+        "note": "先进细胞与基因治疗资源",
+        "flag": "🇯🇵"
       }
     ],
     "clients": [
       {
-        "name": "英国"
+        "name": "英国",
+        "flag": "🇬🇧"
       },
       {
-        "name": "尼日利亚"
+        "name": "尼日利亚",
+        "flag": "🇳🇬"
       },
       {
-        "name": "新西兰"
+        "name": "新西兰",
+        "flag": "🇳🇿"
       },
       {
-        "name": "泰国"
+        "name": "泰国",
+        "flag": "🇹🇭"
       }
     ],
     "whyTitle": "为什么是中国和日本",
@@ -367,7 +382,7 @@
     "addressLabel": "地址",
     "address": "美国纽约州布鲁克林 Willoughby Ave 1329 号，NY 11237-3177",
     "websiteLabel": "网站",
-    "email": "hello@motaiot.com",
+    "email": "contract@motaiot.com",
     "copyright": "© 2026 MOTA TECHLINK. 保留所有权利。",
     "back": "返回 MOTA 概览",
     "dots": [
@@ -412,12 +427,12 @@
       "name": "Franklin Ng",
       "role": "联合创始人 · 公司事务",
       "photo": "",
-      "roleDesc": "负责公司事务管理，美国纽约本地居民，Willoughby Ave 1329 大楼业主；创办全美中药供应商 Kingsway Trade，2017 年被中国上市公司一心堂收购，并在第五大道开设旗舰店。",
+      "roleDesc": "负责公司事务：美国主体管理、税务合规，以及财务与收款管理，依托纽约本地身份与自有物业支撑运营。",
       "caps": [
         "公司事务与治理",
-        "美国主体、地产与本地运营",
-        "全美中药供应链",
-        "零售与批发分销"
+        "美国主体与税务合规",
+        "财务与收款管理",
+        "纽约地产与本地运营"
       ],
       "exp": [
         "Kingsway Trade —— 全美中药供应商",
@@ -478,8 +493,9 @@
       "name": "Ethan",
       "role": "临床 AI 研究与市场策略",
       "photo": "",
-      "roleDesc": "为 Auraight 衔接临床证据、市场进入与技术策略。",
+      "roleDesc": "负责 Auraight 海外病患客源的获取，并衔接临床证据、市场进入与技术策略。",
       "caps": [
+        "海外病患客源获取与转介网络",
         "肿瘤预后与疗效预测",
         "临床 AI 研究",
         "英国、北美与尼日利亚市场通路"
