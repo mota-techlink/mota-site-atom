@@ -91,8 +91,8 @@ export function FlowMap({ labels }: { labels: { title: string; nodes: Record<Key
           return (
             <g key={k} className={isHub ? "mtl-fm-node is-hub" : "mtl-fm-node"}>
               {isHub ? <circle cx={n.x} cy={n.y} r="22" fill="url(#fm-glow)" /> : null}
-              <circle cx={n.x} cy={n.y} r={isHub ? 5.4 : 4.2} className="mtl-fm-dot" />
-              <image href={flagSrc(NODE_FLAG[k])} x={n.x - 10} y={(n.anchor === "above" ? n.y - 13 : n.y + 22) - 15} width={20} height={13} opacity={0.95} />
+              <circle cx={n.x} cy={n.y} r={isHub ? 6.6 : 5.2} className="mtl-fm-dot" />
+              <image href={flagSrc(NODE_FLAG[k])} x={n.x - 23} y={(n.anchor === "above" ? n.y - 13 : n.y + 22) - 32} width={46} height={31} opacity={0.97} />
               <text x={n.x} y={n.anchor === "above" ? n.y - 3 : n.y + 34} textAnchor="middle" className={isHub ? "mtl-fm-label is-hub" : "mtl-fm-label"}>
                 {labels.nodes[k]}
               </text>

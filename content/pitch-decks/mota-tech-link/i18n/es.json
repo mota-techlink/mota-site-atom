@@ -280,7 +280,7 @@
     ],
     "assetLabel": "Lado de mercados de activos",
     "assets": [
-      "Acciones EE. UU.",
+      "Principales bolsas globales",
       "Metales preciosos",
       "Materias primas",
       "Futuros y opciones"
@@ -289,7 +289,74 @@
       "Sitio de VFlux",
       "Libro blanco"
     ],
-    "note": "Material de planificación · modelo propuesto · requiere validación regulatoria y comercial."
+    "note": "Material de planificación · modelo propuesto · requiere validación regulatoria y comercial.",
+    "marketTitle": "Tamaño de mercado",
+    "marketLead": "La oportunidad no es crear activos nuevos, sino conectar capital con activos existentes.",
+    "market": [
+      {
+        "value": "318,5 billones USD",
+        "label": "Renta variable y fija global"
+      },
+      {
+        "value": "391.800 M USD",
+        "label": "RWA tokenizado distribuido"
+      },
+      {
+        "value": "304.300 M USD",
+        "label": "Stablecoins como capa de liquidación"
+      }
+    ],
+    "roleTitle": "Qué opera VFLUX",
+    "roles": [
+      {
+        "t": "Acceso y distribución",
+        "d": "Catálogo de activos, estándares, elegibilidad y canales"
+      },
+      {
+        "t": "Ejecución y routing",
+        "d": "Ejecución multipath, selección de liquidez, market makers y cobertura"
+      },
+      {
+        "t": "Compensación y datos",
+        "d": "Registros, conciliación, reparto de comisiones y liquidación"
+      }
+    ],
+    "revTitle": "Modelo de ingresos",
+    "revs": [
+      {
+        "t": "Distribución y trading",
+        "d": "Comisión de distribución, ingresos de trading y reparto de routing"
+      },
+      {
+        "t": "Servicios de infraestructura",
+        "d": "API, permisos, datos, conciliación y compensación"
+      },
+      {
+        "t": "Ingresos de protocolo",
+        "d": "Servicios de liquidez e ingresos de protocolo tras el paso on-chain"
+      }
+    ],
+    "scaleTitle": "Escenarios de escala (planificación)",
+    "scale": [
+      {
+        "v": "10 billones USD",
+        "f": "5 bp",
+        "r": "5.000 M USD"
+      },
+      {
+        "v": "20 billones USD",
+        "f": "7,5 bp",
+        "r": "15.000 M USD"
+      },
+      {
+        "v": "30 billones USD",
+        "f": "10 bp",
+        "r": "30.000 M USD"
+      }
+    ],
+    "scaleNote": "Escenarios de planificación, no previsiones ni ingresos contratados",
+    "asset0": "Principales bolsas globales",
+    "headline": "Infraestructura global de liquidez de activos"
   },
   "video": {
     "eyebrow": "05 · YOSHI SEI · 吉晟株式会社",

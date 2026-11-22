@@ -280,7 +280,7 @@
     ],
     "assetLabel": "Asset markets",
     "assets": [
-      "US equities",
+      "Global major equities",
       "Precious metals",
       "Commodities",
       "Futures & options"
@@ -289,7 +289,74 @@
       "VFlux website",
       "Whitepaper"
     ],
-    "note": "Planning material · proposed model · regulatory and commercial validation still required."
+    "note": "Planning material · proposed model · regulatory and commercial validation still required.",
+    "marketTitle": "Market size",
+    "marketLead": "The opening is not creating new assets, but connecting capital to assets that already exist.",
+    "market": [
+      {
+        "value": "USD 318.5tn",
+        "label": "Global equity and fixed income"
+      },
+      {
+        "value": "USD 391.8bn",
+        "label": "Distributed tokenised RWA"
+      },
+      {
+        "value": "USD 304.3bn",
+        "label": "Stablecoins as settlement layer"
+      }
+    ],
+    "roleTitle": "What VFLUX operates",
+    "roles": [
+      {
+        "t": "Access and distribution",
+        "d": "Asset catalogue, admission standards, investor eligibility and channel onboarding"
+      },
+      {
+        "t": "Execution and routing",
+        "d": "Multi-path execution, liquidity selection, market-maker access and hedge coordination"
+      },
+      {
+        "t": "Clearing and data",
+        "d": "Trade records, reconciliation, fee allocation and settlement coordination"
+      }
+    ],
+    "revTitle": "Revenue model",
+    "revs": [
+      {
+        "t": "Distribution and trading",
+        "d": "Asset distribution commission, trading revenue and routing share"
+      },
+      {
+        "t": "Infrastructure services",
+        "d": "API, entitlements, data, reconciliation and clearing fees"
+      },
+      {
+        "t": "Protocol revenue",
+        "d": "Liquidity services and protocol revenue after the on-chain shift"
+      }
+    ],
+    "scaleTitle": "Scale scenarios (planning)",
+    "scale": [
+      {
+        "v": "USD 10tn",
+        "f": "5 bp",
+        "r": "USD 5bn"
+      },
+      {
+        "v": "USD 20tn",
+        "f": "7.5 bp",
+        "r": "USD 15bn"
+      },
+      {
+        "v": "USD 30tn",
+        "f": "10 bp",
+        "r": "USD 30bn"
+      }
+    ],
+    "scaleNote": "Planning scenarios, not forecasts or contracted revenue",
+    "asset0": "Global major equities",
+    "headline": "Global asset liquidity infrastructure"
   },
   "video": {
     "eyebrow": "05 · YOSHI SEI · 吉晟株式会社",

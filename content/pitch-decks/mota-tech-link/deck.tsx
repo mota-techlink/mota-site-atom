@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { DeckLocaleProvider, DeckAccessProvider, LoginGate } from "@/components/pitch-deck";
 import type { DeckAccess } from "@/config/pitch-decks";
 import { LOCALES, LOCALE_LABELS, SECTION_IDS } from "./constants";
@@ -121,19 +121,19 @@ const STYLES = `
 .mtl-programme b{font-size:.92em;line-height:1.25}
 .mtl-programme small{color:var(--muted);font-size:.76em;line-height:1.4}
 .mtl-programme em{position:absolute;right:.7em;bottom:.55em;color:var(--accent);font-style:normal;font-size:.9em}
-.mtl-elms-lower{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(12px,1.6vw,26px);margin-top:clamp(8px,1.2vh,16px);align-items:center}
+.mtl-elms-lower{display:grid;grid-template-columns:.92fr 1.12fr .92fr;gap:clamp(10px,1.4vw,24px);margin-top:clamp(8px,1.2vh,16px);align-items:start}
 .mtl-globe{display:grid;justify-items:center;gap:.5em}
-.mtl-globe-inner{position:relative;width:min(100%,180px);aspect-ratio:1}
+.mtl-globe-inner{position:relative;width:min(100%,clamp(190px,17vw,250px));aspect-ratio:1;margin-block:.4em}
 .mtl-globe-ring{position:absolute;inset:6%;border:1px dashed var(--line);border-radius:50%;background:radial-gradient(circle,rgba(119,228,223,.12),transparent 66%)}
 .mtl-globe-ring::before,.mtl-globe-ring::after{content:"";position:absolute;border:1px solid var(--line);border-radius:50%}
 .mtl-globe-ring::before{inset:18% 34%}
 .mtl-globe-ring::after{inset:34% 18%}
-.mtl-globe-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:.5em .8em;border-radius:999px;background:var(--surface);border:1px solid var(--accent);font-size:.8em;white-space:nowrap}
-.mtl-globe-node{position:absolute;font-style:normal;font-size:.72em;padding:.32em .6em;border-radius:999px;background:var(--deep);border:1px solid var(--line);white-space:nowrap}
-.mtl-globe-node.n1{left:2%;top:16%}
-.mtl-globe-node.n2{right:0;top:34%}
-.mtl-globe-node.n3{left:6%;bottom:18%}
-.mtl-globe-node.n4{right:4%;bottom:6%}
+.mtl-globe-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:.4em;padding:.55em .9em;border-radius:999px;background:var(--surface);border:1px solid var(--accent);font-size:.92em;font-weight:800;white-space:nowrap;box-shadow:0 8px 22px rgba(0,0,0,.24)}
+.mtl-globe-node{position:absolute;display:inline-flex;align-items:center;gap:.35em;font-style:normal;font-size:.78em;font-weight:700;padding:.36em .68em;border-radius:999px;background:var(--deep);border:1px solid var(--line);white-space:nowrap;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.mtl-globe-node.n1{left:50%;top:-4%;transform:translateX(-50%)}
+.mtl-globe-node.n2{right:-6%;top:50%;transform:translateY(-50%)}
+.mtl-globe-node.n3{left:50%;bottom:-4%;transform:translateX(-50%)}
+.mtl-globe-node.n4{left:-6%;top:50%;transform:translateY(-50%)}
 .mtl-elms-side{display:grid;gap:clamp(10px,1.6vh,20px)}
 .mtl-official-row{display:flex;gap:.5em;margin-top:.45em}
 .mtl-official-thumb{border:0;padding:0;background:transparent;line-height:0;border-radius:14px;overflow:hidden;transition:transform .18s}
@@ -284,10 +284,10 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 .mtl-tax-band li{font-size:.66em;padding:.22em .48em;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
 
 /* ---------- VFlux flow ---------- */
-.mtl-vflow{display:grid;grid-template-columns:.9fr 1.25fr .9fr;gap:clamp(8px,1.2vw,18px);align-items:center;margin-top:clamp(6px,1.2vh,14px)}
+.mtl-vflow{display:grid;grid-template-columns:1.02fr 1.14fr .92fr;gap:clamp(8px,1.2vw,18px);align-items:center;margin-top:clamp(6px,1.2vh,14px)}
 .mtl-vcol{display:grid;gap:.35em;align-content:start}
-.mtl-vbox{display:flex;align-items:center;gap:.45em;padding:.5em .65em;background:var(--surface);border:1px solid var(--line);border-radius:11px;font-size:.78em}
-.mtl-vbox span{font-size:1.05em}
+.mtl-vbox{display:flex;align-items:center;gap:.65em;padding:1.05em 1em;background:var(--surface);border:1px solid var(--line);border-radius:14px;font-size:1.02em;font-weight:700}
+.mtl-vbox span{font-size:1.3em;line-height:1}
 .mtl-vcol:last-of-type .mtl-vbox{border-color:rgba(255,190,114,.4)}
 .mtl-vmid{position:relative;display:grid;place-items:center;min-height:clamp(250px,32vh,360px)}
 .mtl-vglobe{position:relative;width:clamp(210px,26vw,300px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(119,228,223,.4);box-shadow:inset 0 0 42px rgba(119,228,223,.22),0 0 34px rgba(119,228,223,.12);animation:mtlspin 18s linear infinite;transform-style:preserve-3d}
@@ -314,6 +314,48 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 /* ---------- CTA ---------- */
 .mtl-cta-logo{display:grid;place-items:center;background:transparent;padding:0}
 .mtl-cta-logo img{width:clamp(180px,17vw,300px);height:auto;max-height:72px;object-fit:contain}
+/* ---------- ELMSFLOW side columns ---------- */
+.mtl-elms-col{display:grid;gap:.4em;align-content:start}
+.mtl-official-list,.mtl-team-list{display:grid;gap:.45em}
+.mtl-official-card.is-lg,.mtl-team-card{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:.7em;padding:.55em .7em;border-radius:14px;border:1px solid var(--line);background:var(--surface);text-align:left;width:100%;transition:transform .2s,box-shadow .2s,border-color .2s}
+.mtl-official-card.is-lg img{border-radius:12px;width:clamp(52px,4.6vw,72px);height:clamp(52px,4.6vw,72px);object-fit:cover;display:block}
+.mtl-official-card.is-lg b,.mtl-team-card b{display:block;font-size:.86em;line-height:1.25}
+.mtl-official-card.is-lg small,.mtl-team-card small{display:block;font-size:.7em;color:var(--muted);line-height:1.3}
+.mtl-official-card.is-lg:hover,.mtl-team-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.26);border-color:var(--accent)}
+.light .mtl-official-card.is-lg:hover,.light .mtl-team-card:hover{box-shadow:0 14px 26px rgba(14,43,58,.16)}
+.mtl-team-card .mtl-avatar{width:clamp(56px,5vw,78px)!important;height:clamp(56px,5vw,78px)!important}
+/* ---------- touch feedback ---------- */
+.is-lifted{transform:translateY(-4px) scale(1.015)!important;box-shadow:0 16px 34px rgba(0,0,0,.34)!important;border-color:var(--accent)!important;z-index:3;position:relative}
+.light .is-lifted{box-shadow:0 16px 30px rgba(14,43,58,.18)!important}
+.mtl-slice.is-lifted path{filter:drop-shadow(0 8px 18px rgba(0,0,0,.4))}
+@media(hover:none){
+  .mtl-panel:active,.mtl-project-card:active,.mtl-hub-card:active,.mtl-client-chip:active,.mtl-vbox:active,.mtl-gap-card:active,.mtl-lines article:active,.mtl-why-grid article:active,.mtl-tech-grid article:active,.mtl-pillar:active,.mtl-chip-person:active,.mtl-official-card:active,.mtl-official-thumb:active,.mtl-team-card:active,.mtl-tax-band:active,.mtl-programme:active,.mtl-vblock:active{transform:translateY(-4px) scale(1.015);box-shadow:0 16px 34px rgba(0,0,0,.32);border-color:var(--accent)}
+}
+/* ---------- VFlux extra content ---------- */
+.mtl-vstats{display:grid;grid-template-columns:1.15fr repeat(3,minmax(0,1fr));gap:.6em;align-items:center;margin-top:.55em;padding:.7em .9em;border-radius:16px;border:1px solid var(--line);background:linear-gradient(120deg,rgba(199,125,255,.12),rgba(119,228,223,.06))}
+.mtl-vstats-head{display:grid;gap:.15em}
+.mtl-vstat{display:grid;gap:.1em;padding-left:.8em;border-left:1px solid var(--line)}
+.mtl-vstat b{font-size:1.02em;font-weight:900;letter-spacing:-.01em}
+.mtl-vstat small{font-size:.68em;color:var(--muted);line-height:1.25}
+.mtl-vthree{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6em;margin-top:.5em}
+.mtl-vblock{padding:.7em .85em;border-radius:14px;border:1px solid var(--line);background:var(--surface)}
+.mtl-vblock.is-scale{background:linear-gradient(150deg,rgba(255,190,114,.14),transparent 70%)}
+.mtl-vlist{list-style:none;margin:.35em 0 0;padding:0;display:grid;gap:.35em}
+.mtl-vlist li{display:grid;grid-template-columns:auto 1fr;gap:.5em;align-items:start}
+.mtl-vlist li>span{font-size:1.05em;line-height:1.25}
+.mtl-vlist b{display:block;font-size:.8em;font-weight:800}
+.mtl-vlist small{display:block;font-size:.68em;color:var(--muted);line-height:1.3}
+.mtl-vscale{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.4em;margin-top:.35em}
+.mtl-vscale div{display:grid;gap:.1em;text-align:center;padding:.45em .3em;border-radius:10px;background:rgba(255,190,114,.1)}
+.mtl-vscale b{font-size:.88em;font-weight:900;color:var(--hot)}
+.mtl-vscale small{font-size:.6em;color:var(--muted)}
+
+/* ---------- growth block ---------- */
+.mtl-market-foot{padding:.7em .9em;border-radius:16px;border:1px solid var(--line);background:linear-gradient(120deg,rgba(119,228,223,.1),rgba(199,125,255,.07));margin-top:.55em}
+.mtl-gap-row{gap:.7em;margin-top:.35em}
+.mtl-gap-card{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:.6em;padding:.85em 1em;border-radius:14px}
+.mtl-gap-card span{font-size:1.9em;line-height:1}
+.mtl-gap-card b{font-size:.9em;font-weight:800;line-height:1.35}
 /* ---------- flags + closing page hover ---------- */
 .mtl-flag{display:inline-block;width:auto;height:.85em;border-radius:2px;object-fit:cover;vertical-align:-.08em;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
 .mtl-hub-flag .mtl-flag{height:30px;border-radius:3px}
@@ -377,13 +419,13 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 @media(hover:none){.mtl-panel:hover,.mtl-project-card:hover,.mtl-hub-card:hover,.mtl-client-chip:hover,.mtl-vbox:hover,.mtl-gap-card:hover,.mtl-lines article:hover,.mtl-why-grid article:hover,.mtl-tech-grid article:hover,.mtl-pillar:hover,.mtl-chip-person:hover,.mtl-official-card:hover,.mtl-service-chips span:hover,.mtl-tax-band:hover,.mtl-programme:hover,.mtl-hex:hover{transform:none;box-shadow:none;border-color:var(--line)}}
 @media(prefers-reduced-motion:reduce){.mtl-panel,.mtl-project-card,.mtl-hub-card,.mtl-slice,.mtl-gap-card{transition:none}}
 .mtl-flowmap{width:100%;max-width:min(920px,100%);margin:.1em auto 0}
-.mtl-flowmap svg{display:block;width:100%;height:auto;max-height:min(27vh,250px);overflow:visible}
+.mtl-flowmap svg{display:block;width:100%;height:auto;max-height:min(48vh,430px);overflow:visible}
 .mtl-fm-line{animation:mtlFmDash 1.15s linear infinite}
 @keyframes mtlFmDash{to{stroke-dashoffset:-36}}
 .mtl-fm-runner{filter:drop-shadow(0 0 5px currentColor)}
 .mtl-fm-dot{fill:var(--ink);opacity:.9}
-.mtl-fm-label{fill:var(--muted);font-size:13px;font-weight:600;letter-spacing:.02em}
-.mtl-fm-label.is-hub{fill:var(--ink);font-weight:800;font-size:14px}
+.mtl-fm-label{fill:var(--ink);font-size:27px;font-weight:700;letter-spacing:.01em}
+.mtl-fm-label.is-hub{fill:var(--ink);font-weight:900;font-size:32px}
 .mtl-fm-node.is-hub .mtl-fm-dot{fill:var(--accent)}
 .mtl-fm-legend{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45em .9em;justify-content:center}
 .mtl-fm-legend li{display:flex;align-items:center;gap:.4em;font-size:.72em;color:var(--muted);font-weight:600}
@@ -452,6 +494,25 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 function Inner() {
   const rootRef = useRef<HTMLDivElement>(null);
   const { activeIdx, exitingIdx, direction, goTo } = usePageNav(rootRef);
+
+  /* Touch devices get the same lift feedback the desktop hover provides. */
+  useEffect(() => {
+    const sel = ".mtl-panel,.mtl-project-card,.mtl-hub-card,.mtl-client-chip,.mtl-vbox,.mtl-gap-card,.mtl-lines article,.mtl-why-grid article,.mtl-tech-grid article,.mtl-pillar,.mtl-chip-person,.mtl-official-card,.mtl-official-thumb,.mtl-team-card,.mtl-service-chips span,.mtl-tax-band,.mtl-programme,.mtl-hex,.mtl-vblock,.mtl-vstat,.mtl-slice,.mtl-cta-logo,.mtl-contact>div,.mtl-fm-legend li";
+    let timer: number | undefined;
+    const onTouch = (ev: TouchEvent) => {
+      const target = ev.target as Element | null;
+      const el = target?.closest?.(sel) as HTMLElement | null;
+      if (!el) return;
+      el.classList.add("is-lifted");
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => el.classList.remove("is-lifted"), 520);
+    };
+    document.addEventListener("touchstart", onTouch, { passive: true });
+    return () => {
+      document.removeEventListener("touchstart", onTouch);
+      window.clearTimeout(timer);
+    };
+  }, []);
   return (
     <div ref={rootRef} tabIndex={-1} className="mtl-deck relative h-full w-full overflow-hidden bg-slate-950 text-white" style={{ touchAction: "pan-y", outline: "none" }}>
       <style>{STYLES}</style>

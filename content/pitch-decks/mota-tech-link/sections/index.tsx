@@ -281,37 +281,45 @@ function Elms({ t, open, openOfficial }: { t: Deck; open: (p: Person) => void; o
         ))}
       </div>
       <div className="mtl-elms-lower">
+        <div className="mtl-elms-col is-official">
+          <p className="mtl-label">{t.elms.officialsTitle}</p>
+          <div className="mtl-official-list">
+            {Object.values(offs).map((o) => (
+              <button type="button" key={o.name} className="mtl-official-card is-lg" onClick={() => openOfficial(o)} aria-label={`${o.name} — ${o.role}`}>
+                <Image src={o.photo} alt={o.name} width={96} height={96} />
+                <span>
+                  <b>{o.name}</b>
+                  <small>{o.role}</small>
+                </span>
+              </button>
+            ))}
+          </div>
+          <p className="mtl-hint">{t.elms.officialsNote}</p>
+        </div>
         <div className="mtl-globe">
           <p className="mtl-label">{t.elms.mapTitle}</p>
           <div className="mtl-globe-inner">
             <span className="mtl-globe-ring" />
-            <b className="mtl-globe-core"><Flag code="ie" /> {t.elms.mapNodes[0]}</b>
-            <i className="mtl-globe-node n1"><Flag code="gb" size={14} /> {t.elms.mapNodes[1]}</i>
-            <i className="mtl-globe-node n2"><Flag code="eu" size={14} /> {t.elms.mapNodes[2]}</i>
-            <i className="mtl-globe-node n3"><Flag code="us" size={14} /> {t.elms.mapNodes[3]}</i>
-            <i className="mtl-globe-node n4"><Flag code="cn" size={14} /> {t.elms.mapNodes[4]}</i>
+            <b className="mtl-globe-core"><Flag code="ie" size={22} /> {t.elms.mapNodes[0]}</b>
+            <i className="mtl-globe-node n1"><Flag code="gb" size={16} /> {t.elms.mapNodes[1]}</i>
+            <i className="mtl-globe-node n2"><Flag code="eu" size={16} /> {t.elms.mapNodes[2]}</i>
+            <i className="mtl-globe-node n3"><Flag code="us" size={16} /> {t.elms.mapNodes[3]}</i>
+            <i className="mtl-globe-node n4"><Flag code="cn" size={16} /> {t.elms.mapNodes[4]}</i>
           </div>
           <p className="mtl-hint">{t.elms.mapNote}</p>
         </div>
-        <div className="mtl-elms-side">
-          <div>
-            <p className="mtl-label">{t.elms.teamTitle}</p>
-            <div className="mtl-people">
-              <PersonChip person={ppl.paul} onOpen={() => open(ppl.paul)} />
-              <PersonChip person={ppl.turlough} onOpen={() => open(ppl.turlough)} />
-              <PersonChip person={ppl.harling} onOpen={() => open(ppl.harling)} />
-            </div>
-          </div>
-          <div>
-            <p className="mtl-label">{t.elms.officialsTitle}</p>
-            <div className="mtl-official-row">
-              {Object.values(offs).map((o) => (
-                <button type="button" key={o.name} className="mtl-official-thumb" onClick={() => openOfficial(o)} aria-label={`${o.name} — ${o.role}`}>
-                  <Image src={o.photo} alt={o.name} width={64} height={64} />
-                </button>
-              ))}
-            </div>
-            <p className="mtl-hint">{t.elms.officialsNote}</p>
+        <div className="mtl-elms-col is-team">
+          <p className="mtl-label">{t.elms.teamTitle}</p>
+          <div className="mtl-team-list">
+            {[ppl.paul, ppl.turlough, ppl.harling].map((p) => (
+              <button type="button" key={p.name} className="mtl-team-card" onClick={() => open(p)} aria-label={`${p.name} — ${p.role}`}>
+                <Avatar name={p.name} photo={p.photo} size={84} ring />
+                <span>
+                  <b>{p.name}</b>
+                  <small>{p.role}</small>
+                </span>
+              </button>
+            ))}
           </div>
         </div>
       </div>
@@ -418,11 +426,11 @@ function Vflux({ t, open }: { t: Deck; open: (p: Person) => void }) {
     <>
       <div className="mtl-head mtl-head-row">
         <span className="mtl-logo is-vflux-logo">
-          <Image src="/images/pitch-deck/vflux-logo.png" alt="VFlux" width={132} height={84} />
+          <Image src="/images/pitch-deck/vflux-icon.png" alt="VFlux" width={92} height={92} />
         </span>
         <div>
           <p className="mtl-eyebrow">{t.vflux.eyebrow}</p>
-          <h1>{t.vflux.title}</h1>
+          <h1>{t.vflux.headline}</h1>
           <p className="mtl-lead">{t.vflux.lead}</p>
           <div className="mtl-head-links">
             <LinkOut href="https://vflux.ai/en">{t.vflux.links[0]}</LinkOut>
@@ -444,6 +452,45 @@ function Vflux({ t, open }: { t: Deck; open: (p: Person) => void }) {
         <div className="mtl-vcol">
           <p className="mtl-label">{t.vflux.assetLabel}</p>
           {t.vflux.assets.map((a, i) => <div className="mtl-vbox" key={a}><span>{["📈", "🥇", "🛢️", "📊"][i]}</span>{a}</div>)}
+        </div>
+      </div>
+      <div className="mtl-vstats">
+        <div className="mtl-vstats-head">
+          <p className="mtl-label">{t.vflux.marketTitle}</p>
+          <p className="mtl-hint">{t.vflux.marketLead}</p>
+        </div>
+        {t.vflux.market.map((m) => (
+          <div className="mtl-vstat" key={m.label}>
+            <b>{m.value}</b>
+            <small>{m.label}</small>
+          </div>
+        ))}
+      </div>
+      <div className="mtl-vthree">
+        <div className="mtl-vblock">
+          <p className="mtl-label">{t.vflux.roleTitle}</p>
+          <ul className="mtl-vlist">
+            {t.vflux.roles.map((r, i) => (
+              <li key={r.t}><span aria-hidden="true">{["🔑", "🔀", "🧾"][i]}</span><div><b>{r.t}</b><small>{r.d}</small></div></li>
+            ))}
+          </ul>
+        </div>
+        <div className="mtl-vblock">
+          <p className="mtl-label">{t.vflux.revTitle}</p>
+          <ul className="mtl-vlist">
+            {t.vflux.revs.map((r, i) => (
+              <li key={r.t}><span aria-hidden="true">{["💹", "🧩", "🌐"][i]}</span><div><b>{r.t}</b><small>{r.d}</small></div></li>
+            ))}
+          </ul>
+        </div>
+        <div className="mtl-vblock is-scale">
+          <p className="mtl-label">{t.vflux.scaleTitle}</p>
+          <div className="mtl-vscale">
+            {t.vflux.scale.map((s) => (
+              <div key={s.v}><b>{s.r}</b><small>{s.v} · {s.f}</small></div>
+            ))}
+          </div>
+          <p className="mtl-hint">{t.vflux.scaleNote}</p>
         </div>
       </div>
       <div className="mtl-teambar">
