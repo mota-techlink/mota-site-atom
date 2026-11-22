@@ -1,4 +1,44 @@
 {
+  "editorial": {
+    "missionLabel": "使命",
+    "mission": "从真实需求出发，组织技术、团队、资源与本地伙伴，推进可执行的项目。",
+    "visionLabel": "愿景",
+    "vision": "建立互联的项目网络，让各地优势资源与目标市场的稀缺资源相遇。",
+    "modelLabel": "运营模式",
+    "model": "从需求出发，匹配能力与可信合作方，再协调实际交付路径。每个项目都有独立的范围和核验要求。",
+    "techLabel": "IT 连接 · AI 加速",
+    "tech": "从硬件与传感器到云平台、边缘推理和 AI 智能体，技术帮助团队协作并构建实用系统。",
+    "founders": "创始人",
+    "founderRole": "创始人 / CTO / 技术架构师",
+    "franklinRole": "职责与简介待补",
+    "harlingBio": "Harling Sun（孙涛）是技术架构师与业务整合者，拥有约 30 年经验。他创建并领导 eBay 中国 API 团队，工作涉及跨境系统、AI、物联网与平台架构。",
+    "harlingDetail": "中日 AI 视频项目资料将 Harling 列为负责平台架构的技术合伙人；MOTA 项目资料介绍了其更广泛的技术背景。",
+    "harlingSkills": "资料列出的技术范围包括 AI 智能体、LLM 工作流、物联网、边缘计算、云基础设施、数据系统与跨境业务整合。",
+    "harlingExperience": "所提供资料还介绍了他在 KONAMI、IBM 金融系统及上海 1210 跨境服务系统架构方面的经历。",
+    "franklinBio": "Franklin Ng 列于创始人介绍中。具体职责、履历和肖像待提供并确认。",
+    "portfolio": "四个正在推进的项目",
+    "portfolioNote": "项目正在推进，并不代表已完成交付或取得商业成果。",
+    "cases": "其他案例与项目",
+    "casesNote": "以下为技术展示；产品状态和商业关系仍需进一步核验。",
+    "caseDescriptions": ["AI 智能体与联网照明。", "语音交互、连接与设备控制。", "宠物智能设备与垂直 AI。", "联网手杖的定位与语音交互。", "面向电梯安全的边缘检测。", "纺织品标识的机器视觉检测。"],
+    "explore": "查看项目页面",
+    "details": "打开详情",
+    "caseLink": "查看案例",
+    "source": "来源：MOTA 项目资料及公开案例。各项目的依据与边界见对应页面。",
+    "cta": "开始交流",
+    "flow": "运营流程",
+    "capabilities": "能力与考量",
+    "evidence": "依据与边界",
+    "person": "核心成员",
+    "role": "技术架构师",
+    "videoRole": "技术合伙人",
+    "back": "返回 MOTA 概览",
+    "document": "查看来源文件",
+    "language": "语言",
+    "theme": "切换浅色或深色主题",
+    "section": "前往页面",
+    "coverAction": "探索项目网络"
+  },
   "nav": {
     "tagline": "全球项目网络",
     "index": "返回项目索引"
@@ -48,7 +88,7 @@
         },
         {
           "title": "当前项目进展",
-          "body": "现有 deck 提及目前有四个项目在推进；此处未列出项目身份或结果。"
+          "body": "项目资料列出食品包装印刷、医疗/医药包装、工厂与仓库建设、冷库建设四个推进方向；这不代表项目已完成或获批。"
         }
       ],
       "team": [
@@ -58,11 +98,11 @@
         }
       ],
       "sources": [
-        "当前 MOTA TECH LINK 中文 locale 中的 ELMSFLOW 项目说明。",
+        "MOTA 项目资料：ELMSFLOW 定位及四个推进方向。",
         "Ireland Gateway deck 的 ELMSFLOW 部分：机会发现、本地伙伴、选址、政府对接、合规与筹建。"
       ],
       "pending": [
-        "四个推进中项目的具体信息与佐证材料。",
+        "四个方向各自的合作方、审批、交付状态和佐证材料。",
         "已批准的团队简介与肖像。",
         "政府及合作伙伴照片、授权与说明文字。",
         "须针对每个项目核实当地合规步骤。"
@@ -113,11 +153,11 @@
         },
         {
           "name": "Ethan",
-          "role": "列于当前 Auraight 项目说明；职责与已批准简介待补。"
+          "role": "所提供的 Ethan Yichen Wang 简历介绍了其牛津临床医学博士研究及癌症研究、计算生物学经历。其 Auraight 职责待确认。"
         }
       ],
       "sources": [
-        "Auraight 概览与团队姓名来自当前 MOTA TECH LINK locale。",
+        "Auraight 概览与团队姓名来自当前 MOTA TECH LINK locale；Ethan 的研究背景来自提供的 2026 年简历。",
         "目前没有可用于本 deck 的独立 Auraight 运营、临床或医院来源文件。"
       ],
       "pending": [

@@ -1,4 +1,44 @@
 {
+  "editorial": {
+    "missionLabel": "Misión",
+    "mission": "Convertir necesidades reales en proyectos ejecutables reuniendo tecnología, equipos, recursos y socios locales.",
+    "visionLabel": "Visión",
+    "vision": "Una red de proyectos conectada donde las fortalezas regionales encuentren recursos escasos en los mercados de destino.",
+    "modelLabel": "Modelo operativo",
+    "model": "Partimos de la demanda, conectamos capacidades y contrapartes de confianza y coordinamos una vía práctica de ejecución. Cada proyecto tiene su propio alcance y requisitos de verificación.",
+    "techLabel": "TI conecta · IA acelera",
+    "tech": "Desde hardware y sensores hasta plataformas cloud, inferencia en el borde y agentes de IA, la tecnología ayuda a coordinar equipos y construir sistemas prácticos.",
+    "founders": "Fundadores",
+    "founderRole": "Fundador / CTO / arquitecto tecnológico",
+    "franklinRole": "Función y biografía pendientes",
+    "harlingBio": "Harling Sun es arquitecto tecnológico e integrador de negocios con unos 30 años de experiencia. Fundó y dirigió el equipo de API de eBay China; su trabajo abarca sistemas transfronterizos, IA, IoT y arquitectura de plataformas.",
+    "harlingDetail": "El documento del proyecto de vídeo IA Japón–China identifica a Harling como socio tecnológico responsable de la arquitectura de la plataforma. El documento de MOTA describe su trayectoria tecnológica más amplia.",
+    "harlingSkills": "Su alcance técnico declarado incluye agentes de IA, flujos LLM, IoT, computación en el borde, infraestructura cloud, sistemas de datos e integración transfronteriza.",
+    "harlingExperience": "Los documentos facilitados también describen su trabajo en KONAMI y en sistemas financieros de IBM, y la arquitectura del sistema de servicios transfronterizos Shanghai 1210.",
+    "franklinBio": "Franklin Ng figura en la presentación de fundadores. Su función detallada, biografía y retrato están pendientes de materiales aprobados.",
+    "portfolio": "Cuatro proyectos en curso",
+    "portfolioNote": "Son iniciativas en curso, no afirmaciones de entregas completadas o resultados comerciales.",
+    "cases": "Otros casos e iniciativas",
+    "casesNote": "Muestras tecnológicas seleccionadas; el estado del producto y las relaciones comerciales requieren verificación adicional.",
+    "caseDescriptions": ["Agentes de IA e iluminación conectada.", "Interfaz de voz, conectividad y control de dispositivos.", "Dispositivos conectados para mascotas e IA vertical.", "Posicionamiento e interacción de voz para un bastón conectado.", "Detección en el borde para seguridad en ascensores.", "Visión artificial para inspección de logotipos textiles."],
+    "explore": "Ver página del proyecto",
+    "details": "Abrir detalles",
+    "caseLink": "Ver caso",
+    "source": "Fuentes: documento del proyecto MOTA y muestras públicas. Las fuentes y los límites de cada proyecto aparecen en su página.",
+    "cta": "Iniciar una conversación",
+    "flow": "Flujo operativo",
+    "capabilities": "Capacidades y consideraciones",
+    "evidence": "Fuentes y límites",
+    "person": "Persona clave",
+    "role": "Arquitecto tecnológico",
+    "videoRole": "Socio tecnológico",
+    "back": "Volver al resumen de MOTA",
+    "document": "Leer documento fuente",
+    "language": "Idioma",
+    "theme": "Cambiar entre tema claro y oscuro",
+    "section": "Ir a la sección",
+    "coverAction": "Explorar la red"
+  },
   "nav": {
     "tagline": "Red global de proyectos",
     "index": "Volver al índice"
@@ -48,7 +88,7 @@
         },
         {
           "title": "Proyectos actuales",
-          "body": "El deck existente indica que hay cuatro proyectos en curso. Aquí no se detallan sus identidades ni resultados."
+          "body": "El documento identifica cuatro áreas en curso: impresión de envases alimentarios, envases médicos y farmacéuticos, construcción de fábricas y almacenes, y almacenamiento frigorífico. No se presentan como terminadas ni aprobadas."
         }
       ],
       "team": [
@@ -58,11 +98,11 @@
         }
       ],
       "sources": [
-        "Descripción de ELMSFLOW en el locale actual de MOTA TECH LINK.",
+        "Documento del proyecto MOTA: posicionamiento de ELMSFLOW y cuatro áreas en curso.",
         "Sección ELMSFLOW del deck Ireland Gateway: oportunidades, socios locales, ubicación, enlace gubernamental, cumplimiento y establecimiento."
       ],
       "pending": [
-        "Detalles y evidencias de los cuatro proyectos en curso.",
+        "Contrapartes, autorizaciones, estado de ejecución y evidencias específicas de las cuatro áreas.",
         "Biografías y retratos aprobados del equipo.",
         "Fotografías gubernamentales y de socios, permisos y textos explicativos.",
         "Verificación de los requisitos de cumplimiento específicos de cada mercado."
@@ -113,11 +153,11 @@
         },
         {
           "name": "Ethan",
-          "role": "Figura en las notas actuales de Auraight; función y biografía aprobada pendientes."
+          "role": "El CV facilitado de Ethan Yichen Wang describe investigación doctoral en medicina clínica en Oxford y experiencia en cáncer y biología computacional. Su función en Auraight está pendiente de confirmación."
         }
       ],
       "sources": [
-        "El resumen de Auraight y los nombres del equipo proceden del locale actual de MOTA TECH LINK.",
+        "El resumen y los nombres proceden del locale actual de MOTA TECH LINK; la trayectoria investigadora de Ethan procede del CV de 2026 facilitado.",
         "No se dispone de documentación independiente aprobada sobre operaciones, práctica clínica u hospitales de Auraight."
       ],
       "pending": [

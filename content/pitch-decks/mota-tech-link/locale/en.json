@@ -1,4 +1,44 @@
 {
+  "editorial": {
+    "missionLabel": "Mission",
+    "mission": "Turn real needs into executable projects by bringing together technology, teams, resources and local partners.",
+    "visionLabel": "Vision",
+    "vision": "A connected project network where regional strengths can meet scarce resources in target markets.",
+    "modelLabel": "Operating model",
+    "model": "Start with demand, match capabilities and trusted counterparts, then coordinate a practical path to delivery. Each project has its own scope and verification needs.",
+    "techLabel": "IT connects · AI accelerates",
+    "tech": "From hardware and sensors to cloud platforms, edge inference and AI agents, technology helps teams coordinate and build practical systems.",
+    "founders": "Founders",
+    "founderRole": "Founder / CTO / technology architect",
+    "franklinRole": "Biography and role pending",
+    "harlingBio": "Harling Sun is a technology architect and business integrator with around 30 years of experience. He founded and led the eBay China API team; his work spans cross-border systems, AI, IoT and platform architecture.",
+    "harlingDetail": "The Japan–China AI video brief identifies Harling as the technical partner responsible for the platform architecture. The MOTA project brief describes his wider technology background.",
+    "harlingSkills": "His stated technical scope includes AI agents, LLM workflows, IoT, edge computing, cloud infrastructure, data systems and cross-border integration.",
+    "harlingExperience": "The supplied briefs also describe work at KONAMI and on IBM financial systems, and architecture for the Shanghai 1210 cross-border service system.",
+    "franklinBio": "Franklin Ng is included in the founder introduction. His detailed role, biography and portrait are pending approved materials.",
+    "portfolio": "Four projects in progress",
+    "portfolioNote": "Initiatives in progress, not claims of completed delivery or commercial results.",
+    "cases": "Other cases & initiatives",
+    "casesNote": "Selected technology showcases; product status and commercial relationships require further verification.",
+    "caseDescriptions": ["AI agents and connected lighting.", "Voice interface, connectivity and device control.", "Connected pet devices and vertical AI.", "Positioning and voice interaction for a connected cane.", "Edge detection for elevator safety.", "Machine vision for textile logo inspection."],
+    "explore": "Explore project page",
+    "details": "Open details",
+    "caseLink": "Read showcase",
+    "source": "Source: MOTA project brief and public showcase. Project-specific claims and boundaries are noted on each page.",
+    "cta": "Start a conversation",
+    "flow": "Operating flow",
+    "capabilities": "Capabilities and considerations",
+    "evidence": "Evidence & boundaries",
+    "person": "Core person",
+    "role": "Technology architect",
+    "videoRole": "Technical partner",
+    "back": "Back to MOTA overview",
+    "document": "Read source document",
+    "language": "Language",
+    "theme": "Toggle light or dark theme",
+    "section": "Go to section",
+    "coverAction": "Explore the network"
+  },
   "nav": {
     "tagline": "Global project network",
     "index": "Back to index"
@@ -48,7 +88,7 @@
         },
         {
           "title": "Current pipeline",
-          "body": "The existing deck states that four projects are in progress. Project identities and outcomes are not specified here."
+          "body": "The project brief identifies food packaging printing, medical/pharmaceutical packaging, factory and warehouse construction, and cold storage as current areas under development. None is presented as completed or approved."
         }
       ],
       "team": [
@@ -58,11 +98,11 @@
         }
       ],
       "sources": [
-        "ELMSFLOW project description in the current MOTA TECH LINK locale.",
+        "MOTA project brief: ELMSFLOW positioning and four areas in progress.",
         "Ireland Gateway deck, ELMSFLOW section: opportunity discovery, local partners, site, government liaison, compliance and setup."
       ],
       "pending": [
-        "Named project details and evidence for the four in-progress projects.",
+        "Project-specific counterparties, approvals, delivery status and supporting evidence for the four areas.",
         "Approved team biographies and portraits.",
         "Government and partner photographs, permissions and captions.",
         "Market-specific compliance steps must be verified for each project."
@@ -105,7 +145,7 @@
       "team": [
         {
           "name": "Harling",
-          "role": "Named in the current Auraight project notes; role and approved biography pending."
+          "role": "Ethan Yichen Wang's supplied CV describes doctoral research in clinical medicine at Oxford and work in cancer research and computational biology. His Auraight role is pending confirmation."
         },
         {
           "name": "Vivian",
@@ -117,7 +157,7 @@
         }
       ],
       "sources": [
-        "Auraight overview and named team members are from the current MOTA TECH LINK locale.",
+        "Auraight overview and named team members are from the current MOTA TECH LINK locale; Ethan's research background is from the supplied 2026 CV.",
         "No separate approved Auraight operating, clinical or hospital source document was available for this deck."
       ],
       "pending": [

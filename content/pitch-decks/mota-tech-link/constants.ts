@@ -4,7 +4,7 @@ import ja from "./locale/ja.json";
 import es from "./locale/es.json";
 
 export const SECTION_IDS = [
-  "s-cover","s-map","s-elmsflow","s-auraight","s-vflux","s-ai-video","s-network","s-mota","s-cta",
+  "s-cover","s-map","s-elmsflow","s-auraight","s-vflux","s-ai-video","s-network","s-cta",
 ] as const;
 export type SectionId = (typeof SECTION_IDS)[number];
 export const LOCALES = ["en","zh","ja","es"] as const;

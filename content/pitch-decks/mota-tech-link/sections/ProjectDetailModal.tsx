@@ -15,10 +15,14 @@ export function ProjectDetailModal({
   project,
   labels,
   onClose,
+  onBack,
+  backLabel,
 }: {
   project: Project;
   labels: GalleryLabels;
   onClose: () => void;
+  onBack?: () => void;
+  backLabel?: string;
 }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -91,10 +95,9 @@ export function ProjectDetailModal({
       >
         <header className="flex items-start gap-4 border-b border-white/10 px-4 py-4 pr-14 sm:px-7 sm:py-6">
           <div
-            aria-label={`${project.name} brand mark`}
             className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-200/30 bg-white/90 p-1 text-center text-sm font-black tracking-tight text-cyan-100 sm:h-14 sm:w-14 sm:text-base"
           >
-            {project.logo ? <Image src={project.logo} alt={`${project.name} logo`} width={56} height={56} className="h-full w-full object-contain" /> : project.mark}
+            {project.logo ? <Image src={project.logo} alt="" width={56} height={56} className="h-full w-full object-contain" /> : <span className="text-slate-800">{project.mark}</span>}
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-cyan-200/80">
@@ -118,7 +121,7 @@ export function ProjectDetailModal({
           </button>
         </header>
 
-        <nav aria-label={`${project.name} detail slides`} className="flex gap-2 overflow-x-auto border-b border-white/10 px-4 py-3 sm:px-7">
+        <nav aria-label={`${project.name} · ${labels.open}`} className="flex gap-2 overflow-x-auto border-b border-white/10 px-4 py-3 sm:px-7">
           {SLIDE_IDS.map((id, index) => (
             <button
               key={id}
@@ -192,6 +195,7 @@ export function ProjectDetailModal({
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${labels.website}: ${project.name}`}
                 className="inline-flex h-fit items-center justify-center gap-2 rounded-full border border-cyan-200/35 bg-cyan-200/10 px-5 py-3 text-sm font-semibold text-cyan-100 hover:bg-cyan-200/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
               >
                 {labels.website}<span aria-hidden="true">↗</span>
@@ -213,7 +217,7 @@ export function ProjectDetailModal({
           )}
         </div>
 
-        <footer className="flex items-center justify-between border-t border-white/10 px-4 py-3 sm:px-7">
+        <footer className="flex items-center justify-between gap-2 border-t border-white/10 px-4 py-3 sm:px-7">
           <button
             type="button"
             onClick={() => setActiveSlide((current) => Math.max(0, current - 1))}
@@ -223,6 +227,7 @@ export function ProjectDetailModal({
           >
             <span aria-hidden="true">←</span><span className="ml-2 hidden sm:inline">{labels.previous}</span>
           </button>
+          {onBack && <button type="button" onClick={onBack} className="rounded-full border border-white/15 px-3 py-2 text-xs text-white/80 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300">{backLabel}</button>}
           <span className="text-xs tabular-nums text-white/50">{activeSlide + 1} / {SLIDE_IDS.length}</span>
           <button
             type="button"
