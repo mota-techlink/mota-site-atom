@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { DeckLocaleProvider, DeckAccessProvider, useDeckAccess, LoginGate } from "@/components/pitch-deck";
+import { DeckLocaleProvider, DeckAccessProvider, LoginGate } from "@/components/pitch-deck";
 import type { DeckAccess } from "@/config/pitch-decks";
 import { LOCALES, LOCALE_LABELS, SECTION_IDS } from "./constants";
 import { usePageNav, PageNavCtx, ActiveSlideCtx } from "./hooks";
@@ -12,4 +12,4 @@ const STYLES=`
 `;
 function Inner(){const rootRef=useRef<HTMLDivElement>(null);const {activeIdx,exitingIdx,direction,goTo}=usePageNav(rootRef);return <div ref={rootRef} tabIndex={-1} className="relative h-full w-full overflow-hidden bg-slate-950 text-white" style={{touchAction:"pan-y",outline:"none"}}><style>{STYLES}</style><PageNavCtx.Provider value={goTo}><ActiveSlideCtx.Provider value={activeIdx}><FloatingNav pastHero={activeIdx>0}/><SectionDots activeIdx={activeIdx} goTo={goTo}/>{SECTION_IDS.map((id,i)=><div key={id} className="mtl-slide" data-state={i===activeIdx?"active":i===exitingIdx?"exiting":"idle"} data-dir={i===activeIdx||i===exitingIdx?String(direction):"0"}><MotaSection index={i} goTo={goTo}/></div>)}<LoginGate onBack={()=>goTo(0)}/></ActiveSlideCtx.Provider></PageNavCtx.Provider></div>}
 export interface MotaTechLinkDeckProps{access?:DeckAccess;previewSlides?:number;isAuthenticated?:boolean;userRole?:string}
-export function MotaTechLinkDeck({access="public",previewSlides=SECTION_IDS.length,isAuthenticated=false,userRole}:MotaTechLinkDeckProps={}){return <DeckAccessProvider access={access} previewSlides={previewSlides} totalSlides={SECTION_IDS.length} serverAuth={isAuthenticated?{isAuthenticated:true,role:userRole}:undefined}><DeckLocaleProvider availableLocales={[...LOCALES]} localeLabels={LOCALE_LABELS} defaultLocale="en"><Inner/></DeckLocaleProvider></DeckAccessProvider>}
+export function MotaTechLinkDeck({access="public",previewSlides=SECTION_IDS.length,isAuthenticated=false,userRole}:MotaTechLinkDeckProps={}){return <DeckAccessProvider access={access} previewSlides={previewSlides} totalSlides={SECTION_IDS.length} serverAuth={isAuthenticated?{isAuthenticated:true,role:userRole}:undefined}><DeckLocaleProvider availableLocales={[...LOCALES]} localeLabels={LOCALE_LABELS}><Inner/></DeckLocaleProvider></DeckAccessProvider>}

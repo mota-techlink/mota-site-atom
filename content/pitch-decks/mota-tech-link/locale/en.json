@@ -1,1 +1,360 @@
-{"nav":{"tagline":"Global project network","index":"Back to index"},"sections":[{"id":"cover","eyebrow":"MOTA TECH LINK","title":"Connect the need. Accelerate the path.","body":"Local advantage meets scarce resources in target markets — connected by IT, accelerated by AI.","items":["🧭 Local advantage","🌍 Global demand","🔗 Cross-border connection","⚡ AI acceleration"]},{"id":"map","eyebrow":"PHILOSOPHY × PORTFOLIO","title":"Resource matching is the business.","body":"Technology, production capacity, talent, medical resources and professional networks move toward demand, channels, capital, patients, liquidity and delivery opportunities.","items":["ELMSFLOW · China → Western markets","Auraight · international patient pathways","VFlux · global asset clearing","AI Video · Japan ↔ China"]},{"id":"elmsflow","eyebrow":"ELMSFLOW","title":"Move capability into new markets.","body":"ELMSFLOW combines China’s surplus production capacity, advanced technology, technical talent and human resources with Western-market demand, local landing and overseas expansion advisory.","items":["Market-entry consulting","Local partners, sites and delivery","Compliance-readiness coordination","Four current projects in progress","Team + government gallery"]},{"id":"auraight","eyebrow":"AURAIGHT","title":"Cross-border medical care, coordinated.","body":"An independent bilingual coordination layer connecting Shanghai and Japan with patient-development pathways across North America, the UK, Nigeria, Singapore, Thailand and New Zealand.","items":["VIP-style cancer-care coordination","Shanghai hospital resources","Japan high-end medical","Screening and overseas checks","Harling · Vivian · Ethan"]},{"id":"vflux","eyebrow":"VFLUX · VFLUX.AI","title":"The unified clearing layer for global assets.","body":"Distribution, liquidity, smart routing, clearing and settlement connect asset providers, exchanges, brokers, custody, wealth channels and investors.","items":["Asset supply → access → distribution","Smart routing + liquidity","Clearing + settlement","Centralised first, on-chain progressively","Chris · Anthony · Harling"]},{"id":"ai-video","eyebrow":"CHINA ↔ JAPAN AI VIDEO","title":"Japanese demand. Chinese AI production.","body":"A responsible workflow for brief, matching, production, localisation, quality review and JPY–RMB settlement.","items":["AI short animation / manga IP","AI advertising","AI education","Harling · full-stack technical partner","Too much to list."]},{"id":"network","eyebrow":"THE NETWORK","title":"Different regions. One connected project layer.","body":"Asia, Europe, North America, Africa, Oceania and Southeast Asia become a connected map of capabilities, demand and trusted execution.","items":["Technology ↔ market","Talent ↔ delivery","Capital ↔ opportunity","AI ↔ acceleration"]},{"id":"mota","eyebrow":"MOTA TECH LINK · IoT × EDGE AI","title":"From connected devices to intelligent real-world systems.","body":"AI agents, edge inference, IoT management, hardware-to-cloud integration and vertical models become practical products.","items":["AI lighting","AI Voice USB","Pet vertical AI","AI walking cane","Elevator safety Edge AI","Textile vision QA","Harling · Founder / CTO","Franklin Ng · Profile on hold"]},{"id":"cta","eyebrow":"MOTA TECH LINK","title":"Connect the need. Accelerate the path.","body":"Bring a market, a capability or a difficult cross-border problem. We will help map the people, technology and next practical step.","items":["Explore a project","Start a conversation"]}]}
+{
+  "nav": {
+    "tagline": "Global project network",
+    "index": "Back to index"
+  },
+  "gallery": {
+    "overview": "Project overview",
+    "capabilities": "Capabilities",
+    "team": "Team",
+    "sources": "Sources & website",
+    "pending": "Pending materials",
+    "close": "Close project details",
+    "previous": "Previous slide",
+    "next": "Next slide",
+    "open": "Open project details",
+    "website": "Visit website",
+    "sourceNote": "Source notes"
+  },
+  "projects": [
+    {
+      "id": "elmsflow",
+      "name": "ELMSFLOW",
+      "mark": "EF",
+      "logo": "/images/pitch-deck/elmsflow-logo.png",
+      "url": "https://elmsflo.com",
+      "summary": "Cross-border market entry and local execution for Chinese suppliers and investors.",
+      "overview": {
+        "title": "From opportunity discovery to local execution",
+        "body": "ELMSFLOW connects Chinese suppliers and investors with opportunities in Western markets, then helps organise the practical route to landing: local counterparties, sites, government liaison, compliance pathways and setup.",
+        "points": [
+          "Connects supply and investment capabilities with identified market opportunities.",
+          "Coordinates local partners, site options and execution steps.",
+          "The Ireland Gateway deck is an example of the landing-support model, not a claim of completed projects."
+        ]
+      },
+      "capabilities": [
+        {
+          "title": "Market entry",
+          "body": "Shape an entry route around the target market, intended customer and supplier readiness."
+        },
+        {
+          "title": "Local landing",
+          "body": "Organise counterparties, site considerations, government liaison and setup as a practical sequence."
+        },
+        {
+          "title": "Compliance readiness",
+          "body": "Map certification and market-access steps with relevant local specialists; requirements must be confirmed with the appropriate authorities."
+        },
+        {
+          "title": "Current pipeline",
+          "body": "The existing deck states that four projects are in progress. Project identities and outcomes are not specified here."
+        }
+      ],
+      "team": [
+        {
+          "name": "Team profiles on hold",
+          "role": "Approved biographies and portraits were not included in the available project materials."
+        }
+      ],
+      "sources": [
+        "ELMSFLOW project description in the current MOTA TECH LINK locale.",
+        "Ireland Gateway deck, ELMSFLOW section: opportunity discovery, local partners, site, government liaison, compliance and setup."
+      ],
+      "pending": [
+        "Named project details and evidence for the four in-progress projects.",
+        "Approved team biographies and portraits.",
+        "Government and partner photographs, permissions and captions.",
+        "Market-specific compliance steps must be verified for each project."
+      ]
+    },
+    {
+      "id": "auraight",
+      "name": "Auraight",
+      "mark": "A",
+      "logo": "/images/pitch-deck/auraight-logo.svg",
+      "url": "https://auraight.com",
+      "summary": "A bilingual coordination layer for cross-border medical-care pathways.",
+      "overview": {
+        "title": "Cross-border care coordination",
+        "body": "The current project notes describe an independent bilingual coordination layer connecting Shanghai and Japan with patient-development pathways across North America, the UK, Nigeria, Singapore, Thailand and New Zealand. This is a coordination concept, not a clinical provider or a treatment-outcome claim.",
+        "points": [
+          "Shanghai and Japan are the named resource locations in the current project notes.",
+          "The notes list international patient pathways across six regions.",
+          "No clinical outcomes or specific hospital relationships are asserted in this deck."
+        ]
+      },
+      "capabilities": [
+        {
+          "title": "Patient coordination",
+          "body": "Coordinate enquiries and cross-border next steps around the patient's requested pathway; clinical decisions remain with qualified providers."
+        },
+        {
+          "title": "Shanghai and Japan resources",
+          "body": "The project notes identify Shanghai hospital resources and high-end medical resources in Japan; institution names and service details remain to be confirmed."
+        },
+        {
+          "title": "Screening pathways",
+          "body": "Screening and overseas checks are listed as areas of coordination, not as guaranteed services or medical outcomes."
+        },
+        {
+          "title": "Bilingual navigation",
+          "body": "A bilingual coordination layer is intended to help patients navigate cross-border communication and logistics."
+        }
+      ],
+      "team": [
+        {
+          "name": "Harling",
+          "role": "Named in the current Auraight project notes; role and approved biography pending."
+        },
+        {
+          "name": "Vivian",
+          "role": "Named in the current Auraight project notes; role and approved biography pending."
+        },
+        {
+          "name": "Ethan",
+          "role": "Named in the current Auraight project notes; role and approved biography pending."
+        }
+      ],
+      "sources": [
+        "Auraight overview and named team members are from the current MOTA TECH LINK locale.",
+        "No separate approved Auraight operating, clinical or hospital source document was available for this deck."
+      ],
+      "pending": [
+        "Named provider and hospital relationships, service scope and operating permissions.",
+        "Clinical review, jurisdiction-specific requirements and patient privacy processes.",
+        "Approved biographies and portraits for named team members.",
+        "Pricing, service availability and any outcome evidence; no medical outcomes are claimed."
+      ]
+    },
+    {
+      "id": "vflux",
+      "name": "VFlux",
+      "mark": "V",
+      "logo": "/images/pitch-deck/vflux-logo.png",
+      "url": "https://vflux.ai",
+      "summary": "A proposed network layer for global asset distribution, liquidity, routing and clearing.",
+      "overview": {
+        "title": "Connect assets, venues and investors",
+        "body": "The VFLUX project material describes a multi-asset infrastructure layer connecting eligible asset providers, trading venues and investors through distribution, liquidity coordination, routing, clearing and settlement. The source describes an initial centralised operating model, with any on-chain progression staged over time.",
+        "points": [
+          "Designed to connect specialist institutions rather than replace them.",
+          "Market access, participant permissions and partner connections are part of the described role.",
+          "This is a project description; it is not a representation of regulatory approval or live trading."
+        ]
+      },
+      "capabilities": [
+        {
+          "title": "Asset access and distribution",
+          "body": "Organise an asset directory, admission criteria, investor eligibility, product permissions and distribution-channel connections."
+        },
+        {
+          "title": "Routing and liquidity",
+          "body": "Coordinate routing and shared liquidity across participating venues and distribution channels."
+        },
+        {
+          "title": "Clearing and settlement",
+          "body": "Provide a network-level coordination layer for clearing, reconciliation and settlement between participants."
+        },
+        {
+          "title": "Institutional roles",
+          "body": "The source distinguishes VFLUX's network role from the specialist responsibilities of regulated and professional counterparties."
+        }
+      ],
+      "team": [
+        {
+          "name": "Chris",
+          "role": "Named in the current VFlux project notes; role and approved biography pending."
+        },
+        {
+          "name": "Anthony",
+          "role": "Named in the current VFlux project notes; role and approved biography pending."
+        },
+        {
+          "name": "Harling",
+          "role": "Named in the current VFlux project notes; role and approved biography pending."
+        }
+      ],
+      "sources": [
+        "VFLUX project white paper V17, supplied as vflux-cn-43.txt; source sections describe the network role, institutional responsibilities and clearing model.",
+        "The source includes a VFLX token white-paper draft v1.4; it labels its terms as proposed and subject to legal review."
+      ],
+      "pending": [
+        "Regulatory perimeter, jurisdictions, participating institutions and operating permissions.",
+        "Commercial terms, verified adoption and audited financial or transaction evidence.",
+        "Approved biographies for named team members.",
+        "VFLX token allocation, unlock and sale terms are expressly proposed and not final in the cited draft."
+      ]
+    },
+    {
+      "id": "ai-video",
+      "name": "吉晟株式会社 · YOSHI SEI CORPORATION",
+      "mark": "吉晟",
+      "url": "https://yoshisei.jp",
+      "summary": "Japan–China AI video production matching and transaction platform; website beta is in development.",
+      "overview": {
+        "title": "A Japan–China production bridge",
+        "body": "The supplied Yoshisei project brief describes a Japan-based platform connecting Japanese buyers with Chinese AI video studios. It proposes fair matching and a workflow covering production, Japanese localisation, agreed quality checks and JPY–RMB settlement. The brief says the website beta is in development; planned activity is not presented as completed.",
+        "points": [
+          "The brief identifies 吉晟株式会社 / YOSHI SEI CORPORATION and a Tokyo headquarters with Osaka and Fukuoka branches.",
+          "AI short animation / manga IP is the lead category, with AI advertising and education as adjacent categories.",
+          "First transactions are planned for January–March 2027 in the brief; this is a plan, not achieved traction."
+        ]
+      },
+      "capabilities": [
+        {
+          "title": "Buyer and studio matching",
+          "body": "Translate buyer briefs into production requirements and match them with Chinese AI production partners."
+        },
+        {
+          "title": "Production workflow",
+          "body": "The brief maps coverage across planning, scripting, generation, storyboarding, direction, editing, visual work and delivery."
+        },
+        {
+          "title": "Japanese localisation and review",
+          "body": "Localise the deliverable and check it against mutually agreed Japanese-language quality criteria before acceptance."
+        },
+        {
+          "title": "Cross-border settlement",
+          "body": "The proposed flow is JPY collection and RMB settlement to the studio after acceptance, subject to the agreed transaction and applicable requirements."
+        }
+      ],
+      "team": [
+        {
+          "name": "Vito He (贺稀)",
+          "role": "Identified as Founder in the supplied Yoshisei project brief."
+        },
+        {
+          "name": "Harling Sun (孙涛)",
+          "role": "The supplied brief identifies responsibility for platform technology architecture."
+        }
+      ],
+      "sources": [
+        "吉晟株式会社 / YOSHI SEI CORPORATION project brief, supplied as ai-video-bp.txt (2026).",
+        "The brief lists yoshisei.jp and states that the website beta is in development."
+      ],
+      "pending": [
+        "Website beta completion, live service availability and verified transaction results.",
+        "Planned first-transaction timing is not evidence that transactions have occurred.",
+        "Approved team portraits and any additional biographies not contained in the supplied brief.",
+        "Buyer, studio, pricing and transaction forecasts in the source are not actual clients, revenue or results."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "cover",
+      "eyebrow": "MOTA TECH LINK",
+      "title": "Connect the need. Accelerate the path.",
+      "body": "Local advantage meets scarce resources in target markets — connected by IT, accelerated by AI.",
+      "items": [
+        "🧭 Local advantage",
+        "🌍 Global demand",
+        "🔗 Cross-border connection",
+        "⚡ AI acceleration"
+      ]
+    },
+    {
+      "id": "map",
+      "eyebrow": "PHILOSOPHY × PORTFOLIO",
+      "title": "Resource matching is the business.",
+      "body": "Technology, production capacity, talent, medical resources and professional networks move toward demand, channels, capital, patients, liquidity and delivery opportunities.",
+      "items": [
+        "ELMSFLOW · China → Western markets",
+        "Auraight · international patient pathways",
+        "VFlux · global asset clearing",
+        "AI Video · Japan ↔ China"
+      ]
+    },
+    {
+      "id": "elmsflow",
+      "eyebrow": "ELMSFLOW",
+      "title": "Move capability into new markets.",
+      "body": "ELMSFLOW combines China’s surplus production capacity, advanced technology, technical talent and human resources with Western-market demand, local landing and overseas expansion advisory.",
+      "items": [
+        "Market-entry consulting",
+        "Local partners, sites and delivery",
+        "Compliance-readiness coordination",
+        "Four current projects in progress",
+        "Team + government gallery"
+      ]
+    },
+    {
+      "id": "auraight",
+      "eyebrow": "AURAIGHT",
+      "title": "Cross-border medical care, coordinated.",
+      "body": "An independent bilingual coordination layer connecting Shanghai and Japan with patient-development pathways across North America, the UK, Nigeria, Singapore, Thailand and New Zealand.",
+      "items": [
+        "VIP-style cancer-care coordination",
+        "Shanghai hospital resources",
+        "Japan high-end medical",
+        "Screening and overseas checks",
+        "Harling · Vivian · Ethan"
+      ]
+    },
+    {
+      "id": "vflux",
+      "eyebrow": "VFLUX · VFLUX.AI",
+      "title": "The unified clearing layer for global assets.",
+      "body": "Distribution, liquidity, smart routing, clearing and settlement connect asset providers, exchanges, brokers, custody, wealth channels and investors.",
+      "items": [
+        "Asset supply → access → distribution",
+        "Smart routing + liquidity",
+        "Clearing + settlement",
+        "Centralised first, on-chain progressively",
+        "Chris · Anthony · Harling"
+      ]
+    },
+    {
+      "id": "ai-video",
+      "eyebrow": "CHINA ↔ JAPAN AI VIDEO",
+      "title": "Japanese demand. Chinese AI production.",
+      "body": "A responsible workflow for brief, matching, production, localisation, quality review and JPY–RMB settlement.",
+      "items": [
+        "AI short animation / manga IP",
+        "AI advertising",
+        "AI education",
+        "Harling · full-stack technical partner",
+        "Too much to list."
+      ]
+    },
+    {
+      "id": "network",
+      "eyebrow": "THE NETWORK",
+      "title": "Different regions. One connected project layer.",
+      "body": "Asia, Europe, North America, Africa, Oceania and Southeast Asia become a connected map of capabilities, demand and trusted execution.",
+      "items": [
+        "Technology ↔ market",
+        "Talent ↔ delivery",
+        "Capital ↔ opportunity",
+        "AI ↔ acceleration"
+      ]
+    },
+    {
+      "id": "mota",
+      "eyebrow": "MOTA TECH LINK · IoT × EDGE AI",
+      "title": "From connected devices to intelligent real-world systems.",
+      "body": "AI agents, edge inference, IoT management, hardware-to-cloud integration and vertical models become practical products.",
+      "items": [
+        "AI lighting",
+        "AI Voice USB",
+        "Pet vertical AI",
+        "AI walking cane",
+        "Elevator safety Edge AI",
+        "Textile vision QA",
+        "Harling · Founder / CTO",
+        "Franklin Ng · Profile on hold"
+      ]
+    },
+    {
+      "id": "cta",
+      "eyebrow": "MOTA TECH LINK",
+      "title": "Connect the need. Accelerate the path.",
+      "body": "Bring a market, a capability or a difficult cross-border problem. We will help map the people, technology and next practical step.",
+      "items": [
+        "Explore a project",
+        "Start a conversation"
+      ]
+    }
+  ]
+}
