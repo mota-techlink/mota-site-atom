@@ -52,12 +52,12 @@ const STYLES = `
 .mtl-core{display:grid;gap:.3em;padding:.7em .9em;border:1px solid var(--line);border-radius:14px;background:var(--surface);min-width:min(100%,260px)}
 .mtl-core .mtl-ticks{font-size:.78em}
 .mtl-head-links{display:flex;flex-wrap:wrap;gap:.9em;margin-top:.35em}
-.mtl-logo{display:grid;place-items:center;background:#fff;border-radius:16px;padding:8px 12px;min-width:96px}
+.mtl-logo{display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px 14px;min-width:104px}
 .mtl-logo img{width:clamp(70px,7vw,132px);height:auto;max-height:74px;object-fit:contain}
 .only-light{display:none}
 .light .only-dark{display:none}
 .light .only-light{display:block}
-.light .mtl-logo{background:#fff}
+.light .mtl-logo{background:#fff;border-color:rgba(14,43,58,.14)}
 
 /* ---------- cover ---------- */
 .mtl-cover{display:grid;justify-items:center;gap:clamp(14px,2.2vh,26px);text-align:center;max-width:1180px;margin-inline:auto}
@@ -265,8 +265,8 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 .mtl-hub-card b{display:block;font-size:.84em}
 .mtl-hub-card small{display:block;font-size:.7em;color:var(--muted);line-height:1.3}
 .mtl-hub-arrow{color:var(--muted);font-size:1.2em;line-height:1;opacity:.75}
-.mtl-client-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35em}
-.mtl-client-chip{display:flex;align-items:center;gap:.35em;padding:.42em .55em;border-radius:10px;background:rgba(255,177,92,.09);border:1px solid rgba(255,177,92,.38);font-size:.74em;font-weight:600}
+.mtl-client-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.32em}
+.mtl-client-chip{display:flex;align-items:center;gap:.3em;padding:.4em .45em;border-radius:10px;background:rgba(255,177,92,.09);border:1px solid rgba(255,177,92,.38);font-size:.7em;font-weight:600;white-space:nowrap;justify-content:center}
 .mtl-client-chip span{font-size:1.05em;line-height:1}
 .mtl-tax-band{display:grid;grid-template-columns:auto 1.4fr auto;gap:clamp(10px,1.4vw,22px);align-items:center;margin-top:clamp(8px,1.2vh,16px);padding:.6em .85em;border-radius:14px;background:linear-gradient(120deg,rgba(255,190,114,.11),rgba(119,228,223,.08));border:1px solid rgba(255,190,114,.4)}
 .mtl-tax-lead{display:grid;gap:.15em;min-width:max-content}

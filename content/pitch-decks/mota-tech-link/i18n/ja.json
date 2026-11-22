@@ -225,6 +225,14 @@
       {
         "name": "タイ",
         "flag": "🇹🇭"
+      },
+      {
+        "name": "アメリカ",
+        "flag": "🇺🇸"
+      },
+      {
+        "name": "アイルランド",
+        "flag": "🇮🇪"
       }
     ],
     "whyTitle": "なぜ中国と日本か",
@@ -592,13 +600,13 @@
       "name": "John Cummins TD",
       "role": "地方自治・計画担当 政務次官",
       "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
-      "link": "https://www.oireachtas.ie/en/members/member/John-Cummins.D.2020-06-29/"
+      "link": "https://www.gov.ie/en/organisation/department-of-housing-local-government-and-heritage/"
     },
     "evans": {
       "name": "Gareth Evans",
       "role": "ウォーターフォード市・郡議会 最高経営責任者",
       "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
-      "link": "https://www.waterfordcouncil.ie/"
+      "link": "https://waterfordcouncil.ie/"
     },
     "hurley": {
       "name": "Gerald Hurley",

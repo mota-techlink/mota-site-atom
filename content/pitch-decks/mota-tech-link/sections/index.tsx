@@ -299,9 +299,9 @@ function Aura({ t, open }: { t: Deck; open: (p: Person) => void }) {
   return (
     <>
       <div className="mtl-head mtl-head-row">
-        <span className="mtl-logo">
-          <Image className="only-dark" src={AURA_LOGO.dark} alt="Auraight" width={96} height={72} />
-          <Image className="only-light" src={AURA_LOGO.light} alt="Auraight" width={96} height={72} />
+        <span className="mtl-logo mtl-logo-card">
+          <Image className="only-dark" src={AURA_LOGO.dark} alt="Auraight" width={84} height={64} />
+          <Image className="only-light" src={AURA_LOGO.light} alt="Auraight" width={84} height={64} />
         </span>
         <div>
           <p className="mtl-eyebrow">{t.aura.eyebrow}</p>

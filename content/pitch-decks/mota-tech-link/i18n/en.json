@@ -225,6 +225,14 @@
       {
         "name": "Thailand",
         "flag": "🇹🇭"
+      },
+      {
+        "name": "United States",
+        "flag": "🇺🇸"
+      },
+      {
+        "name": "Ireland",
+        "flag": "🇮🇪"
       }
     ],
     "whyTitle": "Why China and Japan",
@@ -592,13 +600,13 @@
       "name": "John Cummins TD",
       "role": "Minister of State for Local Government and Planning",
       "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
-      "link": "https://www.oireachtas.ie/en/members/member/John-Cummins.D.2020-06-29/"
+      "link": "https://www.gov.ie/en/organisation/department-of-housing-local-government-and-heritage/"
     },
     "evans": {
       "name": "Gareth Evans",
       "role": "Chief Executive, Waterford City & County Council",
       "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
-      "link": "https://www.waterfordcouncil.ie/"
+      "link": "https://waterfordcouncil.ie/"
     },
     "hurley": {
       "name": "Gerald Hurley",
