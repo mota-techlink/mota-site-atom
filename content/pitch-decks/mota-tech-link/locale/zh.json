@@ -44,9 +44,9 @@
     "index": "返回项目索引"
   },
   "gallery": {
-    "overview": "项目概览",
-    "capabilities": "能力与功能",
-    "team": "团队",
+    "overview": "分工描述",
+    "capabilities": "能力",
+    "team": "经历和案例",
     "sources": "来源与网站",
     "pending": "待补充资料",
     "close": "关闭项目详情",

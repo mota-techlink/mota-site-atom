@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" role="img" aria-labelledby="title desc">
+<title id="title">MOTA TECH LINK connected project network</title><desc id="desc">Abstract nodes connecting local advantage, global demand, IT and AI.</desc>
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#77e4df"/><stop offset="1" stop-color="#c77dff"/></linearGradient><radialGradient id="bg"><stop stop-color="#1c6670" stop-opacity=".7"/><stop offset="1" stop-color="#06131d" stop-opacity="0"/></radialGradient></defs>
+<rect width="720" height="560" rx="48" fill="#071821"/><circle cx="360" cy="280" r="250" fill="url(#bg)"/>
+<g fill="none" stroke="url(#g)" stroke-width="3" opacity=".8"><path d="M110 128 Q220 40 360 160 T610 125"/><path d="M104 410 Q230 300 360 400 T620 370"/><path d="M110 128 Q160 280 104 410"/><path d="M610 125 Q560 280 620 370"/><path d="M110 128 Q350 220 610 125"/><path d="M104 410 Q350 300 620 370"/></g>
+<g fill="#77e4df" stroke="#d8ffff" stroke-width="4"><circle cx="110" cy="128" r="18"/><circle cx="610" cy="125" r="18"/><circle cx="104" cy="410" r="18"/><circle cx="620" cy="370" r="18"/><circle cx="360" cy="280" r="48" fill="#0c313b"/></g>
+<g fill="#dff9f8" font-family="Arial,sans-serif" text-anchor="middle"><text x="110" y="91" font-size="20">LOCAL</text><text x="610" y="88" font-size="20">DEMAND</text><text x="104" y="460" font-size="20">IT</text><text x="620" y="420" font-size="20">AI</text><text x="360" y="274" font-size="22" font-weight="700">MOTA</text><text x="360" y="300" font-size="18">TECH LINK</text></g>
+<g fill="#ffbe72" font-family="Arial,sans-serif" font-size="16" font-weight="700"><text x="50" y="52">CONNECT</text><text x="575" y="520">ACCELERATE</text></g></svg>

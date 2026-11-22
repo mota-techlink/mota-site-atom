@@ -1,145 +1,71 @@
 "use client";
-
 import { useState } from "react";
 import Image from "next/image";
 import { useDeckLocale } from "@/components/pitch-deck";
 import { useContent, useNav } from "../hooks";
 import { ProjectDetailModal } from "./ProjectDetailModal";
+import type { ContentType } from "../constants";
 import en from "../briefs/en.json";
 import zh from "../briefs/zh.json";
 import ja from "../briefs/ja.json";
 import es from "../briefs/es.json";
-import type { ContentType } from "../constants";
 
-type Project = ContentType["projects"][number];
+type Project = ContentType["projects"][number] & { photo?: string };
 type Brief = typeof en;
 type Person = Brief["projects"][number]["people"][number];
 const briefs: Record<string, Brief> = { en, zh, ja, es };
-const caseSlugs = ["Lingjii-Lighting-AI", "AI-Voice-USB", "Lingjii-Pet-AI", "AI-Smart-Cane", "GenAI-Driven", "Textile-Logo-QA"];
-const caseIcons = ["☼", "◉", "◇", "⌁", "▣", "◎"];
-const projectLinks = [
-  ["https://elmsflo.com/about", "https://elmsflo.com/why-ireland"],
-  ["https://auraight.com", "https://auraight.com/zh/showcase"],
-  ["https://vflux.ai/en", "/en/contact"],
-  ["https://yoshisei.jp", "https://drive.google.com/file/d/1ckJ0lmtw3F9C1dkobx1Zz4UfzwRKJRK-/view"],
-];
+const projectLinks = [["https://elmsflo.com/about", "https://elmsflo.com/why-ireland"], ["https://auraight.com/zh/showcase", "https://auraight.com/zh"], ["https://vflux.ai/en", "https://vflux.ai/en"], ["https://yoshisei.jp", "https://drive.google.com/file/d/1ckJ0lmtw3F9C1dkobx1Zz4UfzwRKJRK-/view"]];
+const elmsPhotos = ["/images/pitch-deck/elmsflow/paul-brennan.jpg", "/images/pitch-deck/elmsflow/turlough-sheehan.jpg", "/images/pitch-deck/elmsflow/harling-sun.jpg"];
+const officials = [{ name: "John Cummins TD", role: "National government · Minister of State", photo: "/images/pitch-deck/elmsflow/john-cummins.jpg" }, { name: "Gareth Evans", role: "Waterford City & County Council", photo: "/images/pitch-deck/elmsflow/gareth-evans.jpg" }, { name: "Gerald Hurley", role: "Waterford Chamber · Chief Executive", photo: "/images/pitch-deck/elmsflow/gerald-hurley.jpg" }];
+const personStories: Record<string, { experience: string; capability: string; cases: string }> = {
+  "Paul Brennan": { experience: "45+ years across supply-chain management, food safety and quality; senior roles with McDonald's Europe and a wide range of global industrial and retail organisations.", capability: "BRC food standards, ISO, carbon, sustainability, green projects, Six Sigma and supply-chain quality systems.", cases: "Paradigm Supply Chain Solutions · McDonald's Europe supply-chain leadership · food-safety consulting for McDonald's China." },
+  "Turlough Sheehan": { experience: "40+ years in global logistics and customs frameworks; active in e-commerce compliance since 1992.", capability: "DDP shipping, customs-compliant hubs, Section 321 strategy and international trade-law advisory.", cases: "International customs-compliant hub design · low-value US entry compliance · logistics entity advisory." },
+  "Harling Sun": { experience: "The supplied project briefs describe Harling's work in cross-border systems, AI, IoT and platform architecture, including the Shanghai 1210 system.", capability: "AI agents, LLM workflows, IoT, edge computing, cloud infrastructure, data systems and cross-border integration.", cases: "eBay China API team · Shanghai 1210 cross-border system · AI+IoT smart elevator · MOTA TECHLINK." },
+  "John Cummins TD": { experience: "Public engagement recorded on ELMSFLOW's Ireland Gateway page.", capability: "National government context: Local Government and Planning.", cases: "Meeting photograph and public profile are shown as engagement evidence only; not an endorsement or funding award." },
+  "Gareth Evans": { experience: "Public engagement recorded with Waterford City & County Council.", capability: "Local-government and regional implementation context.", cases: "Waterford local network photograph; engagement is not planning approval or project commitment." },
+  "Gerald Hurley": { experience: "Chief Executive of Waterford Chamber, according to ELMSFLOW's public network page.", capability: "Business-community and chamber network connection.", cases: "Waterford Chamber engagement photograph; no commercial endorsement is claimed." },
+  "Ethan": { experience: "Supplied CV: Oxford DPhil Clinical Medicine research, cancer prognosis and treatment-outcome prediction, with Harvard Medical School, Wyss Institute and Johns Hopkins experience.", capability: "UK, North America and Nigeria market window; clinical-AI research and technical strategy.", cases: "Time for Africa Nigeria technical strategy; Auraight market-resource role pending final confirmation." },
+  "Vivian": { experience: "Meeting notes identify Vivian as a project participant and Shanghai private-hospital resource contact.", capability: "Shanghai private-hospital resource coordination; approved biography pending.", cases: "Auraight cross-border care pathway; detailed case evidence and portrait approval pending." },
+  "Chris": { experience: "VFlux project team member; approved biography pending.", capability: "VFlux role and capability pending confirmation.", cases: "VFlux asset-distribution and liquidity network; personal case evidence pending." },
+  "Anthony": { experience: "VFlux project team member; approved biography pending.", capability: "VFlux role and capability pending confirmation.", cases: "VFlux routing, clearing and multi-asset infrastructure proposal; personal case evidence pending." },
+  "Franklin Ng": { experience: "Founder entry recorded; approved biography pending.", capability: "Founder role and capability pending confirmation.", cases: "MOTA TECH LINK founder profile and case evidence pending approved material." },
+  "贺稀 · Vito He": { experience: "International consulting partner with 20+ years in B2B sales, consulting, digital marketing and team management.", capability: "Japan market development, quality governance and cross-border commercial leadership.", cases: "Yoshisei founder · Tokyo, Osaka and Fukuoka operating footprint." },
+  "渠成 · Allen Qu": { experience: "Netconcepts founder, Sinorbis co-founder and Cross Border Digital founder; long-term digital marketing and brand practitioner.", capability: "Brand expansion, search, content, performance marketing and AI visibility.", cases: "Yoshisei co-founder / special adviser · China-Japan market acquisition." },
+  "栗木霞 · Kuri Ki": { experience: "30+ years across tourism, cruise, recycling and logistics industries; bilingual Japan-China business experience.", capability: "Japan buyer development, sales, after-sales and regional go-to-market.", cases: "Yoshisei Japan-side sales and after-sales lead." },
+};
+const ui = {
+  en: { pages: ["MOTA TECH LINK", "MOTA / AIOT", "ELMSFLOW", "Auraight", "VFLUX", "Japan–China AI video", "Closing signal"], hero: "Connect the need. Accelerate the path.", cover: "A project network for scarce capability, local trust and practical delivery.", home: "MOTA TECH LINK home", local: "Local advantage", it: "IT connects", ai: "AI accelerates", global: "Global demand", mission: "MISSION", vision: "VISION", aiot: "AIoT · GenAI edge intelligence", cases: "Four showcases, one AIoT capability", opportunities: "Four opportunity lanes", team: "People & delivery", officials: "National · local · business engagement", map: "Ireland → EU → global routes", care: "Care pathways are coordinated, not clinically promised.", source: "Source / verification boundary", contact: "CONTACT", address: "1329 Willoughby Ave, Brooklyn, NY 11237-3177, USA", email: "hello@motaiot.com", copyright: "© 2026 MOTA TECHLINK. All rights reserved." },
+  zh: { pages: ["MOTA TECH LINK", "MOTA / AIOT", "ELMSFLOW", "Auraight", "VFLUX", "中日 AI 视频", "收束信号"], hero: "连接需求，加速落地。", cover: "为稀缺能力、本地信任与实际交付建立项目网络。", home: "MOTA TECH LINK 主页", local: "本地优势", it: "IT 连接", ai: "AI 加速", global: "全球需求", mission: "使命", vision: "愿景", aiot: "AIoT · GenAI 边缘智能", cases: "四个案例，一项 AIoT 能力", opportunities: "四个机会方向", team: "团队与交付", officials: "国家 · 地方 · 商业交流", map: "爱尔兰 → 欧盟 → 全球通路", care: "我们协调就医路径，不作临床承诺。", source: "来源 / 核验边界", contact: "联系方式", address: "美国纽约州布鲁克林 Willoughby Ave 1329号，NY 11237-3177", email: "hello@motaiot.com", copyright: "© 2026 MOTA TECHLINK. 保留所有权利。" },
+  ja: { pages: ["MOTA TECH LINK", "MOTA / AIOT", "ELMSFLOW", "Auraight", "VFLUX", "日中 AI 動画", "Closing signal"], hero: "需要をつなぎ、実装を加速する。", cover: "希少な能力、地域の信頼、実行力をつなぐプロジェクトネットワーク。", home: "MOTA TECH LINK ホーム", local: "地域の強み", it: "ITで接続", ai: "AIで加速", global: "世界の需要", mission: "使命", vision: "ビジョン", aiot: "AIoT · GenAI エッジ知能", cases: "4つの事例、1つのAIoT能力", opportunities: "4つの機会", team: "チームと実装", officials: "国 · 地方 · 産業の対話", map: "アイルランド → EU → 世界", care: "医療の調整であり、臨床結果の保証ではありません。", source: "出典 / 確認範囲", contact: "連絡先", address: "1329 Willoughby Ave, Brooklyn, NY 11237-3177, USA", email: "hello@motaiot.com", copyright: "© 2026 MOTA TECHLINK." },
+  es: { pages: ["MOTA TECH LINK", "MOTA / AIOT", "ELMSFLOW", "Auraight", "VFLUX", "Vídeo IA China–Japón", "Cierre"], hero: "Conectar la necesidad. Acelerar el camino.", cover: "Una red de proyectos para capacidades escasas, confianza local y ejecución práctica.", home: "Inicio de MOTA TECH LINK", local: "Ventaja local", it: "IT conecta", ai: "IA acelera", global: "Demanda global", mission: "MISIÓN", vision: "VISIÓN", aiot: "AIoT · inteligencia edge GenAI", cases: "Cuatro casos, una capacidad AIoT", opportunities: "Cuatro oportunidades", team: "Equipo y ejecución", officials: "Relación nacional · local · empresarial", map: "Irlanda → UE → rutas globales", care: "Coordinación asistencial, sin prometer resultados clínicos.", source: "Fuente / límite de verificación", contact: "CONTACTO", address: "1329 Willoughby Ave, Brooklyn, NY 11237-3177, USA", email: "hello@motaiot.com", copyright: "© 2026 MOTA TECHLINK." },
+} as const;
 
-function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return <a className="mtl-link" href={href} target="_blank" rel="noopener noreferrer">{children} <span aria-hidden="true">↗</span></a>;
-}
-
-function Logo({ project }: { project: Project }) {
-  return <span className="mtl-logo">{project.logo ? <Image src={project.logo} alt={`${project.name} logo`} width={180} height={72} /> : <span aria-label={`${project.name} logo`}>{project.mark}</span>}</span>;
-}
-
-function PersonButton({ person, onClick }: { person: Person; onClick: () => void }) {
-  const harling = person.name === "Harling Sun";
-  return <button type="button" className="mtl-person" onClick={onClick} aria-label={`${person.name} · ${person.role}`}>
-    {harling ? <Image src="/images/team/Harling.jpg" alt="" width={48} height={48} /> : <span className="mtl-avatar" aria-hidden="true">{person.name.charAt(0)}</span>}
-    <span><strong>{person.name}</strong><small>{person.role}</small></span>
-  </button>;
-}
+function LinkOut({ href, children }: { href: string; children: React.ReactNode }) { return <a className="mtl-link" href={href} target="_blank" rel="noopener noreferrer">{children} ↗</a>; }
+function PersonButton({ person, onClick, photo }: { person: Person; onClick: () => void; photo?: string }) { return <button type="button" className="mtl-photo-person" onClick={onClick}><Image src={photo || (person.name.includes("Harling") ? "/images/team/Harling.jpg" : "/images/team/Harling.jpg")} alt="" width={48} height={48} /><span><strong>{person.name}</strong><small>{person.role}</small></span></button>; }
 
 export function MotaSection({ index, goTo: navigate }: { index: number; goTo?: (idx: number) => void }) {
-  const c = useContent();
-  const { deckLocale } = useDeckLocale();
-  const b = briefs[deckLocale] ?? en;
-  const fallback = useNav();
-  const goTo = navigate ?? fallback;
-  const [selected, setSelected] = useState<Project | null>(null);
-  const e = c.editorial;
-  const d = c.sections[index === 7 ? 8 : index];
-  const projectIndex = index - 2;
-  const project = c.projects[projectIndex];
-  const brief = b.projects[projectIndex];
-  const showcaseLocale = ["en", "zh", "ja"].includes(deckLocale) ? deckLocale : "en";
-  const projectUrl = (slug: string) => `https://github.com/mota-techlink/mota-site-atom/blob/main/content/showcase/${slug}${showcaseLocale === "en" ? "" : `.${showcaseLocale}`}.md`;
-  const makeProject = (p: Project, detail: Brief["projects"][number]): Project => ({
-    ...p,
-    summary: detail.lead,
-    overview: { title: p.name, body: detail.lead, points: detail.blocks.map(block => block.body) },
-    capabilities: detail.blocks,
-    team: detail.people,
-    sources: [detail.source],
-    pending: [detail.blocks[detail.blocks.length - 1].body],
-  });
-  const openPerson = (person: Person, p?: Project) => {
-    const base = p ?? c.projects[0];
-    setSelected({
-      ...base,
-      id: person.name,
-      name: person.name,
-      mark: person.name.charAt(0),
-      logo: person.name === "Harling Sun" ? "/images/team/Harling.jpg" : undefined,
-      summary: person.role,
-      overview: { title: person.name, body: person.role, points: person.name === "Harling Sun" ? [e.harlingBio, e.harlingSkills] : [person.role] },
-      capabilities: [{ title: c.gallery.overview, body: person.role }],
-      team: [person],
-      sources: [e.source],
-      pending: [person.name === "Franklin Ng" ? e.franklinBio : person.role],
-    });
-  };
-  const back = () => {
-    setSelected(null);
-    goTo(1);
-    window.setTimeout(() => document.querySelector<HTMLElement>('.mtl-slide[data-state="active"] h1')?.focus(), 0);
-  };
-  const founders = [{ name: "Harling Sun", role: e.founderRole }, { name: "Franklin Ng", role: e.franklinRole }];
-
-  return <section className="mtl-section">
-    <div className="mtl-content">
-      <div className="mtl-kicker"><span>{String(index + 1).padStart(2, "0")} · {d.eyebrow}</span>{index > 1 && <button type="button" onClick={() => goTo(1)}>↩ {e.back}</button>}</div>
-
-      {index === 0 && <>
-        <div className="mtl-cover-grid">
-          <div className="mtl-cover-main">
-            <span className="mtl-mota-logo"><Image src="/logos/mota-techlink-logo-v2.webp" alt="MOTA TECH LINK logo" width={270} height={85} priority /></span>
-            <h1 tabIndex={-1}>{d.title}</h1>
-            <p className="mtl-lead">{b.cover.thesis}</p>
-            <p className="mtl-muted"><strong>{e.missionLabel}:</strong> {e.mission} <strong>{e.visionLabel}:</strong> {e.vision}</p>
-            <button type="button" className="mtl-action" onClick={() => goTo(1)}>{e.coverAction} →</button>
-          </div>
-          <div className="mtl-cover-side">
-            <p className="mtl-label">{b.overview.active}</p>
-            {c.projects.map((p, i) => <button type="button" key={p.id} onClick={() => goTo(i + 2)} className="mtl-cover-project"><span>0{i + 1}</span><strong>{p.name}</strong><span>↗</span></button>)}
-            <p className="mtl-boundary">{b.cover.boundary}</p>
-          </div>
-        </div>
-        <div className="mtl-flow">{b.cover.flow.map((item, i) => <div key={item}><span>0{i + 1}</span><strong>{item}</strong>{i < 2 && <b aria-hidden="true">→</b>}</div>)}</div>
-      </>}
-
-      {index === 1 && <>
-        <div className="mtl-overview-head">
-          <div><span className="mtl-mota-logo mtl-mota-logo-small"><Image src="/logos/mota-techlink-logo-v2.webp" alt="MOTA TECH LINK logo" width={220} height={70} /></span><h1 tabIndex={-1}>{d.title}</h1><p className="mtl-lead">{b.overview.intro}</p></div>
-          <div className="mtl-philosophy">{[[e.missionLabel, e.mission], [e.visionLabel, e.vision], [e.modelLabel, e.model], [e.techLabel, e.tech]].map(([title, body]) => <div key={title}><strong>{title}</strong><p>{body}</p></div>)}</div>
-        </div>
-        <div className="mtl-overview-bar"><strong>{e.founders}</strong><div className="mtl-people">{founders.map(person => <PersonButton key={person.name} person={person} onClick={() => openPerson(person)} />)}</div><span className="mtl-boundary">{b.overview.boundary}</span></div>
-        <div className="mtl-portfolio"><h2>{b.overview.active}</h2><div className="mtl-project-grid">{c.projects.map((p, i) => <article className="mtl-project-card" key={p.id}><Logo project={p} /><div><h3>{p.name}</h3><p>{p.summary}</p><div className="mtl-actions"><button type="button" onClick={() => goTo(i + 2)}>{e.explore} →</button><button type="button" onClick={() => setSelected(makeProject(p, b.projects[i]))}>{e.details} →</button><ExternalLink href={p.url}>{c.gallery.website}</ExternalLink></div></div></article>)}</div></div>
-        <div className="mtl-cases"><h2>{b.overview.cases}</h2><div>{caseSlugs.map((slug, i) => <article key={slug}><span aria-hidden="true">{caseIcons[i]}</span><p><strong>{c.sections[7].items[i]}</strong> · {e.caseDescriptions[i]} <ExternalLink href={projectUrl(slug)}>{e.caseLink}</ExternalLink></p></article>)}</div></div>
-      </>}
-
-      {project && brief && <>
-        <div className="mtl-project-head">
-          <Logo project={project} />
-          <div><h1 tabIndex={-1}>{d.title}</h1><p className="mtl-lead">{brief.lead}</p></div>
-          <div className="mtl-project-links"><button type="button" className="mtl-action" onClick={() => setSelected(makeProject(project, brief))}>{e.details} →</button>{brief.links.map((label, i) => <ExternalLink key={label} href={projectIndex === 2 && i === 1 ? `/${showcaseLocale}/contact` : projectLinks[projectIndex][i]}>{label}</ExternalLink>)}</div>
-        </div>
-        <div className={`mtl-block-grid mtl-project-${projectIndex}`}>{brief.blocks.map((block, i) => <article className="mtl-block" key={block.title}><span className="mtl-block-number">0{i + 1}</span><div><h2>{block.title}</h2><p>{block.body}</p></div></article>)}</div>
-        <div className="mtl-team"><div><p className="mtl-label">{c.gallery.team}</p><p className="mtl-boundary">{brief.source}</p></div><div className="mtl-people">{brief.people.map(person => <PersonButton key={person.name} person={person} onClick={() => openPerson(person, project)} />)}</div></div>
-      </>}
-
-      {index === 6 && <>
-        <div className="mtl-simple-head"><h1 tabIndex={-1}>{d.title}</h1><p className="mtl-lead">{b.network.lead}</p></div>
-        <div className="mtl-network-grid">{b.network.blocks.map((item, i) => <article className="mtl-block" key={item}><span className="mtl-block-number">0{i + 1}</span><h2>{item}</h2></article>)}</div>
-        <div className="mtl-end-bar"><p className="mtl-boundary">{b.network.boundary}</p><button className="mtl-action" type="button" onClick={() => goTo(7)}>{e.cta} →</button></div>
-      </>}
-
-      {index === 7 && <>
-        <div className="mtl-simple-head"><span className="mtl-mota-logo mtl-mota-logo-small"><Image src="/logos/mota-techlink-logo-v2.webp" alt="MOTA TECH LINK logo" width={220} height={70} /></span><h1 tabIndex={-1}>{d.title}</h1><p className="mtl-lead">{b.cta.lead}</p><p className="mtl-muted">{e.mission}</p></div>
-        <div className="mtl-cta-grid"><div><p className="mtl-label">{b.overview.active}</p>{c.projects.map((p, i) => <button type="button" className="mtl-cover-project" key={p.id} onClick={() => goTo(i + 2)}><span>0{i + 1}</span><strong>{p.name}</strong><span>→</span></button>)}</div><div><p className="mtl-label">{e.cta}</p>{b.cta.entries.map((entry, i) => <div className="mtl-entry" key={entry}><span>0{i + 1}</span>{entry}</div>)}</div></div>
-        <div className="mtl-end-bar"><p className="mtl-boundary">{b.cta.boundary}</p><a className="mtl-action" href={`/${showcaseLocale}/contact`} target="_blank" rel="noopener noreferrer">{e.cta} ↗</a></div>
-      </>}
-    </div>
-    {selected && <ProjectDetailModal project={selected} labels={c.gallery} onClose={() => setSelected(null)} onBack={back} backLabel={e.back} />}
-  </section>;
+  const c = useContent(); const { deckLocale } = useDeckLocale(); const fallback = useNav(); const goTo = navigate || fallback; const t = ui[deckLocale as keyof typeof ui] || ui.en; const b = briefs[deckLocale] || en; const [selected, setSelected] = useState<Project | null>(null);
+  const project = index >= 2 && index <= 5 ? c.projects[index - 2] as Project : null; const brief = index >= 2 && index <= 5 ? b.projects[index - 2] : null;
+  const projectDetail = (p: Project, d: Brief["projects"][number]): Project => ({ ...p, summary: d.lead, overview: { title: d.lead, body: d.blocks.map(x => x.body).join(" "), points: d.blocks.map(x => `${x.title}: ${x.body}`) }, capabilities: d.blocks, team: d.people, sources: [d.source], pending: [d.blocks[d.blocks.length - 1].body] });
+  const openPerson = (person: Person, base: Project = c.projects[0] as Project, photo?: string) => { const story = personStories[person.name] || { experience: "Approved biography pending.", capability: person.role, cases: "Personal case evidence pending." }; return setSelected({ ...base, name: person.name, mark: person.name.slice(0, 2), photo, logo: undefined, summary: person.role, overview: { title: person.role, body: person.role, points: [story.experience, story.cases] }, capabilities: [{ title: t.ai, body: story.capability }, { title: t.cases, body: story.cases }], team: [person], sources: [c.editorial.source], pending: [person.name === "Franklin Ng" ? c.editorial.franklinBio : story.experience] }); };
+  const closeBack = () => { setSelected(null); goTo(1); };
+  return <section className="mtl-section"><div className="mtl-content">
+    <div className="mtl-kicker"><span>{String(index + 1).padStart(2, "0")} · {t.pages[index]}</span>{index > 1 && <button type="button" onClick={() => goTo(1)}>↩ {c.editorial.back}</button>}</div>
+    {index === 0 && <div className="mtl-cover"><div className="mtl-cover-copy"><span className="mtl-mota-logo"><Image src="/logos/mota-techlink-logo-v2.webp" alt="MOTA TECH LINK" width={300} height={90} priority /></span><h1>{t.hero}</h1><p className="mtl-lead">{t.cover}</p><p className="mtl-muted"><b>{t.mission}:</b> {c.editorial.mission} <b>{t.vision}:</b> {c.editorial.vision}</p><button className="mtl-action" type="button" onClick={() => goTo(1)}>Explore MOTA / AIOT →</button></div><div className="mtl-cover-ring"><div className="mtl-node">🌍<br />{t.global}</div><div className="mtl-node">⚡<br />{t.ai}</div><div className="mtl-node">🧩<br />{t.it}</div><div className="mtl-node">🧭<br />{t.local}</div></div></div>}
+    {index === 0 && <div className="mtl-feature-row"><div className="mtl-feature"><b>🧭</b>{t.local}</div><div className="mtl-feature"><b>🔌</b>{t.it}</div><div className="mtl-feature"><b>⚡</b>{t.ai}</div><div className="mtl-feature"><b>🤝</b>{c.editorial.modelLabel}</div></div>}
+    {index === 1 && <div className="mtl-mota"><div className="mtl-mota-copy"><span className="mtl-mota-logo"><Image src="/logos/mota-techlink-logo-v2.webp" alt="MOTA TECH LINK" width={260} height={80} /></span><h1>🌐 {t.pages[1]}</h1><p className="mtl-lead">{c.editorial.model}</p><div className="mtl-aiot"><span>AIOT CASE STUDY</span><h2>{t.aiot}</h2><p>{c.editorial.harlingBio}</p><LinkOut href="https://motaiot.com/zh/showcase/GenAI-Driven">{t.cases}</LinkOut></div></div><div><div className="mtl-mota-hex"><div className="mtl-hex"><strong>🧠 {t.mission}</strong><p>{c.editorial.mission}</p></div><div className="mtl-hex"><strong>🚀 {t.vision}</strong><p>{c.editorial.vision}</p></div><div className="mtl-hex"><strong>🔌 {t.it}</strong><p>{c.editorial.tech}</p></div><div className="mtl-hex"><strong>⚡ {t.ai}</strong><p>GenAI synthetic data, edge inference, automation and practical delivery.</p></div></div><div className="mtl-case-orbit"><article>💡 AI lighting<br /><small>Connected environment</small></article><article>🎙️ AI voice<br /><small>Device interaction</small></article><article>🛗 GenAI edge safety<br /><small>Privacy-first IoT</small></article></div></div></div>}
+    {project && brief && index === 2 && <Elmsflow t={t} c={c} p={project} d={brief} openPerson={openPerson} setSelected={setSelected} projectDetail={projectDetail} />}
+    {project && brief && index === 3 && <Auraight t={t} c={c} p={project} d={brief} openPerson={openPerson} projectDetail={projectDetail} />}
+    {project && brief && index === 4 && <Vflux t={t} c={c} p={project} d={brief} openPerson={openPerson} projectDetail={projectDetail} />}
+    {project && brief && index === 5 && <AiVideo t={t} c={c} p={project} d={brief} openPerson={openPerson} projectDetail={projectDetail} />}
+    {index === 6 && <Cta t={t} c={c} goTo={goTo} />}
+    {selected && <ProjectDetailModal project={selected} labels={{ ...c.gallery, overview: "分工描述", capabilities: "能力", team: "经历和案例" }} onClose={() => setSelected(null)} onBack={closeBack} backLabel={c.editorial.back} />}
+  </div></section>;
 }
+
+function ProjectHead({ p, d, t, links }: { p: Project; d: Brief["projects"][number]; t: typeof ui.en; links: string[] }) { return <div className="mtl-project-head"><span className="mtl-logo"><Image src={p.logo || "/logos/mota-techlink-logo-v2.webp"} alt={`${p.name} logo`} width={180} height={90} /></span><div><h1>{p.name}</h1><p className="mtl-lead">{d.lead}</p></div><div className="mtl-project-links"><LinkOut href={links[0]}>{d.links[0]}</LinkOut><LinkOut href={links[1]}>{d.links[1]}</LinkOut></div></div>; }
+function Elmsflow({ t, c, p, d, openPerson, setSelected, projectDetail }: any) { return <><ProjectHead p={p} d={d} t={t} links={projectLinks[0]} /><div className="mtl-elms-layout"><div><p className="mtl-eyebrow">🏗️ {t.opportunities}</p><div className="mtl-opportunities">{["📦 Food packaging printing", "🧪 Medical / pharmaceutical packaging", "🏭 Factory & warehouse construction", "❄️ Cold storage construction"].map((x) => <article className="mtl-opportunity" key={x}><strong>{x}</strong><p>Scope and assessment in progress · not a completion claim.</p></article>)}</div><div className="mtl-network-people"><p className="mtl-label">{t.team}</p>{d.people.map((person: Person, i: number) => <PersonButton key={person.name} person={person} photo={elmsPhotos[i]} onClick={() => openPerson(person, p, elmsPhotos[i])} />)}</div></div><div><p className="mtl-eyebrow">🌍 {t.map}</p><div className="mtl-map"><span>🇮🇪 Dublin</span><span>🇨🇳 Shanghai</span><span>🇬🇧 London</span><span>🇺🇸 Brooklyn</span></div><p className="mtl-boundary">EU single market · English-speaking business · common-law context · industrial and technology clusters.</p></div></div><div className="mtl-officials"><p className="mtl-label">{t.officials}</p>{officials.map((official) => <button key={official.name} type="button" onClick={() => openPerson({ name: official.name, role: official.role }, p, official.photo)}><Image src={official.photo} alt={official.name} width={52} height={52} /></button>)}</div></>; }
+function Auraight({ t, c, p, d, openPerson, projectDetail }: any) { return <><ProjectHead p={p} d={d} t={t} links={projectLinks[1]} /><div className="mtl-aura-layout"><div><div className="mtl-disease-ring" /><div className="mtl-legend"><span><b><i />MM · 3/6</b><em>50%</em></span><span><b><i />Lymphoma · 1/6</b><em>17%</em></span><span><b><i />T-ALL · 1/6</b><em>17%</em></span><span><b><i />NHL · 1/6</b><em>16%</em></span></div><p className="mtl-boundary">Published Showcase sample mix · not population prevalence.</p></div><div className="mtl-aura-main"><div className="mtl-country-map"><b>🇬🇧 UK</b><b>🇳🇬 Nigeria</b><b>🇨🇳 Shanghai</b><b>🇯🇵 Japan</b><b>🇳🇿 NZ</b></div><p className="mtl-muted">{t.care} Overseas queues, limited specialist access and resource gaps create a coordination need; Shanghai can offer efficient private-hospital pathways, while Japan is a route to advanced technologies subject to clinical and regulatory confirmation.</p><div className="mtl-medical-pillars"><article>🩺 Efficient diagnosis<br />Private-hospital navigation</article><article>🧬 CAR-T · iPS<br />Yamanaka factors</article><article>🧪 ACTR<br />Universal engineered T cells</article></div><p className="mtl-muted">🔍 Cancer screening · 胃肠镜 · 🧠 psychological support · 👑 full VIP coordination</p><div className="mtl-project-links"><LinkOut href="https://www.cancer.gov/about-cancer/treatment/research/car-t-cells">CAR-T / NCI</LinkOut><LinkOut href="https://www.cira.kyoto-u.ac.jp/e/">iPS / Kyoto</LinkOut><LinkOut href="https://meeting.tencent.com/ys/gB0RjR1ePZ0ND3Om">Meeting record 01</LinkOut><LinkOut href="https://meeting.tencent.com/ys/gB0RjXrvZ90NrLj7">Meeting record 02</LinkOut></div></div></div><div className="mtl-network-people">{d.people.map((person: Person) => <PersonButton key={person.name} person={person} onClick={() => openPerson(person, p)} />)}</div></>; }
+function Vflux({ t, c, p, d, openPerson }: any) { return <><ProjectHead p={p} d={d} t={t} links={projectLinks[2]} /><div className="mtl-vflux-layout"><div className="mtl-vflux-visual"><div className="mtl-vflux-orbit" /><div className="mtl-vflux-core">VFLUX<br />NETWORK</div><span className="mtl-vflux-node">Asset providers</span><span className="mtl-vflux-node">Trading venues</span><span className="mtl-vflux-node">Global investors</span><span className="mtl-vflux-node">Custody / brokers</span></div><div className="mtl-vflux-copy"><article><b>①</b><span><strong>Market access</strong><br />Eligibility, permissions and asset catalogue.</span></article><article><b>②</b><span><strong>Distribution + liquidity</strong><br />More channels, orders and better execution.</span></article><article><b>③</b><span><strong>Routing + clearing</strong><br />Connect institutions rather than replace them.</span></article><div className="mtl-vflux-steps"><span>Centralized</span><span>Network</span><span>RWA</span><span>On-chain</span></div><p className="mtl-boundary">Planning material only · proposed model · regulatory and commercial validation required.</p></div></div><div className="mtl-network-people">{d.people.map((person: Person) => <PersonButton key={person.name} person={person} onClick={() => openPerson(person, p)} />)}</div></>; }
+function AiVideo({ t, c, p, d, openPerson }: any) { return <><ProjectHead p={p} d={d} t={t} links={projectLinks[3]} /><div className="mtl-video-layout"><div className="mtl-video-copy"><p className="mtl-eyebrow">🇯🇵 demand ↔ 🇨🇳 production</p><h2>AI 漫剧 · AI 广告 · AI 教育</h2><p className="mtl-muted">日本的高单价需求与中国已工业化的 AI 视频供给之间，需要日语品质验收、本地化和日元—人民币结算桥梁。</p><div className="mtl-video-bars"><i /><i /><i /><i /></div><p className="mtl-muted">📈 量产节奏 · 🎬 IP 视频化 · 🧾 QA · 💴 settlement</p><div className="mtl-video-team">{d.people.map((person: Person) => <PersonButton key={person.name} person={person} onClick={() => openPerson(person, p, person.name.includes("Harling") ? "/images/team/Harling.jpg" : undefined)} />)}</div></div><div className="mtl-video-chart"><div className="mtl-video-bridge" /><div className="mtl-video-step">需求<br />需求方</div><div className="mtl-video-step">匹配<br />公平规则</div><div className="mtl-video-step">生成<br />AI production</div><div className="mtl-video-step">验收<br />localisation</div></div></div></>; }
+function Cta({ t, c, goTo }: any) { return <div className="mtl-cta"><div className="mtl-cta-copy"><span className="mtl-mota-logo"><Image src="/logos/mota-techlink-logo-v2.webp" alt="MOTA TECH LINK" width={240} height={75} /></span><h1>🌐 One practical next step.</h1><p className="mtl-lead">Bring a real need, an uncommon capability or a trusted local route. MOTA TECH LINK turns the connection into a project conversation.</p><button type="button" className="mtl-action" onClick={() => goTo(1)}>Return to MOTA overview →</button><div className="mtl-contact"><div><strong>{t.contact}</strong><a href="mailto:hello@motaiot.com">{t.email}</a></div><div><strong>📍 ADDRESS</strong>{t.address}</div><div><strong>🌐 WEBSITE</strong><LinkOut href="https://motaiot.com">motaiot.com</LinkOut></div></div><p className="mtl-boundary">{t.copyright}</p></div><Image className="mtl-cta-art" src="/images/pitch-deck/cta-network.svg" alt="Abstract connected project network" width={720} height={560} /></div>; }

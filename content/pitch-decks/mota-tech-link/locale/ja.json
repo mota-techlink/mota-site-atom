@@ -44,9 +44,9 @@
     "index": "プロジェクト一覧へ"
   },
   "gallery": {
-    "overview": "プロジェクト概要",
-    "capabilities": "機能・対応領域",
-    "team": "チーム",
+    "overview": "役割の説明",
+    "capabilities": "能力",
+    "team": "経験と事例",
     "sources": "出典・ウェブサイト",
     "pending": "保留中の資料",
     "close": "詳細を閉じる",
