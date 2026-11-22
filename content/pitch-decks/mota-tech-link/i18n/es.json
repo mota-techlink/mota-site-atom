@@ -1,0 +1,509 @@
+{
+  "nav": {
+    "home": "Inicio de MOTA TECHLINK",
+    "overview": "Volver al resumen MOTA",
+    "lang": "Idioma",
+    "theme": "Cambiar tema claro u oscuro",
+    "page": "Ir a la página"
+  },
+  "cover": {
+    "eyebrow": "MOTA TECH LINK · RED DE PROYECTOS",
+    "title": "Conectar la necesidad. Acelerar el camino.",
+    "lead": "Unimos capacidad escasa con demanda real y acompañamos hasta la entrega.",
+    "pillars": [
+      {
+        "icon": "🧭",
+        "label": "Ventaja local",
+        "note": "Acceso a mercados de Irlanda y Japón"
+      },
+      {
+        "icon": "🔌",
+        "label": "IT conecta",
+        "note": "Plataformas, datos e integración de sistemas"
+      },
+      {
+        "icon": "⚡",
+        "label": "IA acelera",
+        "note": "IA generativa, inferencia en el borde, automatización"
+      }
+    ],
+    "enter": "Ver proyectos"
+  },
+  "mota": {
+    "eyebrow": "01 · MOTA / AIOT",
+    "title": "Un modelo operativo, cuatro líneas de entrega",
+    "lead": "Cada proyecto parte de una necesidad real, un socio verificado y una ruta de entrega auditable.",
+    "missionTitle": "Misión",
+    "mission": "Convertir necesidades reales en proyectos ejecutables organizando tecnología, equipos, recursos y socios locales.",
+    "visionTitle": "Visión",
+    "vision": "Una red de proyectos donde las fortalezas regionales encuentran los recursos escasos de los mercados objetivo.",
+    "itTitle": "IT conecta",
+    "it": "De sensores y dispositivos a la nube, la inferencia en el borde y agentes de IA: tecnología que hace trabajar juntos a los equipos.",
+    "aiTitle": "IA acelera",
+    "ai": "Datos sintéticos con IA generativa, inferencia en el borde, automatización y entrega práctica.",
+    "aiotTag": "CASO AIOT",
+    "aiotTitle": "Datos sintéticos generativos para dispositivos AIoT",
+    "aiotBody": "En un caso de ascensores inteligentes, los escasos datos de fallo se sustituyen por muestras sintéticas generadas y luego se cuantizan para un NPU con inferencia en el dispositivo: privacidad por defecto, baja latencia y despliegue en el borde.",
+    "aiotPoints": [
+      "Muestras sintéticas de fallo en lugar de costosa recolección en campo",
+      "Modelos cuantizados que corren en NPU de baja potencia",
+      "La inferencia local mantiene los datos del sensor en el dispositivo"
+    ],
+    "aiotLink": "Ver el caso AIoT",
+    "cases": [
+      "💡 Iluminación IA",
+      "🎙️ Voz e interacción IA",
+      "🛗 Seguridad en el borde",
+      "📊 Canal de datos sintéticos"
+    ],
+    "teamTitle": "Equipo",
+    "teamNote": "Toca un retrato para ver rol, capacidades y experiencia."
+  },
+  "elms": {
+    "eyebrow": "02 · ELMSFLOW",
+    "title": "ELMSFLOW",
+    "lead": "Una plataforma transfronteriza que conecta demanda, producto, tecnología, mano de obra y capacidad de entrega. Irlanda es el punto de aterrizaje, no el límite.",
+    "links": [
+      "Sobre ELMSFLOW",
+      "Por qué Irlanda"
+    ],
+    "programmesTitle": "Cuatro programas de entrega",
+    "programmes": [
+      {
+        "title": "Impresión de envases alimentarios",
+        "desc": "Capacidad de impresión y envasado para producción alimentaria.",
+        "image": "/images/pitch-deck/elmsflow/food-packaging-printing.jpg",
+        "link": "https://elmsflo.com/programmes/food-packaging-printing"
+      },
+      {
+        "title": "Envases médicos y farmacéuticos",
+        "desc": "Líneas de envasado conformes para productos sanitarios regulados.",
+        "image": "/images/pitch-deck/elmsflow/medical-pharmaceutical-packaging.jpg",
+        "link": "https://elmsflo.com/programmes/medical-pharmaceutical-packaging"
+      },
+      {
+        "title": "Construcción de fábricas y almacenes",
+        "desc": "Obra industrial y acondicionamiento para producción y almacenaje.",
+        "image": "/images/pitch-deck/elmsflow/factory-warehouse-construction.jpg",
+        "link": "https://elmsflo.com/programmes/factory-warehouse-construction"
+      },
+      {
+        "title": "Construcción de cámaras frigoríficas",
+        "desc": "Instalaciones con temperatura controlada para cadenas alimentarias y farmacéuticas.",
+        "image": "/images/pitch-deck/elmsflow/cold-storage-construction.jpg",
+        "link": "https://elmsflo.com/programmes/cold-storage-construction"
+      }
+    ],
+    "mapTitle": "Irlanda como puerta de entrada",
+    "mapNote": "Mercado único de la UE · entorno empresarial en inglés · tradición de derecho común",
+    "mapNodes": [
+      "Irlanda",
+      "Reino Unido",
+      "Unión Europea",
+      "Estados Unidos",
+      "China"
+    ],
+    "teamTitle": "Equipo",
+    "officialsTitle": "Relación institucional y empresarial",
+    "officialsNote": "Solo registro de encuentros públicos, no implican aval ni compromiso de financiación."
+  },
+  "aura": {
+    "eyebrow": "03 · AURAIGHT",
+    "title": "Auraight",
+    "lead": "Navegación médica transfronteriza bilingüe: preparamos el viaje y coordinamos la comunicación. Las decisiones clínicas corresponden a profesionales sanitarios cualificados.",
+    "links": [
+      "Sitio de Auraight",
+      "Casos públicos"
+    ],
+    "mixTitle": "Composición de casos publicados",
+    "mixNote": "Composición de la muestra publicada, no prevalencia poblacional.",
+    "mix": [
+      {
+        "label": "Mieloma múltiple",
+        "short": "MM",
+        "count": 3,
+        "pct": 50
+      },
+      {
+        "label": "Linfoma",
+        "short": "LY",
+        "count": 1,
+        "pct": 17
+      },
+      {
+        "label": "T-ALL",
+        "short": "TA",
+        "count": 1,
+        "pct": 17
+      },
+      {
+        "label": "NHL",
+        "short": "NH",
+        "count": 1,
+        "pct": 16
+      }
+    ],
+    "mapTitle": "Dos centros de recursos, varios mercados de clientes",
+    "resourceLabel": "Centro de recursos",
+    "clientLabel": "Origen de clientes",
+    "resources": [
+      {
+        "name": "China · Shanghái",
+        "note": "Diagnóstico y tratamiento en hospitales privados"
+      },
+      {
+        "name": "Japón",
+        "note": "Acceso a terapias celulares y génicas avanzadas"
+      }
+    ],
+    "clients": [
+      {
+        "name": "Reino Unido"
+      },
+      {
+        "name": "Nigeria"
+      },
+      {
+        "name": "Nueva Zelanda"
+      }
+    ],
+    "whyTitle": "Por qué China y Japón",
+    "why": [
+      {
+        "title": "Shanghái · rutas privadas rápidas",
+        "body": "Los hospitales privados pueden acortar la programación de diagnóstico y tratamiento para pacientes internacionales.",
+        "link": "https://auraight.com/zh/showcase"
+      },
+      {
+        "title": "Japón · CAR-T e iPS",
+        "body": "Terapia CAR-T e investigación con células iPS, incluida la reprogramación con factores Yamanaka.",
+        "link": "https://www.cira.kyoto-u.ac.jp/e/"
+      },
+      {
+        "title": "Japón · células T universales",
+        "body": "Enfoques alogénicos de células T como ACTR, sujetos a elegibilidad clínica.",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/?term=universal+allogeneic+CAR-T+ACTR"
+      }
+    ],
+    "servicesTitle": "Más allá de la oncología",
+    "services": [
+      "🔍 Cribado de cáncer",
+      "🩺 Endoscopia (gastroscopia y colonoscopia)",
+      "🧠 Apoyo psicológico",
+      "👑 Coordinación VIP completa"
+    ],
+    "teamTitle": "Equipo"
+  },
+  "vflux": {
+    "eyebrow": "04 · VFLUX",
+    "title": "VFlux",
+    "lead": "El problema no es la falta de activos, sino el acceso y la liquidez fragmentados.",
+    "links": [
+      "Sitio de VFlux",
+      "Libro blanco"
+    ],
+    "layersTitle": "Tres capas, una conexión",
+    "layers": [
+      {
+        "tag": "Acceso",
+        "title": "Acceso al mercado",
+        "body": "Elegibilidad, permisos y catálogo de activos verificado."
+      },
+      {
+        "tag": "Distribución",
+        "title": "Distribución y liquidez",
+        "body": "Más canales, más flujo de órdenes y mejor ejecución."
+      },
+      {
+        "tag": "Liquidación",
+        "title": "Enrutamiento y compensación",
+        "body": "Conectar las instituciones existentes en lugar de reemplazarlas."
+      }
+    ],
+    "flowTitle": "Ruta de evolución",
+    "flow": [
+      "Centralizado",
+      "Red",
+      "RWA",
+      "On-chain"
+    ],
+    "note": "Material de planificación · modelo propuesto · requiere validación regulatoria y comercial.",
+    "teamTitle": "Equipo"
+  },
+  "video": {
+    "eyebrow": "05 · YOSHI SEI · 吉晟株式会社",
+    "title": "Plataforma de emparejamiento de vídeo IA Japón–China",
+    "lead": "La demanda japonesa se encuentra con la producción china de vídeo IA industrializada mediante una plataforma transfronteriza neutral.",
+    "demandTitle": "🇯🇵 Lado de la demanda",
+    "demand": [
+      "Agencias y marcas",
+      "Propietarios de IP y editoriales",
+      "Educación y formación"
+    ],
+    "supplyTitle": "🇨🇳 Lado de la oferta",
+    "supply": [
+      "Estudios maduros de vídeo IA",
+      "Herramientas Kling, Jimeng, Vidu, Hailuo",
+      "Guion → storyboard → generación → montaje"
+    ],
+    "linesTitle": "Tres líneas de negocio",
+    "lines": [
+      {
+        "icon": "🎬",
+        "title": "Drama cómico IA",
+        "body": "Series cortas para plataformas japonesas."
+      },
+      {
+        "icon": "📣",
+        "title": "Publicidad IA",
+        "body": "Creatividad de marca y rendimiento localizada."
+      },
+      {
+        "icon": "🎓",
+        "title": "Educación IA",
+        "body": "Vídeo formativo y de cursos a escala."
+      }
+    ],
+    "stepsTitle": "Cadena de entrega",
+    "steps": [
+      "Encargo",
+      "Emparejamiento",
+      "Generación",
+      "Localización",
+      "Revisión",
+      "Entrega"
+    ],
+    "whyTitle": "Por qué una plataforma",
+    "why": [
+      "Control de calidad y localización en japonés",
+      "Puente de liquidación yen–renminbi",
+      "Reglas de emparejamiento justas para ambas partes"
+    ],
+    "links": [
+      "Sitio de Yoshi Sei",
+      "Plan de negocio"
+    ],
+    "teamTitle": "Equipo fundador"
+  },
+  "cta": {
+    "eyebrow": "06 · SIGUIENTE PASO",
+    "title": "Trae una necesidad real.",
+    "lead": "Una necesidad, una capacidad poco común o una ruta local de confianza bastan para iniciar una conversación de proyecto.",
+    "contact": "Contacto",
+    "addressLabel": "Dirección",
+    "address": "1329 Willoughby Ave, Brooklyn, NY 11237-3177, USA",
+    "websiteLabel": "Sitio web",
+    "email": "hello@motaiot.com",
+    "copyright": "© 2026 MOTA TECHLINK. Todos los derechos reservados.",
+    "back": "Volver al resumen MOTA"
+  },
+  "modal": {
+    "tabs": [
+      "Rol",
+      "Capacidades",
+      "Experiencia y casos"
+    ],
+    "close": "Cerrar",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "officialTitle": "Registro de encuentro"
+  },
+  "people": {
+    "harling": {
+      "name": "Harling Sun 孙涛",
+      "role": "Fundador y arquitecto jefe, MOTA TECHLINK",
+      "photo": "/images/team/Harling.jpg",
+      "roleDesc": "Define la dirección técnica de los cuatro proyectos e integra sistemas transfronterizos, IA e IoT.",
+      "caps": [
+        "Agentes de IA y flujos LLM",
+        "IoT y computación en el borde",
+        "Infraestructura cloud y sistemas de datos",
+        "Integración de plataformas transfronterizas"
+      ],
+      "exp": [
+        "Creó y dirigió el equipo de API de eBay China",
+        "Arquitectura del sistema transfronterizo Shanghái 1210",
+        "Plataforma de ascensores inteligentes IA + IoT",
+        "Experiencia previa en KONAMI e IBM"
+      ]
+    },
+    "franklin": {
+      "name": "Franklin Ng",
+      "role": "Cofundador",
+      "photo": "",
+      "roleDesc": "Socio fundador que apoya la identificación de proyectos y la estructuración comercial.",
+      "caps": [
+        "Estructuración comercial",
+        "Identificación de socios"
+      ],
+      "exp": [
+        "Biografía y casos pendientes de aprobación"
+      ]
+    },
+    "paul": {
+      "name": "Paul Brennan",
+      "role": "Cadena de suministro, seguridad alimentaria y calidad",
+      "photo": "/images/pitch-deck/elmsflow/paul-brennan.jpg",
+      "roleDesc": "Responsable de cadena de suministro, seguridad alimentaria y gobernanza de calidad en los programas de ELMSFLOW.",
+      "caps": [
+        "Normas BRC e ISO",
+        "Carbono, sostenibilidad y proyectos verdes",
+        "Six Sigma y calidad de cadena de suministro"
+      ],
+      "exp": [
+        "Más de 45 años en cadena de suministro y seguridad alimentaria",
+        "Puestos senior en la cadena de suministro de McDonald's Europa",
+        "Fundador de Paradigm Supply Chain Solutions"
+      ]
+    },
+    "turlough": {
+      "name": "Turlough Sheehan",
+      "role": "Logística global y cumplimiento aduanero",
+      "photo": "/images/pitch-deck/elmsflow/turlough-sheehan.jpg",
+      "roleDesc": "Diseña logística conforme y estrategia de entrada aduanera para programas transfronterizos.",
+      "caps": [
+        "Envío DDP y hubs conformes",
+        "Section 321 y entrada de bajo valor",
+        "Asesoría en derecho comercial internacional"
+      ],
+      "exp": [
+        "Más de 40 años en logística global y aduanas",
+        "Activo en cumplimiento de comercio electrónico desde 1992"
+      ]
+    },
+    "vivian": {
+      "name": "Vivian Yan 闫玮",
+      "role": "Recursos de hospitales privados de Shanghái · Auraight",
+      "photo": "/images/pitch-deck/auraight/vivian-yan.jpg",
+      "roleDesc": "Desarrolla canales de hospitales privados y salud corporativa en Shanghái y coordina rutas de pacientes para Auraight.",
+      "caps": [
+        "Ventas de hospitales privados y salud corporativa",
+        "Diseño de programas de gestión de salud",
+        "Consejera psicológica certificada (nivel 2)",
+        "Comunicación empresarial en japonés"
+      ],
+      "exp": [
+        "Parkway Health 百汇医疗 — desde agosto de 2026",
+        "SinoUnited Health 曜影医疗 — desarrollo de negocio, 2020–2026",
+        "iKang Healthcare 爱康集团 — directora regional de ventas, China Oriental, 2016–2020",
+        "Universidad de Pekín — licenciatura en Administración Pública"
+      ]
+    },
+    "ethan": {
+      "name": "Ethan",
+      "role": "Investigación en IA clínica y estrategia de mercado",
+      "photo": "",
+      "roleDesc": "Conecta evidencia clínica, entrada al mercado y estrategia técnica para Auraight.",
+      "caps": [
+        "Pronóstico y predicción de resultados en cáncer",
+        "Investigación en IA clínica",
+        "Acceso a mercados de Reino Unido, Norteamérica y Nigeria"
+      ],
+      "exp": [
+        "Doctorado en investigación clínica, Oxford",
+        "Harvard Medical School y Wyss Institute",
+        "Experiencia en Johns Hopkins",
+        "Time for Africa — estrategia técnica en Nigeria"
+      ]
+    },
+    "chris": {
+      "name": "Chris",
+      "role": "Equipo del proyecto VFlux",
+      "photo": "",
+      "roleDesc": "Línea de distribución de activos y liquidez de VFlux. Biografía pendiente de aprobación.",
+      "caps": [
+        "Rol y capacidades pendientes de confirmación"
+      ],
+      "exp": [
+        "Biografía y casos pendientes"
+      ]
+    },
+    "anthony": {
+      "name": "Anthony Chen",
+      "role": "Mercados de capital, trading y tokenización RWA · VFlux",
+      "photo": "/images/pitch-deck/vflux/anthony-chen.jpg",
+      "link": "https://www.linkedin.com/in/chenanthony",
+      "roleDesc": "Aporta experiencia en trading, investigación de inversiones y tokenización de activos reales al acceso al mercado y la liquidez de VFlux.",
+      "caps": [
+        "Inversión financiera, trading e investigación",
+        "Tokenización de activos del mundo real (RWA)",
+        "Blockchain aplicado a pagos y energía",
+        "Mercados transfronterizos: Singapur, Hong Kong, Tailandia, Australia"
+      ],
+      "exp": [
+        "Fforward.finance — inversión financiera, trading e investigación",
+        "Con base en Singapur; antes en Bangkok, Phuket y Hong Kong",
+        "University of Technology, Sydney",
+        "Publicó sobre el papel del blockchain en la innovación energética limpia"
+      ]
+    },
+    "vito": {
+      "name": "Vito He 贺稀",
+      "role": "Fundador, Yoshi Sei Corporation",
+      "photo": "/images/pitch-deck/yoshisei/vito-he.jpg",
+      "roleDesc": "Dirige la plataforma de vídeo IA Japón–China, desde la demanda japonesa hasta la producción china.",
+      "caps": [
+        "Más de 20 años en ventas B2B, consultoría y marketing digital",
+        "Construcción de equipos de 0 a 1",
+        "Universidad de Tongji; MBA en SBS Swiss Business School"
+      ],
+      "exp": [
+        "Fundó Yoshi Sei Corporation, sede en Tokio con oficinas en Osaka y Fukuoka",
+        "Equipo de 3 a más de 30 personas",
+        "Multiplicó por 7 los ingresos hasta 22 M ¥ en 2018"
+      ]
+    },
+    "allen": {
+      "name": "Allen Qu 渠成",
+      "role": "Cofundador y asesor especial",
+      "photo": "/images/pitch-deck/yoshisei/allen-qu.jpg",
+      "roleDesc": "Responsable de marketing digital, marca y estrategia de búsqueda de la plataforma.",
+      "caps": [
+        "Búsqueda, contenido y visibilidad en IA",
+        "Expansión de marca en China y Japón",
+        "Marketing de rendimiento"
+      ],
+      "exp": [
+        "Fundador de Netconcepts",
+        "Cofundador de Sinorbis",
+        "Fundador de Cross Border Digital",
+        "Estudios en Japón; Universidad de Auckland"
+      ]
+    },
+    "kuri": {
+      "name": "Kuri Ki 栗木霞",
+      "role": "Responsable de ventas y posventa en Japón",
+      "photo": "/images/pitch-deck/yoshisei/kuri-ki.jpg",
+      "roleDesc": "Desarrolla compradores japoneses y gestiona ventas y posventa.",
+      "caps": [
+        "Desarrollo de compradores japoneses",
+        "Comunicación bilingüe Japón–China",
+        "Operaciones de venta y posventa"
+      ],
+      "exp": [
+        "Más de 30 años en turismo, cruceros, reciclaje y logística",
+        "Responsable de ventas y posventa en Japón en Yoshi Sei"
+      ]
+    }
+  },
+  "officials": {
+    "cummins": {
+      "name": "John Cummins TD",
+      "role": "Secretario de Estado de Gobierno Local y Planificación",
+      "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
+      "link": "https://elmsflo.com/why-ireland"
+    },
+    "evans": {
+      "name": "Gareth Evans",
+      "role": "Director ejecutivo, Ayuntamiento de Waterford",
+      "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
+      "link": "https://elmsflo.com/why-ireland"
+    },
+    "hurley": {
+      "name": "Gerald Hurley",
+      "role": "Director ejecutivo, Cámara de Waterford",
+      "photo": "/images/pitch-deck/elmsflow/gerald-hurley.jpg",
+      "link": "https://elmsflo.com/about"
+    }
+  }
+}

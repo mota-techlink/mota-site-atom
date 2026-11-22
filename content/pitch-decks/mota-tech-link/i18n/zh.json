@@ -1,0 +1,509 @@
+{
+  "nav": {
+    "home": "MOTA TECHLINK 主页",
+    "overview": "返回 MOTA 概览",
+    "lang": "语言",
+    "theme": "切换浅色或深色主题",
+    "page": "前往页面"
+  },
+  "cover": {
+    "eyebrow": "MOTA TECH LINK · 项目网络",
+    "title": "连接需求，加速落地。",
+    "lead": "把稀缺能力与真实需求对接，并推进到实际交付。",
+    "pillars": [
+      {
+        "icon": "🧭",
+        "label": "本地优势",
+        "note": "爱尔兰与日本市场通路"
+      },
+      {
+        "icon": "🔌",
+        "label": "IT 连接",
+        "note": "平台、数据与系统整合"
+      },
+      {
+        "icon": "⚡",
+        "label": "AI 加速",
+        "note": "生成式 AI、边缘推理、自动化"
+      }
+    ],
+    "enter": "进入项目"
+  },
+  "mota": {
+    "eyebrow": "01 · MOTA / AIOT",
+    "title": "一套运营模型，四条交付线",
+    "lead": "每个项目都从真实需求出发，配可信伙伴，走可验证的交付路径。",
+    "missionTitle": "使命",
+    "mission": "从真实需求出发，组织技术、团队、资源与本地伙伴，把需求推进成可执行的项目。",
+    "visionTitle": "愿景",
+    "vision": "建立互联的项目网络，让各地优势资源与目标市场的稀缺资源相遇。",
+    "itTitle": "IT 连接",
+    "it": "从传感器与设备到云平台、边缘推理与 AI 智能体，用技术让团队协同工作。",
+    "aiTitle": "AI 加速",
+    "ai": "生成式合成数据、边缘推理、流程自动化与工程化落地。",
+    "aiotTag": "AIOT 案例",
+    "aiotTitle": "面向 AIoT 设备的生成式合成数据",
+    "aiotBody": "以智能电梯为例：用生成式合成样本替代稀缺的故障数据，再量化部署到 NPU 做端侧推理，原始数据不出设备，延迟低，可规模化落地。",
+    "aiotPoints": [
+      "用合成故障样本替代昂贵的现场采集",
+      "量化模型可运行在低功耗 NPU 上",
+      "端侧推理让原始传感器数据留在本地"
+    ],
+    "aiotLink": "查看 AIoT 案例",
+    "cases": [
+      "💡 AI 照明",
+      "🎙️ AI 语音交互",
+      "🛗 生成式边缘安全",
+      "📊 合成数据管线"
+    ],
+    "teamTitle": "团队",
+    "teamNote": "点击头像查看分工、能力与经历。"
+  },
+  "elms": {
+    "eyebrow": "02 · ELMSFLOW",
+    "title": "ELMSFLOW",
+    "lead": "连接需求、产品、技术、人力与交付能力的跨境平台。爱尔兰是落地点，不是边界。",
+    "links": [
+      "关于 ELMSFLOW",
+      "为何选择爱尔兰"
+    ],
+    "programmesTitle": "四个交付项目",
+    "programmes": [
+      {
+        "title": "食品包装印刷",
+        "desc": "面向食品级生产的印刷与包装产能。",
+        "image": "/images/pitch-deck/elmsflow/food-packaging-printing.jpg",
+        "link": "https://elmsflo.com/programmes/food-packaging-printing"
+      },
+      {
+        "title": "医疗与医药包装",
+        "desc": "符合监管要求的医疗健康产品包装产线。",
+        "image": "/images/pitch-deck/elmsflow/medical-pharmaceutical-packaging.jpg",
+        "link": "https://elmsflo.com/programmes/medical-pharmaceutical-packaging"
+      },
+      {
+        "title": "工厂与仓储建设",
+        "desc": "面向生产与仓储的工业厂房建设与装修。",
+        "image": "/images/pitch-deck/elmsflow/factory-warehouse-construction.jpg",
+        "link": "https://elmsflo.com/programmes/factory-warehouse-construction"
+      },
+      {
+        "title": "冷库建设",
+        "desc": "服务食品与医药链路的温控设施。",
+        "image": "/images/pitch-deck/elmsflow/cold-storage-construction.jpg",
+        "link": "https://elmsflo.com/programmes/cold-storage-construction"
+      }
+    ],
+    "mapTitle": "爱尔兰作为门户",
+    "mapNote": "欧盟单一市场 · 英语营商环境 · 普通法体系",
+    "mapNodes": [
+      "爱尔兰",
+      "英国",
+      "欧盟",
+      "美国",
+      "中国"
+    ],
+    "teamTitle": "团队",
+    "officialsTitle": "政府与商业交流",
+    "officialsNote": "仅为公开交流记录，不构成背书或资金承诺。"
+  },
+  "aura": {
+    "eyebrow": "03 · AURAIGHT",
+    "title": "Auraight 微光跨境医疗",
+    "lead": "双语跨境就医导航：我们准备行程、协调沟通，临床决策始终由合格医疗专业人员作出。",
+    "links": [
+      "Auraight 官网",
+      "公开案例"
+    ],
+    "mixTitle": "公开案例构成",
+    "mixNote": "公开案例的样本构成，不代表疾病总体比例。",
+    "mix": [
+      {
+        "label": "多发性骨髓瘤",
+        "short": "MM",
+        "count": 3,
+        "pct": 50
+      },
+      {
+        "label": "淋巴瘤",
+        "short": "LY",
+        "count": 1,
+        "pct": 17
+      },
+      {
+        "label": "T 细胞急性淋巴细胞白血病",
+        "short": "TA",
+        "count": 1,
+        "pct": 17
+      },
+      {
+        "label": "非霍奇金淋巴瘤",
+        "short": "NH",
+        "count": 1,
+        "pct": 16
+      }
+    ],
+    "mapTitle": "两个资源方，多个客户来源",
+    "resourceLabel": "资源方",
+    "clientLabel": "客户来源",
+    "resources": [
+      {
+        "name": "中国 · 上海",
+        "note": "私立医院诊断与治疗路径"
+      },
+      {
+        "name": "日本",
+        "note": "先进细胞与基因治疗资源"
+      }
+    ],
+    "clients": [
+      {
+        "name": "英国"
+      },
+      {
+        "name": "尼日利亚"
+      },
+      {
+        "name": "新西兰"
+      }
+    ],
+    "whyTitle": "为什么是中国和日本",
+    "why": [
+      {
+        "title": "上海 · 私立医院高效路径",
+        "body": "私立医院可以为国际患者压缩检查与治疗排期。",
+        "link": "https://auraight.com/zh/showcase"
+      },
+      {
+        "title": "日本 · CAR-T 与 iPS",
+        "body": "CAR-T 细胞治疗与 iPS 细胞研究，包括山中因子重编程。",
+        "link": "https://www.cira.kyoto-u.ac.jp/e/"
+      },
+      {
+        "title": "日本 · 通用型基因改造 T 细胞",
+        "body": "ACTR 等通用型异体 T 细胞技术，需符合临床适应证。",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/?term=universal+allogeneic+CAR-T+ACTR"
+      }
+    ],
+    "servicesTitle": "不止肿瘤",
+    "services": [
+      "🔍 癌症筛查",
+      "🩺 胃肠镜检查",
+      "🧠 心理辅导",
+      "👑 全程贵宾服务"
+    ],
+    "teamTitle": "团队"
+  },
+  "vflux": {
+    "eyebrow": "04 · VFLUX",
+    "title": "VFlux",
+    "lead": "问题不是缺少资产，而是参与渠道和流动性被割裂。",
+    "links": [
+      "VFlux 官网",
+      "白皮书"
+    ],
+    "layersTitle": "三层能力，一个连接",
+    "layers": [
+      {
+        "tag": "准入",
+        "title": "市场准入",
+        "body": "资质、权限与经验证的资产目录。"
+      },
+      {
+        "tag": "分发",
+        "title": "分发与流动性",
+        "body": "更多渠道、更多订单流、更好的执行。"
+      },
+      {
+        "tag": "清算",
+        "title": "路由与清算",
+        "body": "连接现有机构，而不是替代它们。"
+      }
+    ],
+    "flowTitle": "演进路径",
+    "flow": [
+      "中心化",
+      "网络化",
+      "RWA",
+      "链上"
+    ],
+    "note": "规划材料 · 提案模型 · 仍需监管与商业验证。",
+    "teamTitle": "团队"
+  },
+  "video": {
+    "eyebrow": "05 · 吉晟株式会社",
+    "title": "中日 AI 视频撮合平台",
+    "lead": "以中立跨境平台，把日本需求对接中国已工业化的 AI 视频产能。",
+    "demandTitle": "🇯🇵 需求侧",
+    "demand": [
+      "广告代理与品牌方",
+      "IP 方与出版方",
+      "教育与培训机构"
+    ],
+    "supplyTitle": "🇨🇳 供给侧",
+    "supply": [
+      "成熟的 AI 视频制作团队",
+      "可灵、即梦、Vidu、海螺等工具链",
+      "策划 → 剧本 → 生成 → 分镜 → 剪辑"
+    ],
+    "linesTitle": "三条业务线",
+    "lines": [
+      {
+        "icon": "🎬",
+        "title": "AI 漫剧",
+        "body": "面向日本平台的连载短剧内容。"
+      },
+      {
+        "icon": "📣",
+        "title": "AI 广告",
+        "body": "本地化的效果与品牌创意。"
+      },
+      {
+        "icon": "🎓",
+        "title": "AI 教育",
+        "body": "规模化的课程与培训视频。"
+      }
+    ],
+    "stepsTitle": "交付链路",
+    "steps": [
+      "需求",
+      "匹配",
+      "生成",
+      "本地化",
+      "验收",
+      "交付"
+    ],
+    "whyTitle": "为什么需要平台",
+    "why": [
+      "日语品质验收与本地化关口",
+      "日元与人民币结算桥梁",
+      "对双方公平的匹配规则"
+    ],
+    "links": [
+      "吉晟官网",
+      "商业计划书"
+    ],
+    "teamTitle": "创始团队"
+  },
+  "cta": {
+    "eyebrow": "06 · 下一步",
+    "title": "带来一个真实需求。",
+    "lead": "一个需求、一项稀缺能力或一条可信的本地通路，就足以开始一次项目沟通。",
+    "contact": "联系方式",
+    "addressLabel": "地址",
+    "address": "美国纽约州布鲁克林 Willoughby Ave 1329 号，NY 11237-3177",
+    "websiteLabel": "网站",
+    "email": "hello@motaiot.com",
+    "copyright": "© 2026 MOTA TECHLINK. 保留所有权利。",
+    "back": "返回 MOTA 概览"
+  },
+  "modal": {
+    "tabs": [
+      "分工描述",
+      "能力",
+      "经历和案例"
+    ],
+    "close": "关闭",
+    "previous": "上一页",
+    "next": "下一页",
+    "officialTitle": "交流记录"
+  },
+  "people": {
+    "harling": {
+      "name": "Harling Sun 孙涛",
+      "role": "MOTA TECHLINK 创始人 · 首席架构师",
+      "photo": "/images/team/Harling.jpg",
+      "roleDesc": "负责四个项目的技术方向，整合跨境系统、AI 与物联网交付。",
+      "caps": [
+        "AI 智能体与 LLM 工作流",
+        "物联网与边缘计算",
+        "云基础设施与数据系统",
+        "跨境平台整合"
+      ],
+      "exp": [
+        "创建并领导 eBay 中国 API 团队",
+        "设计上海 1210 跨境电商系统架构",
+        "AI + 物联网智能电梯平台",
+        "早期任职 KONAMI 与 IBM 金融系统"
+      ]
+    },
+    "franklin": {
+      "name": "Franklin Ng",
+      "role": "联合创始人",
+      "photo": "",
+      "roleDesc": "创始人级合伙人，负责项目获取与商业结构设计。",
+      "caps": [
+        "商业结构设计",
+        "合作方获取"
+      ],
+      "exp": [
+        "履历与案例证据待确认后补充"
+      ]
+    },
+    "paul": {
+      "name": "Paul Brennan",
+      "role": "供应链、食品安全与质量",
+      "photo": "/images/pitch-deck/elmsflow/paul-brennan.jpg",
+      "roleDesc": "负责 ELMSFLOW 各项目的供应链、食品安全与质量治理。",
+      "caps": [
+        "BRC 食品标准与 ISO 体系",
+        "碳管理、可持续与绿色项目",
+        "六西格玛与供应链质量"
+      ],
+      "exp": [
+        "45 年以上供应链管理与食品安全经验",
+        "麦当劳欧洲供应链高级管理岗位",
+        "Paradigm Supply Chain Solutions 创始人"
+      ]
+    },
+    "turlough": {
+      "name": "Turlough Sheehan",
+      "role": "全球物流与海关合规",
+      "photo": "/images/pitch-deck/elmsflow/turlough-sheehan.jpg",
+      "roleDesc": "为跨境项目设计合规物流与清关进入策略。",
+      "caps": [
+        "DDP 运输与合规集散中心",
+        "Section 321 与低值进入策略",
+        "国际贸易法咨询"
+      ],
+      "exp": [
+        "40 年以上全球物流与海关经验",
+        "1992 年起从事电商合规业务"
+      ]
+    },
+    "vivian": {
+      "name": "Vivian Yan 闫玮",
+      "role": "上海私立医院资源 · Auraight",
+      "photo": "/images/pitch-deck/auraight/vivian-yan.jpg",
+      "roleDesc": "开拓上海私立医院与企业健康渠道，为 Auraight 协调患者就医路径。",
+      "caps": [
+        "私立医院与企业健康服务销售",
+        "健康管理方案设计",
+        "二级心理咨询师",
+        "日语商务沟通"
+      ],
+      "exp": [
+        "百汇医疗 Parkway —— 2026 年 8 月起",
+        "曜影医疗 —— 商务拓展，2020–2026",
+        "爱康集团 —— 华东区区域销售总监，2016–2020",
+        "北京大学 行政管理 本科"
+      ]
+    },
+    "ethan": {
+      "name": "Ethan",
+      "role": "临床 AI 研究与市场策略",
+      "photo": "",
+      "roleDesc": "为 Auraight 衔接临床证据、市场进入与技术策略。",
+      "caps": [
+        "肿瘤预后与疗效预测",
+        "临床 AI 研究",
+        "英国、北美与尼日利亚市场通路"
+      ],
+      "exp": [
+        "牛津大学临床医学博士研究",
+        "哈佛医学院与 Wyss 研究所",
+        "约翰霍普金斯大学经历",
+        "Time for Africa 尼日利亚技术策略"
+      ]
+    },
+    "chris": {
+      "name": "Chris",
+      "role": "VFlux 项目团队",
+      "photo": "",
+      "roleDesc": "负责 VFlux 资产分发与流动性工作流，履历待确认后补充。",
+      "caps": [
+        "分工与能力待确认"
+      ],
+      "exp": [
+        "个人履历与案例证据待补充"
+      ]
+    },
+    "anthony": {
+      "name": "Anthony Chen",
+      "role": "资本市场 · 交易与 RWA 通证化 · VFlux",
+      "photo": "/images/pitch-deck/vflux/anthony-chen.jpg",
+      "link": "https://www.linkedin.com/in/chenanthony",
+      "roleDesc": "以交易、投资研究与真实资产通证化经验，参与 VFlux 的市场准入与流动性工作。",
+      "caps": [
+        "金融投资、交易与研究",
+        "真实世界资产（RWA）通证化",
+        "区块链在支付与能源场景的应用",
+        "跨境市场：新加坡、香港、泰国、澳大利亚"
+      ],
+      "exp": [
+        "Fforward.finance —— 金融投资、交易与研究",
+        "常驻新加坡，此前在曼谷、普吉、香港任职",
+        "悉尼科技大学",
+        "发表区块链在清洁能源创新中的作用"
+      ]
+    },
+    "vito": {
+      "name": "Vito He 贺稀",
+      "role": "吉晟株式会社 创始人",
+      "photo": "/images/pitch-deck/yoshisei/vito-he.jpg",
+      "roleDesc": "负责中日 AI 视频平台，从日本侧需求到中国侧制作。",
+      "caps": [
+        "20 年以上跨国企业 B2B 销售、咨询与数字营销",
+        "0 到 1 团队搭建",
+        "同济大学计算机科学学士；SBS 瑞士商学院 MBA"
+      ],
+      "exp": [
+        "创立吉晟株式会社，东京本社，大阪与福冈设支社",
+        "团队从 3 人扩展到 30 人以上",
+        "2018 年业绩增长 7 倍至 2200 万元"
+      ]
+    },
+    "allen": {
+      "name": "Allen Qu 渠成",
+      "role": "联合创始人 · 特邀顾问",
+      "photo": "/images/pitch-deck/yoshisei/allen-qu.jpg",
+      "roleDesc": "负责平台的数字营销、品牌与搜索策略。",
+      "caps": [
+        "搜索、内容与 AI 可见性",
+        "中日品牌扩展",
+        "效果营销"
+      ],
+      "exp": [
+        "Netconcepts 创始人",
+        "Sinorbis 联合创始人",
+        "Cross Border Digital 创始人",
+        "日本求学背景；奥克兰大学"
+      ]
+    },
+    "kuri": {
+      "name": "Kuri Ki 栗木霞",
+      "role": "日本销售与售后负责人",
+      "photo": "/images/pitch-deck/yoshisei/kuri-ki.jpg",
+      "roleDesc": "开发日本买家，负责销售与售后运营。",
+      "caps": [
+        "日本买家开发",
+        "中日双语商务沟通",
+        "销售运营与售后"
+      ],
+      "exp": [
+        "30 年以上旅游、邮轮、回收与物流行业经验",
+        "吉晟日本侧销售与售后负责人"
+      ]
+    }
+  },
+  "officials": {
+    "cummins": {
+      "name": "John Cummins TD",
+      "role": "地方政府与规划事务国务部长",
+      "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
+      "link": "https://elmsflo.com/why-ireland"
+    },
+    "evans": {
+      "name": "Gareth Evans",
+      "role": "沃特福德市郡议会 首席执行官",
+      "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
+      "link": "https://elmsflo.com/why-ireland"
+    },
+    "hurley": {
+      "name": "Gerald Hurley",
+      "role": "沃特福德商会 首席执行官",
+      "photo": "/images/pitch-deck/elmsflow/gerald-hurley.jpg",
+      "link": "https://elmsflo.com/about"
+    }
+  }
+}
