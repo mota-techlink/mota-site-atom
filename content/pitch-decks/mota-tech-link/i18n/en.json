@@ -469,8 +469,8 @@
     "flow": {
       "title": "Project flows across the network",
       "nodes": {
-        "na": "North America",
-        "uk": "United Kingdom",
+        "na": "United States",
+        "uk": "Commonwealth",
         "ie": "Ireland",
         "cn": "China",
         "jp": "Japan",
