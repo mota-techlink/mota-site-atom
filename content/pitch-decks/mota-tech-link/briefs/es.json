@@ -1,0 +1,90 @@
+{
+  "cover": {
+    "thesis": "Conectamos fortalezas locales con demanda global y reunimos personas, tecnología y capacidad de ejecución para convertir oportunidades en proyectos viables.",
+    "flow": ["Ventaja local", "Demanda global", "IT conecta · IA acelera"],
+    "boundary": "Cuatro iniciativas activas · Fuentes y verificaciones pendientes en cada página."
+  },
+  "overview": {
+    "intro": "La conexión de recursos es el negocio: demanda, talento, tecnología y ejecución local fiable alrededor de una oportunidad concreta.",
+    "active": "Cuatro proyectos activos",
+    "cases": "Casos tecnológicos seleccionados",
+    "boundary": "Proyectos en curso. El estado de los casos y las relaciones comerciales requieren verificación."
+  },
+  "projects": [
+    {
+      "lead": "Una plataforma transfronteriza que conecta demanda, productos, tecnología, mano de obra y ejecución. Irlanda es el punto de entrada, no el límite.",
+      "blocks": [
+        {"title": "Cuatro oportunidades · evaluación", "body": "Impresión de envases alimentarios · envases médicos / farmacéuticos · construcción de fábricas y almacenes · cámaras frigoríficas. En definición y evaluación, no completadas."},
+        {"title": "Coordinar → conectar → preparar", "body": "Estructurar la demanda, conectar capacidades y preparar pruebas, cualificaciones, ejecución local y logística."},
+        {"title": "Irlanda y red", "body": "Mercado único europeo, negocios en inglés, derecho común y polos industriales y tecnológicos. Sede en Dublín; oficina en Shanghái; registro en Brooklyn en curso; Londres y Bruselas en establecimiento."},
+        {"title": "Relación nacional y local", "body": "John Cummins TD · gobierno nacional; Gareth Evans · Ayuntamiento y condado de Waterford; Gerald Hurley · Cámara de Waterford. La relación no es aprobación: no se reclama financiación, permiso urbanístico ni respaldo."}
+      ],
+      "people": [
+        {"name": "Harling Sun", "role": "Fundador de MOTA TECHLINK · arquitecto principal / integrador transfronterizo"},
+        {"name": "Paul Brennan", "role": "Cadena de suministro, seguridad alimentaria, calidad y sostenibilidad · más de 45 años"},
+        {"name": "Turlough Sheehan", "role": "Logística global y cumplimiento aduanero · más de 40 años"}
+      ],
+      "links": ["Sobre ELMSFLOW", "Por qué Irlanda"],
+      "source": "Fuentes: Sobre ELMSFLOW y Por qué Irlanda; las oportunidades están en evaluación."
+    },
+    {
+      "lead": "Orientación sanitaria transfronteriza bilingüe: preparar el viaje y coordinar conversaciones; las decisiones clínicas corresponden a profesionales cualificados.",
+      "blocks": [
+        {"title": "Casos familiares anonimizados publicados", "body": "Etiquetas de enfermedad: linfoma · T-ALL · NHL · MM. Etiquetas de país en casos publicados: NZ · UK · TH · CN · US. Las experiencias individuales no garantizan resultados."},
+        {"title": "Antes del viaje", "body": "Lista previa y guía de orientación: aclarar servicios solicitados, documentos, citas y próximos pasos."},
+        {"title": "Durante el viaje", "body": "Coordinación de conserjería y comunicación bilingüe EN / ZH. Relaciones con proveedores y alcance sujetos a verificación."},
+        {"title": "Privacidad y consentimiento", "body": "Compartir información personal o médica solo con consentimiento informado y protección adecuada. No se promete diagnóstico ni resultado clínico."}
+      ],
+      "people": [
+        {"name": "Vivian", "role": "Recursos de hospitales privados en Shanghái · biografía aprobada pendiente"},
+        {"name": "Ethan", "role": "Ventana de mercado Reino Unido / Norteamérica / Nigeria · DPhil en Medicina Clínica en Oxford en curso; IA para pronóstico y resultados del cáncer; Harvard Medical School, Wyss Institute, Johns Hopkins; estrategia técnica de Time for Africa en Nigeria"},
+        {"name": "Harling Sun", "role": "Fundador de MOTA TECHLINK · arquitecto tecnológico"}
+      ],
+      "links": ["Sitio de Aura Light", "Casos publicados"],
+      "source": "Fuentes: casos públicos de Aura Light y CV de Ethan facilitado; alcance y biografías sujetos a confirmación."
+    },
+    {
+      "lead": "El problema es la fragmentación de la participación y la liquidez, no la falta de activos. Los activos globales necesitan entradas locales.",
+      "blocks": [
+        {"title": "Modelo operativo", "body": "Acceso / elegibilidad → distribución / permisos → ejecución / enrutamiento / liquidez → compensación posterior / datos."},
+        {"title": "Ciclo del activo", "body": "Activo → elegibilidad → distribución → orden → enrutamiento → ejecución → compensación → ciclo de vida. VFlux conecta instituciones especializadas, no las reemplaza."},
+        {"title": "Estrategia y hoja de ruta", "body": "Empezar de forma centralizada con instituciones existentes y migrar gradualmente funciones adecuadas a la cadena. Vía To C: perpetuos y spot de activos digitales → spot RWA → cuenta unificada multiactivo → finanzas on-chain."},
+        {"title": "Modelo de negocio · escenario", "body": "Comisiones de distribución, transacción y enrutamiento; servicios de infraestructura, datos y compensación; posibles ingresos futuros de liquidez / protocolo. El neto depende de costes y reparto. Defensa: red de activos + distribución / liquidez + enrutamiento / compensación / datos; no es una previsión."}
+      ],
+      "people": [
+        {"name": "Chris", "role": "Equipo del proyecto · función y biografía aprobada pendientes"},
+        {"name": "Anthony", "role": "Equipo del proyecto · función y biografía aprobada pendientes"},
+        {"name": "Harling Sun", "role": "Equipo del proyecto · función específica en VFlux pendiente de verificación"}
+      ],
+      "links": ["Sitio de VFlux", "Contactar con MOTA"],
+      "source": "Fuente: material para inversores de VFlux de 43 páginas facilitado. Permisos y resultados comerciales sin verificar."
+    },
+    {
+      "lead": "Una plataforma neutral conecta la demanda japonesa y su capacidad limitada con la oferta industrializada china de vídeo con IA.",
+      "blocks": [
+        {"title": "Tres líneas", "body": "Manga IA / animación vertical corta · publicidad IA · educación y formación IA. Entrada al mercado mediante compradores japoneses y estudios chinos."},
+        {"title": "Flujo de seis pasos", "body": "Demanda → conexión → producción → localización → aceptación de calidad japonesa → liquidación transfronteriza. Cobro en JPY y liquidación en CNY tras la aceptación acordada."},
+        {"title": "Diferenciación e ingresos", "body": "Más allá del crowdsourcing general y las herramientas únicas: conexión, localización japonesa, aceptación de calidad y liquidación. Tarifas e ingresos previstos son escenarios, no resultados."},
+        {"title": "Beta / MVP · solo planificación", "body": "Beta web en desarrollo. Primeras transacciones previstas para enero–marzo de 2027; validación y expansión son planes, no pruebas de entregas o actividad."}
+      ],
+      "people": [
+        {"name": "贺稀 · Vito He", "role": "Fundador · ventas B2B internacionales, consultoría y marketing digital"},
+        {"name": "渠成 · Allen Qu", "role": "Cofundador / asesor especial · expansión de marcas, marketing digital y búsqueda"},
+        {"name": "Harling Sun", "role": "Socio técnico · arquitectura de plataforma y liquidación transfronteriza"},
+        {"name": "栗木霞 · Kuri Ki", "role": "Responsable de enlace en Japón · captación de compradores, ventas y posventa"}
+      ],
+      "links": ["Sitio de Yoshisei", "Plan de negocio de vídeo IA"],
+      "source": "Fuente: plan de negocio de vídeo IA de Yoshisei facilitado; previsiones y fechas son planes, no resultados."
+    }
+  ],
+  "network": {
+    "lead": "Distintas regiones, una capa práctica de proyectos: conectar capacidades con demanda y coordinar la ejecución.",
+    "blocks": ["Tecnología ↔ mercado · sistemas para necesidades reales", "Talento ↔ ejecución · equipos expertos y trabajo local", "Capital ↔ oportunidad · evaluar encaje, elegibilidad y pruebas", "IA ↔ aceleración · apoyar investigación, coordinación e implementación"],
+    "boundary": "Las relaciones y la elegibilidad dependen de cada proyecto; una presentación no implica aprobación ni entrega."
+  },
+  "cta": {
+    "lead": "Traiga una necesidad real. Conectemos capacidades, socios fiables y un próximo paso concreto.",
+    "entries": ["Demanda · describa una necesidad de mercado", "Oferta · aporte productos o capacidad", "Ejecución · aporte experiencia local", "Tecnología · construya los sistemas habilitadores"],
+    "boundary": "Las descripciones combinan fuentes públicas y materiales de planificación facilitados. Afirmaciones, permisos y resultados requieren verificación independiente."
+  }
+}
