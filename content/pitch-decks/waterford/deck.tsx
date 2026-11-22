@@ -68,7 +68,7 @@ function WaterfoldDeckInner() {
             <main className="flex-1 h-full overflow-hidden relative">
               <MobileTopBar onToggle={() => setSidebarOpen((v) => !v)} />
               <TopControls />
-              <div className="h-full pt-14 lg:pt-0"><ActiveSection /></div>
+              <div className="h-full pt-16 lg:pt-0"><ActiveSection /></div>
               <div className="absolute bottom-4 right-5 z-20 flex items-center gap-3">
                 <button onClick={() => goTo(activeIdx - 1)} disabled={activeIdx === 0} className={`w-9 h-9 rounded-full ${t.cardBg} hover:bg-white/10 disabled:opacity-20 flex items-center justify-center ${t.body} text-sm transition-all cursor-pointer disabled:cursor-not-allowed`} aria-label="Previous slide">▲</button>
                 <span className={`text-xs ${t.muted} font-mono tabular-nums min-w-[3rem] text-center`}>{activeIdx + 1} / {SECTION_IDS.length}</span>

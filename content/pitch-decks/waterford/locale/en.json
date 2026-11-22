@@ -12,7 +12,9 @@
     "description":"The campus is planned as a local production, storage and dispatch hub serving Ireland, the United Kingdom and wider European Union markets. A later phase can add pharmaceutical packaging, but only with the higher standards, controlled processes, plastics and aluminium capabilities that regulated products require.",
     "metrics":[{"icon":"📦","value":"Paper first","label":"Pizza + takeaway packaging"},{"icon":"🌍","value":"3 markets","label":"Ireland · UK · wider EU"},{"icon":"🏥","value":"Phase 2","label":"Regulated pharma packaging"}],
     "highlights":[{"icon":"🍕","label":"Pizza boxes","desc":"Multiple box formats with printing, conversion, hygiene control, storage and dispatch."},{"icon":"🥡","label":"Takeaway products","desc":"Paper-based takeaway packaging using compatible material handling, printing and finishing capability."},{"icon":"🧪","label":"Future pharma phase","desc":"A separately assessed expansion using higher-specification quality systems and plastics/aluminium printing and conversion."}],
-    "note":"Scope boundary: this is packaging-material manufacturing — not food production and not pharmaceutical production. Food-related packaging requires hygiene controls; pharma is a future regulated phase, subject to validation."
+    "note":"Scope boundary: this is packaging-material manufacturing — not food production and not pharmaceutical production. Food-related packaging requires hygiene controls; pharma is a future regulated phase, subject to validation.",
+    "image":"/images/pitch-decks/waterford/facility-exterior.webp",
+    "imageAlt":"Proposed Waterford packaging facility exterior at dusk"
   },
   "opportunity": {
     "badge":"02 · PRODUCTS + MARKETS",
@@ -44,8 +46,9 @@
     "intro":"The source model compares importing finished boxes with bringing dense raw rolls to Waterford for local conversion. The figures are indicative model outputs and require freight, material and customer validation.",
     "metrics":[{"icon":"🚢","value":"2,300 → 515","label":"Illustrative containers: finished boxes vs raw rolls"},{"icon":"💶","value":"€13.6M","label":"Illustrative annual inbound-freight delta"},{"icon":"🌍","value":"Lower intensity","label":"Potential freight and emissions reduction"}],
     "phases":[{"icon":"🔎","title":"1 · Validate","body":"Confirm customers, product specifications, materials, equipment, hygiene requirements and the 1.6-acre layout."},{"icon":"🏗️","title":"2 · Design","body":"Compare local construction with rapid-build options from China; complete Irish and EU-facing planning, engineering and logistics design."},{"icon":"🛠️","title":"3 · Install","body":"Procure, install, commission and train operators, hygiene, quality, maintenance and warehouse teams."},{"icon":"📈","title":"4 · Scale","body":"Ramp pizza and takeaway packaging for Ireland, the UK and EU markets, then assess a separately controlled pharma phase."}],
-    "cards":[{"icon":"🇪🇺","title":"Three-market delivery strategy","body":"The campus is intended to serve Ireland, the United Kingdom and wider EU customers. Delivery times and routes will depend on customer location, carrier contracts, customs requirements and product certification."},{"icon":"♻️","title":"Less empty weight moved","body":"The local-conversion model replaces imported finished boxes with denser raw-material movements, potentially reducing freight cost, handling waste and emissions."}],
-    "callout":"Source-model reference: finished goods are shown at €4,500 per container / €10.35M inbound freight versus raw rolls at €2,200 per container / €1.13M inbound freight. These are not yet contracted savings."
+    "cards":[{"icon":"🇪🇺","title":"Three-market delivery strategy","body":"The campus is intended to serve Ireland, the United Kingdom and wider EU customers. Delivery times and routes will depend on customer location, carrier contracts, customs requirements and product certification."}],
+    "image":"/images/pitch-decks/waterford/localized-conversion.webp",
+    "imageAlt":"Illustration of local paper-roll conversion and regional packaging logistics"
   },
   "employment": {
     "badge":"06 · JOBS + PUBLIC VALUE",
@@ -65,6 +68,8 @@
     "nextSteps":[{"icon":"1️⃣","title":"Confirm the operating case","body":"Agree customer demand, product formats, equipment, raw materials, hygiene controls, freight assumptions and the defensible employment model."},{"icon":"2️⃣","title":"Confirm the site plan","body":"Test the 1.6-acre layout for production, two warehouses, sanitation, logistics, offices, accommodation and future separation."},{"icon":"3️⃣","title":"Open the public pathway","body":"Coordinate planning, IDA, grants, training, construction and investment discussions."}],
     "leftTitle":"Immediate evidence pack","leftBody":"Technical review, supplier quotations, CE and hygiene checks, preliminary layout, raw-material tenders and customer validation.",
     "rightTitle":"Decision requested","rightBody":"Support a coordinated route to confirm the site, validate the model and unlock the next stage of investment and employment planning.",
-    "source":"Source note: figures marked as source-model references are taken from Waterford_Strategic_Packaging_JV.pdf supplied via Google Drive. Market, freight, EBITDA, tax, capacity and delivery figures require independent commercial, legal, tax, hygiene and engineering validation before commitment."
+    "source":"Source note: figures marked as source-model references are taken from Waterford_Strategic_Packaging_JV.pdf supplied via Google Drive. Market, freight, EBITDA, tax, capacity and delivery figures require independent commercial, legal, tax, hygiene and engineering validation before commitment.",
+    "image":"/images/pitch-decks/waterford/facility-layout.webp",
+    "imageAlt":"Top-down concept layout of the packaging production and logistics facility"
   }
 }
