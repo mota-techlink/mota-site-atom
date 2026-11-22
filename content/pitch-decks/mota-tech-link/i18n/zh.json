@@ -12,9 +12,9 @@
     "lead": "把稀缺能力与真实需求对接，并推进到实际交付。",
     "pillars": [
       {
-        "icon": "🧭",
-        "label": "本地优势",
-        "note": "爱尔兰与日本市场通路"
+        "icon": "🌍",
+        "label": "全球化优势",
+        "note": "全球资源与市场的融通"
       },
       {
         "icon": "🔌",
@@ -41,15 +41,6 @@
     "it": "从传感器与设备到云平台、边缘推理与 AI 智能体，用技术让团队协同工作。",
     "aiTitle": "AI 加速",
     "ai": "生成式合成数据、边缘推理、流程自动化与工程化落地。",
-    "aiotTag": "AIOT 案例",
-    "aiotTitle": "面向 AIoT 设备的生成式合成数据",
-    "aiotBody": "以智能电梯为例：用生成式合成样本替代稀缺的故障数据，再量化部署到 NPU 做端侧推理，原始数据不出设备，延迟低，可规模化落地。",
-    "aiotPoints": [
-      "用合成故障样本替代昂贵的现场采集",
-      "量化模型可运行在低功耗 NPU 上",
-      "端侧推理让原始传感器数据留在本地"
-    ],
-    "aiotLink": "查看 AIoT 案例",
     "cases": [
       "💡 AI 照明",
       "🎙️ AI 语音交互",
@@ -57,7 +48,58 @@
       "📊 合成数据管线"
     ],
     "teamTitle": "团队",
-    "teamNote": "点击头像查看分工、能力与经历。"
+    "teamNote": "点击头像查看分工、能力与经历。",
+    "techTag": "技术优势",
+    "techTitle": "全栈信息技术，AI 增强",
+    "techLead": "从设备到云、从数据到智能体，一支团队打通全栈。",
+    "techGroups": [
+      {
+        "icon": "🧠",
+        "title": "AI 与生成式 AI",
+        "items": [
+          "LLM 应用与智能体",
+          "生成式合成训练数据",
+          "模型量化与边缘推理"
+        ]
+      },
+      {
+        "icon": "🧩",
+        "title": "全栈研发",
+        "items": [
+          "Web 与移动端应用",
+          "后端服务与 API",
+          "数据平台与实时管线"
+        ]
+      },
+      {
+        "icon": "📡",
+        "title": "物联网与边缘",
+        "items": [
+          "传感器与设备接入",
+          "边缘计算与低延迟",
+          "设备管理与固件"
+        ]
+      },
+      {
+        "icon": "☁️",
+        "title": "云与企业集成",
+        "items": [
+          "云原生、CDN 与零信任",
+          "企业服务总线（ESB）",
+          "跨境支付与结算对接"
+        ]
+      }
+    ],
+    "techHighlight": "亮点：AI 合成训练数据",
+    "techHighlightBody": "用生成式模型合成稀缺的故障与训练样本，替代昂贵的现场采集，再把模型量化部署到 NPU 做端侧推理。",
+    "caseLink": "查看案例",
+    "siteLabel": "motaiot.com",
+    "coreLabel": "MOTA 的核心作用",
+    "core": [
+      "发现各地市场需求",
+      "组织稀缺资源与伙伴",
+      "把控技术交付到底"
+    ]
   },
   "elms": {
     "eyebrow": "02 · ELMSFLOW",
@@ -109,7 +151,7 @@
   },
   "aura": {
     "eyebrow": "03 · AURAIGHT",
-    "title": "Auraight 微光跨境医疗",
+    "title": "Auraight 跨境医疗",
     "lead": "双语跨境就医导航：我们准备行程、协调沟通，临床决策始终由合格医疗专业人员作出。",
     "links": [
       "Auraight 官网",
@@ -143,7 +185,7 @@
         "pct": 16
       }
     ],
-    "mapTitle": "两个资源方，多个客户来源",
+    "mapTitle": "资源方与客户来源",
     "resourceLabel": "资源方",
     "clientLabel": "客户来源",
     "resources": [
@@ -165,6 +207,9 @@
       },
       {
         "name": "新西兰"
+      },
+      {
+        "name": "泰国"
       }
     ],
     "whyTitle": "为什么是中国和日本",
@@ -195,40 +240,33 @@
     "teamTitle": "团队"
   },
   "vflux": {
-    "eyebrow": "04 · VFLUX",
     "title": "VFlux",
-    "lead": "问题不是缺少资产，而是参与渠道和流动性被割裂。",
+    "lead": "在加密交易所与真实资产市场之间，建立一条统一的结算通道。",
+    "flowTitle": "平台在交易所与资产市场之间的位置",
+    "venueLabel": "加密交易所侧",
+    "venue": [
+      "中心化交易所（CEX）",
+      "去中心化交易所（DEX）",
+      "做市商 / OTC 柜台"
+    ],
+    "platformLabel": "VFlux 平台",
+    "platform": [
+      "交易货币：稳定币",
+      "手续费：VF 币",
+      "路由、清算与对账"
+    ],
+    "assetLabel": "资产交易所侧",
+    "assets": [
+      "美股",
+      "贵金属",
+      "大宗商品",
+      "期货 / 期权"
+    ],
     "links": [
       "VFlux 官网",
       "白皮书"
     ],
-    "layersTitle": "三层能力，一个连接",
-    "layers": [
-      {
-        "tag": "准入",
-        "title": "市场准入",
-        "body": "资质、权限与经验证的资产目录。"
-      },
-      {
-        "tag": "分发",
-        "title": "分发与流动性",
-        "body": "更多渠道、更多订单流、更好的执行。"
-      },
-      {
-        "tag": "清算",
-        "title": "路由与清算",
-        "body": "连接现有机构，而不是替代它们。"
-      }
-    ],
-    "flowTitle": "演进路径",
-    "flow": [
-      "中心化",
-      "网络化",
-      "RWA",
-      "链上"
-    ],
-    "note": "规划材料 · 提案模型 · 仍需监管与商业验证。",
-    "teamTitle": "团队"
+    "note": "规划材料 · 提案模型 · 仍需监管与商业验证。"
   },
   "video": {
     "eyebrow": "05 · 吉晟株式会社",
@@ -283,7 +321,43 @@
       "吉晟官网",
       "商业计划书"
     ],
-    "teamTitle": "创始团队"
+    "teamTitle": "创始团队",
+    "marketTitle": "市场规模与现状",
+    "marketLead": "中国供给侧已工业化，日本仍处于测试验证阶段。",
+    "cols": [
+      "",
+      "🇨🇳 中国",
+      "🇯🇵 日本"
+    ],
+    "rows": [
+      [
+        "供给成熟度",
+        "成熟工作室与工具链，已工业化",
+        "测试与验证阶段"
+      ],
+      [
+        "成本结构",
+        "算力约占制作成本 50%",
+        "本地化与品质验收"
+      ],
+      [
+        "入门价格",
+        "低端报价约 1,000 元/分钟",
+        "按项目与买方定制"
+      ],
+      [
+        "需求方",
+        "平台、品牌、教育",
+        "广告代理、IP 方、教育"
+      ]
+    ],
+    "gapTitle": "成长空间",
+    "gap": [
+      "尚缺中立的撮合层",
+      "日语品质验收是瓶颈",
+      "日元与人民币结算尚未解决"
+    ],
+    "srcNote": "来源：吉晟商业计划书；行业估算，待核验。"
   },
   "cta": {
     "eyebrow": "06 · 下一步",
@@ -295,7 +369,13 @@
     "websiteLabel": "网站",
     "email": "hello@motaiot.com",
     "copyright": "© 2026 MOTA TECHLINK. 保留所有权利。",
-    "back": "返回 MOTA 概览"
+    "back": "返回 MOTA 概览",
+    "dots": [
+      "ELMSFLOW",
+      "Auraight",
+      "VFlux",
+      "吉晟"
+    ]
   },
   "modal": {
     "tabs": [
@@ -313,31 +393,36 @@
       "name": "Harling Sun 孙涛",
       "role": "MOTA TECHLINK 创始人 · 首席架构师",
       "photo": "/images/team/Harling.jpg",
-      "roleDesc": "负责四个项目的技术方向，整合跨境系统、AI 与物联网交付。",
+      "roleDesc": "探索各地市场需求，整合稀缺资源，并叠加 AI 增强的技术交付能力，让每个项目真正落地。",
       "caps": [
-        "AI 智能体与 LLM 工作流",
-        "物联网与边缘计算",
-        "云基础设施与数据系统",
-        "跨境平台整合"
+        "AI 与生成式 AI 应用",
+        "全栈 IT 工程能力",
+        "跨境业务整合",
+        "超强执行力与公关能力",
+        "全球化人脉网络"
       ],
       "exp": [
-        "创建并领导 eBay 中国 API 团队",
-        "设计上海 1210 跨境电商系统架构",
-        "AI + 物联网智能电梯平台",
-        "早期任职 KONAMI 与 IBM 金融系统"
+        "500 强企业高管：KONAMI 首席程序员、eBay API 中国团队创始人、IBM 企业服务总线",
+        "跨境通宝上市前技术负责人",
+        "上海跨境电商协会一期成员（上海商委、东航、阿里、京东、顺丰等头部企业）",
+        "AI + 物联网项目丰富案例"
       ]
     },
     "franklin": {
       "name": "Franklin Ng",
-      "role": "联合创始人",
+      "role": "联合创始人 · 公司事务",
       "photo": "",
-      "roleDesc": "创始人级合伙人，负责项目获取与商业结构设计。",
+      "roleDesc": "负责公司事务管理，美国纽约本地居民，Willoughby Ave 1329 大楼业主；创办全美中药供应商 Kingsway Trade，2017 年被中国上市公司一心堂收购，并在第五大道开设旗舰店。",
       "caps": [
-        "商业结构设计",
-        "合作方获取"
+        "公司事务与治理",
+        "美国主体、地产与本地运营",
+        "全美中药供应链",
+        "零售与批发分销"
       ],
       "exp": [
-        "履历与案例证据待确认后补充"
+        "Kingsway Trade —— 全美中药供应商",
+        "2017 年被中国上市公司一心堂（002727）收购，随后在第五大道开设旗舰店",
+        "美国纽约布鲁克林 Willoughby Ave 1329 号大楼业主"
       ]
     },
     "paul": {
@@ -491,19 +576,19 @@
       "name": "John Cummins TD",
       "role": "地方政府与规划事务国务部长",
       "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
-      "link": "https://elmsflo.com/why-ireland"
+      "link": "https://www.oireachtas.ie/en/members/member/John-Cummins.D.2020-06-29/"
     },
     "evans": {
       "name": "Gareth Evans",
       "role": "沃特福德市郡议会 首席执行官",
       "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
-      "link": "https://elmsflo.com/why-ireland"
+      "link": "https://www.waterfordcouncil.ie/"
     },
     "hurley": {
       "name": "Gerald Hurley",
       "role": "沃特福德商会 首席执行官",
       "photo": "/images/pitch-deck/elmsflow/gerald-hurley.jpg",
-      "link": "https://elmsflo.com/about"
+      "link": "https://www.waterfordchamber.ie/"
     }
   }
 }

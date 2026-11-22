@@ -14,14 +14,15 @@ import es from "../i18n/es.json";
 type Deck = typeof en;
 const DECKS: Record<string, Deck> = { en, zh, ja, es };
 
-const PROJECTS = [
-  { key: "elms", page: 2, logo: "/images/pitch-deck/elmsflow-logo.png", name: "ELMSFLOW", wordmark: "" },
-  { key: "aura", page: 3, logo: "", name: "Auraight", wordmark: "" },
-  { key: "vflux", page: 4, logo: "/images/pitch-deck/vflux-logo.png", name: "VFlux", wordmark: "" },
-  { key: "video", page: 5, logo: "", name: "吉晟", wordmark: "YOSHI SEI" },
-] as const;
+type ProjectCard = { key: string; page: number; name: string; logo?: string; logoLight?: string; wordmark?: string };
+const PROJECTS: ProjectCard[] = [
+  { key: "elms", page: 2, name: "ELMSFLOW", logo: "/images/pitch-deck/elmsflow-logo.png" },
+  { key: "aura", page: 3, name: "Auraight", logo: "/images/pitch-deck/auraight-icon-dark.svg", logoLight: "/images/pitch-deck/auraight-icon-light.svg" },
+  { key: "vflux", page: 4, name: "VFlux", logo: "/images/pitch-deck/vflux-logo.png" },
+  { key: "video", page: 5, name: "吉晟", wordmark: "YOSHI SEI" },
+];
 
-const AURA_THEME_LOGO = { dark: "/images/pitch-deck/auraight-logo-dark.svg", light: "/images/pitch-deck/auraight-logo-light.svg" };
+const AURA_LOGO = { dark: "/images/pitch-deck/auraight-icon-dark.svg", light: "/images/pitch-deck/auraight-icon-light.svg" };
 
 function LinkOut({ href, children }: { href: string; children: React.ReactNode }) {
   return <a className="mtl-link" href={href} target="_blank" rel="noopener noreferrer">{children} ↗</a>;
@@ -39,7 +40,7 @@ function SectionHead({ eyebrow, title, lead, links }: { eyebrow: string; title: 
       <p className="mtl-eyebrow">{eyebrow}</p>
       <h1>{title}</h1>
       <p className="mtl-lead">{lead}</p>
-      {links?.length ? <div className="mtl-head-links">{links.map((l) => <LinkOut key={l.href} href={l.href}>{l.label}</LinkOut>)}</div> : null}
+      {links?.length ? <div className="mtl-head-links">{links.map((l) => <LinkOut key={l.href + l.label} href={l.href}>{l.label}</LinkOut>)}</div> : null}
     </header>
   );
 }
@@ -49,12 +50,12 @@ function Donut({ slices }: { slices: { label: string; pct: number }[] }) {
   const size = 420, cx = 210, cy = 210, R = 132, r = 84;
   const colors = ["#77e4df", "#c77dff", "#ffbe72", "#6ea7ff"];
   let angle = -90;
-  const arc = (a0: number, a1: number, outer: number, inner: number) => {
-    const p = (a: number) => [cx + outer * Math.cos((a * Math.PI) / 180), cy + outer * Math.sin((a * Math.PI) / 180)];
-    const q = (a: number) => [cx + inner * Math.cos((a * Math.PI) / 180), cy + inner * Math.sin((a * Math.PI) / 180)];
+  const arc = (a0: number, a1: number) => {
+    const p = (a: number) => [cx + R * Math.cos((a * Math.PI) / 180), cy + R * Math.sin((a * Math.PI) / 180)];
+    const q = (a: number) => [cx + r * Math.cos((a * Math.PI) / 180), cy + r * Math.sin((a * Math.PI) / 180)];
     const large = a1 - a0 > 180 ? 1 : 0;
     const [x1, y1] = p(a0), [x2, y2] = p(a1), [x3, y3] = q(a1), [x4, y4] = q(a0);
-    return `M${x1} ${y1}A${outer} ${outer} 0 ${large} 1 ${x2} ${y2}L${x3} ${y3}A${inner} ${inner} 0 ${large} 0 ${x4} ${y4}Z`;
+    return `M${x1} ${y1}A${R} ${R} 0 ${large} 1 ${x2} ${y2}L${x3} ${y3}A${r} ${r} 0 ${large} 0 ${x4} ${y4}Z`;
   };
   return (
     <svg className="mtl-donut" viewBox={`0 0 ${size} ${size}`} role="img" aria-label={slices.map((s) => `${s.label} ${s.pct}%`).join(", ")}>
@@ -68,7 +69,7 @@ function Donut({ slices }: { slices: { label: string; pct: number }[] }) {
         const right = Math.cos(mid) >= 0;
         return (
           <g key={s.label}>
-            <path d={arc(a0, a1, R, r)} fill={colors[i % 4]} opacity={0.92} />
+            <path d={arc(a0, a1)} fill={colors[i % 4]} opacity={0.92} />
             <line x1={cx + (R + 4) * Math.cos(mid)} y1={cy + (R + 4) * Math.sin(mid)} x2={cx + 162 * Math.cos(mid)} y2={cy + 162 * Math.sin(mid)} stroke={colors[i % 4]} strokeWidth="1.5" opacity=".7" />
             <text x={lx} y={ly} textAnchor={right ? "start" : "end"} dominantBaseline="middle" className="mtl-donut-label">
               {s.label} <tspan className="mtl-donut-pct">{s.pct}%</tspan>
@@ -78,15 +79,6 @@ function Donut({ slices }: { slices: { label: string; pct: number }[] }) {
       })}
     </svg>
   );
-}
-
-/* ---------- equirectangular country map ---------- */
-const AURA_POINTS = {
-  resources: [{ name: "中国 · 上海", lon: 121.5, lat: 31.2, short: "中国" }, { name: "日本", lon: 139.7, lat: 35.7, short: "日本" }],
-  clients: [{ name: "英国", lon: -0.1, lat: 51.5, short: "英国" }, { name: "尼日利亚", lon: 3.4, lat: 6.5, short: "尼日利亚" }, { name: "新西兰", lon: 174.8, lat: -36.9, short: "新西兰" }],
-};
-function project(lon: number, lat: number) {
-  return { left: `${Math.min(96, Math.max(4, ((lon + 180) / 360) * 100))}%`, top: `${((90 - lat) / 180) * 100}%` };
 }
 
 export function MotaSection({ index, goTo: navigate }: { index: number; goTo?: (idx: number) => void }) {
@@ -112,8 +104,8 @@ export function MotaSection({ index, goTo: navigate }: { index: number; goTo?: (
     <section className="mtl-section">
       <div className="mtl-content">
         <div className="mtl-kicker">
-          {index > 0 && <span>{t.nav.page} {index + 1}/{7}</span>}
           {index > 0 && <button type="button" onClick={() => goTo(1)}>↩ {t.nav.overview}</button>}
+          {index > 0 && <span className="mtl-progress">{t.nav.page} {index + 1}/{7}</span>}
         </div>
         {page}
       </div>
@@ -143,7 +135,14 @@ function Cover({ t, goTo }: { t: Deck; goTo: (i: number) => void }) {
       <div className="mtl-project-row">
         {PROJECTS.map((p) => (
           <button type="button" key={p.key} className="mtl-project-card" onClick={() => goTo(p.page)} aria-label={p.name}>
-            {p.logo ? <Image src={p.logo} alt="" width={168} height={64} /> : (
+            {p.logo && p.logoLight ? (
+              <>
+                <Image className="only-dark" src={p.logo} alt="" width={80} height={64} />
+                <Image className="only-light" src={p.logoLight} alt="" width={80} height={64} />
+              </>
+            ) : p.logo ? (
+              <Image src={p.logo} alt="" width={168} height={64} />
+            ) : (
               <span className="mtl-wordmark-wrap">
                 <span className="mtl-wordmark">{p.name}</span>
                 {p.wordmark ? <small>{p.wordmark}</small> : null}
@@ -158,18 +157,29 @@ function Cover({ t, goTo }: { t: Deck; goTo: (i: number) => void }) {
 
 function Mota({ t, open }: { t: Deck; open: (p: Person) => void }) {
   const ppl = t.people as unknown as Record<string, Person>;
-  const hexes = [
-    { icon: "🧠", title: t.mota.missionTitle, body: t.mota.mission },
-    { icon: "🚀", title: t.mota.visionTitle, body: t.mota.vision },
-    { icon: "🔌", title: t.mota.itTitle, body: t.mota.it },
-    { icon: "⚡", title: t.mota.aiTitle, body: t.mota.ai },
-  ];
   return (
     <>
-      <SectionHead eyebrow={t.mota.eyebrow} title={t.mota.title} lead={t.mota.lead} />
+      <div className="mtl-head mtl-head-row mtl-head-mota">
+        <span className="mtl-logo"><Image src="/logos/mota-techlink-logo-v2.webp" alt="MOTA TECH LINK" width={200} height={72} /></span>
+        <div>
+          <p className="mtl-eyebrow">{t.mota.eyebrow}</p>
+          <h1>{t.mota.title}</h1>
+          <p className="mtl-lead">{t.mota.lead}</p>
+          <div className="mtl-head-links">
+            <LinkOut href="https://motaiot.com">{t.mota.siteLabel}</LinkOut>
+          </div>
+        </div>
+        <div className="mtl-core">
+          <p className="mtl-label">{t.mota.coreLabel}</p>
+          <ul className="mtl-ticks">{t.mota.core.map((x) => <li key={x}>{x}</li>)}</ul>
+        </div>
+      </div>
       <div className="mtl-mota-grid">
         <div className="mtl-hexes">
-          {hexes.map((h) => (
+          {[{ icon: "🧠", title: t.mota.missionTitle, body: t.mota.mission },
+            { icon: "🚀", title: t.mota.visionTitle, body: t.mota.vision },
+            { icon: "🔌", title: t.mota.itTitle, body: t.mota.it },
+            { icon: "⚡", title: t.mota.aiTitle, body: t.mota.ai }].map((h) => (
             <div className="mtl-hex" key={h.title}>
               <div className="mtl-hex-inner">
                 <b>{h.icon} {h.title}</b>
@@ -178,13 +188,23 @@ function Mota({ t, open }: { t: Deck; open: (p: Person) => void }) {
             </div>
           ))}
         </div>
-        <div className="mtl-aiot-card">
-          <p className="mtl-label">{t.mota.aiotTag}</p>
-          <h2>{t.mota.aiotTitle}</h2>
-          <p>{t.mota.aiotBody}</p>
-          <ul className="mtl-ticks">{t.mota.aiotPoints.map((x) => <li key={x}>{x}</li>)}</ul>
-          <LinkOut href="https://motaiot.com/zh/showcase/GenAI-Driven">{t.mota.aiotLink}</LinkOut>
-          <div className="mtl-case-chips">{t.mota.cases.map((c) => <span key={c}>{c}</span>)}</div>
+        <div className="mtl-tech">
+          <p className="mtl-label">{t.mota.techTag}</p>
+          <h2>{t.mota.techTitle}</h2>
+          <p className="mtl-hint">{t.mota.techLead}</p>
+          <div className="mtl-tech-grid">
+            {t.mota.techGroups.map((g) => (
+              <article key={g.title}>
+                <b><span aria-hidden="true">{g.icon}</span> {g.title}</b>
+                <ul>{g.items.map((it) => <li key={it}>{it}</li>)}</ul>
+              </article>
+            ))}
+          </div>
+          <div className="mtl-tech-spot">
+            <b>✨ {t.mota.techHighlight}</b>
+            <p>{t.mota.techHighlightBody}</p>
+            <LinkOut href="https://motaiot.com/zh/showcase/GenAI-Driven">{t.mota.caseLink}</LinkOut>
+          </div>
         </div>
       </div>
       <div className="mtl-teambar">
@@ -221,7 +241,7 @@ function Elms({ t, open, openOfficial }: { t: Deck; open: (p: Person) => void; o
       <div className="mtl-programmes">
         {t.elms.programmes.map((p) => (
           <a className="mtl-programme" key={p.title} href={p.link} target="_blank" rel="noopener noreferrer">
-            <span className="mtl-programme-img"><Image src={p.image} alt={p.title} width={400} height={250} /></span>
+            <span className="mtl-programme-img"><Image src={p.image} alt={p.title} width={400} height={225} /></span>
             <b>{p.title}</b>
             <small>{p.desc}</small>
             <em aria-hidden="true">↗</em>
@@ -273,8 +293,8 @@ function Aura({ t, open }: { t: Deck; open: (p: Person) => void }) {
     <>
       <div className="mtl-head mtl-head-row">
         <span className="mtl-logo">
-          <Image className="only-dark" src={AURA_THEME_LOGO.dark} alt="Auraight" width={120} height={90} />
-          <Image className="only-light" src={AURA_THEME_LOGO.light} alt="Auraight" width={120} height={90} />
+          <Image className="only-dark" src={AURA_LOGO.dark} alt="Auraight" width={96} height={72} />
+          <Image className="only-light" src={AURA_LOGO.light} alt="Auraight" width={96} height={72} />
         </span>
         <div>
           <p className="mtl-eyebrow">{t.aura.eyebrow}</p>
@@ -294,26 +314,23 @@ function Aura({ t, open }: { t: Deck; open: (p: Person) => void }) {
         </div>
         <div className="mtl-panel">
           <p className="mtl-label">{t.aura.mapTitle}</p>
-          <div className="mtl-worldmap">
-            <div className="mtl-worldmap-grid" aria-hidden="true" />
-            {AURA_POINTS.resources.map((p) => (
-              <span key={p.name} className="mtl-dot is-resource" style={project(p.lon, p.lat)}>
-                <i /> {p.short}
-              </span>
-            ))}
-            {AURA_POINTS.clients.map((p) => (
-              <span key={p.name} className="mtl-dot is-client" style={project(p.lon, p.lat)}>
-                <i /> {p.short}
-              </span>
-            ))}
+          <div className="mtl-hubs">
+            <div className="mtl-hubs-col is-resource">
+              <p className="mtl-hubs-head"><i />{t.aura.resourceLabel}</p>
+              {t.aura.resources.map((r, i) => (
+                <div className={`mtl-hub h${i + 1}`} key={r.name}>
+                  <b>{r.name}</b>
+                  <small>{r.note}</small>
+                </div>
+              ))}
+            </div>
+            <div className="mtl-hubs-col is-client">
+              <p className="mtl-hubs-head"><i />{t.aura.clientLabel}</p>
+              {t.aura.clients.map((c, i) => (
+                <div className={`mtl-hub c${i + 1}`} key={c.name}><b>{c.name}</b></div>
+              ))}
+            </div>
           </div>
-          <div className="mtl-map-legend">
-            <span className="is-resource"><i />{t.aura.resourceLabel}</span>
-            <span className="is-client"><i />{t.aura.clientLabel}</span>
-          </div>
-          <ul className="mtl-resource-list">
-            {t.aura.resources.map((r) => <li key={r.name}><b>{r.name}</b><small>{r.note}</small></li>)}
-          </ul>
         </div>
       </div>
       <div className="mtl-why">
@@ -338,6 +355,7 @@ function Aura({ t, open }: { t: Deck; open: (p: Person) => void }) {
           <div className="mtl-people">
             <PersonChip person={ppl.vivian} onOpen={() => open(ppl.vivian)} />
             <PersonChip person={ppl.ethan} onOpen={() => open(ppl.ethan)} />
+            <PersonChip person={ppl.harling} onOpen={() => open(ppl.harling)} />
           </div>
         </div>
       </div>
@@ -353,24 +371,21 @@ function Vflux({ t, open }: { t: Deck; open: (p: Person) => void }) {
         eyebrow={t.vflux.eyebrow} title={t.vflux.title} lead={t.vflux.lead}
         links={[{ label: t.vflux.links[0], href: "https://vflux.ai/en" }, { label: t.vflux.links[1], href: "https://vflux.ai/en/docs" }]}
       />
-      <div className="mtl-layers">
-        {t.vflux.layers.map((l, i) => (
-          <article className="mtl-layer" key={l.title}>
-            <span className="mtl-layer-num">{String(i + 1).padStart(2, "0")}</span>
-            <div>
-              <p className="mtl-layer-tag">{l.tag}</p>
-              <h3>{l.title}</h3>
-              <p>{l.body}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-      <div className="mtl-flow">
-        <p className="mtl-label">{t.vflux.flowTitle}</p>
-        <div className="mtl-flow-track">
-          {t.vflux.flow.map((f, i) => (
-            <span key={f} className={i === 1 ? "is-on" : undefined}>{f}</span>
-          ))}
+      <div className="mtl-vflow">
+        <div className="mtl-vcol">
+          <p className="mtl-label">{t.vflux.venueLabel}</p>
+          {t.vflux.venue.map((v, i) => <div className="mtl-vbox" key={v}><span>{["🏦", "🔁", "🤝"][i]}</span>{v}</div>)}
+        </div>
+        <div className="mtl-vmid">
+          <div className="mtl-vglobe" aria-hidden="true"><span /></div>
+          <div className="mtl-vcore">
+            <b>VFLUX</b>
+            <ul>{t.vflux.platform.map((p) => <li key={p}>{p}</li>)}</ul>
+          </div>
+        </div>
+        <div className="mtl-vcol">
+          <p className="mtl-label">{t.vflux.assetLabel}</p>
+          {t.vflux.assets.map((a, i) => <div className="mtl-vbox" key={a}><span>{["📈", "🥇", "🛢️", "📊"][i]}</span>{a}</div>)}
         </div>
       </div>
       <div className="mtl-teambar">
@@ -400,28 +415,35 @@ function Video({ t, open }: { t: Deck; open: (p: Person) => void }) {
         <div className="mtl-panel">
           <p className="mtl-label">{t.video.demandTitle}</p>
           <ul className="mtl-ticks">{t.video.demand.map((d) => <li key={d}>{d}</li>)}</ul>
+          <div className="mtl-flag">🇯🇵</div>
         </div>
         <div className="mtl-bridge" aria-hidden="true"><span>⇄</span></div>
         <div className="mtl-panel">
           <p className="mtl-label">{t.video.supplyTitle}</p>
           <ul className="mtl-ticks">{t.video.supply.map((d) => <li key={d}>{d}</li>)}</ul>
+          <div className="mtl-flag">🇨🇳</div>
         </div>
       </div>
-      <div className="mtl-lines">
-        {t.video.lines.map((l) => (
-          <article key={l.title}><span aria-hidden="true">{l.icon}</span><b>{l.title}</b><p>{l.body}</p></article>
-        ))}
-      </div>
-      <div className="mtl-steps">
-        <p className="mtl-label">{t.video.stepsTitle}</p>
-        <ol>
-          {t.video.steps.map((s, i) => <li key={s}><b>{i + 1}</b>{s}</li>)}
-        </ol>
+      <div className="mtl-market">
+        <p className="mtl-label">{t.video.marketTitle}</p>
+        <p className="mtl-hint">{t.video.marketLead}</p>
+        <table className="mtl-mtable">
+          <thead><tr>{t.video.cols.map((c, i) => <th key={i}>{c}</th>)}</tr></thead>
+          <tbody>
+            {t.video.rows.map((r) => <tr key={r[0]}><th scope="row">{r[0]}</th><td>{r[1]}</td><td>{r[2]}</td></tr>)}
+          </tbody>
+        </table>
+        <div className="mtl-market-foot">
+          <div><p className="mtl-label">{t.video.gapTitle}</p><ul className="mtl-ticks">{t.video.gap.map((g) => <li key={g}>{g}</li>)}</ul></div>
+          <p className="mtl-hint">{t.video.srcNote}</p>
+        </div>
       </div>
       <div className="mtl-video-foot">
         <div>
-          <p className="mtl-label">{t.video.whyTitle}</p>
-          <ul className="mtl-ticks">{t.video.why.map((w) => <li key={w}>{w}</li>)}</ul>
+          <p className="mtl-label">{t.video.linesTitle}</p>
+          <div className="mtl-lines">
+            {t.video.lines.map((l) => <article key={l.title}><span aria-hidden="true">{l.icon}</span><b>{l.title}</b><p>{l.body}</p></article>)}
+          </div>
         </div>
         <div>
           <p className="mtl-label">{t.video.teamTitle}</p>
@@ -440,16 +462,23 @@ function Video({ t, open }: { t: Deck; open: (p: Person) => void }) {
 function Cta({ t, goTo }: { t: Deck; goTo: (i: number) => void }) {
   return (
     <div className="mtl-cta">
+      <span className="mtl-cta-logo"><Image src="/logos/mota-techlink-logo-v2.webp" alt="MOTA TECH LINK" width={360} height={110} /></span>
       <p className="mtl-eyebrow">{t.cta.eyebrow}</p>
       <h1 className="mtl-hero">{t.cta.title}</h1>
       <p className="mtl-lead mtl-center">{t.cta.lead}</p>
+      <div className="mtl-cta-dots">
+        {t.cta.dots.map((d, i) => (
+          <button type="button" key={d} className="mtl-cta-dot" onClick={() => goTo(i + 2)}>
+            <i aria-hidden="true" /><span>{d}</span>
+          </button>
+        ))}
+      </div>
       <div className="mtl-contact">
         <div><b>{t.cta.contact}</b><a href={`mailto:${t.cta.email}`}>{t.cta.email}</a></div>
         <div><b>{t.cta.addressLabel}</b><span>{t.cta.address}</span></div>
         <div><b>{t.cta.websiteLabel}</b><LinkOut href="https://motaiot.com">motaiot.com</LinkOut></div>
       </div>
       <button type="button" className="mtl-action" onClick={() => goTo(1)}>{t.cta.back} →</button>
-      <Image className="mtl-cta-art" src="/images/pitch-deck/cta-network.svg" alt="" width={520} height={300} />
       <p className="mtl-hint mtl-center">{t.cta.copyright}</p>
     </div>
   );

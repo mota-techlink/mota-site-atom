@@ -12,9 +12,9 @@
     "lead": "We match scarce capability with real demand, then carry it through to delivery.",
     "pillars": [
       {
-        "icon": "🧭",
-        "label": "Local advantage",
-        "note": "Ireland and Japan market access"
+        "icon": "🌍",
+        "label": "Global advantage",
+        "note": "Connecting resources and markets worldwide"
       },
       {
         "icon": "🔌",
@@ -41,15 +41,6 @@
     "it": "From sensors and devices to cloud platforms, edge inference and AI agents: technology that makes teams work together.",
     "aiTitle": "AI accelerates",
     "ai": "GenAI synthetic data, edge inference, automation and practical delivery.",
-    "aiotTag": "AIOT CASE STUDY",
-    "aiotTitle": "GenAI synthetic data for AIoT devices",
-    "aiotBody": "A smart-elevator case where scarce failure data is replaced by GenAI-generated synthetic samples, then quantised onto an NPU for on-device inference — private by default, low latency, deployable at the edge.",
-    "aiotPoints": [
-      "Synthetic fault samples instead of expensive field collection",
-      "Quantised models that run on low-power NPUs",
-      "On-device inference keeps raw sensor data local"
-    ],
-    "aiotLink": "Read the AIoT case",
     "cases": [
       "💡 AI lighting",
       "🎙️ AI voice interaction",
@@ -57,7 +48,58 @@
       "📊 Synthetic data pipeline"
     ],
     "teamTitle": "Team",
-    "teamNote": "Tap a portrait for role, capabilities and experience."
+    "teamNote": "Tap a portrait for role, capabilities and experience.",
+    "techTag": "TECHNOLOGY ADVANTAGE",
+    "techTitle": "Full-stack IT, amplified by AI",
+    "techLead": "From devices to cloud, from data to agents: one delivery team across the whole stack.",
+    "techGroups": [
+      {
+        "icon": "🧠",
+        "title": "AI & generative AI",
+        "items": [
+          "LLM applications and agents",
+          "Generative synthetic training data",
+          "Quantisation and edge inference"
+        ]
+      },
+      {
+        "icon": "🧩",
+        "title": "Full-stack engineering",
+        "items": [
+          "Web and mobile applications",
+          "Backend services and APIs",
+          "Data platforms and real-time pipelines"
+        ]
+      },
+      {
+        "icon": "📡",
+        "title": "IoT & edge",
+        "items": [
+          "Sensors and device connectivity",
+          "Edge computing and low latency",
+          "Device management and firmware"
+        ]
+      },
+      {
+        "icon": "☁️",
+        "title": "Cloud & enterprise integration",
+        "items": [
+          "Cloud-native, CDN and Zero Trust",
+          "Enterprise service bus (ESB)",
+          "Cross-border payment and settlement"
+        ]
+      }
+    ],
+    "techHighlight": "Highlight: AI synthetic training data",
+    "techHighlightBody": "Generative models produce the scarce fault and training samples that field collection cannot afford, then the model is quantised to run on-device on an NPU.",
+    "caseLink": "View the case",
+    "siteLabel": "motaiot.com",
+    "coreLabel": "MOTA's role",
+    "core": [
+      "Finds demand across markets",
+      "Assembles scarce resources and partners",
+      "Owns technical delivery to the end"
+    ]
   },
   "elms": {
     "eyebrow": "02 · ELMSFLOW",
@@ -143,7 +185,7 @@
         "pct": 16
       }
     ],
-    "mapTitle": "Two resource hubs, several client markets",
+    "mapTitle": "Resource hubs and client markets",
     "resourceLabel": "Resource hub",
     "clientLabel": "Client source",
     "resources": [
@@ -165,6 +207,9 @@
       },
       {
         "name": "New Zealand"
+      },
+      {
+        "name": "Thailand"
       }
     ],
     "whyTitle": "Why China and Japan",
@@ -195,40 +240,33 @@
     "teamTitle": "Team"
   },
   "vflux": {
-    "eyebrow": "04 · VFLUX",
     "title": "VFlux",
-    "lead": "The problem is not a shortage of assets. It is fragmented access and fragmented liquidity.",
+    "lead": "One settlement rail between crypto venues and real-world asset markets.",
+    "flowTitle": "How the platform sits between venues and assets",
+    "venueLabel": "Crypto venues",
+    "venue": [
+      "Centralised exchange (CEX)",
+      "Decentralised exchange (DEX)",
+      "Market makers / OTC desks"
+    ],
+    "platformLabel": "VFlux platform",
+    "platform": [
+      "Stablecoin as the settlement currency",
+      "VF token as the transaction fee",
+      "Routing, clearing and reconciliation"
+    ],
+    "assetLabel": "Asset markets",
+    "assets": [
+      "US equities",
+      "Precious metals",
+      "Commodities",
+      "Futures & options"
+    ],
     "links": [
       "VFlux website",
       "Whitepaper"
     ],
-    "layersTitle": "Three layers, one connection",
-    "layers": [
-      {
-        "tag": "Access",
-        "title": "Market access",
-        "body": "Eligibility, permissions and a verified asset catalogue."
-      },
-      {
-        "tag": "Distribution",
-        "title": "Distribution & liquidity",
-        "body": "More channels, more order flow, better execution."
-      },
-      {
-        "tag": "Settlement",
-        "title": "Routing & clearing",
-        "body": "Connecting existing institutions instead of replacing them."
-      }
-    ],
-    "flowTitle": "Evolution path",
-    "flow": [
-      "Centralised",
-      "Network",
-      "RWA",
-      "On-chain"
-    ],
-    "note": "Planning material · proposed model · regulatory and commercial validation still required.",
-    "teamTitle": "Team"
+    "note": "Planning material · proposed model · regulatory and commercial validation still required."
   },
   "video": {
     "eyebrow": "05 · YOSHI SEI · 吉晟株式会社",
@@ -283,7 +321,43 @@
       "Yoshisei website",
       "Business plan"
     ],
-    "teamTitle": "Founding team"
+    "teamTitle": "Founding team",
+    "marketTitle": "Market size and maturity",
+    "marketLead": "China has industrialised the supply side; Japan is still in testing and validation.",
+    "cols": [
+      "",
+      "🇨🇳 China",
+      "🇯🇵 Japan"
+    ],
+    "rows": [
+      [
+        "Supply maturity",
+        "Industrialised studios and toolchains",
+        "Testing and validation phase"
+      ],
+      [
+        "Cost driver",
+        "Compute ≈50% of production cost",
+        "Localisation and quality review"
+      ],
+      [
+        "Entry price",
+        "From ¥1,000 per minute (low-end quote)",
+        "Buyer-specific, project based"
+      ],
+      [
+        "Demand",
+        "Platforms, brands, education",
+        "Agencies, IP owners, education"
+      ]
+    ],
+    "gapTitle": "Growth space",
+    "gap": [
+      "No neutral matching layer exists yet",
+      "Japanese quality review is the bottleneck",
+      "Settlement in yen and renminbi is unresolved"
+    ],
+    "srcNote": "Source: Yoshisei business plan; industry estimates, to be verified."
   },
   "cta": {
     "eyebrow": "06 · NEXT STEP",
@@ -295,7 +369,13 @@
     "websiteLabel": "Website",
     "email": "hello@motaiot.com",
     "copyright": "© 2026 MOTA TECHLINK. All rights reserved.",
-    "back": "Back to MOTA overview"
+    "back": "Back to MOTA overview",
+    "dots": [
+      "ELMSFLOW",
+      "Auraight",
+      "VFlux",
+      "Yoshi Sei"
+    ]
   },
   "modal": {
     "tabs": [
@@ -313,31 +393,36 @@
       "name": "Harling Sun",
       "role": "Founder & Chief Architect, MOTA TECHLINK",
       "photo": "/images/team/Harling.jpg",
-      "roleDesc": "Sets technical direction across the four projects and integrates cross-border systems, AI and IoT delivery.",
+      "roleDesc": "Explores market demand across regions, assembles scarce resources, and layers AI-enhanced technical delivery on top so each project can actually ship.",
       "caps": [
-        "AI agents and LLM workflows",
-        "IoT and edge computing",
-        "Cloud infrastructure and data systems",
-        "Cross-border platform integration"
+        "AI and generative AI applications",
+        "Full-stack IT engineering",
+        "Cross-border business integration",
+        "High-execution delivery and public relations",
+        "A global network of partners"
       ],
       "exp": [
-        "Created and led the eBay China API team",
-        "Architected the Shanghai 1210 cross-border system",
-        "AI + IoT smart-elevator platform",
-        "Earlier roles at KONAMI and IBM financial systems"
+        "Senior roles in Fortune 500 companies: chief programmer at KONAMI, founder of the eBay China API team, IBM enterprise service bus",
+        "Pre-IPO technical lead at Kuajing Tongbao",
+        "Founding member of the Shanghai Cross-border E-commerce Association, with the Shanghai Commerce Commission, China Eastern, Alibaba, JD.com and SF Express",
+        "A broad portfolio of AI + IoT projects"
       ]
     },
     "franklin": {
       "name": "Franklin Ng",
-      "role": "Co-founder",
+      "role": "Co-founder · corporate affairs",
       "photo": "",
-      "roleDesc": "Founder-level partner supporting project sourcing and commercial structuring.",
+      "roleDesc": "Runs corporate affairs. A New York resident, he owns the building at 1329 Willoughby Ave and built Kingsway Trade into a nationwide Chinese-medicine supplier, acquired in 2017 by the listed Chinese pharmaceutical group Yixintang, which opened a Fifth Avenue flagship store.",
       "caps": [
-        "Commercial structuring",
-        "Partner sourcing"
+        "Corporate affairs and governance",
+        "US entity, real estate and local operations",
+        "Chinese-medicine supply chain across the United States",
+        "Retail and wholesale distribution"
       ],
       "exp": [
-        "Approved biography and case evidence pending"
+        "Kingsway Trade — nationwide Chinese-medicine supplier",
+        "Acquired in 2017 by Yixintang (002727), a listed Chinese pharmaceutical group, followed by a Fifth Avenue flagship store",
+        "Owner of the 1329 Willoughby Ave building, Brooklyn, New York"
       ]
     },
     "paul": {
@@ -491,19 +576,19 @@
       "name": "John Cummins TD",
       "role": "Minister of State for Local Government and Planning",
       "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
-      "link": "https://elmsflo.com/why-ireland"
+      "link": "https://www.oireachtas.ie/en/members/member/John-Cummins.D.2020-06-29/"
     },
     "evans": {
       "name": "Gareth Evans",
       "role": "Chief Executive, Waterford City & County Council",
       "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
-      "link": "https://elmsflo.com/why-ireland"
+      "link": "https://www.waterfordcouncil.ie/"
     },
     "hurley": {
       "name": "Gerald Hurley",
       "role": "Chief Executive, Waterford Chamber",
       "photo": "/images/pitch-deck/elmsflow/gerald-hurley.jpg",
-      "link": "https://elmsflo.com/about"
+      "link": "https://www.waterfordchamber.ie/"
     }
   }
 }

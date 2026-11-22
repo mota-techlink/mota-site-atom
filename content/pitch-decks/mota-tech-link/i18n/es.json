@@ -12,9 +12,9 @@
     "lead": "Unimos capacidad escasa con demanda real y acompañamos hasta la entrega.",
     "pillars": [
       {
-        "icon": "🧭",
-        "label": "Ventaja local",
-        "note": "Acceso a mercados de Irlanda y Japón"
+        "icon": "🌍",
+        "label": "Ventaja global",
+        "note": "Conectamos recursos y mercados del mundo"
       },
       {
         "icon": "🔌",
@@ -41,15 +41,6 @@
     "it": "De sensores y dispositivos a la nube, la inferencia en el borde y agentes de IA: tecnología que hace trabajar juntos a los equipos.",
     "aiTitle": "IA acelera",
     "ai": "Datos sintéticos con IA generativa, inferencia en el borde, automatización y entrega práctica.",
-    "aiotTag": "CASO AIOT",
-    "aiotTitle": "Datos sintéticos generativos para dispositivos AIoT",
-    "aiotBody": "En un caso de ascensores inteligentes, los escasos datos de fallo se sustituyen por muestras sintéticas generadas y luego se cuantizan para un NPU con inferencia en el dispositivo: privacidad por defecto, baja latencia y despliegue en el borde.",
-    "aiotPoints": [
-      "Muestras sintéticas de fallo en lugar de costosa recolección en campo",
-      "Modelos cuantizados que corren en NPU de baja potencia",
-      "La inferencia local mantiene los datos del sensor en el dispositivo"
-    ],
-    "aiotLink": "Ver el caso AIoT",
     "cases": [
       "💡 Iluminación IA",
       "🎙️ Voz e interacción IA",
@@ -57,7 +48,58 @@
       "📊 Canal de datos sintéticos"
     ],
     "teamTitle": "Equipo",
-    "teamNote": "Toca un retrato para ver rol, capacidades y experiencia."
+    "teamNote": "Toca un retrato para ver rol, capacidades y experiencia.",
+    "techTag": "VENTAJA TECNOLÓGICA",
+    "techTitle": "IT full-stack ampliado con IA",
+    "techLead": "Del dispositivo a la nube, del dato al agente: un solo equipo cubre toda la pila.",
+    "techGroups": [
+      {
+        "icon": "🧠",
+        "title": "IA y IA generativa",
+        "items": [
+          "Aplicaciones LLM y agentes",
+          "Datos sintéticos de entrenamiento",
+          "Cuantización e inferencia en el borde"
+        ]
+      },
+      {
+        "icon": "🧩",
+        "title": "Ingeniería full-stack",
+        "items": [
+          "Aplicaciones web y móviles",
+          "Servicios backend y APIs",
+          "Plataformas de datos y pipelines en tiempo real"
+        ]
+      },
+      {
+        "icon": "📡",
+        "title": "IoT y borde",
+        "items": [
+          "Sensores y conectividad de dispositivos",
+          "Computación en el borde y baja latencia",
+          "Gestión de dispositivos y firmware"
+        ]
+      },
+      {
+        "icon": "☁️",
+        "title": "Nube e integración empresarial",
+        "items": [
+          "Cloud native, CDN y Zero Trust",
+          "Bus de servicios empresariales (ESB)",
+          "Pagos y liquidación transfronteriza"
+        ]
+      }
+    ],
+    "techHighlight": "Destacado: datos sintéticos de entrenamiento con IA",
+    "techHighlightBody": "Modelos generativos crean las muestras de fallo y entrenamiento que la recolección en campo no puede costear; después el modelo se cuantiza para inferencia en el NPU del dispositivo.",
+    "caseLink": "Ver el caso",
+    "siteLabel": "motaiot.com",
+    "coreLabel": "El papel de MOTA",
+    "core": [
+      "Detecta demanda en los mercados",
+      "Reúne recursos escasos y socios",
+      "Asume la entrega técnica de principio a fin"
+    ]
   },
   "elms": {
     "eyebrow": "02 · ELMSFLOW",
@@ -143,7 +185,7 @@
         "pct": 16
       }
     ],
-    "mapTitle": "Dos centros de recursos, varios mercados de clientes",
+    "mapTitle": "Centros de recursos y mercados de clientes",
     "resourceLabel": "Centro de recursos",
     "clientLabel": "Origen de clientes",
     "resources": [
@@ -165,6 +207,9 @@
       },
       {
         "name": "Nueva Zelanda"
+      },
+      {
+        "name": "Tailandia"
       }
     ],
     "whyTitle": "Por qué China y Japón",
@@ -195,40 +240,33 @@
     "teamTitle": "Equipo"
   },
   "vflux": {
-    "eyebrow": "04 · VFLUX",
     "title": "VFlux",
-    "lead": "El problema no es la falta de activos, sino el acceso y la liquidez fragmentados.",
+    "lead": "Un único raíl de liquidación entre venues cripto y mercados de activos reales.",
+    "flowTitle": "Dónde se sitúa la plataforma entre venues y activos",
+    "venueLabel": "Lado de venues cripto",
+    "venue": [
+      "Exchange centralizado (CEX)",
+      "Exchange descentralizado (DEX)",
+      "Creadores de mercado / OTC"
+    ],
+    "platformLabel": "Plataforma VFlux",
+    "platform": [
+      "Moneda de liquidación: stablecoin",
+      "Comisión: token VF",
+      "Enrutamiento, compensación y conciliación"
+    ],
+    "assetLabel": "Lado de mercados de activos",
+    "assets": [
+      "Acciones EE. UU.",
+      "Metales preciosos",
+      "Materias primas",
+      "Futuros y opciones"
+    ],
     "links": [
       "Sitio de VFlux",
       "Libro blanco"
     ],
-    "layersTitle": "Tres capas, una conexión",
-    "layers": [
-      {
-        "tag": "Acceso",
-        "title": "Acceso al mercado",
-        "body": "Elegibilidad, permisos y catálogo de activos verificado."
-      },
-      {
-        "tag": "Distribución",
-        "title": "Distribución y liquidez",
-        "body": "Más canales, más flujo de órdenes y mejor ejecución."
-      },
-      {
-        "tag": "Liquidación",
-        "title": "Enrutamiento y compensación",
-        "body": "Conectar las instituciones existentes en lugar de reemplazarlas."
-      }
-    ],
-    "flowTitle": "Ruta de evolución",
-    "flow": [
-      "Centralizado",
-      "Red",
-      "RWA",
-      "On-chain"
-    ],
-    "note": "Material de planificación · modelo propuesto · requiere validación regulatoria y comercial.",
-    "teamTitle": "Equipo"
+    "note": "Material de planificación · modelo propuesto · requiere validación regulatoria y comercial."
   },
   "video": {
     "eyebrow": "05 · YOSHI SEI · 吉晟株式会社",
@@ -283,7 +321,43 @@
       "Sitio de Yoshi Sei",
       "Plan de negocio"
     ],
-    "teamTitle": "Equipo fundador"
+    "teamTitle": "Equipo fundador",
+    "marketTitle": "Tamaño y madurez del mercado",
+    "marketLead": "China ya industrializó la oferta; Japón sigue en fase de prueba y validación.",
+    "cols": [
+      "",
+      "🇨🇳 China",
+      "🇯🇵 Japón"
+    ],
+    "rows": [
+      [
+        "Madurez de la oferta",
+        "Estudios y herramientas industrializados",
+        "Fase de prueba y validación"
+      ],
+      [
+        "Estructura de coste",
+        "Cómputo ≈50% del coste de producción",
+        "Localización y control de calidad"
+      ],
+      [
+        "Precio de entrada",
+        "Desde 1.000 CNY por minuto (gama baja)",
+        "Según proyecto y comprador"
+      ],
+      [
+        "Demanda",
+        "Plataformas, marcas, educación",
+        "Agencias, propietarios de IP, educación"
+      ]
+    ],
+    "gapTitle": "Espacio de crecimiento",
+    "gap": [
+      "Aún no existe una capa neutral de emparejamiento",
+      "La revisión de calidad en japonés es el cuello de botella",
+      "La liquidación yen–renminbi sigue sin resolver"
+    ],
+    "srcNote": "Fuente: plan de negocio de Yoshisei; estimaciones del sector, pendientes de verificación."
   },
   "cta": {
     "eyebrow": "06 · SIGUIENTE PASO",
@@ -295,7 +369,13 @@
     "websiteLabel": "Sitio web",
     "email": "hello@motaiot.com",
     "copyright": "© 2026 MOTA TECHLINK. Todos los derechos reservados.",
-    "back": "Volver al resumen MOTA"
+    "back": "Volver al resumen MOTA",
+    "dots": [
+      "ELMSFLOW",
+      "Auraight",
+      "VFlux",
+      "Yoshi Sei"
+    ]
   },
   "modal": {
     "tabs": [
@@ -313,31 +393,36 @@
       "name": "Harling Sun 孙涛",
       "role": "Fundador y arquitecto jefe, MOTA TECHLINK",
       "photo": "/images/team/Harling.jpg",
-      "roleDesc": "Define la dirección técnica de los cuatro proyectos e integra sistemas transfronterizos, IA e IoT.",
+      "roleDesc": "Explora la demanda en distintos mercados, integra recursos escasos y añade capacidad técnica potenciada por IA para que cada proyecto llegue a entregarse.",
       "caps": [
-        "Agentes de IA y flujos LLM",
-        "IoT y computación en el borde",
-        "Infraestructura cloud y sistemas de datos",
-        "Integración de plataformas transfronterizas"
+        "Aplicaciones de IA y IA generativa",
+        "Ingeniería IT full-stack",
+        "Integración de negocio transfronterizo",
+        "Alta capacidad de ejecución y relaciones públicas",
+        "Red global de contactos"
       ],
       "exp": [
-        "Creó y dirigió el equipo de API de eBay China",
-        "Arquitectura del sistema transfronterizo Shanghái 1210",
-        "Plataforma de ascensores inteligentes IA + IoT",
-        "Experiencia previa en KONAMI e IBM"
+        "Puestos directivos en empresas Fortune 500: programador jefe en KONAMI, fundador del equipo API de eBay China, bus de servicios empresariales de IBM",
+        "Responsable técnico antes de la salida a bolsa de Kuajing Tongbao",
+        "Miembro fundador de la Asociación de Comercio Electrónico Transfronterizo de Shanghái, con la Comisión de Comercio, China Eastern, Alibaba, JD.com y SF Express",
+        "Amplio historial de proyectos de IA + IoT"
       ]
     },
     "franklin": {
       "name": "Franklin Ng",
-      "role": "Cofundador",
+      "role": "Cofundador · asuntos corporativos",
       "photo": "",
-      "roleDesc": "Socio fundador que apoya la identificación de proyectos y la estructuración comercial.",
+      "roleDesc": "Dirige los asuntos corporativos. Residente en Nueva York, es propietario del edificio de 1329 Willoughby Ave y creó Kingsway Trade, proveedor nacional de medicina china adquirido en 2017 por el grupo farmacéutico chino cotizado Yixintang, que abrió una tienda insignia en Fifth Avenue.",
       "caps": [
-        "Estructuración comercial",
-        "Identificación de socios"
+        "Asuntos corporativos y gobernanza",
+        "Entidad estadounidense, inmuebles y operación local",
+        "Cadena de suministro de medicina china en EE. UU.",
+        "Distribución minorista y mayorista"
       ],
       "exp": [
-        "Biografía y casos pendientes de aprobación"
+        "Kingsway Trade — proveedor nacional de medicina china",
+        "Adquirida en 2017 por Yixintang (002727), grupo farmacéutico chino cotizado, con apertura posterior de una tienda insignia en Fifth Avenue",
+        "Propietario del edificio 1329 Willoughby Ave, Brooklyn, Nueva York"
       ]
     },
     "paul": {
@@ -491,19 +576,19 @@
       "name": "John Cummins TD",
       "role": "Secretario de Estado de Gobierno Local y Planificación",
       "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
-      "link": "https://elmsflo.com/why-ireland"
+      "link": "https://www.oireachtas.ie/en/members/member/John-Cummins.D.2020-06-29/"
     },
     "evans": {
       "name": "Gareth Evans",
       "role": "Director ejecutivo, Ayuntamiento de Waterford",
       "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
-      "link": "https://elmsflo.com/why-ireland"
+      "link": "https://www.waterfordcouncil.ie/"
     },
     "hurley": {
       "name": "Gerald Hurley",
       "role": "Director ejecutivo, Cámara de Waterford",
       "photo": "/images/pitch-deck/elmsflow/gerald-hurley.jpg",
-      "link": "https://elmsflo.com/about"
+      "link": "https://www.waterfordchamber.ie/"
     }
   }
 }
