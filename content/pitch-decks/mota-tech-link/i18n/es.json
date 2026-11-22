@@ -398,7 +398,24 @@
       "Auraight",
       "VFlux",
       "Yoshi Sei"
-    ]
+    ],
+    "flow": {
+      "title": "Flujos entre proyectos",
+      "nodes": {
+        "na": "Norteamérica",
+        "uk": "Reino Unido",
+        "ie": "Irlanda",
+        "cn": "China",
+        "jp": "Japón",
+        "th": "Tailandia",
+        "sg": "Singapur",
+        "oc": "Oceanía"
+      },
+      "elms": "ELMSFLOW · China a Irlanda",
+      "video": "Matchmaking AI China–Japón",
+      "vflux": "VFLUX · global a Singapur",
+      "aura": "Auraight · hacia China y Japón"
+    }
   },
   "modal": {
     "tabs": [
@@ -552,7 +569,7 @@
       "photo": "/images/pitch-deck/yoshisei/vito-he.jpg",
       "roleDesc": "Fundador de Yoshisei. Socio de una consultora global, con más de veinte años en ventas B2B, consultoría y marketing digital para multinacionales.",
       "caps": [
-        "Socio de una consultora global",
+        "Socio de una consultora global; antes en Accenture, IBM, Brandtology y Emailvision China",
         "Más de 20 años en ventas B2B, consultoría y gestión de equipos en multinacionales",
         "Dirigió proyectos estratégicos de más de 5 millones de USD, tratando directamente con CXO y presidentes",
         "Marketing digital: SEO, performance y SaaS de email"
@@ -560,7 +577,7 @@
       "exp": [
         "Fundador de Yoshisei Corporation; sede en Tokio con oficinas en Osaka y Fukuoka",
         "Gestión regional y entrada de mercado desde cero: equipo de 3 a más de 30, ingresos x7 hasta 22 millones de CNY en 2018",
-        "Experiencia previa en Brandtology y Emailvision China, con trayectoria en Netconcepts",
+        "Antes en Accenture e IBM, después en Brandtology y Emailvision China, con trayectoria en Netconcepts",
         "Licenciatura en Informática, Universidad de Tongji; MBA, SBS Swiss Business School"
       ]
     },

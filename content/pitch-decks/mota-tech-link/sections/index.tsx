@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useDeckLocale } from "@/components/pitch-deck";
 import { useNav } from "../hooks";
 import { Avatar } from "./Avatar";
+import { FlowMap, FLOW_LEGEND_COLORS } from "./FlowMap";
 import { PersonModal, type Person } from "./PersonModal";
 import { OfficialModal, type Official } from "./OfficialModal";
 import en from "../i18n/en.json";
@@ -19,7 +20,7 @@ const PROJECTS: ProjectCard[] = [
   { key: "elms", page: 2, name: "ELMSFLOW", logo: "/images/pitch-deck/elmsflow-logo.png" },
   { key: "aura", page: 3, name: "Auraight", logo: "/images/pitch-deck/auraight-icon-dark.svg", logoLight: "/images/pitch-deck/auraight-icon-light.svg" },
   { key: "vflux", page: 4, name: "VFlux", logo: "/images/pitch-deck/vflux-logo.png" },
-  { key: "video", page: 5, name: "吉晟", wordmark: "YOSHI SEI" },
+  { key: "video", page: 5, name: "吉晟 YOSHI SEI", logo: "/images/pitch-deck/yoshisei-logo-dark.svg", logoLight: "/images/pitch-deck/yoshisei-logo-light.svg" },
 ];
 
 const AURA_LOGO = { dark: "/images/pitch-deck/auraight-icon-dark.svg", light: "/images/pitch-deck/auraight-icon-light.svg" };
@@ -29,7 +30,7 @@ const CTA_ICONS: CtaIcon[] = [
   { key: "elms", page: 2, name: "ELMSFLOW", logo: "/images/pitch-deck/elmsflow-logo.png" },
   { key: "aura", page: 3, name: "Auraight", logo: AURA_LOGO.dark, logoLight: AURA_LOGO.light },
   { key: "vflux", page: 4, name: "VFlux", mark: "/images/pitch-deck/vflux-icon.png" },
-  { key: "yoshi", page: 5, name: "吉晟 YOSHI SEI", text: "吉晟" },
+  { key: "yoshi", page: 5, name: "吉晟 YOSHI SEI", logo: "/images/pitch-deck/yoshisei-logo-dark.svg", logoLight: "/images/pitch-deck/yoshisei-logo-light.svg" },
 ];
 
 function LinkOut({ href, children }: { href: string; children: React.ReactNode }) {
@@ -430,10 +431,21 @@ function Video({ t, open }: { t: Deck; open: (p: Person) => void }) {
   const ppl = t.people as unknown as Record<string, Person>;
   return (
     <>
-      <SectionHead
-        eyebrow={t.video.eyebrow} title={t.video.title} lead={t.video.lead}
-        links={[{ label: t.video.links[0], href: "https://yoshisei.jp" }, { label: t.video.links[1], href: "https://drive.google.com/file/d/1ckJ0lmtw3F9C1dkobx1Zz4UfzwRKJRK-/view" }]}
-      />
+      <div className="mtl-head mtl-head-row">
+        <span className="mtl-logo">
+          <Image className="only-dark" src="/images/pitch-deck/yoshisei-logo-dark.svg" alt="吉晟 YOSHI SEI" width={84} height={84} />
+          <Image className="only-light" src="/images/pitch-deck/yoshisei-logo-light.svg" alt="吉晟 YOSHI SEI" width={84} height={84} />
+        </span>
+        <div>
+          <p className="mtl-eyebrow">{t.video.eyebrow}</p>
+          <h1>{t.video.title}</h1>
+          <p className="mtl-lead">{t.video.lead}</p>
+          <div className="mtl-head-links">
+            <LinkOut href="https://yoshisei.jp">{t.video.links[0]}</LinkOut>
+            <LinkOut href="https://drive.google.com/file/d/1ckJ0lmtw3F9C1dkobx1Zz4UfzwRKJRK-/view">{t.video.links[1]}</LinkOut>
+          </div>
+        </div>
+      </div>
       <div className="mtl-video-top">
         <div className="mtl-panel">
           <p className="mtl-label">{t.video.demandTitle}</p>
@@ -487,6 +499,17 @@ function Cta({ t, goTo }: { t: Deck; goTo: (i: number) => void }) {
       <p className="mtl-eyebrow">{t.cta.eyebrow}</p>
       <h1 className="mtl-hero">{t.cta.title}</h1>
       <p className="mtl-lead mtl-center">{t.cta.lead}</p>
+      <FlowMap labels={{ title: t.cta.flow.title, nodes: t.cta.flow.nodes }} />
+      <ul className="mtl-fm-legend">
+        {[
+          { c: FLOW_LEGEND_COLORS.elms, label: t.cta.flow.elms },
+          { c: FLOW_LEGEND_COLORS.video, label: t.cta.flow.video },
+          { c: FLOW_LEGEND_COLORS.vflux, label: t.cta.flow.vflux },
+          { c: FLOW_LEGEND_COLORS.aura, label: t.cta.flow.aura },
+        ].map((l) => (
+          <li key={l.label}><i style={{ background: l.c }} aria-hidden="true" />{l.label}</li>
+        ))}
+      </ul>
       <div className="mtl-cta-icons">
         {CTA_ICONS.map((p) => (
           <button type="button" key={p.key} className={`mtl-cta-icon is-${p.key}`} onClick={() => goTo(p.page)} title={p.name} aria-label={p.name}>

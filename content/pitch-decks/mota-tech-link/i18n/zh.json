@@ -398,7 +398,24 @@
       "Auraight",
       "VFlux",
       "吉晟"
-    ]
+    ],
+    "flow": {
+      "title": "项目流向示意",
+      "nodes": {
+        "na": "北美",
+        "uk": "英国",
+        "ie": "爱尔兰",
+        "cn": "中国",
+        "jp": "日本",
+        "th": "泰国",
+        "sg": "新加坡",
+        "oc": "大洋洲"
+      },
+      "elms": "ELMSFLOW · 中国 → 爱尔兰",
+      "video": "中日 AI 撮合",
+      "vflux": "VFLUX · 全球 → 新加坡",
+      "aura": "Auraight · 流向中国与日本"
+    }
   },
   "modal": {
     "tabs": [
@@ -552,7 +569,7 @@
       "photo": "/images/pitch-deck/yoshisei/vito-he.jpg",
       "roleDesc": "吉晟株式会社创始人，国际咨询公司合伙人，二十年以上跨国企业 B2B 销售、咨询与数字营销经验。",
       "caps": [
-        "国际咨询公司合伙人",
+        "国际咨询公司合伙人；曾任职埃森哲（Accenture）、IBM、Brandtology、Emailvision China",
         "20 年以上跨国企业 B2B 销售、咨询与团队管理",
         "主导 500 万美元以上战略项目，直接对接 CXO 与董事长",
         "数字营销：SEO、效果营销与邮件营销 SaaS"
@@ -560,7 +577,7 @@
       "exp": [
         "创立吉晟株式会社，东京本社，大阪与福冈设支社",
         "区域经营与 0 到 1 开拓：团队 3 人扩至 30 人以上，2018 年业绩增长 7 倍至 2200 万元",
-        "曾任职 Brandtology、Emailvision China，具 Netconcepts 网络营销背景",
+        "曾任职埃森哲（Accenture）、IBM，其后为 Brandtology、Emailvision China，具 Netconcepts 网络营销背景",
         "同济大学计算机科学学士；SBS 瑞士商学院 MBA"
       ]
     },

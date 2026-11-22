@@ -7,7 +7,7 @@ import { FloatingNav, SectionDots } from "./nav";
 import { MotaSection } from "./sections";
 
 const STYLES = `
-.mtl-slide{position:absolute;inset:0;overflow:hidden;background:transparent;color:#eef8fa}
+.mtl-slide{position:absolute;inset:0;overflow:hidden;background:transparent;color:var(--ink)}
 .mtl-slide[data-state=idle]{visibility:hidden;pointer-events:none}
 .mtl-slide[data-state=active]{z-index:2;animation:mtlIn .5s ease both}
 .mtl-slide[data-state=exiting]{z-index:1;pointer-events:none;animation:mtlOut .5s ease both}
@@ -23,6 +23,8 @@ const STYLES = `
 .light .mtl-deck .mtl-slide{background:transparent}
 .light .mtl-nav{background:rgba(244,249,249,.95)!important;border-color:rgba(14,43,58,.14)!important}
 .light .mtl-nav a,.light .mtl-nav button,.light .mtl-nav select,.light .mtl-nav span{color:#0e2b3a!important}
+.light .mtl-nav select{background:#fff!important;border-color:rgba(14,43,58,.22)!important;color-scheme:light}
+.mtl-nav select{color-scheme:dark}
 
 /* ---------- page frame: horizontally + vertically centered ---------- */
 .mtl-section{height:100%;width:100%;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:clamp(78px,7.4vh,108px) clamp(20px,3.6vw,64px) clamp(56px,5.2vh,84px);background:transparent;overscroll-behavior:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch}
@@ -308,8 +310,21 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 /* ---------- CTA ---------- */
 .mtl-cta-logo{display:grid;place-items:center;background:#fff;border-radius:16px;padding:8px 16px}
 .mtl-cta-logo img{width:clamp(180px,17vw,300px);height:auto;max-height:72px;object-fit:contain}
+.mtl-flowmap{width:100%;max-width:min(920px,100%);margin:.1em auto 0}
+.mtl-flowmap svg{display:block;width:100%;height:auto;max-height:min(27vh,250px);overflow:visible}
+.mtl-fm-line{animation:mtlFmDash 1.15s linear infinite}
+@keyframes mtlFmDash{to{stroke-dashoffset:-36}}
+.mtl-fm-runner{filter:drop-shadow(0 0 5px currentColor)}
+.mtl-fm-dot{fill:var(--ink);opacity:.9}
+.mtl-fm-label{fill:var(--muted);font-size:13px;font-weight:600;letter-spacing:.02em}
+.mtl-fm-label.is-hub{fill:var(--ink);font-weight:800;font-size:14px}
+.mtl-fm-node.is-hub .mtl-fm-dot{fill:var(--accent)}
+.mtl-fm-legend{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45em .9em;justify-content:center}
+.mtl-fm-legend li{display:flex;align-items:center;gap:.4em;font-size:.72em;color:var(--muted);font-weight:600}
+.mtl-fm-legend i{width:.62em;height:.62em;border-radius:50%;display:block;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 12%,transparent)}
+@media(prefers-reduced-motion:reduce){.mtl-fm-line{animation:none}.mtl-fm-runner{display:none}}
 .mtl-cta-icons{display:flex;gap:clamp(10px,1.4vw,20px);flex-wrap:wrap;justify-content:center;margin-top:.2em}
-.mtl-cta-icon{width:clamp(76px,7.2vw,108px);aspect-ratio:1;display:grid;place-items:center;padding:12px;border-radius:20px;border:1px solid var(--line);background:var(--surface);transition:border-color .2s,transform .2s}
+.mtl-cta-icon{width:clamp(66px,6.2vw,92px);aspect-ratio:1;display:grid;place-items:center;padding:12px;border-radius:20px;border:1px solid var(--line);background:var(--surface);transition:border-color .2s,transform .2s}
 .mtl-cta-icon:hover{border-color:var(--accent);transform:translateY(-2px)}
 .mtl-cta-icon img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
 .mtl-cta-icon.is-vflux{background:#000;border-color:rgba(255,255,255,.16)}
@@ -353,6 +368,8 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 }
 @media(max-width:520px){
  .mtl-content{font-size:13px}
+ .mtl-flowmap svg{max-height:240px}
+ .mtl-fm-label{font-size:15px}
  .mtl-chip-person .mtl-avatar{width:52px!important;height:52px!important}
  .mtl-modal-tabs button{padding:.55em .8em;font-size:.8em}
  .mtl-mtable{font-size:.7em}
