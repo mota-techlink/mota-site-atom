@@ -20,7 +20,14 @@
     "portfolioNote": "项目正在推进，并不代表已完成交付或取得商业成果。",
     "cases": "其他案例与项目",
     "casesNote": "以下为技术展示；产品状态和商业关系仍需进一步核验。",
-    "caseDescriptions": ["AI 智能体与联网照明。", "语音交互、连接与设备控制。", "宠物智能设备与垂直 AI。", "联网手杖的定位与语音交互。", "面向电梯安全的边缘检测。", "纺织品标识的机器视觉检测。"],
+    "caseDescriptions": [
+      "AI 智能体与联网照明。",
+      "语音交互、连接与设备控制。",
+      "宠物智能设备与垂直 AI。",
+      "联网手杖的定位与语音交互。",
+      "面向电梯安全的边缘检测。",
+      "纺织品标识的机器视觉检测。"
+    ],
     "explore": "查看项目页面",
     "details": "打开详情",
     "caseLink": "查看案例",
@@ -230,7 +237,6 @@
       "id": "ai-video",
       "name": "吉晟株式会社 · YOSHI SEI CORPORATION",
       "mark": "吉晟",
-      "url": "https://yoshisei.jp",
       "summary": "中日 AI 视频制作撮合与交易平台；网站 Beta 仍在开发中。",
       "overview": {
         "title": "连接日本与中国制作资源",
@@ -271,7 +277,7 @@
       ],
       "sources": [
         "吉晟株式会社 / YOSHI SEI CORPORATION 项目 brief，来源文件 ai-video-bp.txt（2026）。",
-        "Brief 列出 yoshisei.jp，并说明网站 Beta 正在开发。"
+        "Brief 说明网站 Beta 正在开发。"
       ],
       "pending": [
         "网站 Beta 完成、服务正式可用及经核实的交易结果。",

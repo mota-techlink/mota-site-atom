@@ -20,7 +20,14 @@
     "portfolioNote": "Son iniciativas en curso, no afirmaciones de entregas completadas o resultados comerciales.",
     "cases": "Otros casos e iniciativas",
     "casesNote": "Muestras tecnológicas seleccionadas; el estado del producto y las relaciones comerciales requieren verificación adicional.",
-    "caseDescriptions": ["Agentes de IA e iluminación conectada.", "Interfaz de voz, conectividad y control de dispositivos.", "Dispositivos conectados para mascotas e IA vertical.", "Posicionamiento e interacción de voz para un bastón conectado.", "Detección en el borde para seguridad en ascensores.", "Visión artificial para inspección de logotipos textiles."],
+    "caseDescriptions": [
+      "Agentes de IA e iluminación conectada.",
+      "Interfaz de voz, conectividad y control de dispositivos.",
+      "Dispositivos conectados para mascotas e IA vertical.",
+      "Posicionamiento e interacción de voz para un bastón conectado.",
+      "Detección en el borde para seguridad en ascensores.",
+      "Visión artificial para inspección de logotipos textiles."
+    ],
     "explore": "Ver página del proyecto",
     "details": "Abrir detalles",
     "caseLink": "Ver caso",
@@ -230,7 +237,6 @@
       "id": "ai-video",
       "name": "吉晟株式会社 · YOSHI SEI CORPORATION",
       "mark": "吉晟",
-      "url": "https://yoshisei.jp",
       "summary": "Plataforma de matching y transacciones de producción de vídeo IA Japón–China; beta web en desarrollo.",
       "overview": {
         "title": "Un puente de producción entre Japón y China",
@@ -271,7 +277,7 @@
       ],
       "sources": [
         "Brief del proyecto 吉晟株式会社 / YOSHI SEI CORPORATION, archivo proporcionado ai-video-bp.txt (2026).",
-        "El brief cita yoshisei.jp e indica que la beta del sitio web está en desarrollo."
+        "El brief indica que la beta del sitio web está en desarrollo."
       ],
       "pending": [
         "Finalización de la beta, disponibilidad del servicio y resultados de transacciones verificados.",

@@ -523,7 +523,6 @@ function Video({ t, open }: { t: Deck; open: (p: Person) => void }) {
           <h1>{t.video.title}</h1>
           <p className="mtl-lead">{t.video.lead}</p>
           <div className="mtl-head-links">
-            <LinkOut href="https://yoshisei.jp">{t.video.links[0]}</LinkOut>
             <LinkOut href="https://drive.google.com/file/d/1ckJ0lmtw3F9C1dkobx1Zz4UfzwRKJRK-/view">{t.video.links[1]}</LinkOut>
           </div>
         </div>
