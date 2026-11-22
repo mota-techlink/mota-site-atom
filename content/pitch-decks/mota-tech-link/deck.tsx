@@ -54,9 +54,9 @@ const STYLES = `
 .mtl-head-links{display:flex;flex-wrap:wrap;gap:.9em;margin-top:.35em}
 .mtl-logo{display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px 14px;min-width:104px}
 .mtl-logo img{width:clamp(70px,7vw,132px);height:auto;max-height:74px;object-fit:contain}
-.only-light{display:none}
-.light .only-dark{display:none}
-.light .only-light{display:block}
+.only-light{display:none!important}
+.light .only-dark{display:none!important}
+.light .only-light{display:block!important}
 .light .mtl-logo{background:#fff;border-color:rgba(14,43,58,.14)}
 
 /* ---------- cover ---------- */
@@ -308,10 +308,14 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 /* ---------- CTA ---------- */
 .mtl-cta-logo{display:grid;place-items:center;background:#fff;border-radius:16px;padding:8px 16px}
 .mtl-cta-logo img{width:clamp(180px,17vw,300px);height:auto;max-height:72px;object-fit:contain}
-.mtl-cta-dots{display:flex;gap:.6em;flex-wrap:wrap;justify-content:center;margin-top:.2em}
-.mtl-cta-dot{display:flex;align-items:center;gap:.4em;padding:.42em .8em;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:.76em;font-weight:700}
-.mtl-cta-dot:hover{border-color:var(--accent)}
-.mtl-cta-dot i{width:.5em;height:.5em;border-radius:50%;background:var(--accent);display:block}
+.mtl-cta-icons{display:flex;gap:clamp(10px,1.4vw,20px);flex-wrap:wrap;justify-content:center;margin-top:.2em}
+.mtl-cta-icon{width:clamp(76px,7.2vw,108px);aspect-ratio:1;display:grid;place-items:center;padding:12px;border-radius:20px;border:1px solid var(--line);background:var(--surface);transition:border-color .2s,transform .2s}
+.mtl-cta-icon:hover{border-color:var(--accent);transform:translateY(-2px)}
+.mtl-cta-icon img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.mtl-cta-icon.is-vflux{background:#000;border-color:rgba(255,255,255,.16)}
+.mtl-cta-icon.is-vflux img{max-height:58%}
+.mtl-cta-icon.is-elms{background:#fff}
+.mtl-cta-wordmark{font-size:clamp(13px,1.15vw,17px);font-weight:900;letter-spacing:.09em;color:var(--ink);line-height:1.15;text-align:center}
 
 /* ---------- responsive ---------- */
 @media(max-width:1100px){

@@ -24,6 +24,14 @@ const PROJECTS: ProjectCard[] = [
 
 const AURA_LOGO = { dark: "/images/pitch-deck/auraight-icon-dark.svg", light: "/images/pitch-deck/auraight-icon-light.svg" };
 
+type CtaIcon = { key: string; page: number; name: string; logo?: string; logoLight?: string; mark?: string; text?: string };
+const CTA_ICONS: CtaIcon[] = [
+  { key: "elms", page: 2, name: "ELMSFLOW", logo: "/images/pitch-deck/elmsflow-logo.png" },
+  { key: "aura", page: 3, name: "Auraight", logo: AURA_LOGO.dark, logoLight: AURA_LOGO.light },
+  { key: "vflux", page: 4, name: "VFlux", mark: "/images/pitch-deck/vflux-icon.png" },
+  { key: "yoshi", page: 5, name: "吉晟 YOSHI SEI", text: "吉晟" },
+];
+
 function LinkOut({ href, children }: { href: string; children: React.ReactNode }) {
   return <a className="mtl-link" href={href} target="_blank" rel="noopener noreferrer">{children} ↗</a>;
 }
@@ -479,10 +487,14 @@ function Cta({ t, goTo }: { t: Deck; goTo: (i: number) => void }) {
       <p className="mtl-eyebrow">{t.cta.eyebrow}</p>
       <h1 className="mtl-hero">{t.cta.title}</h1>
       <p className="mtl-lead mtl-center">{t.cta.lead}</p>
-      <div className="mtl-cta-dots">
-        {t.cta.dots.map((d, i) => (
-          <button type="button" key={d} className="mtl-cta-dot" onClick={() => goTo(i + 2)}>
-            <i aria-hidden="true" /><span>{d}</span>
+      <div className="mtl-cta-icons">
+        {CTA_ICONS.map((p) => (
+          <button type="button" key={p.key} className={`mtl-cta-icon is-${p.key}`} onClick={() => goTo(p.page)} title={p.name} aria-label={p.name}>
+            {p.logo && !p.logoLight ? <Image src={p.logo} alt="" width={120} height={120} /> : null}
+            {p.logo && p.logoLight ? <Image className="only-dark" src={p.logo} alt="" width={120} height={120} /> : null}
+            {p.logoLight ? <Image className="only-light" src={p.logoLight} alt="" width={120} height={120} /> : null}
+            {p.mark ? <Image src={p.mark} alt="" width={140} height={70} /> : null}
+            {p.text ? <span className="mtl-cta-wordmark">{p.text}</span> : null}
           </button>
         ))}
       </div>
