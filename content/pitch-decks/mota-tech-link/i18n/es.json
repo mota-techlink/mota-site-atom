@@ -295,13 +295,13 @@
     "eyebrow": "05 · YOSHI SEI · 吉晟株式会社",
     "title": "Plataforma de emparejamiento de vídeo IA Japón–China",
     "lead": "La demanda japonesa se encuentra con la producción china de vídeo IA industrializada mediante una plataforma transfronteriza neutral.",
-    "demandTitle": "🇯🇵 Lado de la demanda",
+    "demandTitle": "Lado de la demanda",
     "demand": [
       "Agencias y marcas",
       "Propietarios de IP y editoriales",
       "Educación y formación"
     ],
-    "supplyTitle": "🇨🇳 Lado de la oferta",
+    "supplyTitle": "Lado de la oferta",
     "supply": [
       "Estudios maduros de vídeo IA",
       "Herramientas Kling, Jimeng, Vidu, Hailuo",
@@ -349,8 +349,8 @@
     "marketLead": "China ya industrializó la oferta; Japón sigue en fase de prueba y validación.",
     "cols": [
       "",
-      "🇨🇳 China",
-      "🇯🇵 Japón"
+      "China",
+      "Japón"
     ],
     "rows": [
       [
@@ -402,14 +402,14 @@
     "flow": {
       "title": "Flujos entre proyectos",
       "nodes": {
-        "na": "🇺🇸 Norteamérica",
-        "uk": "🇬🇧 Reino Unido",
-        "ie": "🇮🇪 Irlanda",
-        "cn": "🇨🇳 China",
-        "jp": "🇯🇵 Japón",
-        "th": "🇹🇭 Tailandia",
-        "sg": "🇸🇬 Singapur",
-        "oc": "🇦🇺 Oceanía"
+        "na": "Norteamérica",
+        "uk": "Reino Unido",
+        "ie": "Irlanda",
+        "cn": "China",
+        "jp": "Japón",
+        "th": "Tailandia",
+        "sg": "Singapur",
+        "oc": "Oceanía"
       },
       "elms": "ELMSFLOW · China a Irlanda",
       "video": "Matchmaking AI China–Japón",

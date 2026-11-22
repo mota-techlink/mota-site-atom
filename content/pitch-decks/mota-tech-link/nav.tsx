@@ -40,8 +40,8 @@ export function FloatingNav({ pastHero }: { pastHero: boolean }) {
   return <header className={`mtl-nav fixed inset-x-0 top-0 z-50 border-b border-white/10 transition ${pastHero ? "bg-slate-950/90 backdrop-blur-xl" : "bg-slate-950/80"}`}>
     <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-2 px-4 sm:h-16 sm:px-8">
       <a href={`/${deckLocale}`} className="flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" aria-label="MOTA TECH LINK home">
-        <Image className="only-dark h-6 w-auto sm:h-7" src="/logos/mota-techlink-logo-wht.webp" alt="MOTA TECH LINK" width={150} height={66} />
-        <Image className="only-light h-6 w-auto sm:h-7" src="/logos/mota-techlink-logo-blk.webp" alt="MOTA TECH LINK" width={150} height={66} />
+        <Image className="only-dark h-6 w-auto sm:h-7" src="/logos/mota-techlink-logo-blk.webp" alt="MOTA TECH LINK" width={150} height={66} />
+        <Image className="only-light h-6 w-auto sm:h-7" src="/logos/mota-techlink-logo-wht.webp" alt="MOTA TECH LINK" width={150} height={66} />
       </a>
       <div className="flex items-center gap-1.5">
         <div className="relative" ref={langRef}>

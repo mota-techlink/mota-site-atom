@@ -295,13 +295,13 @@
     "eyebrow": "05 · YOSHI SEI · 吉晟株式会社",
     "title": "Japan–China AI video matching platform",
     "lead": "Japanese demand meets industrialised Chinese AI video production through a neutral cross-border platform.",
-    "demandTitle": "🇯🇵 Demand side",
+    "demandTitle": "Demand side",
     "demand": [
       "Advertising agencies & brands",
       "IP owners & publishers",
       "Education & training"
     ],
-    "supplyTitle": "🇨🇳 Supply side",
+    "supplyTitle": "Supply side",
     "supply": [
       "Mature AI video studios",
       "Kling, Jimeng, Vidu, Hailuo toolchains",
@@ -349,8 +349,8 @@
     "marketLead": "China has industrialised the supply side; Japan is still in testing and validation.",
     "cols": [
       "",
-      "🇨🇳 China",
-      "🇯🇵 Japan"
+      "China",
+      "Japan"
     ],
     "rows": [
       [
@@ -402,14 +402,14 @@
     "flow": {
       "title": "Project flows across the network",
       "nodes": {
-        "na": "🇺🇸 North America",
-        "uk": "🇬🇧 United Kingdom",
-        "ie": "🇮🇪 Ireland",
-        "cn": "🇨🇳 China",
-        "jp": "🇯🇵 Japan",
-        "th": "🇹🇭 Thailand",
-        "sg": "🇸🇬 Singapore",
-        "oc": "🇦🇺 Oceania"
+        "na": "North America",
+        "uk": "United Kingdom",
+        "ie": "Ireland",
+        "cn": "China",
+        "jp": "Japan",
+        "th": "Thailand",
+        "sg": "Singapore",
+        "oc": "Oceania"
       },
       "elms": "ELMSFLOW · China to Ireland",
       "video": "China–Japan AI matchmaking",

@@ -1,6 +1,10 @@
 "use client";
+import { useState } from "react";
+import { flagSrc } from "./FlagText";
 
 type Key = "na" | "uk" | "ie" | "cn" | "jp" | "th" | "sg" | "oc";
+
+const NODE_FLAG: Record<Key, string> = { na: "us", uk: "gb", ie: "ie", cn: "cn", jp: "jp", th: "th", sg: "sg", oc: "au" };
 
 const NODES: Record<Key, { x: number; y: number; anchor: "above" | "below" }> = {
   na: { x: 112, y: 128, anchor: "below" },
@@ -48,6 +52,7 @@ function curve(leg: Leg) {
 }
 
 export function FlowMap({ labels }: { labels: { title: string; nodes: Record<Key, string> } }) {
+  const [hover, setHover] = useState<string | null>(null);
   return (
     <div className="mtl-flowmap">
       <svg viewBox="0 0 1000 420" role="img" aria-label={labels.title} preserveAspectRatio="xMidYMid meet">
@@ -66,10 +71,11 @@ export function FlowMap({ labels }: { labels: { title: string; nodes: Record<Key
         {LEGS.map((leg) => {
           const d = curve(leg);
           const colorKey = leg.color === C.elms ? "elms" : leg.color === C.video ? "video" : leg.color === C.vflux ? "vflux" : "aura";
+          const on = hover === leg.id;
           return (
-            <g key={leg.id}>
-              <path id={`fm-p-${leg.id}`} d={d} fill="none" stroke={leg.color} strokeWidth="1.6" strokeOpacity=".24" strokeLinecap="round" />
-              <path d={d} fill="none" stroke={leg.color} strokeWidth="2.6" strokeLinecap="round" strokeDasharray="7 11" className="mtl-fm-line" markerEnd={`url(#fm-arr-${colorKey})`} />
+            <g key={leg.id} className={on ? "mtl-fm-leg is-on" : "mtl-fm-leg"} onMouseEnter={() => setHover(leg.id)} onMouseLeave={() => setHover(null)}>
+              <path id={`fm-p-${leg.id}`} d={d} fill="none" stroke={leg.color} strokeWidth={on ? 3 : 1.6} strokeOpacity={on ? 0.45 : 0.24} strokeLinecap="round" />
+              <path d={d} fill="none" stroke={leg.color} strokeWidth={on ? 3.6 : 2.6} strokeLinecap="round" strokeDasharray="7 11" className="mtl-fm-line" markerEnd={`url(#fm-arr-${colorKey})`} style={{ opacity: hover && !on ? 0.35 : 1 }} />
               <circle r="3.6" fill={leg.color} className="mtl-fm-runner">
                 <animateMotion dur="3.4s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
                   <mpath href={`#fm-p-${leg.id}`} />
@@ -86,7 +92,8 @@ export function FlowMap({ labels }: { labels: { title: string; nodes: Record<Key
             <g key={k} className={isHub ? "mtl-fm-node is-hub" : "mtl-fm-node"}>
               {isHub ? <circle cx={n.x} cy={n.y} r="22" fill="url(#fm-glow)" /> : null}
               <circle cx={n.x} cy={n.y} r={isHub ? 5.4 : 4.2} className="mtl-fm-dot" />
-              <text x={n.x} y={n.anchor === "above" ? n.y - 13 : n.y + 22} textAnchor="middle" className={isHub ? "mtl-fm-label is-hub" : "mtl-fm-label"}>
+              <image href={flagSrc(NODE_FLAG[k])} x={n.x - 10} y={(n.anchor === "above" ? n.y - 13 : n.y + 22) - 15} width={20} height={13} opacity={0.95} />
+              <text x={n.x} y={n.anchor === "above" ? n.y - 3 : n.y + 34} textAnchor="middle" className={isHub ? "mtl-fm-label is-hub" : "mtl-fm-label"}>
                 {labels.nodes[k]}
               </text>
             </g>

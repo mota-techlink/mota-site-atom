@@ -5,6 +5,7 @@ import { useDeckLocale } from "@/components/pitch-deck";
 import { useNav } from "../hooks";
 import { Avatar } from "./Avatar";
 import { FlowMap, FLOW_LEGEND_COLORS } from "./FlowMap";
+import { Flag, FlagText, FLAG_CODE } from "./FlagText";
 import { PersonModal, type Person } from "./PersonModal";
 import { OfficialModal, type Official } from "./OfficialModal";
 import en from "../i18n/en.json";
@@ -189,8 +190,8 @@ function Mota({ t, open }: { t: Deck; open: (p: Person) => void }) {
     <>
       <div className="mtl-head mtl-head-row mtl-head-mota">
         <span className="mtl-logo is-mota">
-          <Image className="only-dark" src="/logos/mota-techlink-logo-wht.webp" alt="MOTA TECH LINK" width={210} height={92} />
-          <Image className="only-light" src="/logos/mota-techlink-logo-blk.webp" alt="MOTA TECH LINK" width={210} height={92} />
+          <Image className="only-dark" src="/logos/mota-techlink-logo-blk.webp" alt="MOTA TECH LINK" width={210} height={92} />
+          <Image className="only-light" src="/logos/mota-techlink-logo-wht.webp" alt="MOTA TECH LINK" width={210} height={92} />
         </span>
         <div>
           <p className="mtl-eyebrow">{t.mota.eyebrow}</p>
@@ -264,7 +265,7 @@ function Elms({ t, open, openOfficial }: { t: Deck; open: (p: Person) => void; o
           <h1>{t.elms.title}</h1>
           <p className="mtl-lead">{t.elms.lead}</p>
           <div className="mtl-head-links">
-            <LinkOut href="https://elmsflo.com/about">{t.elms.links[0]}</LinkOut>
+            <LinkOut href="https://elmsflo.com">{t.elms.links[0]}</LinkOut>
             <LinkOut href="https://elmsflo.com/why-ireland">{t.elms.links[1]}</LinkOut>
           </div>
         </div>
@@ -284,11 +285,11 @@ function Elms({ t, open, openOfficial }: { t: Deck; open: (p: Person) => void; o
           <p className="mtl-label">{t.elms.mapTitle}</p>
           <div className="mtl-globe-inner">
             <span className="mtl-globe-ring" />
-            <b className="mtl-globe-core">🇮🇪 {t.elms.mapNodes[0]}</b>
-            <i className="mtl-globe-node n1">🇬🇧 {t.elms.mapNodes[1]}</i>
-            <i className="mtl-globe-node n2">🇪🇺 {t.elms.mapNodes[2]}</i>
-            <i className="mtl-globe-node n3">🇺🇸 {t.elms.mapNodes[3]}</i>
-            <i className="mtl-globe-node n4">🇨🇳 {t.elms.mapNodes[4]}</i>
+            <b className="mtl-globe-core"><Flag code="ie" /> {t.elms.mapNodes[0]}</b>
+            <i className="mtl-globe-node n1"><Flag code="gb" size={14} /> {t.elms.mapNodes[1]}</i>
+            <i className="mtl-globe-node n2"><Flag code="eu" size={14} /> {t.elms.mapNodes[2]}</i>
+            <i className="mtl-globe-node n3"><Flag code="us" size={14} /> {t.elms.mapNodes[3]}</i>
+            <i className="mtl-globe-node n4"><Flag code="cn" size={14} /> {t.elms.mapNodes[4]}</i>
           </div>
           <p className="mtl-hint">{t.elms.mapNote}</p>
         </div>
@@ -340,7 +341,7 @@ function Aura({ t, open }: { t: Deck; open: (p: Person) => void }) {
           <h1>{t.aura.title}</h1>
           <p className="mtl-lead">{t.aura.lead}</p>
           <div className="mtl-head-links">
-            <LinkOut href="https://auraight.com/zh/showcase">{t.aura.links[0]}</LinkOut>
+            <LinkOut href="https://auraight.com/">{t.aura.links[0]}</LinkOut>
             <LinkOut href="https://auraight.com/zh/showcase">{t.aura.links[1]}</LinkOut>
           </div>
         </div>
@@ -358,7 +359,7 @@ function Aura({ t, open }: { t: Deck; open: (p: Person) => void }) {
               <p className="mtl-hubs-head"><i />{t.aura.resourceLabel}</p>
               {t.aura.resources.map((r) => (
                 <div className="mtl-hub-card" key={r.name}>
-                  <span className="mtl-hub-flag">{r.flag}</span>
+                  <span className="mtl-hub-flag"><Flag code={FLAG_CODE[r.flag]} size={30} /></span>
                   <div>
                     <b>{r.name}</b>
                     <small>{r.note}</small>
@@ -372,7 +373,8 @@ function Aura({ t, open }: { t: Deck; open: (p: Person) => void }) {
               <div className="mtl-client-grid">
                 {t.aura.clients.map((c) => (
                   <div className="mtl-client-chip" key={c.name}>
-                    <span>{c.flag}</span>{c.name}
+                    <Flag code={FLAG_CODE[c.flag]} size={20} />
+                    <span>{c.name}</span>
                   </div>
                 ))}
               </div>
@@ -436,7 +438,6 @@ function Vflux({ t, open }: { t: Deck; open: (p: Person) => void }) {
         <div className="mtl-vmid">
           <div className="mtl-vglobe" aria-hidden="true"><span /><span className="mtl-vglobe-ring" /></div>
           <div className="mtl-vcore">
-            <b>VFLUX</b>
             <ul>{t.vflux.platform.map((p) => <li key={p}>{p}</li>)}</ul>
           </div>
         </div>
@@ -481,12 +482,12 @@ function Video({ t, open }: { t: Deck; open: (p: Person) => void }) {
       </div>
       <div className="mtl-video-top">
         <div className="mtl-panel">
-          <p className="mtl-label">{t.video.demandTitle}</p>
+          <p className="mtl-label"><FlagText text={t.video.demandTitle} flagCode="jp" /></p>
           <ul className="mtl-ticks">{t.video.demand.map((d) => <li key={d}>{d}</li>)}</ul>
         </div>
         <div className="mtl-bridge" aria-hidden="true"><span>⇄</span></div>
         <div className="mtl-panel">
-          <p className="mtl-label">{t.video.supplyTitle}</p>
+          <p className="mtl-label"><FlagText text={t.video.supplyTitle} flagCode="cn" /></p>
           <ul className="mtl-ticks">{t.video.supply.map((d) => <li key={d}>{d}</li>)}</ul>
         </div>
       </div>
@@ -494,7 +495,7 @@ function Video({ t, open }: { t: Deck; open: (p: Person) => void }) {
         <p className="mtl-label">{t.video.marketTitle}</p>
         <p className="mtl-hint">{t.video.marketLead}</p>
         <table className="mtl-mtable">
-          <thead><tr>{t.video.cols.map((c, i) => <th key={i}>{c}</th>)}</tr></thead>
+          <thead><tr>{t.video.cols.map((c, i) => <th key={i}>{i === 0 ? c : <FlagText text={c} flagCode={i === 1 ? "cn" : "jp"} />}</th>)}</tr></thead>
           <tbody>
             {t.video.rows.map((r) => <tr key={r[0]}><th scope="row">{r[0]}</th><td>{r[1]}</td><td>{r[2]}</td></tr>)}
           </tbody>
@@ -537,8 +538,8 @@ function Cta({ t, goTo }: { t: Deck; goTo: (i: number) => void }) {
   return (
     <div className="mtl-cta">
       <span className="mtl-cta-logo">
-        <Image className="only-dark" src="/logos/mota-techlink-logo-wht.webp" alt="MOTA TECH LINK" width={320} height={140} />
-        <Image className="only-light" src="/logos/mota-techlink-logo-blk.webp" alt="MOTA TECH LINK" width={320} height={140} />
+        <Image className="only-dark" src="/logos/mota-techlink-logo-blk.webp" alt="MOTA TECH LINK" width={320} height={140} />
+        <Image className="only-light" src="/logos/mota-techlink-logo-wht.webp" alt="MOTA TECH LINK" width={320} height={140} />
       </span>
       <p className="mtl-eyebrow">{t.cta.eyebrow}</p>
       <h1 className="mtl-hero">{t.cta.title}</h1>
