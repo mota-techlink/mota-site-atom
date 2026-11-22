@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="YOSHI SEI AI video platform">
+  <defs>
+    <linearGradient id="ysAL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#087b82"/>
+      <stop offset="1" stop-color="#c25e00"/>
+    </linearGradient>
+  </defs>
+  <path d="M36 24L20 40l16 16" fill="none" stroke="url(#ysAL)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 24l16 16-16 16" fill="none" stroke="url(#ysAL)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M42 31l15 9-15 9z" fill="#c25e00"/>
+  <path d="M22 66h52" stroke="#087b82" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+  <circle cx="34" cy="77" r="3.4" fill="#087b82" opacity=".55"/>
+  <circle cx="48" cy="77" r="3.4" fill="#087b82" opacity=".8"/>
+  <circle cx="62" cy="77" r="3.4" fill="#087b82" opacity=".55"/>
+</svg>

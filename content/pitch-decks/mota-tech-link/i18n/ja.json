@@ -1,0 +1,731 @@
+{
+  "nav": {
+    "home": "MOTA TECHLINK ホーム",
+    "overview": "MOTA 概要へ",
+    "lang": "言語",
+    "theme": "ライト／ダークを切り替え",
+    "page": "ページへ移動"
+  },
+  "cover": {
+    "eyebrow": "MOTA TECH LINK · プロジェクトネットワーク",
+    "title": "需要をつなぎ、実装を加速する。",
+    "lead": "希少な能力と実際の需要を結び、納品まで伴走します。",
+    "pillars": [
+      {
+        "icon": "🌍",
+        "label": "グローバル優位",
+        "note": "世界の資源と市場をつなぐ"
+      },
+      {
+        "icon": "🔌",
+        "label": "ITで接続",
+        "note": "プラットフォーム・データ・システム統合"
+      },
+      {
+        "icon": "⚡",
+        "label": "AIで加速",
+        "note": "生成AI・エッジ推論・自動化"
+      }
+    ],
+    "enter": "プロジェクトを見る"
+  },
+  "mota": {
+    "eyebrow": "01 · MOTA / AIOT",
+    "title": "ひとつの運営モデル、4つの納品ライン",
+    "lead": "すべてのプロジェクトは実際の需要、検証済みのパートナー、検証可能な納品経路から始まります。",
+    "missionTitle": "使命",
+    "mission": "実際の需要から出発し、技術・チーム・資源・地域パートナーを組み合わせて、実行可能なプロジェクトへ進めます。",
+    "visionTitle": "ビジョン",
+    "vision": "地域の強みと、対象市場の希少資源が出会うネットワークをつくります。",
+    "itTitle": "ITで接続",
+    "it": "センサーやデバイスからクラウド、エッジ推論、AIエージェントまで、チームが協働できる技術を整えます。",
+    "aiTitle": "AIで加速",
+    "ai": "生成AIによる合成データ、エッジ推論、自動化、実装までを担います。",
+    "cases": [
+      "💡 AI照明",
+      "🎙️ AI音声対話",
+      "🛗 生成AIエッジ安全",
+      "📊 合成データパイプライン"
+    ],
+    "teamTitle": "チーム",
+    "teamNote": "顔写真をタップすると役割・能力・経験が表示されます。",
+    "techTag": "技術優位",
+    "techTitle": "フルスタックITをAIで増幅",
+    "techLead": "デバイスからクラウド、データからエージェントまで、ひとつのチームで全層を担います。",
+    "techGroups": [
+      {
+        "icon": "🧠",
+        "title": "AI：CNN から LLM までフルカバー",
+        "items": [
+          "CNN 画像認識・ビジョン",
+          "生成 AI と LLM エージェント",
+          "合成学習データとエッジ推論"
+        ]
+      },
+      {
+        "icon": "🧩",
+        "title": "フルスタック開発",
+        "items": [
+          "Web・モバイルアプリ",
+          "バックエンドとAPI",
+          "データ基盤とリアルタイム処理"
+        ]
+      },
+      {
+        "icon": "📡",
+        "title": "IoT・エッジ",
+        "items": [
+          "センサーとデバイス接続",
+          "エッジ演算と低遅延",
+          "デバイス管理とファームウェア"
+        ]
+      },
+      {
+        "icon": "☁️",
+        "title": "クラウド・企業統合",
+        "items": [
+          "クラウドネイティブ、CDN、Zero Trust",
+          "企業サービスバス（ESB）",
+          "越境決済・清算連携"
+        ]
+      }
+    ],
+    "techHighlight": "ハイライト：AI合成学習データ",
+    "techHighlightBody": "現場収集が難しい故障・学習サンプルを生成AIで合成し、量子化してNPUで端末側推論します。",
+    "caseLink": "事例を見る",
+    "siteLabel": "motaiot.com",
+    "coreLabel": "MOTAの役割",
+    "core": [
+      "各地の市場需要を発見",
+      "希少な資源とパートナーを組成",
+      "技術デリバリーを最後まで統括"
+    ]
+  },
+  "elms": {
+    "eyebrow": "02 · ELMSFLOW",
+    "title": "ELMSFLOW",
+    "lead": "需要・製品・技術・人材・納品力を結ぶ越境プラットフォーム。アイルランドは拠点であり、境界ではありません。",
+    "links": [
+      "ELMSFLOWについて",
+      "なぜアイルランドか"
+    ],
+    "programmesTitle": "4つの納品プログラム",
+    "programmes": [
+      {
+        "title": "食品包装印刷",
+        "desc": "食品グレード生産向けの印刷・包装能力。",
+        "image": "/images/pitch-deck/elmsflow/food-packaging-printing.jpg",
+        "link": "https://elmsflo.com/programmes/food-packaging-printing"
+      },
+      {
+        "title": "医療・医薬品包装",
+        "desc": "規制要件に適合する医療製品向け包装ライン。",
+        "image": "/images/pitch-deck/elmsflow/medical-pharmaceutical-packaging.jpg",
+        "link": "https://elmsflo.com/programmes/medical-pharmaceutical-packaging"
+      },
+      {
+        "title": "工場・倉庫建設",
+        "desc": "生産・保管向けの産業施設の建設と内装。",
+        "image": "/images/pitch-deck/elmsflow/factory-warehouse-construction.jpg",
+        "link": "https://elmsflo.com/programmes/factory-warehouse-construction"
+      },
+      {
+        "title": "冷蔵・冷凍倉庫建設",
+        "desc": "食品・医薬品チェーン向けの温度管理施設。",
+        "image": "/images/pitch-deck/elmsflow/cold-storage-construction.jpg",
+        "link": "https://elmsflo.com/programmes/cold-storage-construction"
+      }
+    ],
+    "mapTitle": "アイルランドをゲートウェイに",
+    "mapNote": "EU単一市場 · 英語ビジネス環境 · コモンロー",
+    "mapNodes": [
+      "アイルランド",
+      "英連邦",
+      "EU",
+      "アメリカ",
+      "中国"
+    ],
+    "teamTitle": "チーム",
+    "officialsTitle": "政府・産業界との対話",
+    "officialsNote": "公開された対話の記録であり、推薦や資金供与ではありません。",
+    "taxLabel": "税制・本部立地の優位",
+    "taxTitle": "世界のIT大手・製薬企業の欧州本部",
+    "taxBody": "事業所得には12.5%の法人税が適用され、研究開発税制とEU単一市場へのアクセスにより、アイルランドは世界のIT・製薬グループの欧州拠点となっています。",
+    "taxItems": [
+      "事業所得への法人税12.5%",
+      "研究開発税額控除",
+      "EU単一市場へのアクセス",
+      "英語の法務・人材環境"
+    ]
+  },
+  "aura": {
+    "eyebrow": "03 · AURAIGHT",
+    "title": "Auraight",
+    "lead": "二言語の越境医療ナビゲーション。渡航準備と意思疎通を調整し、臨床判断は有資格の医療専門職が行います。",
+    "links": [
+      "Auraight サイト",
+      "公開事例"
+    ],
+    "mixTitle": "公開事例の構成",
+    "mixNote": "公開事例のサンプル構成であり、疾患全体の比率ではありません。",
+    "mix": [
+      {
+        "label": "多発性骨髄腫",
+        "short": "MM",
+        "count": 3,
+        "pct": 50
+      },
+      {
+        "label": "リンパ腫",
+        "short": "LY",
+        "count": 1,
+        "pct": 17
+      },
+      {
+        "label": "T-ALL",
+        "short": "TA",
+        "count": 1,
+        "pct": 17
+      },
+      {
+        "label": "NHL",
+        "short": "NH",
+        "count": 1,
+        "pct": 16
+      }
+    ],
+    "mapTitle": "資源拠点と顧客市場",
+    "resourceLabel": "資源拠点",
+    "clientLabel": "顧客來源",
+    "resources": [
+      {
+        "name": "中国 · 上海",
+        "note": "民間病院での診断・治療経路",
+        "flag": "🇨🇳"
+      },
+      {
+        "name": "日本",
+        "note": "先端の細胞・遺伝子治療へのアクセス",
+        "flag": "🇯🇵"
+      }
+    ],
+    "clients": [
+      {
+        "name": "イギリス",
+        "flag": "🇬🇧"
+      },
+      {
+        "name": "ナイジェリア",
+        "flag": "🇳🇬"
+      },
+      {
+        "name": "ニュージーランド",
+        "flag": "🇳🇿"
+      },
+      {
+        "name": "タイ",
+        "flag": "🇹🇭"
+      },
+      {
+        "name": "アメリカ",
+        "flag": "🇺🇸"
+      },
+      {
+        "name": "アイルランド",
+        "flag": "🇮🇪"
+      }
+    ],
+    "whyTitle": "なぜ中国と日本か",
+    "why": [
+      {
+        "title": "上海 · 民間病院の迅速な経路",
+        "body": "民間病院は外国人患者の検査・治療スケジュールを短縮できます。",
+        "link": "https://auraight.com/zh/showcase"
+      },
+      {
+        "title": "日本 · CAR-TとiPS",
+        "body": "CAR-T療法とiPS細胞研究（山中因子による初期化を含む）。",
+        "link": "https://www.cira.kyoto-u.ac.jp/e/"
+      },
+      {
+        "title": "日本 · 汎用型遺伝子改変T細胞",
+        "body": "ACTRなどの同種汎用型T細胞技術。適用は臨床要件によります。",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/?term=universal+allogeneic+CAR-T+ACTR"
+      }
+    ],
+    "servicesTitle": "腫瘍以外も",
+    "services": [
+      "🔍 がん検診",
+      "🩺 内視鏡（胃・大腸）",
+      "🧠 心理サポート",
+      "👑 フルVIPコーディネーション"
+    ],
+    "teamTitle": "チーム"
+  },
+  "vflux": {
+    "title": "VFlux",
+    "lead": "暗号資産取引所と実物資産市場の間に、統一された決済レールを敷きます。",
+    "flowTitle": "取引所と資産市場の間に位置するプラットフォーム",
+    "venueLabel": "暗号資産取引所側",
+    "venue": [
+      "中央集権型取引所（CEX）",
+      "分散型取引所（DEX）",
+      "マーケットメイカー / OTC"
+    ],
+    "platformLabel": "VFluxプラットフォーム",
+    "platform": [
+      "決済通貨：ステーブルコイン",
+      "手数料：VFトークン",
+      "ルーティング・清算・照合"
+    ],
+    "assetLabel": "資産市場側",
+    "assets": [
+      "世界の主要株式市場",
+      "貴金属",
+      "コモディティ",
+      "先物・オプション"
+    ],
+    "links": [
+      "VFlux サイト",
+      "ホワイトペーパー"
+    ],
+    "note": "計画資料 · 提案モデル · 規制・商業面の検証が必要です。",
+    "marketTitle": "市場規模",
+    "marketLead": "機会は新しい資産の創出ではなく、既存資産に資金をつなぐことにあります。",
+    "market": [
+      {
+        "value": "318.5 兆ドル",
+        "label": "世界の株式＋債券"
+      },
+      {
+        "value": "3,918 億ドル",
+        "label": "流通済みトークン化 RWA"
+      },
+      {
+        "value": "3,043 億ドル",
+        "label": "決済レイヤーとしてのステーブルコイン"
+      }
+    ],
+    "roleTitle": "VFLUX の役割",
+    "roles": [
+      {
+        "t": "アクセスと流通",
+        "d": "資産カタログ、基準、投資家適格性、チャネル接続"
+      },
+      {
+        "t": "執行とルーティング",
+        "d": "複数経路の執行、流動性選択、マーケットメイカー接続とヘッジ調整"
+      },
+      {
+        "t": "清算とデータ",
+        "d": "取引記録、照合、手数料配分、決済調整"
+      }
+    ],
+    "revTitle": "収益モデル",
+    "revs": [
+      {
+        "t": "流通と取引",
+        "d": "資産流通手数料、取引収益、ルーティング分配"
+      },
+      {
+        "t": "インフラサービス",
+        "d": "API、権限、データ、照合、清算手数料"
+      },
+      {
+        "t": "プロトコル収益",
+        "d": "流動性サービスとオンチェーン移行後のプロトコル収益"
+      }
+    ],
+    "scaleTitle": "規模シナリオ（計画値）",
+    "scale": [
+      {
+        "v": "10 兆ドル",
+        "f": "5 bp",
+        "r": "50 億ドル"
+      },
+      {
+        "v": "20 兆ドル",
+        "f": "7.5 bp",
+        "r": "150 億ドル"
+      },
+      {
+        "v": "30 兆ドル",
+        "f": "10 bp",
+        "r": "300 億ドル"
+      }
+    ],
+    "scaleNote": "計画シナリオであり、予測や契約済み収益ではありません",
+    "asset0": "世界の主要株式市場",
+    "headline": "グローバル資産の流動性インフラ"
+  },
+  "video": {
+    "eyebrow": "05 · 吉晟株式会社",
+    "title": "日中AI動画マッチングプラットフォーム",
+    "lead": "中立的な越境プラットフォームで、日本の需要と中国の工業化されたAI動画制作をつなぎます。",
+    "demandTitle": "需要側",
+    "demand": [
+      "広告代理店・ブランド",
+      "IP保有者・出版社",
+      "教育・研修機関"
+    ],
+    "supplyTitle": "供給側",
+    "supply": [
+      "成熟したAI動画スタジオ",
+      "Kling・Jimeng・Vidu・Hailuoなどのツール群",
+      "企画 → 脚本 → 生成 → 絵コンテ → 編集"
+    ],
+    "linesTitle": "3つの事業ライン",
+    "lines": [
+      {
+        "icon": "🎬",
+        "title": "AIコミックドラマ",
+        "body": "日本のプラットフォーム向け連載ショートドラマ。"
+      },
+      {
+        "icon": "📣",
+        "title": "AI広告",
+        "body": "ローカライズされた成果型・ブランドクリエイティブ。"
+      },
+      {
+        "icon": "🎓",
+        "title": "AI教育",
+        "body": "規模化できる研修・講座動画。"
+      }
+    ],
+    "stepsTitle": "納品チェーン",
+    "steps": [
+      "要件",
+      "マッチング",
+      "生成",
+      "ローカライズ",
+      "検収",
+      "納品"
+    ],
+    "whyTitle": "なぜプラットフォームか",
+    "why": [
+      "日本語品質検収とローカライズの関門",
+      "円と人民元の決済ブリッジ",
+      "双方に公平なマッチング規則"
+    ],
+    "links": [
+      "吉晟サイト",
+      "事業計画書"
+    ],
+    "teamTitle": "創業チーム",
+    "marketTitle": "市場規模と現状",
+    "marketLead": "中国は供給側が工業化済み、日本はまだテスト・検証段階です。",
+    "cols": [
+      "",
+      "中国",
+      "日本"
+    ],
+    "rows": [
+      [
+        "供給の成熟度",
+        "成熟したスタジオとツール群で工業化",
+        "テスト・検証段階"
+      ],
+      [
+        "コスト構造",
+        "制作費の約50%が計算資源",
+        "ローカライズと品質検収"
+      ],
+      [
+        "参入価格",
+        "低価格帯で毎分約1,000元",
+        "案件・買い手ごとに設定"
+      ],
+      [
+        "需要側",
+        "プラットフォーム、ブランド、教育",
+        "広告代理店、IP保有者、教育"
+      ]
+    ],
+    "gapTitle": "成長余地",
+    "gap": [
+      "中立的なマッチング層が未整備",
+      "日本語の品質検収がボトルネック",
+      "円と人民元の決済が未解決"
+    ],
+    "srcNote": "出典：吉晟事業計画書、業界推計（要検証）。"
+  },
+  "cta": {
+    "eyebrow": "06 · 次の一歩",
+    "title": "実際の需要をひとつ。",
+    "lead": "需要、希少な能力、信頼できる地域ルートのいずれかがあれば、プロジェクトの対話を始められます。",
+    "contact": "連絡先",
+    "addressLabel": "住所",
+    "address": "1329 Willoughby Ave, Brooklyn, NY 11237-3177, USA",
+    "websiteLabel": "サイト",
+    "email": "contract@motaiot.com",
+    "copyright": "© 2026 MOTA TECHLINK. All rights reserved.",
+    "back": "MOTA概要へ戻る",
+    "dots": [
+      "ELMSFLOW",
+      "Auraight",
+      "VFlux",
+      "吉晟"
+    ],
+    "flow": {
+      "title": "プロジェクトの流れ",
+      "nodes": {
+        "na": "アメリカ",
+        "uk": "英連邦",
+        "ie": "アイルランド",
+        "cn": "中国",
+        "jp": "日本",
+        "th": "タイ",
+        "sg": "シンガポール",
+        "oc": "オセアニア"
+      },
+      "elms": "ELMSFLOW · 中国 → アイルランド",
+      "video": "日中 AI マッチング",
+      "vflux": "VFLUX · 世界 → シンガポール",
+      "aura": "Auraight · 中国・日本へ"
+    }
+  },
+  "modal": {
+    "tabs": [
+      "役割",
+      "能力",
+      "経験と事例"
+    ],
+    "close": "閉じる",
+    "previous": "前へ",
+    "next": "次へ",
+    "officialTitle": "対話の記録"
+  },
+  "people": {
+    "harling": {
+      "name": "Harling Sun 孫濤",
+      "role": "MOTA TECHLINK 創業者・チーフアーキテクト",
+      "photo": "/images/team/Harling.jpg",
+      "roleDesc": "各地の市場需要を探索し、希少な資源を統合し、AIで強化した技術デリバリーを重ねて、各プロジェクトを実際に着地させます。",
+      "caps": [
+        "AI：CNN から LLM までフルカバー",
+        "フルスタックITエンジニアリング",
+        "越境ビジネス統合",
+        "高い実行力と渉外能力",
+        "グローバルな人脈"
+      ],
+      "exp": [
+        "Fortune 500企業の上級職：KONAMIチーフプログラマー、eBay中国APIチーム創設者、IBMエンタープライズサービスバス",
+        "越境通宝の上場前技術責任者",
+        "上海越境EC協会の第一期メンバー（上海商務委員会、東方航空、アリババ、京東、順豊など）",
+        "AI＋IoTプロジェクトの豊富な実績"
+      ]
+    },
+    "franklin": {
+      "name": "Franklin Ng",
+      "role": "共同創業者・コーポレート業務",
+      "photo": "",
+      "roleDesc": "コーポレート業務を担当：米国法人の管理、税務コンプライアンス、財務・回収管理を、ニューヨーク拠点と自社物件を基盤に運営します。",
+      "caps": [
+        "コーポレート業務とガバナンス",
+        "米国法人・税務コンプライアンス",
+        "財務・回収管理",
+        "ニューヨークの不動産・現地運営"
+      ],
+      "exp": [
+        "Kingsway Trade — 全米向け漢方薬サプライヤー",
+        "2017年に中国上場企業・一心堂（002727）が買収、その後5番街に旗艦店を開設",
+        "ニューヨーク・ブルックリン、Willoughby Ave 1329のビル所有者"
+      ]
+    },
+    "paul": {
+      "name": "Paul Brennan",
+      "role": "サプライチェーン・食品安全・品質",
+      "photo": "/images/pitch-deck/elmsflow/paul-brennan.jpg",
+      "roleDesc": "ELMSFLOW各プログラムのサプライチェーン、食品安全、品質ガバナンスを担当します。",
+      "caps": [
+        "BRC食品基準とISO体系",
+        "カーボン・サステナビリティ・グリーン案件",
+        "シックスシグマとサプライチェーン品質"
+      ],
+      "exp": [
+        "サプライチェーンと食品安全で45年以上",
+        "マクドナルド・ヨーロッパのサプライチェーン上級職",
+        "Paradigm Supply Chain Solutions 創業者"
+      ]
+    },
+    "turlough": {
+      "name": "Turlough Sheehan",
+      "role": "国際物流・通関コンプライアンス",
+      "photo": "/images/pitch-deck/elmsflow/turlough-sheehan.jpg",
+      "roleDesc": "越境プログラム向けにコンプライアントな物流と通関戦略を設計します。",
+      "caps": [
+        "DDP輸送と通関準拠ハブ",
+        "Section 321と低額輸入戦略",
+        "国際貿易法アドバイザリー"
+      ],
+      "exp": [
+        "国際物流・通関で40年以上",
+        "1992年からECコンプライアンスに従事"
+      ]
+    },
+    "vivian": {
+      "name": "Vivian Yan 閻瑋",
+      "role": "上海民間病院リソース · Auraight",
+      "photo": "/images/pitch-deck/auraight/vivian-yan.jpg",
+      "roleDesc": "上海の民間病院・企業健康チャネルを開拓し、Auraightの患者経路を調整します。",
+      "caps": [
+        "民間病院・企業健康サービスの営業",
+        "健康管理プログラム設計",
+        "二级心理カウンセラー資格",
+        "日本語ビジネスコミュニケーション"
+      ],
+      "exp": [
+        "Parkway Health 百汇医疗 — 2026年8月より",
+        "曜影医療 — 事業開発、2020–2026",
+        "愛康グループ — 華東地区販売総監、2016–2020",
+        "北京大学 行政管理 学士"
+      ]
+    },
+    "ethan": {
+      "name": "Ethan",
+      "role": "臨床AI研究・市場戦略",
+      "photo": "",
+      "roleDesc": "Auraightの海外患者獲得を担い、臨床エビデンス、市場参入、技術戦略をつなぎます。",
+      "caps": [
+        "海外患者の獲得と紹介ネットワーク",
+        "がん予後・治療効果予測",
+        "臨床AI研究",
+        "英国・北米・ナイジェリアの市場アクセス"
+      ],
+      "exp": [
+        "オックスフォード大学 臨床医学博士研究",
+        "ハーバード医学部・Wyss研究所",
+        "ジョンズ・ホプキンス大学での経歴",
+        "Time for Africa ナイジェリア技術戦略"
+      ]
+    },
+    "chris": {
+      "name": "Chris",
+      "role": "VFlux プロジェクトチーム",
+      "photo": "",
+      "roleDesc": "VFluxの資産流通と流動性ワークストリームを担当。経歴は確認待ちです。",
+      "caps": [
+        "役割・能力は確認待ち"
+      ],
+      "exp": [
+        "個人経歴・事例は確認後に追記"
+      ]
+    },
+    "anthony": {
+      "name": "Anthony Chen",
+      "role": "資本市場・トレーディング・RWAトークン化 · VFlux",
+      "photo": "/images/pitch-deck/vflux/anthony-chen.jpg",
+      "link": "https://www.linkedin.com/in/chenanthony",
+      "roleDesc": "トレーディング、投資リサーチ、実物資産のトークン化の経験をVFluxの市場アクセスと流動性に活かします。",
+      "caps": [
+        "金融投資・トレーディング・リサーチ",
+        "実物資産（RWA）のトークン化",
+        "決済・エネルギー領域のブロックチェーン活用",
+        "越境市場：シンガポール、香港、タイ、オーストラリア"
+      ],
+      "exp": [
+        "Fforward.finance — 金融投資・トレーディング・リサーチ",
+        "シンガポール拠点、バンコク・プーケット・香港での職歴",
+        "シドニー工科大学",
+        "クリーンエネルギーにおけるブロックチェーン役割を寄稿"
+      ]
+    },
+    "vito": {
+      "name": "Vito He 賀稀",
+      "role": "吉晟株式会社 創業者",
+      "photo": "/images/pitch-deck/yoshisei/vito-he.jpg",
+      "roleDesc": "吉晟株式会社の創業者。グローバルコンサルティングファームのパートナーで、外資系企業の B2B 営業・コンサルティング・デジタルマーケティングに 20 年以上従事。",
+      "caps": [
+        "グローバルコンサルティングファームのパートナー。アクセンチュア、IBM、Brandtology、Emailvision China での勤務歴",
+        "外資系企業で B2B 営業・コンサルティング・組織運営 20 年以上",
+        "500 万ドル超の戦略案件を主導、CxO・会長と直接折衝",
+        "デジタルマーケティング：SEO・運用型広告・メール SaaS"
+      ],
+      "exp": [
+        "吉晟株式会社を創業、東京本社・大阪・福岡に支社",
+        "地域経営とゼロからの市場開拓：チーム 3 名→30 名超、2018 年に売上 7 倍（2,200 万元）",
+        "アクセンチュア、IBM を経て Brandtology、Emailvision China。Netconcepts のバックグラウンド",
+        "同済大学コンピュータサイエンス学士／SBS スイス・ビジネススクール MBA"
+      ]
+    },
+    "allen": {
+      "name": "Allen Qu 渠成",
+      "role": "共同創業者・特別顧問",
+      "photo": "/images/pitch-deck/yoshisei/allen-qu.jpg",
+      "roleDesc": "プラットフォームのデジタルマーケティング、ブランド、検索戦略を担当します。",
+      "caps": [
+        "検索・コンテンツ・AI可視性",
+        "中国・日本でのブランド拡大",
+        "パフォーマンスマーケティング"
+      ],
+      "exp": [
+        "Netconcepts 創業者",
+        "Sinorbis 共同創業者",
+        "Cross Border Digital 創業者",
+        "日本留学経験、オークランド大学卒"
+      ]
+    },
+    "kuri": {
+      "name": "Kuri Ki 栗木霞",
+      "role": "日本営業・アフターサービス責任者",
+      "photo": "/images/pitch-deck/yoshisei/kuri-ki.jpg",
+      "roleDesc": "日本のバイヤー開拓と、営業・アフターサービス運営を担当します。",
+      "caps": [
+        "日本バイヤー開拓",
+        "日中バイリンガル商談",
+        "営業運営とアフターサービス"
+      ],
+      "exp": [
+        "観光・クルーズ・リサイクル・物流で30年以上",
+        "吉晟の日本側営業・アフターサービス責任者"
+      ]
+    }
+  },
+  "officials": {
+    "cummins": {
+      "name": "John Cummins TD",
+      "role": "Minister of State for Local Government & Planning",
+      "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
+      "links": [
+        {
+          "label": "View public profile",
+          "href": "https://www.google.com/search?q=John+Cummins+TD+Minister+of+State+for+Local+Government+and+Planning"
+        },
+        {
+          "label": "Department of Housing, Local Government and Heritage",
+          "href": "https://www.gov.ie/en/organisation/department-of-housing-local-government-and-heritage/"
+        }
+      ]
+    },
+    "evans": {
+      "name": "Gareth Evans",
+      "role": "General Manager, Waterford City & County Council",
+      "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
+      "links": [
+        {
+          "label": "LinkedIn profile",
+          "href": "https://www.linkedin.com/in/gwevans/"
+        },
+        {
+          "label": "Waterford City & County Council",
+          "href": "https://waterfordcouncil.ie/"
+        }
+      ]
+    },
+    "hurley": {
+      "name": "Gerald Hurley",
+      "role": "Chief Executive, Waterford Chamber",
+      "photo": "/images/pitch-deck/elmsflow/gerald-hurley.jpg",
+      "links": [
+        {
+          "label": "Appointment announcement",
+          "href": "https://chambersawards.ie/gerald-hurley-appointed-ceo-waterford-chamber/"
+        },
+        {
+          "label": "Waterford Chamber",
+          "href": "https://www.waterfordchamber.ie/"
+        }
+      ]
+    }
+  }
+}
