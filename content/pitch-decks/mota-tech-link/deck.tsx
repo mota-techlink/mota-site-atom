@@ -60,6 +60,10 @@ const STYLES = `
 .light .only-dark{display:none!important}
 .light .only-light{display:block!important}
 .light .mtl-logo{background:#fff;border-color:rgba(14,43,58,.14)}
+.mtl-logo.is-mota{background:transparent!important;border:0!important;padding:0;min-width:0}
+.mtl-logo.is-mota img{max-height:92px;width:clamp(150px,14vw,210px)}
+.mtl-logo.is-vflux-logo{background:#000!important;border-color:rgba(255,255,255,.2)!important;padding:10px 14px}
+.mtl-logo.is-vflux-logo img{max-height:66px}
 
 /* ---------- cover ---------- */
 .mtl-cover{display:grid;justify-items:center;gap:clamp(14px,2.2vh,26px);text-align:center;max-width:1180px;margin-inline:auto}
@@ -285,14 +289,14 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 .mtl-vbox{display:flex;align-items:center;gap:.45em;padding:.5em .65em;background:var(--surface);border:1px solid var(--line);border-radius:11px;font-size:.78em}
 .mtl-vbox span{font-size:1.05em}
 .mtl-vcol:last-of-type .mtl-vbox{border-color:rgba(255,190,114,.4)}
-.mtl-vmid{position:relative;display:grid;place-items:center;min-height:clamp(150px,22vh,230px)}
-.mtl-vglobe{position:absolute;width:clamp(130px,15vw,200px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(119,228,223,.35);box-shadow:inset 0 0 26px rgba(119,228,223,.18);animation:mtlspin 16s linear infinite}
+.mtl-vmid{position:relative;display:grid;justify-items:center;align-content:center;gap:.55em;min-height:clamp(230px,30vh,330px)}
+.mtl-vglobe{position:relative;width:clamp(210px,26vw,300px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(119,228,223,.4);box-shadow:inset 0 0 42px rgba(119,228,223,.22),0 0 34px rgba(119,228,223,.12);animation:mtlspin 18s linear infinite;transform-style:preserve-3d}
 .mtl-vglobe::before,.mtl-vglobe::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid rgba(119,228,223,.28)}
 .mtl-vglobe::before{transform:scaleX(.45)}
 .mtl-vglobe::after{transform:scaleY(.45)}
 .mtl-vglobe span{position:absolute;inset:18%;border-radius:50%;border:1px dashed rgba(255,190,114,.45)}
 @keyframes mtlspin{to{transform:rotateY(360deg)}}
-.mtl-vcore{position:relative;z-index:1;display:grid;gap:.3em;justify-items:center;padding:.8em 1.1em;border-radius:18px;background:color-mix(in srgb,var(--bg) 82%,transparent);border:1px solid var(--accent);backdrop-filter:blur(6px);text-align:center}
+.mtl-vcore{position:relative;z-index:2;display:grid;gap:.28em;justify-items:center;padding:.7em 1.2em;border-radius:18px;background:var(--surface);border:1px solid var(--accent);backdrop-filter:blur(10px);text-align:center;box-shadow:0 12px 30px rgba(0,0,0,.28)}
 .mtl-vcore b{font-size:1.05em;letter-spacing:.1em;color:var(--accent)}
 .mtl-vcore ul{list-style:none;margin:0;padding:0;display:grid;gap:.1em;font-size:.74em;color:var(--muted)}
 
@@ -308,8 +312,55 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 .mtl-market-foot ul{margin-top:.25em}
 
 /* ---------- CTA ---------- */
-.mtl-cta-logo{display:grid;place-items:center;background:#fff;border-radius:16px;padding:8px 16px}
+.mtl-cta-logo{display:grid;place-items:center;background:transparent;padding:0}
 .mtl-cta-logo img{width:clamp(180px,17vw,300px);height:auto;max-height:72px;object-fit:contain}
+/* ---------- header controls ---------- */
+.mtl-icon-btn{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:transparent;color:var(--ink);transition:border-color .2s,transform .2s,background-color .2s}
+.mtl-icon-btn svg{width:17px;height:17px}
+.mtl-icon-btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+.mtl-icon-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.light .mtl-icon-btn{border-color:rgba(14,43,58,.2)}
+.mtl-lang-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:132px;display:grid;gap:2px;padding:6px;border-radius:14px;background:var(--surface);border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.35);backdrop-filter:blur(14px)}
+.light .mtl-lang-menu{background:#fff;box-shadow:0 18px 40px rgba(14,43,58,.16)}
+.mtl-lang-menu button{text-align:left;padding:.42em .6em;border-radius:9px;font-size:.82em;font-weight:600;color:var(--ink);background:transparent;border:0}
+.mtl-lang-menu button:hover,.mtl-lang-menu button:focus-visible{background:rgba(119,228,223,.16);outline:none}
+.mtl-lang-menu button.is-active{color:var(--accent);background:rgba(119,228,223,.2)}
+/* ---------- donut interaction ---------- */
+.mtl-slice{cursor:pointer;outline:none;transition:opacity .2s}
+.mtl-slice path{transition:opacity .2s,d .18s}
+.mtl-slice:focus-visible path{stroke:var(--ink);stroke-width:2}
+.mtl-slice.is-active path{filter:drop-shadow(0 6px 16px rgba(0,0,0,.35))}
+.mtl-donut-center{animation:mtlPop .22s ease-out both}
+@keyframes mtlPop{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
+.mtl-donut-center{transform-origin:210px 210px}
+.mtl-donut-big{fill:var(--ink);font-size:46px;font-weight:900;letter-spacing:-.02em}
+.mtl-donut-center-label{fill:var(--muted);font-size:15px;font-weight:700}
+
+/* ---------- market growth row ---------- */
+.mtl-market-foot{display:grid;gap:.45em;margin-top:.5em}
+.mtl-gap-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5em}
+.mtl-gap-card{display:flex;align-items:center;gap:.55em;padding:.6em .8em;border-radius:14px;border:1px solid var(--line);background:linear-gradient(120deg,rgba(119,228,223,.14),rgba(119,228,223,.04));transition:transform .2s,box-shadow .2s}
+.mtl-gap-card span{font-size:1.5em;line-height:1}
+.mtl-gap-card b{font-size:.82em;font-weight:700;line-height:1.35}
+.mtl-gap-card.g1{background:linear-gradient(120deg,rgba(199,125,255,.16),rgba(199,125,255,.04));border-color:rgba(199,125,255,.4)}
+.mtl-gap-card.g2{background:linear-gradient(120deg,rgba(255,190,114,.18),rgba(255,190,114,.05));border-color:rgba(255,190,114,.45)}
+
+/* ---------- colour accents on the video page ---------- */
+.mtl-video-top .mtl-panel:first-child{border-top:3px solid #ff9a3d}
+.mtl-video-top .mtl-panel:last-child{border-top:3px solid #77e4df}
+.mtl-mtable tbody tr:nth-child(odd){background:rgba(119,228,223,.05)}
+.mtl-mtable tbody th{color:var(--ink)}
+.mtl-lines article{background:linear-gradient(150deg,rgba(119,228,223,.10),transparent 70%);border-left:3px solid var(--accent)}
+.mtl-lines article:nth-child(2){border-left-color:#c77dff;background:linear-gradient(150deg,rgba(199,125,255,.12),transparent 70%)}
+.mtl-lines article:nth-child(3){border-left-color:#ffbe72;background:linear-gradient(150deg,rgba(255,190,114,.14),transparent 70%)}
+
+/* ---------- hover lift for every component ---------- */
+.mtl-panel,.mtl-project-card,.mtl-hub-card,.mtl-client-chip,.mtl-vbox,.mtl-gap-card,.mtl-lines article,.mtl-why-grid article,.mtl-tech-grid article,.mtl-pillar,.mtl-chip-person,.mtl-official-card,.mtl-service-chips span,.mtl-tax-band,.mtl-ticks li,.mtl-programme,.mtl-hex{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background-color .2s ease}
+.mtl-panel:hover,.mtl-project-card:hover,.mtl-hub-card:hover,.mtl-client-chip:hover,.mtl-vbox:hover,.mtl-gap-card:hover,.mtl-lines article:hover,.mtl-why-grid article:hover,.mtl-tech-grid article:hover,.mtl-pillar:hover,.mtl-chip-person:hover,.mtl-official-card:hover,.mtl-service-chips span:hover,.mtl-tax-band:hover,.mtl-ticks li:hover,.mtl-programme:hover,.mtl-hex:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.26);border-color:var(--accent)}
+.light .mtl-panel:hover,.light .mtl-project-card:hover,.light .mtl-hub-card:hover,.light .mtl-client-chip:hover,.light .mtl-vbox:hover,.light .mtl-gap-card:hover,.light .mtl-lines article:hover,.light .mtl-why-grid article:hover,.light .mtl-tech-grid article:hover,.light .mtl-pillar:hover,.light .mtl-chip-person:hover,.light .mtl-official-card:hover,.light .mtl-service-chips span:hover,.light .mtl-tax-band:hover,.light .mtl-programme:hover,.light .mtl-hex:hover{box-shadow:0 14px 26px rgba(14,43,58,.16)}
+.mtl-panel:active,.mtl-project-card:active,.mtl-hub-card:active,.mtl-client-chip:active,.mtl-vbox:active,.mtl-gap-card:active,.mtl-lines article:active,.mtl-why-grid article:active,.mtl-tech-grid article:active,.mtl-pillar:active,.mtl-chip-person:active,.mtl-official-card:active,.mtl-service-chips span:active,.mtl-tax-band:active,.mtl-programme:active,.mtl-hex:active{transform:translateY(-1px) scale(.985)}
+@media(hover:none){.mtl-panel:hover,.mtl-project-card:hover,.mtl-hub-card:hover,.mtl-client-chip:hover,.mtl-vbox:hover,.mtl-gap-card:hover,.mtl-lines article:hover,.mtl-why-grid article:hover,.mtl-tech-grid article:hover,.mtl-pillar:hover,.mtl-chip-person:hover,.mtl-official-card:hover,.mtl-service-chips span:hover,.mtl-tax-band:hover,.mtl-programme:hover,.mtl-hex:hover{transform:none;box-shadow:none;border-color:var(--line)}}
+@media(prefers-reduced-motion:reduce){.mtl-panel,.mtl-project-card,.mtl-hub-card,.mtl-slice,.mtl-gap-card{transition:none}}
 .mtl-flowmap{width:100%;max-width:min(920px,100%);margin:.1em auto 0}
 .mtl-flowmap svg{display:block;width:100%;height:auto;max-height:min(27vh,250px);overflow:visible}
 .mtl-fm-line{animation:mtlFmDash 1.15s linear infinite}
@@ -365,6 +416,9 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
  .mtl-flow-track{grid-template-columns:repeat(2,minmax(0,1fr))}
  .mtl-teambar{flex-direction:column;align-items:flex-start;gap:.8em}
  .mtl-avatar b{font-size:.95em}
+ .mtl-gap-row{grid-template-columns:1fr}
+ .mtl-vmid{min-height:clamp(200px,26vh,260px)}
+ .mtl-vglobe{width:clamp(170px,46vw,220px)}
 }
 @media(max-width:520px){
  .mtl-content{font-size:13px}

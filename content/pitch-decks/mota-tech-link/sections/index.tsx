@@ -25,13 +25,6 @@ const PROJECTS: ProjectCard[] = [
 
 const AURA_LOGO = { dark: "/images/pitch-deck/auraight-icon-dark.svg", light: "/images/pitch-deck/auraight-icon-light.svg" };
 
-type CtaIcon = { key: string; page: number; name: string; logo?: string; logoLight?: string; mark?: string; text?: string };
-const CTA_ICONS: CtaIcon[] = [
-  { key: "elms", page: 2, name: "ELMSFLOW", logo: "/images/pitch-deck/elmsflow-logo.png" },
-  { key: "aura", page: 3, name: "Auraight", logo: AURA_LOGO.dark, logoLight: AURA_LOGO.light },
-  { key: "vflux", page: 4, name: "VFlux", mark: "/images/pitch-deck/vflux-icon.png" },
-  { key: "yoshi", page: 5, name: "吉晟 YOSHI SEI", logo: "/images/pitch-deck/yoshisei-logo-dark.svg", logoLight: "/images/pitch-deck/yoshisei-logo-light.svg" },
-];
 
 function LinkOut({ href, children }: { href: string; children: React.ReactNode }) {
   return <a className="mtl-link" href={href} target="_blank" rel="noopener noreferrer">{children} ↗</a>;
@@ -56,36 +49,63 @@ function SectionHead({ eyebrow, title, lead, links }: { eyebrow: string; title: 
 
 /* ---------- donut with labels + percentages on the chart ---------- */
 function Donut({ slices }: { slices: { label: string; pct: number }[] }) {
+  const [active, setActive] = useState<number | null>(null);
   const size = 420, cx = 210, cy = 210, R = 132, r = 84;
   const colors = ["#77e4df", "#c77dff", "#ffbe72", "#6ea7ff"];
   let angle = -90;
-  const arc = (a0: number, a1: number) => {
-    const p = (a: number) => [cx + R * Math.cos((a * Math.PI) / 180), cy + R * Math.sin((a * Math.PI) / 180)];
+  const arc = (a0: number, a1: number, rad: number) => {
+    const p = (a: number) => [cx + rad * Math.cos((a * Math.PI) / 180), cy + rad * Math.sin((a * Math.PI) / 180)];
     const q = (a: number) => [cx + r * Math.cos((a * Math.PI) / 180), cy + r * Math.sin((a * Math.PI) / 180)];
     const large = a1 - a0 > 180 ? 1 : 0;
     const [x1, y1] = p(a0), [x2, y2] = p(a1), [x3, y3] = q(a1), [x4, y4] = q(a0);
-    return `M${x1} ${y1}A${R} ${R} 0 ${large} 1 ${x2} ${y2}L${x3} ${y3}A${r} ${r} 0 ${large} 0 ${x4} ${y4}Z`;
+    return `M${x1} ${y1}A${rad} ${rad} 0 ${large} 1 ${x2} ${y2}L${x3} ${y3}A${r} ${r} 0 ${large} 0 ${x4} ${y4}Z`;
   };
+  const cur = active !== null ? slices[active] : null;
   return (
-    <svg className="mtl-donut" viewBox={`0 0 ${size} ${size}`} role="img" aria-label={slices.map((s) => `${s.label} ${s.pct}%`).join(", ")}>
+    <svg
+      className="mtl-donut" viewBox={`0 0 ${size} ${size}`}
+      role="group" aria-label={slices.map((s) => `${s.label} ${s.pct}%`).join(", ")}
+      onMouseLeave={() => setActive(null)}
+    >
       {slices.map((s, i) => {
         const a0 = angle + 1.2;
         const a1 = angle + (s.pct / 100) * 360 - 1.2;
         angle += (s.pct / 100) * 360;
         const mid = ((a0 + a1) / 2) * (Math.PI / 180);
-        const lx = cx + 176 * Math.cos(mid);
-        const ly = cy + 176 * Math.sin(mid);
-        const right = Math.cos(mid) >= 0;
+        const isActive = active === i;
+        const rad = isActive ? R + 10 : R;
+        const dim = active !== null && !isActive;
         return (
-          <g key={s.label}>
-            <path d={arc(a0, a1)} fill={colors[i % 4]} opacity={0.92} />
-            <line x1={cx + (R + 4) * Math.cos(mid)} y1={cy + (R + 4) * Math.sin(mid)} x2={cx + 162 * Math.cos(mid)} y2={cy + 162 * Math.sin(mid)} stroke={colors[i % 4]} strokeWidth="1.5" opacity=".7" />
-            <text x={lx} y={ly} textAnchor={right ? "start" : "end"} dominantBaseline="middle" className="mtl-donut-label">
+          <g
+            key={s.label}
+            className={isActive ? "mtl-slice is-active" : "mtl-slice"}
+            onMouseEnter={() => setActive(i)}
+            onClick={() => setActive(isActive ? null : i)}
+            onFocus={() => setActive(i)}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setActive(isActive ? null : i); } }}
+            tabIndex={0} role="button"
+            aria-label={`${s.label} ${s.pct}%`}
+          >
+            <path d={arc(a0, a1, rad)} fill={colors[i % 4]} opacity={dim ? 0.26 : 1} />
+            <line
+              x1={cx + (rad + 4) * Math.cos(mid)} y1={cy + (rad + 4) * Math.sin(mid)}
+              x2={cx + 162 * Math.cos(mid)} y2={cy + 162 * Math.sin(mid)}
+              stroke={colors[i % 4]} strokeWidth="1.5" opacity={dim ? 0.2 : 0.85}
+            />
+            <text x={cx + 176 * Math.cos(mid)} y={cy + 176 * Math.sin(mid)}
+              textAnchor={Math.cos(mid) >= 0 ? "start" : "end"} dominantBaseline="middle"
+              className="mtl-donut-label" opacity={dim ? 0.3 : 1}>
               {s.label} <tspan className="mtl-donut-pct">{s.pct}%</tspan>
             </text>
           </g>
         );
       })}
+      {cur ? (
+        <g className="mtl-donut-center" aria-hidden="true">
+          <text x={cx} y={cy - 4} textAnchor="middle" className="mtl-donut-big">{cur.pct}%</text>
+          <text x={cx} y={cy + 30} textAnchor="middle" className="mtl-donut-center-label">{cur.label}</text>
+        </g>
+      ) : null}
     </svg>
   );
 }
@@ -168,7 +188,10 @@ function Mota({ t, open }: { t: Deck; open: (p: Person) => void }) {
   return (
     <>
       <div className="mtl-head mtl-head-row mtl-head-mota">
-        <span className="mtl-logo"><Image src="/logos/mota-techlink-logo-v2.webp" alt="MOTA TECH LINK" width={200} height={72} /></span>
+        <span className="mtl-logo is-mota">
+          <Image className="only-dark" src="/logos/mota-techlink-logo-wht.webp" alt="MOTA TECH LINK" width={210} height={92} />
+          <Image className="only-light" src="/logos/mota-techlink-logo-blk.webp" alt="MOTA TECH LINK" width={210} height={92} />
+        </span>
         <div>
           <p className="mtl-eyebrow">{t.mota.eyebrow}</p>
           <h1>{t.mota.title}</h1>
@@ -391,17 +414,27 @@ function Vflux({ t, open }: { t: Deck; open: (p: Person) => void }) {
   const ppl = t.people as unknown as Record<string, Person>;
   return (
     <>
-      <SectionHead
-        eyebrow={t.vflux.eyebrow} title={t.vflux.title} lead={t.vflux.lead}
-        links={[{ label: t.vflux.links[0], href: "https://vflux.ai/en" }, { label: t.vflux.links[1], href: "https://vflux.ai/en/docs" }]}
-      />
+      <div className="mtl-head mtl-head-row">
+        <span className="mtl-logo is-vflux-logo">
+          <Image src="/images/pitch-deck/vflux-logo.png" alt="VFlux" width={132} height={84} />
+        </span>
+        <div>
+          <p className="mtl-eyebrow">{t.vflux.eyebrow}</p>
+          <h1>{t.vflux.title}</h1>
+          <p className="mtl-lead">{t.vflux.lead}</p>
+          <div className="mtl-head-links">
+            <LinkOut href="https://vflux.ai/en">{t.vflux.links[0]}</LinkOut>
+            <LinkOut href="https://vflux.ai/en/docs">{t.vflux.links[1]}</LinkOut>
+          </div>
+        </div>
+      </div>
       <div className="mtl-vflow">
         <div className="mtl-vcol">
           <p className="mtl-label">{t.vflux.venueLabel}</p>
           {t.vflux.venue.map((v, i) => <div className="mtl-vbox" key={v}><span>{["🏦", "🔁", "🤝"][i]}</span>{v}</div>)}
         </div>
         <div className="mtl-vmid">
-          <div className="mtl-vglobe" aria-hidden="true"><span /></div>
+          <div className="mtl-vglobe" aria-hidden="true"><span /><span className="mtl-vglobe-ring" /></div>
           <div className="mtl-vcore">
             <b>VFLUX</b>
             <ul>{t.vflux.platform.map((p) => <li key={p}>{p}</li>)}</ul>
@@ -467,7 +500,15 @@ function Video({ t, open }: { t: Deck; open: (p: Person) => void }) {
           </tbody>
         </table>
         <div className="mtl-market-foot">
-          <div><p className="mtl-label">{t.video.gapTitle}</p><ul className="mtl-ticks">{t.video.gap.map((g) => <li key={g}>{g}</li>)}</ul></div>
+          <p className="mtl-label">{t.video.gapTitle}</p>
+          <div className="mtl-gap-row">
+            {t.video.gap.map((g, i) => (
+              <div className={`mtl-gap-card g${i}`} key={g}>
+                <span aria-hidden="true">{["🧩", "🗣️", "💱"][i]}</span>
+                <b>{g}</b>
+              </div>
+            ))}
+          </div>
           <p className="mtl-hint">{t.video.srcNote}</p>
         </div>
       </div>
@@ -495,7 +536,10 @@ function Video({ t, open }: { t: Deck; open: (p: Person) => void }) {
 function Cta({ t, goTo }: { t: Deck; goTo: (i: number) => void }) {
   return (
     <div className="mtl-cta">
-      <span className="mtl-cta-logo"><Image src="/logos/mota-techlink-logo-v2.webp" alt="MOTA TECH LINK" width={360} height={110} /></span>
+      <span className="mtl-cta-logo">
+        <Image className="only-dark" src="/logos/mota-techlink-logo-wht.webp" alt="MOTA TECH LINK" width={320} height={140} />
+        <Image className="only-light" src="/logos/mota-techlink-logo-blk.webp" alt="MOTA TECH LINK" width={320} height={140} />
+      </span>
       <p className="mtl-eyebrow">{t.cta.eyebrow}</p>
       <h1 className="mtl-hero">{t.cta.title}</h1>
       <p className="mtl-lead mtl-center">{t.cta.lead}</p>
@@ -510,17 +554,6 @@ function Cta({ t, goTo }: { t: Deck; goTo: (i: number) => void }) {
           <li key={l.label}><i style={{ background: l.c }} aria-hidden="true" />{l.label}</li>
         ))}
       </ul>
-      <div className="mtl-cta-icons">
-        {CTA_ICONS.map((p) => (
-          <button type="button" key={p.key} className={`mtl-cta-icon is-${p.key}`} onClick={() => goTo(p.page)} title={p.name} aria-label={p.name}>
-            {p.logo && !p.logoLight ? <Image src={p.logo} alt="" width={120} height={120} /> : null}
-            {p.logo && p.logoLight ? <Image className="only-dark" src={p.logo} alt="" width={120} height={120} /> : null}
-            {p.logoLight ? <Image className="only-light" src={p.logoLight} alt="" width={120} height={120} /> : null}
-            {p.mark ? <Image src={p.mark} alt="" width={140} height={70} /> : null}
-            {p.text ? <span className="mtl-cta-wordmark">{p.text}</span> : null}
-          </button>
-        ))}
-      </div>
       <div className="mtl-contact">
         <div><b>{t.cta.contact}</b><a href={`mailto:${t.cta.email}`}>{t.cta.email}</a></div>
         <div><b>{t.cta.addressLabel}</b><span>{t.cta.address}</span></div>

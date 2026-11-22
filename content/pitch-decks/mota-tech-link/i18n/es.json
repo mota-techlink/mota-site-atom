@@ -55,11 +55,11 @@
     "techGroups": [
       {
         "icon": "🧠",
-        "title": "IA y IA generativa",
+        "title": "IA: cobertura completa de CNN a LLM",
         "items": [
-          "Aplicaciones LLM y agentes",
-          "Datos sintéticos de entrenamiento",
-          "Cuantización e inferencia en el borde"
+          "Visión CNN y reconocimiento de imagen",
+          "IA generativa y agentes LLM",
+          "Datos sintéticos de entrenamiento e inferencia en el borde"
         ]
       },
       {
@@ -402,14 +402,14 @@
     "flow": {
       "title": "Flujos entre proyectos",
       "nodes": {
-        "na": "Norteamérica",
-        "uk": "Reino Unido",
-        "ie": "Irlanda",
-        "cn": "China",
-        "jp": "Japón",
-        "th": "Tailandia",
-        "sg": "Singapur",
-        "oc": "Oceanía"
+        "na": "🇺🇸 Norteamérica",
+        "uk": "🇬🇧 Reino Unido",
+        "ie": "🇮🇪 Irlanda",
+        "cn": "🇨🇳 China",
+        "jp": "🇯🇵 Japón",
+        "th": "🇹🇭 Tailandia",
+        "sg": "🇸🇬 Singapur",
+        "oc": "🇦🇺 Oceanía"
       },
       "elms": "ELMSFLOW · China a Irlanda",
       "video": "Matchmaking AI China–Japón",
@@ -435,7 +435,7 @@
       "photo": "/images/team/Harling.jpg",
       "roleDesc": "Explora la demanda en distintos mercados, integra recursos escasos y añade capacidad técnica potenciada por IA para que cada proyecto llegue a entregarse.",
       "caps": [
-        "Aplicaciones de IA y IA generativa",
+        "IA: cobertura completa de CNN a LLM",
         "Ingeniería IT full-stack",
         "Integración de negocio transfronterizo",
         "Alta capacidad de ejecución y relaciones públicas",

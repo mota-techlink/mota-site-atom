@@ -55,11 +55,11 @@
     "techGroups": [
       {
         "icon": "🧠",
-        "title": "AI & generative AI",
+        "title": "AI: full coverage from CNN to LLM",
         "items": [
-          "LLM applications and agents",
-          "Generative synthetic training data",
-          "Quantisation and edge inference"
+          "CNN vision and image recognition",
+          "Generative AI and LLM agents",
+          "Synthetic training data and edge inference"
         ]
       },
       {
@@ -402,14 +402,14 @@
     "flow": {
       "title": "Project flows across the network",
       "nodes": {
-        "na": "North America",
-        "uk": "United Kingdom",
-        "ie": "Ireland",
-        "cn": "China",
-        "jp": "Japan",
-        "th": "Thailand",
-        "sg": "Singapore",
-        "oc": "Oceania"
+        "na": "🇺🇸 North America",
+        "uk": "🇬🇧 United Kingdom",
+        "ie": "🇮🇪 Ireland",
+        "cn": "🇨🇳 China",
+        "jp": "🇯🇵 Japan",
+        "th": "🇹🇭 Thailand",
+        "sg": "🇸🇬 Singapore",
+        "oc": "🇦🇺 Oceania"
       },
       "elms": "ELMSFLOW · China to Ireland",
       "video": "China–Japan AI matchmaking",
@@ -435,7 +435,7 @@
       "photo": "/images/team/Harling.jpg",
       "roleDesc": "Explores market demand across regions, assembles scarce resources, and layers AI-enhanced technical delivery on top so each project can actually ship.",
       "caps": [
-        "AI and generative AI applications",
+        "AI: full coverage from CNN to LLM",
         "Full-stack IT engineering",
         "Cross-border business integration",
         "High-execution delivery and public relations",
