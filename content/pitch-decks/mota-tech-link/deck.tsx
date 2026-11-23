@@ -141,9 +141,9 @@ const STYLES = `
 .mtl-vlist li:hover{transform:translateX(3px)}
 .mtl-vstats:hover{border-color:var(--accent)}
 .mtl-globe-node.n1{left:50%;top:-4%;transform:translateX(-50%)}
-.mtl-globe-node.n2{right:-6%;top:50%;transform:translateY(-50%)}
+.mtl-globe-node.n2{left:100%;top:50%;margin-left:.4em;transform:translateY(-50%)}
 .mtl-globe-node.n3{left:50%;bottom:-4%;transform:translateX(-50%)}
-.mtl-globe-node.n4{left:-6%;top:50%;transform:translateY(-50%)}
+.mtl-globe-node.n4{right:100%;top:50%;margin-right:.4em;transform:translateY(-50%)}
 .mtl-elms-side{display:grid;gap:clamp(10px,1.6vh,20px)}
 .mtl-official-row{display:flex;gap:.5em;margin-top:.45em}
 .mtl-official-thumb{border:0;padding:0;background:transparent;line-height:0;border-radius:14px;overflow:hidden;transition:transform .18s}
