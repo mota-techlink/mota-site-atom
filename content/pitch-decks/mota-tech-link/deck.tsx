@@ -272,8 +272,10 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 .mtl-tech-spot .mtl-link{font-size:.78em}
 
 /* ---------- Auraight hubs (staggered) ---------- */
-.mtl-hubs{display:grid;grid-template-columns:1.05fr auto 1.15fr;gap:.6em;align-items:center;margin-top:.35em}
+.mtl-hubs{display:grid;grid-template-columns:1fr auto 1.35fr;gap:.6em;align-items:start;margin-top:.35em}
 .mtl-hubs-block{display:grid;gap:.4em;align-content:start}
+.mtl-hubs-block.is-client{align-self:stretch}
+.mtl-hubs-block.is-client .mtl-client-grid{align-content:space-between;height:100%}
 .mtl-hubs-head{display:flex;align-items:center;gap:.4em;font-size:.72em;font-weight:800;color:var(--muted);margin:0}
 .mtl-hubs-head i{width:.6em;height:.6em;border-radius:50%;display:block}
 .mtl-hubs-block.is-resource .mtl-hubs-head i{background:#4ddfc0}
@@ -283,8 +285,8 @@ position:relative;width:min(100%,900px);max-height:92dvh;display:flex;flex-direc
 .mtl-hub-card b{display:block;font-size:1.02em;letter-spacing:.01em}
 .mtl-hub-card small{display:block;font-size:.8em;color:var(--muted);line-height:1.35;margin-top:.15em}
 .mtl-hub-arrow{color:var(--muted);font-size:1.2em;line-height:1;opacity:.75}
-.mtl-client-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.32em}
-.mtl-client-chip{display:flex;align-items:center;gap:.45em;padding:.62em .6em;border-radius:11px;background:rgba(255,177,92,.1);border:1px solid rgba(255,177,92,.38);font-size:.8em;font-weight:700;white-space:nowrap;justify-content:center}
+.mtl-client-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:.42em}
+.mtl-client-chip{display:flex;align-items:center;gap:.55em;padding:.75em .85em;border-radius:11px;background:rgba(255,177,92,.1);border:1px solid rgba(255,177,92,.38);font-size:.84em;font-weight:700;white-space:nowrap;justify-content:flex-start}
 .mtl-client-chip span{font-size:1.05em;line-height:1}
 .mtl-tax-band{display:grid;grid-template-columns:auto 1.4fr auto;gap:clamp(10px,1.4vw,22px);align-items:center;margin-top:clamp(8px,1.2vh,16px);padding:.6em .85em;border-radius:14px;background:linear-gradient(120deg,rgba(255,190,114,.11),rgba(119,228,223,.08));border:1px solid rgba(255,190,114,.4)}
 .mtl-tax-lead{display:grid;gap:.15em;min-width:max-content}
