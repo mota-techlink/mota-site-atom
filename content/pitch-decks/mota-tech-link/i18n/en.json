@@ -584,7 +584,7 @@
     "ethan": {
       "name": "Ethan",
       "role": "Clinical-AI research & market strategy",
-      "photo": "",
+      "photo": "/images/pitch-deck/auraight/ethan.jpg",
       "roleDesc": "Sources overseas patients for Auraight and links clinical evidence, market entry and technical strategy.",
       "caps": [
         "Overseas patient sourcing and referral network",
@@ -600,15 +600,23 @@
       ]
     },
     "chris": {
-      "name": "Chris",
-      "role": "VFlux project team",
+      "name": "Chris Chen",
+      "role": "Founder, Project Studio · Co-founder, VFlux",
       "photo": "",
-      "roleDesc": "VFlux asset-distribution and liquidity workstream. Approved biography pending.",
+      "roleDesc": "20+ years in company building, investment management and crypto mining. Founder of Project Studio, which incubates Web3 and AI projects for Asian markets through co-founding, capital, partnerships and market reach. Co-founder of VFlux and Executive Secretary of the World Blockchain Organization (WBO).",
       "caps": [
-        "Role and capability pending confirmation"
+        "Venture building and early-stage investment in Web3 and AI",
+        "Crypto mining infrastructure and energy sourcing",
+        "Tokenisation, DeFi and digital-asset strategy",
+        "Fundraising, partnerships and cross-border deal-making"
       ],
       "exp": [
-        "Personal biography and case evidence pending"
+        "Founder, Project Studio — Web3/AI incubation for Asian markets, 2026–present",
+        "Co-founder, VFlux — stock tokenisation, 2026–present",
+        "Co-founder, DogeCity (crypto mining) 2024–2026; Hashbox (crypto mining) 2018–2021",
+        "Founder, WaterRock Capital (investment firm) 2014–2019",
+        "Executive Secretary, World Blockchain Organization (WBO), 2017–present",
+        "University of British Columbia — BA, International Economics"
       ]
     },
     "anthony": {

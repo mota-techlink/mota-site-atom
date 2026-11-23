@@ -583,8 +583,8 @@
     },
     "ethan": {
       "name": "Ethan",
-      "role": "临床 AI 研究与市场策略",
-      "photo": "",
+      "role": "临床 AI 研究与市场战略",
+      "photo": "/images/pitch-deck/auraight/ethan.jpg",
       "roleDesc": "负责 Auraight 海外病患客源的获取，并衔接临床证据、市场进入与技术策略。",
       "caps": [
         "海外病患客源获取与转介网络",
@@ -600,15 +600,23 @@
       ]
     },
     "chris": {
-      "name": "Chris",
-      "role": "VFlux 项目团队",
+      "name": "Chris Chen 陈",
+      "role": "Project Studio 创始人 · VFlux 联合创始人",
       "photo": "",
-      "roleDesc": "负责 VFlux 资产分发与流动性工作流，履历待确认后补充。",
+      "roleDesc": "20余年企业创建、投资管理与加密矿业经验。Project Studio 创始人，通过联合创立、资本、合作伙伴关系与市场渠道孵化面向亚洲市场的 Web3 与 AI 项目。VFlux 联合创始人，世界区块链组织（WBO）执行秘书。",
       "caps": [
-        "分工与能力待确认"
+        "Web3 与 AI 领域的风险构建与早期投资",
+        "加密矿业基础设施与能源采购",
+        "代币化、DeFi 与数字资产策略",
+        "融资、合作伙伴关系与跨境交易"
       ],
       "exp": [
-        "个人履历与案例证据待补充"
+        "Project Studio 创始人 — 面向亚洲市场的 Web3/AI 孵化，2026 年至今",
+        "VFlux 联合创始人 — 股权代币化，2026 年至今",
+        "DogeCity（加密矿业）联合创始人，2024–2026；Hashbox（加密矿业）联合创始人，2018–2021",
+        "WaterRock Capital 创始人（投资机构），2014–2019",
+        "世界区块链组织（WBO）执行秘书，2017 年至今",
+        "英属哥伦比亚大学（UBC）— 国际经济学学士"
       ]
     },
     "anthony": {

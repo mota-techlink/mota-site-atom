@@ -583,8 +583,8 @@
     },
     "ethan": {
       "name": "Ethan",
-      "role": "Investigación en IA clínica y estrategia de mercado",
-      "photo": "",
+      "role": "Investigación clínica con IA y estrategia de mercado",
+      "photo": "/images/pitch-deck/auraight/ethan.jpg",
       "roleDesc": "Capta pacientes internacionales para Auraight y conecta la evidencia clínica, la entrada al mercado y la estrategia técnica.",
       "caps": [
         "Captación internacional de pacientes y red de derivación",
@@ -600,15 +600,23 @@
       ]
     },
     "chris": {
-      "name": "Chris",
-      "role": "Equipo del proyecto VFlux",
+      "name": "Chris Chen",
+      "role": "Fundador de Project Studio · Cofundador de VFlux",
       "photo": "",
-      "roleDesc": "Línea de distribución de activos y liquidez de VFlux. Biografía pendiente de aprobación.",
+      "roleDesc": "Más de 20 años en creación de empresas, gestión de inversiones y minería de criptomonedas. Fundador de Project Studio, que incuba proyectos Web3 e IA para los mercados asiáticos mediante cofundación, capital, alianzas y alcance de mercado. Cofundador de VFlux y Secretario Ejecutivo de la Organización Mundial de Blockchain (WBO).",
       "caps": [
-        "Rol y capacidades pendientes de confirmación"
+        "Creación de empresas e inversión en etapa temprana en Web3 e IA",
+        "Infraestructura de minería de criptomonedas y abastecimiento energético",
+        "Tokenización, DeFi y estrategia de activos digitales",
+        "Captación de fondos, alianzas y negociaciones transfronterizas"
       ],
       "exp": [
-        "Biografía y casos pendientes"
+        "Fundador, Project Studio — incubación Web3/IA para mercados asiáticos, 2026–presente",
+        "Cofundador, VFlux — tokenización de acciones, 2026–presente",
+        "Cofundador, DogeCity (minería de criptomonedas) 2024–2026; Hashbox (minería de criptomonedas) 2018–2021",
+        "Fundador, WaterRock Capital (firma de inversión) 2014–2019",
+        "Secretario Ejecutivo, Organización Mundial de Blockchain (WBO), 2017–presente",
+        "Universidad de Columbia Británica (UBC) — Licenciatura en Economía Internacional"
       ]
     },
     "anthony": {
