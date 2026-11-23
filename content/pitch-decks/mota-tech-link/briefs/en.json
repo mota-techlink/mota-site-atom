@@ -1,0 +1,90 @@
+{
+  "cover": {
+    "thesis": "We match local strengths with global demand, assembling the people, technology and delivery capacity needed to turn an opportunity into a practical project.",
+    "flow": ["Local advantage", "Global demand", "IT connects · AI accelerates"],
+    "boundary": "Four active initiatives · Sources and outstanding verification are identified throughout."
+  },
+  "overview": {
+    "intro": "Resource matching is the business: demand, talent, technology and trusted local delivery come together around a defined opportunity.",
+    "active": "Four active projects",
+    "cases": "Selected technology cases",
+    "boundary": "Projects are in progress. Case status and commercial relationships require verification."
+  },
+  "projects": [
+    {
+      "lead": "A cross-border platform connecting demand with products, technology, labour and delivery. Ireland is the landing point, not the limit.",
+      "blocks": [
+        {"title": "Four opportunities · assessment", "body": "Food packaging printing · Medical / pharmaceutical packaging · Factory and warehouse construction · Cold storage construction. Scoped, not completed."},
+        {"title": "Coordinate → match → prepare", "body": "Structure demand, match capabilities and prepare evidence, qualifications, local implementation and logistics hand-offs."},
+        {"title": "Ireland gateway & network", "body": "EU single market, English-speaking business, common law and industrial / technology clusters. Dublin head office; Shanghai office; Brooklyn registration in progress; London and Brussels in establishment."},
+        {"title": "National & local engagement", "body": "John Cummins TD · national government; Gareth Evans · Waterford City & County Council; Gerald Hurley · Waterford Chamber. Engagement is not approval: no funding, planning consent or endorsement claimed."}
+      ],
+      "people": [
+        {"name": "Harling Sun", "role": "Founder, MOTA TECHLINK · lead architect / cross-border integrator"},
+        {"name": "Paul Brennan", "role": "Supply chain, food safety, quality and sustainability · 45+ years"},
+        {"name": "Turlough Sheehan", "role": "Global logistics and customs compliance · 40+ years"}
+      ],
+      "links": ["About ELMSFLOW", "Why Ireland"],
+      "source": "Sources: ELMSFLOW About and Why Ireland; opportunity areas are in assessment."
+    },
+    {
+      "lead": "Bilingual cross-border care navigation: prepare the journey, coordinate the right conversations and keep clinical decisions with qualified providers.",
+      "blocks": [
+        {"title": "Published anonymized case material", "body": "Disease tags: lymphoma · T-ALL · NHL · MM. Country tags on published cases: NZ · UK · TH · CN · US. Individual experiences are not treatment guarantees."},
+        {"title": "Before travel", "body": "Pre-trip checklist and navigation brief: clarify requested services, documents, appointments and practical next steps."},
+        {"title": "During the journey", "body": "Concierge coordination and bilingual EN / ZH communication. Provider relationships and service scope are subject to verification."},
+        {"title": "Privacy & consent", "body": "Share personal or medical information only with informed consent and appropriate safeguards. No diagnosis or clinical outcome is promised."}
+      ],
+      "people": [
+        {"name": "Vivian", "role": "Shanghai private-hospital resources · approved biography pending"},
+        {"name": "Ethan", "role": "UK / North America / Nigeria market window · Oxford DPhil Clinical Medicine (in progress); AI cancer prognosis and treatment prediction; Harvard Medical School, Wyss Institute, Johns Hopkins; Time for Africa technical strategy in Nigeria"},
+        {"name": "Harling Sun", "role": "MOTA TECHLINK founder · technology architect"}
+      ],
+      "links": ["Aura Light website", "Published case studies"],
+      "source": "Sources: published Aura Light case studies and supplied Ethan CV; service scope and biographies remain subject to confirmation."
+    },
+    {
+      "lead": "The problem is fragmented participation and liquidity, not a shortage of assets. Global assets still need local entrances.",
+      "blocks": [
+        {"title": "Operating model", "body": "Market access / eligibility → distribution / permissions → trade execution / routing / liquidity → post-trade clearing / data."},
+        {"title": "Asset lifecycle", "body": "Asset → eligibility → distribution → order → routing → execution → clearing → lifecycle. VFlux connects specialist institutions rather than replacing them."},
+        {"title": "Strategy & roadmap", "body": "Start centralized with existing institutions; progressively migrate suitable functions on-chain. To C path: digital-asset perpetuals and spot → RWA spot → unified multi-asset account → on-chain finance."},
+        {"title": "Business model · planning scenario", "body": "Distribution, transaction and routing fees; infrastructure, data and clearing services; potential future liquidity / protocol income. Net economics depend on partner shares and costs. Defensibility: asset network + distribution / liquidity + routing / clearing / data; not a forecast."}
+      ],
+      "people": [
+        {"name": "Chris", "role": "Project team · role and approved biography pending"},
+        {"name": "Anthony", "role": "Project team · role and approved biography pending"},
+        {"name": "Harling Sun", "role": "Project team · specific VFlux role pending verification"}
+      ],
+      "links": ["VFlux website", "MOTA contact"],
+      "source": "Source: supplied 43-page VFlux investor material. Operating permissions and commercial outcomes remain unverified."
+    },
+    {
+      "lead": "Japanese demand and tight production capacity meet industrialized Chinese AI-video supply through a neutral cross-border platform.",
+      "blocks": [
+        {"title": "Three business lines", "body": "AI manga / vertical short animation · AI advertising · AI education and training. Market entry begins with Japanese buyers and Chinese production studios."},
+        {"title": "Six-step transaction flow", "body": "Demand → matching → production → localization → Japanese quality acceptance → cross-border settlement. JPY collection and CNY settlement follow agreed acceptance."},
+        {"title": "Differentiation & revenue", "body": "Beyond generic crowdsourcing and single tools: matching, Japanese localization, quality acceptance and settlement. Planned service fees and other income are scenarios, not results."},
+        {"title": "Beta / MVP · planning only", "body": "Website beta in development. First transactions targeted for January–March 2027; validation timing and expansion are plans, not evidence of delivery or traction."}
+      ],
+      "people": [
+        {"name": "贺稀 · Vito He", "role": "Founder · international B2B sales, consulting and digital marketing"},
+        {"name": "渠成 · Allen Qu", "role": "Co-founder / special adviser · brand expansion, digital marketing and search"},
+        {"name": "Harling Sun", "role": "Technical partner · platform architecture and cross-border settlement systems"},
+        {"name": "栗木霞 · Kuri Ki", "role": "Japan-side liaison · buyer development, sales and after-sales"}
+      ],
+      "links": ["Yoshisei website", "AI video business plan"],
+      "source": "Source: supplied Yoshisei AI-video business plan; projections and transaction timing are plans, not results."
+    }
+  ],
+  "network": {
+    "lead": "Different regions, one practical project layer: bring the right capability to the right demand and coordinate the work between them.",
+    "blocks": ["Technology ↔ market · match practical systems to real demand", "Talent ↔ delivery · connect experienced teams with local execution", "Capital ↔ opportunity · assess fit, eligibility and evidence", "AI ↔ acceleration · support research, coordination and implementation"],
+    "boundary": "Relationships and eligibility are project-specific; introductions do not imply approval or delivery."
+  },
+  "cta": {
+    "lead": "Bring a real need. Together we can connect capability, trusted counterparts and a practical next step.",
+    "entries": ["Demand · describe a market need", "Supply · offer products or capacity", "Delivery · bring local expertise", "Technology · build the enabling systems"],
+    "boundary": "Project descriptions combine public sources and supplied planning materials. Claims, permissions and outcomes remain subject to independent verification."
+  }
+}

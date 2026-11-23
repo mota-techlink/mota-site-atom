@@ -1,0 +1,406 @@
+{
+  "editorial": {
+    "missionLabel": "Misión",
+    "mission": "Convertir necesidades reales en proyectos ejecutables reuniendo tecnología, equipos, recursos y socios locales.",
+    "visionLabel": "Visión",
+    "vision": "Una red de proyectos conectada donde las fortalezas regionales encuentren recursos escasos en los mercados de destino.",
+    "modelLabel": "Modelo operativo",
+    "model": "Partimos de la demanda, conectamos capacidades y contrapartes de confianza y coordinamos una vía práctica de ejecución. Cada proyecto tiene su propio alcance y requisitos de verificación.",
+    "techLabel": "TI conecta · IA acelera",
+    "tech": "Desde hardware y sensores hasta plataformas cloud, inferencia en el borde y agentes de IA, la tecnología ayuda a coordinar equipos y construir sistemas prácticos.",
+    "founders": "Fundadores",
+    "founderRole": "Fundador / CTO / arquitecto tecnológico",
+    "franklinRole": "Función y biografía pendientes",
+    "harlingBio": "Harling Sun es arquitecto tecnológico e integrador de negocios con unos 30 años de experiencia. Fundó y dirigió el equipo de API de eBay China; su trabajo abarca sistemas transfronterizos, IA, IoT y arquitectura de plataformas.",
+    "harlingDetail": "El documento del proyecto de vídeo IA Japón–China identifica a Harling como socio tecnológico responsable de la arquitectura de la plataforma. El documento de MOTA describe su trayectoria tecnológica más amplia.",
+    "harlingSkills": "Su alcance técnico declarado incluye agentes de IA, flujos LLM, IoT, computación en el borde, infraestructura cloud, sistemas de datos e integración transfronteriza.",
+    "harlingExperience": "Los documentos facilitados también describen su trabajo en KONAMI y en sistemas financieros de IBM, y la arquitectura del sistema de servicios transfronterizos Shanghai 1210.",
+    "franklinBio": "Franklin Ng figura en la presentación de fundadores. Su función detallada, biografía y retrato están pendientes de materiales aprobados.",
+    "portfolio": "Cuatro proyectos en curso",
+    "portfolioNote": "Son iniciativas en curso, no afirmaciones de entregas completadas o resultados comerciales.",
+    "cases": "Otros casos e iniciativas",
+    "casesNote": "Muestras tecnológicas seleccionadas; el estado del producto y las relaciones comerciales requieren verificación adicional.",
+    "caseDescriptions": [
+      "Agentes de IA e iluminación conectada.",
+      "Interfaz de voz, conectividad y control de dispositivos.",
+      "Dispositivos conectados para mascotas e IA vertical.",
+      "Posicionamiento e interacción de voz para un bastón conectado.",
+      "Detección en el borde para seguridad en ascensores.",
+      "Visión artificial para inspección de logotipos textiles."
+    ],
+    "explore": "Ver página del proyecto",
+    "details": "Abrir detalles",
+    "caseLink": "Ver caso",
+    "source": "Fuentes: documento del proyecto MOTA y muestras públicas. Las fuentes y los límites de cada proyecto aparecen en su página.",
+    "cta": "Iniciar una conversación",
+    "flow": "Flujo operativo",
+    "capabilities": "Capacidades y consideraciones",
+    "evidence": "Fuentes y límites",
+    "person": "Persona clave",
+    "role": "Arquitecto tecnológico",
+    "videoRole": "Socio tecnológico",
+    "back": "Volver al resumen de MOTA",
+    "document": "Leer documento fuente",
+    "language": "Idioma",
+    "theme": "Cambiar entre tema claro y oscuro",
+    "section": "Ir a la sección",
+    "coverAction": "Explorar la red"
+  },
+  "nav": {
+    "tagline": "Red global de proyectos",
+    "index": "Volver al índice"
+  },
+  "gallery": {
+    "overview": "Descripción del rol",
+    "capabilities": "Capacidades",
+    "team": "Experiencia y casos",
+    "sources": "Fuentes y sitio web",
+    "pending": "Material pendiente",
+    "close": "Cerrar detalles del proyecto",
+    "previous": "Diapositiva anterior",
+    "next": "Diapositiva siguiente",
+    "open": "Abrir detalles del proyecto",
+    "website": "Visitar sitio web",
+    "sourceNote": "Notas de las fuentes"
+  },
+  "projects": [
+    {
+      "id": "elmsflow",
+      "name": "ELMSFLOW",
+      "mark": "EF",
+      "logo": "/images/pitch-deck/elmsflow-logo.png",
+      "url": "https://elmsflo.com",
+      "summary": "Acceso a mercados y ejecución local para proveedores e inversores chinos.",
+      "overview": {
+        "title": "De identificar oportunidades a ejecutarlas localmente",
+        "body": "ELMSFLOW conecta a proveedores e inversores chinos con oportunidades en mercados occidentales y ayuda a organizar la ruta práctica de implantación: socios locales, ubicaciones, enlace gubernamental, vías de cumplimiento y establecimiento.",
+        "points": [
+          "Conecta capacidades de suministro e inversión con oportunidades de mercado identificadas.",
+          "Coordina socios locales, opciones de ubicación y pasos de ejecución.",
+          "El deck Ireland Gateway ejemplifica el modelo de apoyo; no afirma que los proyectos estén completados."
+        ]
+      },
+      "capabilities": [
+        {
+          "title": "Acceso al mercado",
+          "body": "Define una ruta de entrada según el mercado objetivo, los clientes y la preparación del proveedor."
+        },
+        {
+          "title": "Implantación local",
+          "body": "Organiza contrapartes, opciones de ubicación, enlace gubernamental y establecimiento como una secuencia práctica."
+        },
+        {
+          "title": "Preparación de cumplimiento",
+          "body": "Identifica pasos de certificación y acceso con especialistas locales; los requisitos deben confirmarse con las autoridades pertinentes."
+        },
+        {
+          "title": "Proyectos actuales",
+          "body": "El documento identifica cuatro áreas en curso: impresión de envases alimentarios, envases médicos y farmacéuticos, construcción de fábricas y almacenes, y almacenamiento frigorífico. No se presentan como terminadas ni aprobadas."
+        }
+      ],
+      "team": [
+        {
+          "name": "Perfiles del equipo pendientes",
+          "role": "Los materiales disponibles no incluyen biografías ni retratos aprobados."
+        }
+      ],
+      "sources": [
+        "Documento del proyecto MOTA: posicionamiento de ELMSFLOW y cuatro áreas en curso.",
+        "Sección ELMSFLOW del deck Ireland Gateway: oportunidades, socios locales, ubicación, enlace gubernamental, cumplimiento y establecimiento."
+      ],
+      "pending": [
+        "Contrapartes, autorizaciones, estado de ejecución y evidencias específicas de las cuatro áreas.",
+        "Biografías y retratos aprobados del equipo.",
+        "Fotografías gubernamentales y de socios, permisos y textos explicativos.",
+        "Verificación de los requisitos de cumplimiento específicos de cada mercado."
+      ]
+    },
+    {
+      "id": "auraight",
+      "name": "Auraight",
+      "mark": "A",
+      "logo": "/images/pitch-deck/auraight-logo.svg",
+      "url": "https://auraight.com",
+      "summary": "Capa bilingüe de coordinación para itinerarios de atención médica transfronteriza.",
+      "overview": {
+        "title": "Coordinación de atención transfronteriza",
+        "body": "Las notas actuales describen una capa bilingüe independiente que conecta Shanghai y Japón con itinerarios para pacientes de Norteamérica, Reino Unido, Nigeria, Singapur, Tailandia y Nueva Zelanda. Es un concepto de coordinación, no un proveedor clínico ni una promesa de resultados médicos.",
+        "points": [
+          "Las notas actuales identifican recursos médicos en Shanghai y Japón.",
+          "Las notas enumeran itinerarios internacionales en seis regiones.",
+          "Este deck no afirma resultados clínicos ni relaciones con hospitales concretos."
+        ]
+      },
+      "capabilities": [
+        {
+          "title": "Coordinación de pacientes",
+          "body": "Coordina consultas y siguientes pasos transfronterizos según el itinerario solicitado; las decisiones clínicas corresponden a profesionales cualificados."
+        },
+        {
+          "title": "Recursos de Shanghai y Japón",
+          "body": "Las notas mencionan recursos hospitalarios en Shanghai y medicina avanzada en Japón; las instituciones y los servicios concretos están pendientes de confirmar."
+        },
+        {
+          "title": "Itinerarios de revisión",
+          "body": "Las revisiones y pruebas en el extranjero se indican como ámbitos de coordinación, no como servicios garantizados ni resultados médicos."
+        },
+        {
+          "title": "Orientación bilingüe",
+          "body": "La capa bilingüe pretende facilitar la comunicación y la logística de itinerarios internacionales."
+        }
+      ],
+      "team": [
+        {
+          "name": "Harling",
+          "role": "Figura en las notas actuales de Auraight; función y biografía aprobada pendientes."
+        },
+        {
+          "name": "Vivian",
+          "role": "Figura en las notas actuales de Auraight; función y biografía aprobada pendientes."
+        },
+        {
+          "name": "Ethan",
+          "role": "El CV facilitado de Ethan Yichen Wang describe investigación doctoral en medicina clínica en Oxford y experiencia en cáncer y biología computacional. Su función en Auraight está pendiente de confirmación."
+        }
+      ],
+      "sources": [
+        "El resumen y los nombres proceden del locale actual de MOTA TECH LINK; la trayectoria investigadora de Ethan procede del CV de 2026 facilitado.",
+        "No se dispone de documentación independiente aprobada sobre operaciones, práctica clínica u hospitales de Auraight."
+      ],
+      "pending": [
+        "Relaciones con proveedores y hospitales, alcance del servicio y permisos operativos.",
+        "Revisión clínica, requisitos jurisdiccionales y procesos de privacidad del paciente.",
+        "Biografías y retratos aprobados del equipo.",
+        "Precios, disponibilidad y evidencias de resultados; no se afirman resultados médicos."
+      ]
+    },
+    {
+      "id": "vflux",
+      "name": "VFlux",
+      "mark": "V",
+      "logo": "/images/pitch-deck/vflux-logo.png",
+      "url": "https://vflux.ai",
+      "summary": "Capa de red propuesta para distribución, liquidez, routing y clearing de activos globales.",
+      "overview": {
+        "title": "Conectar activos, mercados e inversores",
+        "body": "El material de VFLUX describe una infraestructura multiactivo que conecta proveedores de activos elegibles, mercados e inversores mediante distribución, coordinación de liquidez, routing, clearing y settlement. El modelo inicial descrito es centralizado, con una posible evolución gradual hacia on-chain.",
+        "points": [
+          "Se plantea como una capa de conexión para instituciones especializadas, no como sustituto.",
+          "El papel descrito incluye acceso al mercado, permisos de participantes y conexiones con socios.",
+          "Es una descripción del proyecto, no una afirmación de aprobación regulatoria ni de operaciones en vivo."
+        ]
+      },
+      "capabilities": [
+        {
+          "title": "Acceso y distribución de activos",
+          "body": "Organiza el catálogo de activos, criterios de admisión, elegibilidad de inversores, permisos de producto y canales de distribución."
+        },
+        {
+          "title": "Routing y liquidez",
+          "body": "Coordina routing y liquidez compartida entre mercados y canales participantes."
+        },
+        {
+          "title": "Clearing y settlement",
+          "body": "Proporciona una capa de coordinación de red para clearing, conciliación y settlement entre participantes."
+        },
+        {
+          "title": "Funciones institucionales",
+          "body": "La fuente distingue la función de red de VFLUX de las responsabilidades de contrapartes profesionales y reguladas."
+        }
+      ],
+      "team": [
+        {
+          "name": "Chris",
+          "role": "Fundador de Project Studio; cofundador de VFlux; más de 20 años en creación de empresas, inversión y minería de criptomonedas; Secretario Ejecutivo de la WBO."
+        },
+        {
+          "name": "Anthony",
+          "role": "Figura en las notas actuales de VFlux; función y biografía aprobada pendientes."
+        },
+        {
+          "name": "Harling",
+          "role": "Figura en las notas actuales de VFlux; función y biografía aprobada pendientes."
+        }
+      ],
+      "sources": [
+        "White paper del proyecto VFLUX V17, archivo proporcionado vflux-cn-43.txt; sus secciones describen la función de red, las responsabilidades institucionales y el modelo de clearing.",
+        "La fuente incluye un borrador del white paper del token VFLX v1.4 y lo identifica como propuesta sujeta a revisión legal."
+      ],
+      "pending": [
+        "Perímetro regulatorio, jurisdicciones, instituciones participantes y permisos de operación.",
+        "Condiciones comerciales, adopción verificada y evidencias financieras o transaccionales auditadas.",
+        "Biografías aprobadas de los integrantes del equipo.",
+        "El borrador citado indica que la asignación, desbloqueo y venta del token VFLX no son definitivos."
+      ]
+    },
+    {
+      "id": "ai-video",
+      "name": "吉晟株式会社 · YOSHI SEI CORPORATION",
+      "mark": "吉晟",
+      "summary": "Plataforma de matching y transacciones de producción de vídeo IA Japón–China; beta web en desarrollo.",
+      "overview": {
+        "title": "Un puente de producción entre Japón y China",
+        "body": "El brief de Yoshisei proporcionado describe una plataforma que conecta compradores japoneses con estudios chinos de vídeo IA. Propone matching justo y un flujo que abarca producción, localización japonesa, revisión según criterios acordados y settlement JPY–RMB. El brief indica que la beta web está en desarrollo; los planes no se presentan como actividad completada.",
+        "points": [
+          "El brief identifica 吉晟株式会社 / YOSHI SEI CORPORATION, con sede en Tokio y sucursales en Osaka y Fukuoka.",
+          "La animación corta IA / manga IP es la categoría principal; publicidad y educación son categorías adyacentes.",
+          "El brief prevé las primeras transacciones para enero–marzo de 2027; es un plan, no tracción conseguida."
+        ]
+      },
+      "capabilities": [
+        {
+          "title": "Matching de compradores y estudios",
+          "body": "Convierte briefs de compradores en requisitos de producción y los conecta con estudios chinos de producción IA."
+        },
+        {
+          "title": "Flujo de producción",
+          "body": "El brief contempla planificación, guion, generación, storyboard, dirección, edición, trabajo visual y entrega."
+        },
+        {
+          "title": "Localización y revisión japonesa",
+          "body": "Localiza la entrega y la verifica según los criterios de calidad en japonés acordados por las partes."
+        },
+        {
+          "title": "Settlement transfronterizo",
+          "body": "El flujo propuesto es cobrar en JPY y pagar al estudio en RMB tras la aceptación, sujeto al acuerdo y a los requisitos aplicables."
+        }
+      ],
+      "team": [
+        {
+          "name": "Vito He (贺稀)",
+          "role": "Identificado como fundador en el brief de Yoshisei proporcionado."
+        },
+        {
+          "name": "Harling Sun (孙涛)",
+          "role": "El brief proporcionado le atribuye la arquitectura tecnológica de la plataforma."
+        }
+      ],
+      "sources": [
+        "Brief del proyecto 吉晟株式会社 / YOSHI SEI CORPORATION, archivo proporcionado ai-video-bp.txt (2026).",
+        "El brief indica que la beta del sitio web está en desarrollo."
+      ],
+      "pending": [
+        "Finalización de la beta, disponibilidad del servicio y resultados de transacciones verificados.",
+        "La fecha prevista para las primeras transacciones no demuestra que ya se hayan realizado.",
+        "Retratos aprobados y biografías adicionales que no aparecen en el brief.",
+        "Las previsiones de compradores, estudios, precios y transacciones de la fuente no son clientes, ingresos ni resultados reales."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "cover",
+      "eyebrow": "MOTA TECH LINK",
+      "title": "Conecta la necesidad. Acelera el camino.",
+      "body": "La ventaja local encuentra los recursos escasos del mercado objetivo; IT conecta y la IA acelera.",
+      "items": [
+        "🧭 Ventaja local",
+        "🌍 Demanda global",
+        "🔗 Conexión transfronteriza",
+        "⚡ Aceleración con IA"
+      ]
+    },
+    {
+      "id": "map",
+      "eyebrow": "FILOSOFÍA × PORTAFOLIO",
+      "title": "La combinación de recursos es el negocio.",
+      "body": "Tecnología, capacidad productiva, talento, recursos médicos y redes profesionales se conectan con demanda, canales, capital, pacientes, liquidez y oportunidades.",
+      "items": [
+        "ELMSFLOW · China → Occidente",
+        "Auraight · pacientes internacionales",
+        "VFlux · liquidación global",
+        "AI Video · Japón ↔ China"
+      ]
+    },
+    {
+      "id": "elmsflow",
+      "eyebrow": "ELMSFLOW",
+      "title": "Llevar capacidades a nuevos mercados.",
+      "body": "Conecta capacidad industrial, tecnología, talento y recursos humanos de China con la demanda occidental, la entrada local y la consultoría de expansión internacional.",
+      "items": [
+        "Entrada en mercados",
+        "Socios y ejecución local",
+        "Preparación de compliance",
+        "Cuatro proyectos actuales",
+        "Equipo + gallery gubernamental"
+      ]
+    },
+    {
+      "id": "auraight",
+      "eyebrow": "AURAIGHT",
+      "title": "Atención médica transfronteriza coordinada.",
+      "body": "Una capa bilingüe independiente que conecta Shanghai y Japón con pacientes de Norteamérica, Reino Unido, Nigeria, Singapur, Tailandia y Nueva Zelanda.",
+      "items": [
+        "Coordinación VIP",
+        "Recursos hospitalarios",
+        "Medicina avanzada japonesa",
+        "Revisiones y pruebas",
+        "Harling · Vivian · Ethan"
+      ]
+    },
+    {
+      "id": "vflux",
+      "eyebrow": "VFLUX · VFLUX.AI",
+      "title": "La capa unificada de liquidación de activos globales.",
+      "body": "Distribución, liquidez, routing, clearing y settlement para proveedores de activos, exchanges, brokers, custodia, wealth channels e inversores.",
+      "items": [
+        "Activo → acceso → distribución",
+        "Smart routing + liquidez",
+        "Clearing + settlement",
+        "Primero centralizado, luego on-chain",
+        "Chris · Anthony · Harling"
+      ]
+    },
+    {
+      "id": "ai-video",
+      "eyebrow": "CHINA ↔ JAPÓN AI VIDEO",
+      "title": "Demanda japonesa. Producción AI china.",
+      "body": "Brief, matching, producción, localización, revisión de calidad y settlement JPY–RMB en un flujo responsable.",
+      "items": [
+        "Animación AI / manga IP",
+        "Publicidad AI",
+        "Educación AI",
+        "Harling · socio técnico full-stack",
+        "Too much to list."
+      ]
+    },
+    {
+      "id": "network",
+      "eyebrow": "LA RED",
+      "title": "Regiones distintas. Una capa conectada.",
+      "body": "Asia, Europa, Norteamérica, África, Oceanía y el Sudeste Asiático forman un mapa de capacidades, demanda y ejecución confiable.",
+      "items": [
+        "Tecnología ↔ mercado",
+        "Talento ↔ entrega",
+        "Capital ↔ oportunidad",
+        "IA ↔ aceleración"
+      ]
+    },
+    {
+      "id": "mota",
+      "eyebrow": "MOTA TECH LINK · IoT × EDGE AI",
+      "title": "De dispositivos conectados a sistemas inteligentes reales.",
+      "body": "Agentes de IA, edge inference, IoT, integración hardware-cloud y modelos verticales aplicados a productos reales.",
+      "items": [
+        "Iluminación AI",
+        "AI Voice USB",
+        "Pet vertical AI",
+        "Bastón AI",
+        "Seguridad Edge AI",
+        "Visión textil",
+        "Harling · Founder / CTO",
+        "Franklin Ng · perfil pendiente"
+      ]
+    },
+    {
+      "id": "cta",
+      "eyebrow": "MOTA TECH LINK",
+      "title": "Conecta la necesidad. Acelera el camino.",
+      "body": "Trae un mercado, una capacidad o un problema transfronterizo. Conectaremos las personas, la tecnología y el siguiente paso práctico.",
+      "items": [
+        "Explorar proyecto",
+        "Iniciar conversación"
+      ]
+    }
+  ]
+}

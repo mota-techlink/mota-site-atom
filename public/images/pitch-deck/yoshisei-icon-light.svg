@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="YOSHI SEI">
+  <defs>
+    <linearGradient id="ysFilmLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e7d78"/>
+      <stop offset="1" stop-color="#c25e00"/>
+    </linearGradient>
+  </defs>
+  <!-- support post -->
+  <path d="M48 50v8" stroke="#0e2b3a" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+  <!-- film strip -->
+  <rect x="14" y="18" width="68" height="32" rx="7" fill="rgba(14,43,58,.06)" stroke="url(#ysFilmLight)" stroke-width="3"/>
+  <!-- perforations -->
+  <g fill="#0e2b3a" opacity=".62">
+    <rect x="21" y="23" width="5" height="4" rx="1.2"/>
+    <rect x="32" y="23" width="5" height="4" rx="1.2"/>
+    <rect x="59" y="23" width="5" height="4" rx="1.2"/>
+    <rect x="70" y="23" width="5" height="4" rx="1.2"/>
+    <rect x="21" y="41" width="5" height="4" rx="1.2"/>
+    <rect x="32" y="41" width="5" height="4" rx="1.2"/>
+    <rect x="59" y="41" width="5" height="4" rx="1.2"/>
+    <rect x="70" y="41" width="5" height="4" rx="1.2"/>
+  </g>
+  <!-- play -->
+  <path d="M44 28l11 6-11 6z" fill="#c25e00"/>
+  <!-- platform -->
+  <path d="M18 70l30 12 30-12v7l-30 12-30-12z" fill="rgba(14,125,120,.26)"/>
+  <path d="M48 58l30 12-30 12-30-12z" fill="#f6fbfb" stroke="#0e7d78" stroke-width="3" stroke-linejoin="round"/>
+</svg>

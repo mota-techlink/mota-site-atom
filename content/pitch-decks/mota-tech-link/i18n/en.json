@@ -1,0 +1,739 @@
+{
+  "nav": {
+    "home": "MOTA TECHLINK home",
+    "overview": "MOTA overview",
+    "lang": "Language",
+    "theme": "Toggle light or dark theme",
+    "page": "Go to page"
+  },
+  "cover": {
+    "eyebrow": "MOTA TECH LINK · PROJECT NETWORK",
+    "title": "Connect the need. Accelerate the path.",
+    "lead": "We match scarce capability with real demand, then carry it through to delivery.",
+    "pillars": [
+      {
+        "icon": "🌍",
+        "label": "Global advantage",
+        "note": "Connecting resources and markets worldwide"
+      },
+      {
+        "icon": "🔌",
+        "label": "IT connects",
+        "note": "Platforms, data and system integration"
+      },
+      {
+        "icon": "⚡",
+        "label": "AI accelerates",
+        "note": "GenAI, edge inference, automation"
+      }
+    ],
+    "enter": "Open projects"
+  },
+  "mota": {
+    "eyebrow": "01 · MOTA / AIOT",
+    "title": "One operating model, four delivery lanes",
+    "lead": "Every project starts from a real need, a verified partner and a delivery path that can be audited.",
+    "missionTitle": "Mission",
+    "mission": "Turn real needs into executable projects by organising technology, teams, resources and local partners.",
+    "visionTitle": "Vision",
+    "vision": "A connected project network where regional strengths meet scarce resources in target markets.",
+    "itTitle": "IT connects",
+    "it": "From sensors and devices to cloud platforms, edge inference and AI agents: technology that makes teams work together.",
+    "aiTitle": "AI accelerates",
+    "ai": "GenAI synthetic data, edge inference, automation and practical delivery.",
+    "cases": [
+      "💡 AI lighting",
+      "🎙️ AI voice interaction",
+      "🛗 GenAI edge safety",
+      "📊 Synthetic data pipeline"
+    ],
+    "teamTitle": "Team",
+    "teamNote": "Tap a portrait for role, capabilities and experience.",
+    "techTag": "TECHNOLOGY ADVANTAGE",
+    "techTitle": "Full-stack IT, amplified by AI",
+    "techLead": "From devices to cloud, from data to agents: one delivery team across the whole stack.",
+    "techGroups": [
+      {
+        "icon": "🧠",
+        "title": "AI: full coverage from CNN to LLM",
+        "items": [
+          "CNN vision and image recognition",
+          "Generative AI and LLM agents",
+          "Synthetic training data and edge inference"
+        ]
+      },
+      {
+        "icon": "🧩",
+        "title": "Full-stack engineering",
+        "items": [
+          "Web and mobile applications",
+          "Backend services and APIs",
+          "Data platforms and real-time pipelines"
+        ]
+      },
+      {
+        "icon": "📡",
+        "title": "IoT & edge",
+        "items": [
+          "Sensors and device connectivity",
+          "Edge computing and low latency",
+          "Device management and firmware"
+        ]
+      },
+      {
+        "icon": "☁️",
+        "title": "Cloud & enterprise integration",
+        "items": [
+          "Cloud-native, CDN and Zero Trust",
+          "Enterprise service bus (ESB)",
+          "Cross-border payment and settlement"
+        ]
+      }
+    ],
+    "techHighlight": "Highlight: AI synthetic training data",
+    "techHighlightBody": "Generative models produce the scarce fault and training samples that field collection cannot afford, then the model is quantised to run on-device on an NPU.",
+    "caseLink": "View the case",
+    "siteLabel": "motaiot.com",
+    "coreLabel": "MOTA's role",
+    "core": [
+      "Finds demand across markets",
+      "Assembles scarce resources and partners",
+      "Owns technical delivery to the end"
+    ]
+  },
+  "elms": {
+    "eyebrow": "02 · ELMSFLOW",
+    "title": "ELMSFLOW",
+    "lead": "A cross-border platform that connects demand, product, technology, labour and delivery capacity. Ireland is the landing point, not the boundary.",
+    "links": [
+      "About ELMSFLOW",
+      "Why Ireland"
+    ],
+    "programmesTitle": "Four delivery programmes",
+    "programmes": [
+      {
+        "title": "Food packaging printing",
+        "desc": "Print and packaging capacity for food-grade production.",
+        "image": "/images/pitch-deck/elmsflow/food-packaging-printing.jpg",
+        "link": "https://elmsflo.com/programmes/food-packaging-printing"
+      },
+      {
+        "title": "Medical & pharmaceutical packaging",
+        "desc": "Compliant packaging lines for regulated healthcare products.",
+        "image": "/images/pitch-deck/elmsflow/medical-pharmaceutical-packaging.jpg",
+        "link": "https://elmsflo.com/programmes/medical-pharmaceutical-packaging"
+      },
+      {
+        "title": "Factory & warehouse construction",
+        "desc": "Industrial build-out and fit-out for production and storage.",
+        "image": "/images/pitch-deck/elmsflow/factory-warehouse-construction.jpg",
+        "link": "https://elmsflo.com/programmes/factory-warehouse-construction"
+      },
+      {
+        "title": "Cold storage construction",
+        "desc": "Temperature-controlled facilities for food and pharma chains.",
+        "image": "/images/pitch-deck/elmsflow/cold-storage-construction.jpg",
+        "link": "https://elmsflo.com/programmes/cold-storage-construction"
+      }
+    ],
+    "mapTitle": "Ireland as the gateway",
+    "mapNote": "EU single market · English-speaking business · common-law context",
+    "mapNodes": [
+      "Ireland",
+      "Commonwealth",
+      "European Union",
+      "United States",
+      "China"
+    ],
+    "teamTitle": "Team",
+    "officialsTitle": "Government & business engagement",
+    "officialsNote": "Public engagement only — not an endorsement or funding commitment.",
+    "taxLabel": "Tax and headquarters advantage",
+    "taxTitle": "European headquarters for global IT and pharma",
+    "taxBody": "Trading income is taxed at 12.5%, and the research credit plus single-market access have made Ireland the European base for global technology and pharmaceutical groups.",
+    "taxItems": [
+      "12.5% corporate tax on trading income",
+      "R&D tax credit",
+      "EU single-market access",
+      "English-language legal and talent base"
+    ]
+  },
+  "aura": {
+    "eyebrow": "03 · AURAIGHT",
+    "title": "Auraight",
+    "lead": "Bilingual cross-border medical navigation: we prepare the journey and coordinate communication. Clinical decisions stay with qualified medical professionals.",
+    "links": [
+      "Auraight website",
+      "Public showcase"
+    ],
+    "mixTitle": "Published case mix",
+    "mixNote": "Sample mix of published cases, not population prevalence.",
+    "mix": [
+      {
+        "label": "Multiple myeloma",
+        "short": "MM",
+        "count": 3,
+        "pct": 50
+      },
+      {
+        "label": "Lymphoma",
+        "short": "LY",
+        "count": 1,
+        "pct": 17
+      },
+      {
+        "label": "T-ALL",
+        "short": "TA",
+        "count": 1,
+        "pct": 17
+      },
+      {
+        "label": "NHL",
+        "short": "NH",
+        "count": 1,
+        "pct": 16
+      }
+    ],
+    "mapTitle": "Resource hubs and client markets",
+    "resourceLabel": "Resource hub",
+    "clientLabel": "Client source",
+    "resources": [
+      {
+        "name": "China · Shanghai",
+        "note": "Private-hospital diagnostics and treatment pathways",
+        "flag": "🇨🇳"
+      },
+      {
+        "name": "Japan",
+        "note": "Advanced cell and gene therapy access",
+        "flag": "🇯🇵"
+      }
+    ],
+    "clients": [
+      {
+        "name": "United Kingdom",
+        "flag": "🇬🇧"
+      },
+      {
+        "name": "Nigeria",
+        "flag": "🇳🇬"
+      },
+      {
+        "name": "New Zealand",
+        "flag": "🇳🇿"
+      },
+      {
+        "name": "Thailand",
+        "flag": "🇹🇭"
+      },
+      {
+        "name": "United States",
+        "flag": "🇺🇸"
+      },
+      {
+        "name": "Ireland",
+        "flag": "🇮🇪"
+      }
+    ],
+    "whyTitle": "Why China and Japan",
+    "why": [
+      {
+        "title": "Shanghai · fast private pathways",
+        "body": "Private hospitals can compress diagnosis and treatment scheduling for international patients.",
+        "link": "https://auraight.com/zh/showcase"
+      },
+      {
+        "title": "Japan · CAR-T and iPS",
+        "body": "CAR-T therapy and iPS cell research, including Yamanaka-factor reprogramming.",
+        "link": "https://www.cira.kyoto-u.ac.jp/e/"
+      },
+      {
+        "title": "Japan · universal engineered T cells",
+        "body": "Allogeneic off-the-shelf T-cell approaches such as ACTR, subject to clinical eligibility.",
+        "link": "https://pubmed.ncbi.nlm.nih.gov/?term=universal+allogeneic+CAR-T+ACTR"
+      }
+    ],
+    "servicesTitle": "Beyond oncology",
+    "services": [
+      "🔍 Cancer screening",
+      "🩺 Endoscopy (gastroscopy & colonoscopy)",
+      "🧠 Psychological support",
+      "👑 Full VIP coordination"
+    ],
+    "teamTitle": "Team"
+  },
+  "vflux": {
+    "title": "VFlux",
+    "lead": "One settlement rail between crypto venues and real-world asset markets.",
+    "flowTitle": "How the platform sits between venues and assets",
+    "venueLabel": "Crypto venues",
+    "venue": [
+      "Centralised exchange (CEX)",
+      "Decentralised exchange (DEX)",
+      "Market makers / OTC desks"
+    ],
+    "platformLabel": "VFlux platform",
+    "platform": [
+      "Stablecoin as the settlement currency",
+      "VF token as the transaction fee",
+      "Routing, clearing and reconciliation"
+    ],
+    "assetLabel": "Asset markets",
+    "assets": [
+      "Global major equities",
+      "Precious metals",
+      "Commodities",
+      "Futures & options"
+    ],
+    "links": [
+      "VFlux website",
+      "Whitepaper"
+    ],
+    "note": "Planning material · proposed model · regulatory and commercial validation still required.",
+    "marketTitle": "Market size",
+    "marketLead": "The opening is not creating new assets, but connecting capital to assets that already exist.",
+    "market": [
+      {
+        "value": "USD 318.5tn",
+        "label": "Global equity and fixed income"
+      },
+      {
+        "value": "USD 391.8bn",
+        "label": "Distributed tokenised RWA"
+      },
+      {
+        "value": "USD 304.3bn",
+        "label": "Stablecoins as settlement layer"
+      }
+    ],
+    "roleTitle": "What VFLUX operates",
+    "roles": [
+      {
+        "t": "Access and distribution",
+        "d": "Asset catalogue, admission standards, investor eligibility and channel onboarding"
+      },
+      {
+        "t": "Execution and routing",
+        "d": "Multi-path execution, liquidity selection, market-maker access and hedge coordination"
+      },
+      {
+        "t": "Clearing and data",
+        "d": "Trade records, reconciliation, fee allocation and settlement coordination"
+      }
+    ],
+    "revTitle": "Revenue model",
+    "revs": [
+      {
+        "t": "Distribution and trading",
+        "d": "Asset distribution commission, trading revenue and routing share"
+      },
+      {
+        "t": "Infrastructure services",
+        "d": "API, entitlements, data, reconciliation and clearing fees"
+      },
+      {
+        "t": "Protocol revenue",
+        "d": "Liquidity services and protocol revenue after the on-chain shift"
+      }
+    ],
+    "scaleTitle": "Scale scenarios (planning)",
+    "scale": [
+      {
+        "v": "USD 10tn",
+        "f": "5 bp",
+        "r": "USD 5bn"
+      },
+      {
+        "v": "USD 20tn",
+        "f": "7.5 bp",
+        "r": "USD 15bn"
+      },
+      {
+        "v": "USD 30tn",
+        "f": "10 bp",
+        "r": "USD 30bn"
+      }
+    ],
+    "scaleNote": "Planning scenarios, not forecasts or contracted revenue",
+    "asset0": "Global major equities",
+    "headline": "Global asset liquidity infrastructure"
+  },
+  "video": {
+    "eyebrow": "05 · YOSHI SEI · 吉晟株式会社",
+    "title": "Japan–China AI video matching platform",
+    "lead": "Japanese demand meets industrialised Chinese AI video production through a neutral cross-border platform.",
+    "demandTitle": "Demand side",
+    "demand": [
+      "Advertising agencies & brands",
+      "IP owners & publishers",
+      "Education & training"
+    ],
+    "supplyTitle": "Supply side",
+    "supply": [
+      "Mature AI video studios",
+      "Kling, Jimeng, Vidu, Hailuo toolchains",
+      "Script → storyboard → generation → edit"
+    ],
+    "linesTitle": "Three business lines",
+    "lines": [
+      {
+        "icon": "🎬",
+        "title": "AI comic drama",
+        "body": "Serialised short-form drama for Japanese platforms."
+      },
+      {
+        "icon": "📣",
+        "title": "AI advertising",
+        "body": "Localised performance and brand creative."
+      },
+      {
+        "icon": "🎓",
+        "title": "AI education",
+        "body": "Training and courseware video at scale."
+      }
+    ],
+    "stepsTitle": "Delivery chain",
+    "steps": [
+      "Brief",
+      "Match",
+      "Generate",
+      "Localise",
+      "Review",
+      "Deliver"
+    ],
+    "whyTitle": "Why a platform",
+    "why": [
+      "Japanese quality review and localisation gate",
+      "Yen–renminbi settlement bridge",
+      "Fair matching rules for both sides"
+    ],
+    "links": [
+      "Yoshisei website",
+      "Business plan"
+    ],
+    "teamTitle": "Founding team",
+    "marketTitle": "Market size and maturity",
+    "marketLead": "China has industrialised the supply side; Japan is still in testing and validation.",
+    "cols": [
+      "",
+      "China",
+      "Japan"
+    ],
+    "rows": [
+      [
+        "Supply maturity",
+        "Industrialised studios and toolchains",
+        "Testing and validation phase"
+      ],
+      [
+        "Cost driver",
+        "Compute ≈50% of production cost",
+        "Localisation and quality review"
+      ],
+      [
+        "Entry price",
+        "From ¥1,000 per minute (low-end quote)",
+        "Buyer-specific, project based"
+      ],
+      [
+        "Demand",
+        "Platforms, brands, education",
+        "Agencies, IP owners, education"
+      ]
+    ],
+    "gapTitle": "Growth space",
+    "gap": [
+      "No neutral matching layer exists yet",
+      "Japanese quality review is the bottleneck",
+      "Settlement in yen and renminbi is unresolved"
+    ],
+    "srcNote": "Source: Yoshisei business plan; industry estimates, to be verified."
+  },
+  "cta": {
+    "eyebrow": "06 · NEXT STEP",
+    "title": "Bring one real need.",
+    "lead": "A need, an uncommon capability or a trusted local route is enough to start a project conversation.",
+    "contact": "Contact",
+    "addressLabel": "Address",
+    "address": "1329 Willoughby Ave, Brooklyn, NY 11237-3177, USA",
+    "websiteLabel": "Website",
+    "email": "contract@motaiot.com",
+    "copyright": "© 2026 MOTA TECHLINK. All rights reserved.",
+    "back": "Back to MOTA overview",
+    "dots": [
+      "ELMSFLOW",
+      "Auraight",
+      "VFlux",
+      "Yoshi Sei"
+    ],
+    "flow": {
+      "title": "Project flows across the network",
+      "nodes": {
+        "na": "United States",
+        "uk": "Commonwealth",
+        "ie": "Ireland",
+        "cn": "China",
+        "jp": "Japan",
+        "th": "Thailand",
+        "sg": "Singapore",
+        "oc": "Oceania"
+      },
+      "elms": "ELMSFLOW · China to Ireland",
+      "video": "China–Japan AI matchmaking",
+      "vflux": "VFLUX · global to Singapore",
+      "aura": "Auraight · patients to China and Japan"
+    }
+  },
+  "modal": {
+    "tabs": [
+      "Role",
+      "Capabilities",
+      "Experience & cases"
+    ],
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next",
+    "officialTitle": "Engagement profile"
+  },
+  "people": {
+    "harling": {
+      "name": "Harling Sun",
+      "role": "Founder & Chief Architect, MOTA TECHLINK",
+      "photo": "/images/team/Harling.jpg",
+      "roleDesc": "Explores market demand across regions, assembles scarce resources, and layers AI-enhanced technical delivery on top so each project can actually ship.",
+      "caps": [
+        "AI: full coverage from CNN to LLM",
+        "Full-stack IT engineering",
+        "Cross-border business integration",
+        "High-execution delivery and public relations",
+        "A global network of partners"
+      ],
+      "exp": [
+        "Senior roles in Fortune 500 companies: chief programmer at KONAMI, founder of the eBay China API team, IBM enterprise service bus",
+        "Pre-IPO technical lead at Kuajing Tongbao",
+        "Founding member of the Shanghai Cross-border E-commerce Association, with the Shanghai Commerce Commission, China Eastern, Alibaba, JD.com and SF Express",
+        "A broad portfolio of AI + IoT projects"
+      ]
+    },
+    "franklin": {
+      "name": "Franklin Ng",
+      "role": "Co-founder · corporate affairs",
+      "photo": "/images/pitch-deck/mota/franklin-ng.jpg",
+      "roleDesc": "Owns corporate affairs: US entity administration, tax compliance, and finance and collections, supported by a New York base and company-owned premises.",
+      "caps": [
+        "Corporate affairs and governance",
+        "US entity and tax compliance",
+        "Finance and collections",
+        "New York real estate and local operations"
+      ],
+      "exp": [
+        "Kingsway Trade — nationwide Chinese-medicine supplier",
+        "Acquired in 2017 by Yixintang (002727), a listed Chinese pharmaceutical group, followed by a Fifth Avenue flagship store",
+        "Owner of the 1329 Willoughby Ave building, Brooklyn, New York"
+      ]
+    },
+    "paul": {
+      "name": "Paul Brennan",
+      "role": "Supply chain, food safety & quality",
+      "photo": "/images/pitch-deck/elmsflow/paul-brennan.jpg",
+      "roleDesc": "Owns supply-chain, food-safety and quality governance for ELMSFLOW programmes.",
+      "caps": [
+        "BRC food standards and ISO systems",
+        "Carbon, sustainability and green projects",
+        "Six Sigma and supply-chain quality"
+      ],
+      "exp": [
+        "45+ years in supply-chain management and food safety",
+        "Senior supply-chain roles with McDonald's Europe",
+        "Founder, Paradigm Supply Chain Solutions"
+      ]
+    },
+    "turlough": {
+      "name": "Turlough Sheehan",
+      "role": "Global logistics & customs compliance",
+      "photo": "/images/pitch-deck/elmsflow/turlough-sheehan.jpg",
+      "roleDesc": "Designs customs-compliant logistics and entry strategy for cross-border programmes.",
+      "caps": [
+        "DDP shipping and customs-compliant hubs",
+        "Section 321 and low-value entry strategy",
+        "International trade-law advisory"
+      ],
+      "exp": [
+        "40+ years in global logistics and customs",
+        "Active in e-commerce compliance since 1992"
+      ]
+    },
+    "vivian": {
+      "name": "Vivian Yan 闫玮",
+      "role": "Shanghai private-hospital resources · Auraight",
+      "photo": "/images/pitch-deck/auraight/vivian-yan.jpg",
+      "roleDesc": "Develops Shanghai private-hospital and corporate-health channels, and coordinates patient pathways for Auraight.",
+      "caps": [
+        "Private-hospital and corporate health-service sales",
+        "Health-management programme design",
+        "Psychological counselling (certified level 2)",
+        "Japanese business communication"
+      ],
+      "exp": [
+        "Parkway Health 百汇医疗 — since Aug 2026",
+        "SinoUnited Health 曜影医疗 — business development, 2020–2026",
+        "iKang Healthcare 爱康集团 — regional sales director, East China, 2016–2020",
+        "Peking University — BA, Public Administration"
+      ]
+    },
+    "ethan": {
+      "name": "Ethan",
+      "role": "Clinical-AI research & market strategy",
+      "photo": "/images/pitch-deck/auraight/ethan.jpg",
+      "roleDesc": "Sources overseas patients for Auraight and links clinical evidence, market entry and technical strategy.",
+      "caps": [
+        "Overseas patient sourcing and referral network",
+        "Cancer prognosis and outcome prediction",
+        "Clinical AI research",
+        "UK, North America and Nigeria market access"
+      ],
+      "exp": [
+        "Oxford DPhil research in clinical medicine",
+        "Harvard Medical School and Wyss Institute",
+        "Johns Hopkins experience",
+        "Time for Africa — Nigeria technical strategy"
+      ]
+    },
+    "chris": {
+      "name": "Chris Chen",
+      "role": "Founder, Project Studio · Co-founder, VFlux",
+      "photo": "/images/pitch-deck/vflux/chris-chen.jpg",
+      "roleDesc": "20+ years in company building, investment management and crypto mining. Founder of Project Studio, which incubates Web3 and AI projects for Asian markets through co-founding, capital, partnerships and market reach. Co-founder of VFlux and Executive Secretary of the World Blockchain Organization (WBO).",
+      "caps": [
+        "Venture building and early-stage investment in Web3 and AI",
+        "Crypto mining infrastructure and energy sourcing",
+        "Tokenisation, DeFi and digital-asset strategy",
+        "Fundraising, partnerships and cross-border deal-making"
+      ],
+      "exp": [
+        "Founder, Project Studio — Web3/AI incubation for Asian markets, 2026–present",
+        "Co-founder, VFlux — stock tokenisation, 2026–present",
+        "Co-founder, DogeCity (crypto mining) 2024–2026; Hashbox (crypto mining) 2018–2021",
+        "Founder, WaterRock Capital (investment firm) 2014–2019",
+        "Executive Secretary, World Blockchain Organization (WBO), 2017–present",
+        "University of British Columbia — BA, International Economics"
+      ]
+    },
+    "anthony": {
+      "name": "Anthony Chen",
+      "role": "Capital markets, trading & RWA tokenisation · VFlux",
+      "photo": "/images/pitch-deck/vflux/anthony-chen.jpg",
+      "link": "https://www.linkedin.com/in/chenanthony",
+      "roleDesc": "Brings trading, investment research and real-world-asset tokenisation experience to VFlux market-access and liquidity work.",
+      "caps": [
+        "Financial investments, trading and research",
+        "Real-world asset (RWA) tokenisation",
+        "Blockchain for payments and energy use cases",
+        "Cross-border markets: Singapore, Hong Kong, Thailand, Australia"
+      ],
+      "exp": [
+        "Fforward.finance — financial investments, trading and research",
+        "Based in Singapore; earlier roles across Bangkok, Phuket and Hong Kong",
+        "University of Technology, Sydney",
+        "Published on blockchain's role in clean-energy innovation"
+      ]
+    },
+    "vito": {
+      "name": "Vito He 贺稀",
+      "role": "Founder, Yoshi Sei Corporation",
+      "photo": "/images/pitch-deck/yoshisei/vito-he.jpg",
+      "roleDesc": "Founder of Yoshisei. A partner at a global consulting firm, with more than twenty years in B2B sales, consulting and digital marketing for multinationals.",
+      "caps": [
+        "Partner at a global consulting firm; earlier at Accenture, IBM, Brandtology and Emailvision China",
+        "20+ years of B2B sales, consulting and team management at multinationals",
+        "Led strategic projects above USD 5 million, dealing directly with CXOs and chairmen",
+        "Digital marketing: SEO, performance marketing and email SaaS"
+      ],
+      "exp": [
+        "Founder of Yoshisei Corporation; Tokyo HQ with branches in Osaka and Fukuoka",
+        "Regional management and zero-to-one market entry: team 3 to 30+, revenue up sevenfold to CNY 22 million in 2018",
+        "Earlier at Accenture and IBM, then Brandtology and Emailvision China, with a Netconcepts background",
+        "BSc Computer Science, Tongji University; MBA, SBS Swiss Business School"
+      ]
+    },
+    "allen": {
+      "name": "Allen Qu 渠成",
+      "role": "Co-founder & special adviser",
+      "photo": "/images/pitch-deck/yoshisei/allen-qu.jpg",
+      "roleDesc": "Owns digital marketing, brand and search strategy for the platform.",
+      "caps": [
+        "Search, content and AI visibility",
+        "Brand expansion into China and Japan",
+        "Performance marketing"
+      ],
+      "exp": [
+        "Founder of Netconcepts",
+        "Co-founder of Sinorbis",
+        "Founder of Cross Border Digital",
+        "Studied in Japan; University of Auckland graduate"
+      ]
+    },
+    "kuri": {
+      "name": "Kuri Ki 栗木霞",
+      "role": "Japan sales & after-sales lead",
+      "photo": "/images/pitch-deck/yoshisei/kuri-ki.jpg",
+      "roleDesc": "Develops Japanese buyers and runs sales and after-sales operations.",
+      "caps": [
+        "Japan buyer development",
+        "Bilingual Japan–China business communication",
+        "Sales operations and after-sales"
+      ],
+      "exp": [
+        "30+ years across tourism, cruise, recycling and logistics",
+        "Japan-side sales and after-sales lead at Yoshi Sei"
+      ]
+    }
+  },
+  "officials": {
+    "cummins": {
+      "name": "John Cummins TD",
+      "role": "Minister of State for Local Government & Planning",
+      "photo": "/images/pitch-deck/elmsflow/john-cummins.jpg",
+      "links": [
+        {
+          "label": "View public profile",
+          "href": "https://www.google.com/search?q=John+Cummins+TD+Minister+of+State+for+Local+Government+and+Planning"
+        },
+        {
+          "label": "Department of Housing, Local Government and Heritage",
+          "href": "https://www.gov.ie/en/organisation/department-of-housing-local-government-and-heritage/"
+        }
+      ]
+    },
+    "evans": {
+      "name": "Gareth Evans",
+      "role": "General Manager, Waterford City & County Council",
+      "photo": "/images/pitch-deck/elmsflow/gareth-evans.jpg",
+      "links": [
+        {
+          "label": "LinkedIn profile",
+          "href": "https://www.linkedin.com/in/gwevans/"
+        },
+        {
+          "label": "Waterford City & County Council",
+          "href": "https://waterfordcouncil.ie/"
+        }
+      ]
+    },
+    "hurley": {
+      "name": "Gerald Hurley",
+      "role": "Chief Executive, Waterford Chamber",
+      "photo": "/images/pitch-deck/elmsflow/gerald-hurley.jpg",
+      "links": [
+        {
+          "label": "Appointment announcement",
+          "href": "https://chambersawards.ie/gerald-hurley-appointed-ceo-waterford-chamber/"
+        },
+        {
+          "label": "Waterford Chamber",
+          "href": "https://www.waterfordchamber.ie/"
+        }
+      ]
+    }
+  }
+}

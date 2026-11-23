@@ -42,6 +42,11 @@ const IrelandGatewayDeck = dynamic(
   { loading: () => <LoadingSpinner /> }
 );
 
+const MotaTechLinkDeck = dynamic(
+  () => import("@content/pitch-decks/mota-tech-link/deck").then(mod => mod.MotaTechLinkDeck),
+  { loading: () => <LoadingSpinner /> }
+);
+
 function LoadingSpinner() {
   return (
     <div className="w-full h-full flex items-center justify-center bg-black">
@@ -122,6 +127,15 @@ export function PitchDeckViewer({ slug, meta, isAuthenticated, userRole }: Pitch
     case "ireland-gateway":
       return (
         <IrelandGatewayDeck
+          access={access}
+          previewSlides={preview}
+          isAuthenticated={isAuthenticated}
+          userRole={userRole}
+        />
+      );
+    case "mota-tech-link":
+      return (
+        <MotaTechLinkDeck
           access={access}
           previewSlides={preview}
           isAuthenticated={isAuthenticated}
